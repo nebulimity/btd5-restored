@@ -1,5 +1,4 @@
 # btd5-restored
-## **Status:** WIP
 
 The original **Flash** version of Bloons Tower Defense 5 rewritten in Godot 4!
 
