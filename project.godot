@@ -11,5 +11,16 @@ config_version=5
 [application]
 
 config/name="Bloons TD 5 Restored"
+run/main_scene="uid://di2rdjwkum74f"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=600
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray()

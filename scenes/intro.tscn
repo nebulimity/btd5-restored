@@ -1,3 +1,66 @@
-[gd_scene format=3 uid="uid://di2rdjwkum74f"]
+[gd_scene load_steps=10 format=3 uid="uid://di2rdjwkum74f"]
+
+[ext_resource type="Texture2D" uid="uid://d4iffgjgxnilc" path="res://assets/animations/intro/sprites/background.svg" id="1_ioskq"]
+[ext_resource type="Texture2D" uid="uid://bgxqfj71030pg" path="res://assets/animations/intro/sprites/stars.png" id="2_i2l1n"]
+[ext_resource type="Texture2D" uid="uid://dxfru28bvqxe3" path="res://assets/animations/intro/sprites/trees.svg" id="2_yjqpq"]
+[ext_resource type="Texture2D" uid="uid://cqr3spu5fjjf7" path="res://assets/animations/intro/sprites/cloud.svg" id="4_es01l"]
+[ext_resource type="Texture2D" uid="uid://0qk5cbchduv3" path="res://assets/animations/intro/sprites/roof.svg" id="4_wfs7u"]
+[ext_resource type="Texture2D" uid="uid://bfyyhy4dryqa6" path="res://assets/animations/intro/sprites/bloon.svg" id="7_bu1yb"]
+
+[sub_resource type="Animation" id="Animation_i2l1n"]
+length = 6.66667
+
+[sub_resource type="Animation" id="Animation_4bx60"]
+resource_name = "move_sprite_test"
+length = 8.2251
+step = 0.0333
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wfs7u"]
+_data = {
+&"RESET": SubResource("Animation_i2l1n"),
+&"move_sprite_test": SubResource("Animation_4bx60")
+}
 
 [node name="Intro" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-2.45, 0.2)
+texture = ExtResource("1_ioskq")
+centered = false
+
+[node name="Stars" type="Sprite2D" parent="."]
+texture = ExtResource("2_i2l1n")
+centered = false
+offset = Vector2(-8.8, -4.45)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wfs7u")
+}
+
+[node name="Trees" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-151.65, 361.55)
+texture = ExtResource("2_yjqpq")
+centered = false
+
+[node name="Cloud" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.38)
+position = Vector2(-352.5, 288.05)
+texture = ExtResource("4_es01l")
+centered = false
+
+[node name="Roof" type="Sprite2D" parent="."]
+position = Vector2(93.6, 256.45)
+texture = ExtResource("4_wfs7u")
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(1.478, 1.478)
+
+[node name="Bloon" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(88.85, 145.35)
+texture = ExtResource("7_bu1yb")
+centered = false
