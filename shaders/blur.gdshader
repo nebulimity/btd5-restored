@@ -5,11 +5,6 @@ uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
 uniform int blur_radius : hint_range(1, 32) = 32;
 uniform float blur_strength : hint_range(0.1, 10.0) = 10.0;
-uniform float Darkness : hint_range(0.0,1.0) = 0.0;
-uniform float R : hint_range(0.0,1.0) = 0.0;
-uniform float G : hint_range(0.0,1.0) = 0.0;
-uniform float B : hint_range(0.0,1.0) = 0.0;
-
 uniform float alpha : hint_range(0.0, 1.0) = 1.0;
 
 float gaussian_weight(float i, float sigma) {
@@ -50,10 +45,6 @@ void fragment() {
 
     vec3 blurred_color = (accum_alpha > 0.0) ? (accum_color / accum_alpha) : texture(TEXTURE, uv).rgb;
     float blurred_alpha = clamp(accum_alpha, 0.0, 1.0);
-
-    blurred_color.r = (blurred_color.r + R) - Darkness;
-    blurred_color.g = (blurred_color.g + G) - Darkness;
-    blurred_color.b = (blurred_color.b + B) - Darkness;
 
     blurred_alpha *= alpha;
 

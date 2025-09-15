@@ -1,14 +1,9 @@
 shader_type canvas_item;
 render_mode blend_mix;
 
-uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
-
-uniform int blur_radius : hint_range(1, 32) = 32;
-uniform float blur_strength : hint_range(0.1, 10.0) = 10.0;
-uniform float Darkness : hint_range(0.0,1.0) = 0.0;
-uniform float R : hint_range(0.0,1.0) = 0.0;
-uniform float G : hint_range(0.0,1.0) = 0.0;
-uniform float B : hint_range(0.0,1.0) = 0.0;
+const int MAX_RADIUS = 64; // compiled max â raise if you need bigger (costly!)
+uniform int blur_radius : hint_range(1, 64) = 55; // user can set up to MAX_RADIUS
+uniform float blur_strength : hint_range(0.1, 25.0) = 10.0;
 
 uniform float glow_intensity : hint_range(0.0, 4.0) = 1.0;
 uniform float glow_alpha : hint_range(0.0, 1.0) = 1.0;
@@ -17,11 +12,11 @@ float gaussian_weight(float i, float sigma) {
     return exp(-0.5 * (i * i) / (sigma * sigma));
 }
 
-void calculate_kernel(out float kernel[32], int radius, float sigma) {
+void calculate_kernel(out float kernel[MAX_RADIUS + 1], int radius, float sigma) {
     float sum = 0.0;
     for (int i = 0; i <= radius; i++) {
         kernel[i] = gaussian_weight(float(i), sigma);
-        sum += i == 0 ? kernel[i] : 2.0 * kernel[i];
+        sum += (i == 0) ? kernel[i] : (2.0 * kernel[i]);
     }
     for (int i = 0; i <= radius; i++) {
         kernel[i] /= sum;
@@ -31,16 +26,18 @@ void calculate_kernel(out float kernel[32], int radius, float sigma) {
 void fragment() {
     vec2 uv = UV;
 
-    float kernel[32];
-    calculate_kernel(kernel, blur_radius, blur_strength);
+    int r = clamp(blur_radius, 1, MAX_RADIUS);
+
+    float kernel[MAX_RADIUS + 1];
+    calculate_kernel(kernel, r, blur_strength);
 
     vec2 texel = 1.0 / vec2(textureSize(TEXTURE, 0));
 
     vec3 accum_color = vec3(0.0);
     float accum_alpha = 0.0;
 
-    for (int x = -blur_radius; x <= blur_radius; x++) {
-        for (int y = -blur_radius; y <= blur_radius; y++) {
+    for (int x = -r; x <= r; x++) {
+        for (int y = -r; y <= r; y++) {
             float w = kernel[abs(x)] * kernel[abs(y)];
             vec2 offset = vec2(float(x), float(y)) * texel;
             vec4 sample = texture(TEXTURE, uv + offset);
@@ -54,15 +51,13 @@ void fragment() {
 
     vec4 original = texture(TEXTURE, uv);
 
-    blurred_color.r = (blurred_color.r + R) - Darkness;
-    blurred_color.g = (blurred_color.g + G) - Darkness;
-    blurred_color.b = (blurred_color.b + B) - Darkness;
+    float outside = 1.0 - original.a;
+    vec3 glow_color = blurred_color * outside;
+    float glow_a = blurred_alpha * outside * glow_alpha;
 
-    vec3 glow_color = max(blurred_color - original.rgb, 0.0);
-    float glow_a = max(blurred_alpha - original.a, 0.0) * glow_alpha;
+    vec3 final_rgb = original.rgb + glow_color * glow_intensity;
 
-    vec3 final_color = original.rgb + glow_color * glow_intensity;
-    float final_alpha = max(original.a, glow_a);
+    float final_alpha = clamp(original.a + glow_a * (1.0 - original.a), 0.0, 1.0);
 
-    COLOR = vec4(final_color, final_alpha);
+    COLOR = vec4(final_rgb, final_alpha);
 }

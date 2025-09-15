@@ -1,14 +1,15 @@
-[gd_scene load_steps=22 format=3 uid="uid://di2rdjwkum74f"]
+[gd_scene load_steps=23 format=3 uid="uid://di2rdjwkum74f"]
 
 [ext_resource type="Texture2D" uid="uid://d4iffgjgxnilc" path="res://assets/animations/intro/sprites/background.svg" id="1_ioskq"]
 [ext_resource type="Texture2D" uid="uid://bgxqfj71030pg" path="res://assets/animations/intro/sprites/stars.png" id="2_i2l1n"]
 [ext_resource type="Texture2D" uid="uid://dxfru28bvqxe3" path="res://assets/animations/intro/sprites/trees.svg" id="2_yjqpq"]
-[ext_resource type="Texture2D" uid="uid://cqr3spu5fjjf7" path="res://assets/animations/intro/sprites/cloud.svg" id="4_es01l"]
 [ext_resource type="Shader" uid="uid://bq37m6b8frsw" path="res://shaders/glow.gdshader" id="4_u05oh"]
 [ext_resource type="Texture2D" uid="uid://0qk5cbchduv3" path="res://assets/animations/intro/sprites/roof.svg" id="4_wfs7u"]
+[ext_resource type="Texture2D" uid="uid://cpeciiwxahxbc" path="res://assets/animations/intro/sprites/moon.png" id="5_epycs"]
 [ext_resource type="Shader" uid="uid://0bqbnhv46sud" path="res://shaders/blur.gdshader" id="5_u5myo"]
 [ext_resource type="Texture2D" uid="uid://cd20hn2mfl5p6" path="res://assets/animations/intro/sprites/moon.svg" id="7_0naf5"]
 [ext_resource type="Texture2D" uid="uid://bfyyhy4dryqa6" path="res://assets/animations/intro/sprites/bloon.svg" id="7_bu1yb"]
+[ext_resource type="Texture2D" uid="uid://bftuhuex585xq" path="res://assets/animations/intro/sprites/cloud.png" id="7_u05oh"]
 [ext_resource type="Texture2D" uid="uid://b8oow7aytmptr" path="res://assets/animations/intro/sprites/kiwi/neck/neck_1.svg" id="8_bu1yb"]
 [ext_resource type="Texture2D" uid="uid://bqyes27p8x535" path="res://assets/animations/intro/sprites/kiwi/head/head_1.svg" id="9_t1qkj"]
 [ext_resource type="Texture2D" uid="uid://d1uh7w705lnof" path="res://assets/animations/intro/sprites/kiwi/face/face_1.svg" id="10_272cy"]
@@ -19,23 +20,15 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_epycs"]
 shader = ExtResource("4_u05oh")
-shader_parameter/blur_radius = 32
-shader_parameter/blur_strength = 10.0
-shader_parameter/Darkness = 0.0
-shader_parameter/R = 0.0
-shader_parameter/G = 0.0
-shader_parameter/B = 0.0
+shader_parameter/blur_radius = 64
+shader_parameter/blur_strength = 25.0
 shader_parameter/glow_intensity = 1.0
 shader_parameter/glow_alpha = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_u5myo"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ge50m"]
 shader = ExtResource("5_u5myo")
 shader_parameter/blur_radius = 17
 shader_parameter/blur_strength = 10.0
-shader_parameter/Darkness = 0.0
-shader_parameter/R = 0.0
-shader_parameter/G = 0.0
-shader_parameter/B = 0.0
 shader_parameter/alpha = 0.38
 
 [sub_resource type="Animation" id="Animation_n6p8m"]
@@ -459,7 +452,7 @@ tracks/14/path = NodePath("Beak:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(-0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4),
+"times": PackedFloat32Array(0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(469.1, 273.6), Vector2(470.75, 251.4), Vector2(470.35, 229.2), Vector2(467.75, 207.25), Vector2(468.75, 209.6), Vector2(469.75, 211.95), Vector2(470.5, 214), Vector2(471.2, 216.25)]
@@ -605,58 +598,59 @@ offset = Vector2(-19.9, -5.8)
 
 [node name="Moon" type="Sprite2D" parent="."]
 modulate = Color(2, 2, 2, 1)
-position = Vector2(162.55, 103.8)
+position = Vector2(192.55, 103.8)
 scale = Vector2(0.331, 0.331)
 texture = ExtResource("7_0naf5")
 centered = false
 offset = Vector2(64.5, 42.4)
 
-[node name="TextureRect" type="TextureRect" parent="Moon"]
+[node name="Glow" type="TextureRect" parent="Moon"]
 material = SubResource("ShaderMaterial_epycs")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 64.5
-offset_top = 42.4
-offset_right = 64.5
-offset_bottom = 42.4
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.5
+offset_top = -209.5
+offset_right = 80.5
+offset_bottom = 14.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(3.021, 3.021)
+pivot_offset = Vector2(64.5, 42.4)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("7_0naf5")
+texture = ExtResource("5_epycs")
 
 [node name="Trees" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(-151.65, 361.55)
+position = Vector2(-114.6, 361.55)
 texture = ExtResource("2_yjqpq")
 centered = false
 
-[node name="Cloud" type="Sprite2D" parent="."]
+[node name="Cloud" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.38)
-position = Vector2(-352.5, 288.05)
-centered = false
-
-[node name="TextureRect" type="TextureRect" parent="Cloud"]
-modulate = Color(1, 1, 1, 0.38)
-material = SubResource("ShaderMaterial_u5myo")
+material = SubResource("ShaderMaterial_ge50m")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 847.0
-offset_bottom = 108.0
+offset_left = -292.5
+offset_top = 288.05
+offset_right = 588.5
+offset_bottom = 430.05
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_es01l")
+texture = ExtResource("7_u05oh")
 
 [node name="Roof" type="Sprite2D" parent="."]
-position = Vector2(93.6, 256.45)
+position = Vector2(246.5, 256.45)
 texture = ExtResource("4_wfs7u")
 centered = false
 
 [node name="Bloon" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(88.85, 145.35)
+position = Vector2(241.75, 145.35)
 texture = ExtResource("7_bu1yb")
 centered = false
 
