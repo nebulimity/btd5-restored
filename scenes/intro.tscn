@@ -36,7 +36,7 @@ shader_parameter/Darkness = 0.0
 shader_parameter/R = 0.0
 shader_parameter/G = 0.0
 shader_parameter/B = 0.0
-shader_parameter/alpha = 1.0
+shader_parameter/alpha = 0.38
 
 [sub_resource type="Animation" id="Animation_n6p8m"]
 length = 0.001
