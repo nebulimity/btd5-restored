@@ -12,13 +12,13 @@ config_version=5
 
 config/name="BTD5 Restored"
 run/main_scene="uid://di2rdjwkum74f"
-config/features=PackedStringArray("4.4")
+config/features=PackedStringArray("4.5")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=800
-window/size/viewport_height=600
+window/size/viewport_width=542
+window/size/viewport_height=406
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
