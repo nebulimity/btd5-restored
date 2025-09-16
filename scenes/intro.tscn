@@ -404,6 +404,30 @@ tracks/30/keys = {
 "update": 1,
 "values": [ExtResource("9_t1qkj")]
 }
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Bloon:position:y")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [145.35]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Bloon:position:x")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [88.85]
+}
 
 [sub_resource type="Animation" id="Animation_es01l"]
 resource_name = "intro"
@@ -411,14 +435,14 @@ length = 8.233337
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Bloon:position")
+tracks/0/path = NodePath("Bloon:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.86667, 3.9, 3.93333, 3.96667, 4, 4.03333, 4.06667, 4.1, 4.13333, 4.16667, 4.2, 4.23333, 4.26667, 4.3, 4.33333, 4.36667, 4.4, 4.43333, 4.46667, 4.5, 4.53333, 4.56667, 4.6, 4.63333, 4.66667, 4.7),
+"times": PackedFloat32Array(0, 3.8666666, 3.9, 3.9333334, 3.9666667, 4, 4.0333333, 4.0666666, 4.1, 4.133333, 4.1666665, 4.2, 4.233333, 4.266667, 4.3, 4.3333335, 4.366667, 4.4, 4.4333334, 4.4666667, 4.5, 4.5333333, 4.5666666, 4.6, 4.633333, 4.6666665, 4.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(88.85, 145.35), Vector2(88.85, 145.35), Vector2(89.3, 145.35), Vector2(90.6, 145.35), Vector2(92.9, 145.35), Vector2(96.2, 145.35), Vector2(100.5, 145.35), Vector2(105.9, 145.35), Vector2(112.3, 145.35), Vector2(119.7, 145.35), Vector2(128.1, 145.35), Vector2(137.3, 145.35), Vector2(147.2, 145.35), Vector2(157.6, 145.35), Vector2(168.2, 145.35), Vector2(178.75, 145.35), Vector2(189.05, 145.35), Vector2(198.75, 145.35), Vector2(207.75, 145.35), Vector2(215.8, 145.35), Vector2(222.8, 145.35), Vector2(228.75, 145.35), Vector2(233.55, 145.35), Vector2(237.2, 145.35), Vector2(239.75, 145.35), Vector2(241.25, 145.35), Vector2(241.75, 145.35)]
+"values": [88.85, 88.84996, 89.30001, 90.60024, 92.8997, 96.2, 100.50062, 105.89945, 112.30011, 119.70096, 128.09918, 137.30014, 147.20119, 157.59894, 168.2, 178.75104, 189.04903, 198.75, 207.75081, 215.7993, 222.80002, 228.75055, 233.54968, 237.20004, 239.75018, 241.24997, 241.75]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -938,6 +962,18 @@ tracks/41/keys = {
 "times": PackedFloat32Array(6.733333)
 }
 tracks/41/use_blend = true
+tracks/42/type = "value"
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/path = NodePath("Bloon:position:y")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/keys = {
+"times": PackedFloat32Array(0, 1.6666666, 3.3333333, 5, 6.6666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [145.35, 135.35, 145.35, 135.35, 145.35]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wfs7u"]
 _data = {
@@ -960,7 +996,7 @@ centered = false
 
 [node name="Moon" type="Sprite2D" parent="."]
 modulate = Color(2, 2, 2, 1)
-position = Vector2(162.55, 103.8)
+position = Vector2(192.55, 103.8)
 scale = Vector2(0.331, 0.331)
 texture = ExtResource("7_0naf5")
 centered = false
@@ -973,17 +1009,17 @@ texture = ExtResource("4_u5myo")
 
 [node name="Trees" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(-151.65, 361.55)
+position = Vector2(-114.6, 361.55)
 texture = ExtResource("2_yjqpq")
 centered = false
 
 [node name="Cloud" type="Sprite2D" parent="."]
-position = Vector2(-352.5, 288.05)
+position = Vector2(-292.5, 288.05)
 texture = ExtResource("7_u05oh")
 centered = false
 
 [node name="Roof" type="Sprite2D" parent="."]
-position = Vector2(93.6, 256.45)
+position = Vector2(246.5, 256.45)
 texture = ExtResource("4_wfs7u")
 centered = false
 
@@ -992,6 +1028,7 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(88.85, 145.35)
 texture = ExtResource("7_bu1yb")
 centered = false
+offset = Vector2(-0.05, 0)
 
 [node name="Neck" type="Sprite2D" parent="."]
 visible = false
