@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://di2rdjwkum74f"]
+[gd_scene load_steps=25 format=3 uid="uid://di2rdjwkum74f"]
 
+[ext_resource type="Script" uid="uid://cbw8h5a8yesbk" path="res://scenes/intro.gd" id="1_5pmge"]
 [ext_resource type="Texture2D" uid="uid://d4iffgjgxnilc" path="res://assets/animations/intro/sprites/background.svg" id="1_ioskq"]
 [ext_resource type="Texture2D" uid="uid://d3n0fexsygk8d" path="res://assets/animations/intro/sprites/stars.svg" id="2_epycs"]
 [ext_resource type="Texture2D" uid="uid://dxfru28bvqxe3" path="res://assets/animations/intro/sprites/trees.svg" id="2_yjqpq"]
@@ -839,6 +840,7 @@ _data = {
 }
 
 [node name="Intro" type="Node2D"]
+script = ExtResource("1_5pmge")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(-2.45, 0.2)
