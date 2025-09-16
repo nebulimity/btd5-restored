@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://di2rdjwkum74f"]
+[gd_scene load_steps=24 format=3 uid="uid://di2rdjwkum74f"]
 
 [ext_resource type="Texture2D" uid="uid://d4iffgjgxnilc" path="res://assets/animations/intro/sprites/background.svg" id="1_ioskq"]
 [ext_resource type="Texture2D" uid="uid://d3n0fexsygk8d" path="res://assets/animations/intro/sprites/stars.svg" id="2_epycs"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bewnfplr52stw" path="res://assets/animations/intro/sprites/kiwi/bandana/bandana_3.svg" id="14_xwriy"]
 [ext_resource type="Texture2D" uid="uid://cis6sy3i10aik" path="res://assets/animations/intro/sprites/kiwi/bandana/bandana_4.svg" id="15_17bgi"]
 [ext_resource type="Texture2D" uid="uid://cj048qvtgid5p" path="res://assets/animations/intro/sprites/kiwi/face/face_2.svg" id="16_u05oh"]
+[ext_resource type="Texture2D" uid="uid://qfd4lpisihm5" path="res://assets/animations/intro/sprites/kiwi/head/head_2.svg" id="17_dryi7"]
 [ext_resource type="Texture2D" uid="uid://cmwob6walfky8" path="res://assets/animations/intro/sprites/kiwi/face/face_3.svg" id="17_epycs"]
 [ext_resource type="Texture2D" uid="uid://b7haelp22qsqo" path="res://assets/animations/intro/sprites/kiwi/beak/beak_2.svg" id="18_ge50m"]
 
@@ -382,6 +383,18 @@ tracks/29/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("Head:texture")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_t1qkj")]
+}
 
 [sub_resource type="Animation" id="Animation_es01l"]
 resource_name = "intro"
@@ -701,91 +714,91 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("Head:scale")
+tracks/26/path = NodePath("Head:texture")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
+"times": PackedFloat32Array(0, 1.0666667, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_t1qkj"), ExtResource("9_t1qkj"), ExtResource("17_dryi7")]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Head:scale")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
 "times": PackedFloat32Array(0, 0.9, 0.93333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [Vector2(-1, 1), Vector2(-1, 1), Vector2(1, 1)]
 }
-tracks/27/type = "value"
-tracks/27/imported = false
-tracks/27/enabled = true
-tracks/27/path = NodePath("Face:texture")
-tracks/27/interp = 1
-tracks/27/loop_wrap = true
-tracks/27/keys = {
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Face:texture")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
 "times": PackedFloat32Array(0, 0.8, 0.8333333, 0.8666667, 0.93333334, 1, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 0, 1, 1),
 "update": 1,
 "values": [ExtResource("10_272cy"), ExtResource("10_272cy"), ExtResource("16_u05oh"), ExtResource("17_epycs"), ExtResource("16_u05oh"), ExtResource("10_272cy"), ExtResource("16_u05oh")]
 }
-tracks/28/type = "value"
-tracks/28/imported = false
-tracks/28/enabled = true
-tracks/28/path = NodePath("Face:offset")
-tracks/28/interp = 1
-tracks/28/loop_wrap = true
-tracks/28/keys = {
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Face:offset")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
 "times": PackedFloat32Array(0, 0.8, 0.8333333, 0.8666667, 0.93333334, 1, 1.4666667, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(-0.15, 1.2), Vector2(-1.25, 4.4), Vector2(-0.15, 1.2), Vector2(0, 0), Vector2(0, 0), Vector2(-0.15, 1.2)]
 }
-tracks/29/type = "value"
-tracks/29/imported = false
-tracks/29/enabled = true
-tracks/29/path = NodePath("Face:scale")
-tracks/29/interp = 1
-tracks/29/loop_wrap = true
-tracks/29/keys = {
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("Face:scale")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
 "times": PackedFloat32Array(0, 0.9, 0.93333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [Vector2(-1, 1), Vector2(-1, 1), Vector2(1, 1)]
 }
-tracks/30/type = "value"
-tracks/30/imported = false
-tracks/30/enabled = true
-tracks/30/path = NodePath("Beak:texture")
-tracks/30/interp = 1
-tracks/30/loop_wrap = true
-tracks/30/keys = {
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Beak:texture")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
 "times": PackedFloat32Array(0, 0.8333333, 0.8666667, 0.93333334),
 "transitions": PackedFloat32Array(1, 1, 1, 0),
 "update": 1,
 "values": [ExtResource("11_37iue"), ExtResource("11_37iue"), ExtResource("18_ge50m"), ExtResource("11_37iue")]
 }
-tracks/31/type = "value"
-tracks/31/imported = false
-tracks/31/enabled = true
-tracks/31/path = NodePath("Beak:offset")
-tracks/31/interp = 1
-tracks/31/loop_wrap = true
-tracks/31/keys = {
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Beak:offset")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
 "times": PackedFloat32Array(0, 0.8333333, 0.8666667, 0.9, 0.93333334),
 "transitions": PackedFloat32Array(1, 0, 0, 1, 1),
 "update": 1,
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(27.95, 3.25), Vector2(27.95, 3.25), Vector2(0, 0)]
 }
-tracks/32/type = "value"
-tracks/32/imported = false
-tracks/32/enabled = true
-tracks/32/path = NodePath("Beak:scale")
-tracks/32/interp = 1
-tracks/32/loop_wrap = true
-tracks/32/keys = {
-"times": PackedFloat32Array(0, 0.9, 0.93333334),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [Vector2(-1, 1), Vector2(-1, 1), Vector2(1, 1)]
-}
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Bandana_1:scale")
+tracks/33/path = NodePath("Beak:scale")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
@@ -797,10 +810,22 @@ tracks/33/keys = {
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Bandana_2:scale")
+tracks/34/path = NodePath("Bandana_1:scale")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
+"times": PackedFloat32Array(0, 0.9, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(-1, 1), Vector2(-1, 1), Vector2(1, 1)]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("Bandana_2:scale")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
 "times": PackedFloat32Array(0, 0.9, 0.93333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
