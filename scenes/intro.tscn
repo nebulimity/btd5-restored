@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://di2rdjwkum74f"]
+[gd_scene load_steps=31 format=3 uid="uid://di2rdjwkum74f"]
 
 [ext_resource type="Script" uid="uid://cbw8h5a8yesbk" path="res://scenes/intro.gd" id="1_5pmge"]
 [ext_resource type="Texture2D" uid="uid://d4iffgjgxnilc" path="res://assets/animations/intro/sprites/background.svg" id="1_ioskq"]
@@ -21,6 +21,12 @@
 [ext_resource type="Texture2D" uid="uid://qfd4lpisihm5" path="res://assets/animations/intro/sprites/kiwi/head/head_2.svg" id="17_dryi7"]
 [ext_resource type="Texture2D" uid="uid://cmwob6walfky8" path="res://assets/animations/intro/sprites/kiwi/face/face_3.svg" id="17_epycs"]
 [ext_resource type="Texture2D" uid="uid://b7haelp22qsqo" path="res://assets/animations/intro/sprites/kiwi/beak/beak_2.svg" id="18_ge50m"]
+[ext_resource type="AudioStream" uid="uid://yynt1my1sq3m" path="res://assets/animations/intro/audio/crickets.mp3" id="22_sg54v"]
+[ext_resource type="AudioStream" uid="uid://d0cbun2ksnfc4" path="res://assets/animations/intro/audio/step_1.mp3" id="23_yj5im"]
+[ext_resource type="AudioStream" uid="uid://cvs85fds38g8r" path="res://assets/animations/intro/audio/step_2.mp3" id="24_h7rjp"]
+[ext_resource type="AudioStream" uid="uid://cnroa2pf3rtte" path="res://assets/animations/intro/audio/step_3.mp3" id="25_6ac85"]
+[ext_resource type="AudioStream" uid="uid://dxffgwyiqhhue" path="res://assets/animations/intro/audio/pop.mp3" id="26_lm4bj"]
+[ext_resource type="AudioStream" uid="uid://bj7myhd2x22dh" path="res://assets/animations/intro/audio/schwing.mp3" id="27_x2gsc"]
 
 [sub_resource type="Animation" id="Animation_n6p8m"]
 length = 0.001
@@ -399,7 +405,7 @@ tracks/30/keys = {
 
 [sub_resource type="Animation" id="Animation_es01l"]
 resource_name = "intro"
-length = 6.4
+length = 8.233337
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -832,6 +838,104 @@ tracks/35/keys = {
 "update": 1,
 "values": [Vector2(-1, 1), Vector2(-1, 1), Vector2(1, 1)]
 }
+tracks/36/type = "audio"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("Crickets")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("22_sg54v")
+}],
+"times": PackedFloat32Array(0.06666667)
+}
+tracks/36/use_blend = true
+tracks/37/type = "audio"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("Step_1")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("23_yj5im")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("23_yj5im")
+}],
+"times": PackedFloat32Array(2.6333334, 4.0666666)
+}
+tracks/37/use_blend = true
+tracks/38/type = "audio"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("Step_2")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_h7rjp")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_h7rjp")
+}],
+"times": PackedFloat32Array(2.6666667, 4.1)
+}
+tracks/38/use_blend = true
+tracks/39/type = "audio"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("Step_3")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("25_6ac85")
+}],
+"times": PackedFloat32Array(3.7333333)
+}
+tracks/39/use_blend = true
+tracks/40/type = "audio"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("Pop")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("26_lm4bj")
+}],
+"times": PackedFloat32Array(5.4333334)
+}
+tracks/40/use_blend = true
+tracks/41/type = "audio"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("Schwing")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("27_x2gsc")
+}],
+"times": PackedFloat32Array(6.733333)
+}
+tracks/41/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wfs7u"]
 _data = {
@@ -854,7 +958,7 @@ centered = false
 
 [node name="Moon" type="Sprite2D" parent="."]
 modulate = Color(2, 2, 2, 1)
-position = Vector2(162.55, 103.8)
+position = Vector2(192.55, 103.8)
 scale = Vector2(0.331, 0.331)
 texture = ExtResource("7_0naf5")
 centered = false
@@ -867,23 +971,23 @@ texture = ExtResource("4_u5myo")
 
 [node name="Trees" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(-151.65, 361.55)
+position = Vector2(-114.6, 361.55)
 texture = ExtResource("2_yjqpq")
 centered = false
 
 [node name="Cloud" type="Sprite2D" parent="."]
-position = Vector2(-352.5, 288.05)
+position = Vector2(-292.5, 288.05)
 texture = ExtResource("7_u05oh")
 centered = false
 
 [node name="Roof" type="Sprite2D" parent="."]
-position = Vector2(93.6, 256.45)
+position = Vector2(246.5, 256.45)
 texture = ExtResource("4_wfs7u")
 centered = false
 
 [node name="Bloon" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(88.85, 145.35)
+position = Vector2(241.75, 145.35)
 texture = ExtResource("7_bu1yb")
 centered = false
 
@@ -937,6 +1041,18 @@ position = Vector2(410.45, 264.5)
 rotation = -2.71573
 scale = Vector2(-1, 1)
 centered = false
+
+[node name="Crickets" type="AudioStreamPlayer" parent="."]
+
+[node name="Step_1" type="AudioStreamPlayer" parent="."]
+
+[node name="Step_2" type="AudioStreamPlayer" parent="."]
+
+[node name="Step_3" type="AudioStreamPlayer" parent="."]
+
+[node name="Pop" type="AudioStreamPlayer" parent="."]
+
+[node name="Schwing" type="AudioStreamPlayer" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
