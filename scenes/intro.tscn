@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://di2rdjwkum74f"]
+[gd_scene load_steps=56 format=3 uid="uid://di2rdjwkum74f"]
 
 [ext_resource type="Texture2D" uid="uid://d4iffgjgxnilc" path="res://assets/animations/intro/sprites/background.svg" id="1_ioskq"]
 [ext_resource type="Texture2D" uid="uid://d3n0fexsygk8d" path="res://assets/animations/intro/sprites/stars.svg" id="2_epycs"]
@@ -27,10 +27,12 @@
 [ext_resource type="Texture2D" uid="uid://b3hywbjm2076k" path="res://assets/animations/intro/sprites/kiwi/neck/neck_3.svg" id="19_7ukfb"]
 [ext_resource type="Texture2D" uid="uid://bqonnlikyrarb" path="res://assets/animations/intro/sprites/kiwi/head/head_3.svg" id="19_lm4bj"]
 [ext_resource type="Texture2D" uid="uid://jc1ra7i8xohu" path="res://assets/animations/intro/sprites/kiwi/neck/neck_4.svg" id="20_7kkmp"]
+[ext_resource type="Texture2D" uid="uid://dn0mjyuuiujtk" path="res://assets/animations/intro/sprites/shine.svg" id="20_va21j"]
 [ext_resource type="Texture2D" uid="uid://cqkqbehalcv42" path="res://assets/animations/intro/sprites/kiwi/head/head_4.svg" id="20_x2gsc"]
 [ext_resource type="Texture2D" uid="uid://wl78h2h0bjdj" path="res://assets/animations/intro/sprites/kiwi/neck/neck_5.svg" id="21_127wd"]
 [ext_resource type="Texture2D" uid="uid://70eaiwld6hyt" path="res://assets/animations/intro/sprites/kiwi/head/head_5.svg" id="21_366e5"]
 [ext_resource type="Texture2D" uid="uid://oyt4odfdrfxn" path="res://assets/animations/intro/sprites/kiwi/face/face_4.svg" id="21_h7rjp"]
+[ext_resource type="Texture2D" uid="uid://b3myf82qx7lei" path="res://assets/animations/intro/sprites/logo_mask.svg" id="21_pnkdl"]
 [ext_resource type="AudioStream" uid="uid://yynt1my1sq3m" path="res://assets/animations/intro/audio/crickets.mp3" id="22_sg54v"]
 [ext_resource type="Texture2D" uid="uid://dthni6lyofhhw" path="res://assets/animations/intro/sprites/kiwi/beak/beak_3.svg" id="22_yj5im"]
 [ext_resource type="AudioStream" uid="uid://d0cbun2ksnfc4" path="res://assets/animations/intro/audio/step_1.mp3" id="23_yj5im"]
@@ -46,9 +48,9 @@
 [ext_resource type="Texture2D" uid="uid://d2lpm3n8wmlix" path="res://assets/animations/intro/sprites/kiwi/left_thigh/left_thigh_2.svg" id="39_o5qfx"]
 [ext_resource type="Texture2D" uid="uid://donj03xi6gio4" path="res://assets/animations/intro/sprites/kiwi/left_thigh/left_thigh_3.svg" id="40_o5f54"]
 [ext_resource type="Texture2D" uid="uid://cmvbqyweswvwr" path="res://assets/animations/intro/sprites/kiwi/left_thigh/left_thigh_4.svg" id="41_nhtyu"]
-[ext_resource type="Texture2D" uid="uid://dffyl2xjqg5hg" path="res://assets/animations/intro/sprites/logo_notext.svg" id="47_nhtyu"]
+[ext_resource type="Texture2D" uid="uid://dffyl2xjqg5hg" path="res://assets/animations/intro/sprites/logo.svg" id="47_nhtyu"]
 [ext_resource type="Shader" uid="uid://csvh6lqt7preb" path="res://shaders/circle.gdshader" id="47_y7gtc"]
-[ext_resource type="Texture2D" uid="uid://dhpgcf5yh8tdm" path="res://assets/animations/intro/sprites/logo.svg" id="49_4lusl"]
+[ext_resource type="Texture2D" uid="uid://cti7rg0j8h0hd" path="res://assets/animations/intro/sprites/pop.svg" id="50_aotd0"]
 
 [sub_resource type="GDScript" id="GDScript_4lusl"]
 script/source = "extends Node2D
@@ -64,7 +66,7 @@ func _input(event: InputEvent) -> void:
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aotd0"]
 shader = ExtResource("47_y7gtc")
-shader_parameter/circle_size = 0.14494727823204123
+shader_parameter/circle_size = 0.90000004275
 shader_parameter/circle_x = 0.5
 shader_parameter/circle_y = 0.4290000203775
 shader_parameter/screen_width = 542.0
@@ -894,50 +896,122 @@ tracks/65/keys = {
 tracks/66/type = "value"
 tracks/66/imported = false
 tracks/66/enabled = true
-tracks/66/path = NodePath("Logo:texture")
+tracks/66/path = NodePath("Logo:modulate:a")
 tracks/66/interp = 1
 tracks/66/loop_wrap = true
 tracks/66/keys = {
-"times": PackedFloat32Array(0, 6.733333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("47_nhtyu"), ExtResource("49_4lusl")]
-}
-tracks/67/type = "value"
-tracks/67/imported = false
-tracks/67/enabled = true
-tracks/67/path = NodePath("Logo:modulate:a")
-tracks/67/interp = 1
-tracks/67/loop_wrap = true
-tracks/67/keys = {
 "times": PackedFloat32Array(5.6666665, 5.8333335),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/67/type = "value"
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/path = NodePath("Circle:visible")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/keys = {
+"times": PackedFloat32Array(0, 5.8, 6.733333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
 tracks/68/type = "value"
 tracks/68/imported = false
 tracks/68/enabled = true
-tracks/68/path = NodePath("Circle:visible")
+tracks/68/path = NodePath("Circle:material:shader_parameter/circle_size")
 tracks/68/interp = 1
 tracks/68/loop_wrap = true
 tracks/68/keys = {
-"times": PackedFloat32Array(0, 5.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/69/type = "value"
-tracks/69/imported = false
-tracks/69/enabled = true
-tracks/69/path = NodePath("Circle:material:shader_parameter/circle_size")
-tracks/69/interp = 1
-tracks/69/loop_wrap = true
-tracks/69/keys = {
 "times": PackedFloat32Array(5.8, 6.0666666),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.90000004275, 0.130000006175]
+}
+tracks/69/type = "value"
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/path = NodePath("Bloon:visible")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/keys = {
+"times": PackedFloat32Array(0, 5.4333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/70/type = "value"
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/path = NodePath("Pop2:position")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/keys = {
+"times": PackedFloat32Array(5.4333334, 5.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(245.25, 154.85), Vector2(225.1, 132.5)]
+}
+tracks/71/type = "value"
+tracks/71/imported = false
+tracks/71/enabled = true
+tracks/71/path = NodePath("Pop2:visible")
+tracks/71/interp = 1
+tracks/71/loop_wrap = true
+tracks/71/keys = {
+"times": PackedFloat32Array(0, 5.4333334, 5.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/72/type = "value"
+tracks/72/imported = false
+tracks/72/enabled = true
+tracks/72/path = NodePath("Pop2:scale")
+tracks/72/interp = 1
+tracks/72/loop_wrap = true
+tracks/72/keys = {
+"times": PackedFloat32Array(5.4333334, 5.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0.53, 0.53), Vector2(1, 1)]
+}
+tracks/73/type = "value"
+tracks/73/imported = false
+tracks/73/enabled = true
+tracks/73/path = NodePath("LogoMask:visible")
+tracks/73/interp = 1
+tracks/73/loop_wrap = true
+tracks/73/keys = {
+"times": PackedFloat32Array(0, 6.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/74/type = "value"
+tracks/74/imported = false
+tracks/74/enabled = true
+tracks/74/path = NodePath("Shine:position")
+tracks/74/interp = 1
+tracks/74/loop_wrap = true
+tracks/74/keys = {
+"times": PackedFloat32Array(6.733333, 7.5333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(177.55, 118.7), Vector2(457.55, 198.7)]
+}
+tracks/75/type = "value"
+tracks/75/imported = false
+tracks/75/enabled = true
+tracks/75/path = NodePath("Shine:visible")
+tracks/75/interp = 1
+tracks/75/loop_wrap = true
+tracks/75/keys = {
+"times": PackedFloat32Array(0, 6.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wfs7u"]
@@ -960,7 +1034,7 @@ centered = false
 
 [node name="Moon" type="Sprite2D" parent="."]
 modulate = Color(2, 2, 2, 1)
-position = Vector2(192.55, 103.8)
+position = Vector2(162.55, 103.8)
 scale = Vector2(0.331, 0.331)
 texture = ExtResource("7_0naf5")
 centered = false
@@ -973,86 +1047,115 @@ texture = ExtResource("4_u5myo")
 
 [node name="Trees" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(-114.6, 361.55)
+position = Vector2(-151.65, 361.55)
 texture = ExtResource("2_yjqpq")
 centered = false
 
 [node name="Cloud" type="Sprite2D" parent="."]
-position = Vector2(-292.5, 288.05)
+position = Vector2(-352.5, 288.05)
 texture = ExtResource("7_u05oh")
 centered = false
 
 [node name="Roof" type="Sprite2D" parent="."]
-position = Vector2(246.5, 256.45)
+position = Vector2(93.6, 256.45)
 texture = ExtResource("4_wfs7u")
 centered = false
 
 [node name="Bloon" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(241.75, 141.71895)
+position = Vector2(88.85, 145.35)
 texture = ExtResource("7_bu1yb")
 centered = false
 offset = Vector2(-0.05, 0)
 
 [node name="Neck" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 1)
-position = Vector2(409.5, 207.45)
-texture = ExtResource("21_127wd")
+position = Vector2(435.4, 274.15)
+rotation = 0.261799
+scale = Vector2(-1, 1)
+texture = ExtResource("8_bu1yb")
 centered = false
-offset = Vector2(-3.05, -1.5)
+offset = Vector2(0, -0.8)
 
 [node name="Head" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 1)
-position = Vector2(394.7, 197.85)
-rotation = -0.3926991
-texture = ExtResource("21_366e5")
+position = Vector2(432.1, 252.95)
+rotation = 0.401426
+scale = Vector2(-1, 1)
+texture = ExtResource("9_t1qkj")
 centered = false
+offset = Vector2(-0.05, 1.3)
 
 [node name="Face" type="Sprite2D" parent="."]
-position = Vector2(397.8, 197.55)
-rotation = -0.3926991
-texture = ExtResource("26_y6kq6")
+visible = false
+position = Vector2(431.7, 252.4)
+rotation = 0.401426
+scale = Vector2(-1, 1)
+texture = ExtResource("10_272cy")
 centered = false
 
 [node name="Beak" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 1)
-position = Vector2(355.25, 202.9)
-rotation = -0.3926991
-texture = ExtResource("24_6ac85")
+position = Vector2(469.1, 273.6)
+rotation = 0.401426
+scale = Vector2(-1, 1)
+texture = ExtResource("11_37iue")
 centered = false
 
 [node name="Bandana1" type="Sprite2D" parent="."]
-position = Vector2(421.55, 206)
-rotation = -1.1082841
+visible = false
+position = Vector2(409.35, 264.9)
+rotation = 0.78365284
+scale = Vector2(-1, 1)
 texture = ExtResource("12_n6p8m")
 centered = false
 
 [node name="Bandana2" type="Sprite2D" parent="."]
-position = Vector2(419.4, 203.95)
-rotation = -0.6195919
+visible = false
+position = Vector2(410.45, 264.5)
+rotation = 0.42586035
+scale = Vector2(-1, 1)
 texture = ExtResource("12_n6p8m")
 centered = false
 
 [node name="Body" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 1)
-position = Vector2(411.9, 216.25)
-texture = ExtResource("36_y7gtc")
+position = Vector2(430.6, 256.7)
+texture = ExtResource("14_roafj")
 centered = false
 
 [node name="RightThigh" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 1)
-position = Vector2(411.1, 240.55)
-texture = ExtResource("38_61bv4")
+position = Vector2(417.1, 270.7)
+rotation = -0.56548667
+texture = ExtResource("15_jbpqs")
 centered = false
-offset = Vector2(0, -5.2)
+offset = Vector2(-0.3, -0.75)
 
 [node name="LeftThigh" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 1)
-position = Vector2(436.35, 248.75)
-texture = ExtResource("41_nhtyu")
+position = Vector2(443.6, 236.6)
+rotation = -0.27401668
+scale = Vector2(1, 1.244)
+centered = false
+offset = Vector2(0, 0.1)
+
+[node name="Pop2" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(245.25, 154.85)
+scale = Vector2(0.53, 0.53)
+texture = ExtResource("50_aotd0")
 centered = false
 
 [node name="Circle" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_aotd0")
 offset_top = 0.2
 offset_right = 542.0
@@ -1060,10 +1163,25 @@ offset_bottom = 406.2
 color = Color(0, 0, 0, 1)
 
 [node name="Logo" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
 position = Vector2(177.55, 118.7)
 texture = ExtResource("47_nhtyu")
 centered = false
 offset = Vector2(0, -3)
+
+[node name="Shine" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(177.55, 118.7)
+texture = ExtResource("20_va21j")
+centered = false
+offset = Vector2(-87.1, -72)
+
+[node name="LogoMask" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("21_pnkdl")
+centered = false
+offset = Vector2(-0.1, -0.3)
 
 [node name="Crickets" type="AudioStreamPlayer" parent="."]
 
