@@ -1,0 +1,338 @@
+[gd_scene load_steps=74 format=3 uid="uid://ckactqtchofhj"]
+
+[ext_resource type="Texture2D" uid="uid://cyxbtefecik4w" path="res://assets/sprites/monkey_lane/background.png" id="2_1ev40"]
+[ext_resource type="Texture2D" uid="uid://c48fwu2o20e4u" path="res://assets/sprites/monkey_lane/side_panel.svg" id="3_coexc"]
+[ext_resource type="AudioStream" uid="uid://djsfwrdgmbe4g" path="res://assets/audio/music/main_theme.ogg" id="3_f0bkg"]
+[ext_resource type="Texture2D" uid="uid://bmn0ag000gmv5" path="res://assets/sprites/monkey_lane/bottom_panel.svg" id="4_coexc"]
+[ext_resource type="Texture2D" uid="uid://cga6jtjpiekyo" path="res://assets/sprites/monkey_lane/windmill/shadow/1.png" id="5_hplqs"]
+[ext_resource type="Texture2D" uid="uid://cu8e57w0auw5u" path="res://assets/sprites/monkey_lane/windmill/shadow/2.png" id="6_v0nal"]
+[ext_resource type="Texture2D" uid="uid://bev287vquytt2" path="res://assets/sprites/monkey_lane/windmill/shadow/3.png" id="7_ierwe"]
+[ext_resource type="Texture2D" uid="uid://bf1gf86boe8ja" path="res://assets/sprites/monkey_lane/windmill/shadow/4.png" id="8_iuhd7"]
+[ext_resource type="Texture2D" uid="uid://byp1lgtye5ayh" path="res://assets/sprites/monkey_lane/windmill/shadow/5.png" id="9_w3sov"]
+[ext_resource type="Texture2D" uid="uid://cubnpj2nswo74" path="res://assets/sprites/monkey_lane/windmill/shadow/6.png" id="10_6g0vd"]
+[ext_resource type="Texture2D" uid="uid://c2nli7a7eion5" path="res://assets/sprites/monkey_lane/windmill/shadow/7.png" id="11_rinr6"]
+[ext_resource type="Texture2D" uid="uid://crscp7h3bry1d" path="res://assets/sprites/monkey_lane/windmill/shadow/8.png" id="12_1v88w"]
+[ext_resource type="Texture2D" uid="uid://b6eg4hc366c26" path="res://assets/sprites/monkey_lane/windmill/shadow/9.png" id="13_7cypu"]
+[ext_resource type="Texture2D" uid="uid://bvq40sdargi5y" path="res://assets/sprites/monkey_lane/windmill/shadow/10.png" id="14_6i1ai"]
+[ext_resource type="Texture2D" uid="uid://fbivsvw4spo5" path="res://assets/sprites/monkey_lane/windmill/shadow/11.png" id="15_etkm6"]
+[ext_resource type="Texture2D" uid="uid://cmd3yfbl7ovj1" path="res://assets/sprites/monkey_lane/windmill/shadow/12.png" id="16_30p2b"]
+[ext_resource type="Texture2D" uid="uid://cjeqpfc4tm65i" path="res://assets/sprites/monkey_lane/windmill/shadow/13.png" id="17_pjwpc"]
+[ext_resource type="Texture2D" uid="uid://bc27pkks0axor" path="res://assets/sprites/monkey_lane/windmill/shadow/14.png" id="18_6saar"]
+[ext_resource type="Texture2D" uid="uid://cqvfj8i8oaci4" path="res://assets/sprites/monkey_lane/windmill/shadow/15.png" id="19_xfa77"]
+[ext_resource type="Texture2D" uid="uid://cvoc5bcfmk7x6" path="res://assets/sprites/monkey_lane/windmill/shadow/16.png" id="20_wfl4f"]
+[ext_resource type="Texture2D" uid="uid://c1mem38brrdts" path="res://assets/sprites/monkey_lane/windmill/shadow/17.png" id="21_hb1ku"]
+[ext_resource type="Texture2D" uid="uid://widrwtxj0jko" path="res://assets/sprites/monkey_lane/windmill/shadow/18.png" id="22_qtkgi"]
+[ext_resource type="Texture2D" uid="uid://dbe4qtp3ga6lx" path="res://assets/sprites/monkey_lane/windmill/shadow/19.png" id="23_0xlmb"]
+[ext_resource type="Texture2D" uid="uid://djj4gn7ik546u" path="res://assets/sprites/monkey_lane/windmill/shadow/20.png" id="24_5w2gd"]
+[ext_resource type="Texture2D" uid="uid://bti26w5ihbbe6" path="res://assets/sprites/monkey_lane/windmill/shadow/21.png" id="25_7j0xl"]
+[ext_resource type="Texture2D" uid="uid://cyfhj2ttds4mw" path="res://assets/sprites/monkey_lane/windmill/shadow/22.png" id="26_0idcn"]
+[ext_resource type="Texture2D" uid="uid://bgsck2mw8udlm" path="res://assets/sprites/monkey_lane/windmill/shadow/23.png" id="27_3shjl"]
+[ext_resource type="Texture2D" uid="uid://ddxrhibl4fe07" path="res://assets/sprites/monkey_lane/windmill/shadow/24.png" id="28_r7knh"]
+[ext_resource type="Texture2D" uid="uid://d3s3ibl20fvdv" path="res://assets/sprites/monkey_lane/windmill/shadow/25.png" id="29_8ftlk"]
+[ext_resource type="Texture2D" uid="uid://bljaf7awucc07" path="res://assets/sprites/monkey_lane/windmill/shadow/26.png" id="30_v07w1"]
+[ext_resource type="Texture2D" uid="uid://bm6yk2tihlrrv" path="res://assets/sprites/monkey_lane/windmill/shadow/27.png" id="31_fypvi"]
+[ext_resource type="Texture2D" uid="uid://c8t33lwfjbf4r" path="res://assets/sprites/monkey_lane/windmill/shadow/28.png" id="32_h4dss"]
+[ext_resource type="Texture2D" uid="uid://cr40s04avdt61" path="res://assets/sprites/monkey_lane/windmill/shadow/29.png" id="33_43gbm"]
+[ext_resource type="Texture2D" uid="uid://dvy1dv58b2xbb" path="res://assets/sprites/monkey_lane/windmill/shadow/30.png" id="34_4pknk"]
+[ext_resource type="Texture2D" uid="uid://d123c4cpxw70w" path="res://assets/sprites/monkey_lane/windmill/shadow/31.png" id="35_47chh"]
+[ext_resource type="Texture2D" uid="uid://dvlqe64tm8dcf" path="res://assets/sprites/monkey_lane/windmill/shadow/32.png" id="36_3q2mo"]
+[ext_resource type="Texture2D" uid="uid://coy01phuqk08k" path="res://assets/sprites/monkey_lane/windmill/shadow/33.png" id="37_44vvn"]
+[ext_resource type="Texture2D" uid="uid://bi56b2e50yi33" path="res://assets/sprites/monkey_lane/windmill/windmill.svg" id="38_v0nal"]
+[ext_resource type="Texture2D" uid="uid://gqf0eljtwovu" path="res://assets/sprites/monkey_lane/windmill/rotor/1.svg" id="39_cc2lc"]
+[ext_resource type="Texture2D" uid="uid://w0cnyx1unsii" path="res://assets/sprites/monkey_lane/windmill/rotor/2.svg" id="39_jaofu"]
+[ext_resource type="Texture2D" uid="uid://cpd30jr5ylmth" path="res://assets/sprites/monkey_lane/windmill/rotor/3.svg" id="40_cc2lc"]
+[ext_resource type="Texture2D" uid="uid://cxa7p7cs7cko2" path="res://assets/sprites/monkey_lane/windmill/rotor/4.svg" id="41_5eumj"]
+[ext_resource type="Texture2D" uid="uid://bh1qb7gb2kx0u" path="res://assets/sprites/monkey_lane/windmill/rotor/5.svg" id="42_gegy3"]
+[ext_resource type="Texture2D" uid="uid://bfpyddtko3bgw" path="res://assets/sprites/monkey_lane/windmill/rotor/6.svg" id="43_y71uu"]
+[ext_resource type="Texture2D" uid="uid://cc74d8guv2vrh" path="res://assets/sprites/monkey_lane/windmill/rotor/7.svg" id="44_xx1xm"]
+[ext_resource type="Texture2D" uid="uid://cmu4eoueecfmu" path="res://assets/sprites/monkey_lane/windmill/rotor/8.svg" id="45_k8csc"]
+[ext_resource type="Texture2D" uid="uid://c75perhdtdb5i" path="res://assets/sprites/monkey_lane/windmill/rotor/9.svg" id="46_dy0cp"]
+[ext_resource type="Texture2D" uid="uid://bchpjn5t2jveh" path="res://assets/sprites/monkey_lane/windmill/rotor/10.svg" id="47_lw33e"]
+[ext_resource type="Texture2D" uid="uid://dcloome3fqner" path="res://assets/sprites/monkey_lane/windmill/rotor/11.svg" id="48_fw4j1"]
+[ext_resource type="Texture2D" uid="uid://dicej6uj2gw78" path="res://assets/sprites/monkey_lane/windmill/rotor/12.svg" id="49_v0oxp"]
+[ext_resource type="Texture2D" uid="uid://dgao34lbxffw" path="res://assets/sprites/monkey_lane/windmill/rotor/13.svg" id="50_w373r"]
+[ext_resource type="Texture2D" uid="uid://dwmv7lr3jq463" path="res://assets/sprites/monkey_lane/windmill/rotor/14.svg" id="51_7crfl"]
+[ext_resource type="Texture2D" uid="uid://d18o7d8rvwkbh" path="res://assets/sprites/monkey_lane/windmill/rotor/15.svg" id="52_xy28j"]
+[ext_resource type="Texture2D" uid="uid://dvxtell3fe2qg" path="res://assets/sprites/monkey_lane/windmill/rotor/16.svg" id="53_4vhqa"]
+[ext_resource type="Texture2D" uid="uid://b7sy0vlnjecl6" path="res://assets/sprites/monkey_lane/windmill/rotor/17.svg" id="54_rsebt"]
+[ext_resource type="Texture2D" uid="uid://bujnjlyo7ix87" path="res://assets/sprites/monkey_lane/windmill/rotor/18.svg" id="55_r1fkc"]
+[ext_resource type="Texture2D" uid="uid://dyl0o1qip0h0x" path="res://assets/sprites/monkey_lane/windmill/rotor/19.svg" id="56_41jlm"]
+[ext_resource type="Texture2D" uid="uid://d0vkctvlgumvr" path="res://assets/sprites/monkey_lane/windmill/rotor/20.svg" id="57_g1wha"]
+[ext_resource type="Texture2D" uid="uid://ctop7468wmyyp" path="res://assets/sprites/monkey_lane/windmill/rotor/21.svg" id="58_ruc3f"]
+[ext_resource type="Texture2D" uid="uid://ckn5wkeafmflg" path="res://assets/sprites/monkey_lane/windmill/rotor/22.svg" id="59_tb07n"]
+[ext_resource type="Texture2D" uid="uid://birml7ib30v5q" path="res://assets/sprites/monkey_lane/windmill/rotor/23.svg" id="60_st8sm"]
+[ext_resource type="Texture2D" uid="uid://58w0hnanl3ar" path="res://assets/sprites/monkey_lane/windmill/rotor/24.svg" id="61_wrefl"]
+[ext_resource type="Texture2D" uid="uid://dex0cner0nv6o" path="res://assets/sprites/monkey_lane/windmill/rotor/25.svg" id="62_fnir3"]
+[ext_resource type="Texture2D" uid="uid://cqi8wcq0jrndm" path="res://assets/sprites/monkey_lane/windmill/rotor/26.svg" id="63_cf0vp"]
+[ext_resource type="Texture2D" uid="uid://dlfj4ur86rive" path="res://assets/sprites/monkey_lane/windmill/rotor/27.svg" id="64_1me42"]
+[ext_resource type="Texture2D" uid="uid://bnxyra15tnjd" path="res://assets/sprites/monkey_lane/windmill/rotor/28.svg" id="65_tawa2"]
+[ext_resource type="Texture2D" uid="uid://b0o4wpphfsaq5" path="res://assets/sprites/monkey_lane/windmill/rotor/29.svg" id="66_mn5mi"]
+[ext_resource type="Texture2D" uid="uid://d2qkgsii2er7f" path="res://assets/sprites/monkey_lane/windmill/rotor/30.svg" id="67_0mvps"]
+[ext_resource type="Texture2D" uid="uid://c7dyi8wrd5pmn" path="res://assets/sprites/monkey_lane/windmill/rotor/31.svg" id="68_pcn27"]
+[ext_resource type="Texture2D" uid="uid://bwwrv48t2gh33" path="res://assets/sprites/monkey_lane/windmill/rotor/32.svg" id="69_up8rk"]
+[ext_resource type="Texture2D" uid="uid://cmichi275bd0h" path="res://assets/sprites/monkey_lane/windmill/rotor/33.svg" id="70_aytji"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jaofu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_hplqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v0nal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ierwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_iuhd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w3sov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6g0vd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rinr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1v88w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7cypu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6i1ai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_etkm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_30p2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pjwpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_6saar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_xfa77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_wfl4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_hb1ku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_qtkgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_0xlmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_5w2gd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_7j0xl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_0idcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3shjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_r7knh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_8ftlk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_v07w1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_fypvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_h4dss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_43gbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_4pknk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_47chh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_3q2mo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_44vvn")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0goub"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_cc2lc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_jaofu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_cc2lc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_5eumj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_gegy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_y71uu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_xx1xm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_k8csc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_dy0cp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_lw33e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_fw4j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_v0oxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_w373r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_7crfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_xy28j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_4vhqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_rsebt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_r1fkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_41jlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_g1wha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_ruc3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_tb07n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_st8sm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_wrefl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_fnir3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_cf0vp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_1me42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_tawa2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_mn5mi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_0mvps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_pcn27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_up8rk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_aytji")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 30.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_f0bkg")
+autoplay = true
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.333, 0.333)
+texture = ExtResource("2_1ev40")
+centered = false
+offset = Vector2(-163.05, 0)
+
+[node name="SidePanel" type="Sprite2D" parent="."]
+position = Vector2(700, 0)
+texture = ExtResource("3_coexc")
+centered = false
+
+[node name="BottomPanel" type="Sprite2D" parent="."]
+position = Vector2(0, 520)
+texture = ExtResource("4_coexc")
+centered = false
+offset = Vector2(-50.95, 0)
+
+[node name="WindmillShadow" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jaofu")
+animation = &"spin"
+autoplay = "spin"
+frame = 23
+frame_progress = 0.60019505
+centered = false
+offset = Vector2(-23, 9.55)
+
+[node name="Windmill" type="Sprite2D" parent="."]
+position = Vector2(-5.25, -15.1)
+texture = ExtResource("38_v0nal")
+centered = false
+
+[node name="WindmillRotor" type="AnimatedSprite2D" parent="."]
+position = Vector2(-16, 1)
+sprite_frames = SubResource("SpriteFrames_0goub")
+animation = &"spin"
+autoplay = "spin"
+frame = 2
+frame_progress = 0.74423957
+centered = false
+offset = Vector2(-34.25, -80.35)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(0.678, 0.677)
