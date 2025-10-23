@@ -1,0 +1,215 @@
+[gd_scene load_steps=17 format=3 uid="uid://b54bixc6lxnii"]
+
+[ext_resource type="AudioStream" uid="uid://djsfwrdgmbe4g" path="res://assets/audio/music/main_theme.ogg" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://c6yn56v5ter2w" path="res://scripts/game.gd" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://qcc8w0d0puor" path="res://scripts/levels/rounds/spawner.gd" id="2_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://c48fwu2o20e4u" path="res://assets/maps/monkey_lane/side_panel.svg" id="4_iywne"]
+[ext_resource type="Texture2D" uid="uid://bmn0ag000gmv5" path="res://assets/maps/monkey_lane/bottom_panel.svg" id="5_p57ef"]
+[ext_resource type="Texture2D" uid="uid://wm34228ffj5x" path="res://assets/ui/play_button.svg" id="6_p57ef"]
+[ext_resource type="FontFile" uid="uid://br002hhqta44a" path="res://assets/fonts/oetztype.ttf" id="7_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://dvnsdc2v1aeax" path="res://assets/ui/green_arrow.svg" id="8_gee14"]
+[ext_resource type="Texture2D" uid="uid://cvvim8vwjnuud" path="res://assets/sprites/spikey_ball.svg" id="9_0tnpc"]
+[ext_resource type="AudioStream" uid="uid://cd3wi427s3xx" path="res://assets/audio/sfx/select.mp3" id="9_vtaks"]
+
+[sub_resource type="Shader" id="Shader_0tnpc"]
+code = "shader_type canvas_item;
+
+uniform bool allow_out_of_bounds = true;
+uniform float outline_thickness: hint_range(0.0, 16.0, 1.0) = 1.0;
+uniform vec4 outline_color: source_color = vec4(1.0);
+
+bool is_inside_usquare(vec2 x) {
+	return x == clamp(x, vec2(0.0), vec2(1.0));
+}
+
+vec4 blend(vec4 bottom, vec4 top) {
+    float alpha = top.a + bottom.a * (1.0 - top.a);
+    if (alpha < 0.0001) return vec4(0.0);
+
+    vec3 color = mix(bottom.rgb * bottom.a, top.rgb, top.a) / alpha;
+    return vec4(color, alpha);
+}
+
+void vertex() {
+	if (allow_out_of_bounds) VERTEX += (UV * 2.0 - 1.0) * outline_thickness;
+}
+
+void fragment() {
+	if (outline_thickness > 0.0 && outline_color.a > 0.0) {
+		vec2 uv = UV;
+		vec4 texture_color = texture(TEXTURE, UV);
+
+		if (allow_out_of_bounds) {
+			vec2 texture_pixel_size = vec2(1.0) / (vec2(1.0) / TEXTURE_PIXEL_SIZE + vec2(outline_thickness * 2.0));
+			uv = (uv - texture_pixel_size * outline_thickness) * TEXTURE_PIXEL_SIZE / texture_pixel_size;
+
+			if (is_inside_usquare(uv)) {
+				texture_color = texture(TEXTURE, uv);
+			} else {
+				texture_color = vec4(0.0);
+			}
+		}
+
+		float alpha = 0.0;
+		
+		for (float y = 1.0; y <= outline_thickness; y++) {
+			for (float x = 0.0; x <= y; x++) {
+				if (length(vec2(x, y - 0.5)) > outline_thickness) break;
+
+				float look_at_alpha;
+				vec2 look_at_uv[8] = {
+					uv + vec2(x, y) * TEXTURE_PIXEL_SIZE,
+					uv + vec2(-x, y) * TEXTURE_PIXEL_SIZE,
+					uv + vec2(x, -y) * TEXTURE_PIXEL_SIZE,
+					uv + vec2(-x, -y) * TEXTURE_PIXEL_SIZE,
+					uv + vec2(y, x) * TEXTURE_PIXEL_SIZE,
+					uv + vec2(-y, x) * TEXTURE_PIXEL_SIZE,
+					uv + vec2(y, -x) * TEXTURE_PIXEL_SIZE,
+					uv + vec2(-y, -x) * TEXTURE_PIXEL_SIZE
+				};
+
+				for (int i = 0; i < 8; i++) {
+					if (is_inside_usquare(look_at_uv[i])) {
+						look_at_alpha = texture(TEXTURE, look_at_uv[i]).a;
+						if (look_at_alpha > alpha) alpha = look_at_alpha;
+						if (1.0 - alpha < 0.0001) break;
+					}
+				}
+				
+				if (1.0 - alpha < 0.0001) break;
+			}
+				
+			if (1.0 - alpha < 0.0001) break;
+		}
+
+		COLOR = blend(vec4(outline_color.rgb, alpha * outline_color.a), texture_color);
+	}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kvpfn"]
+shader = SubResource("Shader_0tnpc")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 0.0
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gee14"]
+font = ExtResource("7_u5sy4")
+font_size = 28
+font_color = Color(0.6156863, 0.84313726, 0, 1)
+outline_size = 10
+outline_color = Color(0.1764706, 0.2627451, 0.02745098, 1)
+
+[sub_resource type="Animation" id="Animation_0tnpc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GreenArrow:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_gee14"]
+resource_name = "arrow"
+length = 0.93333673
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GreenArrow:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.23333333, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.4, 0.43333334, 0.46666667, 0.5, 0.53333336, 0.5666667, 0.6, 0.6333334, 0.6666667, 0.70000005, 0.73333335, 0.7666667, 0.8000001, 0.8333334, 0.86666673, 0.90000004, 0.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 1.4, 2.65, 3.85, 4.9, 5.85, 6.75, 7.5, 8.15, 8.7, 9.2, 9.55, 9.8, 9.95, 10.0, 9.95, 9.8, 9.55, 9.2, 8.7, 8.15, 7.5, 6.75, 5.85, 4.9, 3.85, 2.65, 1.4, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vtaks"]
+_data = {
+&"RESET": SubResource("Animation_0tnpc"),
+&"arrow": SubResource("Animation_gee14")
+}
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_yqjtg")
+
+[node name="Spawner" type="Node" parent="."]
+script = ExtResource("2_lnu2h")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_uwrxv")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(0.678, 0.677)
+
+[node name="SidePanel" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(700, 0)
+texture = ExtResource("4_iywne")
+centered = false
+
+[node name="BottomPanel" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, 520)
+texture = ExtResource("5_p57ef")
+centered = false
+offset = Vector2(-50.95, 0)
+
+[node name="PlayButton" type="TextureButton" parent="."]
+z_index = 1
+material = SubResource("ShaderMaterial_kvpfn")
+offset_left = 701.0
+offset_top = 452.0
+offset_right = 801.0
+offset_bottom = 522.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_p57ef")
+
+[node name="Label" type="Label" parent="PlayButton"]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 77.05
+offset_bottom = 40.45
+text = "GO!"
+label_settings = SubResource("LabelSettings_gee14")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="GreenArrow" type="Sprite2D" parent="PlayButton"]
+position = Vector2(32.5, 33.050003)
+texture = ExtResource("8_gee14")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayButton"]
+libraries = {
+&"": SubResource("AnimationLibrary_vtaks")
+}
+autoplay = "arrow"
+
+[node name="Select" type="AudioStreamPlayer" parent="PlayButton"]
+stream = ExtResource("9_vtaks")
+
+[node name="SpikeyBall" type="Sprite2D" parent="."]
+position = Vector2(-1068, 610)
+texture = ExtResource("9_0tnpc")
+
+[node name="Label" type="Label" parent="SpikeyBall"]
+offset_left = -77.0
+offset_top = -133.0
+offset_right = 78.0
+offset_bottom = -32.0
+text = "in loving memory of
+SpikeyBall
+2007 - 2009
+R.I.P."
+horizontal_alignment = 1

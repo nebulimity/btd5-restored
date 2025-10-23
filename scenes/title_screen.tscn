@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cmbeimkh16owy" path="res://icon.svg" id="1_sa3yf"]
 [ext_resource type="AudioStream" uid="uid://g48odn76nml3" path="res://assets/audio/music/jazz.ogg" id="3_s4lrb"]
 
-[node name="Node2D" type="Node2D"]
+[node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_s4lrb")
 
 [node name="Icon" type="Sprite2D" parent="."]

@@ -1,0 +1,331 @@
+[gd_scene load_steps=73 format=3 uid="uid://ckactqtchofhj"]
+
+[ext_resource type="Texture2D" uid="uid://cyxbtefecik4w" path="res://assets/maps/monkey_lane/background.png" id="1_w4170"]
+[ext_resource type="Texture2D" uid="uid://cga6jtjpiekyo" path="res://assets/maps/monkey_lane/windmill/shadow/1.png" id="4_5s6mp"]
+[ext_resource type="Texture2D" uid="uid://cu8e57w0auw5u" path="res://assets/maps/monkey_lane/windmill/shadow/2.png" id="5_cej8w"]
+[ext_resource type="Texture2D" uid="uid://bev287vquytt2" path="res://assets/maps/monkey_lane/windmill/shadow/3.png" id="6_xflcw"]
+[ext_resource type="Texture2D" uid="uid://bf1gf86boe8ja" path="res://assets/maps/monkey_lane/windmill/shadow/4.png" id="7_wyg6o"]
+[ext_resource type="Texture2D" uid="uid://byp1lgtye5ayh" path="res://assets/maps/monkey_lane/windmill/shadow/5.png" id="8_6pm5r"]
+[ext_resource type="Texture2D" uid="uid://cubnpj2nswo74" path="res://assets/maps/monkey_lane/windmill/shadow/6.png" id="9_nfpgn"]
+[ext_resource type="Texture2D" uid="uid://c2nli7a7eion5" path="res://assets/maps/monkey_lane/windmill/shadow/7.png" id="10_m7jch"]
+[ext_resource type="Texture2D" uid="uid://crscp7h3bry1d" path="res://assets/maps/monkey_lane/windmill/shadow/8.png" id="11_jfp12"]
+[ext_resource type="Texture2D" uid="uid://b6eg4hc366c26" path="res://assets/maps/monkey_lane/windmill/shadow/9.png" id="12_mwhy2"]
+[ext_resource type="Texture2D" uid="uid://bvq40sdargi5y" path="res://assets/maps/monkey_lane/windmill/shadow/10.png" id="13_qp2fk"]
+[ext_resource type="Texture2D" uid="uid://fbivsvw4spo5" path="res://assets/maps/monkey_lane/windmill/shadow/11.png" id="14_24bh1"]
+[ext_resource type="Texture2D" uid="uid://cmd3yfbl7ovj1" path="res://assets/maps/monkey_lane/windmill/shadow/12.png" id="15_awb1l"]
+[ext_resource type="Texture2D" uid="uid://cjeqpfc4tm65i" path="res://assets/maps/monkey_lane/windmill/shadow/13.png" id="16_jgac1"]
+[ext_resource type="Texture2D" uid="uid://bc27pkks0axor" path="res://assets/maps/monkey_lane/windmill/shadow/14.png" id="17_bcp75"]
+[ext_resource type="Texture2D" uid="uid://cqvfj8i8oaci4" path="res://assets/maps/monkey_lane/windmill/shadow/15.png" id="18_ihh3t"]
+[ext_resource type="Texture2D" uid="uid://cvoc5bcfmk7x6" path="res://assets/maps/monkey_lane/windmill/shadow/16.png" id="19_l5iwv"]
+[ext_resource type="Texture2D" uid="uid://c1mem38brrdts" path="res://assets/maps/monkey_lane/windmill/shadow/17.png" id="20_aop2b"]
+[ext_resource type="Texture2D" uid="uid://widrwtxj0jko" path="res://assets/maps/monkey_lane/windmill/shadow/18.png" id="21_nfbnf"]
+[ext_resource type="Texture2D" uid="uid://dbe4qtp3ga6lx" path="res://assets/maps/monkey_lane/windmill/shadow/19.png" id="22_3ca7g"]
+[ext_resource type="Texture2D" uid="uid://djj4gn7ik546u" path="res://assets/maps/monkey_lane/windmill/shadow/20.png" id="23_eexfw"]
+[ext_resource type="Texture2D" uid="uid://bti26w5ihbbe6" path="res://assets/maps/monkey_lane/windmill/shadow/21.png" id="24_x1u1d"]
+[ext_resource type="Texture2D" uid="uid://cyfhj2ttds4mw" path="res://assets/maps/monkey_lane/windmill/shadow/22.png" id="25_qjxev"]
+[ext_resource type="Texture2D" uid="uid://bgsck2mw8udlm" path="res://assets/maps/monkey_lane/windmill/shadow/23.png" id="26_xjsxl"]
+[ext_resource type="Texture2D" uid="uid://ddxrhibl4fe07" path="res://assets/maps/monkey_lane/windmill/shadow/24.png" id="27_55om6"]
+[ext_resource type="Texture2D" uid="uid://d3s3ibl20fvdv" path="res://assets/maps/monkey_lane/windmill/shadow/25.png" id="28_lbw0e"]
+[ext_resource type="Texture2D" uid="uid://bljaf7awucc07" path="res://assets/maps/monkey_lane/windmill/shadow/26.png" id="29_1m73a"]
+[ext_resource type="Texture2D" uid="uid://bm6yk2tihlrrv" path="res://assets/maps/monkey_lane/windmill/shadow/27.png" id="30_3frgc"]
+[ext_resource type="Texture2D" uid="uid://c8t33lwfjbf4r" path="res://assets/maps/monkey_lane/windmill/shadow/28.png" id="31_phtlc"]
+[ext_resource type="Texture2D" uid="uid://cr40s04avdt61" path="res://assets/maps/monkey_lane/windmill/shadow/29.png" id="32_gjycp"]
+[ext_resource type="Texture2D" uid="uid://dvy1dv58b2xbb" path="res://assets/maps/monkey_lane/windmill/shadow/30.png" id="33_s1bse"]
+[ext_resource type="Texture2D" uid="uid://d123c4cpxw70w" path="res://assets/maps/monkey_lane/windmill/shadow/31.png" id="34_4k73s"]
+[ext_resource type="Texture2D" uid="uid://dvlqe64tm8dcf" path="res://assets/maps/monkey_lane/windmill/shadow/32.png" id="35_vj6kv"]
+[ext_resource type="Texture2D" uid="uid://coy01phuqk08k" path="res://assets/maps/monkey_lane/windmill/shadow/33.png" id="36_eh3op"]
+[ext_resource type="Texture2D" uid="uid://bi56b2e50yi33" path="res://assets/maps/monkey_lane/windmill/windmill.svg" id="37_a38uq"]
+[ext_resource type="Texture2D" uid="uid://gqf0eljtwovu" path="res://assets/maps/monkey_lane/windmill/rotor/1.svg" id="38_ls2p5"]
+[ext_resource type="Texture2D" uid="uid://w0cnyx1unsii" path="res://assets/maps/monkey_lane/windmill/rotor/2.svg" id="39_gb4r0"]
+[ext_resource type="Texture2D" uid="uid://cpd30jr5ylmth" path="res://assets/maps/monkey_lane/windmill/rotor/3.svg" id="40_q4cqk"]
+[ext_resource type="Texture2D" uid="uid://cxa7p7cs7cko2" path="res://assets/maps/monkey_lane/windmill/rotor/4.svg" id="41_ojo2r"]
+[ext_resource type="Texture2D" uid="uid://bh1qb7gb2kx0u" path="res://assets/maps/monkey_lane/windmill/rotor/5.svg" id="42_2b8pe"]
+[ext_resource type="Texture2D" uid="uid://bfpyddtko3bgw" path="res://assets/maps/monkey_lane/windmill/rotor/6.svg" id="43_l1j86"]
+[ext_resource type="Texture2D" uid="uid://cc74d8guv2vrh" path="res://assets/maps/monkey_lane/windmill/rotor/7.svg" id="44_6owpb"]
+[ext_resource type="Texture2D" uid="uid://cmu4eoueecfmu" path="res://assets/maps/monkey_lane/windmill/rotor/8.svg" id="45_uhog8"]
+[ext_resource type="Texture2D" uid="uid://c75perhdtdb5i" path="res://assets/maps/monkey_lane/windmill/rotor/9.svg" id="46_sj5jd"]
+[ext_resource type="Texture2D" uid="uid://bchpjn5t2jveh" path="res://assets/maps/monkey_lane/windmill/rotor/10.svg" id="47_ym7o2"]
+[ext_resource type="Texture2D" uid="uid://dcloome3fqner" path="res://assets/maps/monkey_lane/windmill/rotor/11.svg" id="48_etkqq"]
+[ext_resource type="Texture2D" uid="uid://dicej6uj2gw78" path="res://assets/maps/monkey_lane/windmill/rotor/12.svg" id="49_g5lv3"]
+[ext_resource type="Texture2D" uid="uid://dgao34lbxffw" path="res://assets/maps/monkey_lane/windmill/rotor/13.svg" id="50_1wgwo"]
+[ext_resource type="Texture2D" uid="uid://dwmv7lr3jq463" path="res://assets/maps/monkey_lane/windmill/rotor/14.svg" id="51_bla6t"]
+[ext_resource type="Texture2D" uid="uid://d18o7d8rvwkbh" path="res://assets/maps/monkey_lane/windmill/rotor/15.svg" id="52_87isb"]
+[ext_resource type="Texture2D" uid="uid://dvxtell3fe2qg" path="res://assets/maps/monkey_lane/windmill/rotor/16.svg" id="53_nbord"]
+[ext_resource type="Texture2D" uid="uid://b7sy0vlnjecl6" path="res://assets/maps/monkey_lane/windmill/rotor/17.svg" id="54_8jqiv"]
+[ext_resource type="Texture2D" uid="uid://bujnjlyo7ix87" path="res://assets/maps/monkey_lane/windmill/rotor/18.svg" id="55_43w1x"]
+[ext_resource type="Texture2D" uid="uid://dyl0o1qip0h0x" path="res://assets/maps/monkey_lane/windmill/rotor/19.svg" id="56_ny3tu"]
+[ext_resource type="Texture2D" uid="uid://d0vkctvlgumvr" path="res://assets/maps/monkey_lane/windmill/rotor/20.svg" id="57_igc3u"]
+[ext_resource type="Texture2D" uid="uid://ctop7468wmyyp" path="res://assets/maps/monkey_lane/windmill/rotor/21.svg" id="58_adrjl"]
+[ext_resource type="Texture2D" uid="uid://ckn5wkeafmflg" path="res://assets/maps/monkey_lane/windmill/rotor/22.svg" id="59_pg3ee"]
+[ext_resource type="Texture2D" uid="uid://birml7ib30v5q" path="res://assets/maps/monkey_lane/windmill/rotor/23.svg" id="60_ihl61"]
+[ext_resource type="Texture2D" uid="uid://58w0hnanl3ar" path="res://assets/maps/monkey_lane/windmill/rotor/24.svg" id="61_8fjyj"]
+[ext_resource type="Texture2D" uid="uid://dex0cner0nv6o" path="res://assets/maps/monkey_lane/windmill/rotor/25.svg" id="62_ytnv0"]
+[ext_resource type="Texture2D" uid="uid://cqi8wcq0jrndm" path="res://assets/maps/monkey_lane/windmill/rotor/26.svg" id="63_y1r4g"]
+[ext_resource type="Texture2D" uid="uid://dlfj4ur86rive" path="res://assets/maps/monkey_lane/windmill/rotor/27.svg" id="64_2onyj"]
+[ext_resource type="Texture2D" uid="uid://bnxyra15tnjd" path="res://assets/maps/monkey_lane/windmill/rotor/28.svg" id="65_xnq4u"]
+[ext_resource type="Texture2D" uid="uid://b0o4wpphfsaq5" path="res://assets/maps/monkey_lane/windmill/rotor/29.svg" id="66_nnfkr"]
+[ext_resource type="Texture2D" uid="uid://d2qkgsii2er7f" path="res://assets/maps/monkey_lane/windmill/rotor/30.svg" id="67_k7sop"]
+[ext_resource type="Texture2D" uid="uid://c7dyi8wrd5pmn" path="res://assets/maps/monkey_lane/windmill/rotor/31.svg" id="68_4oayb"]
+[ext_resource type="Texture2D" uid="uid://bwwrv48t2gh33" path="res://assets/maps/monkey_lane/windmill/rotor/32.svg" id="69_73pte"]
+[ext_resource type="Texture2D" uid="uid://ckbqph4174tk0" path="res://assets/maps/monkey_lane/tunnel_cover.png" id="69_wl5al"]
+[ext_resource type="Texture2D" uid="uid://cmichi275bd0h" path="res://assets/maps/monkey_lane/windmill/rotor/33.svg" id="70_64jxs"]
+[ext_resource type="Texture2D" uid="uid://dw6tlmqcsmd7c" path="res://assets/maps/monkey_lane/tunnel_cover_2.png" id="70_fdq51"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jaofu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5s6mp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cej8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xflcw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wyg6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6pm5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nfpgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_m7jch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jfp12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mwhy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qp2fk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_24bh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_awb1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jgac1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bcp75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ihh3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_l5iwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_aop2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_nfbnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_3ca7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_eexfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_x1u1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qjxev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_xjsxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_55om6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_lbw0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_1m73a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_3frgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_phtlc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_gjycp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_s1bse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_4k73s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_vj6kv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_eh3op")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0goub"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_ls2p5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_gb4r0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_q4cqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_ojo2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_2b8pe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_l1j86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_6owpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_uhog8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_sj5jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_ym7o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_etkqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_g5lv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_1wgwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_bla6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_87isb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_nbord")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_8jqiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_43w1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_ny3tu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_igc3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_adrjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_pg3ee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_ihl61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_8fjyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_ytnv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_y1r4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_2onyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_xnq4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_nnfkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_k7sop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_4oayb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_73pte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_64jxs")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 30.0
+}]
+
+[node name="MonkeyLane" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.333, 0.333)
+texture = ExtResource("1_w4170")
+centered = false
+offset = Vector2(-163.05, 0)
+
+[node name="WindmillShadow" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jaofu")
+animation = &"spin"
+autoplay = "spin"
+frame = 23
+frame_progress = 0.60019505
+centered = false
+offset = Vector2(-23, 9.55)
+
+[node name="Windmill" type="Sprite2D" parent="."]
+position = Vector2(-5.25, -15.1)
+texture = ExtResource("37_a38uq")
+centered = false
+
+[node name="WindmillRotor" type="AnimatedSprite2D" parent="."]
+position = Vector2(-16, 1)
+sprite_frames = SubResource("SpriteFrames_0goub")
+animation = &"spin"
+autoplay = "spin"
+frame = 2
+frame_progress = 0.74423957
+centered = false
+offset = Vector2(-34.25, -80.35)
+
+[node name="TunnelCover" type="Sprite2D" parent="."]
+position = Vector2(-54, 0)
+scale = Vector2(0.333, 0.333)
+texture = ExtResource("69_wl5al")
+centered = false
+
+[node name="TunnelCover2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-53.999996, 4.7683716e-07)
+scale = Vector2(0.333, 0.333)
+texture = ExtResource("70_fdq51")
+centered = false
