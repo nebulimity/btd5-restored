@@ -1,15 +1,18 @@
-[gd_scene load_steps=17 format=3 uid="uid://b54bixc6lxnii"]
+[gd_scene load_steps=21 format=3 uid="uid://b54bixc6lxnii"]
 
 [ext_resource type="AudioStream" uid="uid://djsfwrdgmbe4g" path="res://assets/audio/music/main_theme.ogg" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://c6yn56v5ter2w" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://qcc8w0d0puor" path="res://scripts/levels/rounds/spawner.gd" id="2_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://c48fwu2o20e4u" path="res://assets/maps/monkey_lane/side_panel.svg" id="4_iywne"]
 [ext_resource type="Texture2D" uid="uid://bmn0ag000gmv5" path="res://assets/maps/monkey_lane/bottom_panel.svg" id="5_p57ef"]
-[ext_resource type="Texture2D" uid="uid://wm34228ffj5x" path="res://assets/ui/play_button.svg" id="6_p57ef"]
+[ext_resource type="Texture2D" uid="uid://ln6lpeyp7xmn" path="res://assets/ui/big_button/background.svg" id="6_kvuet"]
+[ext_resource type="Texture2D" uid="uid://dtk7cjaao34sq" path="res://assets/ui/big_button/outlined.svg" id="7_trtic"]
 [ext_resource type="FontFile" uid="uid://br002hhqta44a" path="res://assets/fonts/oetztype.ttf" id="7_u5sy4"]
-[ext_resource type="Texture2D" uid="uid://dvnsdc2v1aeax" path="res://assets/ui/green_arrow.svg" id="8_gee14"]
+[ext_resource type="Texture2D" uid="uid://dvnsdc2v1aeax" path="res://assets/ui/big_button/play_button/arrow.svg" id="8_gee14"]
 [ext_resource type="Texture2D" uid="uid://cvvim8vwjnuud" path="res://assets/sprites/spikey_ball.svg" id="9_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://cd3wi427s3xx" path="res://assets/audio/sfx/select.mp3" id="9_vtaks"]
+[ext_resource type="Shader" uid="uid://cgh1yokk03gv8" path="res://shaders/outline.gdshader" id="11_dinhu"]
+[ext_resource type="Texture2D" uid="uid://iokj6n4jnkvg" path="res://assets/sprites/towers/dart_monkey/1.svg" id="12_kvuet"]
 
 [sub_resource type="Shader" id="Shader_0tnpc"]
 code = "shader_type canvas_item;
@@ -138,6 +141,13 @@ _data = {
 &"arrow": SubResource("Animation_gee14")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_trtic"]
+shader = ExtResource("11_dinhu")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 1.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/cutout = true
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_yqjtg")
 
@@ -153,27 +163,28 @@ anchor_mode = 0
 zoom = Vector2(0.678, 0.677)
 
 [node name="SidePanel" type="Sprite2D" parent="."]
-z_index = 1
+z_index = 2
 position = Vector2(700, 0)
 texture = ExtResource("4_iywne")
 centered = false
 
 [node name="BottomPanel" type="Sprite2D" parent="."]
-z_index = 1
+z_index = 2
 position = Vector2(0, 520)
 texture = ExtResource("5_p57ef")
 centered = false
 offset = Vector2(-50.95, 0)
 
 [node name="PlayButton" type="TextureButton" parent="."]
-z_index = 1
+z_index = 3
 material = SubResource("ShaderMaterial_kvpfn")
 offset_left = 701.0
 offset_top = 452.0
 offset_right = 801.0
 offset_bottom = 522.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("6_p57ef")
+texture_normal = ExtResource("6_kvuet")
+texture_hover = ExtResource("7_trtic")
 
 [node name="Label" type="Label" parent="PlayButton"]
 layout_mode = 0
@@ -213,3 +224,13 @@ SpikeyBall
 2007 - 2009
 R.I.P."
 horizontal_alignment = 1
+
+[node name="DartMonkey" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(691, 199)
+texture = ExtResource("12_kvuet")
+
+[node name="Outline" type="Sprite2D" parent="DartMonkey"]
+z_index = 100
+material = SubResource("ShaderMaterial_trtic")
+texture = ExtResource("12_kvuet")

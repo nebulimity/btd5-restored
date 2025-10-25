@@ -1,5 +1,3 @@
-// https://godotshaders.com/shader/simple-circle-transition-2/
-
 shader_type canvas_item;
 render_mode unshaded;
 
