@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var spawner = $Spawner
-@onready var play_button = $PlayButton
+@onready var play_button = $SidePanel/PlayButton
 
 var map_def: MonkeyLaneDef
 var current_round: int = 1
