@@ -6,14 +6,33 @@ extends Node2D
 @onready var money_text = $SidePanel/UI/Money/Value
 @onready var lives_text = $SidePanel/UI/Lives/Value
 @onready var round_text = $BottomPanel/Default/RoundValue
+@onready var rbe_text = $BottomPanel/Default/RBEValue
+@onready var blue_arrows = $SidePanel/UI/FastForwardButton/BlueArrows
 
-var money = 650
-var lives = 150
-var current_round: int = 1
+var money: int = 650:
+	set(value):
+		money = value
+		money_text.text = str(money)
+
+var lives: int = 150:
+	set(value):
+		lives = value
+		lives_text.text = str(lives)
+
+var current_round: int = 1:
+	set(value):
+		current_round = value
+		round_text.text = "%s of 65" % [str(current_round)]
+			
+var rbe: int = 0:
+	set(value):
+		rbe = value
+		rbe_text.text = str(rbe)
+
 var active_bloons: int = 0
 var fast_forward: bool = false
 var map_def: MonkeyLaneDef
-var map_scene = preload("res://scenes/maps/monkey_lane.tscn")
+var map_scene: PackedScene = preload("res://scenes/maps/monkey_lane.tscn")
 var map = map_scene.instantiate()
 
 func _ready():
@@ -22,6 +41,10 @@ func _ready():
 	
 	spawner.setup(map_def)
 	add_child(map)
+	
+	spawner.child_entered_tree.connect(_on_bloon_spawned)
+	
+	update_ui()
 
 func _on_play_button_pressed():
 	start_round(current_round)
@@ -41,13 +64,6 @@ func _on_bloon_removed():
 	active_bloons -= 1
 	check_round_complete()
 
-func _process(_delta: float) -> void:
-	update_text()
-	if not play_button.disabled:
-		return
-	
-	check_round_complete()
-
 func check_round_complete():
 	if active_bloons == 0 and spawner.wave_set.current_wave != null and spawner.wave_set.current_wave.is_complete():
 		fast_forward_button.visible = false
@@ -57,14 +73,14 @@ func check_round_complete():
 			Engine.time_scale = 1.0
 			update_fast_forward_button()
 		current_round += 1
-		
-func update_text():
+
+func update_ui():
 	money_text.text = str(money)
 	lives_text.text = str(lives)
 	round_text.text = "%s of 65" % [str(current_round)]
+	rbe_text.text = str(get_current_rbe)
 	
 func update_fast_forward_button():
-	var blue_arrows = fast_forward_button.get_node("BlueArrows")
 	if fast_forward:
 		blue_arrows.texture = blue_arrows.get_meta("pressed_texture")
 		blue_arrows.material.set_shader_parameter("shadow_strength", 0.0)
