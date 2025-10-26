@@ -877,5 +877,6 @@ material = SubResource("ShaderMaterial_trtic")
 texture = ExtResource("12_kvuet")
 
 [connection signal="child_entered_tree" from="Spawner" to="." method="_on_bloon_spawned"]
+[connection signal="rbe_changed" from="Spawner" to="." method="_on_rbe_changed"]
 [connection signal="pressed" from="SidePanel/UI/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="SidePanel/UI/FastForwardButton" to="." method="_on_fast_forward_button_pressed"]

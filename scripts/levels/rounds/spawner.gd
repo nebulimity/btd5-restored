@@ -9,10 +9,16 @@ var current_round: int = 0
 var round_time: float = 0.0
 var active_spawners: Array = []  # {spawner_def, group_def, spawn_index}
 
+signal rbe_changed(new_rbe: int)
+
 func _ready():
 	round_factory = RoundFactory.new()
 	wave_set = WaveSet.new()
 	add_child(wave_set)
+	wave_set.rbe_changed.connect(_on_wave_set_rbe_changed)
+
+func _on_wave_set_rbe_changed(new_rbe: int):
+	rbe_changed.emit(new_rbe)
 
 func setup(p_map_def: MonkeyLaneDef):
 	map_def = p_map_def

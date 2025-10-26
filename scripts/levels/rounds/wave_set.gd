@@ -10,6 +10,8 @@ var map_def: MonkeyLaneDef
 
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
+signal rbe_changed(new_rbe: int)
+
 func _ready():
 	rng.seed = 0
 
@@ -38,6 +40,8 @@ func start_wave(round_number: int) -> void:
 	
 	current_wave.start()
 	print("Started round %d - RBE: %d, Length: %.2fs" % [round_number + 1, current_wave.rbe, current_wave.wave_length])
+	
+	rbe_changed.emit(current_wave.rbe)
 
 func _process(delta: float) -> void:
 	if current_wave == null:

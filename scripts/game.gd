@@ -45,6 +45,9 @@ func _ready():
 	spawner.child_entered_tree.connect(_on_bloon_spawned)
 	
 	update_ui()
+	
+func _on_rbe_changed(new_rbe: int):
+	rbe = new_rbe
 
 func _on_play_button_pressed():
 	start_round(current_round)
@@ -78,7 +81,7 @@ func update_ui():
 	money_text.text = str(money)
 	lives_text.text = str(lives)
 	round_text.text = "%s of 65" % [str(current_round)]
-	rbe_text.text = str(get_current_rbe)
+	rbe_text.text = str(rbe) if rbe != 0 else "-"
 	
 func update_fast_forward_button():
 	if fast_forward:
