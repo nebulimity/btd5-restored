@@ -164,8 +164,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
 	if _initializing_margins: return
-	scroll(true, velocity.y, pos.y, delta)
-	scroll(false, velocity.x, pos.x, delta)
+	var real_delta = delta / Engine.time_scale
+	scroll(true, velocity.y, pos.y, real_delta)
+	scroll(false, velocity.x, pos.x, real_delta)
 	update_scrollbars()
 	update_is_scrolling()
 
@@ -795,6 +796,7 @@ func scroll_x_to(x_pos: float, duration := 0.5) -> void:
 	x_pos = clampf(x_pos, -size_x_diff, 0.0)
 	kill_scroll_x_to_tween()
 	scroll_x_to_tween = create_tween()
+	scroll_x_to_tween.set_speed_scale(1.0 / Engine.time_scale)
 	var tweener = scroll_x_to_tween.tween_property(self, "pos:x", x_pos, duration)
 	tweener.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
 
@@ -807,6 +809,7 @@ func scroll_y_to(y_pos: float, duration := 0.5) -> void:
 	y_pos = clampf(y_pos, -size_y_diff, 0.0)
 	kill_scroll_y_to_tween()
 	scroll_y_to_tween = create_tween()
+	scroll_y_to_tween.set_speed_scale(1.0 / Engine.time_scale)
 	var tweener = scroll_y_to_tween.tween_property(self, "pos:y", y_pos, duration)
 	tweener.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
 
