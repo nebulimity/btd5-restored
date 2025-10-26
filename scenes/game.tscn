@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b54bixc6lxnii"]
+[gd_scene load_steps=47 format=3 uid="uid://b54bixc6lxnii"]
 
 [ext_resource type="AudioStream" uid="uid://djsfwrdgmbe4g" path="res://assets/audio/music/main_theme.ogg" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://c6yn56v5ter2w" path="res://scripts/game.gd" id="1_yqjtg"]
@@ -17,7 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://f3wclmbpmkuj" path="res://assets/ui/lives/default.svg" id="12_rysoc"]
 [ext_resource type="Texture2D" uid="uid://c3lvo86g4ex6c" path="res://assets/ui/lives/outlined.svg" id="13_ssvqc"]
 [ext_resource type="Texture2D" uid="uid://c2xwv7c87b3vp" path="res://assets/ui/money/default.svg" id="14_trtic"]
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="15_37s47"]
+[ext_resource type="Texture2D" uid="uid://crfhapbcbw8i1" path="res://assets/ui/tower_buttons/dart_monkey/default.svg" id="15_264po"]
 [ext_resource type="Texture2D" uid="uid://cgirn0ygc2sr6" path="res://assets/ui/money/outlined.svg" id="15_ir15t"]
+[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="16_bt5mj"]
+[ext_resource type="Texture2D" uid="uid://dnddkj8vxo3d6" path="res://assets/ui/tower_buttons/default.svg" id="17_37s47"]
+[ext_resource type="Texture2D" uid="uid://bbwd3j0o3i3rc" path="res://assets/ui/tower_buttons/outlined.svg" id="18_bt5mj"]
 
 [sub_resource type="Shader" id="Shader_0tnpc"]
 code = "shader_type canvas_item;
@@ -161,6 +166,48 @@ font_color = Color(0.93333334, 0.8901961, 0.8392157, 1)
 outline_size = 9
 outline_color = Color(0.17254902, 0.10980392, 0.03137255, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_37s47"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bt5mj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e1j6l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pl11u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhx41"]
+
+[sub_resource type="Theme" id="Theme_qnb83"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_37s47")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_bt5mj")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_e1j6l")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_pl11u")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_bhx41")
+
+[sub_resource type="Resource" id="Resource_37s47"]
+script = ExtResource("16_bt5mj")
+friction = 7.0
+metadata/_custom_type_script = "uid://b7h0k2h2qwlqv"
+
+[sub_resource type="Resource" id="Resource_pl11u"]
+script = ExtResource("16_bt5mj")
+
+[sub_resource type="Theme" id="Theme_1kice"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bt5mj"]
+shader = ExtResource("8_ssvqc")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/shadow_distance = 2.0
+shader_parameter/shadow_angle = 45.0
+shader_parameter/shadow_strength = 0.1999999955296
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bt5mj"]
+font = ExtResource("7_u5sy4")
+font_size = 41
+font_color = Color(0.8, 0.8, 0.8, 1)
+outline_size = 9
+outline_color = Color(0.2, 0.2, 0.2, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_kvuet"]
 line_spacing = -5.0
 font = ExtResource("7_u5sy4")
@@ -200,6 +247,7 @@ stream = ExtResource("1_uwrxv")
 autoplay = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(2, 0)
 anchor_mode = 0
 zoom = Vector2(0.678, 0.677)
 
@@ -209,9 +257,16 @@ position = Vector2(700, 0)
 texture = ExtResource("4_iywne")
 centered = false
 
-[node name="PlayButton" type="TextureButton" parent="SidePanel"]
+[node name="UI" type="Control" parent="SidePanel"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 103.0
+offset_bottom = 520.0
+
+[node name="PlayButton" type="TextureButton" parent="SidePanel/UI"]
 z_index = 3
 material = SubResource("ShaderMaterial_kvpfn")
+layout_mode = 0
 offset_left = 1.0
 offset_top = 452.0
 offset_right = 101.0
@@ -220,7 +275,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("6_kvuet")
 texture_hover = ExtResource("7_trtic")
 
-[node name="Label" type="Label" parent="SidePanel/PlayButton"]
+[node name="Label" type="Label" parent="SidePanel/UI/PlayButton"]
 layout_mode = 0
 offset_left = 20.0
 offset_right = 77.05
@@ -230,32 +285,33 @@ label_settings = SubResource("LabelSettings_gee14")
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="GreenArrow" type="Sprite2D" parent="SidePanel/PlayButton"]
+[node name="GreenArrow" type="Sprite2D" parent="SidePanel/UI/PlayButton"]
 material = SubResource("ShaderMaterial_264po")
 position = Vector2(32.5, 33.050003)
 texture = ExtResource("8_gee14")
 centered = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SidePanel/PlayButton"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SidePanel/UI/PlayButton"]
 libraries = {
 &"": SubResource("AnimationLibrary_vtaks")
 }
 autoplay = "arrow"
 
-[node name="Select" type="AudioStreamPlayer" parent="SidePanel/PlayButton"]
+[node name="Select" type="AudioStreamPlayer" parent="SidePanel/UI/PlayButton"]
 stream = ExtResource("9_vtaks")
 
-[node name="Money" type="TextureButton" parent="SidePanel"]
+[node name="Money" type="TextureButton" parent="SidePanel/UI"]
 z_index = 3
-offset_left = 2.65
+layout_mode = 0
+offset_left = 2.6500244
 offset_top = 4.1
-offset_right = 99.65
+offset_right = 99.650024
 offset_bottom = 28.1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("14_trtic")
 texture_hover = ExtResource("15_ir15t")
 
-[node name="Value" type="Label" parent="SidePanel/Money"]
+[node name="Value" type="Label" parent="SidePanel/UI/Money"]
 z_index = 3
 z_as_relative = false
 layout_mode = 0
@@ -267,8 +323,9 @@ text = "1234567"
 label_settings = SubResource("LabelSettings_ca42v")
 vertical_alignment = 2
 
-[node name="Lives" type="TextureButton" parent="SidePanel"]
+[node name="Lives" type="TextureButton" parent="SidePanel/UI"]
 z_index = 3
+layout_mode = 0
 offset_left = 2.5
 offset_top = 28.0
 offset_right = 99.5
@@ -277,7 +334,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("12_rysoc")
 texture_hover = ExtResource("13_ssvqc")
 
-[node name="Value" type="Label" parent="SidePanel/Lives"]
+[node name="Value" type="Label" parent="SidePanel/UI/Lives"]
 z_index = 3
 z_as_relative = false
 layout_mode = 0
@@ -288,6 +345,367 @@ offset_bottom = 22.0
 text = "12345"
 label_settings = SubResource("LabelSettings_ca42v")
 vertical_alignment = 2
+
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="SidePanel/UI"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 81.0
+offset_right = 103.0
+offset_bottom = 375.0
+theme = SubResource("Theme_qnb83")
+script = ExtResource("15_37s47")
+wheel_scroll_damper = SubResource("Resource_37s47")
+dragging_scroll_damper = SubResource("Resource_pl11u")
+allow_horizontal_scroll = false
+allow_overdragging = false
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="MarginContainer" type="MarginContainer" parent="SidePanel/UI/SmoothScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = -1
+theme_override_constants/margin_top = -1
+
+[node name="GridContainer" type="GridContainer" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_1kice")
+theme_override_constants/h_separation = -1
+theme_override_constants/v_separation = 1
+columns = 2
+
+[node name="DartMonkey" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Icon" type="Sprite2D" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartMonkey"]
+material = SubResource("ShaderMaterial_bt5mj")
+texture = ExtResource("15_264po")
+centered = false
+
+[node name="TackShooter" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Locked" type="Label" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/TackShooter"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SniperMonkey" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Locked" type="Label" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SniperMonkey"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BoomerangThrower" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Locked" type="Label" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BoomerangThrower"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NinjaMonkey" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Locked" type="Label" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/NinjaMonkey"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BombTower" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Locked" type="Label" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BombTower"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IceTower" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Locked" type="Label" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/IceTower"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GlueGunner" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Locked" type="Label" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/GlueGunner"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MonkeyBuccaneer" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Locked" type="Label" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyBuccaneer"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MonkeyAce" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Locked" type="Label" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyAce"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SuperMonkey" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Locked" type="Label" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SuperMonkey"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MonkeyApprentice" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Locked" type="Label" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyApprentice"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MonkeyVillage" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Locked" type="Label" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyVillage"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BananaFarm" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Locked" type="Label" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BananaFarm"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MortarTower" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Locked" type="Label" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MortarTower"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DartlingGun" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Locked" type="Label" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartlingGun"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpikeFactory" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Locked" type="Label" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SpikeFactory"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MonkeySub" type="TextureButton" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_37s47")
+texture_hover = ExtResource("18_bt5mj")
+
+[node name="Locked" type="Label" parent="SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeySub"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BottomPanel" type="Sprite2D" parent="."]
 z_index = 2
