@@ -1,5 +1,12 @@
 extends Node2D
 
+func _ready() -> void:
+	var window = get_window()
+	var window_size = Vector2i(800, 600)
+	var screen_size = DisplayServer.screen_get_size(0)
+	window.size = window_size
+	window.position = (screen_size / 2) - (window_size / 2)
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("fullscreen"):
 		var mode = DisplayServer.window_get_mode()
