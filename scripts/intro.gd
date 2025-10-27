@@ -4,6 +4,8 @@ func _ready() -> void:
 	var window = get_window()
 	var window_size = Vector2i(800, 600)
 	var screen_size = DisplayServer.screen_get_size(0)
+	if window.size != Vector2i(542, 406): 
+		return
 	window.size = window_size
 	window.position = (screen_size / 2) - (window_size / 2)
 

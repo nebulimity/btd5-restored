@@ -321,6 +321,7 @@ offset_top = 81.0
 offset_right = 103.0
 offset_bottom = 375.0
 theme = SubResource("Theme_qnb83")
+horizontal_scroll_mode = 0
 script = ExtResource("15_37s47")
 wheel_scroll_damper = SubResource("Resource_37s47")
 dragging_scroll_damper = SubResource("Resource_pl11u")
