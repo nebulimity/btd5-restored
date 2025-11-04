@@ -42,8 +42,6 @@ func _ready():
 	spawner.setup(map_def)
 	add_child(map)
 	
-	spawner.child_entered_tree.connect(_on_bloon_spawned)
-	
 	update_ui()
 	
 func _on_rbe_changed(new_rbe: int):
