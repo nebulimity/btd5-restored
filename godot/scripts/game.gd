@@ -1,39 +1,24 @@
 extends Node2D
 
 @onready var spawner = $Spawner
-@onready var play_button = $SidePanel/UI/PlayButton
-@onready var fast_forward_button = $SidePanel/UI/FastForwardButton
-@onready var money_text = $SidePanel/UI/Money/Value
-@onready var lives_text = $SidePanel/UI/Lives/Value
-@onready var round_text = $BottomPanel/Default/RoundValue
-@onready var rbe_text = $BottomPanel/Default/RBEValue
-@onready var blue_arrows = $SidePanel/UI/FastForwardButton/BlueArrows
+@onready var in_game_menu = $InGameMenu
 
-var money: int = 650:
-	set(value):
-		money = value
-		money_text.text = str(money)
-
-var lives: int = 150:
-	set(value):
-		lives = value
-		lives_text.text = str(lives)
-
-var current_round: int = 1:
-	set(value):
-		current_round = value
-		round_text.text = "%s of 65" % [str(current_round)]
-			
-var rbe: int = 0:
-	set(value):
-		rbe = value
-		rbe_text.text = str(rbe)
-
+var money: int = 650
+var lives: int = 150
+var current_round: int = 1
+var rbe: int = 0
 var active_bloons: int = 0
-var fast_forward: bool = false
 var map_def: MonkeyLaneDef
-var map_scene: PackedScene = preload("res://scenes/maps/monkey_lane.tscn")
+var map_scene = preload("res://scenes/maps/monkey_lane.tscn")
 var map = map_scene.instantiate()
+
+var current_place_state: PlaceState = null
+var placed_towers: Array[Tower] = []
+
+var terrain_node: Node2D
+var track_area: Area2D
+var land_area: Area2D
+var water_area: Area2D
 
 func _ready():
 	map_def = MonkeyLaneDef.new()
@@ -42,16 +27,33 @@ func _ready():
 	spawner.setup(map_def)
 	add_child(map)
 	
-	update_ui()
+	setup_terrain_areas()
 	
+	in_game_menu.play_button_pressed.connect(_on_play_button_pressed)
+	in_game_menu.fast_forward_toggled.connect(_on_fast_forward_toggled)
+	in_game_menu.tower_purchase_requested.connect(_on_tower_purchase_requested)
+	
+	update_ui()
+
+func setup_terrain_areas():
+	terrain_node = map.get_node_or_null("Terrain")
+	track_area = terrain_node.get_node_or_null("Track")
+	land_area = terrain_node.get_node_or_null("Land")
+	water_area = terrain_node.get_node_or_null("Water")
+
+func update_ui():
+	in_game_menu.update_money_display(money)
+	in_game_menu.update_lives_display(lives)
+	in_game_menu.update_round_display(current_round)
+	in_game_menu.update_rbe_display(rbe)
+
 func _on_rbe_changed(new_rbe: int):
 	rbe = new_rbe
+	in_game_menu.update_rbe_display(rbe)
 
 func _on_play_button_pressed():
 	start_round(current_round)
-	play_button.visible = false
-	fast_forward_button.visible = true
-	play_button.get_node("Select").play()
+	in_game_menu.set_play_button_enabled(false)
 
 func start_round(round_number: int):
 	spawner.start_round(round_number - 1)
@@ -67,30 +69,54 @@ func _on_bloon_removed():
 
 func check_round_complete():
 	if active_bloons == 0 and spawner.wave_set.current_wave != null and spawner.wave_set.current_wave.is_complete():
-		fast_forward_button.visible = false
-		play_button.visible = true
-		if fast_forward:
-			fast_forward = false
-			Engine.time_scale = 1.0
-			update_fast_forward_button()
+		in_game_menu.set_play_button_enabled(true)
+		Engine.time_scale = 1.0
 		current_round += 1
+		in_game_menu.update_round_display(current_round)
 
-func update_ui():
-	money_text.text = str(money)
-	lives_text.text = str(lives)
-	round_text.text = "%s of 65" % [str(current_round)]
-	rbe_text.text = str(rbe) if rbe != 0 else "-"
+func _on_fast_forward_toggled(enabled: bool):
+	Engine.time_scale = 3.0 if enabled else 1.0
+
+func _on_tower_purchase_requested(tower_type: String):
+	var tower_def = TowerFactory.get_tower_def(tower_type)
 	
-func update_fast_forward_button():
-	if fast_forward:
-		blue_arrows.texture = blue_arrows.get_meta("pressed_texture")
-		blue_arrows.material.set_shader_parameter("shadow_strength", 0.0)
-	else:
-		blue_arrows.texture = blue_arrows.get_meta("default_texture")
-		blue_arrows.material.set_shader_parameter("shadow_strength", 0.25)
+	if money < tower_def["cost"]:
+		print("Cannot afford tower: need $", tower_def["cost"], " but have $", money)
+		return
+	
+	if current_place_state:
+		current_place_state.queue_free()
+		current_place_state = null
+	
+	enter_placement_mode(tower_type)
 
-func _on_fast_forward_button_pressed() -> void:
-	fast_forward = not fast_forward
-	fast_forward_button.get_node("Select").play()
-	Engine.time_scale = 3.0 if fast_forward else 1.0
-	update_fast_forward_button()
+func enter_placement_mode(tower_type: String):
+	current_place_state = PlaceState.new()
+	current_place_state.setup(tower_type)
+	current_place_state.track_area = track_area
+	current_place_state.land_area = land_area
+	current_place_state.water_area = water_area
+	
+	current_place_state.placement_confirmed.connect(_on_tower_placed)
+	current_place_state.placement_cancelled.connect(_on_placement_cancelled)
+	
+	add_child(current_place_state)
+
+func _on_tower_placed(tower_type: String, pos: Vector2):
+	var tower_def = TowerFactory.get_tower_def(tower_type)
+	
+	money -= tower_def["cost"]
+	in_game_menu.update_money_display(money)
+	
+	var tower = Tower.new(tower_type)
+	tower.global_position = pos
+	tower.rotate(deg_to_rad(-90.0))
+	placed_towers.append(tower)
+	add_child(tower)
+	
+	current_place_state = null
+	print("Placed ", tower_type, " at ", pos)
+
+func _on_placement_cancelled():
+	current_place_state = null
+	print("Tower placement cancelled")
