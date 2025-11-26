@@ -110,7 +110,6 @@ func _on_tower_placed(tower_type: String, pos: Vector2):
 	
 	var tower = Tower.new(tower_type)
 	tower.global_position = pos
-	tower.rotate(deg_to_rad(-90.0))
 	placed_towers.append(tower)
 	add_child(tower)
 	

@@ -1,8 +1,8 @@
 shader_type canvas_item;
 
 uniform bool allow_out_of_bounds = true;
-uniform float blur_x: hint_range(0.0, 16.0, 0.1) = 6.0;
-uniform float blur_y: hint_range(0.0, 16.0, 0.1) = 6.0;
+uniform float blur_x: hint_range(0.0, 16.0, 0.1) = 2.0;
+uniform float blur_y: hint_range(0.0, 16.0, 0.1) = 2.0;
 uniform float strength: hint_range(0.0, 1000.0, 1.0) = 100.0;
 uniform vec4 glow_color: source_color = vec4(1.0, 1.0, 1.0, 1.0);
 uniform bool knockout = false;

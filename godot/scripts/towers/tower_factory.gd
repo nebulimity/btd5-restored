@@ -13,6 +13,8 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 			"cost": 170,
 			"range": 100,
 			"occupied_space_radius": small,
+			"position_offset": Vector2(-2.335, 3.335),
+			"weapon_offset": Vector2(6, 9),
 			"sprite_path": "res://assets/sprites/towers/dart_monkey/1.svg",
 			"can_place_on_water": false,
 			"can_place_on_track": false

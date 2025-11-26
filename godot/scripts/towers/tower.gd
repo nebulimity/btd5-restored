@@ -15,6 +15,8 @@ func _init(type: String) -> void:
 func _ready() -> void:
 	sprite = Sprite2D.new()
 	sprite.texture = load(tower_def["sprite_path"])
+	sprite.offset = tower_def["position_offset"]
+	sprite.rotate(deg_to_rad(-90.0))
 	add_child(sprite)
 	
 	if current_range > 0 and current_range < 999999:

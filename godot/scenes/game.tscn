@@ -365,6 +365,7 @@ horizontal_scroll_mode = 0
 script = ExtResource("15_37s47")
 wheel_scroll_damper = SubResource("Resource_37s47")
 dragging_scroll_damper = SubResource("Resource_pl11u")
+drag_with_mouse = false
 allow_horizontal_scroll = false
 allow_overdragging = false
 metadata/_custom_type_script = "uid://bgqglerkcylxx"
