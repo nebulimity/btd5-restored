@@ -9,6 +9,7 @@ var tower_def: Dictionary
 var preview_sprite: Sprite2D
 var glow: ShaderMaterial
 var range_circle: Node2D
+var range_outline: Node2D
 var footprint_area: Area2D
 var is_valid_placement: bool = false
 
@@ -25,7 +26,7 @@ func _initialize_preview() -> void:
 	preview_sprite = Sprite2D.new()
 	preview_sprite.texture = load(tower_def["sprite_path"])
 	preview_sprite.offset = tower_def["position_offset"]
-	preview_sprite.z_index = 5
+	preview_sprite.z_index = 10
 	preview_sprite.rotate(deg_to_rad(-90.0))
 	
 	glow = ShaderMaterial.new()
@@ -38,8 +39,12 @@ func _initialize_preview() -> void:
 	if tower_def["range"] > 0 and tower_def["range"] < 999999:
 		range_circle = Node2D.new()
 		range_circle.z_index = 1
+		range_outline = Node2D.new()
+		range_outline.z_index = 3
 		add_child(range_circle)
+		add_child(range_outline)
 		range_circle.draw.connect(_draw_range_circle)
+		range_outline.draw.connect(_draw_range_outline)
 	
 	footprint_area = Area2D.new()
 	footprint_area.collision_layer = 0
@@ -58,13 +63,19 @@ func _process(_delta: float) -> void:
 	
 	update_placement_validity()
 	
-	if range_circle:
+	if range_circle and range_outline:
 		range_circle.queue_redraw()
+		range_outline.queue_redraw()
 
 func _draw_range_circle() -> void:
 	if range_circle and tower_def["range"] > 0 and tower_def["range"] < 999999:
 		var color = Color(0.2, 0.0, 0.2, 0.5) if is_valid_placement else Color(1.0, 0.0, 0.0, 0.5)
-		range_circle.draw_circle(Vector2.ZERO, tower_def["range"] + 2.0, color)
+		range_circle.draw_circle(Vector2.ZERO, tower_def["range"], color)
+
+func _draw_range_outline() -> void:
+	if range_outline and tower_def["range"] > 0 and tower_def["range"] < 999999:
+		var color = Color(0.2, 0.0, 0.2, 0.5) if is_valid_placement else Color(1.0, 0.0, 0.0, 0.5)
+		range_outline.draw_arc(Vector2.ZERO, tower_def["range"] + 1, 0, TAU, 64, color, 2.0)
 
 func update_placement_validity() -> void:
 	is_valid_placement = false

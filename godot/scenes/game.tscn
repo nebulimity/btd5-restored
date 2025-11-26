@@ -236,6 +236,7 @@ material = SubResource("ShaderMaterial_trtic")
 texture = ExtResource("12_kvuet")
 
 [node name="InGameMenu" type="Control" parent="."]
+z_index = 5
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -243,7 +244,6 @@ offset_bottom = 40.0
 script = ExtResource("7_gxtfn")
 
 [node name="SidePanel" type="Sprite2D" parent="InGameMenu"]
-z_index = 2
 position = Vector2(700, 0)
 texture = ExtResource("4_iywne")
 centered = false
@@ -742,7 +742,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BottomPanel" type="Sprite2D" parent="InGameMenu"]
-z_index = 2
 position = Vector2(0, 520)
 texture = ExtResource("5_p57ef")
 centered = false

@@ -16,6 +16,7 @@ func _ready() -> void:
 	sprite = Sprite2D.new()
 	sprite.texture = load(tower_def["sprite_path"])
 	sprite.offset = tower_def["position_offset"]
+	sprite.z_index = 2
 	sprite.rotate(deg_to_rad(-90.0))
 	add_child(sprite)
 	
