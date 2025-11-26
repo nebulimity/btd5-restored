@@ -73,6 +73,7 @@ func check_round_complete():
 		Engine.time_scale = 1.0
 		current_round += 1
 		in_game_menu.update_round_display(current_round)
+		in_game_menu.update_fast_forward_button(false)
 
 func _on_fast_forward_toggled(enabled: bool):
 	Engine.time_scale = 3.0 if enabled else 1.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://b54bixc6lxnii"]
+[gd_scene load_steps=64 format=3 uid="uid://b54bixc6lxnii"]
 
 [ext_resource type="AudioStream" uid="uid://djsfwrdgmbe4g" path="res://assets/audio/music/main_theme.ogg" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://c6yn56v5ter2w" path="res://scripts/game.gd" id="1_yqjtg"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cvvim8vwjnuud" path="res://assets/sprites/spikey_ball.svg" id="9_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://cd3wi427s3xx" path="res://assets/audio/sfx/select.mp3" id="9_vtaks"]
 [ext_resource type="Shader" uid="uid://cgh1yokk03gv8" path="res://shaders/outline.gdshader" id="11_dinhu"]
+[ext_resource type="BitMap" uid="uid://iqns1bau8u20" path="res://assets/ui/big_button/mask.svg" id="11_twgab"]
 [ext_resource type="Texture2D" uid="uid://bc41qugao8owb" path="res://assets/ui/big_button/fast_forward_button/default.svg" id="11_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://2uplxmb612qr" path="res://assets/ui/big_button/fast_forward_button/pressed.svg" id="12_js0lu"]
 [ext_resource type="Texture2D" uid="uid://iokj6n4jnkvg" path="res://assets/sprites/towers/dart_monkey/1.svg" id="12_kvuet"]
@@ -31,10 +32,13 @@
 [ext_resource type="FontFile" uid="uid://cvtrg54kisg7g" path="res://assets/fonts/nb_obese.ttf" id="23_bhx41"]
 [ext_resource type="Texture2D" uid="uid://wn3icr8ptd41" path="res://assets/ui/menu/default.svg" id="24_sww3w"]
 [ext_resource type="Texture2D" uid="uid://bmfyw85urpwy1" path="res://assets/ui/menu/outlined.svg" id="25_suyxu"]
+[ext_resource type="BitMap" uid="uid://dyggydn2lkit3" path="res://assets/ui/tower_buttons/mask.svg" id="26_02fa5"]
 [ext_resource type="Texture2D" uid="uid://c5m0qjpi8uhl7" path="res://assets/ui/music/on/default.svg" id="26_wljb1"]
 [ext_resource type="Texture2D" uid="uid://bcvbddanvqxfq" path="res://assets/ui/music/on/outlined.svg" id="27_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://cd5rmvpje5nqa" path="res://assets/ui/sfx/on/default.svg" id="28_js0lu"]
 [ext_resource type="Texture2D" uid="uid://8hsgmfjqk03u" path="res://assets/ui/sfx/on/outlined.svg" id="29_gxtfn"]
+[ext_resource type="BitMap" uid="uid://rcw0avyfk02a" path="res://assets/ui/save_button/mask.svg" id="31_nepv3"]
+[ext_resource type="BitMap" uid="uid://dl5xgg2c5oxnc" path="res://assets/ui/sfx/mask.svg" id="35_7025r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_trtic"]
 shader = ExtResource("11_dinhu")
@@ -260,6 +264,7 @@ offset_bottom = 522.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("6_kvuet")
 texture_hover = ExtResource("7_trtic")
+texture_click_mask = ExtResource("11_twgab")
 
 [node name="Label" type="Label" parent="InGameMenu/SidePanel/UI/PlayButton"]
 layout_mode = 0
@@ -297,6 +302,7 @@ offset_bottom = 522.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("6_kvuet")
 texture_hover = ExtResource("7_trtic")
+texture_click_mask = ExtResource("11_twgab")
 
 [node name="Select" type="AudioStreamPlayer" parent="InGameMenu/SidePanel/UI/FastForwardButton"]
 stream = ExtResource("9_vtaks")
@@ -388,6 +394,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartTower"]
 material = SubResource("ShaderMaterial_bt5mj")
@@ -400,6 +407,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/TackShooter"]
 layout_mode = 0
@@ -419,6 +427,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SniperMonkey"]
 layout_mode = 0
@@ -438,6 +447,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BoomerangThrower"]
 layout_mode = 0
@@ -457,6 +467,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/NinjaMonkey"]
 layout_mode = 0
@@ -476,6 +487,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BombTower"]
 layout_mode = 0
@@ -495,6 +507,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/IceTower"]
 layout_mode = 0
@@ -514,6 +527,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/GlueGunner"]
 layout_mode = 0
@@ -533,6 +547,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyBuccaneer"]
 layout_mode = 0
@@ -552,6 +567,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyAce"]
 layout_mode = 0
@@ -571,6 +587,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SuperMonkey"]
 layout_mode = 0
@@ -590,6 +607,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyApprentice"]
 layout_mode = 0
@@ -609,6 +627,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyVillage"]
 layout_mode = 0
@@ -628,6 +647,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BananaFarm"]
 layout_mode = 0
@@ -647,6 +667,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MortarTower"]
 layout_mode = 0
@@ -666,6 +687,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartlingGun"]
 layout_mode = 0
@@ -685,6 +707,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SpikeFactory"]
 layout_mode = 0
@@ -704,6 +727,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
+texture_click_mask = ExtResource("26_02fa5")
 
 [node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeySub"]
 layout_mode = 0
@@ -852,6 +876,7 @@ offset_bottom = 40.599976
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("21_pl11u")
 texture_hover = ExtResource("22_bhx41")
+texture_click_mask = ExtResource("31_nepv3")
 
 [node name="Label" type="Label" parent="InGameMenu/BottomPanel/Misc/Default/SaveButton"]
 layout_mode = 0
@@ -872,6 +897,7 @@ offset_bottom = 70.5
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("24_sww3w")
 texture_hover = ExtResource("25_suyxu")
+texture_click_mask = ExtResource("35_7025r")
 
 [node name="SfxButton" type="TextureButton" parent="InGameMenu/BottomPanel/Misc/Default"]
 layout_mode = 0
@@ -882,6 +908,7 @@ offset_bottom = 70.5
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("28_js0lu")
 texture_hover = ExtResource("29_gxtfn")
+texture_click_mask = ExtResource("35_7025r")
 
 [node name="MusicButton" type="TextureButton" parent="InGameMenu/BottomPanel/Misc/Default"]
 layout_mode = 0
@@ -892,6 +919,7 @@ offset_bottom = 70.5
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("26_wljb1")
 texture_hover = ExtResource("27_v2yb1")
+texture_click_mask = ExtResource("35_7025r")
 
 [connection signal="child_entered_tree" from="Spawner" to="." method="_on_bloon_spawned"]
 [connection signal="rbe_changed" from="Spawner" to="." method="_on_rbe_changed"]

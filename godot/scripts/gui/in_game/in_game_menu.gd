@@ -88,4 +88,4 @@ func update_round_display(value: int) -> void:
 
 func update_rbe_display(value: int) -> void:
 	if rbe_text:
-		rbe_text.text = str(value)
+		rbe_text.text = str(value) if value != 0 else "-"
