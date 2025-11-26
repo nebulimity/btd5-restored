@@ -75,7 +75,7 @@ func _draw_range_circle() -> void:
 func _draw_range_outline() -> void:
 	if range_outline and tower_def["range"] > 0 and tower_def["range"] < 999999:
 		var color = Color(0.2, 0.0, 0.2, 0.5) if is_valid_placement else Color(1.0, 0.0, 0.0, 0.5)
-		range_outline.draw_arc(Vector2.ZERO, tower_def["range"] + 1, 0, TAU, 64, color, 2.0)
+		range_outline.draw_circle(Vector2.ZERO, tower_def["range"] + 1.0, color, false, 2.0)
 
 func update_placement_validity() -> void:
 	is_valid_placement = false
