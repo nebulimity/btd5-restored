@@ -7,6 +7,7 @@ signal placement_cancelled
 var tower_type: String
 var tower_def: Dictionary
 var preview_sprite: Sprite2D
+var glow: ShaderMaterial
 var range_circle: Node2D
 var footprint_area: Area2D
 var is_valid_placement: bool = false
@@ -25,6 +26,12 @@ func _initialize_preview() -> void:
 	preview_sprite.texture = load(tower_def["sprite_path"])
 	preview_sprite.z_index = 5
 	preview_sprite.rotate(deg_to_rad(-90.0))
+	
+	glow = ShaderMaterial.new()
+	glow.shader = load("res://shaders/glow.gdshader")
+	glow.set_shader_parameter("glow_color", Color(0.0, 0.0, 0.0, 0.7))
+	preview_sprite.material = glow
+	
 	add_child(preview_sprite)
 	
 	if tower_def["range"] > 0 and tower_def["range"] < 999999:

@@ -57,6 +57,8 @@ shader_parameter/shadow_distance = 3.0
 shader_parameter/shadow_angle = 45.0
 shader_parameter/shadow_strength = 0.249999994412
 shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/blur_x = 0.0
+shader_parameter/blur_y = 0.0
 
 [sub_resource type="Animation" id="Animation_0tnpc"]
 length = 0.001
@@ -103,6 +105,8 @@ shader_parameter/shadow_distance = 3.0
 shader_parameter/shadow_angle = 45.0
 shader_parameter/shadow_strength = 0.249999994412
 shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/blur_x = 0.0
+shader_parameter/blur_y = 0.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_ca42v"]
 font = ExtResource("7_u5sy4")
@@ -145,6 +149,8 @@ shader_parameter/shadow_distance = 2.0
 shader_parameter/shadow_angle = 45.0
 shader_parameter/shadow_strength = 0.1999999955296
 shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/blur_x = 0.0
+shader_parameter/blur_y = 0.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_bt5mj"]
 font = ExtResource("7_u5sy4")
