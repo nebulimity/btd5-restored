@@ -11,8 +11,9 @@ signal fast_forward_toggled(enabled: bool)
 @onready var rbe_text: Label = $"../InGameMenu/BottomPanel/Default/RBEValue"
 @onready var play_button: TextureButton = $"../InGameMenu/SidePanel/UI/PlayButton"
 @onready var fast_forward_button: TextureButton = $"../InGameMenu/SidePanel/UI/FastForwardButton"
-
 @onready var tower_buttons_container: GridContainer = $"../InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"
+
+@onready var select_sound: AudioStreamPlayer = $"../Sounds/Select"
 
 func _ready() -> void:
 	connect_tower_buttons()
@@ -47,14 +48,15 @@ func connect_tower_buttons() -> void:
 			button.pressed.connect(_on_tower_button_pressed.bind(tower_type))
 
 func _on_tower_button_pressed(tower_type: String) -> void:
+	select_sound.play()
 	tower_purchase_requested.emit(tower_type)
 
 func _on_play_button_pressed() -> void:
-	play_button.get_node("Select").play()
+	select_sound.play()
 	play_button_pressed.emit()
 
 func _on_fast_forward_button_pressed() -> void:
-	fast_forward_button.get_node("Select").play()
+	select_sound.play()
 	var is_fast_forward = Engine.time_scale > 1.0
 	fast_forward_toggled.emit(not is_fast_forward)
 	update_fast_forward_button(not is_fast_forward)

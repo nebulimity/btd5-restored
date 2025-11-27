@@ -20,6 +20,8 @@ func _ready() -> void:
 	sprite.rotate(deg_to_rad(-90.0))
 	add_child(sprite)
 	
+	$"../Sounds/Place".play()
+	
 	if current_range > 0 and current_range < 999999:
 		range_circle = Node2D.new()
 		range_circle.visible = false

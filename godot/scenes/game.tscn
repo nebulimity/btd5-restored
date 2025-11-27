@@ -1,8 +1,9 @@
-[gd_scene load_steps=64 format=3 uid="uid://b54bixc6lxnii"]
+[gd_scene load_steps=65 format=3 uid="uid://b54bixc6lxnii"]
 
 [ext_resource type="AudioStream" uid="uid://djsfwrdgmbe4g" path="res://assets/audio/music/main_theme.ogg" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://c6yn56v5ter2w" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://qcc8w0d0puor" path="res://scripts/levels/rounds/spawner.gd" id="2_lnu2h"]
+[ext_resource type="AudioStream" uid="uid://cagov42se3ktn" path="res://assets/audio/sfx/place.mp3" id="3_m4url"]
 [ext_resource type="Texture2D" uid="uid://c48fwu2o20e4u" path="res://assets/ui/side_panel.svg" id="4_iywne"]
 [ext_resource type="Texture2D" uid="uid://bmn0ag000gmv5" path="res://assets/ui/bottom_panel.svg" id="5_p57ef"]
 [ext_resource type="Texture2D" uid="uid://ln6lpeyp7xmn" path="res://assets/ui/big_button/default.svg" id="6_kvuet"]
@@ -200,6 +201,14 @@ script = ExtResource("1_yqjtg")
 [node name="Spawner" type="Node" parent="."]
 script = ExtResource("2_lnu2h")
 
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Place" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("3_m4url")
+
+[node name="Select" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("9_vtaks")
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_uwrxv")
 autoplay = true
@@ -255,7 +264,6 @@ offset_right = 103.0
 offset_bottom = 523.0
 
 [node name="PlayButton" type="TextureButton" parent="InGameMenu/SidePanel/UI"]
-z_index = 3
 layout_mode = 0
 offset_left = 1.0
 offset_top = 452.0
@@ -288,12 +296,8 @@ libraries = {
 }
 autoplay = "arrow"
 
-[node name="Select" type="AudioStreamPlayer" parent="InGameMenu/SidePanel/UI/PlayButton"]
-stream = ExtResource("9_vtaks")
-
 [node name="FastForwardButton" type="TextureButton" parent="InGameMenu/SidePanel/UI"]
 visible = false
-z_index = 3
 layout_mode = 0
 offset_left = 1.0
 offset_top = 452.0
@@ -304,9 +308,6 @@ texture_normal = ExtResource("6_kvuet")
 texture_hover = ExtResource("7_trtic")
 texture_click_mask = ExtResource("11_twgab")
 
-[node name="Select" type="AudioStreamPlayer" parent="InGameMenu/SidePanel/UI/FastForwardButton"]
-stream = ExtResource("9_vtaks")
-
 [node name="BlueArrows" type="Sprite2D" parent="InGameMenu/SidePanel/UI/FastForwardButton"]
 material = SubResource("ShaderMaterial_js0lu")
 texture = ExtResource("11_v2yb1")
@@ -315,7 +316,7 @@ metadata/default_texture = ExtResource("11_v2yb1")
 metadata/pressed_texture = ExtResource("12_js0lu")
 
 [node name="Money" type="TextureButton" parent="InGameMenu/SidePanel/UI"]
-z_index = 3
+z_index = 1
 layout_mode = 0
 offset_left = 2.6500244
 offset_top = 4.1
@@ -326,7 +327,7 @@ texture_normal = ExtResource("14_trtic")
 texture_hover = ExtResource("15_ir15t")
 
 [node name="Value" type="Label" parent="InGameMenu/SidePanel/UI/Money"]
-z_index = 3
+z_index = 5
 z_as_relative = false
 layout_mode = 0
 offset_left = 23.8
@@ -338,7 +339,7 @@ label_settings = SubResource("LabelSettings_ca42v")
 vertical_alignment = 2
 
 [node name="Lives" type="TextureButton" parent="InGameMenu/SidePanel/UI"]
-z_index = 3
+z_index = 1
 layout_mode = 0
 offset_left = 2.5
 offset_top = 28.0
@@ -349,7 +350,7 @@ texture_normal = ExtResource("12_rysoc")
 texture_hover = ExtResource("13_ssvqc")
 
 [node name="Value" type="Label" parent="InGameMenu/SidePanel/UI/Lives"]
-z_index = 3
+z_index = 5
 z_as_relative = false
 layout_mode = 0
 offset_left = 23.8
