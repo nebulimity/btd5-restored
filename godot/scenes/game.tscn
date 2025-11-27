@@ -905,5 +905,7 @@ texture_normal = ExtResource("26_wljb1")
 texture_hover = ExtResource("27_v2yb1")
 texture_click_mask = ExtResource("35_7025r")
 
+[connection signal="child_entered_tree" from="Spawner" to="Level" method="_on_bloon_spawned"]
+[connection signal="rbe_changed" from="Spawner" to="Level" method="_on_rbe_changed"]
 [connection signal="pressed" from="InGameMenu/SidePanel/UI/PlayButton" to="InGameMenu" method="_on_play_button_pressed"]
 [connection signal="pressed" from="InGameMenu/SidePanel/UI/FastForwardButton" to="InGameMenu" method="_on_fast_forward_button_pressed"]

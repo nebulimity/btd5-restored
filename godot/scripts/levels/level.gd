@@ -52,8 +52,6 @@ func _ready() -> void:
 	get_parent().add_child.call_deferred(map)
 	
 	spawner.setup(map_def)
-	spawner.rbe_changed.connect(_on_rbe_changed)
-	spawner.child_entered_tree.connect(_on_bloon_spawned)
 	
 	setup_terrain_areas()
 	
