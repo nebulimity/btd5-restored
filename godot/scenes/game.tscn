@@ -1,8 +1,9 @@
-[gd_scene load_steps=65 format=3 uid="uid://b54bixc6lxnii"]
+[gd_scene load_steps=66 format=3 uid="uid://b54bixc6lxnii"]
 
 [ext_resource type="AudioStream" uid="uid://djsfwrdgmbe4g" path="res://assets/audio/music/main_theme.ogg" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://c6yn56v5ter2w" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://qcc8w0d0puor" path="res://scripts/levels/rounds/spawner.gd" id="2_lnu2h"]
+[ext_resource type="Script" uid="uid://b2rfnhxh07kdl" path="res://scripts/levels/level.gd" id="3_8ool0"]
 [ext_resource type="AudioStream" uid="uid://cagov42se3ktn" path="res://assets/audio/sfx/place.mp3" id="3_m4url"]
 [ext_resource type="Texture2D" uid="uid://c48fwu2o20e4u" path="res://assets/ui/side_panel.svg" id="4_iywne"]
 [ext_resource type="Texture2D" uid="uid://bmn0ag000gmv5" path="res://assets/ui/bottom_panel.svg" id="5_p57ef"]
@@ -200,6 +201,9 @@ script = ExtResource("1_yqjtg")
 
 [node name="Spawner" type="Node" parent="."]
 script = ExtResource("2_lnu2h")
+
+[node name="Level" type="Node" parent="."]
+script = ExtResource("3_8ool0")
 
 [node name="Sounds" type="Node" parent="."]
 
@@ -921,7 +925,5 @@ texture_normal = ExtResource("26_wljb1")
 texture_hover = ExtResource("27_v2yb1")
 texture_click_mask = ExtResource("35_7025r")
 
-[connection signal="child_entered_tree" from="Spawner" to="." method="_on_bloon_spawned"]
-[connection signal="rbe_changed" from="Spawner" to="." method="_on_rbe_changed"]
 [connection signal="pressed" from="InGameMenu/SidePanel/UI/PlayButton" to="InGameMenu" method="_on_play_button_pressed"]
 [connection signal="pressed" from="InGameMenu/SidePanel/UI/FastForwardButton" to="InGameMenu" method="_on_fast_forward_button_pressed"]

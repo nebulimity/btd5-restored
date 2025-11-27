@@ -1,6 +1,8 @@
 class_name Tower
 extends Node2D
 
+@onready var place_sound = $"../Sounds/Place"
+
 var tower_type: String
 var tower_def: Dictionary
 var current_range: float
@@ -23,7 +25,7 @@ func _ready() -> void:
 	sprite.rotate(deg_to_rad(orientation))
 	add_child(sprite)
 	
-	$"../Sounds/Place".play()
+	place_sound.play()
 	
 	if current_range > 0 and current_range < 999999:
 		range_combo = RangeCombo.new()
@@ -37,3 +39,9 @@ func show_range() -> void:
 
 func hide_range() -> void:
 	range_combo.visible = false
+
+func highlight():
+	sprite.modulate = Color(0.0, 1.0, 0.0)
+	
+func unhighlight():
+	sprite.modulate = Color(1.0, 1.0, 1.0)

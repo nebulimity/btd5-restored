@@ -53,6 +53,7 @@ func _initialize_preview() -> void:
 
 func _process(_delta: float) -> void:
 	global_position = get_global_mouse_position()
+	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 	
 	update_placement_validity()
 	range_combo.redraw(tower_def["range"], is_valid_placement)
