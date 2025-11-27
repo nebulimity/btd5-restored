@@ -48,31 +48,27 @@ func connect_tower_buttons() -> void:
 			button.pressed.connect(_on_tower_button_pressed.bind(tower_type))
 
 func _on_tower_button_pressed(tower_type: String) -> void:
-	if select_sound:
-		select_sound.play()
+	select_sound.play()
 	tower_purchase_requested.emit(tower_type)
 
 func _on_play_button_pressed() -> void:
-	if select_sound:
-		select_sound.play()
+	select_sound.play()
 	play_button_pressed.emit()
 
 func _on_fast_forward_button_pressed() -> void:
-	if select_sound:
-		select_sound.play()
+	select_sound.play()
 	var is_fast_forward = Engine.time_scale > 1.0
 	fast_forward_toggled.emit(not is_fast_forward)
 	update_fast_forward_button(not is_fast_forward)
 
 func update_fast_forward_button(enabled: bool) -> void:
-	var blue_arrows = fast_forward_button.get_node_or_null("BlueArrows")
-	if blue_arrows:
-		if enabled:
-			blue_arrows.texture = blue_arrows.get_meta("pressed_texture")
-			blue_arrows.material.set_shader_parameter("shadow_strength", 0.0)
-		else:
-			blue_arrows.texture = blue_arrows.get_meta("default_texture")
-			blue_arrows.material.set_shader_parameter("shadow_strength", 0.25)
+	var blue_arrows = fast_forward_button.get_node("BlueArrows")
+	if enabled:
+		blue_arrows.texture = blue_arrows.get_meta("pressed_texture")
+		blue_arrows.material.set_shader_parameter("shadow_strength", 0.0)
+	else:
+		blue_arrows.texture = blue_arrows.get_meta("default_texture")
+		blue_arrows.material.set_shader_parameter("shadow_strength", 0.25)
 
 func set_play_button_enabled(enabled: bool) -> void:
 	play_button.disabled = not enabled
@@ -80,17 +76,13 @@ func set_play_button_enabled(enabled: bool) -> void:
 	fast_forward_button.visible = not enabled
 
 func update_money_display(value: int) -> void:
-	if money_text:
-		money_text.text = str(value)
+	money_text.text = str(value)
 
 func update_lives_display(value: int) -> void:
-	if lives_text:
-		lives_text.text = str(value)
+	lives_text.text = str(value)
 
 func update_round_display(value: int) -> void:
-	if round_text:
-		round_text.text = "%s of 65" % [str(value)]
+	round_text.text = "%s of 65" % [str(value)]
 
 func update_rbe_display(value: int) -> void:
-	if rbe_text:
-		rbe_text.text = str(value)
+	rbe_text.text = str(value)

@@ -9,21 +9,35 @@ var current_range: float
 var selected: bool
 var orientation: float
 var sprite: Sprite2D
+var outline: Sprite2D
+var outline_shader: ShaderMaterial
 var range_combo: Node2D
 
 func _init(type: String) -> void:
 	tower_type = type
 	tower_def = TowerFactory.get_tower_def(type)
 	current_range = tower_def["range"]
-	orientation = -90.0
+	orientation = 270.0
 
 func _ready() -> void:
 	sprite = Sprite2D.new()
 	sprite.texture = load(tower_def["sprite_path"])
 	sprite.offset = tower_def["position_offset"]
 	sprite.z_index = 2
-	sprite.rotate(deg_to_rad(orientation))
+	sprite.rotation_degrees = orientation
 	add_child(sprite)
+	
+	outline_shader = ShaderMaterial.new()
+	outline_shader.shader = load("res://shaders/outline.gdshader")
+	outline_shader.set_shader_parameter("cutout", true)
+	outline = Sprite2D.new()
+	outline.offset = sprite.offset
+	outline.position = sprite.position
+	outline.z_index = 100
+	outline.z_as_relative = true
+	outline.material = outline_shader
+	outline.visible = false
+	sprite.add_child(outline)
 	
 	place_sound.play()
 	
@@ -33,6 +47,8 @@ func _ready() -> void:
 		
 func _process(_delta: float) -> void:
 	range_combo.redraw(tower_def["range"], true)
+	if outline.visible:
+		outline.texture = sprite.texture
 
 func show_range() -> void:
 	range_combo.visible = true
@@ -41,7 +57,7 @@ func hide_range() -> void:
 	range_combo.visible = false
 
 func highlight():
-	sprite.modulate = Color(0.0, 1.0, 0.0)
+	outline.visible = true
 	
 func unhighlight():
-	sprite.modulate = Color(1.0, 1.0, 1.0)
+	outline.visible = false

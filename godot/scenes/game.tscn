@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://b54bixc6lxnii"]
+[gd_scene load_steps=63 format=3 uid="uid://b54bixc6lxnii"]
 
 [ext_resource type="AudioStream" uid="uid://djsfwrdgmbe4g" path="res://assets/audio/music/main_theme.ogg" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://c6yn56v5ter2w" path="res://scripts/game.gd" id="1_yqjtg"]
@@ -15,11 +15,9 @@
 [ext_resource type="Shader" uid="uid://c3ryj3gh8f7l2" path="res://shaders/shadow.gdshader" id="8_ssvqc"]
 [ext_resource type="Texture2D" uid="uid://cvvim8vwjnuud" path="res://assets/sprites/spikey_ball.svg" id="9_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://cd3wi427s3xx" path="res://assets/audio/sfx/select.mp3" id="9_vtaks"]
-[ext_resource type="Shader" uid="uid://cgh1yokk03gv8" path="res://shaders/outline.gdshader" id="11_dinhu"]
 [ext_resource type="BitMap" uid="uid://iqns1bau8u20" path="res://assets/ui/big_button/mask.svg" id="11_twgab"]
 [ext_resource type="Texture2D" uid="uid://bc41qugao8owb" path="res://assets/ui/big_button/fast_forward_button/default.svg" id="11_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://2uplxmb612qr" path="res://assets/ui/big_button/fast_forward_button/pressed.svg" id="12_js0lu"]
-[ext_resource type="Texture2D" uid="uid://iokj6n4jnkvg" path="res://assets/sprites/towers/dart_monkey/1.svg" id="12_kvuet"]
 [ext_resource type="Texture2D" uid="uid://f3wclmbpmkuj" path="res://assets/ui/lives/default.svg" id="12_rysoc"]
 [ext_resource type="Texture2D" uid="uid://c3lvo86g4ex6c" path="res://assets/ui/lives/outlined.svg" id="13_ssvqc"]
 [ext_resource type="Texture2D" uid="uid://c2xwv7c87b3vp" path="res://assets/ui/money/default.svg" id="14_trtic"]
@@ -41,13 +39,6 @@
 [ext_resource type="Texture2D" uid="uid://8hsgmfjqk03u" path="res://assets/ui/sfx/on/outlined.svg" id="29_gxtfn"]
 [ext_resource type="BitMap" uid="uid://rcw0avyfk02a" path="res://assets/ui/save_button/mask.svg" id="31_nepv3"]
 [ext_resource type="BitMap" uid="uid://dl5xgg2c5oxnc" path="res://assets/ui/sfx/mask.svg" id="35_7025r"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_trtic"]
-shader = ExtResource("11_dinhu")
-shader_parameter/allow_out_of_bounds = true
-shader_parameter/outline_thickness = 1.0
-shader_parameter/outline_color = Color(1, 1, 1, 1)
-shader_parameter/cutout = true
 
 [sub_resource type="LabelSettings" id="LabelSettings_gee14"]
 font = ExtResource("7_u5sy4")
@@ -236,17 +227,6 @@ SpikeyBall
 2007 - 2009
 R.I.P."
 horizontal_alignment = 1
-
-[node name="DartMonkey" type="Sprite2D" parent="."]
-visible = false
-z_index = 1
-position = Vector2(691, 199)
-texture = ExtResource("12_kvuet")
-
-[node name="Outline" type="Sprite2D" parent="DartMonkey"]
-z_index = 100
-material = SubResource("ShaderMaterial_trtic")
-texture = ExtResource("12_kvuet")
 
 [node name="InGameMenu" type="Control" parent="."]
 z_index = 5
