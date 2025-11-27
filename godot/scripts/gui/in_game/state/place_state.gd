@@ -8,8 +8,7 @@ var tower_type: String
 var tower_def: Dictionary
 var preview_sprite: Sprite2D
 var glow: ShaderMaterial
-var range_circle: Node2D
-var range_outline: Node2D
+var range_combo: Node2D
 var footprint_area: Area2D
 var is_valid_placement: bool = false
 
@@ -37,14 +36,8 @@ func _initialize_preview() -> void:
 	add_child(preview_sprite)
 	
 	if tower_def["range"] > 0 and tower_def["range"] < 999999:
-		range_circle = Node2D.new()
-		range_circle.z_index = 1
-		range_outline = Node2D.new()
-		range_outline.z_index = 3
-		add_child(range_circle)
-		add_child(range_outline)
-		range_circle.draw.connect(_draw_range_circle)
-		range_outline.draw.connect(_draw_range_outline)
+		range_combo = RangeCombo.new()
+		add_child(range_combo)
 	
 	footprint_area = Area2D.new()
 	footprint_area.collision_layer = 0
@@ -62,20 +55,7 @@ func _process(_delta: float) -> void:
 	global_position = get_global_mouse_position()
 	
 	update_placement_validity()
-	
-	if range_circle and range_outline:
-		range_circle.queue_redraw()
-		range_outline.queue_redraw()
-
-func _draw_range_circle() -> void:
-	if range_circle and tower_def["range"] > 0 and tower_def["range"] < 999999:
-		var color = Color(0.2, 0.0, 0.2, 0.5) if is_valid_placement else Color(1.0, 0.0, 0.0, 0.5)
-		range_circle.draw_circle(Vector2.ZERO, tower_def["range"], color)
-
-func _draw_range_outline() -> void:
-	if range_outline and tower_def["range"] > 0 and tower_def["range"] < 999999:
-		var color = Color(0.2, 0.0, 0.2, 0.5) if is_valid_placement else Color(1.0, 0.0, 0.0, 0.5)
-		range_outline.draw_circle(Vector2.ZERO, tower_def["range"] + 1.0, color, false, 2.0)
+	range_combo.redraw(tower_def["range"], is_valid_placement)
 
 func update_placement_validity() -> void:
 	is_valid_placement = false
