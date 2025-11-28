@@ -2,6 +2,7 @@ class_name NeutralState
 extends Node2D
 
 const HIGHLIGHT_RADIUS: float = 50.0
+const PLAY_AREA: Vector2 = Vector2(700, 520)
 
 var mouse_pos: Vector2 = Vector2(-1, -1)
 var last_mouse: Vector2 = Vector2(-1, -1)
@@ -10,10 +11,12 @@ var highlighted_tower: Node2D = null
 @onready var level: Level = get_parent()
 
 func _process(_delta: float) -> void:
-	if level.current_place_state != null:
-		return
-		
 	mouse_pos = get_global_mouse_position()
+	
+	if level.current_place_state != null:
+		if level.selected_tower:
+			level.update_selection(null)
+		return
 
 	if mouse_pos == last_mouse:
 		return
@@ -40,12 +43,16 @@ func _process(_delta: float) -> void:
 		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 
 func _input(event: InputEvent) -> void:
-	if level.current_place_state != null:
-		return
-		
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			if mouse_pos[0] > PLAY_AREA[0] or mouse_pos[1] > PLAY_AREA[1]:
+				return
+			
 			if highlighted_tower:
-				level.selected_tower = highlighted_tower
-			elif level.selected_tower != null:
-				level.selected_tower = null
+				level.update_selection(highlighted_tower)
+			else:
+				if level.just_placed:
+					level.just_placed = false
+					return
+				
+				level.update_selection(null)

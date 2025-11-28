@@ -1,7 +1,8 @@
 class_name Tower
 extends Node2D
 
-@onready var place_sound = $"../Sounds/Place"
+@onready var place_sound: AudioStreamPlayer = $"../Sounds/Place"
+@onready var select_sound: AudioStreamPlayer = $"../Sounds/Select"
 
 var tower_type: String
 var tower_def: Dictionary
@@ -44,7 +45,7 @@ func _ready() -> void:
 	if current_range > 0 and current_range < 999999:
 		range_combo = RangeCombo.new()
 		add_child(range_combo)
-
+		
 func _process(_delta: float) -> void:
 	range_combo.redraw(tower_def["range"], true)
 	if outline.visible:
@@ -56,18 +57,19 @@ func show_range() -> void:
 func hide_range() -> void:
 	range_combo.visible = false
 
-func highlight() -> void:
+func highlight():
 	outline.visible = true
 	
-func unhighlight() -> void:
+func unhighlight():
 	outline.visible = false
 
-func select() -> void:
+func select():
 	selected = true
-	#range_combo.visible = true
-	print("selected")
+	if select_sound:
+		select_sound.play()
+	if range_combo:
+		range_combo.visible = true
 
-func deselect() -> void:
+func deselect():
 	selected = false
-	#range_combo.visible = false
-	print("deselected")
+	range_combo.visible = false
