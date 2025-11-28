@@ -16,11 +16,13 @@ func _process(_delta: float) -> void:
 	if level.current_place_state != null:
 		if level.selected_tower:
 			level.update_selection(null)
-			return
 
 	if mouse_pos == last_mouse:
 		return
 	last_mouse = mouse_pos
+	
+	if level.current_place_state != null:
+		return
 
 	var closest_tower: Node2D = null
 	var closest_dist: float = HIGHLIGHT_RADIUS
