@@ -16,6 +16,9 @@ func _process(_delta: float) -> void:
 	if level.current_place_state != null:
 		if level.selected_tower:
 			level.update_selection(null)
+		if highlighted_tower:
+			highlighted_tower.unhighlight()
+			highlighted_tower = null
 
 	if mouse_pos == last_mouse:
 		return
