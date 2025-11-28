@@ -20,6 +20,11 @@ var rbe: int = 0:
 	set(value):
 		rbe = value
 		in_game_menu.update_rbe_display(rbe)
+		
+var selected_tower: Node2D = null:
+	set(tower):
+		selected_tower = tower
+		select_tower(tower)
 
 var active_bloons: int = 0
 
@@ -135,9 +140,17 @@ func _on_tower_placed(tower_type: String, pos: Vector2):
 	var tower = Tower.new(tower_type)
 	tower.global_position = pos
 	placed_towers.append(tower)
+	selected_tower = tower
 	get_parent().add_child(tower)
 	
 	current_place_state = null
 
 func _on_placement_cancelled():
 	current_place_state = null
+
+func select_tower(new_tower: Node2D) -> void:
+	for tower in placed_towers:
+		if tower != new_tower:
+			tower.deselect()
+		else:
+			tower.select()

@@ -89,9 +89,6 @@ func _input(event: InputEvent) -> void:
 			if is_valid_placement:
 				placement_confirmed.emit(tower_type, global_position)
 				queue_free()
-		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-			placement_cancelled.emit()
-			queue_free()
 	elif event is InputEventKey:
 		if event.keycode == KEY_ESCAPE and event.pressed:
 			placement_cancelled.emit()

@@ -44,7 +44,7 @@ func _ready() -> void:
 	if current_range > 0 and current_range < 999999:
 		range_combo = RangeCombo.new()
 		add_child(range_combo)
-		
+
 func _process(_delta: float) -> void:
 	range_combo.redraw(tower_def["range"], true)
 	if outline.visible:
@@ -56,8 +56,18 @@ func show_range() -> void:
 func hide_range() -> void:
 	range_combo.visible = false
 
-func highlight():
+func highlight() -> void:
 	outline.visible = true
 	
-func unhighlight():
+func unhighlight() -> void:
 	outline.visible = false
+
+func select() -> void:
+	selected = true
+	#range_combo.visible = true
+	print("selected")
+
+func deselect() -> void:
+	selected = false
+	#range_combo.visible = false
+	print("deselected")
