@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://b54bixc6lxnii"]
+[gd_scene load_steps=69 format=3 uid="uid://b54bixc6lxnii"]
 
 [ext_resource type="AudioStream" uid="uid://djsfwrdgmbe4g" path="res://assets/audio/music/main_theme.ogg" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://c6yn56v5ter2w" path="res://scripts/game.gd" id="1_yqjtg"]
@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://cqclgwwflc7ru" path="res://assets/ui/tower_buttons/tack_tower/default.svg" id="28_m4url"]
 [ext_resource type="Texture2D" uid="uid://8hsgmfjqk03u" path="res://assets/ui/sfx/on/outlined.svg" id="29_gxtfn"]
 [ext_resource type="BitMap" uid="uid://rcw0avyfk02a" path="res://assets/ui/save_button/mask.svg" id="31_nepv3"]
+[ext_resource type="Texture2D" uid="uid://cqls336tsosk3" path="res://assets/ui/tower_buttons/super_tower/default.svg" id="33_oaba0"]
 [ext_resource type="BitMap" uid="uid://dl5xgg2c5oxnc" path="res://assets/ui/sfx/mask.svg" id="35_7025r"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gee14"]
@@ -580,7 +581,7 @@ label_settings = SubResource("LabelSettings_bt5mj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SuperMonkey" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="SuperTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -588,17 +589,10 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SuperMonkey"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = -1.0
-offset_right = 35.5
-offset_bottom = 56.4
-mouse_filter = 1
-text = "?"
-label_settings = SubResource("LabelSettings_bt5mj")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SuperTower"]
+material = SubResource("ShaderMaterial_bt5mj")
+texture = ExtResource("33_oaba0")
+centered = false
 
 [node name="MonkeyApprentice" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
 layout_mode = 2

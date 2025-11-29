@@ -66,19 +66,28 @@ func setup_weapons() -> void:
 			proj_def.Pierce(1).Damage(1).Speed(850)
 			
 			var weapon = Single.new()
-			weapon.SetRange(current_range).SetReloadTime(0.95).SetPower(850).SetProjectile(proj_def)
+			weapon.SetRange(161).SetReloadTime(0.9).SetPower(850).SetProjectile(proj_def)
 			weapons.append(weapon)
-			weapon_offsets.append(Vector2(6, 9))
+			weapon_offsets.append(TowerFactory.get_tower_def(tower_type)["weapon_offset"])
 		
 		"TackShooter":
 			var proj_def = ProjectileDef.new("res://assets/projectiles/tack.svg")
 			proj_def.Pierce(1).Damage(1).Speed(200)
 			
 			var weapon = Circular.new()
-			weapon.SetRange(current_range).SetReloadTime(1.175).SetPower(200).SetProjectile(proj_def)
+			weapon.SetRange(70).SetReloadTime(1.66).SetPower(350).SetProjectile(proj_def)
 			weapon.SetAngle(TAU).SetCount(8)
 			weapons.append(weapon)
 			weapon_offsets.append(Vector2.ZERO)
+		
+		"SuperMonkey":
+			var proj_def = ProjectileDef.new("res://assets/projectiles/dart.svg")
+			proj_def.Pierce(1).Damage(1).Speed(850)
+			
+			var weapon = Single.new()
+			weapon.SetRange(500).SetReloadTime(0.058).SetPower(700).SetProjectile(proj_def)
+			weapons.append(weapon)
+			weapon_offsets.append(TowerFactory.get_tower_def(tower_type)["weapon_offset"])
 		_:
 			pass
 
