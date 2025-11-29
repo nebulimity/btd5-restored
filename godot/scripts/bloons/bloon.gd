@@ -70,14 +70,20 @@ static var spawn_order_offsets = [
 ]
 
 const BLOON_TEXTURES = [
-	preload("res://assets/sprites/bloons/0.svg"), # RED
-	preload("res://assets/sprites/bloons/1.svg"), # BLUE
-	preload("res://assets/sprites/bloons/2.svg"), # GREEN
-	preload("res://assets/sprites/bloons/3.svg"), # YELLOW
-	preload("res://assets/sprites/bloons/4.svg"), # PINK
-	preload("res://assets/sprites/bloons/5.svg"), # BLACK
-	preload("res://assets/sprites/bloons/6.svg"), # WHITE
-	preload("res://assets/sprites/bloons/7.svg"), # LEAD
+	preload("res://assets/sprites/bloons/0.svg"),  # RED
+	preload("res://assets/sprites/bloons/1.svg"),  # BLUE
+	preload("res://assets/sprites/bloons/2.svg"),  # GREEN
+	preload("res://assets/sprites/bloons/3.svg"),  # YELLOW
+	preload("res://assets/sprites/bloons/4.svg"),  # PINK
+	preload("res://assets/sprites/bloons/5.svg"),  # BLACK
+	preload("res://assets/sprites/bloons/6.svg"),  # WHITE
+	preload("res://assets/sprites/bloons/7.svg"),  # LEAD
+	preload("res://assets/sprites/bloons/8.svg"),  # ZEBRA
+	preload("res://assets/sprites/bloons/9.svg"),  # RAINBOW
+	preload("res://assets/sprites/bloons/10.svg"), # CERAMIC
+	preload("res://assets/sprites/bloons/11.svg"), # MOAB
+	preload("res://assets/sprites/bloons/12.svg"), # BFB
+	preload("res://assets/sprites/bloons/13.svg"), # BOSS (ZOMG)
 ]
 
 static var cash_multiplier: float = 1.0
