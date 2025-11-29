@@ -1,0 +1,1365 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   ffdec:objectType="frame"
+   height="47.65px"
+   width="49.9px"
+   version="1.1"
+   id="svg89"
+   sodipodi:docname="1.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:ffdec="https://www.free-decompiler.com/flash">
+  <sodipodi:namedview
+     id="namedview89"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="4.023236"
+     inkscape:cx="-1.3670588"
+     inkscape:cy="18.64171"
+     inkscape:window-width="1680"
+     inkscape:window-height="889"
+     inkscape:window-x="0"
+     inkscape:window-y="31"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g5" />
+  <g
+     transform="matrix(1.0, 0.0, 0.0, 1.0, 1.8, 1.6)"
+     id="g5">
+    <filter
+       id="filter0"
+       x="-0.014119266"
+       y="-0.014140227"
+       width="1.0422146"
+       height="1.0422769">
+      <feOffset
+         dx="1.41423199166404"
+         dy="1.4141951328419862"
+         in="SourceGraphic"
+         result="filterResult0"
+         id="feOffset1" />
+      <feColorMatrix
+         in="filterResult0"
+         result="filterResult1"
+         type="matrix"
+         values="0 0 0 0 0.0,0 0 0 0 0.0,0 0 0 0 0.0,0 0 0 1 0"
+         id="feColorMatrix1" />
+      <feColorMatrix
+         in="filterResult1"
+         result="filterResult2"
+         type="matrix"
+         values="1 0 0 0 0,0 1 0 0 0,0 0 1 0 0,0 0 0 0.19921875 0"
+         id="feColorMatrix2" />
+      <feComposite
+         in="SourceGraphic"
+         in2="filterResult2"
+         operator="over"
+         result="filterResult3"
+         id="feComposite2" />
+    </filter>
+    <g
+       id="use2"
+       transform="matrix(-0.35,0,0,-0.35,21.8995,19.8495)"
+       style="filter:url(#filter0)">
+      <g
+         id="use91"
+         transform="matrix(-0.2398,0.2398,-0.2398,-0.2398,27.30169,20.45055)">
+        <path
+           d="M 19,-29.1 V 22.85 H -19.4 V -29.1 H 19"
+           fill="#727272"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path99" />
+        <path
+           d="m 11.25,-28.4 v 51.9 h 1.85 v -51.9 h -1.85 m -12,0 V 23.5 H 6.8 v -51.9 h -7.55"
+           fill="#ffffff"
+           fill-opacity="0.658824"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path100" />
+        <path
+           d="m -10.65,-28.4 v 51.9 h -8.75 v -51.9 h 8.75"
+           fill="#564f4f"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path101" />
+        <path
+           d="M 19,-29.1 V 22.85 H -19.4 V -29.1 Z"
+           ffdec:has-small-stroke="true"
+           ffdec:original-stroke-width="4.0"
+           fill="none"
+           stroke="#2e2d2d"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="8.42412"
+           id="path102" />
+        <path
+           d="M 24.8,-1.95 V 29.1 H -24.85 V -1.95 H 24.8"
+           fill="#fc65af"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path103" />
+        <path
+           d="m 16.6,-2.35 v 31.1 H 19 v -31.1 h -2.4 m -15.55,0 v 31.1 H 10.8 V -2.35 H 1.05"
+           fill="#ffffff"
+           fill-opacity="0.658824"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path104" />
+        <path
+           d="m -13.55,-2.35 v 31.1 h -11.3 v -31.1 h 11.3"
+           fill="#b13d78"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path105" />
+        <path
+           d="M 24.8,-1.95 V 29.1 H -24.85 V -1.95 Z"
+           ffdec:has-small-stroke="true"
+           ffdec:original-stroke-width="4.0"
+           fill="none"
+           stroke="#560b30"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="8.42412"
+           id="path106" />
+      </g>
+      <g
+         id="use92"
+         transform="matrix(0.2398,0.2398,0.2398,-0.2398,-28.85129,20.10005)">
+        <path
+           d="M 19,-29.1 V 22.85 H -19.4 V -29.1 H 19"
+           fill="#727272"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path107" />
+        <path
+           d="m 11.25,-28.4 v 51.9 h 1.85 v -51.9 h -1.85 m -12,0 V 23.5 H 6.8 v -51.9 h -7.55"
+           fill="#ffffff"
+           fill-opacity="0.658824"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path108" />
+        <path
+           d="m -10.65,-28.4 v 51.9 h -8.75 v -51.9 h 8.75"
+           fill="#564f4f"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path109" />
+        <path
+           d="M 19,-29.1 V 22.85 H -19.4 V -29.1 Z"
+           ffdec:has-small-stroke="true"
+           ffdec:original-stroke-width="4.0"
+           fill="none"
+           stroke="#2e2d2d"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="8.42439"
+           id="path110" />
+        <path
+           d="M 24.8,-1.95 V 29.1 H -24.85 V -1.95 H 24.8"
+           fill="#fc65af"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path111" />
+        <path
+           d="m 16.6,-2.35 v 31.1 H 19 v -31.1 h -2.4 m -15.55,0 v 31.1 H 10.8 V -2.35 H 1.05"
+           fill="#ffffff"
+           fill-opacity="0.658824"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path112" />
+        <path
+           d="m -13.55,-2.35 v 31.1 h -11.3 v -31.1 h 11.3"
+           fill="#b13d78"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path113" />
+        <path
+           d="M 24.8,-1.95 V 29.1 H -24.85 V -1.95 Z"
+           ffdec:has-small-stroke="true"
+           ffdec:original-stroke-width="4.0"
+           fill="none"
+           stroke="#560b30"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="8.42439"
+           id="path114" />
+      </g>
+      <g
+         id="use93"
+         transform="matrix(0,0.3392,0.3392,0,-41.44918,-7.64928)">
+        <path
+           d="M 19,-29.1 V 22.85 H -19.4 V -29.1 H 19"
+           fill="#727272"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path115" />
+        <path
+           d="m 11.25,-28.4 v 51.9 h 1.85 v -51.9 h -1.85 m -12,0 V 23.5 H 6.8 v -51.9 h -7.55"
+           fill="#ffffff"
+           fill-opacity="0.658824"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path116" />
+        <path
+           d="m -10.65,-28.4 v 51.9 h -8.75 v -51.9 h 8.75"
+           fill="#564f4f"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path117" />
+        <path
+           d="M 19,-29.1 V 22.85 H -19.4 V -29.1 Z"
+           ffdec:has-small-stroke="true"
+           ffdec:original-stroke-width="4.0"
+           fill="none"
+           stroke="#2e2d2d"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="8.42409"
+           id="path118" />
+        <path
+           d="M 24.8,-1.95 V 29.1 H -24.85 V -1.95 H 24.8"
+           fill="#fc65af"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path119" />
+        <path
+           d="m 16.6,-2.35 v 31.1 H 19 v -31.1 h -2.4 m -15.55,0 v 31.1 H 10.8 V -2.35 H 1.05"
+           fill="#ffffff"
+           fill-opacity="0.658824"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path120" />
+        <path
+           d="m -13.55,-2.35 v 31.1 h -11.3 v -31.1 h 11.3"
+           fill="#b13d78"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path121" />
+        <path
+           d="M 24.8,-1.95 V 29.1 H -24.85 V -1.95 Z"
+           ffdec:has-small-stroke="true"
+           ffdec:original-stroke-width="4.0"
+           fill="none"
+           stroke="#560b30"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="8.42409"
+           id="path122" />
+      </g>
+      <g
+         id="use94"
+         transform="matrix(-0.2398,0.2398,0.2398,0.2398,-29.04965,-36.25179)">
+        <path
+           d="M 19,-29.1 V 22.85 H -19.4 V -29.1 H 19"
+           fill="#727272"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path123" />
+        <path
+           d="m 11.25,-28.4 v 51.9 h 1.85 v -51.9 h -1.85 m -12,0 V 23.5 H 6.8 v -51.9 h -7.55"
+           fill="#ffffff"
+           fill-opacity="0.658824"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path124" />
+        <path
+           d="m -10.65,-28.4 v 51.9 h -8.75 v -51.9 h 8.75"
+           fill="#564f4f"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path125" />
+        <path
+           d="M 19,-29.1 V 22.85 H -19.4 V -29.1 Z"
+           ffdec:has-small-stroke="true"
+           ffdec:original-stroke-width="4.0"
+           fill="none"
+           stroke="#2e2d2d"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="8.42412"
+           id="path126" />
+        <path
+           d="M 24.8,-1.95 V 29.1 H -24.85 V -1.95 H 24.8"
+           fill="#fc65af"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path127" />
+        <path
+           d="m 16.6,-2.35 v 31.1 H 19 v -31.1 h -2.4 m -15.55,0 v 31.1 H 10.8 V -2.35 H 1.05"
+           fill="#ffffff"
+           fill-opacity="0.658824"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path128" />
+        <path
+           d="m -13.55,-2.35 v 31.1 h -11.3 v -31.1 h 11.3"
+           fill="#b13d78"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path129" />
+        <path
+           d="M 24.8,-1.95 V 29.1 H -24.85 V -1.95 Z"
+           ffdec:has-small-stroke="true"
+           ffdec:original-stroke-width="4.0"
+           fill="none"
+           stroke="#560b30"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="8.42412"
+           id="path130" />
+      </g>
+      <g
+         id="use95"
+         transform="matrix(-0.3392,0,0,0.3392,-0.80072,-48.59918)">
+        <path
+           d="M 19,-29.1 V 22.85 H -19.4 V -29.1 H 19"
+           fill="#727272"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path131" />
+        <path
+           d="m 11.25,-28.4 v 51.9 h 1.85 v -51.9 h -1.85 m -12,0 V 23.5 H 6.8 v -51.9 h -7.55"
+           fill="#ffffff"
+           fill-opacity="0.658824"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path132" />
+        <path
+           d="m -10.65,-28.4 v 51.9 h -8.75 v -51.9 h 8.75"
+           fill="#564f4f"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path133" />
+        <path
+           d="M 19,-29.1 V 22.85 H -19.4 V -29.1 Z"
+           ffdec:has-small-stroke="true"
+           ffdec:original-stroke-width="4.0"
+           fill="none"
+           stroke="#2e2d2d"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="8.42409"
+           id="path134" />
+        <path
+           d="M 24.8,-1.95 V 29.1 H -24.85 V -1.95 H 24.8"
+           fill="#fc65af"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path135" />
+        <path
+           d="m 16.6,-2.35 v 31.1 H 19 v -31.1 h -2.4 m -15.55,0 v 31.1 H 10.8 V -2.35 H 1.05"
+           fill="#ffffff"
+           fill-opacity="0.658824"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path136" />
+        <path
+           d="m -13.55,-2.35 v 31.1 h -11.3 v -31.1 h 11.3"
+           fill="#b13d78"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path137" />
+        <path
+           d="M 24.8,-1.95 V 29.1 H -24.85 V -1.95 Z"
+           ffdec:has-small-stroke="true"
+           ffdec:original-stroke-width="4.0"
+           fill="none"
+           stroke="#560b30"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="8.42409"
+           id="path138" />
+      </g>
+      <g
+         id="use96"
+         transform="matrix(0.2398,0.2398,-0.2398,0.2398,27.64965,-36.25179)">
+        <path
+           d="M 19,-29.1 V 22.85 H -19.4 V -29.1 H 19"
+           fill="#727272"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path139" />
+        <path
+           d="m 11.25,-28.4 v 51.9 h 1.85 v -51.9 h -1.85 m -12,0 V 23.5 H 6.8 v -51.9 h -7.55"
+           fill="#ffffff"
+           fill-opacity="0.658824"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path140" />
+        <path
+           d="m -10.65,-28.4 v 51.9 h -8.75 v -51.9 h 8.75"
+           fill="#564f4f"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path141" />
+        <path
+           d="M 19,-29.1 V 22.85 H -19.4 V -29.1 Z"
+           ffdec:has-small-stroke="true"
+           ffdec:original-stroke-width="4.0"
+           fill="none"
+           stroke="#2e2d2d"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="8.42412"
+           id="path142" />
+        <path
+           d="M 24.8,-1.95 V 29.1 H -24.85 V -1.95 H 24.8"
+           fill="#fc65af"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path143" />
+        <path
+           d="m 16.6,-2.35 v 31.1 H 19 v -31.1 h -2.4 m -15.55,0 v 31.1 H 10.8 V -2.35 H 1.05"
+           fill="#ffffff"
+           fill-opacity="0.658824"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path144" />
+        <path
+           d="m -13.55,-2.35 v 31.1 h -11.3 v -31.1 h 11.3"
+           fill="#b13d78"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path145" />
+        <path
+           d="M 24.8,-1.95 V 29.1 H -24.85 V -1.95 Z"
+           ffdec:has-small-stroke="true"
+           ffdec:original-stroke-width="4.0"
+           fill="none"
+           stroke="#560b30"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="8.42412"
+           id="path146" />
+      </g>
+      <g
+         id="use97"
+         transform="matrix(0,0.3392,-0.3392,0,39.99918,-7.39928)">
+        <path
+           d="M 19,-29.1 V 22.85 H -19.4 V -29.1 H 19"
+           fill="#727272"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path147" />
+        <path
+           d="m 11.25,-28.4 v 51.9 h 1.85 v -51.9 h -1.85 m -12,0 V 23.5 H 6.8 v -51.9 h -7.55"
+           fill="#ffffff"
+           fill-opacity="0.658824"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path148" />
+        <path
+           d="m -10.65,-28.4 v 51.9 h -8.75 v -51.9 h 8.75"
+           fill="#564f4f"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path149" />
+        <path
+           d="M 19,-29.1 V 22.85 H -19.4 V -29.1 Z"
+           ffdec:has-small-stroke="true"
+           ffdec:original-stroke-width="4.0"
+           fill="none"
+           stroke="#2e2d2d"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="8.42409"
+           id="path150" />
+        <path
+           d="M 24.8,-1.95 V 29.1 H -24.85 V -1.95 H 24.8"
+           fill="#fc65af"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path151" />
+        <path
+           d="m 16.6,-2.35 v 31.1 H 19 v -31.1 h -2.4 m -15.55,0 v 31.1 H 10.8 V -2.35 H 1.05"
+           fill="#ffffff"
+           fill-opacity="0.658824"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path152" />
+        <path
+           d="m -13.55,-2.35 v 31.1 h -11.3 v -31.1 h 11.3"
+           fill="#b13d78"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path153" />
+        <path
+           d="M 24.8,-1.95 V 29.1 H -24.85 V -1.95 Z"
+           ffdec:has-small-stroke="true"
+           ffdec:original-stroke-width="4.0"
+           fill="none"
+           stroke="#560b30"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="8.42409"
+           id="path154" />
+      </g>
+      <g
+         id="use98"
+         transform="matrix(-0.3392,0,0,-0.3392,-0.80072,32.69918)">
+        <path
+           d="M 19,-29.1 V 22.85 H -19.4 V -29.1 H 19"
+           fill="#727272"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path155" />
+        <path
+           d="m 11.25,-28.4 v 51.9 h 1.85 v -51.9 h -1.85 m -12,0 V 23.5 H 6.8 v -51.9 h -7.55"
+           fill="#ffffff"
+           fill-opacity="0.658824"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path156" />
+        <path
+           d="m -10.65,-28.4 v 51.9 h -8.75 v -51.9 h 8.75"
+           fill="#564f4f"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path157" />
+        <path
+           d="M 19,-29.1 V 22.85 H -19.4 V -29.1 Z"
+           ffdec:has-small-stroke="true"
+           ffdec:original-stroke-width="4.0"
+           fill="none"
+           stroke="#2e2d2d"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="8.42409"
+           id="path158" />
+        <path
+           d="M 24.8,-1.95 V 29.1 H -24.85 V -1.95 H 24.8"
+           fill="#fc65af"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path159" />
+        <path
+           d="m 16.6,-2.35 v 31.1 H 19 v -31.1 h -2.4 m -15.55,0 v 31.1 H 10.8 V -2.35 H 1.05"
+           fill="#ffffff"
+           fill-opacity="0.658824"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path160" />
+        <path
+           d="m -13.55,-2.35 v 31.1 h -11.3 v -31.1 h 11.3"
+           fill="#b13d78"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path161" />
+        <path
+           d="M 24.8,-1.95 V 29.1 H -24.85 V -1.95 Z"
+           ffdec:has-small-stroke="true"
+           ffdec:original-stroke-width="4.0"
+           fill="none"
+           stroke="#560b30"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="8.42409"
+           id="path162" />
+      </g>
+      <g
+         id="use99">
+        <path
+           d="m 34.8,-7.65 q 0,15 -10.6,25.6 Q 13.6,28.5 -1.35,28.5 -16.3,28.5 -26.9,17.95 -37.5,7.35 -37.5,-7.65 q 0,-14.95 10.6,-25.5 10.6,-10.6 25.55,-10.6 14.95,0 25.55,10.6 10.6,10.55 10.6,25.5"
+           fill="#727272"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path163" />
+        <path
+           d="m 35.35,-7.75 q 0,14.95 -10.55,25.5 -10.6,10.6 -25.55,10.6 L -2.1,28.3 -1.9,28.4 Q -9.8,25.75 -16.1,19.05 -26.7,7.95 -26.7,-7.8 q 0,-15.7 10.6,-26.85 6.2,-6.5 13.9,-9.2 l 1.45,-0.05 q 14.95,0 25.55,10.6 10.55,10.55 10.55,25.55"
+           fill="#564f4f"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path164" />
+        <path
+           d="m 34.8,-7.65 q 0,15 -10.6,25.6 Q 13.6,28.5 -1.35,28.5 -16.3,28.5 -26.9,17.95 -37.5,7.35 -37.5,-7.65 q 0,-14.95 10.6,-25.5 10.6,-10.6 25.55,-10.6 14.95,0 25.55,10.6 10.6,10.55 10.6,25.5 z"
+           fill="none"
+           stroke="#2e2d2d"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="6"
+           id="path165" />
+        <path
+           d="m -22.6,14.15 q -8.9,-8.9 -8.9,-21.55 0,-12.6 8.9,-21.55 8.95,-8.9 21.55,-8.9 12.65,0 21.55,8.9 8.9,8.95 8.9,21.55 0,12.65 -8.9,21.55 -8.9,8.9 -21.55,8.9 -12.6,0 -21.55,-8.9"
+           fill="#fc65af"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path166" />
+        <path
+           d="M -6,22.65 Q 3.55,21.25 10.7,14.1 19.6,5.2 19.6,-7.45 19.6,-20.05 10.7,-29 3.55,-36.1 -6,-37.55 l 4.9,-0.35 q 12.65,0 21.55,8.9 8.9,8.95 8.9,21.55 0,12.65 -8.9,21.55 Q 11.55,23 -1.1,23 L -6,22.65"
+           fill="#b13d78"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path167" />
+        <path
+           d="m -17.25,16.55 1.25,1.35 -4.55,-3.8 q -8.9,-8.9 -8.9,-21.55 0,-12.6 8.9,-21.55 2.15,-2.1 4.5,-3.75 l -1.2,1.3 q -8.9,9.95 -8.9,24 0,14.05 8.9,24"
+           fill="#ffa8d2"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path168" />
+        <path
+           d="m 29.95,-7.7 q 0,12.8 -9,21.85 -9.1,9.05 -21.85,9.05 -12.8,0 -21.85,-9.05 -9.05,-9.05 -9.05,-21.85 0,-12.8 9.05,-21.85 9.05,-9.05 21.85,-9.05 12.75,0 21.85,9.05 9,9.05 9,21.85 z"
+           fill="none"
+           stroke="#560b30"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="6"
+           id="path169" />
+        <path
+           d="m 15.05,-5 q 1.15,0.3 1.7,0.85 0.95,0.95 0,3.3 Q 15.8,1.4 13.5,3.65 11.25,5.95 9,6.9 6.65,7.85 5.7,6.9 5.15,6.35 4.8,5.25 4.4,3.9 4.9,2.85 5.75,0.6 8.05,-1.75 q 2.35,-2.3 4.6,-3.15 l 2.4,-0.1"
+           fill="#000000"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path170" />
+        <path
+           d="m 7.7,1.2 q -21.65,-23.6 -20.75,-24.45 0.85,-0.9 24,21.15 L 7.7,1.2"
+           fill="#000000"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path171" />
+        <path
+           d="m -16.95,-5 q -1.15,0.3 -1.7,0.85 -0.95,0.95 0,3.3 0.95,2.25 3.25,4.5 2.25,2.3 4.5,3.25 2.35,0.95 3.3,0 0.55,-0.55 0.9,-1.65 0.4,-1.35 -0.1,-2.4 -0.85,-2.25 -3.15,-4.6 -2.35,-2.3 -4.6,-3.15 l -2.4,-0.1"
+           fill="#000000"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path172" />
+        <path
+           d="m -9.55,1.2 q 21.65,-23.6 20.75,-24.45 -0.85,-0.9 -24,21.15 l 3.25,3.3"
+           fill="#000000"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path173" />
+      </g>
+    </g>
+    <filter
+       id="filter1"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feColorMatrix
+         in="SourceGraphic"
+         result="filterResult4"
+         type="matrix"
+         values="0 0 0 0 0.2,0 0 0 0 0.2,0 0 0 0 0.2,0 0 0 1 0"
+         id="feColorMatrix3" />
+      <feConvolveMatrix
+         divisor="9.0"
+         in="filterResult4"
+         kernelMatrix="1 1 1 1 1 1 1 1 1"
+         order="3 3"
+         result="filterResult5"
+         id="feConvolveMatrix3" />
+      <feConvolveMatrix
+         divisor="9.0"
+         in="filterResult5"
+         kernelMatrix="1 1 1 1 1 1 1 1 1"
+         order="3 3"
+         result="filterResult6"
+         id="feConvolveMatrix4" />
+      <feConvolveMatrix
+         divisor="9.0"
+         in="filterResult6"
+         kernelMatrix="1 1 1 1 1 1 1 1 1"
+         order="3 3"
+         result="filterResult7"
+         id="feConvolveMatrix5" />
+      <feComposite
+         in="SourceGraphic"
+         in2="filterResult7"
+         operator="over"
+         result="filterResult8"
+         id="feComposite5" />
+    </filter>
+  </g>
+  <defs
+     id="defs89">
+    <g
+       id="shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 1.25, 1.05)">
+      <path
+         d="M42.55 43.05 L1.45 44.5 -0.25 0.0 46.45 3.0 42.55 43.05"
+         fill="#ffffff"
+         fill-opacity="0.49803922"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path5" />
+      <path
+         d="M42.55 43.05 L1.45 44.5 -0.25 0.0 46.45 3.0 42.55 43.05 Z"
+         fill="none"
+         stroke="#000000"
+         stroke-linecap="butt"
+         stroke-linejoin="miter-clip"
+         stroke-miterlimit="3.0"
+         stroke-opacity="0.49803922"
+         stroke-width="2.0"
+         id="path6" />
+    </g>
+    <g
+       id="sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 52.0, 59.15)">
+      <use
+         ffdec:characterId="5125"
+         height="62.2"
+         transform="matrix(-0.2398, 0.2398, -0.2398, -0.2398, 41.1981, 21.4697)"
+         width="53.65"
+         xlink:href="#shape1"
+         id="use6" />
+      <use
+         ffdec:characterId="5125"
+         height="62.2"
+         transform="matrix(0.2398, 0.2398, 0.2398, -0.2398, -42.7477, 21.1192)"
+         width="53.65"
+         xlink:href="#shape2"
+         id="use7" />
+      <use
+         ffdec:characterId="5125"
+         height="62.2"
+         transform="matrix(0.0, 0.3392, 0.3392, 0.0, -51.9983, -16.7568)"
+         width="53.65"
+         xlink:href="#shape3"
+         id="use8" />
+      <use
+         ffdec:characterId="5125"
+         height="62.2"
+         transform="matrix(-0.2398, 0.2398, 0.2398, 0.2398, -30.0688, -50.1482)"
+         width="53.65"
+         xlink:href="#shape4"
+         id="use9" />
+      <use
+         ffdec:characterId="5125"
+         height="62.2"
+         transform="matrix(-0.3392, 0.0, 0.0, 0.3392, 8.3068, -59.1483)"
+         width="53.65"
+         xlink:href="#shape5"
+         id="use10" />
+      <use
+         ffdec:characterId="5125"
+         height="62.2"
+         transform="matrix(0.2398, 0.2398, -0.2398, 0.2398, 28.6688, -50.1482)"
+         width="53.65"
+         xlink:href="#shape6"
+         id="use11" />
+      <use
+         ffdec:characterId="5125"
+         height="62.2"
+         transform="matrix(0.0, 0.3392, -0.3392, 0.0, 50.5483, -16.5068)"
+         width="53.65"
+         xlink:href="#shape7"
+         id="use12" />
+      <use
+         ffdec:characterId="5125"
+         height="62.2"
+         transform="matrix(-0.3392, 0.0, 0.0, -0.3392, 8.3068, 43.2483)"
+         width="53.65"
+         xlink:href="#shape8"
+         id="use13" />
+      <use
+         ffdec:characterId="5126"
+         height="78.25"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -40.5, -46.75)"
+         width="78.3"
+         xlink:href="#shape9"
+         id="use14" />
+    </g>
+    <g
+       id="shape1"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 26.85, 31.1)">
+      <path
+         d="M19.0 -29.1 L19.0 22.85 -19.4 22.85 -19.4 -29.1 19.0 -29.1"
+         fill="#727272"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path14" />
+      <path
+         d="M11.25 -28.4 L11.25 23.5 13.1 23.5 13.1 -28.4 11.25 -28.4 M-0.75 -28.4 L-0.75 23.5 6.8 23.5 6.8 -28.4 -0.75 -28.4"
+         fill="#ffffff"
+         fill-opacity="0.65882355"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path15" />
+      <path
+         d="M-10.65 -28.4 L-10.65 23.5 -19.4 23.5 -19.4 -28.4 -10.65 -28.4"
+         fill="#564f4f"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path16" />
+      <path
+         d="M19.0 -29.1 L19.0 22.85 -19.4 22.85 -19.4 -29.1 19.0 -29.1 Z"
+         ffdec:has-small-stroke="true"
+         ffdec:original-stroke-width="4.0"
+         fill="none"
+         stroke="#2e2d2d"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="8.424124556914329"
+         id="path17" />
+      <path
+         d="M24.8 -1.95 L24.8 29.1 -24.85 29.1 -24.85 -1.95 24.8 -1.95"
+         fill="#fc65af"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path18" />
+      <path
+         d="M16.6 -2.35 L16.6 28.75 19.0 28.75 19.0 -2.35 16.6 -2.35 M1.05 -2.35 L1.05 28.75 10.8 28.75 10.8 -2.35 1.05 -2.35"
+         fill="#ffffff"
+         fill-opacity="0.65882355"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path19" />
+      <path
+         d="M-13.55 -2.35 L-13.55 28.75 -24.85 28.75 -24.85 -2.35 -13.55 -2.35"
+         fill="#b13d78"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20" />
+      <path
+         d="M24.8 -1.95 L24.8 29.1 -24.85 29.1 -24.85 -1.95 24.8 -1.95 Z"
+         ffdec:has-small-stroke="true"
+         ffdec:original-stroke-width="4.0"
+         fill="none"
+         stroke="#560b30"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="8.424124556914329"
+         id="path21" />
+    </g>
+    <g
+       id="shape2"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 26.85, 31.1)">
+      <path
+         d="M19.0 -29.1 L19.0 22.85 -19.4 22.85 -19.4 -29.1 19.0 -29.1"
+         fill="#727272"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path22" />
+      <path
+         d="M11.25 -28.4 L11.25 23.5 13.1 23.5 13.1 -28.4 11.25 -28.4 M-0.75 -28.4 L-0.75 23.5 6.8 23.5 6.8 -28.4 -0.75 -28.4"
+         fill="#ffffff"
+         fill-opacity="0.65882355"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path23" />
+      <path
+         d="M-10.65 -28.4 L-10.65 23.5 -19.4 23.5 -19.4 -28.4 -10.65 -28.4"
+         fill="#564f4f"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path24" />
+      <path
+         d="M19.0 -29.1 L19.0 22.85 -19.4 22.85 -19.4 -29.1 19.0 -29.1 Z"
+         ffdec:has-small-stroke="true"
+         ffdec:original-stroke-width="4.0"
+         fill="none"
+         stroke="#2e2d2d"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="8.424392555213931"
+         id="path25" />
+      <path
+         d="M24.8 -1.95 L24.8 29.1 -24.85 29.1 -24.85 -1.95 24.8 -1.95"
+         fill="#fc65af"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path26" />
+      <path
+         d="M16.6 -2.35 L16.6 28.75 19.0 28.75 19.0 -2.35 16.6 -2.35 M1.05 -2.35 L1.05 28.75 10.8 28.75 10.8 -2.35 1.05 -2.35"
+         fill="#ffffff"
+         fill-opacity="0.65882355"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path27" />
+      <path
+         d="M-13.55 -2.35 L-13.55 28.75 -24.85 28.75 -24.85 -2.35 -13.55 -2.35"
+         fill="#b13d78"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path28" />
+      <path
+         d="M24.8 -1.95 L24.8 29.1 -24.85 29.1 -24.85 -1.95 24.8 -1.95 Z"
+         ffdec:has-small-stroke="true"
+         ffdec:original-stroke-width="4.0"
+         fill="none"
+         stroke="#560b30"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="8.424392555213931"
+         id="path29" />
+    </g>
+    <g
+       id="shape3"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 26.85, 31.1)">
+      <path
+         d="M19.0 -29.1 L19.0 22.85 -19.4 22.85 -19.4 -29.1 19.0 -29.1"
+         fill="#727272"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path30" />
+      <path
+         d="M11.25 -28.4 L11.25 23.5 13.1 23.5 13.1 -28.4 11.25 -28.4 M-0.75 -28.4 L-0.75 23.5 6.8 23.5 6.8 -28.4 -0.75 -28.4"
+         fill="#ffffff"
+         fill-opacity="0.65882355"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path31" />
+      <path
+         d="M-10.65 -28.4 L-10.65 23.5 -19.4 23.5 -19.4 -28.4 -10.65 -28.4"
+         fill="#564f4f"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path32" />
+      <path
+         d="M19.0 -29.1 L19.0 22.85 -19.4 22.85 -19.4 -29.1 19.0 -29.1 Z"
+         ffdec:has-small-stroke="true"
+         ffdec:original-stroke-width="4.0"
+         fill="none"
+         stroke="#2e2d2d"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="8.424087294089516"
+         id="path33" />
+      <path
+         d="M24.8 -1.95 L24.8 29.1 -24.85 29.1 -24.85 -1.95 24.8 -1.95"
+         fill="#fc65af"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path34" />
+      <path
+         d="M16.6 -2.35 L16.6 28.75 19.0 28.75 19.0 -2.35 16.6 -2.35 M1.05 -2.35 L1.05 28.75 10.8 28.75 10.8 -2.35 1.05 -2.35"
+         fill="#ffffff"
+         fill-opacity="0.65882355"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path35" />
+      <path
+         d="M-13.55 -2.35 L-13.55 28.75 -24.85 28.75 -24.85 -2.35 -13.55 -2.35"
+         fill="#b13d78"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path36" />
+      <path
+         d="M24.8 -1.95 L24.8 29.1 -24.85 29.1 -24.85 -1.95 24.8 -1.95 Z"
+         ffdec:has-small-stroke="true"
+         ffdec:original-stroke-width="4.0"
+         fill="none"
+         stroke="#560b30"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="8.424087294089516"
+         id="path37" />
+    </g>
+    <g
+       id="shape4"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 26.85, 31.1)">
+      <path
+         d="M19.0 -29.1 L19.0 22.85 -19.4 22.85 -19.4 -29.1 19.0 -29.1"
+         fill="#727272"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path38" />
+      <path
+         d="M11.25 -28.4 L11.25 23.5 13.1 23.5 13.1 -28.4 11.25 -28.4 M-0.75 -28.4 L-0.75 23.5 6.8 23.5 6.8 -28.4 -0.75 -28.4"
+         fill="#ffffff"
+         fill-opacity="0.65882355"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path39" />
+      <path
+         d="M-10.65 -28.4 L-10.65 23.5 -19.4 23.5 -19.4 -28.4 -10.65 -28.4"
+         fill="#564f4f"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path40" />
+      <path
+         d="M19.0 -29.1 L19.0 22.85 -19.4 22.85 -19.4 -29.1 19.0 -29.1 Z"
+         ffdec:has-small-stroke="true"
+         ffdec:original-stroke-width="4.0"
+         fill="none"
+         stroke="#2e2d2d"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="8.424124556914329"
+         id="path41" />
+      <path
+         d="M24.8 -1.95 L24.8 29.1 -24.85 29.1 -24.85 -1.95 24.8 -1.95"
+         fill="#fc65af"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path42" />
+      <path
+         d="M16.6 -2.35 L16.6 28.75 19.0 28.75 19.0 -2.35 16.6 -2.35 M1.05 -2.35 L1.05 28.75 10.8 28.75 10.8 -2.35 1.05 -2.35"
+         fill="#ffffff"
+         fill-opacity="0.65882355"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path43" />
+      <path
+         d="M-13.55 -2.35 L-13.55 28.75 -24.85 28.75 -24.85 -2.35 -13.55 -2.35"
+         fill="#b13d78"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path44" />
+      <path
+         d="M24.8 -1.95 L24.8 29.1 -24.85 29.1 -24.85 -1.95 24.8 -1.95 Z"
+         ffdec:has-small-stroke="true"
+         ffdec:original-stroke-width="4.0"
+         fill="none"
+         stroke="#560b30"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="8.424124556914329"
+         id="path45" />
+    </g>
+    <g
+       id="shape5"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 26.85, 31.1)">
+      <path
+         d="M19.0 -29.1 L19.0 22.85 -19.4 22.85 -19.4 -29.1 19.0 -29.1"
+         fill="#727272"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path46" />
+      <path
+         d="M11.25 -28.4 L11.25 23.5 13.1 23.5 13.1 -28.4 11.25 -28.4 M-0.75 -28.4 L-0.75 23.5 6.8 23.5 6.8 -28.4 -0.75 -28.4"
+         fill="#ffffff"
+         fill-opacity="0.65882355"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path47" />
+      <path
+         d="M-10.65 -28.4 L-10.65 23.5 -19.4 23.5 -19.4 -28.4 -10.65 -28.4"
+         fill="#564f4f"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path48" />
+      <path
+         d="M19.0 -29.1 L19.0 22.85 -19.4 22.85 -19.4 -29.1 19.0 -29.1 Z"
+         ffdec:has-small-stroke="true"
+         ffdec:original-stroke-width="4.0"
+         fill="none"
+         stroke="#2e2d2d"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="8.424087294089516"
+         id="path49" />
+      <path
+         d="M24.8 -1.95 L24.8 29.1 -24.85 29.1 -24.85 -1.95 24.8 -1.95"
+         fill="#fc65af"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path50" />
+      <path
+         d="M16.6 -2.35 L16.6 28.75 19.0 28.75 19.0 -2.35 16.6 -2.35 M1.05 -2.35 L1.05 28.75 10.8 28.75 10.8 -2.35 1.05 -2.35"
+         fill="#ffffff"
+         fill-opacity="0.65882355"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path51" />
+      <path
+         d="M-13.55 -2.35 L-13.55 28.75 -24.85 28.75 -24.85 -2.35 -13.55 -2.35"
+         fill="#b13d78"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path52" />
+      <path
+         d="M24.8 -1.95 L24.8 29.1 -24.85 29.1 -24.85 -1.95 24.8 -1.95 Z"
+         ffdec:has-small-stroke="true"
+         ffdec:original-stroke-width="4.0"
+         fill="none"
+         stroke="#560b30"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="8.424087294089516"
+         id="path53" />
+    </g>
+    <g
+       id="shape6"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 26.85, 31.1)">
+      <path
+         d="M19.0 -29.1 L19.0 22.85 -19.4 22.85 -19.4 -29.1 19.0 -29.1"
+         fill="#727272"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path54" />
+      <path
+         d="M11.25 -28.4 L11.25 23.5 13.1 23.5 13.1 -28.4 11.25 -28.4 M-0.75 -28.4 L-0.75 23.5 6.8 23.5 6.8 -28.4 -0.75 -28.4"
+         fill="#ffffff"
+         fill-opacity="0.65882355"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path55" />
+      <path
+         d="M-10.65 -28.4 L-10.65 23.5 -19.4 23.5 -19.4 -28.4 -10.65 -28.4"
+         fill="#564f4f"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path56" />
+      <path
+         d="M19.0 -29.1 L19.0 22.85 -19.4 22.85 -19.4 -29.1 19.0 -29.1 Z"
+         ffdec:has-small-stroke="true"
+         ffdec:original-stroke-width="4.0"
+         fill="none"
+         stroke="#2e2d2d"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="8.424124556914329"
+         id="path57" />
+      <path
+         d="M24.8 -1.95 L24.8 29.1 -24.85 29.1 -24.85 -1.95 24.8 -1.95"
+         fill="#fc65af"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path58" />
+      <path
+         d="M16.6 -2.35 L16.6 28.75 19.0 28.75 19.0 -2.35 16.6 -2.35 M1.05 -2.35 L1.05 28.75 10.8 28.75 10.8 -2.35 1.05 -2.35"
+         fill="#ffffff"
+         fill-opacity="0.65882355"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path59" />
+      <path
+         d="M-13.55 -2.35 L-13.55 28.75 -24.85 28.75 -24.85 -2.35 -13.55 -2.35"
+         fill="#b13d78"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path60" />
+      <path
+         d="M24.8 -1.95 L24.8 29.1 -24.85 29.1 -24.85 -1.95 24.8 -1.95 Z"
+         ffdec:has-small-stroke="true"
+         ffdec:original-stroke-width="4.0"
+         fill="none"
+         stroke="#560b30"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="8.424124556914329"
+         id="path61" />
+    </g>
+    <g
+       id="shape7"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 26.85, 31.1)">
+      <path
+         d="M19.0 -29.1 L19.0 22.85 -19.4 22.85 -19.4 -29.1 19.0 -29.1"
+         fill="#727272"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path62" />
+      <path
+         d="M11.25 -28.4 L11.25 23.5 13.1 23.5 13.1 -28.4 11.25 -28.4 M-0.75 -28.4 L-0.75 23.5 6.8 23.5 6.8 -28.4 -0.75 -28.4"
+         fill="#ffffff"
+         fill-opacity="0.65882355"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path63" />
+      <path
+         d="M-10.65 -28.4 L-10.65 23.5 -19.4 23.5 -19.4 -28.4 -10.65 -28.4"
+         fill="#564f4f"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path64" />
+      <path
+         d="M19.0 -29.1 L19.0 22.85 -19.4 22.85 -19.4 -29.1 19.0 -29.1 Z"
+         ffdec:has-small-stroke="true"
+         ffdec:original-stroke-width="4.0"
+         fill="none"
+         stroke="#2e2d2d"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="8.424087294089516"
+         id="path65" />
+      <path
+         d="M24.8 -1.95 L24.8 29.1 -24.85 29.1 -24.85 -1.95 24.8 -1.95"
+         fill="#fc65af"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path66" />
+      <path
+         d="M16.6 -2.35 L16.6 28.75 19.0 28.75 19.0 -2.35 16.6 -2.35 M1.05 -2.35 L1.05 28.75 10.8 28.75 10.8 -2.35 1.05 -2.35"
+         fill="#ffffff"
+         fill-opacity="0.65882355"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path67" />
+      <path
+         d="M-13.55 -2.35 L-13.55 28.75 -24.85 28.75 -24.85 -2.35 -13.55 -2.35"
+         fill="#b13d78"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path68" />
+      <path
+         d="M24.8 -1.95 L24.8 29.1 -24.85 29.1 -24.85 -1.95 24.8 -1.95 Z"
+         ffdec:has-small-stroke="true"
+         ffdec:original-stroke-width="4.0"
+         fill="none"
+         stroke="#560b30"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="8.424087294089516"
+         id="path69" />
+    </g>
+    <g
+       id="shape8"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 26.85, 31.1)">
+      <path
+         d="M19.0 -29.1 L19.0 22.85 -19.4 22.85 -19.4 -29.1 19.0 -29.1"
+         fill="#727272"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path70" />
+      <path
+         d="M11.25 -28.4 L11.25 23.5 13.1 23.5 13.1 -28.4 11.25 -28.4 M-0.75 -28.4 L-0.75 23.5 6.8 23.5 6.8 -28.4 -0.75 -28.4"
+         fill="#ffffff"
+         fill-opacity="0.65882355"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path71" />
+      <path
+         d="M-10.65 -28.4 L-10.65 23.5 -19.4 23.5 -19.4 -28.4 -10.65 -28.4"
+         fill="#564f4f"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path72" />
+      <path
+         d="M19.0 -29.1 L19.0 22.85 -19.4 22.85 -19.4 -29.1 19.0 -29.1 Z"
+         ffdec:has-small-stroke="true"
+         ffdec:original-stroke-width="4.0"
+         fill="none"
+         stroke="#2e2d2d"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="8.424087294089516"
+         id="path73" />
+      <path
+         d="M24.8 -1.95 L24.8 29.1 -24.85 29.1 -24.85 -1.95 24.8 -1.95"
+         fill="#fc65af"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path74" />
+      <path
+         d="M16.6 -2.35 L16.6 28.75 19.0 28.75 19.0 -2.35 16.6 -2.35 M1.05 -2.35 L1.05 28.75 10.8 28.75 10.8 -2.35 1.05 -2.35"
+         fill="#ffffff"
+         fill-opacity="0.65882355"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path75" />
+      <path
+         d="M-13.55 -2.35 L-13.55 28.75 -24.85 28.75 -24.85 -2.35 -13.55 -2.35"
+         fill="#b13d78"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path76" />
+      <path
+         d="M24.8 -1.95 L24.8 29.1 -24.85 29.1 -24.85 -1.95 24.8 -1.95 Z"
+         ffdec:has-small-stroke="true"
+         ffdec:original-stroke-width="4.0"
+         fill="none"
+         stroke="#560b30"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="8.424087294089516"
+         id="path77" />
+    </g>
+    <g
+       id="shape9"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 40.5, 46.75)">
+      <path
+         d="M34.8 -7.65 Q34.8 7.35 24.2 17.95 13.6 28.5 -1.35 28.5 -16.3 28.5 -26.9 17.95 -37.5 7.35 -37.5 -7.65 -37.5 -22.6 -26.9 -33.15 -16.3 -43.75 -1.35 -43.75 13.6 -43.75 24.2 -33.15 34.8 -22.6 34.8 -7.65"
+         fill="#727272"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path78" />
+      <path
+         d="M35.35 -7.75 Q35.35 7.2 24.8 17.75 14.2 28.35 -0.75 28.35 L-2.1 28.3 -1.9 28.4 Q-9.8 25.75 -16.1 19.05 -26.7 7.95 -26.7 -7.8 -26.7 -23.5 -16.1 -34.65 -9.9 -41.15 -2.2 -43.85 L-0.75 -43.9 Q14.2 -43.9 24.8 -33.3 35.35 -22.75 35.35 -7.75"
+         fill="#564f4f"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path79" />
+      <path
+         d="M34.8 -7.65 Q34.8 7.35 24.2 17.95 13.6 28.5 -1.35 28.5 -16.3 28.5 -26.9 17.95 -37.5 7.35 -37.5 -7.65 -37.5 -22.6 -26.9 -33.15 -16.3 -43.75 -1.35 -43.75 13.6 -43.75 24.2 -33.15 34.8 -22.6 34.8 -7.65 Z"
+         fill="none"
+         stroke="#2e2d2d"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="6.0"
+         id="path80" />
+      <path
+         d="M-22.6 14.15 Q-31.5 5.25 -31.5 -7.4 -31.5 -20.0 -22.6 -28.95 -13.65 -37.85 -1.05 -37.85 11.6 -37.85 20.5 -28.95 29.4 -20.0 29.4 -7.4 29.4 5.25 20.5 14.15 11.6 23.05 -1.05 23.05 -13.65 23.05 -22.6 14.15"
+         fill="#fc65af"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path81" />
+      <path
+         d="M-6.0 22.65 Q3.55 21.25 10.7 14.1 19.6 5.2 19.6 -7.45 19.6 -20.05 10.7 -29.0 3.55 -36.1 -6.0 -37.55 L-1.1 -37.9 Q11.55 -37.9 20.45 -29.0 29.35 -20.05 29.35 -7.45 29.35 5.2 20.45 14.1 11.55 23.0 -1.1 23.0 L-6.0 22.65"
+         fill="#b13d78"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path82" />
+      <path
+         d="M-17.25 16.55 L-16.0 17.9 -20.55 14.1 Q-29.45 5.2 -29.45 -7.45 -29.45 -20.05 -20.55 -29.0 -18.4 -31.1 -16.05 -32.75 L-17.25 -31.45 Q-26.15 -21.5 -26.15 -7.45 -26.15 6.6 -17.25 16.55"
+         fill="#ffa8d2"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path83" />
+      <path
+         d="M29.95 -7.7 Q29.95 5.1 20.95 14.15 11.85 23.2 -0.9 23.2 -13.7 23.2 -22.75 14.15 -31.8 5.1 -31.8 -7.7 -31.8 -20.5 -22.75 -29.55 -13.7 -38.6 -0.9 -38.6 11.85 -38.6 20.95 -29.55 29.95 -20.5 29.95 -7.7 Z"
+         fill="none"
+         stroke="#560b30"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="6.0"
+         id="path84" />
+      <path
+         d="M15.05 -5.0 Q16.2 -4.7 16.75 -4.15 17.7 -3.2 16.75 -0.85 15.8 1.4 13.5 3.65 11.25 5.95 9.0 6.9 6.65 7.85 5.7 6.9 5.15 6.35 4.8 5.25 4.4 3.9 4.9 2.85 5.75 0.6 8.05 -1.75 10.4 -4.05 12.65 -4.9 L15.05 -5.0"
+         fill="#000000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path85" />
+      <path
+         d="M7.7 1.2 Q-13.95 -22.4 -13.05 -23.25 -12.2 -24.15 10.95 -2.1 L7.7 1.2"
+         fill="#000000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path86" />
+      <path
+         d="M-16.95 -5.0 Q-18.1 -4.7 -18.65 -4.15 -19.6 -3.2 -18.65 -0.85 -17.7 1.4 -15.4 3.65 -13.15 5.95 -10.9 6.9 -8.55 7.85 -7.6 6.9 -7.05 6.35 -6.7 5.25 -6.3 3.9 -6.8 2.85 -7.65 0.6 -9.95 -1.75 -12.3 -4.05 -14.55 -4.9 L-16.95 -5.0"
+         fill="#000000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path87" />
+      <path
+         d="M-9.55 1.2 Q12.1 -22.4 11.2 -23.25 10.35 -24.15 -12.8 -2.1 L-9.55 1.2"
+         fill="#000000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path88" />
+    </g>
+    <g
+       id="sprite1"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use
+         ffdec:characterId="5057"
+         height="31.1"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)"
+         width="19.35"
+         xlink:href="#shape10"
+         id="use88" />
+    </g>
+    <g
+       id="shape10"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <path
+         d="M7.1 23.35 L9.65 22.45 10.2 22.45 Q10.9 22.65 11.2 22.95 L12.15 23.8 12.7 24.5 12.7 29.6 Q12.7 30.15 12.1 30.45 10.75 31.1 8.05 31.1 7.15 31.1 6.05 29.7 5.0 28.4 5.0 27.35 5.0 26.1 5.3 25.3 5.75 24.05 7.1 23.35 M10.65 10.2 Q10.95 6.7 11.7 5.1 L11.2 5.1 9.3 6.2 6.65 7.95 Q3.15 10.3 2.25 10.3 1.3 10.3 0.6 8.8 0.0 7.5 0.0 6.4 L0.0 6.15 Q0.15 5.45 0.45 5.1 L2.95 1.95 Q4.85 0.0 6.45 0.0 L7.6 0.0 9.45 0.1 12.2 0.25 16.8 0.5 Q17.8 1.2 18.6 2.75 19.35 4.3 19.35 5.6 L19.35 6.15 18.6 9.2 17.8 12.3 Q17.55 13.45 15.95 14.0 L13.25 14.8 12.45 15.1 11.95 15.35 11.95 18.9 11.5 19.1 9.8 19.6 6.6 20.45 5.55 20.5 5.55 15.8 10.65 10.2"
+         fill="#cccccc"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path89" />
+    </g>
+  </defs>
+</svg>

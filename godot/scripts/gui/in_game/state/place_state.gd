@@ -26,7 +26,7 @@ func _initialize_preview() -> void:
 	preview_sprite.texture = load(tower_def["sprite_path"])
 	preview_sprite.offset = tower_def["position_offset"]
 	preview_sprite.z_index = 10
-	preview_sprite.rotate(deg_to_rad(-90.0))
+	preview_sprite.rotate(deg_to_rad(tower_def["rotation_offset"]))
 	
 	glow = ShaderMaterial.new()
 	glow.shader = load("res://shaders/glow.gdshader")

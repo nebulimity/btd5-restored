@@ -15,7 +15,8 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 			"occupied_space_radius": small,
 			"position_offset": Vector2(-2.335, 3.335),
 			"weapon_offset": Vector2(6, 9),
-			"sprite_path": "res://assets/sprites/towers/dart_monkey/1.svg",
+			"rotation_offset": -90.0,
+			"sprite_path": "res://assets/sprites/towers/dart_monkey/11.svg",
 			"can_place_on_water": false,
 			"can_place_on_track": false
 		},
@@ -25,7 +26,9 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 			"cost": 280,
 			"range": 65,
 			"occupied_space_radius": small,
-			"sprite_path": "res://assets/sprites/towers/tack_shooter/1.svg",
+			"position_offset": Vector2.ZERO,
+			"rotation_offset": 0.0,
+			"sprite_path": "res://assets/sprites/towers/tack_shooter/9.svg",
 			"can_place_on_water": false,
 			"can_place_on_track": false
 		},

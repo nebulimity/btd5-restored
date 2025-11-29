@@ -9,6 +9,8 @@ var current_round: int = 0
 var round_time: float = 0.0
 var active_spawners: Array = []  # {spawner_def, group_def, spawn_index}
 
+var level: Level = null
+
 signal rbe_changed(new_rbe: int)
 
 func _ready():

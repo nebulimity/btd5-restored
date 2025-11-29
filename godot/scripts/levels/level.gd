@@ -33,6 +33,9 @@ var placed_towers: Array[Tower] = []
 var selected_tower: Node2D
 var just_placed: bool
 
+var projectiles: Array[Projectile] = []
+var bloons: Array[Bloon] = []
+
 var terrain_node: Node2D
 var track_area: Area2D
 var land_area: Area2D
@@ -90,11 +93,18 @@ func start_round(round_number: int):
 func _on_bloon_spawned(node: Node):
 	if node is Bloon:
 		active_bloons += 1
-		node.bloon_removed.connect(_on_bloon_removed)
+		bloons.append(node)
+		node.bloon_removed.connect(_on_bloon_removed.bind(node))
+		node.bloon_popped.connect(_on_bloon_popped)
 
-func _on_bloon_removed():
+func _on_bloon_removed(bloon: Bloon = null):
 	active_bloons -= 1
+	if bloon and bloon in bloons:
+		bloons.erase(bloon)
 	check_round_complete()
+
+func _on_bloon_popped():
+	money += 1
 
 func check_round_complete():
 	if active_bloons == 0 and spawner.wave_set.current_wave != null and spawner.wave_set.current_wave.is_complete():
@@ -137,6 +147,7 @@ func _on_tower_placed(tower_type: String, pos: Vector2):
 	
 	var tower = Tower.new(tower_type)
 	tower.global_position = pos
+	tower.level = self
 	just_placed = true
 	placed_towers.append(tower)
 	update_selection(tower)
@@ -159,3 +170,10 @@ func update_selection(new_tower: Node2D) -> void:
 		selected_tower = new_tower
 	else:
 		selected_tower = null
+		
+func add_projectile(proj: Projectile) -> void:
+	projectiles.append(proj)
+	get_parent().add_child(proj)
+
+func get_bloons() -> Array[Bloon]:
+	return bloons

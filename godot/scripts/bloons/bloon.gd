@@ -101,11 +101,17 @@ var is_frozen: bool = false
 var is_glued: bool = false
 var is_stunned: bool = false
 
+var level: Level = null
+var sounds: Node = null
+
 @onready var sprite: Sprite2D = $Sprite2D
 
 signal bloon_removed
+signal bloon_popped
+static var next_id: int = 0
+var id: int = 0
 
-func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0, p_is_regen: bool = false, p_is_camo: bool = false, p_spawn_order: int = 0):
+func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0, p_is_regen: bool = false, p_is_camo: bool = false, p_spawn_order: int = 0, p_level: Level = null):
 	bloon_type = p_type
 	tile = start_tile
 	tile_progress = start_progress
@@ -113,6 +119,11 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 	is_camo = p_is_camo
 	is_regen = p_is_regen
 	spawn_order_index = p_spawn_order
+	level = p_level
+	sounds = self.get_parent().get_parent().get_node("Sounds") # temp
+	
+	id = Bloon.next_id
+	Bloon.next_id += 1
 	
 	match bloon_type:
 		BloonType.CERAMIC:
@@ -155,19 +166,29 @@ func leak() -> void:
 	bloon_removed.emit()
 	queue_free()
 
-func take_damage(damage: int) -> void:
-	health -= damage
+func take_damage(damage_taken: int) -> void:
+	health -= damage_taken
 	if health <= 0:
 		pop()
 	else:
 		update_sprite()
 
 func pop() -> void:
-	bloon_removed.emit()
-	queue_free()
+	bloon_popped.emit()
+	sounds.get_node("Pop" + str(randi_range(1, 4))).play()
+	
+	if bloon_type > BloonType.RED:
+		bloon_type = (bloon_type - 1) as BloonType
+		update_sprite()
+	else:
+		bloon_removed.emit()
+		queue_free()
 
 func update_sprite() -> void:
 	sprite.texture = BLOON_TEXTURES[bloon_type]
 
 func get_pop_value() -> float:
 	return rbe_by_type[bloon_type] * cash_multiplier
+
+func damage(amount: int) -> void:
+	take_damage(amount)

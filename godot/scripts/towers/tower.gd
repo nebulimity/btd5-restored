@@ -13,12 +13,21 @@ var sprite: Sprite2D
 var outline: Sprite2D
 var outline_shader: ShaderMaterial
 var range_combo: Node2D
+var level: Level
+
+var weapons: Array[Weapon] = []
+var weapon_offsets: Array[Vector2] = []
+var targets_by_priority: Array[Bloon] = []
+var current_target: Bloon = null
+var target_priority: String = "first"  # first, last, close, strong
 
 func _init(type: String) -> void:
 	tower_type = type
 	tower_def = TowerFactory.get_tower_def(type)
 	current_range = tower_def["range"]
-	orientation = 270.0
+	orientation = tower_def["rotation_offset"]
+	
+	setup_weapons()
 
 func _ready() -> void:
 	sprite = Sprite2D.new()
@@ -45,11 +54,99 @@ func _ready() -> void:
 	if current_range > 0 and current_range < 999999:
 		range_combo = RangeCombo.new()
 		add_child(range_combo)
+	
+	level = get_parent().get_node_or_null("Level")
+	if not level:
+		level = get_parent().get_parent().get_node_or_null("Level")
+
+func setup_weapons() -> void:
+	match tower_type:
+		"DartMonkey":
+			var proj_def = ProjectileDef.new("res://assets/projectiles/dart.svg")
+			proj_def.Pierce(1).Damage(1).Speed(850)
+			
+			var weapon = Single.new()
+			weapon.SetRange(current_range).SetReloadTime(0.95).SetPower(850).SetProjectile(proj_def)
+			weapons.append(weapon)
+			weapon_offsets.append(Vector2(6, 9))
 		
-func _process(_delta: float) -> void:
+		"TackShooter":
+			var proj_def = ProjectileDef.new("res://assets/projectiles/tack.svg")
+			proj_def.Pierce(1).Damage(1).Speed(200)
+			
+			var weapon = Circular.new()
+			weapon.SetRange(current_range).SetReloadTime(1.175).SetPower(200).SetProjectile(proj_def)
+			weapon.SetAngle(TAU).SetCount(8)
+			weapons.append(weapon)
+			weapon_offsets.append(Vector2.ZERO)
+		_:
+			pass
+
+func _process(delta: float) -> void:
+	if not level:
+		return
+	
 	range_combo.redraw(tower_def["range"], true)
 	if outline.visible:
 		outline.texture = sprite.texture
+	
+	for weapon in weapons:
+		weapon.update(delta)
+	
+	find_targets()
+	
+	if weapons.size() > 0 and targets_by_priority.size() > 0:
+		current_target = get_target_by_priority()
+		
+		for i in range(weapons.size()):
+			var weapon = weapons[i]
+			if weapon.can_fire():
+				var offset = weapon_offsets[i] if i < weapon_offsets.size() else Vector2.ZERO
+				weapon.execute(self, self, current_target, offset)
+
+func find_targets() -> void:
+	targets_by_priority.clear()
+	
+	if not level:
+		return
+	
+	var bloons = level.get_bloons()
+	for bloon in bloons:
+		if bloon.bloon_type < 0:
+			continue
+		
+		var dist = global_position.distance_to(bloon.global_position)
+		if dist <= current_range:
+			targets_by_priority.append(bloon)
+	
+	targets_by_priority.sort_custom(func(a, b): return a.overall_progress > b.overall_progress)
+
+func get_target_by_priority() -> Bloon:
+	if targets_by_priority.size() == 0:
+		return null
+	
+	match target_priority:
+		"first":
+			return targets_by_priority[0]
+		"last":
+			return targets_by_priority[targets_by_priority.size() - 1]
+		"close":
+			var closest = targets_by_priority[0]
+			var closest_dist = global_position.distance_to(closest.global_position)
+			for bloon in targets_by_priority:
+				var dist = global_position.distance_to(bloon.global_position)
+				if dist < closest_dist:
+					closest = bloon
+					closest_dist = dist
+			return closest
+		"strong":
+			var strongest = targets_by_priority[0]
+			for bloon in targets_by_priority:
+				if bloon.health > strongest.health:
+					strongest = bloon
+			return strongest
+		_:
+			return targets_by_priority[0]
 
 func show_range() -> void:
 	range_combo.visible = true
