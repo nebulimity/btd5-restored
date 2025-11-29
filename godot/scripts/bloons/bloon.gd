@@ -52,6 +52,40 @@ static var rbe_by_type = [
 	16656   # BOSS (ZOMG)
 ]
 
+static var health_by_type = [
+	1,
+	1,
+	1,
+	1,
+	1,
+	1,
+	1,
+	1,
+	1,
+	1,
+	10,
+	200,
+	700,
+	4000
+]
+
+static var child_count_by_type = [
+	1,
+	1,
+	1,
+	1,
+	1,
+	2,
+	2,
+	2,
+	2,
+	2,
+	2,
+	4,
+	4,
+	4
+]
+
 static var spawn_order_offsets = [
 	1,    # RED
 	1,    # BLUE
@@ -116,8 +150,9 @@ signal bloon_removed
 signal bloon_popped
 static var next_id: int = 0
 var id: int = 0
+var bursts_this_process: int = 0
 
-func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0, p_is_regen: bool = false, p_is_camo: bool = false, p_spawn_order: int = 0, p_level: Level = null):
+func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0, p_is_regen: bool = false, p_is_camo: bool = false, p_spawn_order: int = 0, _p_level: Level = null):
 	bloon_type = p_type
 	tile = start_tile
 	tile_progress = start_progress
@@ -125,7 +160,7 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 	is_camo = p_is_camo
 	is_regen = p_is_regen
 	spawn_order_index = p_spawn_order
-	level = p_level
+	level = self.get_parent().get_parent().get_node("Level") # temp
 	sounds = self.get_parent().get_parent().get_node("Sounds") # temp
 	
 	id = Bloon.next_id
@@ -153,6 +188,8 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 func _process(delta: float) -> void:
 	if tile == null or bloon_type < 0:
 		return
+		
+	bursts_this_process = 0
 	
 	var type_speed_mult = speed_multiplier_by_type[bloon_type]
 	var effective_speed = BASE_SPEED * (type_speed_mult + difficulty_speed_modifier) * speed_modifier
@@ -171,30 +208,96 @@ func _process(delta: float) -> void:
 func leak() -> void:
 	bloon_removed.emit()
 	queue_free()
-
-func take_damage(damage_taken: int) -> void:
-	health -= damage_taken
-	if health <= 0:
-		pop()
-	else:
-		update_sprite()
-
-func pop() -> void:
-	bloon_popped.emit()
-	sounds.get_node("Pop" + str(randi_range(1, 4))).play()
+		
+func damage(damage_amount: int, cash_scale: float, tower: Tower, show_pop: bool = true) -> void:
+	var loc5: int = 0
+	var loc6: int = health
 	
-	if bloon_type > BloonType.RED:
-		bloon_type = (bloon_type - 1) as BloonType
-		update_sprite()
+	while damage_amount > 0 and bloon_type - loc5 >= BloonType.CERAMIC:
+		loc6 -= 1
+		damage_amount -= 1
+		if loc6 == 0:
+			loc5 += 1
+			loc6 = health_by_type[bloon_type - loc5]
+	
+	loc5 += damage_amount
+	
+	if loc5 != 0:
+		degrade(loc5, cash_scale, tower, show_pop)
 	else:
-		bloon_removed.emit()
-		queue_free()
+		if bloon_type == BloonType.CERAMIC:
+			# play ceramic hit sound
+			pass
+		elif bloon_type == BloonType.MOAB:
+			# play moab hit sound
+			pass
+		
+		health = loc6
+		update_sprite()
+
+func degrade(layers: int, _cash_scale: float, _tower: Tower, show_pop: bool = true) -> void:
+	#var loc14: Burst = null
+	var loc15: int = 0
+	var loc16: int = 0
+	
+	if bloon_type < 0:
+		return
+	
+	layers = layers > bloon_type + 1 and bloon_type + 1 or layers
+	
+	if show_pop and bursts_this_process < 15:
+		sounds.get_node("Pop" + str(randi_range(1, 4))).play()
+		bursts_this_process += 1
+		
+		#var burst = Burst.new()
+		#burst.initialize(self.position)
+		#level.add_child(burst)
+	
+	if bloon_type == BloonType.BOSS:
+		# play zomg destroy sound
+		pass
+	elif bloon_type == BloonType.BFB:
+		# play bfb destroy sound
+		pass
+	elif bloon_type == BloonType.MOAB:
+		# play moab destroy sound
+		pass
+		
+	var loc5: int = 1
+	var loc6: bool = false
+	var loc8: int = bloon_type
+	var loc13: int = 1
+		
+	while layers > 0:
+		if loc8 == 0:
+			bloon_removed.emit()
+			queue_free()
+			return
+			
+		if level.current_round < 85:
+			loc5 *= child_count_by_type[loc8]
+		elif loc8 >= BloonType.MOAB:
+			loc5 *= child_count_by_type[loc8]
+		
+		loc6 = loc8 == BloonType.ZEBRA
+		if loc8 == BloonType.WHITE or loc8 == BloonType.LEAD or loc8 == BloonType.ZEBRA:
+			loc8 -= 2
+		else:
+			loc8 -= 1
+			
+		layers -= 1
+		loc16 = 0
+		
+		while loc16 < loc13:
+			bloon_popped.emit()
+			loc16 += 1
+		
+		loc13 *= child_count_by_type[loc15]
+		bloon_type = loc8 as BloonType
+		update_sprite()
 
 func update_sprite() -> void:
 	sprite.texture = BLOON_TEXTURES[bloon_type]
 
 func get_pop_value() -> float:
 	return rbe_by_type[bloon_type] * cash_multiplier
-
-func damage(amount: int) -> void:
-	take_damage(amount)

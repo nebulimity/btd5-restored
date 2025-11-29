@@ -84,7 +84,7 @@ func line_intersects_circle(line_start: Vector2, line_end: Vector2, circle_cente
 
 func handle_collision(bloon: Bloon) -> void:
 	hit_bloons.append(bloon.id)
-	bloon.damage(damage)
+	bloon.damage(damage, 1, null)
 	
 	pierce -= 1
 	if pierce <= 0:
