@@ -236,22 +236,19 @@ func damage(damage_amount: int, cash_scale: float, tower: Tower, show_pop: bool 
 		update_sprite()
 
 func degrade(layers: int, _cash_scale: float, _tower: Tower, show_pop: bool = true) -> void:
-	#var loc14: Burst = null
-	var loc15: int = 0
-	var loc16: int = 0
-	
 	if bloon_type < 0:
 		return
 	
-	layers = layers > bloon_type + 1 and bloon_type + 1 or layers
+	layers = min(layers, bloon_type + 1)
 	
 	if show_pop and bursts_this_process < 15:
-		sounds.get_node("Pop" + str(randi_range(1, 4))).play()
 		bursts_this_process += 1
+		if sounds:
+			sounds.get_node("Pop" + str(randi_range(1, 4))).play()
 		
-		#var burst = Burst.new()
-		#burst.initialize(self.position)
-		#level.add_child(burst)
+		var burst = Burst.new()
+		burst.initialize(position.x, position.y)
+		level.add_child(burst)
 	
 	if bloon_type == BloonType.BOSS:
 		# play zomg destroy sound
@@ -262,38 +259,41 @@ func degrade(layers: int, _cash_scale: float, _tower: Tower, show_pop: bool = tr
 	elif bloon_type == BloonType.MOAB:
 		# play moab destroy sound
 		pass
-		
-	var loc5: int = 1
-	var loc6: bool = false
-	var loc8: int = bloon_type
-	var loc13: int = 1
-		
-	while layers > 0:
-		if loc8 == 0:
+	
+	var current_type = bloon_type
+	var children_count = 1
+	
+	for i in range(layers):
+		if current_type < 0:
 			bloon_removed.emit()
+			bloon_popped.emit()
 			queue_free()
 			return
-			
-		if level.current_round < 85:
-			loc5 *= child_count_by_type[loc8]
-		elif loc8 >= BloonType.MOAB:
-			loc5 *= child_count_by_type[loc8]
 		
-		loc6 = loc8 == BloonType.ZEBRA
-		if loc8 == BloonType.WHITE or loc8 == BloonType.LEAD or loc8 == BloonType.ZEBRA:
-			loc8 -= 2
-		else:
-			loc8 -= 1
-			
-		layers -= 1
-		loc16 = 0
+		var child_spawn_count = children_count
+		if level:
+			if level.current_round < 85:
+				child_spawn_count *= child_count_by_type[current_type]
+			elif current_type >= BloonType.MOAB:
+				child_spawn_count *= child_count_by_type[current_type]
 		
-		while loc16 < loc13:
+		for _i in range(child_spawn_count):
 			bloon_popped.emit()
-			loc16 += 1
 		
-		loc13 *= child_count_by_type[loc15]
-		bloon_type = loc8 as BloonType
+		if current_type == BloonType.WHITE or current_type == BloonType.LEAD or current_type == BloonType.ZEBRA:
+			current_type = current_type - 2 as BloonType
+		else:
+			current_type = current_type - 1 as BloonType
+		
+		if current_type >= 0:
+			children_count = child_count_by_type[current_type + 1]
+	
+	bloon_type = current_type
+	
+	if bloon_type < 0:
+		bloon_removed.emit()
+		queue_free()
+	else:
 		update_sprite()
 
 func update_sprite() -> void:
