@@ -121,6 +121,9 @@ func find_targets() -> void:
 	
 	var bloons = level.get_bloons()
 	for bloon in bloons:
+		if not is_instance_valid(bloon): # hacky fix for child bloons that were leaked
+			continue
+			
 		if bloon.bloon_type < 0:
 			continue
 		

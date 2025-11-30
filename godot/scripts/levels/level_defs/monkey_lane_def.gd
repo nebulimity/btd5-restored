@@ -171,6 +171,39 @@ func parse_monkey_lane() -> void:
 	tile30.next_tiles.append(tile31)
 	tile31.next_tiles.append(tile32)
 	
+	tile1.previous_tile = tile0
+	tile2.previous_tile = tile1
+	tile3.previous_tile = tile2
+	tile4.previous_tile = tile3
+	tile5.previous_tile = tile4
+	tile6.previous_tile = tile5
+	tile7.previous_tile = tile6
+	tile8.previous_tile = tile7
+	tile9.previous_tile = tile8
+	tile10.previous_tile = tile9
+	tile11.previous_tile = tile10
+	tile12.previous_tile = tile11
+	tile13.previous_tile = tile12
+	tile14.previous_tile = tile13
+	tile15.previous_tile = tile14
+	tile16.previous_tile = tile15
+	tile17.previous_tile = tile16
+	tile18.previous_tile = tile17
+	tile19.previous_tile = tile18
+	tile20.previous_tile = tile19
+	tile21.previous_tile = tile20
+	tile22.previous_tile = tile21
+	tile23.previous_tile = tile22
+	tile24.previous_tile = tile23
+	tile25.previous_tile = tile24
+	tile26.previous_tile = tile25
+	tile27.previous_tile = tile26
+	tile28.previous_tile = tile27
+	tile29.previous_tile = tile28
+	tile30.previous_tile = tile29
+	tile31.previous_tile = tile30
+	tile32.previous_tile = tile31
+	
 	tile_sets.append(tiles)
 
 func get_start_tile() -> Tile:

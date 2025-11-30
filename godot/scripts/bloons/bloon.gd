@@ -141,8 +141,42 @@ var is_frozen: bool = false
 var is_glued: bool = false
 var is_stunned: bool = false
 
+var iceCountdown: float = 0.0
+var permaFrostSpeedScale: float = 1.0
+var viralIce: bool = false
+var viralDepth: int = 0
+var iceShards: bool = false
+var freezeLayers: int = 1
+var arcticWind: float = 1.0
+var arcticWindCountdown: int = 0
+var icedBy = null
+
+var glueCountdown: float = 0.0
+var glueCorrosionInterval: float = 0.0
+var glueCorrosionCountDown: float = 0.0
+var glueSpeedScale: float = 1.0
+var glueSoak: bool = false
+var glueCash: float = 1.0
+
+var stunInherited: bool = false
+var stunCountDown: float = 0.0
+
+var burning: bool = false
+var burnCountDown: float = 0.0
+var burnInterval: float = 0.0
+var burnLifeSpan: float = 0.0
+var burnCash: float = 0.0
+
+var parentIDs: Array = []
+
 var level: Level = null
 var sounds: Node = null
+
+static var global_spawn_counter: int = 0
+
+var spawn_time: float = 0.0
+var was_regenerated: bool = false
+var special_flag: bool = false
 
 @onready var sprite: Sprite2D = $Sprite2D
 
@@ -160,8 +194,12 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 	is_camo = p_is_camo
 	is_regen = p_is_regen
 	spawn_order_index = p_spawn_order
-	level = self.get_parent().get_parent().get_node("Level") # temp
-	sounds = self.get_parent().get_parent().get_node("Sounds") # temp
+
+	spawn_time = p_spawn_order
+	was_regenerated = false
+	special_flag = false
+	level = self.get_parent().get_parent().get_node("Level") #_p_level
+	sounds = level.get_node("../Sounds")
 	
 	id = Bloon.next_id
 	Bloon.next_id += 1
@@ -184,6 +222,7 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 		tile.update_bloon_position(self)
 	
 	update_sprite()
+	# level._on_bloon_spawned(self)
 
 func _process(delta: float) -> void:
 	if tile == null or bloon_type < 0:
@@ -208,7 +247,81 @@ func _process(delta: float) -> void:
 func leak() -> void:
 	bloon_removed.emit()
 	queue_free()
+
+func create_children(amount: int, is_zebra: bool) -> void:
+	if amount <= 0:
+		return
+	
+	var bloon_scene = load("res://scenes/entities/bloon.tscn")
+	var parent_node = get_parent()
+	var base_progress = tile_progress
+	var progress_offset = min(60.0 / float(amount), 20.0)
+	
+	for i in range(amount):
+		var offset_progress = (i + 1) * progress_offset
+		var child_progress = base_progress - offset_progress
+		var unwound = _unwind_progress(tile, child_progress)
 		
+		var inst = bloon_scene.instantiate() as Bloon
+		
+		var child_spawn_order = spawn_order_index + spawn_order_offsets[bloon_type] * i
+		if was_regenerated or child_spawn_order < 0:
+			global_spawn_counter -= 10
+			child_spawn_order = global_spawn_counter
+		
+		var child_type = int(bloon_type)
+		if is_zebra:
+			child_type = max(0, child_type - (1 - (i % 2)))
+		
+		parent_node.add_child(inst)
+		
+		inst.initialize(child_type, unwound.tile, unwound.progress, is_regen, is_camo, child_spawn_order, level)
+		#inst.initialize(child_type, tile, base_progress - offset_progress, is_regen, is_camo, child_spawn_order, level)
+		
+		inst.spawn_time = spawn_time
+		if was_regenerated or special_flag:
+			inst.special_flag = true
+		
+		inst.parentIDs.append(id)
+		for pid in parentIDs:
+			inst.parentIDs.append(pid)
+		
+		inst.is_frozen = is_frozen
+		inst.iceCountdown = iceCountdown
+		inst.permaFrostSpeedScale = permaFrostSpeedScale
+		inst.viralIce = viralIce
+		inst.iceShards = iceShards
+		inst.icedBy = icedBy
+		inst.freezeLayers = freezeLayers
+		inst.arcticWind = arcticWind
+		inst.arcticWindCountdown = arcticWindCountdown
+		inst.is_glued = is_glued
+		inst.glueCountdown = glueCountdown
+		inst.glueCorrosionInterval = glueCorrosionInterval
+		inst.glueCorrosionCountDown = glueCorrosionCountDown
+		inst.glueSpeedScale = glueSpeedScale
+		inst.glueSoak = glueSoak
+		inst.glueCash = glueCash
+		
+		inst.overall_progress = overall_progress - offset_progress
+		
+		if stunInherited:
+			inst.is_stunned = is_stunned
+			inst.stunInherited = stunInherited
+			inst.stunCountDown = stunCountDown
+		else:
+			inst.is_stunned = false
+			inst.stunCountDown = 0
+		inst.stunInherited = false
+		
+		inst.burning = burning
+		inst.burnCountDown = burnCountDown
+		inst.burnInterval = burnInterval
+		inst.burnLifeSpan = burnLifeSpan
+		inst.burnCash = burnCash
+		
+		inst.tile.update_bloon_position(inst)
+
 func damage(damage_amount: int, cash_scale: float, tower: Tower, show_pop: bool = true) -> void:
 	var loc5: int = 0
 	var loc6: int = health
@@ -241,7 +354,7 @@ func degrade(layers: int, _cash_scale: float, _tower: Tower, show_pop: bool = tr
 	
 	layers = min(layers, bloon_type + 1)
 	
-	if show_pop and bursts_this_process < 15:
+	if show_pop and bursts_this_process < 15 and level:
 		bursts_this_process += 1
 		if sounds:
 			sounds.get_node("Pop" + str(randi_range(1, 4))).play()
@@ -251,50 +364,75 @@ func degrade(layers: int, _cash_scale: float, _tower: Tower, show_pop: bool = tr
 		level.add_child(burst)
 	
 	if bloon_type == BloonType.BOSS:
-		# play zomg destroy sound
 		pass
 	elif bloon_type == BloonType.BFB:
-		# play bfb destroy sound
 		pass
 	elif bloon_type == BloonType.MOAB:
-		# play moab destroy sound
 		pass
 	
-	var current_type = bloon_type
-	var children_count = 1
+	var total_multiplier: int = 1
+	var event_multiplier: int = 1
+	var zebra_flag: bool = false
+	var cur_type: int = int(bloon_type)
 	
-	for i in range(layers):
-		if current_type < 0:
+	var remaining_layers = layers
+	while remaining_layers > 0:
+		if cur_type <= 0:
+			for _k in range(event_multiplier):
+				bloon_popped.emit()
 			bloon_removed.emit()
-			bloon_popped.emit()
 			queue_free()
 			return
 		
-		var child_spawn_count = children_count
 		if level:
 			if level.current_round < 85:
-				child_spawn_count *= child_count_by_type[current_type]
-			elif current_type >= BloonType.MOAB:
-				child_spawn_count *= child_count_by_type[current_type]
+				total_multiplier *= child_count_by_type[cur_type]
+			elif cur_type >= BloonType.MOAB:
+				total_multiplier *= child_count_by_type[cur_type]
 		
-		for _i in range(child_spawn_count):
+		zebra_flag = (cur_type == BloonType.ZEBRA)
+		
+		for _k in range(event_multiplier):
 			bloon_popped.emit()
 		
-		if current_type == BloonType.WHITE or current_type == BloonType.LEAD or current_type == BloonType.ZEBRA:
-			current_type = current_type - 2 as BloonType
-		else:
-			current_type = current_type - 1 as BloonType
+		event_multiplier *= child_count_by_type[cur_type]
 		
-		if current_type >= 0:
-			children_count = child_count_by_type[current_type + 1]
+		if cur_type == BloonType.WHITE or cur_type == BloonType.LEAD or cur_type == BloonType.ZEBRA:
+			cur_type -= 2
+		else:
+			cur_type -= 1
+		
+		remaining_layers -= 1
 	
-	bloon_type = current_type
+	bloon_type = cur_type as BloonType
 	
 	if bloon_type < 0:
 		bloon_removed.emit()
 		queue_free()
+		return
 	else:
 		update_sprite()
+	
+	var to_spawn = total_multiplier - 1
+	if to_spawn > 0:
+		create_children(to_spawn, zebra_flag)
+	
+	parentIDs.append(id)
+	id = Bloon.next_id
+	Bloon.next_id += 1
+
+func _unwind_progress(p_tile: Tile, p_progress: float) -> Dictionary:
+	var current_tile = p_tile
+	var current_progress = p_progress
+	
+	while current_progress < 0.0 and current_tile.previous_tile != null:
+		current_tile = current_tile.previous_tile
+		current_progress += current_tile.tile_length
+	
+	if current_progress < 0.0:
+		current_progress = 0.0
+	
+	return { "tile": current_tile, "progress": current_progress }
 
 func update_sprite() -> void:
 	sprite.texture = BLOON_TEXTURES[bloon_type]

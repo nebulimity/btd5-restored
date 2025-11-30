@@ -47,6 +47,9 @@ func check_bloon_collisions(delta: float) -> void:
 	var velocity_magnitude = velocity.length()
 	
 	for bloon in bloons:
+		if not is_instance_valid(bloon): # hacky fix for child bloons that were leaked
+			continue
+			
 		if bloon.id in hit_bloons:
 			continue
 		
