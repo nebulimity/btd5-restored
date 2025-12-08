@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://ckactqtchofhj"]
+[gd_scene load_steps=76 format=3 uid="uid://ckactqtchofhj"]
 
 [ext_resource type="Texture2D" uid="uid://cyxbtefecik4w" path="res://assets/maps/monkey_lane/background.png" id="1_w4170"]
 [ext_resource type="Texture2D" uid="uid://cga6jtjpiekyo" path="res://assets/maps/monkey_lane/windmill/shadow/1.png" id="4_5s6mp"]
@@ -71,6 +71,7 @@
 [ext_resource type="Texture2D" uid="uid://cmichi275bd0h" path="res://assets/maps/monkey_lane/windmill/rotor/33.svg" id="70_64jxs"]
 [ext_resource type="Texture2D" uid="uid://dw6tlmqcsmd7c" path="res://assets/maps/monkey_lane/tunnel_cover_2.png" id="70_fdq51"]
 [ext_resource type="Texture2D" uid="uid://yyitemijio3h" path="res://assets/maps/monkey_lane/terrain/track.png" id="71_y64qo"]
+[ext_resource type="Texture2D" uid="uid://cjhrqxijh4ubp" path="res://assets/maps/monkey_lane/trees.svg" id="71_yiucl"]
 [ext_resource type="Texture2D" uid="uid://4c7tj8w8amuf" path="res://assets/maps/monkey_lane/terrain/land.png" id="72_yiucl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jaofu"]
@@ -310,6 +311,7 @@ texture = ExtResource("37_a38uq")
 centered = false
 
 [node name="WindmillRotor" type="AnimatedSprite2D" parent="."]
+z_index = 4
 position = Vector2(-16, 1)
 sprite_frames = SubResource("SpriteFrames_0goub")
 animation = &"spin"
@@ -330,6 +332,12 @@ z_index = 1
 position = Vector2(-53.999996, 4.7683716e-07)
 scale = Vector2(0.333, 0.333)
 texture = ExtResource("70_fdq51")
+centered = false
+
+[node name="Trees" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(-54, -82)
+texture = ExtResource("71_yiucl")
 centered = false
 
 [node name="Track" type="Sprite2D" parent="."]
@@ -362,6 +370,7 @@ polygon = PackedVector2Array(43, 40, 43, 41, 42, 41, 42, 42, 41, 42, 41, 48, 40,
 polygon = PackedVector2Array(42, 81, 42, 82, 41, 82, 41, 84, 40, 84, 40, 121, 39, 121, 39, 139, 40, 139, 40, 140, 45, 140, 45, 139, 46, 139, 46, 99, 47, 99, 47, 88, 51, 88, 51, 87, 52, 87, 52, 86, 53, 86, 53, 82, 52, 82, 52, 81)
 
 [node name="Land" type="Area2D" parent="Terrain"]
+position = Vector2(0, -3.25)
 collision_layer = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/Land"]
