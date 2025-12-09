@@ -11,7 +11,7 @@ func _init() -> void:
 func redraw(target_range, is_valid) -> void:
 	tower_range = target_range
 	is_valid_placement = is_valid
-	color = Color(0.2, 0.0, 0.2, 0.5) if is_valid_placement else Color(1.0, 0.0, 0.0, 0.5)
+	color = Color(0.2, 0.2, 0.2, 0.5) if is_valid_placement else Color(1.0, 0.0, 0.0, 0.5)
 	
 	if tower_range > 0 and tower_range < 999999:
 		queue_redraw()
