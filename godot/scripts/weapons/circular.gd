@@ -42,6 +42,7 @@ func execute(tower: Tower, source: Node2D, _target: Node2D, _weapon_offset: Vect
 		proj.position = source.global_position
 		
 		proj.lifespan = weapon_range / power
+		proj.max_lifespan = proj.lifespan
 		proj.velocity.x = power
 		proj.velocity.y = 0
 		proj.velocity = proj.velocity.rotated(source.rotation + rotation_offset * i)

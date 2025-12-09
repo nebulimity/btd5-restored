@@ -5,20 +5,18 @@ var def: ProjectileDef
 var owner_tower: Tower
 var velocity: Vector2 = Vector2.ZERO
 var lifespan: float = 10.0
+var max_lifespan: float = 10.0
 var pierce: int = 1
 var damage: int = 1
 var hit_bloons: Array[int] = []
 var target: Bloon = null
 var sprite: Sprite2D
-
-#func _ready() -> void:
-	#sprite = Sprite2D.new()
-	#add_child(sprite)
+var damage_effect: DamageEffectDef
 
 func initialize(projectile_def: ProjectileDef) -> void:
 	def = projectile_def
-	pierce = projectile_def.pierce
-	damage = projectile_def.damage
+	pierce = def.pierce
+	damage_effect = def.damage_effect
 	hit_bloons.clear()
 	
 	sprite = Sprite2D.new()
@@ -27,12 +25,13 @@ func initialize(projectile_def: ProjectileDef) -> void:
 	sprite.texture = load(projectile_def.display_path)
 
 func _process(delta: float) -> void:
-	position += velocity * delta
 	lifespan -= delta
 	
-	rotation = velocity.angle()
+	if def.behavior and def.behavior.process_behavior:
+		def.behavior.process_behavior.execute(self, delta)
 	
 	if lifespan <= 0:
+		# TODO: check for LifespanOver
 		destroy()
 		return
 	
@@ -86,8 +85,25 @@ func line_intersects_circle(line_start: Vector2, line_end: Vector2, circle_cente
 	return (t1 >= 0 and t1 <= 1) or (t2 >= 0 and t2 <= 1)
 
 func handle_collision(bloon: Bloon) -> void:
+	if damage_effect:
+		if bloon.bloon_type in damage_effect.cant_break_types:
+			# play lead hit sound
+			hit_bloons.append(bloon.id)
+			destroy() 
+			return
+			
+		if bloon.is_frozen and not damage_effect.can_break_ice:
+			hit_bloons.append(bloon.id)
+			destroy()
+			return
+
 	hit_bloons.append(bloon.id)
-	bloon.damage(damage, 1, null)
+	
+	var dmg_amount = 1
+	if damage_effect:
+		dmg_amount = damage_effect.damage
+		
+	bloon.damage(dmg_amount, 1, owner_tower)
 	
 	pierce -= 1
 	if pierce <= 0:

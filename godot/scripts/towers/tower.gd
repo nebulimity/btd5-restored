@@ -62,8 +62,9 @@ func _ready() -> void:
 func setup_weapons() -> void:
 	match tower_type:
 		"DartMonkey":
+			var damage_def = DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
 			var proj_def = ProjectileDef.new("res://assets/projectiles/dart.svg")
-			proj_def.Pierce(1).Damage(1).Speed(850)
+			proj_def.Pierce(1).Speed(850).DamageEffect(damage_def)
 			
 			var weapon = Single.new()
 			weapon.SetRange(161).SetReloadTime(0.9).SetPower(850).SetProjectile(proj_def)
@@ -71,8 +72,9 @@ func setup_weapons() -> void:
 			weapon_offsets.append(TowerFactory.get_tower_def(tower_type)["weapon_offset"])
 		
 		"TackShooter":
+			var damage_def = DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
 			var proj_def = ProjectileDef.new("res://assets/projectiles/tack.svg")
-			proj_def.Pierce(1).Damage(1).Speed(200)
+			proj_def.Pierce(1).Speed(200).DamageEffect(damage_def)
 			
 			var weapon = Circular.new()
 			weapon.SetRange(70).SetReloadTime(1.66).SetPower(350).SetProjectile(proj_def)
@@ -80,9 +82,27 @@ func setup_weapons() -> void:
 			weapons.append(weapon)
 			weapon_offsets.append(Vector2.ZERO)
 		
+		"BoomerangThrower":
+			var path_behavior = FollowPath.new().Path([
+				CubicBezierDef.new().A(Vector2.ZERO).B(Vector2.ZERO).C(Vector2(112, 55)).D(Vector2(131, -27)),
+				CubicBezierDef.new().A(Vector2(131, -27)).B(Vector2(151, -109)).C(Vector2(45, -159)).D(Vector2(-13, -11))
+			])
+			var damage_def = DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
+			var behavior_def = BehaviorDef.new().Process(path_behavior)
+			
+			var proj_def = ProjectileDef.new("res://assets/projectiles/boomerang.svg")
+			proj_def.Pierce(3).Radius(10).Speed(850)
+			proj_def.DamageEffect(damage_def).Behavior(behavior_def)
+			
+			var weapon = Spread.new()
+			weapon.SetRange(520).SetPower(700).SetReloadTime(1.33).SetProjectile(proj_def).SetCount(1).SetAngle(0.5)
+			weapons.append(weapon)
+			weapon_offsets.append(TowerFactory.get_tower_def(tower_type)["weapon_offset"])
+		
 		"SuperMonkey":
+			var damage_def = DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
 			var proj_def = ProjectileDef.new("res://assets/projectiles/dart.svg")
-			proj_def.Pierce(1).Damage(1).Speed(850)
+			proj_def.Pierce(1).Speed(850).DamageEffect(damage_def)
 			
 			var weapon = Single.new()
 			weapon.SetRange(500).SetReloadTime(0.058).SetPower(700).SetProjectile(proj_def)

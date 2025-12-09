@@ -48,7 +48,9 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 			"cost": 330,
 			"range": 130,
 			"occupied_space_radius": medium,
+			"position_offset": Vector2(-2.335, 3.335),
 			"weapon_offset": Vector2(26, 8),
+			"rotation_offset": -90.0,
 			"sprite_path": "res://assets/sprites/towers/boomerang_thrower/1.svg",
 			"can_place_on_water": false,
 			"can_place_on_track": false

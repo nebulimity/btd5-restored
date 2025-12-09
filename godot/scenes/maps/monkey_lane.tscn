@@ -311,7 +311,7 @@ texture = ExtResource("37_a38uq")
 centered = false
 
 [node name="WindmillRotor" type="AnimatedSprite2D" parent="."]
-z_index = 4
+z_index = 5
 position = Vector2(-16, 1)
 sprite_frames = SubResource("SpriteFrames_0goub")
 animation = &"spin"

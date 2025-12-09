@@ -51,6 +51,7 @@ func execute(tower: Tower, source: Node2D, target: Node2D, weapon_offset: Vector
 		proj.position += temp_rotation
 	
 	proj.lifespan = weapon_range / power
+	proj.max_lifespan = proj.lifespan
 	if target != null:
 		var direction = (target.global_position - proj.position).normalized()
 		proj.velocity = direction * power
