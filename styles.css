@@ -18,34 +18,63 @@ html.dark {
 }
 
 body {
-  font-family: Inter;
+  font-family: "Open Sans", sans-serif;
   background: rgb(var(--surface));
   color: rgb(var(--on-surface));
 
-  background-image: radial-gradient(rgb(var(--dot)) 1px, transparent 0);
-  background-size: 40px 40px;
-  background-position: -19px -19px;
+  background: url(images/background-tile.png);
+  color: rgb(204, 204, 204);
 
   overflow-x: hidden;
 }
 
-header {
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(11, 12, 13, 1) 100%),
-    url(images/thumbnail.png);
-  background-size: 100%;
-
-  text-align: center;
-  padding-top: 50px;
-
-  height: 150px;
-}
-
 main {
-  padding: 0px 100px;
+  background-color: rgba(39, 43, 48, 0.8);
+  box-shadow: rgb(0, 0, 0) 0px 0px 10px 1px;
+  backdrop-filter: blur(10px);
+
+  width: auto;
+  max-width: 800px;
+  margin: 56px auto;
+  padding: 15px;
 }
 
 h1 {
   font-size: 50px;
+}
+
+iframe {
+  margin-top: 15px;
+}
+
+nav {
+  border-bottom: 1px solid rgb(20, 20, 20);
+  padding: 10px 0;
+  display: flex;
+  gap: 10px;
+}
+
+nav .right {
+  margin-left: auto;
+}
+
+a {
+  color: rgb(0, 170, 213);
+  text-decoration: none;
+
+  transition: all 0.5s;
+}
+
+a:hover {
+  color: rgb(0, 204, 255);
+  text-shadow: 0 0 5px;
+}
+
+footer {
+  font-size: 10px;
+  color: rgb(102, 102, 102);
+  border-top: 1px solid rgb(50, 55, 63);
+  padding: 10px 0 10px;
 }
 
 @media screen and (prefers-color-scheme: dark) {
