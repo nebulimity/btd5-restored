@@ -13,6 +13,7 @@ config_version=5
 config/name="BTD5 Restored"
 run/main_scene="uid://di2rdjwkum74f"
 config/features=PackedStringArray("4.5")
+boot_splash/image="uid://dpyimxjhceom3"
 config/icon="res://icon.svg"
 
 [display]
