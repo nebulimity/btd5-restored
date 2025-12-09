@@ -1,8 +1,8 @@
 class_name Tower
 extends Node2D
 
-@onready var place_sound: AudioStreamPlayer = $"../Sounds/Place"
-@onready var select_sound: AudioStreamPlayer = $"../Sounds/Select"
+@onready var place_sound: AudioStreamPlayer = $"../../Sounds/Place"
+@onready var select_sound: AudioStreamPlayer = $"../../Sounds/Select"
 
 var tower_type: String
 var tower_def: Dictionary

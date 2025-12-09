@@ -151,7 +151,7 @@ func _on_tower_placed(tower_type: String, pos: Vector2):
 	just_placed = true
 	placed_towers.append(tower)
 	update_selection(tower)
-	get_parent().add_child(tower)
+	get_parent().get_node("Towers").add_child(tower)
 	
 	current_place_state = null
 
