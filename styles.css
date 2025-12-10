@@ -57,7 +57,13 @@ nav {
   background-image: linear-gradient(rgba(68, 68, 68, 0.8), rgba(0, 0, 0, 0.8));
   backdrop-filter: blur(5px);
   height: 56px;
+  width: 100%;
   box-shadow: 0 0 10px 1px black;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 nav div {
@@ -184,7 +190,6 @@ footer {
   main {
     width: 100%;
     max-width: none;
-    margin: 0;
     padding: 10px;
   }
 
@@ -217,9 +222,4 @@ footer {
   .small-nav .right {
     margin-left: 0;
   }
-}
-
-@font-face {
-  font-family: "oetztype";
-  src: url("fonts/oetztype.ttf") format("truetype");
 }
