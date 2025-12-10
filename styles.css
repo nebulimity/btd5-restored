@@ -17,6 +17,10 @@ html.dark {
   padding: 0;
   box-sizing: border-box;
 }
+::selection {
+  background: #f21616;
+  color: white;
+}
 
 html {
   background: fixed url(images/background-tile.png);
@@ -51,14 +55,40 @@ iframe {
 }
 
 nav {
-  border-bottom: 1px solid rgb(20, 20, 20);
-  padding: 10px 0;
-  display: flex;
-  gap: 10px;
+  background-image: linear-gradient(#444, black);
+  height: 56px;
+  box-shadow: 0 0 10px 1px black;
 }
 
-nav .right {
-  margin-left: auto;
+nav div {
+  margin: 0 auto;
+  width: 800px;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+nav div h2 {
+  margin-right: 10px;
+}
+
+nav div a {
+  background: url(images/menu-divider.png) right top no-repeat;
+  height: 56px;
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 13px;
+
+  color: white;
+}
+
+nav div a:hover {
+  color: #f21616;
 }
 
 a {
@@ -78,6 +108,17 @@ footer {
   color: rgb(102, 102, 102);
   border-top: 1px solid rgb(50, 55, 63);
   padding: 10px 0 10px;
+}
+
+.small-nav {
+  border-bottom: 1px solid rgb(20, 20, 20);
+  padding: 10px 0;
+  display: flex;
+  gap: 15px;
+}
+
+.small-nav .right {
+  margin-left: auto;
 }
 
 #game-container {
@@ -139,6 +180,13 @@ footer {
 
 @media screen and (max-width: 830px) {
   main {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 10px;
+  }
+
+  nav {
     width: 100%;
     max-width: none;
     margin: 0;

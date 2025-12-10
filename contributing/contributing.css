@@ -1,0 +1,25 @@
+h2 {
+  padding-bottom: 10px;
+}
+
+dl {
+  padding-bottom: 10px;
+}
+
+dt {
+  font-weight: bold;
+  padding: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+dt::before {
+  content: "•";
+  position: absolute;
+  left: 5px;
+}
+
+dd {
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
