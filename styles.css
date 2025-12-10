@@ -94,20 +94,23 @@ nav div a {
   color: white;
 }
 
-nav div a:hover {
-  color: #f21616;
-}
-
 a {
-  color: rgb(0, 170, 213);
+  color: #f21616;
   text-decoration: none;
 
   transition: all 0.5s;
 }
 
 a:hover {
-  color: rgb(0, 204, 255);
   text-shadow: 0 0 5px;
+}
+
+.small-nav a {
+  color: rgb(0, 170, 213);
+}
+
+.small-nav a:hover {
+  color: rgb(0, 204, 255);
 }
 
 footer {
