@@ -213,6 +213,12 @@ footer {
   }
 }
 
+@media screen and (max-width: 511px) {
+  .small-nav .right {
+    margin-left: 0;
+  }
+}
+
 @font-face {
   font-family: "oetztype";
   src: url("fonts/oetztype.ttf") format("truetype");
