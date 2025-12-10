@@ -97,11 +97,13 @@ nav div a {
 a {
   color: #f21616;
   text-decoration: none;
+  font-weight: 600;
 
   transition: all 0.5s;
 }
 
 a:hover {
+  color: #f21616;
   text-shadow: 0 0 5px;
 }
 
