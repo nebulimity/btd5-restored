@@ -41,7 +41,7 @@ main {
 
   width: auto;
   max-width: 800px;
-  margin: 56px auto;
+  margin: 56px auto 0;
   padding: 15px;
 }
 
@@ -148,6 +148,7 @@ footer {
 
 #load-game-btn {
   background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
   border-radius: 0.5rem;
   border: 1px solid rgb(100, 100, 100, 0.5);
   color: #e0e0e0;
@@ -189,8 +190,8 @@ footer {
 @media screen and (max-width: 830px) {
   main {
     width: 100%;
+    min-height: calc(100vh - 56px);
     max-width: none;
-    padding: 10px;
   }
 
   nav {
@@ -212,9 +213,12 @@ footer {
 }
 
 @media screen and (max-width: 491px) {
+  nav {
+    padding: 0;
+  }
+
   nav div img {
     width: 0;
-    padding: 0;
   }
 }
 
