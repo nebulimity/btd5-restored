@@ -25,7 +25,6 @@ html.dark {
 html {
   background: fixed url(images/background-tile.png);
   background-color: rgb(51, 51, 51);
-  overscroll-behavior: none;
 }
 
 body {
