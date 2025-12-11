@@ -99,6 +99,16 @@ func setup_weapons() -> void:
 			weapons.append(weapon)
 			weapon_offsets.append(TowerFactory.get_tower_def(tower_type)["weapon_offset"])
 		
+		"NinjaMonkey":
+			var damage_def = DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
+			var proj_def = ProjectileDef.new("res://assets/projectiles/shuriken.svg")
+			proj_def.Pierce(2).Radius(4).DamageEffect(damage_def)
+			
+			var weapon = Single.new()
+			weapon.SetRange(360).SetReloadTime(0.6).SetPower(360).SetProjectile(proj_def)
+			weapons.append(weapon)
+			weapon_offsets.append(TowerFactory.get_tower_def(tower_type)["weapon_offset"])
+		
 		"SuperMonkey":
 			var damage_def = DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
 			var proj_def = ProjectileDef.new("res://assets/projectiles/dart.svg")
