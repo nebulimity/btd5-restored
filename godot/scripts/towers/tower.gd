@@ -146,22 +146,21 @@ func _process(delta: float) -> void:
 func find_targets() -> void:
 	targets_by_priority.clear()
 	
-	if not level:
+	if not level or not level.collision_grid:
 		return
 	
-	var bloons = level.get_bloons()
-	for bloon in bloons:
-		if not is_instance_valid(bloon): # hacky fix for child bloons that were leaked
-			continue
-			
-		if bloon.bloon_type < 0:
+	var candidates = level.collision_grid.get_bloons_in_range(global_position, current_range)
+	
+	for bloon in candidates:
+		if not is_instance_valid(bloon) or bloon.bloon_type < 0:
 			continue
 		
 		var dist = global_position.distance_to(bloon.global_position)
 		if dist <= current_range:
 			targets_by_priority.append(bloon)
 	
-	targets_by_priority.sort_custom(func(a, b): return a.overall_progress > b.overall_progress)
+	if targets_by_priority.size() > 1:
+		targets_by_priority.sort_custom(func(a, b): return a.overall_progress > b.overall_progress)
 
 func get_target_by_priority() -> Bloon:
 	if targets_by_priority.size() == 0:

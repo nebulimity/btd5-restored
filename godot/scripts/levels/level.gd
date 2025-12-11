@@ -35,6 +35,7 @@ var just_placed: bool
 
 var projectiles: Array[Projectile] = []
 var bloons: Array[Bloon] = []
+var collision_grid: CollisionGrid
 
 var terrain_node: Node2D
 var track_area: Area2D
@@ -48,6 +49,9 @@ var water_area: Area2D
 func _ready() -> void:
 	map_scene = preload("res://scenes/maps/monkey_lane.tscn")
 	map = map_scene.instantiate()
+	
+	collision_grid = CollisionGrid.new()
+	add_child(collision_grid)
 	
 	map_def = MonkeyLaneDef.new()
 	map_def.parse_monkey_lane()

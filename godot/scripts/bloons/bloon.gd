@@ -125,6 +125,7 @@ static var cash_multiplier: float = 1.0
 var tile: Tile = null
 var tile_progress: float = 0.0
 var overall_progress: float = 0.0
+var last_grid_pos: Vector2
 
 var bloon_type: BloonType = BloonType.RED
 var health: int = 1
@@ -140,6 +141,7 @@ var speed_modifier: float = 1.0
 var is_frozen: bool = false
 var is_glued: bool = false
 var is_stunned: bool = false
+var is_dead: bool = false
 
 var iceCountdown: float = 0.0
 var permaFrostSpeedScale: float = 1.0
@@ -222,7 +224,10 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 		tile.update_bloon_position(self)
 	
 	update_sprite()
-	# level._on_bloon_spawned(self)
+	
+	if level and level.collision_grid:
+		level.collision_grid.add_bloon(self)
+		last_grid_pos = global_position
 
 func _process(delta: float) -> void:
 	if tile == null or bloon_type < 0:
@@ -243,6 +248,10 @@ func _process(delta: float) -> void:
 	overall_progress += distance
 	
 	tile.update_bloon_position(self)
+	
+	if level and level.collision_grid:
+		level.collision_grid.move_bloon(self, last_grid_pos)
+		last_grid_pos = global_position
 
 func leak() -> void:
 	bloon_removed.emit()
@@ -323,6 +332,9 @@ func create_children(amount: int, is_zebra: bool) -> void:
 		inst.tile.update_bloon_position(inst)
 
 func damage(damage_amount: int, cash_scale: float, tower: Tower, show_pop: bool = true) -> void:
+	if is_dead:
+		return
+	
 	var loc5: int = 0
 	var loc6: int = health
 	
@@ -381,6 +393,7 @@ func degrade(layers: int, _cash_scale: float, _tower: Tower, show_pop: bool = tr
 			for _k in range(event_multiplier):
 				bloon_popped.emit()
 			bloon_removed.emit()
+			is_dead = true
 			queue_free()
 			return
 		
@@ -408,6 +421,7 @@ func degrade(layers: int, _cash_scale: float, _tower: Tower, show_pop: bool = tr
 	
 	if bloon_type < 0:
 		bloon_removed.emit()
+		is_dead = true
 		queue_free()
 		return
 	else:
@@ -439,3 +453,7 @@ func update_sprite() -> void:
 
 func get_pop_value() -> float:
 	return rbe_by_type[bloon_type] * cash_multiplier
+
+func _exit_tree() -> void:
+	if level and level.collision_grid:
+		level.collision_grid.remove_bloon(self, last_grid_pos)

@@ -13,6 +13,8 @@ var target: Bloon = null
 var sprite: Sprite2D
 var damage_effect: DamageEffectDef
 
+var prev_pos: Vector2 
+
 func initialize(projectile_def: ProjectileDef) -> void:
 	def = projectile_def
 	pierce = def.pierce
@@ -23,9 +25,13 @@ func initialize(projectile_def: ProjectileDef) -> void:
 	add_child(sprite)
 	
 	sprite.texture = load(projectile_def.display_path)
+	
+	prev_pos = global_position
 
 func _process(delta: float) -> void:
 	lifespan -= delta
+	
+	prev_pos = global_position
 	
 	if def.behavior and def.behavior.process_behavior:
 		def.behavior.process_behavior.execute(self, delta)
@@ -37,42 +43,50 @@ func _process(delta: float) -> void:
 	
 	check_bloon_collisions(delta)
 
-func check_bloon_collisions(delta: float) -> void:
-	if not owner_tower or not owner_tower.level:
+func check_bloon_collisions(_delta: float) -> void:
+	if not owner_tower or not owner_tower.level or not owner_tower.level.collision_grid:
 		return
 	
-	var bloons = owner_tower.level.get_bloons()
+	var move_dist = prev_pos.distance_to(global_position)
 	var collision_radius = 10.0
-	var velocity_magnitude = velocity.length()
+	var max_bloon_radius = 15.0
 	
-	for bloon in bloons:
-		if not is_instance_valid(bloon): # hacky fix for child bloons that were leaked
+	var search_radius = move_dist / 2.0 + collision_radius + max_bloon_radius
+	var search_center = (prev_pos + global_position) / 2.0
+	
+	var candidates = owner_tower.level.collision_grid.get_bloons_in_range(search_center, search_radius)
+	
+	for bloon in candidates:
+		if not is_instance_valid(bloon): 
 			continue
 			
 		if bloon.id in hit_bloons:
 			continue
 		
-		var dist = position.distance_to(bloon.position)
-		var bloon_radius = 8.0
+		var bloon_radius = 10.0 
+		var total_radius = collision_radius + bloon_radius
 		
-		if dist < (collision_radius + bloon_radius + velocity_magnitude):
-			if dist < (collision_radius + bloon_radius):
-				handle_collision(bloon)
-			else:
-				var prev_pos = position - velocity * delta
-				if line_intersects_circle(prev_pos, position, bloon.position, bloon_radius):
-					handle_collision(bloon)
+		var hit = false
 		
-		if pierce <= 0:
-			break
+		if global_position.distance_to(bloon.global_position) < total_radius:
+			hit = true
+		
+		elif move_dist > 0:
+			if line_intersects_circle(prev_pos, global_position, bloon.global_position, total_radius):
+				hit = true
+				
+		if hit:
+			handle_collision(bloon)
+			if pierce <= 0:
+				break
 
-func line_intersects_circle(line_start: Vector2, line_end: Vector2, circle_center: Vector2, circle_radius: float) -> bool:
+func line_intersects_circle(line_start: Vector2, line_end: Vector2, circle_center: Vector2, total_radius: float) -> bool:
 	var d = line_end - line_start
 	var f = line_start - circle_center
 	
 	var a = d.dot(d)
 	var b = 2 * f.dot(d)
-	var c = f.dot(f) - circle_radius * circle_radius
+	var c = f.dot(f) - total_radius * total_radius
 	
 	var discriminant = b * b - 4 * a * c
 	if discriminant < 0:
@@ -87,9 +101,8 @@ func line_intersects_circle(line_start: Vector2, line_end: Vector2, circle_cente
 func handle_collision(bloon: Bloon) -> void:
 	if damage_effect:
 		if bloon.bloon_type in damage_effect.cant_break_types:
-			# play lead hit sound
 			hit_bloons.append(bloon.id)
-			destroy() 
+			destroy()
 			return
 			
 		if bloon.is_frozen and not damage_effect.can_break_ice:
