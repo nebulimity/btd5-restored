@@ -57,10 +57,19 @@ func check_bloon_collisions(_delta: float) -> void:
 	var candidates = owner_tower.level.collision_grid.get_bloons_in_range(search_center, search_radius)
 	
 	for bloon in candidates:
-		if not is_instance_valid(bloon): 
+		if not is_instance_valid(bloon) or bloon.is_dead: 
 			continue
 			
 		if bloon.id in hit_bloons:
+			continue
+			
+		var lineage_hit = false
+		if "parentIDs" in bloon:
+			for pid in bloon.parentIDs:
+				if pid in hit_bloons:
+					lineage_hit = true
+					break
+		if lineage_hit:
 			continue
 		
 		var bloon_radius = 10.0 
@@ -70,7 +79,6 @@ func check_bloon_collisions(_delta: float) -> void:
 		
 		if global_position.distance_to(bloon.global_position) < total_radius:
 			hit = true
-		
 		elif move_dist > 0:
 			if line_intersects_circle(prev_pos, global_position, bloon.global_position, total_radius):
 				hit = true
