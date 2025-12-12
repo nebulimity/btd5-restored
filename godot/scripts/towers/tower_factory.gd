@@ -10,7 +10,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 		"DartMonkey": {
 			"label": "Dart Monkey",
 			"description": "Shoots a single dart that pops a single bloon. A good, cheap tower suitable for the early rounds.",
-			"cost": 170,
+			"cost": 200,
 			"range": 100,
 			"occupied_space_radius": small,
 			"position_offset": Vector2(-2.335, 3.335),
@@ -24,7 +24,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 		"TackShooter": {
 			"label": "Tack Shooter",
 			"description": "Shoots 8 tacks spread in all directions, each tack can pop 1 bloon. Has short range and medium-slow fire rate.",
-			"cost": 280,
+			"cost": 360,
 			"range": 70,
 			"occupied_space_radius": small,
 			"position_offset": Vector2.ZERO,
@@ -48,7 +48,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 		"BoomerangThrower": {
 			"label": "Boomerang Thrower",
 			"description": "hrows a single boomerang in an arc back round to the monkey. Each boomerang can pop 3 bloons.",
-			"cost": 330,
+			"cost": 380,
 			"range": 130,
 			"occupied_space_radius": medium,
 			"position_offset": Vector2(-3.0, 8.5),
@@ -76,7 +76,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 		"BombTower": {
 			"label": "Bomb Tower",
 			"description": "Shoots a single bomb that explodes in a radius burst on impact. Good range, medium-slow fire rate. Can pop lead bloons but not black bloons.",
-			"cost": 525,
+			"cost": 650,
 			"range": 120,
 			"occupied_space_radius": medium,
 			"sprite_path": "res://assets/sprites/towers/bomb_tower/1.svg",
@@ -96,7 +96,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 		"GlueTower": {
 			"label": "Glue Gunner",
 			"description": "Shoots a glob of monkey glue at a single bloon. Glued bloons move more slowly than normal.",
-			"cost": 275,
+			"cost": 270,
 			"range": 140,
 			"occupied_space_radius": small,
 			"sprite_path": "res://assets/sprites/towers/glue_tower/1.svg",
@@ -117,7 +117,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 		"MonkeyAce": {
 			"label": "Monkey Ace",
 			"description": "Patrols the skies above the action, regularly strafing the area with powerful darts in 8 directions.",
-			"cost": 800,
+			"cost": 900,
 			"range": 50, 
 			"occupied_space_radius": "ace_space",
 			"sprite_path": "res://assets/sprites/towers/monkey_ace/1.svg",
@@ -143,7 +143,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 		"MonkeyApprentice": {
 			"label": "Monkey Apprentice",
 			"description": "Trained in the arts of monkey magic, the Monkey Apprentice weaves magical bolts of power that pop bloons. Each shot can pop 2 bloons. Can upgrade to cast additional spells.",
-			"cost": 650,
+			"cost": 550,
 			"range": 120,
 			"occupied_space_radius": small,
 			"sprite_path": "res://assets/sprites/towers/monkey_apprentice/1.svg",
@@ -153,7 +153,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 		"MonkeyVillage": {
 			"label": "Monkey Village",
 			"description": "Monkey Village does not attack bloons but instead lowers cost of all towers and upgrades in radius by 10%. Has many useful upgrades that help nearby towers.",
-			"cost": 1200,
+			"cost": 1600,
 			"range": 120,
 			"occupied_space_radius": "village_space",
 			"sprite_path": "res://assets/sprites/towers/monkey_village/1.svg",
@@ -163,7 +163,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 		"BananaTower": {
 			"label": "Banana Farm",
 			"description": "Banana Farms grow bananas that you can collect to turn into cash. When your farm produces some bananas, collect them by moving your mouse over them. Don't leave them too long however, or they will spoil!",
-			"cost": 850,
+			"cost": 1000,
 			"range": 120,
 			"occupied_space_radius": "banana_farm_space",
 			"sprite_path": "res://assets/sprites/towers/banana_tower/1.svg",
@@ -173,7 +173,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 		"MortarTower": {
 			"label": "Mortar Tower",
 			"description": "Targets a specific bit of ground anywhere on the screen. Launches explosive mortar shells to that spot. Useful for placing far away from the track to make room for other towers.",
-			"cost": 650,
+			"cost": 750,
 			"range": 1250,  # Manual targeting
 			"occupied_space_radius": "mortar_monkey_space",
 			"sprite_path": "res://assets/sprites/towers/mortar_tower/1.svg",
@@ -183,7 +183,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 		"DartlingGun": {
 			"label": "Dartling Gun",
 			"description": "Shoots darts like a machine gun, super fast but not very accurate. The Dartling Gun will shoot towards wherever your mouse is, so you control how effective it is!",
-			"cost": 800,
+			"cost": 950,
 			"range": 1250,  # Manual aiming
 			"occupied_space_radius": large,
 			"sprite_path": "res://assets/sprites/towers/dartling_gun/1.svg",
@@ -193,7 +193,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 		"SpikeFactory": {
 			"label": "Spike Factory",
 			"description": "Generates piles of road spikes on bits of nearby track. Each pile can pop 5 bloons, and unused spikes disappear at the end of each round.",
-			"cost": 700,
+			"cost": 750,
 			"range": 105,
 			"occupied_space_radius": large,
 			"sprite_path": "res://assets/sprites/towers/spike_factory/1.svg",
@@ -203,7 +203,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 		"RoadSpikes": {
 			"label": "Road Spikes",
 			"description": "Place these on the track to pop bloons. Each pack of spikes can pop 11 bloons before being used up. Use these to get bloons that escape past your towers.",
-			"cost": 25,
+			"cost": 30,
 			"range": 20,
 			"occupied_space_radius": small,
 			"sprite_path": "res://assets/sprites/towers/road_spikes/1.svg",
@@ -214,7 +214,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 		"ExplodingPineapple": {
 			"label": "Exploding Pineapple",
 			"description": "This explosive fruit packs a real punch. When placed will explode violently after 3 seconds. Useful for destroying those bloons that require explosives to pop.",
-			"cost": 20,
+			"cost": 25,
 			"range": 100,
 			"occupied_space_radius": small,
 			"sprite_path": "res://assets/sprites/towers/exploding_pineapple/1.svg",

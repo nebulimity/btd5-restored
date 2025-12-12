@@ -13,6 +13,7 @@ var target: Bloon = null
 var sprite: Sprite2D
 var damage_effect: DamageEffectDef
 
+var radius: float = 10.0
 var prev_pos: Vector2 
 
 func initialize(projectile_def: ProjectileDef) -> void:
@@ -26,6 +27,13 @@ func initialize(projectile_def: ProjectileDef) -> void:
 	
 	sprite.texture = load(projectile_def.display_path)
 	
+	if def.radius and def.radius > 0:
+		radius = def.radius
+	elif sprite.texture:
+		radius = sprite.texture.get_size().y / 2.0
+	else:
+		radius = 10.0
+
 	prev_pos = global_position
 
 func _process(delta: float) -> void:
@@ -48,9 +56,9 @@ func check_bloon_collisions(_delta: float) -> void:
 		return
 	
 	var move_dist = prev_pos.distance_to(global_position)
-	var collision_radius = 10.0
-	var max_bloon_radius = 15.0
-	
+	var collision_radius = radius
+	var max_bloon_radius = Bloon.max_radius
+
 	var search_radius = move_dist / 2.0 + collision_radius + max_bloon_radius
 	var search_center = (prev_pos + global_position) / 2.0
 	
@@ -72,7 +80,7 @@ func check_bloon_collisions(_delta: float) -> void:
 		if lineage_hit:
 			continue
 		
-		var bloon_radius = 10.0 
+		var bloon_radius = bloon.radius
 		var total_radius = collision_radius + bloon_radius
 		
 		var hit = false

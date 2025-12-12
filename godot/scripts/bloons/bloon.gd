@@ -120,6 +120,8 @@ const BLOON_TEXTURES = [
 	preload("res://assets/sprites/bloons/13.svg"), # BOSS (ZOMG)
 ]
 
+static var max_radius: float = 10.0
+
 static var cash_multiplier: float = 1.0
 
 var tile: Tile = null
@@ -173,6 +175,7 @@ var parentIDs: Array = []
 
 var level: Level = null
 var sounds: Node = null
+var radius: float = 10.0
 
 static var global_spawn_counter: int = 0
 
@@ -391,7 +394,7 @@ func degrade(layers: int, _cash_scale: float, _tower: Tower, show_pop: bool = tr
 	while remaining_layers > 0:
 		if cur_type <= 0:
 			for _k in range(event_multiplier):
-				bloon_popped.emit()
+				bloon_popped.emit(self)
 			bloon_removed.emit()
 			is_dead = true
 			queue_free()
@@ -406,7 +409,7 @@ func degrade(layers: int, _cash_scale: float, _tower: Tower, show_pop: bool = tr
 		zebra_flag = (cur_type == BloonType.ZEBRA)
 		
 		for _k in range(event_multiplier):
-			bloon_popped.emit()
+			bloon_popped.emit(self)
 		
 		event_multiplier *= child_count_by_type[cur_type]
 		
@@ -450,12 +453,13 @@ func _unwind_progress(p_tile: Tile, p_progress: float) -> Dictionary:
 
 func update_sprite() -> void:
 	sprite.texture = BLOON_TEXTURES[bloon_type]
+	if sprite.texture:
+		radius = sprite.texture.get_size().y / 2.0
+		if radius > Bloon.max_radius:
+			Bloon.max_radius = radius
 
 func get_pop_value() -> float:
 	return rbe_by_type[bloon_type] * cash_multiplier
-
-func get_total_rbe() -> float:
-	return rbe_by_type[bloon_type]
 
 func _exit_tree() -> void:
 	if level and level.collision_grid:

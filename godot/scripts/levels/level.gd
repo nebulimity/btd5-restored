@@ -21,6 +21,8 @@ var rbe: int = 0:
 		rbe = value
 		in_game_menu.update_rbe_display(rbe)
 
+var cash_multiplier: float = 1.0
+
 var active_bloons: int = 0
 
 var map_def: MonkeyLaneDef
@@ -107,15 +109,23 @@ func _on_bloon_removed(bloon: Bloon = null):
 		bloons.erase(bloon)
 	check_round_complete()
 
-func _on_bloon_popped():
-	money += 1
+func _on_bloon_popped(bloon: Bloon):
+	var cash = bloon.get_pop_value()
+	add_cash(int(cash))
 
 func check_round_complete():
 	if active_bloons == 0 and spawner.wave_set.current_wave != null and spawner.wave_set.current_wave.is_complete():
+		var round_bonus = 100 + (current_round - 1)
+		add_cash(round_bonus)
+
 		in_game_menu.set_play_button_enabled(true)
 		Engine.time_scale = 1.0
 		current_round += 1
 		in_game_menu.update_fast_forward_button(false)
+
+func add_cash(amount: int) -> void:
+	var final_amount = int(round(amount * cash_multiplier))
+	money += final_amount
 
 func _on_fast_forward_toggled(enabled: bool):
 	Engine.time_scale = 3.0 if enabled else 1.0
