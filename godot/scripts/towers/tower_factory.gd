@@ -16,6 +16,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 			"position_offset": Vector2(-2.335, 3.335),
 			"weapon_offset": Vector2(6, 9),
 			"rotation_offset": -90.0,
+			"fire_frame": 8,
 			"sprite_path": "res://assets/sprites/towers/dart_monkey/1.svg",
 			"can_place_on_water": false,
 			"can_place_on_track": false
@@ -28,6 +29,8 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 			"occupied_space_radius": small,
 			"position_offset": Vector2.ZERO,
 			"rotation_offset": 0.0,
+			"rotates": false,
+			"fire_frame": 5,
 			"sprite_path": "res://assets/sprites/towers/tack_shooter/1.svg",
 			"can_place_on_water": false,
 			"can_place_on_track": false
@@ -51,6 +54,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 			"position_offset": Vector2(-2.335, 3.335),
 			"weapon_offset": Vector2(26, 8),
 			"rotation_offset": -90.0,
+			"fire_frame": 10,
 			"sprite_path": "res://assets/sprites/towers/boomerang_thrower/1.svg",
 			"can_place_on_water": false,
 			"can_place_on_track": false
@@ -64,6 +68,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 			"position_offset": Vector2(-2.335, 3.335),
 			"weapon_offset": Vector2.ZERO,
 			"rotation_offset": -90.0,
+			"fire_frame": 3,
 			"sprite_path": "res://assets/sprites/towers/ninja_monkey/1.svg",
 			"can_place_on_water": false,
 			"can_place_on_track": false
@@ -129,6 +134,8 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 			"position_offset": Vector2(0.0, 3.335),
 			"weapon_offset": Vector2(9, 14),
 			"rotation_offset": -90.0,
+			"idle_frame": 1,
+			"fire_frame": 2,
 			"sprite_path": "res://assets/sprites/towers/super_monkey/1.svg",
 			"can_place_on_water": false,
 			"can_place_on_track": false

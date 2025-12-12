@@ -71,11 +71,10 @@ func execute(tower: Tower, source: Node2D, target: Node2D, weapon_offset: Vector
 		
 		proj.lifespan = weapon_range / power
 		proj.max_lifespan = proj.lifespan
+		proj.target = target as Bloon
 		var shot_angle = start_angle + angle_step * i
 		proj.velocity = Vector2.RIGHT.rotated(shot_angle) * power
 		proj.rotation = proj.velocity.angle()
 		
 		if tower.level:
 			tower.level.add_projectile(proj)
-	
-	reload_timer = reload_time

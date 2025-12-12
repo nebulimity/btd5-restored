@@ -454,6 +454,9 @@ func update_sprite() -> void:
 func get_pop_value() -> float:
 	return rbe_by_type[bloon_type] * cash_multiplier
 
+func get_total_rbe() -> float:
+	return rbe_by_type[bloon_type]
+
 func _exit_tree() -> void:
 	if level and level.collision_grid:
 		level.collision_grid.remove_bloon(self, last_grid_pos)

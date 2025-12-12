@@ -14,6 +14,9 @@ func execute(_tower: Tower, _source: Node2D, _target: Node2D, _offset: Vector2 =
 func can_fire() -> bool:
 	return reload_timer <= 0.0
 
+func reset_cooldown() -> void:
+	reload_timer = reload_time
+
 func update(delta: float) -> void:
 	if reload_timer > 0:
 		reload_timer -= delta

@@ -9,7 +9,7 @@ var tower_def: Dictionary
 var current_range: float
 var selected: bool
 var orientation: float
-var sprite: Sprite2D
+var sprite: AnimatedSprite2D
 var outline: Sprite2D
 var outline_shader: ShaderMaterial
 var range_combo: Node2D
@@ -21,6 +21,15 @@ var targets_by_priority: Array[Bloon] = []
 var current_target: Bloon = null
 var target_priority: String = "first"  # first, last, close, strong
 
+var in_throw_animation: bool = false
+var has_fired: bool = false
+var behaviors: Array = [] 
+
+var fire_weapon: Weapon = null
+var fire_offset: Vector2 = Vector2.ZERO
+
+var target_search_timer: float = 0.0
+
 func _init(type: String) -> void:
 	tower_type = type
 	tower_def = TowerFactory.get_tower_def(type)
@@ -28,13 +37,36 @@ func _init(type: String) -> void:
 	orientation = tower_def["rotation_offset"]
 	
 	setup_weapons()
+	
+	if tower_def.get("rotates", true):
+		behaviors.append(RotateToTarget.new())
 
 func _ready() -> void:
-	sprite = Sprite2D.new()
-	sprite.texture = load(tower_def["sprite_path"])
+	sprite = AnimatedSprite2D.new()
 	sprite.offset = tower_def["position_offset"]
 	sprite.z_index = 2
 	sprite.rotation_degrees = orientation
+	
+	var sprite_frames = SpriteFrames.new()
+	sprite_frames.remove_animation("default")
+	sprite_frames.add_animation("default")
+	sprite_frames.set_animation_loop("default", false)
+	sprite_frames.set_animation_speed("default", 30.0)
+	
+	var base_path = tower_def["sprite_path"].get_base_dir()
+	var frame_index = 1
+	
+	while true:
+		var frame_path = base_path + "/" + str(frame_index) + ".svg"
+		if FileAccess.file_exists(frame_path):
+			var texture = load(frame_path)
+			sprite_frames.add_frame("default", texture)
+			frame_index += 1
+		else:
+			break
+	
+	sprite.sprite_frames = sprite_frames
+	sprite.animation_finished.connect(_on_animation_finished)
 	add_child(sprite)
 	
 	outline_shader = ShaderMaterial.new()
@@ -49,8 +81,6 @@ func _ready() -> void:
 	outline.visible = false
 	sprite.add_child(outline)
 	
-	place_sound.play()
-	
 	if current_range > 0 and current_range < 999999:
 		range_combo = RangeCombo.new()
 		add_child(range_combo)
@@ -58,6 +88,8 @@ func _ready() -> void:
 	level = get_parent().get_node_or_null("Level")
 	if not level:
 		level = get_parent().get_parent().get_node_or_null("Level")
+	
+	place_sound.play()
 
 func setup_weapons() -> void:
 	match tower_type:
@@ -122,26 +154,85 @@ func setup_weapons() -> void:
 			pass
 
 func _process(delta: float) -> void:
-	if not level:
-		return
+	target_search_timer += delta
 	
-	range_combo.redraw(tower_def["range"], true)
-	if outline.visible:
-		outline.texture = sprite.texture
+	find_targets()
+	
+	for behavior in behaviors:
+		if behavior.has_method("process"):
+			behavior.process(self, delta)
 	
 	for weapon in weapons:
 		weapon.update(delta)
 	
-	find_targets()
+	if fire_weapon != null and not has_fired and not in_throw_animation:
+		fire()
 	
-	if weapons.size() > 0 and targets_by_priority.size() > 0:
-		current_target = get_target_by_priority()
+	ready_fire()      
+	check_fire_frame()
+	
+	if range_combo and selected:
+		range_combo.redraw(tower_def["range"], true)
+	if outline.visible and sprite.sprite_frames.get_frame_count("default") > 0:
+		outline.texture = sprite.sprite_frames.get_frame_texture("default", sprite.frame)
+
+func ready_fire() -> void:
+	if in_throw_animation:
+		return
+	
+	for i in range(weapons.size()):
+		var weapon = weapons[i]
 		
-		for i in range(weapons.size()):
-			var weapon = weapons[i]
-			if weapon.can_fire():
-				var offset = weapon_offsets[i] if i < weapon_offsets.size() else Vector2.ZERO
-				weapon.execute(self, self, current_target, offset)
+		if i == 0:
+			var target_invalid = false
+			
+			if current_target == null or not is_instance_valid(current_target):
+				target_invalid = true
+			elif current_target.bloon_type < 0:
+				target_invalid = true
+			elif target_search_timer > 0.5:
+				target_invalid = true
+			elif global_position.distance_to(current_target.global_position) > current_range:
+				target_invalid = true
+			
+			if target_invalid:
+				current_target = null
+				if targets_by_priority.size() > 0:
+					current_target = get_target_by_priority()
+				target_search_timer = 0.0
+		
+		if current_target == null:
+			continue
+		
+		if weapon.can_fire():
+			weapon.reset_cooldown()
+			fire_weapon = weapon
+			fire_offset = weapon_offsets[i] if i < weapon_offsets.size() else Vector2.ZERO
+			
+			in_throw_animation = true
+			has_fired = false
+			
+			sprite.frame = 0
+			sprite.play("default")
+
+func check_fire_frame() -> void:
+	if in_throw_animation and not has_fired:
+		var trigger_frame = int(tower_def.get("fire_frame", 1))
+		if sprite.frame >= trigger_frame - 1:
+			fire()
+
+func fire() -> void:
+	if fire_weapon:
+		has_fired = true
+		if current_target:
+			fire_weapon.execute(self, self, current_target, fire_offset)
+		else:
+			fire_weapon.execute(self, self, null, fire_offset)
+
+func _on_animation_finished() -> void:
+	in_throw_animation = false
+	if tower_def.get("idle_frame"):
+		sprite.frame = tower_def["idle_frame"] - 1
 
 func find_targets() -> void:
 	targets_by_priority.clear()
@@ -183,7 +274,9 @@ func get_target_by_priority() -> Bloon:
 		"strong":
 			var strongest = targets_by_priority[0]
 			for bloon in targets_by_priority:
-				if bloon.health > strongest.health:
+				if bloon.get_total_rbe() > strongest.get_total_rbe():
+					strongest = bloon
+				elif bloon.get_total_rbe() == strongest.get_total_rbe() and bloon.overall_progress > strongest.overall_progress:
 					strongest = bloon
 			return strongest
 		_:

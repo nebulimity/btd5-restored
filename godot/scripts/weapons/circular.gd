@@ -29,7 +29,7 @@ func SetProjectile(proj: ProjectileDef) -> Circular:
 	projectile = proj
 	return self
 
-func execute(tower: Tower, source: Node2D, _target: Node2D, _weapon_offset: Vector2 = Vector2.ZERO) -> void:
+func execute(tower: Tower, source: Node2D, target: Node2D, _weapon_offset: Vector2 = Vector2.ZERO) -> void:
 	if not projectile:
 		return
 		
@@ -43,6 +43,7 @@ func execute(tower: Tower, source: Node2D, _target: Node2D, _weapon_offset: Vect
 		
 		proj.lifespan = weapon_range / power
 		proj.max_lifespan = proj.lifespan
+		proj.target = target as Bloon
 		proj.velocity.x = power
 		proj.velocity.y = 0
 		proj.velocity = proj.velocity.rotated(source.rotation + rotation_offset * i)
@@ -50,5 +51,3 @@ func execute(tower: Tower, source: Node2D, _target: Node2D, _weapon_offset: Vect
 		
 		if tower.level:
 			tower.level.add_projectile(proj)
-	
-	reload_timer = reload_time
