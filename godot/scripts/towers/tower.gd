@@ -42,7 +42,7 @@ func _init(type: String) -> void:
 	if tower_def.get("rotates", true):
 		behaviors.append(RotateToTarget.new())
 
-func _ready() -> void:	
+func _ready() -> void:
 	sprite = AnimatedSprite2D.new()
 	sprite.offset = tower_def["position_offset"]
 	sprite.z_index = 2

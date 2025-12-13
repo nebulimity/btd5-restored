@@ -5,6 +5,7 @@ var def: ProjectileDef
 var owner_tower: Tower
 var velocity: Vector2 = Vector2.ZERO
 var lifespan: float = 10.0
+var max_lifespan: float = 10.0
 var pierce: int = 1
 var damage: int = 1
 var hit_bloons: Array[int] = []
