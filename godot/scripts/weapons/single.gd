@@ -34,15 +34,15 @@ func execute(tower: Tower, source: Node2D, target: Node2D, weapon_offset: Vector
 	proj.owner_tower = tower
 	proj.position = source.global_position
 	
-	if rotate and target != null:
-		var initial_direction = target.global_position - proj.position
-		tower.rotation = initial_direction.angle() + deg_to_rad(90.0)
-	
 	var temp_rotation = Vector2.ZERO
 	if offset_sequence.size() > 0:
 		var seq_offset = offset_sequence[offset_index % offset_sequence.size()]
 		temp_rotation = seq_offset
 		offset_index += 1
+	
+	if rotate and target != null:
+		var initial_direction = target.global_position - proj.position
+		tower.rotation = initial_direction.angle() + deg_to_rad(90.0)
 	
 	if weapon_offset != Vector2.ZERO:
 		temp_rotation += weapon_offset
@@ -50,8 +50,6 @@ func execute(tower: Tower, source: Node2D, target: Node2D, weapon_offset: Vector
 		proj.position += temp_rotation
 	
 	proj.lifespan = weapon_range / power
-	proj.max_lifespan = proj.lifespan
-	proj.target = target as Bloon
 	
 	if target != null:
 		proj.velocity = (target.global_position - proj.position).normalized() * power
@@ -60,6 +58,7 @@ func execute(tower: Tower, source: Node2D, target: Node2D, weapon_offset: Vector
 		proj.velocity = Vector2(cos(shoot_angle), sin(shoot_angle)) * power
 	
 	proj.rotation = proj.velocity.angle()
+	proj.target = target as Bloon
 	
 	if tower.level:
 		tower.level.add_child(proj)

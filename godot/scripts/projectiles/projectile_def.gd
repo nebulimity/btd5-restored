@@ -3,7 +3,7 @@ extends RefCounted
 
 var display_path: String = ""
 var pierce: int = 1
-var radius: float = 10.0
+var radius: float = 0.0
 var speed: float = 0.0
 var damage_effect: DamageEffectDef = null
 var behavior: BehaviorDef = null

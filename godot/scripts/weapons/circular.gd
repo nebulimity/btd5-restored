@@ -42,7 +42,6 @@ func execute(tower: Tower, source: Node2D, target: Node2D, _weapon_offset: Vecto
 		proj.position = source.global_position
 		
 		proj.lifespan = weapon_range / power
-		proj.max_lifespan = proj.lifespan
 		proj.target = target as Bloon
 		proj.velocity.x = power
 		proj.velocity.y = 0

@@ -191,6 +191,9 @@ static var next_id: int = 0
 var id: int = 0
 var bursts_this_process: int = 0
 
+func _init() -> void:
+	process_priority = 0
+
 func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0, p_is_regen: bool = false, p_is_camo: bool = false, p_spawn_order: int = 0, _p_level: Level = null):
 	bloon_type = p_type
 	tile = start_tile

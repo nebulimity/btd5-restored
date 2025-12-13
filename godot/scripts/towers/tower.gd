@@ -31,6 +31,7 @@ var fire_offset: Vector2 = Vector2.ZERO
 var target_search_timer: float = 0.0
 
 func _init(type: String) -> void:
+	process_priority = 5
 	tower_type = type
 	tower_def = TowerFactory.get_tower_def(type)
 	current_range = tower_def["range"]
@@ -41,7 +42,7 @@ func _init(type: String) -> void:
 	if tower_def.get("rotates", true):
 		behaviors.append(RotateToTarget.new())
 
-func _ready() -> void:
+func _ready() -> void:	
 	sprite = AnimatedSprite2D.new()
 	sprite.offset = tower_def["position_offset"]
 	sprite.z_index = 2

@@ -5,7 +5,6 @@ var def: ProjectileDef
 var owner_tower: Tower
 var velocity: Vector2 = Vector2.ZERO
 var lifespan: float = 10.0
-var max_lifespan: float = 10.0
 var pierce: int = 1
 var damage: int = 1
 var hit_bloons: Array[int] = []
@@ -13,12 +12,16 @@ var target: Bloon = null
 var sprite: Sprite2D
 var damage_effect: DamageEffectDef
 
-var radius: float = 10.0
-var prev_pos: Vector2 
+var radius: float = 0.0
+var prev_pos: Vector2
+
+func _init() -> void:
+	process_priority = 10
 
 func initialize(projectile_def: ProjectileDef) -> void:
 	def = projectile_def
 	pierce = def.pierce
+	radius = def.radius
 	damage_effect = def.damage_effect
 	hit_bloons.clear()
 	
@@ -26,13 +29,6 @@ func initialize(projectile_def: ProjectileDef) -> void:
 	add_child(sprite)
 	
 	sprite.texture = load(projectile_def.display_path)
-	
-	if def.radius and def.radius > 0:
-		radius = def.radius
-	elif sprite.texture:
-		radius = sprite.texture.get_size().y / 2.0
-	else:
-		radius = 10.0
 
 	prev_pos = global_position
 
