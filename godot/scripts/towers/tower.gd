@@ -59,7 +59,7 @@ func _ready() -> void:
 	
 	while true:
 		var frame_path = base_path + "/" + str(frame_index) + ".svg"
-		if FileAccess.file_exists(frame_path):
+		if ResourceLoader.exists(frame_path):
 			var texture = load(frame_path)
 			sprite_frames.add_frame("default", texture)
 			frame_index += 1
