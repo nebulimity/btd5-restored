@@ -128,7 +128,7 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 		"SuperMonkey": {
 			"label": "Super Monkey",
 			"description": "Throws darts incredibly fast. Has long range and lots of insanely powerful upgrades.",
-			"cost": 1,
+			"cost": 3500,
 			"range": 140,
 			"occupied_space_radius": large,
 			"position_offset": Vector2(-1.0, 1.5),
