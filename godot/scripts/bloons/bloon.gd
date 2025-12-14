@@ -207,7 +207,6 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 	was_regenerated = false
 	special_flag = false
 	level = self.get_parent().get_parent().get_node("Level") #_p_level
-	sounds = level.get_node("../Sounds")
 	
 	id = Bloon.next_id
 	Bloon.next_id += 1
@@ -374,8 +373,7 @@ func degrade(layers: int, _cash_scale: float, _tower: Tower, show_pop: bool = tr
 	
 	if show_pop and bursts_this_process < 15 and level:
 		bursts_this_process += 1
-		if sounds:
-			sounds.get_node("Pop" + str(randi_range(1, 4))).play()
+		SoundManager.play("pop" + str(randi_range(1, 4)))
 		
 		var burst = Burst.new()
 		burst.initialize(position.x, position.y)

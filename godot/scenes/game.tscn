@@ -1,24 +1,17 @@
-[gd_scene load_steps=71 format=3 uid="uid://b54bixc6lxnii"]
+[gd_scene load_steps=68 format=3 uid="uid://b54bixc6lxnii"]
 
-[ext_resource type="AudioStream" uid="uid://djsfwrdgmbe4g" path="res://assets/audio/music/main_theme.ogg" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://c6yn56v5ter2w" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://qcc8w0d0puor" path="res://scripts/levels/rounds/spawner.gd" id="2_lnu2h"]
 [ext_resource type="Script" uid="uid://b2rfnhxh07kdl" path="res://scripts/levels/level.gd" id="3_8ool0"]
-[ext_resource type="AudioStream" uid="uid://cagov42se3ktn" path="res://assets/audio/sfx/place.mp3" id="3_m4url"]
 [ext_resource type="Texture2D" uid="uid://c48fwu2o20e4u" path="res://assets/ui/side_panel.svg" id="4_iywne"]
 [ext_resource type="Texture2D" uid="uid://bmn0ag000gmv5" path="res://assets/ui/bottom_panel.svg" id="5_p57ef"]
-[ext_resource type="AudioStream" uid="uid://mieg5op3sy4p" path="res://assets/audio/sfx/pop1.mp3" id="6_0sl42"]
 [ext_resource type="Texture2D" uid="uid://ln6lpeyp7xmn" path="res://assets/ui/big_button/default.svg" id="6_kvuet"]
 [ext_resource type="Script" uid="uid://sb7eaf6gujrg" path="res://scripts/gui/in_game/in_game_menu.gd" id="7_gxtfn"]
-[ext_resource type="AudioStream" uid="uid://dh0en3vflem0i" path="res://assets/audio/sfx/pop2.mp3" id="7_oaba0"]
 [ext_resource type="Texture2D" uid="uid://dtk7cjaao34sq" path="res://assets/ui/big_button/outlined.svg" id="7_trtic"]
 [ext_resource type="FontFile" uid="uid://br002hhqta44a" path="res://assets/fonts/oetztype.ttf" id="7_u5sy4"]
-[ext_resource type="AudioStream" uid="uid://cyxibnhxkc5jx" path="res://assets/audio/sfx/pop3.mp3" id="8_458eo"]
 [ext_resource type="Texture2D" uid="uid://dvnsdc2v1aeax" path="res://assets/ui/big_button/play_button/arrow.svg" id="8_gee14"]
 [ext_resource type="Shader" uid="uid://c3ryj3gh8f7l2" path="res://shaders/shadow.gdshader" id="8_ssvqc"]
 [ext_resource type="Texture2D" uid="uid://cvvim8vwjnuud" path="res://assets/sprites/spikey_ball.svg" id="9_0tnpc"]
-[ext_resource type="AudioStream" uid="uid://d2c3dr2srgbru" path="res://assets/audio/sfx/pop4.mp3" id="9_h3rex"]
-[ext_resource type="AudioStream" uid="uid://cd3wi427s3xx" path="res://assets/audio/sfx/select.mp3" id="9_vtaks"]
 [ext_resource type="BitMap" uid="uid://iqns1bau8u20" path="res://assets/ui/big_button/mask.svg" id="11_twgab"]
 [ext_resource type="Texture2D" uid="uid://bc41qugao8owb" path="res://assets/ui/big_button/fast_forward_button/default.svg" id="11_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://2uplxmb612qr" path="res://assets/ui/big_button/fast_forward_button/pressed.svg" id="12_js0lu"]
@@ -47,6 +40,10 @@
 [ext_resource type="Texture2D" uid="uid://cqls336tsosk3" path="res://assets/ui/tower_buttons/super_tower/default.svg" id="33_oaba0"]
 [ext_resource type="Texture2D" uid="uid://dnxn0lhjd44ih" path="res://assets/ui/tower_buttons/ninja_tower/default.svg" id="34_h3rex"]
 [ext_resource type="BitMap" uid="uid://dl5xgg2c5oxnc" path="res://assets/ui/sfx/mask.svg" id="35_7025r"]
+[ext_resource type="Texture2D" uid="uid://cfutrdkf1dwbo" path="res://assets/ui/sfx/off/default.svg" id="40_05nbr"]
+[ext_resource type="Texture2D" uid="uid://bjur1rvi756u5" path="res://assets/ui/sfx/off/outlined.svg" id="41_0sl42"]
+[ext_resource type="Texture2D" uid="uid://dq7jebuwqx6mb" path="res://assets/ui/music/off/default.svg" id="44_oaba0"]
+[ext_resource type="Texture2D" uid="uid://c1f746kogr1k7" path="res://assets/ui/music/off/outlined.svg" id="45_458eo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gee14"]
 font = ExtResource("7_u5sy4")
@@ -204,42 +201,9 @@ script = ExtResource("2_lnu2h")
 [node name="Level" type="Node" parent="."]
 script = ExtResource("3_8ool0")
 
-[node name="Sounds" type="Node" parent="."]
-
-[node name="Place" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("3_m4url")
-
-[node name="Select" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("9_vtaks")
-
-[node name="Pop1" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("6_0sl42")
-max_polyphony = 15
-
-[node name="Pop2" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("7_oaba0")
-max_polyphony = 15
-
-[node name="Pop3" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("8_458eo")
-max_polyphony = 15
-
-[node name="Pop4" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("9_h3rex")
-max_polyphony = 15
-
 [node name="Towers" type="Node2D" parent="."]
 z_index = 1
 y_sort_enabled = true
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_uwrxv")
-autoplay = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(2, 0)
-anchor_mode = 0
-zoom = Vector2(0.678, 0.677)
 
 [node name="SpikeyBall" type="Sprite2D" parent="."]
 position = Vector2(-1068, 610)
@@ -893,6 +857,10 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("28_js0lu")
 texture_hover = ExtResource("29_gxtfn")
 texture_click_mask = ExtResource("35_7025r")
+metadata/default_texture = ExtResource("28_js0lu")
+metadata/pressed_texture = ExtResource("40_05nbr")
+metadata/default_outlined = ExtResource("29_gxtfn")
+metadata/pressed_outlined = ExtResource("41_0sl42")
 
 [node name="MusicButton" type="TextureButton" parent="InGameMenu/BottomPanel/Misc/Default"]
 layout_mode = 0
@@ -904,8 +872,19 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("26_wljb1")
 texture_hover = ExtResource("27_v2yb1")
 texture_click_mask = ExtResource("35_7025r")
+metadata/default_texture = ExtResource("26_wljb1")
+metadata/pressed_texture = ExtResource("44_oaba0")
+metadata/default_outlined = ExtResource("27_v2yb1")
+metadata/pressed_outlined = ExtResource("45_458eo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(2, 0)
+anchor_mode = 0
+zoom = Vector2(0.678, 0.677)
 
 [connection signal="child_entered_tree" from="Spawner" to="Level" method="_on_bloon_spawned"]
 [connection signal="rbe_changed" from="Spawner" to="Level" method="_on_rbe_changed"]
 [connection signal="pressed" from="InGameMenu/SidePanel/UI/PlayButton" to="InGameMenu" method="_on_play_button_pressed"]
 [connection signal="pressed" from="InGameMenu/SidePanel/UI/FastForwardButton" to="InGameMenu" method="_on_fast_forward_button_pressed"]
+[connection signal="pressed" from="InGameMenu/BottomPanel/Misc/Default/SfxButton" to="InGameMenu" method="_on_sfx_button_pressed"]
+[connection signal="pressed" from="InGameMenu/BottomPanel/Misc/Default/MusicButton" to="InGameMenu" method="_on_music_button_pressed"]

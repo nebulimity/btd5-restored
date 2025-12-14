@@ -46,7 +46,6 @@ var water_area: Area2D
 
 @onready var spawner: Node = $"../Spawner"
 @onready var in_game_menu: Control = $"../InGameMenu"
-@onready var select_sound: AudioStreamPlayer = $"../Sounds/Select"
 
 func _ready() -> void:
 	map_scene = preload("res://scenes/maps/monkey_lane.tscn")
@@ -72,6 +71,8 @@ func _ready() -> void:
 	in_game_menu.tower_purchase_requested.connect(_on_tower_purchase_requested)
 	
 	call_deferred("update_ui")
+	
+	SoundManager.play_music("main_theme")
 
 func update_ui():
 	in_game_menu.update_money_display(money)
@@ -174,7 +175,7 @@ func _on_placement_cancelled():
 	
 func update_selection(new_tower: Node2D) -> void:
 	if selected_tower == new_tower and selected_tower != null and new_tower != null:
-		select_sound.play()
+		SoundManager.play("select")
 		return
 	if selected_tower:
 		selected_tower.deselect()

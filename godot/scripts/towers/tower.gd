@@ -1,9 +1,6 @@
 class_name Tower
 extends Node2D
 
-@onready var place_sound: AudioStreamPlayer = $"../../Sounds/Place"
-@onready var select_sound: AudioStreamPlayer = $"../../Sounds/Select"
-
 var tower_type: String
 var tower_def: Dictionary
 var current_range: float
@@ -90,7 +87,7 @@ func _ready() -> void:
 	if not level:
 		level = get_parent().get_parent().get_node_or_null("Level")
 	
-	place_sound.play()
+	SoundManager.play("place")
 
 func setup_weapons() -> void:
 	match tower_type:
@@ -297,8 +294,7 @@ func unhighlight():
 
 func select():
 	selected = true
-	if select_sound:
-		select_sound.play()
+	SoundManager.play("select")
 	if range_combo:
 		range_combo.visible = true
 

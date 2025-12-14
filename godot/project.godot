@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.5")
 boot_splash/image="uid://dpyimxjhceom3"
 config/icon="res://icon.svg"
 
+[autoload]
+
+SoundManager="*res://scripts/sound/sound_manager.gd"
+
 [display]
 
 window/size/viewport_width=542
