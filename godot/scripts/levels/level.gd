@@ -102,17 +102,12 @@ func _on_bloon_spawned(node: Node):
 		active_bloons += 1
 		bloons.append(node)
 		node.bloon_removed.connect(_on_bloon_removed.bind(node))
-		node.bloon_popped.connect(_on_bloon_popped)
 
 func _on_bloon_removed(bloon: Bloon = null):
 	active_bloons -= 1
 	if bloon and bloon in bloons:
 		bloons.erase(bloon)
 	check_round_complete()
-
-func _on_bloon_popped(bloon: Bloon):
-	var cash = bloon.get_pop_value()
-	add_cash(int(cash))
 
 func check_round_complete():
 	if active_bloons == 0 and spawner.wave_set.current_wave != null and spawner.wave_set.current_wave.is_complete():

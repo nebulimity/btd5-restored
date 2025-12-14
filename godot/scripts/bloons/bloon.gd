@@ -53,37 +53,37 @@ static var rbe_by_type = [
 ]
 
 static var health_by_type = [
-	1,
-	1,
-	1,
-	1,
-	1,
-	1,
-	1,
-	1,
-	1,
-	1,
-	10,
-	200,
-	700,
-	4000
+	1,      # RED
+	1,      # BLUE
+	1,      # GREEN
+	1,      # YELLOW
+	1,      # PINK
+	1,      # BLACK
+	1,      # WHITE
+	1,      # LEAD
+	1,      # ZEBRA
+	1,      # RAINBOW
+	10,     # CERAMIC
+	200,    # MOAB
+	700,    # BFB
+	4000    # BOSS (ZOMG)
 ]
 
 static var child_count_by_type = [
-	1,
-	1,
-	1,
-	1,
-	1,
-	2,
-	2,
-	2,
-	2,
-	2,
-	2,
-	4,
-	4,
-	4
+	1,      # RED
+	1,      # BLUE
+	1,      # GREEN
+	1,      # YELLOW
+	1,      # PINK
+	2,      # BLACK
+	2,      # WHITE
+	2,      # LEAD
+	2,      # ZEBRA
+	2,      # RAINBOW
+	2,      # CERAMIC
+	4,      # MOAB
+	4,      # BFB
+	4       # BOSS (ZOMG)
 ]
 
 static var spawn_order_offsets = [
@@ -123,6 +123,7 @@ const BLOON_TEXTURES = [
 static var max_radius: float = 10.0
 
 static var cash_multiplier: float = 1.0
+var cash_awarded: Array[bool] = []
 
 var tile: Tile = null
 var tile_progress: float = 0.0
@@ -210,6 +211,9 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 	
 	id = Bloon.next_id
 	Bloon.next_id += 1
+	
+	cash_awarded.resize(BloonType.size())
+	cash_awarded.fill(false)
 	
 	match bloon_type:
 		BloonType.CERAMIC:
@@ -365,7 +369,7 @@ func damage(damage_amount: int, cash_scale: float, tower: Tower, show_pop: bool 
 		health = loc6
 		update_sprite()
 
-func degrade(layers: int, _cash_scale: float, _tower: Tower, show_pop: bool = true) -> void:
+func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop: bool = true) -> void:
 	if bloon_type < 0:
 		return
 	
@@ -391,13 +395,30 @@ func degrade(layers: int, _cash_scale: float, _tower: Tower, show_pop: bool = tr
 	var zebra_flag: bool = false
 	var cur_type: int = int(bloon_type)
 	
+	var calculated_cash: float = 0.0
+	var calculated_pops: int = 0
+	var calculated_xp: float = 0.0
+	
+	var current_layer_width: int = 1
+	
 	var remaining_layers = layers
 	while remaining_layers > 0:
+		if not cash_awarded[cur_type]:
+			cash_awarded[cur_type] = true
+			
+			if level.current_round >= 85 and cur_type == BloonType.CERAMIC:
+				calculated_cash += _cash_scale * current_layer_width * level.cash_multiplier * 95
+				calculated_xp += current_layer_width * 95
+			else:
+				calculated_cash += _cash_scale * current_layer_width * level.cash_multiplier
+				calculated_xp += current_layer_width
+		
 		if cur_type <= 0:
 			for _k in range(event_multiplier):
 				bloon_popped.emit(self)
 			bloon_removed.emit()
 			is_dead = true
+			post_degrade(tower, calculated_cash, calculated_pops, calculated_xp)
 			queue_free()
 			return
 		
@@ -435,9 +456,16 @@ func degrade(layers: int, _cash_scale: float, _tower: Tower, show_pop: bool = tr
 	if to_spawn > 0:
 		create_children(to_spawn, zebra_flag)
 	
+	post_degrade(tower, calculated_cash, calculated_pops, calculated_xp)
 	parentIDs.append(id)
 	id = Bloon.next_id
 	Bloon.next_id += 1
+
+func get_pop_value() -> float:
+	return rbe_by_type[bloon_type] * cash_multiplier
+
+func post_degrade(_tower, cash_earned, _pop_count: int, _xp_amount: float) -> void:
+	level.add_cash(cash_earned)
 
 func _unwind_progress(p_tile: Tile, p_progress: float) -> Dictionary:
 	var current_tile = p_tile
@@ -458,9 +486,6 @@ func update_sprite() -> void:
 		radius = sprite.texture.get_size().y / 2.0
 		if radius > Bloon.max_radius:
 			Bloon.max_radius = radius
-
-func get_pop_value() -> float:
-	return rbe_by_type[bloon_type] * cash_multiplier
 
 func _exit_tree() -> void:
 	if level and level.collision_grid:
