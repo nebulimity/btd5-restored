@@ -11,7 +11,7 @@ var lives: int = 150:
 		lives = value
 		in_game_menu.update_lives_display(lives)
 
-var current_round: int = 1:
+var current_round: int = 46:
 	set(value):
 		current_round = value
 		in_game_menu.update_round_display(current_round)

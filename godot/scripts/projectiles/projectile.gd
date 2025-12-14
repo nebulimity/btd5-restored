@@ -114,6 +114,7 @@ func line_intersects_circle(line_start: Vector2, line_end: Vector2, circle_cente
 func handle_collision(bloon: Bloon) -> void:
 	if damage_effect:
 		if bloon.bloon_type in damage_effect.cant_break_types:
+			SoundManager.play("metal_bloon_hit")
 			hit_bloons.append(bloon.id)
 			destroy()
 			return

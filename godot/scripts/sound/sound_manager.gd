@@ -14,10 +14,18 @@ const MUSIC = {
 const SFX = {
 	"select": preload("res://assets/audio/sfx/select.mp3"),
 	"place": preload("res://assets/audio/sfx/place.mp3"),
-	"pop1": preload("res://assets/audio/sfx/pop1.mp3"),
-	"pop2": preload("res://assets/audio/sfx/pop2.mp3"),
-	"pop3": preload("res://assets/audio/sfx/pop3.mp3"),
-	"pop4": preload("res://assets/audio/sfx/pop4.mp3"),
+	"pop_1": preload("res://assets/audio/sfx/pop_1.mp3"),
+	"pop_2": preload("res://assets/audio/sfx/pop_2.mp3"),
+	"pop_3": preload("res://assets/audio/sfx/pop_3.mp3"),
+	"pop_4": preload("res://assets/audio/sfx/pop_4.mp3"),
+	"metal_bloon_hit": preload("res://assets/audio/sfx/metal_bloon_hit.mp3"),
+	"ceramic_bloon_hit": preload("res://assets/audio/sfx/ceramic_bloon_hit.mp3"),
+	"moab_damage_1": preload("res://assets/audio/sfx/moab_damage_1.mp3"),
+	"moab_damage_2": preload("res://assets/audio/sfx/moab_damage_2.mp3"),
+	"moab_damage_3": preload("res://assets/audio/sfx/moab_damage_3.mp3"),
+	"moab_destroyed_short": preload("res://assets/audio/sfx/moab_destroyed_short.mp3"),
+	"moab_destroyed_med": preload("res://assets/audio/sfx/moab_destroyed_med.mp3"),
+	"moab_destroyed_big": preload("res://assets/audio/sfx/moab_destroyed_big.mp3"),
 }
 
 var sfx_pool: Array[AudioStreamPlayer] = []

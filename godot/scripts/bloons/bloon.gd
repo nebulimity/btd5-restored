@@ -360,10 +360,9 @@ func damage(damage_amount: int, cash_scale: float, tower: Tower, show_pop: bool 
 		degrade(loc5, cash_scale, tower, show_pop)
 	else:
 		if bloon_type == BloonType.CERAMIC:
-			# play ceramic hit sound
-			pass
+			SoundManager.play("ceramic_bloon_hit")
 		elif bloon_type == BloonType.MOAB:
-			# play moab hit sound
+			SoundManager.play("moab_damage_" + str(randi_range(1, 3)))
 			pass
 		
 		health = loc6
@@ -377,18 +376,18 @@ func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop: bool = tru
 	
 	if show_pop and bursts_this_process < 15 and level:
 		bursts_this_process += 1
-		SoundManager.play("pop" + str(randi_range(1, 4)))
+		SoundManager.play("pop_" + str(randi_range(1, 4)))
 		
 		var burst = Burst.new()
 		burst.initialize(position.x, position.y)
 		level.add_child(burst)
 	
 	if bloon_type == BloonType.BOSS:
-		pass
+		SoundManager.play("moab_destroyed_big")
 	elif bloon_type == BloonType.BFB:
-		pass
+		SoundManager.play("moab_destroyed_med")
 	elif bloon_type == BloonType.MOAB:
-		pass
+		SoundManager.play("moab_destroyed_short")
 	
 	var total_multiplier: int = 1
 	var event_multiplier: int = 1
