@@ -61,4 +61,4 @@ func execute(tower: Tower, source: Node2D, target: Node2D, weapon_offset: Vector
 	proj.target = target as Bloon
 	
 	if tower.level:
-		tower.level.add_child(proj)
+		tower.level.add_projectile(proj)

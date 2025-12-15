@@ -24,7 +24,7 @@ func update_bloon_position(bloon) -> void:
 			bloon.tile_progress = bloon.tile_progress - tile_length
 			bloon.tile.update_bloon_position(bloon)
 		else:
-			bloon.leak()
+			bloon.destroy()
 		return
 	
 	var start_pos = way_points[0]

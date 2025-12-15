@@ -27,7 +27,6 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 			"cost": 360,
 			"range": 70,
 			"occupied_space_radius": small,
-			"position_offset": Vector2.ZERO,
 			"rotation_offset": 0.0,
 			"rotates": false,
 			"fire_frame": 5,
@@ -39,8 +38,12 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 			"label": "Sniper Monkey",
 			"description": "Armed with a high-tech long range rifle, pops 2 layers off of bloons with unlimited range.",
 			"cost": 350,
-			"range": 999999,  # Infinite range
+			"range": 1200,
 			"occupied_space_radius": small,
+			"position_offset": Vector2(22.5, -3.5),
+			"rotation_offset": -90.0,
+			"rotates": false,  # instant class ignores this
+			"fire_frame": 2,
 			"sprite_path": "res://assets/sprites/towers/sniper_monkey/1.svg",
 			"can_place_on_water": false,
 			"can_place_on_track": false
@@ -65,7 +68,6 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 			"cost": 500,
 			"range": 120,
 			"occupied_space_radius": small,
-			"position_offset": Vector2.ZERO,
 			"weapon_offset": Vector2.ZERO,
 			"rotation_offset": -90.0,
 			"fire_frame": 3,

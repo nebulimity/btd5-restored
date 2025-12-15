@@ -24,7 +24,7 @@ func setup(type: String) -> void:
 func _initialize_preview() -> void:
 	preview_sprite = Sprite2D.new()
 	preview_sprite.texture = load(tower_def["sprite_path"])
-	preview_sprite.offset = tower_def["position_offset"]
+	preview_sprite.offset = tower_def.get("position_offset", Vector2.ZERO)
 	preview_sprite.z_index = 10
 	preview_sprite.rotate(deg_to_rad(tower_def["rotation_offset"]))
 	

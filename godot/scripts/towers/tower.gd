@@ -28,7 +28,6 @@ var fire_offset: Vector2 = Vector2.ZERO
 var target_search_timer: float = 0.0
 
 func _init(type: String) -> void:
-	process_priority = 5
 	tower_type = type
 	tower_def = TowerFactory.get_tower_def(type)
 	current_range = tower_def["range"]
@@ -41,7 +40,7 @@ func _init(type: String) -> void:
 
 func _ready() -> void:
 	sprite = AnimatedSprite2D.new()
-	sprite.offset = tower_def["position_offset"]
+	sprite.offset = tower_def.get("position_offset", Vector2.ZERO)
 	sprite.z_index = 2
 	sprite.rotation_degrees = orientation
 	
@@ -112,6 +111,16 @@ func setup_weapons() -> void:
 			weapons.append(weapon)
 			weapon_offsets.append(Vector2.ZERO)
 		
+		"SniperMonkey":
+			var damage_def = DamageEffectDef.new().Damage(2).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
+			var proj_def = ProjectileDef.new("res://assets/projectiles/tack.svg")
+			proj_def.Pierce(1).Speed(200).DamageEffect(damage_def)
+			
+			var weapon = Instant.new()
+			weapon.SetReloadTime(2.2).SetProjectile(proj_def)
+			weapons.append(weapon)
+			weapon_offsets.append(Vector2.ZERO)
+		
 		"BoomerangThrower":
 			var path_behavior = FollowPath.new().Path([
 				CubicBezierDef.new().A(Vector2.ZERO).B(Vector2.ZERO).C(Vector2(112, 55)).D(Vector2(131, -27)),
@@ -151,7 +160,7 @@ func setup_weapons() -> void:
 		_:
 			pass
 
-func _process(delta: float) -> void:
+func process(delta: float) -> void:
 	target_search_timer += delta
 	
 	find_targets()
@@ -186,7 +195,7 @@ func ready_fire() -> void:
 			
 			if current_target == null or not is_instance_valid(current_target):
 				target_invalid = true
-			elif current_target.bloon_type < 0:
+			elif current_target.bloon_type == -1:
 				target_invalid = true
 			elif target_search_timer > 0.5:
 				target_invalid = true

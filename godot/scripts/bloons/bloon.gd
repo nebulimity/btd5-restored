@@ -144,7 +144,6 @@ var speed_modifier: float = 1.0
 var is_frozen: bool = false
 var is_glued: bool = false
 var is_stunned: bool = false
-var is_dead: bool = false
 
 var iceCountdown: float = 0.0
 var permaFrostSpeedScale: float = 1.0
@@ -190,10 +189,6 @@ signal bloon_removed
 signal bloon_popped
 static var next_id: int = 0
 var id: int = 0
-var bursts_this_process: int = 0
-
-func _init() -> void:
-	process_priority = 0
 
 func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0, p_is_regen: bool = false, p_is_camo: bool = false, p_spawn_order: int = 0, _p_level: Level = null):
 	bloon_type = p_type
@@ -238,11 +233,9 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 		level.collision_grid.add_bloon(self)
 		last_grid_pos = global_position
 
-func _process(delta: float) -> void:
+func process(delta: float) -> void:
 	if tile == null or bloon_type < 0:
 		return
-		
-	bursts_this_process = 0
 	
 	var type_speed_mult = speed_multiplier_by_type[bloon_type]
 	var effective_speed = BASE_SPEED * (type_speed_mult + difficulty_speed_modifier) * speed_modifier
@@ -261,10 +254,6 @@ func _process(delta: float) -> void:
 	if level and level.collision_grid:
 		level.collision_grid.move_bloon(self, last_grid_pos)
 		last_grid_pos = global_position
-
-func leak() -> void:
-	bloon_removed.emit()
-	queue_free()
 
 func create_children(amount: int, is_zebra: bool) -> void:
 	if amount <= 0:
@@ -341,7 +330,7 @@ func create_children(amount: int, is_zebra: bool) -> void:
 		inst.tile.update_bloon_position(inst)
 
 func damage(damage_amount: int, cash_scale: float, tower: Tower, show_pop: bool = true) -> void:
-	if is_dead:
+	if self.bloon_type == -1:
 		return
 	
 	var loc5: int = 0
@@ -374,8 +363,8 @@ func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop: bool = tru
 	
 	layers = min(layers, bloon_type + 1)
 	
-	if show_pop and bursts_this_process < 15 and level:
-		bursts_this_process += 1
+	if show_pop and level.bursts_this_process < 15:
+		level.bursts_this_process += 1
 		SoundManager.play("pop_" + str(randi_range(1, 4)))
 		
 		var burst = Burst.new()
@@ -415,10 +404,8 @@ func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop: bool = tru
 		if cur_type <= 0:
 			for _k in range(event_multiplier):
 				bloon_popped.emit(self)
-			bloon_removed.emit()
-			is_dead = true
+			destroy()
 			post_degrade(tower, calculated_cash, calculated_pops, calculated_xp)
-			queue_free()
 			return
 		
 		if level:
@@ -441,12 +428,10 @@ func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop: bool = tru
 		
 		remaining_layers -= 1
 	
-	bloon_type = cur_type as BloonType
+	bloon_type = cur_type # as BloonType
 	
 	if bloon_type < 0:
-		bloon_removed.emit()
-		is_dead = true
-		queue_free()
+		destroy()
 		return
 	else:
 		update_sprite()
@@ -459,6 +444,11 @@ func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop: bool = tru
 	parentIDs.append(id)
 	id = Bloon.next_id
 	Bloon.next_id += 1
+
+func destroy() -> void:
+	bloon_type = -1 # as BloonType
+	bloon_removed.emit()
+	queue_free()
 
 func get_pop_value() -> float:
 	return rbe_by_type[bloon_type] * cash_multiplier

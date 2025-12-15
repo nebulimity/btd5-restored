@@ -16,9 +16,6 @@ var damage_effect: DamageEffectDef
 var radius: float = 0.0
 var prev_pos: Vector2
 
-func _init() -> void:
-	process_priority = 10
-
 func initialize(projectile_def: ProjectileDef) -> void:
 	def = projectile_def
 	pierce = def.pierce
@@ -33,7 +30,7 @@ func initialize(projectile_def: ProjectileDef) -> void:
 
 	prev_pos = global_position
 
-func _process(delta: float) -> void:
+func process(delta: float) -> void:
 	lifespan -= delta
 	
 	prev_pos = global_position
@@ -62,7 +59,7 @@ func check_bloon_collisions(_delta: float) -> void:
 	var candidates = owner_tower.level.collision_grid.get_bloons_in_range(search_center, search_radius)
 	
 	for bloon in candidates:
-		if not is_instance_valid(bloon) or bloon.is_dead: 
+		if not is_instance_valid(bloon) or bloon.bloon_type == -1: 
 			continue
 			
 		if bloon.id in hit_bloons:

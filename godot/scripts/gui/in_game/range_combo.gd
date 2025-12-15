@@ -11,5 +11,8 @@ func _init() -> void:
 	add_child(range_outline)
 
 func redraw(target_range, is_valid) -> void:
+	if target_range > 1000:
+		target_range = 50
+		
 	range_shade.redraw(target_range, is_valid)
 	range_outline.redraw(target_range, is_valid)

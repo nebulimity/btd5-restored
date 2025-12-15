@@ -21,9 +21,10 @@ var rbe: int = 0:
 		rbe = value
 		in_game_menu.update_rbe_display(rbe)
 
-var cash_multiplier: float = 1.0
-
 var active_bloons: int = 0
+var cash_multiplier: float = 1.0
+var process_multiplier: int = 1
+var bursts_this_process: int = 0
 
 var map_def: MonkeyLaneDef
 var map_scene: PackedScene
@@ -73,6 +74,21 @@ func _ready() -> void:
 	call_deferred("update_ui")
 	
 	SoundManager.play_music("main_theme")
+
+func _process(delta: float) -> void:
+	bursts_this_process = 0
+
+	for bloon in bloons:
+		if is_instance_valid(bloon):
+			bloon.process(delta)
+	
+	for tower in placed_towers:
+		if is_instance_valid(tower):
+			tower.process(delta)
+	
+	for proj in projectiles:
+		if is_instance_valid(proj):
+			proj.process(delta)
 
 func update_ui():
 	in_game_menu.update_money_display(money)
@@ -167,7 +183,7 @@ func _on_tower_placed(tower_type: String, pos: Vector2):
 
 func _on_placement_cancelled():
 	current_place_state = null
-	
+
 func update_selection(new_tower: Node2D) -> void:
 	if selected_tower == new_tower and selected_tower != null and new_tower != null:
 		SoundManager.play("select")
@@ -180,7 +196,7 @@ func update_selection(new_tower: Node2D) -> void:
 		selected_tower = new_tower
 	else:
 		selected_tower = null
-		
+
 func add_projectile(proj: Projectile) -> void:
 	projectiles.append(proj)
 	get_parent().add_child(proj)
