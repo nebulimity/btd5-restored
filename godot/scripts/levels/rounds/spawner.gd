@@ -67,4 +67,5 @@ func spawn_bloon(type: int, camo: bool = false, regen: bool = false):
 	
 	var bloon = wave_set.get_bloon_scene().instantiate() as Bloon
 	add_child(bloon)
+	bloon.get_parent().move_child(bloon, 0)
 	bloon.initialize(type, start_tile, 0.0, regen, camo)

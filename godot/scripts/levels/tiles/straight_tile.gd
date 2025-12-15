@@ -21,6 +21,7 @@ func update_bloon_position(bloon) -> void:
 	if progress_ratio >= 1.0:
 		if next_tiles.size() > 0:
 			bloon.tile = next_tiles[0]
+			bloon.update_layer_order() 
 			bloon.tile_progress = bloon.tile_progress - tile_length
 			bloon.tile.update_bloon_position(bloon)
 		else:

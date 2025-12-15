@@ -204,6 +204,19 @@ func parse_monkey_lane() -> void:
 	tile31.previous_tile = tile30
 	tile32.previous_tile = tile31
 	
+	tile8.layer = -1
+	tile9.layer = -1
+	tile10.layer = -1
+	
+	tile9.transition_type = Tile.UNDERPASS
+	
+	tile29.layer = -1
+	tile30.layer = -1
+	tile31.layer = -1
+	tile32.layer = -1
+	
+	tile30.transition_type = Tile.UNDERPASS
+	
 	tile_sets.append(tiles)
 
 func get_start_tile() -> Tile:

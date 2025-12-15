@@ -97,6 +97,7 @@ func spawn_bloon(spawner: SpawnerInstance, time_offset: float, spawner_node: Nod
 	var bloon_scene = load("res://scenes/entities/bloon.tscn")
 	var bloon = bloon_scene.instantiate() as Bloon
 	spawner_node.add_child(bloon)
+	bloon.get_parent().move_child(bloon, 0)
 	bloon.initialize(spawner.type_index, start_tile, initial_progress, spawner.regen, spawner.camo, spawn_order)
 
 func is_complete() -> bool:

@@ -291,6 +291,7 @@ animations = [{
 [node name="MonkeyLane" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
+z_index = -10
 scale = Vector2(0.333, 0.333)
 texture = ExtResource("1_w4170")
 centered = false
@@ -328,7 +329,6 @@ texture = ExtResource("69_wl5al")
 centered = false
 
 [node name="TunnelCover2" type="Sprite2D" parent="."]
-z_index = 1
 position = Vector2(-53.999996, 4.7683716e-07)
 scale = Vector2(0.333, 0.333)
 texture = ExtResource("70_fdq51")

@@ -195,6 +195,8 @@ func ready_fire() -> void:
 			
 			if current_target == null or not is_instance_valid(current_target):
 				target_invalid = true
+			elif current_target.is_in_tunnel():
+				target_invalid = true
 			elif current_target.bloon_type == -1:
 				target_invalid = true
 			elif target_search_timer > 0.5:
@@ -250,7 +252,10 @@ func find_targets() -> void:
 	var candidates = level.collision_grid.get_bloons_in_range(global_position, current_range)
 	
 	for bloon in candidates:
-		if not is_instance_valid(bloon) or bloon.bloon_type < 0:
+		if not is_instance_valid(bloon) or bloon.bloon_type == -1:
+			continue
+		
+		if bloon.is_in_tunnel():
 			continue
 		
 		var dist = global_position.distance_to(bloon.global_position)

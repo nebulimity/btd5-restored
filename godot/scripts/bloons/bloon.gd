@@ -226,6 +226,7 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 	
 	if tile:
 		tile.update_bloon_position(self)
+		update_layer_order()
 	
 	update_sprite()
 	
@@ -234,7 +235,7 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 		last_grid_pos = global_position
 
 func process(delta: float) -> void:
-	if tile == null or bloon_type < 0:
+	if tile == null or bloon_type == -1:
 		return
 	
 	var type_speed_mult = speed_multiplier_by_type[bloon_type]
@@ -358,7 +359,7 @@ func damage(damage_amount: int, cash_scale: float, tower: Tower, show_pop: bool 
 		update_sprite()
 
 func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop: bool = true) -> void:
-	if bloon_type < 0:
+	if bloon_type == -1:
 		return
 	
 	layers = min(layers, bloon_type + 1)
@@ -428,9 +429,9 @@ func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop: bool = tru
 		
 		remaining_layers -= 1
 	
-	bloon_type = cur_type # as BloonType
+	bloon_type = cur_type as BloonType
 	
-	if bloon_type < 0:
+	if bloon_type == -1:
 		destroy()
 		return
 	else:
@@ -446,7 +447,7 @@ func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop: bool = tru
 	Bloon.next_id += 1
 
 func destroy() -> void:
-	bloon_type = -1 # as BloonType
+	bloon_type = -1 as BloonType
 	bloon_removed.emit()
 	queue_free()
 
@@ -468,6 +469,28 @@ func _unwind_progress(p_tile: Tile, p_progress: float) -> Dictionary:
 		current_progress = 0.0
 	
 	return { "tile": current_tile, "progress": current_progress }
+
+func is_in_tunnel() -> bool:
+	if tile == null:
+		return false
+		
+	if bloon_type >= 11:
+		return false
+		
+	if tile.transition_type == Tile.UNDERPASS: # or tile.transition_type == Tile.TELEPORT
+		return true
+		
+	return false
+
+func update_layer_order() -> void:
+	if tile == null:
+		return
+	
+	if bloon_type >= 11:
+		z_index = 4
+		return
+	
+	z_index = tile.layer * 10
 
 func update_sprite() -> void:
 	sprite.texture = BLOON_TEXTURES[bloon_type]

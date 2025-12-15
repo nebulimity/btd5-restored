@@ -88,9 +88,10 @@ func update_bloon_position(bloon) -> void:
 		bloon.tile_progress -= tile_length
 		if next_tiles.size() > 0:
 			bloon.tile = next_tiles[0]
+			bloon.update_layer_order()
 			bloon.tile.update_bloon_position(bloon)
 		else:
-			bloon.leak()
+			bloon.destroy()
 		return
 	
 	var start_pos = way_points[section_index]
