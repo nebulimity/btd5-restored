@@ -3,10 +3,9 @@ extends Sprite2D
 
 var timer: Timer
 
-func initialize(x: float, y: float) -> void:
-	position = Vector2(x, y)
+func initialize() -> void:
 	z_index = 5
-	texture = load("res://assets/sprites/bloons/burst.svg")
+	texture = AssetManager.grab("Burst")
 	rotation = randf() * TAU
 	
 	timer = Timer.new()

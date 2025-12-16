@@ -73,6 +73,7 @@ func _ready() -> void:
 	
 	call_deferred("update_ui")
 	
+	AssetManager.preload_all()
 	SoundManager.play_music("main_theme")
 
 func _process(delta: float) -> void:

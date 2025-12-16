@@ -32,17 +32,8 @@ func initialize(projectile_def: ProjectileDef) -> void:
 	sprite_frames.set_animation_loop("default", true)
 	sprite_frames.set_animation_speed("default", 30.0)
 	
-	var base_path = projectile_def["display_path"].get_base_dir()
-	var frame_index = 1
-	
-	while true:
-		var frame_path = base_path + "/" + str(frame_index) + ".svg"
-		if ResourceLoader.exists(frame_path):
-			var texture = load(frame_path)
-			sprite_frames.add_frame("default", texture)
-			frame_index += 1
-		else:
-			break
+	for texture in AssetManager.grab(projectile_def["display"]):
+		sprite_frames.add_frame("default", texture)
 	
 	sprite.sprite_frames = sprite_frames
 	sprite.play()

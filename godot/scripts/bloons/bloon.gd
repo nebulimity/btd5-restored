@@ -103,23 +103,6 @@ static var spawn_order_offsets = [
 	1024  # BOSS (ZOMG)
 ]
 
-const BLOON_TEXTURES = [
-	preload("res://assets/sprites/bloons/0.svg"),  # RED
-	preload("res://assets/sprites/bloons/1.svg"),  # BLUE
-	preload("res://assets/sprites/bloons/2.svg"),  # GREEN
-	preload("res://assets/sprites/bloons/3.svg"),  # YELLOW
-	preload("res://assets/sprites/bloons/4.svg"),  # PINK
-	preload("res://assets/sprites/bloons/5.svg"),  # BLACK
-	preload("res://assets/sprites/bloons/6.svg"),  # WHITE
-	preload("res://assets/sprites/bloons/7.svg"),  # LEAD
-	preload("res://assets/sprites/bloons/8.svg"),  # ZEBRA
-	preload("res://assets/sprites/bloons/9.svg"),  # RAINBOW
-	preload("res://assets/sprites/bloons/10.svg"), # CERAMIC
-	preload("res://assets/sprites/bloons/11.svg"), # MOAB
-	preload("res://assets/sprites/bloons/12.svg"), # BFB
-	preload("res://assets/sprites/bloons/13.svg"), # BOSS (ZOMG)
-]
-
 static var max_radius: float = 10.0
 
 static var cash_multiplier: float = 1.0
@@ -369,7 +352,8 @@ func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop) -> void:
 		SoundManager.play("pop_" + str(randi_range(1, 4)))
 		
 		var burst = Burst.new()
-		burst.initialize(position.x, position.y)
+		burst.initialize()
+		burst.position = position
 		level.add_child(burst)
 	
 	if bloon_type == BloonType.BOSS:
@@ -524,7 +508,7 @@ func update_layer_order() -> void:
 	z_index = tile.layer * 10
 
 func update_sprite() -> void:
-	sprite.texture = BLOON_TEXTURES[bloon_type]
+	sprite.texture = AssetManager.grab("Bloon")[bloon_type]
 	if sprite.texture:
 		radius = sprite.texture.get_size().y / 2.0
 		if radius > Bloon.max_radius:

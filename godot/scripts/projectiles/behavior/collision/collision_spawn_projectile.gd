@@ -10,8 +10,6 @@ func SetProjectile(value: ProjectileDef) -> CollisionSpawnProjectile:
 func execute(projectile: Projectile) -> void:
 	projectile.pierce = 0
 	
-	# print(new_projectile.damage_effect.show_pop)
-	
 	var proj = Projectile.new()
 	proj.initialize(new_projectile)
 	proj.owner_tower = projectile.owner_tower

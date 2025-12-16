@@ -50,17 +50,8 @@ func _ready() -> void:
 	sprite_frames.set_animation_loop("default", false)
 	sprite_frames.set_animation_speed("default", 30.0)
 	
-	var base_path = tower_def["sprite_path"].get_base_dir()
-	var frame_index = 1
-	
-	while true:
-		var frame_path = base_path + "/" + str(frame_index) + ".svg"
-		if ResourceLoader.exists(frame_path):
-			var texture = load(frame_path)
-			sprite_frames.add_frame("default", texture)
-			frame_index += 1
-		else:
-			break
+	for texture in AssetManager.grab(tower_type):
+		sprite_frames.add_frame("default", texture)
 	
 	sprite.sprite_frames = sprite_frames
 	sprite.animation_finished.connect(_on_animation_finished)
@@ -92,7 +83,7 @@ func setup_weapons() -> void:
 	match tower_type:
 		"DartMonkey":
 			var damage_def = DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
-			var proj_def = ProjectileDef.new("res://assets/projectiles/dart/1.svg")
+			var proj_def = ProjectileDef.new().Display("Dart")
 			proj_def.Pierce(1).Speed(850).DamageEffect(damage_def)
 			
 			var weapon = Single.new()
@@ -102,7 +93,7 @@ func setup_weapons() -> void:
 		
 		"TackShooter":
 			var damage_def = DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
-			var proj_def = ProjectileDef.new("res://assets/projectiles/tack/1.svg")
+			var proj_def = ProjectileDef.new().Display("Tack")
 			proj_def.Pierce(1).Speed(200).DamageEffect(damage_def)
 			
 			var weapon = Circular.new()
@@ -113,7 +104,7 @@ func setup_weapons() -> void:
 		
 		"SniperMonkey":
 			var damage_def = DamageEffectDef.new().Damage(2).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
-			var proj_def = ProjectileDef.new("res://assets/projectiles/dart/1.svg")
+			var proj_def = ProjectileDef.new().Display("Dart")
 			proj_def.Pierce(1).Speed(200).DamageEffect(damage_def)
 			
 			var weapon = Instant.new()
@@ -129,7 +120,7 @@ func setup_weapons() -> void:
 			var damage_def = DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
 			var behavior_def = BehaviorDef.new().Process(path_behavior)
 			
-			var proj_def = ProjectileDef.new("res://assets/projectiles/boomerang/1.svg")
+			var proj_def = ProjectileDef.new().Display("Boomerang")
 			proj_def.Pierce(3).Radius(10).Speed(850)
 			proj_def.DamageEffect(damage_def).Behavior(behavior_def)
 			
@@ -140,7 +131,7 @@ func setup_weapons() -> void:
 		
 		"NinjaMonkey":
 			var damage_def = DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
-			var proj_def = ProjectileDef.new("res://assets/projectiles/shuriken/1.svg")
+			var proj_def = ProjectileDef.new().Display("Shuriken")
 			proj_def.Pierce(2).Radius(4).DamageEffect(damage_def)
 			
 			var weapon = Single.new()
@@ -150,12 +141,12 @@ func setup_weapons() -> void:
 		
 		"BombTower":
 			var dumb = DamageEffectDef.new().Damage(1).CanBreakIce(true).CantBreak([Bloon.BloonType.BLACK, Bloon.BloonType.ZEBRA]).ShowPop(false)
-			var explosion_medium = ProjectileDef.new("res://assets/projectiles/medium_explosion/1.svg").Display("MediumExplosion").Pierce(40).Radius(60)
+			var explosion_medium = ProjectileDef.new().Display("MediumExplosion").Pierce(40).Radius(60)
 			explosion_medium.DamageEffect(dumb)
 			
 			var spawn_projectile = CollisionSpawnProjectile.new().SetProjectile(explosion_medium)
 			var behavior_def = BehaviorDef.new().Collision(spawn_projectile)
-			var proj_def = ProjectileDef.new("res://assets/projectiles/bomb/1.svg")
+			var proj_def = ProjectileDef.new().Display("Bomb")
 			proj_def.Pierce(1).Radius(5).Behavior(behavior_def)
 			
 			var weapon = Single.new()
@@ -164,7 +155,7 @@ func setup_weapons() -> void:
 		
 		"SuperMonkey":
 			var damage_def = DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
-			var proj_def = ProjectileDef.new("res://assets/projectiles/dart/1.svg")
+			var proj_def = ProjectileDef.new().Display("Dart")
 			proj_def.Pierce(1).Speed(850).DamageEffect(damage_def)
 			
 			var weapon = Single.new()
