@@ -12,7 +12,7 @@ func Path(p_path_defs: Array) -> FollowPath:
 			path_defs.append(def)
 	return self
 
-func execute(projectile: Node2D, _delta: float) -> void:
+func execute(projectile: Projectile, _delta: float) -> void:
 	var owner_node = projectile.owner_tower
 	if not is_instance_valid(owner_node):
 		return

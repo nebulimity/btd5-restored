@@ -351,14 +351,14 @@ func damage(damage_amount: int, cash_scale: float, tower: Tower, show_pop: bool 
 	else:
 		if bloon_type == BloonType.CERAMIC:
 			SoundManager.play("ceramic_bloon_hit")
-		elif bloon_type == BloonType.MOAB:
+		elif bloon_type >= BloonType.MOAB:
 			SoundManager.play("moab_damage_" + str(randi_range(1, 3)))
 			pass
 		
 		health = loc6
 		update_sprite()
 
-func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop: bool = true) -> void:
+func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop) -> void:
 	if bloon_type == -1:
 		return
 	
@@ -445,6 +445,37 @@ func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop: bool = tru
 	parentIDs.append(id)
 	id = Bloon.next_id
 	Bloon.next_id += 1
+
+func handle_collision(projectile: Projectile) -> void:
+	if projectile.def.behavior and projectile.def.behavior.collision_behavior:
+		projectile.def.behavior.collision_behavior.execute(projectile)
+	
+	if projectile.damage_effect:
+		if bloon_type in projectile.damage_effect.cant_break_types:
+			if bloon_type == BloonType.LEAD:
+				SoundManager.play("metal_bloon_hit")
+			
+			projectile.hit_bloons.append(id)
+			projectile.destroy()
+			return
+			
+		if is_frozen and not projectile.damage_effect.can_break_ice:
+			projectile.hit_bloons.append(id)
+			projectile.destroy()
+			return
+	
+	projectile.hit_bloons.append(id)
+	
+	var dmg_amount = 0
+	if projectile.damage_effect:
+		dmg_amount = projectile.damage_effect.damage
+		damage(dmg_amount, 1, projectile.owner_tower, projectile.damage_effect.show_pop)
+	else:
+		damage(dmg_amount, 1, projectile.owner_tower)
+		
+	projectile.pierce -= 1
+	if projectile.pierce <= 0:
+		projectile.destroy()
 
 func destroy() -> void:
 	bloon_type = -1 as BloonType

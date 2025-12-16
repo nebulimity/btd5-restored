@@ -42,7 +42,6 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 			"occupied_space_radius": small,
 			"position_offset": Vector2(22.5, -3.5),
 			"rotation_offset": -90.0,
-			"rotates": false,  # instant class ignores this
 			"fire_frame": 2,
 			"sprite_path": "res://assets/sprites/towers/sniper_monkey/1.svg",
 			"can_place_on_water": false,
@@ -81,6 +80,9 @@ static func get_tower_def(tower_type: String) -> Dictionary:
 			"cost": 650,
 			"range": 120,
 			"occupied_space_radius": medium,
+			"position_offset": Vector2(13, -0.5),
+			"rotation_offset": -90.0,
+			"fire_frame": 2,
 			"sprite_path": "res://assets/sprites/towers/bomb_tower/1.svg",
 			"can_place_on_water": false,
 			"can_place_on_track": false

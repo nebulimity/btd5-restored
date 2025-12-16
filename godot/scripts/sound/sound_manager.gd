@@ -26,6 +26,7 @@ const SFX = {
 	"moab_destroyed_short": preload("res://assets/audio/sfx/moab_destroyed_short.mp3"),
 	"moab_destroyed_med": preload("res://assets/audio/sfx/moab_destroyed_med.mp3"),
 	"moab_destroyed_big": preload("res://assets/audio/sfx/moab_destroyed_big.mp3"),
+	"explosion_medium": preload("res://assets/audio/sfx/explosion_medium.mp3"),
 }
 
 var sfx_pool: Array[AudioStreamPlayer] = []

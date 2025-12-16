@@ -10,8 +10,9 @@ var pierce: int = 1
 var damage: int = 1
 var hit_bloons: Array[int] = []
 var target: Bloon = null
-var sprite: Sprite2D
+var sprite: AnimatedSprite2D
 var damage_effect: DamageEffectDef
+var level: Level
 
 var radius: float = 0.0
 var prev_pos: Vector2
@@ -23,17 +24,39 @@ func initialize(projectile_def: ProjectileDef) -> void:
 	damage_effect = def.damage_effect
 	hit_bloons.clear()
 	
-	sprite = Sprite2D.new()
+	sprite = AnimatedSprite2D.new()
+	
+	var sprite_frames = SpriteFrames.new()
+	sprite_frames.remove_animation("default")
+	sprite_frames.add_animation("default")
+	sprite_frames.set_animation_loop("default", true)
+	sprite_frames.set_animation_speed("default", 30.0)
+	
+	var base_path = projectile_def["display_path"].get_base_dir()
+	var frame_index = 1
+	
+	while true:
+		var frame_path = base_path + "/" + str(frame_index) + ".svg"
+		if ResourceLoader.exists(frame_path):
+			var texture = load(frame_path)
+			sprite_frames.add_frame("default", texture)
+			frame_index += 1
+		else:
+			break
+	
+	sprite.sprite_frames = sprite_frames
+	sprite.play()
 	add_child(sprite)
 	
-	sprite.texture = load(projectile_def.display_path)
-
 	prev_pos = global_position
 
 func process(delta: float) -> void:
 	lifespan -= delta
 	
 	prev_pos = global_position
+	
+	position += velocity * delta
+	rotation = velocity.angle()
 	
 	if def.behavior and def.behavior.process_behavior:
 		def.behavior.process_behavior.execute(self, delta)
@@ -86,7 +109,7 @@ func check_bloon_collisions(_delta: float) -> void:
 				hit = true
 				
 		if hit:
-			handle_collision(bloon)
+			bloon.handle_collision(self)
 			if pierce <= 0:
 				break
 
@@ -108,30 +131,14 @@ func line_intersects_circle(line_start: Vector2, line_end: Vector2, circle_cente
 	
 	return (t1 >= 0 and t1 <= 1) or (t2 >= 0 and t2 <= 1)
 
-func handle_collision(bloon: Bloon) -> void:
-	if damage_effect:
-		if bloon.bloon_type in damage_effect.cant_break_types:
-			SoundManager.play("metal_bloon_hit")
-			hit_bloons.append(bloon.id)
-			destroy()
-			return
-			
-		if bloon.is_frozen and not damage_effect.can_break_ice:
-			hit_bloons.append(bloon.id)
-			destroy()
-			return
-
-	hit_bloons.append(bloon.id)
-	
-	var dmg_amount = 1
-	if damage_effect:
-		dmg_amount = damage_effect.damage
-		
-	bloon.damage(dmg_amount, 1, owner_tower)
-	
-	pierce -= 1
-	if pierce <= 0:
-		destroy()
-
 func destroy() -> void:
+	if sprite.is_playing():
+		if def.display == "MediumExplosion":
+			var clip: TrailClip = TrailClip.new()
+			clip.initialize(sprite.sprite_frames, sprite.frame)
+			clip.position = position
+			clip.rotation = rotation
+			
+			get_parent().add_child(clip)
+		
 	queue_free()

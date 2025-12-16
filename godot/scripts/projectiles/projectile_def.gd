@@ -2,6 +2,7 @@ class_name ProjectileDef
 extends RefCounted
 
 var display_path: String = ""
+var display: String = ""
 var pierce: int = 1
 var radius: float = 0.0
 var speed: float = 0.0
@@ -10,11 +11,9 @@ var behavior: BehaviorDef = null
 
 func _init(path: String = "") -> void:
 	display_path = path
-	damage_effect = DamageEffectDef.new().Damage(1) 
-	behavior = BehaviorDef.new().Process(MoveLinear.new())
 
 func Display(path: String) -> ProjectileDef:
-	display_path = path
+	display = path
 	return self
 
 func Pierce(value: int) -> ProjectileDef:
@@ -31,6 +30,8 @@ func Speed(value: float) -> ProjectileDef:
 
 func DamageEffect(effect: DamageEffectDef) -> ProjectileDef:
 	damage_effect = effect
+	if effect:
+		print(damage_effect.show_pop)
 	return self
 
 func Behavior(b: BehaviorDef) -> ProjectileDef:

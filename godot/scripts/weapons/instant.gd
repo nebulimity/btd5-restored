@@ -59,7 +59,7 @@ func execute(tower: Tower, _source: Node2D, _target_arg: Node2D, _weapon_offset:
 	proj.initialize(projectile)
 	proj.owner_tower = tower
 	
-	proj.handle_collision(final_target)
+	final_target.handle_collision(proj)
 	proj.queue_free()
 	
 	var direction = final_target.global_position - tower.global_position
