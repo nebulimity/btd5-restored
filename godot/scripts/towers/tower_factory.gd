@@ -20,7 +20,7 @@ func tower_factory():
 	var sniper = Instant.new().SetReloadTime(2.2).SetProjectile(sniper_projectile)
 	var boomerang_projectile = ProjectileDef.new().Display("Boomerang").Pierce(3).Radius(10).DamageEffect(DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)).Behavior(ProjectileBehaviorDef.new().Process(path_behavior))
 	var boomerang = Spread.new().SetRange(520).SetPower(700).SetReloadTime(1.33).SetProjectile(boomerang_projectile).SetCount(1).SetAngle(0.5)
-	var shuriken_projectile = ProjectileDef.new().Pierce(2).Radius(4).DamageEffect(DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false))
+	var shuriken_projectile = ProjectileDef.new().Display("Shuriken").Pierce(2).Radius(4).DamageEffect(DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false))
 	var shuriken = Single.new().SetRange(360).SetPower(630).SetReloadTime(0.6).SetProjectile(shuriken_projectile)
 	var bomb_projectile = ProjectileDef.new().Display("Bomb").Pierce(1).Radius(5).Behavior(ProjectileBehaviorDef.new().Collision(CollisionSpawnProjectile.new().SetProjectile(medium_explosion)))
 	var bomb = Single.new().SetRange(234).SetPower(455).SetReloadTime(1.54).SetProjectile(bomb_projectile)
