@@ -52,7 +52,7 @@ func _ready() -> void:
 	map_scene = preload("res://scenes/maps/monkey_lane.tscn")
 	map = map_scene.instantiate()
 	
-	collision_grid = CollisionGrid.new()
+	collision_grid = CollisionGrid.new(self)
 	add_child(collision_grid)
 	
 	map_def = MonkeyLaneDef.new()
@@ -79,7 +79,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	bursts_this_process = 0
-
+	
+	collision_grid.process(delta)
+	
 	for bloon in bloons:
 		if is_instance_valid(bloon):
 			bloon.process(delta)

@@ -111,7 +111,7 @@ var cash_awarded: Array[bool] = []
 var tile: Tile = null
 var tile_progress: float = 0.0
 var overall_progress: float = 0.0
-var last_grid_pos: Vector2
+var collision_cell_index: int = -1
 
 var bloon_type: BloonType = BloonType.RED
 var health: int = 1
@@ -186,6 +186,7 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 	was_regenerated = false
 	special_flag = false
 	level = self.get_parent().get_parent().get_node("Level") #_p_level
+	collision_cell_index = level.collision_grid.get_cell_index(global_position.x, global_position.y)
 	
 	id = Bloon.next_id
 	Bloon.next_id += 1
@@ -212,10 +213,6 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 		update_layer_order()
 	
 	update_sprite()
-	
-	if level and level.collision_grid:
-		level.collision_grid.add_bloon(self)
-		last_grid_pos = global_position
 
 func process(delta: float) -> void:
 	if tile == null or bloon_type == -1:
@@ -235,9 +232,10 @@ func process(delta: float) -> void:
 	
 	tile.update_bloon_position(self)
 	
-	if level and level.collision_grid:
-		level.collision_grid.move_bloon(self, last_grid_pos)
-		last_grid_pos = global_position
+	var new_index = level.collision_grid.get_cell_index(global_position.x, global_position.y)
+	if new_index != collision_cell_index:
+		level.collision_grid.switch_cells(self, collision_cell_index, new_index)
+		collision_cell_index = new_index
 
 func create_children(amount: int, is_zebra: bool) -> void:
 	if amount <= 0:
@@ -430,36 +428,79 @@ func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop) -> void:
 	id = Bloon.next_id
 	Bloon.next_id += 1
 
-func handle_collision(projectile: Projectile) -> void:
-	if projectile.def.behavior and projectile.def.behavior.collision_behavior:
-		projectile.def.behavior.collision_behavior.execute(projectile)
-	
-	if projectile.damage_effect:
-		if bloon_type in projectile.damage_effect.cant_break_types:
-			if bloon_type == BloonType.LEAD:
-				SoundManager.play("metal_bloon_hit")
-			
-			projectile.hit_bloons.append(id)
-			projectile.destroy()
-			return
-			
-		if is_frozen and not projectile.damage_effect.can_break_ice:
-			projectile.hit_bloons.append(id)
-			projectile.destroy()
-			return
-	
-	projectile.hit_bloons.append(id)
-	
-	var dmg_amount = 0
-	if projectile.damage_effect:
-		dmg_amount = projectile.damage_effect.damage
-		damage(dmg_amount, 1, projectile.owner_tower, projectile.damage_effect.show_pop)
-	else:
-		damage(dmg_amount, 1, projectile.owner_tower)
+func hit_previously(proj: Projectile) -> bool:
+	if id in proj.hit_bloons:
+		return true
 		
-	projectile.pierce -= 1
-	if projectile.pierce <= 0:
-		projectile.destroy()
+	for parent_id in parentIDs:
+		if parent_id in proj.hit_bloons:
+			return true
+			
+	return false
+
+func handle_collision(proj: Projectile) -> void:
+	if proj.def == null:
+		return
+	
+	var type_id = bloon_type
+	var tower = proj.owner_tower
+	var damage_effect = proj.def.damage_effect
+	
+	var _pop_cash_scale: float = proj.def.get("pop_cash_scale") if proj.def.get("pop_cash_scale") else 1.0
+	
+	if damage_effect:
+		var can_damage_type = true
+		var _can_break_ice = false
+		
+		if damage_effect.cant_break_types and type_id in damage_effect.cant_break_types:
+			can_damage_type = false
+		
+		var effective_can_break_ice = true 
+		
+		if can_damage_type and effective_can_break_ice:
+			proj.hit_bloons.append(id)
+		elif is_frozen:
+			proj.pierce = 0
+			return
+		elif type_id == BloonType.LEAD:
+			SoundManager.play("metal_bloon_hit")
+			proj.pierce = 0
+			return
+		else:
+			return
+	else:
+		proj.hit_bloons.append(id)
+	
+	if proj.def.get("remove_camo"):
+		if is_camo:
+			is_camo = false
+	
+	if proj.def.get("remove_regen"):
+		if is_regen:
+			is_regen = false
+	
+	if damage_effect:
+		var can_dmg = true
+		if damage_effect.cant_break_types and type_id in damage_effect.cant_break_types:
+			can_dmg = false
+			
+		if can_dmg:
+			var final_damage = float(damage_effect.damage)
+			
+			if type_id >= BloonType.MOAB:
+				if damage_effect.get("blimp_scale"):
+					final_damage *= damage_effect.blimp_scale
+			
+			if type_id == BloonType.CERAMIC:
+				if damage_effect.get("ceramic_scale"):
+					final_damage *= damage_effect.ceramic_scale
+			
+			if damage_effect.get("kill") and type_id < BloonType.MOAB:
+				damage(health, 1, tower, damage_effect.show_pop)
+			elif damage_effect.get("peel_layer") and type_id < BloonType.MOAB:
+				damage(1, 1, tower, damage_effect.show_pop)
+			else:
+				damage(int(final_damage), 1, tower, damage_effect.show_pop)
 
 func destroy() -> void:
 	bloon_type = -1 as BloonType
@@ -516,4 +557,4 @@ func update_sprite() -> void:
 
 func _exit_tree() -> void:
 	if level and level.collision_grid:
-		level.collision_grid.remove_bloon(self, last_grid_pos)
+		level.collision_grid.remove_from_cell(self, collision_cell_index)
