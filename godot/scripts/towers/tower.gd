@@ -14,12 +14,14 @@ var level: Level
 
 var targets_by_priority: Array[Bloon] = []
 var current_target: Bloon = null
-var target_priority: String = "first"  # first, last, close, strong
+var target_priority: String = "first"
 
 var in_throw_animation: bool = false
 var has_fired: bool = false
 
-var fire_weapon: Weapon = null
+var reload_timers: Array[CustomTimer] = []
+
+var throw_sequence: int = 0 
 
 var target_search_timer: float = 0.0
 
@@ -69,20 +71,22 @@ func _ready() -> void:
 		level = get_parent().get_parent().get_node_or_null("Level")
 	
 	SoundManager.play("place")
+	
+	reload_timers.clear()
+	for weapon in tower_def.weapons:
+		var timer = CustomTimer.new(weapon.reload_time)
+		reload_timers.append(timer)
 
 func process(delta: float) -> void:
 	target_search_timer += delta
+	
+	for timer in reload_timers:
+		timer.process(delta)
 	
 	find_targets()
 	
 	if tower_def.behavior and tower_def.behavior.process_behavior:
 		tower_def.behavior.process_behavior.execute(self, delta)
-	
-	for weapon in tower_def.weapons:
-		weapon.update(delta)
-	
-	if fire_weapon != null and not has_fired and not in_throw_animation:
-		fire(0)
 	
 	ready_fire()      
 	check_fire_frame()
@@ -93,14 +97,12 @@ func process(delta: float) -> void:
 		outline.texture = sprite.sprite_frames.get_frame_texture("default", sprite.frame)
 
 func ready_fire() -> void:
-	if in_throw_animation:
+	if tower_def.weapons == null:
 		return
-	
-	var i: int = 0
-	for weapon in tower_def.weapons:
+		
+	for i in range(tower_def.weapons.size()):
 		if i == 0:
 			var target_invalid = false
-			
 			if current_target == null or not is_instance_valid(current_target):
 				target_invalid = true
 			elif current_target.is_in_tunnel():
@@ -118,20 +120,17 @@ func ready_fire() -> void:
 					current_target = get_target_by_priority()
 				target_search_timer = 0.0
 		
-		if current_target == null:
-			continue
-		
-		if weapon.can_fire():
-			weapon.reset_cooldown()
-			fire_weapon = weapon
-			
-			in_throw_animation = true
-			has_fired = false
-			
-			sprite.frame = 0
-			sprite.play("default")
-		
-		i += 1
+		if current_target != null:
+			if not reload_timers[i].running:
+				if in_throw_animation:
+					pass 
+				else:
+					sprite.frame = 0
+					sprite.play("default")
+					in_throw_animation = true
+					has_fired = false
+				
+				reload_timers[i].reset()
 
 func check_fire_frame() -> void:
 	if in_throw_animation and not has_fired:
@@ -142,15 +141,12 @@ func check_fire_frame() -> void:
 func fire(index: int) -> void:
 	var weapon = tower_def.weapons[index]
 	
-	if fire_weapon:
-		has_fired = true
-		if not current_target:
-			current_target = null
+	if tower_def.weapon_offsets and tower_def.weapon_offsets.size() > index and tower_def.weapon_offsets[index]:
+		weapon.execute(self, self, current_target, tower_def.weapon_offsets[index])
+	else:
+		weapon.execute(self, self, current_target)
 		
-		if tower_def.weapon_offsets and tower_def.weapon_offsets.size() > index and tower_def.weapon_offsets[index]:
-			weapon.execute(self, self, current_target, tower_def.weapon_offsets[index])
-		else:
-			weapon.execute(self, self, current_target)
+	has_fired = true
 
 func _on_animation_finished() -> void:
 	in_throw_animation = false
