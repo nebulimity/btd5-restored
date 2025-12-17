@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://rcw0avyfk02a"
+path="res://.godot/imported/mask.svg-306de48208e43929c352b11548850a7d.res"
+
+[deps]
+
+source_file="res://assets/gui/save_button/mask.svg"
+dest_files=["res://.godot/imported/mask.svg-306de48208e43929c352b11548850a7d.res"]
+
+[params]
+
+create_from=1
+threshold=0.0

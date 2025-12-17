@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dyggydn2lkit3"
+path="res://.godot/imported/mask.svg-581bf557787becd465ca938bb0185c79.res"
+
+[deps]
+
+source_file="res://assets/gui/tower_buttons/mask.svg"
+dest_files=["res://.godot/imported/mask.svg-581bf557787becd465ca938bb0185c79.res"]
+
+[params]
+
+create_from=1
+threshold=0.0

@@ -1,7 +1,7 @@
 class_name RotateToTarget
-extends RefCounted
+extends TowerBehaviorProcess
 
-func process(tower: Tower, _delta: float) -> void:
+func execute(tower: Tower, _delta: float) -> void:
 	if tower.has_fired or not tower.in_throw_animation or not tower.current_target or not is_instance_valid(tower.current_target):
 		return
 	

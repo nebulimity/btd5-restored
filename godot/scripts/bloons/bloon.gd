@@ -243,7 +243,7 @@ func create_children(amount: int, is_zebra: bool) -> void:
 	if amount <= 0:
 		return
 	
-	var bloon_scene = load("res://scenes/entities/bloon.tscn")
+	var bloon_scene = preload("res://scenes/entities/bloon.tscn")
 	var parent_node = get_parent()
 	var base_progress = tile_progress
 	var progress_offset = min(60.0 / float(amount), 20.0)

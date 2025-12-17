@@ -5,7 +5,7 @@ signal placement_confirmed(tower_type: String, pos: Vector2)
 signal placement_cancelled
 
 var tower_type: String
-var tower_def: Dictionary
+var tower_def: TowerDef
 var preview_sprite: Sprite2D
 var glow: ShaderMaterial
 var range_combo: Node2D
@@ -18,24 +18,24 @@ var water_area: Area2D
 
 func setup(type: String) -> void:
 	tower_type = type
-	tower_def = TowerFactory.get_tower_def(type)
+	tower_def = TowerFactory.get_base_tower(tower_type)
 	_initialize_preview()
 
 func _initialize_preview() -> void:
 	preview_sprite = Sprite2D.new()
-	preview_sprite.texture = load(tower_def["sprite_path"])
-	preview_sprite.offset = tower_def.get("position_offset", Vector2.ZERO)
+	preview_sprite.texture = AssetManager.grab(tower_type)[0]
+	preview_sprite.offset = tower_def.position_offset
 	preview_sprite.z_index = 10
-	preview_sprite.rotate(deg_to_rad(tower_def["rotation_offset"]))
+	preview_sprite.rotate(deg_to_rad(tower_def.rotation_offset))
 	
 	glow = ShaderMaterial.new()
-	glow.shader = load("res://shaders/glow.gdshader")
+	glow.shader = preload("res://shaders/glow.gdshader")
 	glow.set_shader_parameter("glow_color", Color(0.0, 0.0, 0.0, 0.7))
 	preview_sprite.material = glow
 	
 	add_child(preview_sprite)
 	
-	if tower_def["range"] > 0 and tower_def["range"] < 999999:
+	if tower_def.range_of_visibility > 0 and tower_def.range_of_visibility < 999999:
 		range_combo = RangeCombo.new()
 		add_child(range_combo)
 	
@@ -44,7 +44,7 @@ func _initialize_preview() -> void:
 	footprint_area.collision_mask = 2
 	var collision_shape = CollisionShape2D.new()
 	var circle = CircleShape2D.new()
-	circle.radius = tower_def["occupied_space_radius"]
+	circle.radius = tower_def.occupied_space
 	collision_shape.shape = circle
 	footprint_area.add_child(collision_shape)
 	add_child(footprint_area)
@@ -56,7 +56,7 @@ func _process(_delta: float) -> void:
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 	
 	update_placement_validity()
-	range_combo.redraw(tower_def["range"], is_valid_placement)
+	range_combo.redraw(tower_def.range_of_visibility, is_valid_placement)
 
 func update_placement_validity() -> void:
 	is_valid_placement = false
@@ -66,13 +66,13 @@ func update_placement_validity() -> void:
 	var touching_track = overlapping_areas.has(track_area)
 	var touching_water = water_area and overlapping_areas.has(water_area)
 		
-	if tower_def.get("requires_track", false):
+	if tower_def.requires_track:
 		if not touching_track:
 			return
 		is_valid_placement = true
 		return
 	
-	if tower_def.get("requires_water", false):
+	if tower_def.requires_water:
 		if not touching_water:
 			return
 		is_valid_placement = true

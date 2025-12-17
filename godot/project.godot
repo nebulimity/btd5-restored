@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 SoundManager="*res://scripts/sound/sound_manager.gd"
 AssetManager="*res://scripts/asset_manager.gd"
+TowerFactory="*res://scripts/towers/tower_factory.gd"
 
 [display]
 

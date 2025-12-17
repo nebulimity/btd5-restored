@@ -18,6 +18,7 @@ func preload_all() -> void:
 		"BoomerangThrower": load_animation("res://assets/sprites/towers/boomerang_thrower"),
 		"NinjaMonkey": load_animation("res://assets/sprites/towers/ninja_monkey"),
 		"BombTower": load_animation("res://assets/sprites/towers/bomb_tower"),
+		"IceTower": load_animation("res://assets/sprites/towers/ice_tower"),
 		"SuperMonkey": load_animation("res://assets/sprites/towers/super_monkey"),
 	}
 

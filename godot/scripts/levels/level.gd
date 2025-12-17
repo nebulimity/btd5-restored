@@ -75,6 +75,7 @@ func _ready() -> void:
 	
 	AssetManager.preload_all()
 	SoundManager.play_music("main_theme")
+	TowerFactory.tower_factory()
 
 func _process(delta: float) -> void:
 	bursts_this_process = 0
@@ -144,9 +145,9 @@ func _on_fast_forward_toggled(enabled: bool):
 	Engine.time_scale = 3.0 if enabled else 1.0
 
 func _on_tower_purchase_requested(tower_type: String):
-	var tower_def = TowerFactory.get_tower_def(tower_type)
+	var tower_def = TowerFactory.get_base_tower(tower_type)
 	
-	if money < tower_def["cost"]:
+	if money < tower_def.cost:
 		return
 	
 	if current_place_state:
@@ -168,9 +169,9 @@ func enter_placement_mode(tower_type: String):
 	get_parent().add_child(current_place_state)
 
 func _on_tower_placed(tower_type: String, pos: Vector2):
-	var tower_def = TowerFactory.get_tower_def(tower_type)
+	var tower_def: TowerDef = TowerFactory.get_base_tower(tower_type)
 	
-	money -= tower_def["cost"]
+	money -= tower_def.cost
 	
 	var tower = Tower.new(tower_type)
 	tower.global_position = pos

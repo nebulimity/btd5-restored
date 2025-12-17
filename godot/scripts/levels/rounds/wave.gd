@@ -94,7 +94,7 @@ func spawn_bloon(spawner: SpawnerInstance, time_offset: float, spawner_node: Nod
 	var initial_progress = time_offset * Bloon.speed_multiplier_by_type[spawner.type_index] * Bloon.BASE_SPEED
 	var spawn_order = spawner.spawn_order_offset + Bloon.spawn_order_offsets[spawner.type_index] * spawner.current_index
 	
-	var bloon_scene = load("res://scenes/entities/bloon.tscn")
+	var bloon_scene = preload("res://scenes/entities/bloon.tscn")
 	var bloon = bloon_scene.instantiate() as Bloon
 	spawner_node.add_child(bloon)
 	bloon.get_parent().move_child(bloon, 0)

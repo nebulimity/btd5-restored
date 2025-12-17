@@ -1,5 +1,5 @@
 class_name FollowPath
-extends BehaviorProcess
+extends ProjectileBehaviorProcess
 
 static var path_cache: Dictionary = {}
 

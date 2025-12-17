@@ -1,51 +1,52 @@
-[gd_scene load_steps=70 format=3 uid="uid://b54bixc6lxnii"]
+[gd_scene load_steps=71 format=3 uid="uid://b54bixc6lxnii"]
 
 [ext_resource type="Script" uid="uid://c6yn56v5ter2w" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://qcc8w0d0puor" path="res://scripts/levels/rounds/spawner.gd" id="2_lnu2h"]
 [ext_resource type="Script" uid="uid://b2rfnhxh07kdl" path="res://scripts/levels/level.gd" id="3_8ool0"]
-[ext_resource type="Texture2D" uid="uid://c48fwu2o20e4u" path="res://assets/ui/side_panel.svg" id="4_iywne"]
-[ext_resource type="Texture2D" uid="uid://bmn0ag000gmv5" path="res://assets/ui/bottom_panel.svg" id="5_p57ef"]
-[ext_resource type="Texture2D" uid="uid://ln6lpeyp7xmn" path="res://assets/ui/big_button/default.svg" id="6_kvuet"]
+[ext_resource type="Texture2D" uid="uid://c48fwu2o20e4u" path="res://assets/gui/side_panel.svg" id="4_iywne"]
+[ext_resource type="Texture2D" uid="uid://bmn0ag000gmv5" path="res://assets/gui/bottom_panel.svg" id="5_p57ef"]
+[ext_resource type="Texture2D" uid="uid://ln6lpeyp7xmn" path="res://assets/gui/big_button/default.svg" id="6_kvuet"]
 [ext_resource type="Script" uid="uid://sb7eaf6gujrg" path="res://scripts/gui/in_game/in_game_menu.gd" id="7_gxtfn"]
-[ext_resource type="Texture2D" uid="uid://dtk7cjaao34sq" path="res://assets/ui/big_button/outlined.svg" id="7_trtic"]
+[ext_resource type="Texture2D" uid="uid://dtk7cjaao34sq" path="res://assets/gui/big_button/outlined.svg" id="7_trtic"]
 [ext_resource type="FontFile" uid="uid://br002hhqta44a" path="res://assets/fonts/oetztype.ttf" id="7_u5sy4"]
-[ext_resource type="Texture2D" uid="uid://dvnsdc2v1aeax" path="res://assets/ui/big_button/play_button/arrow.svg" id="8_gee14"]
+[ext_resource type="Texture2D" uid="uid://dvnsdc2v1aeax" path="res://assets/gui/big_button/play_button/arrow.svg" id="8_gee14"]
 [ext_resource type="Shader" uid="uid://c3ryj3gh8f7l2" path="res://shaders/shadow.gdshader" id="8_ssvqc"]
 [ext_resource type="Texture2D" uid="uid://cvvim8vwjnuud" path="res://assets/sprites/spikey_ball.svg" id="9_0tnpc"]
-[ext_resource type="BitMap" uid="uid://iqns1bau8u20" path="res://assets/ui/big_button/mask.svg" id="11_twgab"]
-[ext_resource type="Texture2D" uid="uid://bc41qugao8owb" path="res://assets/ui/big_button/fast_forward_button/default.svg" id="11_v2yb1"]
-[ext_resource type="Texture2D" uid="uid://2uplxmb612qr" path="res://assets/ui/big_button/fast_forward_button/pressed.svg" id="12_js0lu"]
-[ext_resource type="Texture2D" uid="uid://f3wclmbpmkuj" path="res://assets/ui/lives/default.svg" id="12_rysoc"]
-[ext_resource type="Texture2D" uid="uid://c3lvo86g4ex6c" path="res://assets/ui/lives/outlined.svg" id="13_ssvqc"]
-[ext_resource type="Texture2D" uid="uid://c2xwv7c87b3vp" path="res://assets/ui/money/default.svg" id="14_trtic"]
+[ext_resource type="BitMap" uid="uid://iqns1bau8u20" path="res://assets/gui/big_button/mask.svg" id="11_twgab"]
+[ext_resource type="Texture2D" uid="uid://bc41qugao8owb" path="res://assets/gui/big_button/fast_forward_button/default.svg" id="11_v2yb1"]
+[ext_resource type="Texture2D" uid="uid://2uplxmb612qr" path="res://assets/gui/big_button/fast_forward_button/pressed.svg" id="12_js0lu"]
+[ext_resource type="Texture2D" uid="uid://f3wclmbpmkuj" path="res://assets/gui/lives/default.svg" id="12_rysoc"]
+[ext_resource type="Texture2D" uid="uid://c3lvo86g4ex6c" path="res://assets/gui/lives/outlined.svg" id="13_ssvqc"]
+[ext_resource type="Texture2D" uid="uid://c2xwv7c87b3vp" path="res://assets/gui/money/default.svg" id="14_trtic"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="15_37s47"]
-[ext_resource type="Texture2D" uid="uid://crfhapbcbw8i1" path="res://assets/ui/tower_buttons/dart_tower/default.svg" id="15_264po"]
-[ext_resource type="Texture2D" uid="uid://cgirn0ygc2sr6" path="res://assets/ui/money/outlined.svg" id="15_ir15t"]
+[ext_resource type="Texture2D" uid="uid://crfhapbcbw8i1" path="res://assets/gui/tower_buttons/dart_tower/default.svg" id="15_264po"]
+[ext_resource type="Texture2D" uid="uid://cgirn0ygc2sr6" path="res://assets/gui/money/outlined.svg" id="15_ir15t"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="16_bt5mj"]
-[ext_resource type="Texture2D" uid="uid://dnddkj8vxo3d6" path="res://assets/ui/tower_buttons/default.svg" id="17_37s47"]
-[ext_resource type="Texture2D" uid="uid://bbwd3j0o3i3rc" path="res://assets/ui/tower_buttons/outlined.svg" id="18_bt5mj"]
-[ext_resource type="Texture2D" uid="uid://betp47d556be0" path="res://assets/ui/save_button/default.svg" id="21_pl11u"]
-[ext_resource type="Texture2D" uid="uid://po4xu7dbajki" path="res://assets/ui/save_button/outlined.svg" id="22_bhx41"]
+[ext_resource type="Texture2D" uid="uid://dnddkj8vxo3d6" path="res://assets/gui/tower_buttons/default.svg" id="17_37s47"]
+[ext_resource type="Texture2D" uid="uid://bbwd3j0o3i3rc" path="res://assets/gui/tower_buttons/outlined.svg" id="18_bt5mj"]
+[ext_resource type="Texture2D" uid="uid://betp47d556be0" path="res://assets/gui/save_button/default.svg" id="21_pl11u"]
+[ext_resource type="Texture2D" uid="uid://po4xu7dbajki" path="res://assets/gui/save_button/outlined.svg" id="22_bhx41"]
 [ext_resource type="FontFile" uid="uid://cvtrg54kisg7g" path="res://assets/fonts/nb_obese.ttf" id="23_bhx41"]
-[ext_resource type="Texture2D" uid="uid://bs7jxb4sfn2j7" path="res://assets/ui/tower_buttons/sniper_tower/default.svg" id="24_0sl42"]
-[ext_resource type="Texture2D" uid="uid://wn3icr8ptd41" path="res://assets/ui/menu/default.svg" id="24_sww3w"]
-[ext_resource type="Texture2D" uid="uid://bmfyw85urpwy1" path="res://assets/ui/menu/outlined.svg" id="25_suyxu"]
-[ext_resource type="BitMap" uid="uid://dyggydn2lkit3" path="res://assets/ui/tower_buttons/mask.svg" id="26_02fa5"]
-[ext_resource type="Texture2D" uid="uid://c5m0qjpi8uhl7" path="res://assets/ui/music/on/default.svg" id="26_wljb1"]
-[ext_resource type="Texture2D" uid="uid://bcvbddanvqxfq" path="res://assets/ui/music/on/outlined.svg" id="27_v2yb1"]
-[ext_resource type="Texture2D" uid="uid://cd5rmvpje5nqa" path="res://assets/ui/sfx/on/default.svg" id="28_js0lu"]
-[ext_resource type="Texture2D" uid="uid://cqclgwwflc7ru" path="res://assets/ui/tower_buttons/tack_tower/default.svg" id="28_m4url"]
-[ext_resource type="Texture2D" uid="uid://bherte7k5usq5" path="res://assets/ui/tower_buttons/bomb_tower/default.svg" id="29_458eo"]
-[ext_resource type="Texture2D" uid="uid://8hsgmfjqk03u" path="res://assets/ui/sfx/on/outlined.svg" id="29_gxtfn"]
-[ext_resource type="BitMap" uid="uid://rcw0avyfk02a" path="res://assets/ui/save_button/mask.svg" id="31_nepv3"]
-[ext_resource type="Texture2D" uid="uid://bor23t2ldqr2o" path="res://assets/ui/tower_buttons/boomerang_tower/default.svg" id="33_458eo"]
-[ext_resource type="Texture2D" uid="uid://cqls336tsosk3" path="res://assets/ui/tower_buttons/super_tower/default.svg" id="33_oaba0"]
-[ext_resource type="Texture2D" uid="uid://dnxn0lhjd44ih" path="res://assets/ui/tower_buttons/ninja_tower/default.svg" id="34_h3rex"]
-[ext_resource type="BitMap" uid="uid://dl5xgg2c5oxnc" path="res://assets/ui/sfx/mask.svg" id="35_7025r"]
-[ext_resource type="Texture2D" uid="uid://cfutrdkf1dwbo" path="res://assets/ui/sfx/off/default.svg" id="40_05nbr"]
-[ext_resource type="Texture2D" uid="uid://bjur1rvi756u5" path="res://assets/ui/sfx/off/outlined.svg" id="41_0sl42"]
-[ext_resource type="Texture2D" uid="uid://dq7jebuwqx6mb" path="res://assets/ui/music/off/default.svg" id="44_oaba0"]
-[ext_resource type="Texture2D" uid="uid://c1f746kogr1k7" path="res://assets/ui/music/off/outlined.svg" id="45_458eo"]
+[ext_resource type="Texture2D" uid="uid://bs7jxb4sfn2j7" path="res://assets/gui/tower_buttons/sniper_tower/default.svg" id="24_0sl42"]
+[ext_resource type="Texture2D" uid="uid://wn3icr8ptd41" path="res://assets/gui/menu/default.svg" id="24_sww3w"]
+[ext_resource type="Texture2D" uid="uid://bmfyw85urpwy1" path="res://assets/gui/menu/outlined.svg" id="25_suyxu"]
+[ext_resource type="BitMap" uid="uid://dyggydn2lkit3" path="res://assets/gui/tower_buttons/mask.svg" id="26_02fa5"]
+[ext_resource type="Texture2D" uid="uid://c5m0qjpi8uhl7" path="res://assets/gui/music/on/default.svg" id="26_wljb1"]
+[ext_resource type="Texture2D" uid="uid://bcvbddanvqxfq" path="res://assets/gui/music/on/outlined.svg" id="27_v2yb1"]
+[ext_resource type="Texture2D" uid="uid://cd5rmvpje5nqa" path="res://assets/gui/sfx/on/default.svg" id="28_js0lu"]
+[ext_resource type="Texture2D" uid="uid://cqclgwwflc7ru" path="res://assets/gui/tower_buttons/tack_tower/default.svg" id="28_m4url"]
+[ext_resource type="Texture2D" uid="uid://bherte7k5usq5" path="res://assets/gui/tower_buttons/bomb_tower/default.svg" id="29_458eo"]
+[ext_resource type="Texture2D" uid="uid://8hsgmfjqk03u" path="res://assets/gui/sfx/on/outlined.svg" id="29_gxtfn"]
+[ext_resource type="Texture2D" uid="uid://dgtajjls2tp8v" path="res://assets/gui/tower_buttons/ice_tower/default.svg" id="30_h3rex"]
+[ext_resource type="BitMap" uid="uid://rcw0avyfk02a" path="res://assets/gui/save_button/mask.svg" id="31_nepv3"]
+[ext_resource type="Texture2D" uid="uid://bor23t2ldqr2o" path="res://assets/gui/tower_buttons/boomerang_tower/default.svg" id="33_458eo"]
+[ext_resource type="Texture2D" uid="uid://cqls336tsosk3" path="res://assets/gui/tower_buttons/super_tower/default.svg" id="33_oaba0"]
+[ext_resource type="Texture2D" uid="uid://dnxn0lhjd44ih" path="res://assets/gui/tower_buttons/ninja_tower/default.svg" id="34_h3rex"]
+[ext_resource type="BitMap" uid="uid://dl5xgg2c5oxnc" path="res://assets/gui/sfx/mask.svg" id="35_7025r"]
+[ext_resource type="Texture2D" uid="uid://cfutrdkf1dwbo" path="res://assets/gui/sfx/off/default.svg" id="40_05nbr"]
+[ext_resource type="Texture2D" uid="uid://bjur1rvi756u5" path="res://assets/gui/sfx/off/outlined.svg" id="41_0sl42"]
+[ext_resource type="Texture2D" uid="uid://dq7jebuwqx6mb" path="res://assets/gui/music/off/default.svg" id="44_oaba0"]
+[ext_resource type="Texture2D" uid="uid://c1f746kogr1k7" path="res://assets/gui/music/off/outlined.svg" id="45_458eo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gee14"]
 font = ExtResource("7_u5sy4")
@@ -453,17 +454,10 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/IceTower"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = -1.0
-offset_right = 35.5
-offset_bottom = 56.4
-mouse_filter = 1
-text = "?"
-label_settings = SubResource("LabelSettings_bt5mj")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/IceTower"]
+material = SubResource("ShaderMaterial_bt5mj")
+texture = ExtResource("30_h3rex")
+centered = false
 
 [node name="GlueGunner" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
 layout_mode = 2

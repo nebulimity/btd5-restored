@@ -2,7 +2,7 @@ class_name Tower
 extends Node2D
 
 var tower_type: String
-var tower_def: Dictionary
+var tower_def: TowerDef
 var current_range: float
 var selected: bool
 var orientation: float
@@ -12,35 +12,26 @@ var outline_shader: ShaderMaterial
 var range_combo: Node2D
 var level: Level
 
-var weapons: Array[Weapon] = []
-var weapon_offsets: Array[Vector2] = []
 var targets_by_priority: Array[Bloon] = []
 var current_target: Bloon = null
 var target_priority: String = "first"  # first, last, close, strong
 
 var in_throw_animation: bool = false
 var has_fired: bool = false
-var behaviors: Array = [] 
 
 var fire_weapon: Weapon = null
-var fire_offset: Vector2 = Vector2.ZERO
 
 var target_search_timer: float = 0.0
 
 func _init(type: String) -> void:
 	tower_type = type
-	tower_def = TowerFactory.get_tower_def(type)
-	current_range = tower_def["range"]
-	orientation = tower_def["rotation_offset"]
-	
-	setup_weapons()
-	
-	if tower_def.get("rotates", true):
-		behaviors.append(RotateToTarget.new())
+	tower_def = TowerFactory.get_base_tower(tower_type)
+	current_range = tower_def.range_of_visibility
+	orientation = tower_def.rotation_offset
 
 func _ready() -> void:
 	sprite = AnimatedSprite2D.new()
-	sprite.offset = tower_def.get("position_offset", Vector2.ZERO)
+	sprite.offset = tower_def.position_offset
 	sprite.z_index = 2
 	sprite.rotation_degrees = orientation
 	
@@ -50,7 +41,7 @@ func _ready() -> void:
 	sprite_frames.set_animation_loop("default", false)
 	sprite_frames.set_animation_speed("default", 30.0)
 	
-	for texture in AssetManager.grab(tower_type):
+	for texture in AssetManager.grab(tower_def.display):
 		sprite_frames.add_frame("default", texture)
 	
 	sprite.sprite_frames = sprite_frames
@@ -79,112 +70,25 @@ func _ready() -> void:
 	
 	SoundManager.play("place")
 
-func setup_weapons() -> void:	
-	match tower_type:
-		"DartMonkey":
-			var damage_def = DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
-			var proj_def = ProjectileDef.new().Display("Dart")
-			proj_def.Pierce(1).Speed(850).DamageEffect(damage_def)
-			
-			var weapon = Single.new()
-			weapon.SetRange(161).SetReloadTime(0.9).SetPower(850).SetProjectile(proj_def)
-			weapons.append(weapon)
-			weapon_offsets.append(TowerFactory.get_tower_def(tower_type)["weapon_offset"])
-		
-		"TackShooter":
-			var damage_def = DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
-			var proj_def = ProjectileDef.new().Display("Tack")
-			proj_def.Pierce(1).Speed(200).DamageEffect(damage_def)
-			
-			var weapon = Circular.new()
-			weapon.SetRange(70).SetReloadTime(1.66).SetPower(350).SetProjectile(proj_def)
-			weapon.SetAngle(TAU).SetCount(8)
-			weapons.append(weapon)
-			weapon_offsets.append(Vector2.ZERO)
-		
-		"SniperMonkey":
-			var damage_def = DamageEffectDef.new().Damage(2).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
-			var proj_def = ProjectileDef.new().Display("Dart")
-			proj_def.Pierce(1).Speed(200).DamageEffect(damage_def)
-			
-			var weapon = Instant.new()
-			weapon.SetReloadTime(2.2).SetProjectile(proj_def)
-			weapons.append(weapon)
-			weapon_offsets.append(Vector2.ZERO)
-		
-		"BoomerangThrower":
-			var path_behavior = FollowPath.new().Path([
-				CubicBezierDef.new().A(Vector2.ZERO).B(Vector2.ZERO).C(Vector2(112, 55)).D(Vector2(131, -27)),
-				CubicBezierDef.new().A(Vector2(131, -27)).B(Vector2(151, -109)).C(Vector2(45, -159)).D(Vector2(-13, -11))
-			])
-			var damage_def = DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
-			var behavior_def = BehaviorDef.new().Process(path_behavior)
-			
-			var proj_def = ProjectileDef.new().Display("Boomerang")
-			proj_def.Pierce(3).Radius(10).Speed(850)
-			proj_def.DamageEffect(damage_def).Behavior(behavior_def)
-			
-			var weapon = Spread.new()
-			weapon.SetRange(520).SetPower(700).SetReloadTime(1.33).SetProjectile(proj_def).SetCount(1).SetAngle(0.5)
-			weapons.append(weapon)
-			weapon_offsets.append(TowerFactory.get_tower_def(tower_type)["weapon_offset"])
-		
-		"NinjaMonkey":
-			var damage_def = DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
-			var proj_def = ProjectileDef.new().Display("Shuriken")
-			proj_def.Pierce(2).Radius(4).DamageEffect(damage_def)
-			
-			var weapon = Single.new()
-			weapon.SetRange(360).SetReloadTime(0.6).SetPower(360).SetProjectile(proj_def)
-			weapons.append(weapon)
-			weapon_offsets.append(TowerFactory.get_tower_def(tower_type)["weapon_offset"])
-		
-		"BombTower":
-			var dumb = DamageEffectDef.new().Damage(1).CanBreakIce(true).CantBreak([Bloon.BloonType.BLACK, Bloon.BloonType.ZEBRA]).ShowPop(false)
-			var explosion_medium = ProjectileDef.new().Display("MediumExplosion").Pierce(40).Radius(60)
-			explosion_medium.DamageEffect(dumb)
-			
-			var spawn_projectile = CollisionSpawnProjectile.new().SetProjectile(explosion_medium)
-			var behavior_def = BehaviorDef.new().Collision(spawn_projectile)
-			var proj_def = ProjectileDef.new().Display("Bomb")
-			proj_def.Pierce(1).Radius(5).Behavior(behavior_def)
-			
-			var weapon = Single.new()
-			weapon.SetRange(234).SetReloadTime(1.54).SetPower(455).SetProjectile(proj_def)
-			weapons.append(weapon)
-		
-		"SuperMonkey":
-			var damage_def = DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)
-			var proj_def = ProjectileDef.new().Display("Dart")
-			proj_def.Pierce(1).Speed(850).DamageEffect(damage_def)
-			
-			var weapon = Single.new()
-			weapon.SetRange(500).SetReloadTime(0.058).SetPower(700).SetProjectile(proj_def)
-			weapons.append(weapon)
-			weapon_offsets.append(TowerFactory.get_tower_def(tower_type)["weapon_offset"])
-		_:
-			pass
-
 func process(delta: float) -> void:
 	target_search_timer += delta
 	
 	find_targets()
 	
-	for behavior in behaviors:
-		if behavior.has_method("process"):
-			behavior.process(self, delta)
+	if tower_def.behavior and tower_def.behavior.process_behavior:
+		tower_def.behavior.process_behavior.execute(self, delta)
 	
-	for weapon in weapons:
+	for weapon in tower_def.weapons:
 		weapon.update(delta)
 	
 	if fire_weapon != null and not has_fired and not in_throw_animation:
-		fire()
+		fire(0)
 	
 	ready_fire()      
 	check_fire_frame()
 	
 	if range_combo and selected:
-		range_combo.redraw(tower_def["range"], true)
+		range_combo.redraw(tower_def.range_of_visibility, true)
 	if outline.visible and sprite.sprite_frames.get_frame_count("default") > 0:
 		outline.texture = sprite.sprite_frames.get_frame_texture("default", sprite.frame)
 
@@ -192,9 +96,8 @@ func ready_fire() -> void:
 	if in_throw_animation:
 		return
 	
-	for i in range(weapons.size()):
-		var weapon = weapons[i]
-		
+	var i: int = 0
+	for weapon in tower_def.weapons:
 		if i == 0:
 			var target_invalid = false
 			
@@ -221,32 +124,38 @@ func ready_fire() -> void:
 		if weapon.can_fire():
 			weapon.reset_cooldown()
 			fire_weapon = weapon
-			fire_offset = weapon_offsets[i] if i < weapon_offsets.size() else Vector2.ZERO
 			
 			in_throw_animation = true
 			has_fired = false
 			
 			sprite.frame = 0
 			sprite.play("default")
+		
+		i += 1
 
 func check_fire_frame() -> void:
 	if in_throw_animation and not has_fired:
-		var trigger_frame = int(tower_def.get("fire_frame", 1))
+		var trigger_frame = tower_def.fire_frame
 		if sprite.frame >= trigger_frame - 1:
-			fire()
+			fire(0)
 
-func fire() -> void:
+func fire(index: int) -> void:
+	var weapon = tower_def.weapons[index]
+	
 	if fire_weapon:
 		has_fired = true
-		if current_target:
-			fire_weapon.execute(self, self, current_target, fire_offset)
+		if not current_target:
+			current_target = null
+		
+		if tower_def.weapon_offsets and tower_def.weapon_offsets.size() > index and tower_def.weapon_offsets[index]:
+			weapon.execute(self, self, current_target, tower_def.weapon_offsets[index])
 		else:
-			fire_weapon.execute(self, self, null, fire_offset)
+			weapon.execute(self, self, current_target)
 
 func _on_animation_finished() -> void:
 	in_throw_animation = false
-	if tower_def.get("idle_frame"):
-		sprite.frame = tower_def["idle_frame"] - 1
+	if tower_def.idle_frame != -1:
+		sprite.frame = tower_def.idle_frame - 1
 
 func find_targets() -> void:
 	targets_by_priority.clear()

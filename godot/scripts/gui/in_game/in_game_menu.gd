@@ -89,6 +89,7 @@ func update_rbe_display(value: int) -> void:
 	rbe_text.text = str(value)
 
 func _on_sfx_button_pressed() -> void:
+	SoundManager.play("select")
 	if not SoundManager.sfx_muted:
 		SoundManager.mute_sfx(true)
 		sfx_button.texture_normal = sfx_button.get_meta("pressed_texture")
@@ -99,6 +100,7 @@ func _on_sfx_button_pressed() -> void:
 		sfx_button.texture_hover = sfx_button.get_meta("default_outlined")
 
 func _on_music_button_pressed() -> void:
+	SoundManager.play("select")
 	if not SoundManager.music_muted:
 		SoundManager.mute_music(true)
 		music_button.texture_normal = music_button.get_meta("pressed_texture")
