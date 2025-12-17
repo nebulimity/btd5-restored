@@ -32,6 +32,10 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg")
 
+[gui]
+
+common/snap_controls_to_pixels=false
+
 [input]
 
 fullscreen={
