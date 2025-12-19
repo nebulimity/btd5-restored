@@ -45,7 +45,7 @@ func _parse_rounds():
 	var round1 = RoundDef.new()
 	round1.flavor_text = "Easy peasy."
 	var group1a = GroupDef.new()
-	group1a.bloon = BloonDef.new(2, false, false)
+	group1a.bloon = BloonDef.new(0, false, false)
 	group1a.spawners.append(SpawnerDef.new(20, 17.5125, 0))
 	round1.groups.append(group1a)
 	rounds.append(round1)
