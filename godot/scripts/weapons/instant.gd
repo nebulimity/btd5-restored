@@ -31,23 +31,14 @@ func execute(tower: Tower, _source: Node2D, _target_arg: Node2D, _weapon_offset:
 	
 	var candidate: Bloon = null
 	var final_target: Bloon = null
-	var i: int = 0
-	var count: int = tower.targets_by_priority.size()
+	var i: int = int(tower.targets_by_priority.size() - 1)
 	
-	while i < count:
+	while i >= 0:
 		candidate = tower.targets_by_priority[i]
 		if candidate.bloon_type != -1:
 			final_target = candidate
 			break
-		i += 1
-		
-	#var i: int = int(tower.targets_by_priority.size() - 1) # AS3 direct port (doesn't work properly, behaves as target_priority = "last" :/)
-	#while i >= 0:
-		#candidate = tower.targets_by_priority[i]
-		#if candidate.bloon_type != -1:
-			#final_target = candidate
-			#break
-		#i -= 1
+		i -= 1
 	
 	if final_target == null:
 		tower.sprite.frame = 0

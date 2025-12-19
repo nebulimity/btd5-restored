@@ -15,6 +15,7 @@ var level: Level
 var targets_by_priority: Array[Bloon] = []
 var current_target: Bloon = null
 var target_priority: String = "first"
+var target_mask: int = 0
 
 var in_throw_animation: bool = false
 var has_fired: bool = false
@@ -70,6 +71,10 @@ func _ready() -> void:
 	if not level:
 		level = get_parent().get_parent().get_node_or_null("Level")
 	
+	if tower_def.target_mask:
+		for mask in tower_def.target_mask:
+			target_mask |= mask
+	
 	SoundManager.play("place")
 	
 	reload_timers.clear()
@@ -96,41 +101,76 @@ func process(delta: float) -> void:
 	if outline.visible and sprite.sprite_frames.get_frame_count("default") > 0:
 		outline.texture = sprite.sprite_frames.get_frame_texture("default", sprite.frame)
 
+func is_target_valid(bloon: Bloon) -> bool:
+	if bloon == null or not is_instance_valid(bloon):
+		return false
+	if bloon.bloon_type == -1:
+		return false
+	if bloon.is_in_tunnel():
+		return false
+	
+	var dist = global_position.distance_to(bloon.global_position)
+	if dist > current_range + bloon.target_addon:
+		return false
+		
+	if (bloon.immunity & target_mask) != 0:
+		return false
+		
+	return true
+
 func ready_fire() -> void:
 	if tower_def.weapons == null:
 		return
-		
+	
+	if level.active_bloons == 0:
+		return
+
+	var target_found_this_frame: bool = false
+	
 	for i in range(tower_def.weapons.size()):
-		if i == 0:
-			var target_invalid = false
-			if current_target == null or not is_instance_valid(current_target):
-				target_invalid = true
-			elif current_target.is_in_tunnel():
-				target_invalid = true
-			elif current_target.bloon_type == -1:
-				target_invalid = true
-			elif target_search_timer > 0.5:
-				target_invalid = true
-			elif global_position.distance_to(current_target.global_position) > current_range:
-				target_invalid = true
-			
-			if target_invalid:
-				current_target = null
-				if targets_by_priority.size() > 0:
-					current_target = get_target_by_priority()
-				target_search_timer = 0.0
+		var _weapon = tower_def.weapons[i]
+		var timer = reload_timers[i]
 		
-		if current_target != null:
-			if not reload_timers[i].running:
-				if in_throw_animation:
-					pass 
-				else:
-					sprite.frame = 0
-					sprite.play("default")
-					in_throw_animation = true
-					has_fired = false
+		if not timer.running:
+			var needs_target = true
+			
+			if not target_found_this_frame and needs_target:
+				var target_invalid = false
 				
-				reload_timers[i].reset()
+				if current_target == null or target_search_timer > 0.5:
+					target_invalid = true
+				elif not is_target_valid(current_target):
+					target_invalid = true
+				
+				if target_invalid:
+					current_target = null
+					
+					if level.collision_grid:
+						level.collision_grid.populate_tower_targets(self)
+						if targets_by_priority.size() > 1:
+							level.collision_grid.sort_targets_by_priority(target_priority, targets_by_priority, global_position)
+					
+					if targets_by_priority.size() > 0:
+						current_target = targets_by_priority.back()
+						target_found_this_frame = true
+						target_search_timer = 0.0
+			
+			if current_target != null or not needs_target:
+				if i == 0:
+					if in_throw_animation:
+						pass
+					else:
+						sprite.frame = 0
+						sprite.play("default")
+						in_throw_animation = true
+						has_fired = false
+						
+						if tower_def.fire_frame == -1:
+							fire(i)
+				else:
+					fire(i)
+				
+				timer.reset()
 
 func check_fire_frame() -> void:
 	if in_throw_animation and not has_fired:
@@ -140,11 +180,12 @@ func check_fire_frame() -> void:
 
 func fire(index: int) -> void:
 	var weapon = tower_def.weapons[index]
+	var valid_target = current_target if is_instance_valid(current_target) else null
 	
 	if tower_def.weapon_offsets and tower_def.weapon_offsets.size() > index and tower_def.weapon_offsets[index]:
-		weapon.execute(self, self, current_target, tower_def.weapon_offsets[index])
+		weapon.execute(self, self, valid_target, tower_def.weapon_offsets[index])
 	else:
-		weapon.execute(self, self, current_target)
+		weapon.execute(self, self, valid_target)
 		
 	has_fired = true
 
@@ -159,50 +200,7 @@ func find_targets() -> void:
 	if not level or not level.collision_grid:
 		return
 	
-	var candidates = level.collision_grid.get_bloons_in_range(global_position, current_range)
-	
-	for bloon in candidates:
-		if not is_instance_valid(bloon) or bloon.bloon_type == -1:
-			continue
-		
-		if bloon.is_in_tunnel():
-			continue
-		
-		var dist = global_position.distance_to(bloon.global_position)
-		if dist <= current_range:
-			targets_by_priority.append(bloon)
-	
-	if targets_by_priority.size() > 1:
-		targets_by_priority.sort_custom(func(a, b): return a.overall_progress > b.overall_progress)
-
-func get_target_by_priority() -> Bloon:
-	if targets_by_priority.size() == 0:
-		return null
-	
-	match target_priority:
-		"first":
-			return targets_by_priority[0]
-		"last":
-			return targets_by_priority[targets_by_priority.size() - 1]
-		"close":
-			var closest = targets_by_priority[0]
-			var closest_dist = global_position.distance_to(closest.global_position)
-			for bloon in targets_by_priority:
-				var dist = global_position.distance_to(bloon.global_position)
-				if dist < closest_dist:
-					closest = bloon
-					closest_dist = dist
-			return closest
-		"strong":
-			var strongest = targets_by_priority[0]
-			for bloon in targets_by_priority:
-				if bloon.get_total_rbe() > strongest.get_total_rbe():
-					strongest = bloon
-				elif bloon.get_total_rbe() == strongest.get_total_rbe() and bloon.overall_progress > strongest.overall_progress:
-					strongest = bloon
-			return strongest
-		_:
-			return targets_by_priority[0]
+	level.collision_grid.populate_tower_targets(self)
 
 func show_range() -> void:
 	range_combo.visible = true

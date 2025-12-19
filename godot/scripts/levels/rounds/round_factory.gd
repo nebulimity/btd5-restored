@@ -16,7 +16,7 @@ class BloonDef:
 	var camo: bool
 	var regen: bool
 	
-	func _init(p_type: int, p_camo: bool, p_regen: bool):
+	func _init(p_type: int, p_regen: bool, p_camo: bool):
 		type = p_type
 		camo = p_camo
 		regen = p_regen
@@ -45,7 +45,7 @@ func _parse_rounds():
 	var round1 = RoundDef.new()
 	round1.flavor_text = "Easy peasy."
 	var group1a = GroupDef.new()
-	group1a.bloon = BloonDef.new(0, false, false)
+	group1a.bloon = BloonDef.new(2, false, false)
 	group1a.spawners.append(SpawnerDef.new(20, 17.5125, 0))
 	round1.groups.append(group1a)
 	rounds.append(round1)

@@ -12,6 +12,7 @@ var hit_bloons: Array[int] = []
 var target: Bloon = null
 var sprite: AnimatedSprite2D
 var damage_effect: DamageEffectDef
+var effect_mask: int = 0
 var level: Level
 
 var radius: float = 0.0
@@ -40,6 +41,10 @@ func initialize(projectile_def: ProjectileDef) -> void:
 	add_child(sprite)
 	
 	prev_pos = global_position
+	
+	if def.effect_mask:
+		for mask in def.effect_mask:
+			effect_mask |= mask
 
 func process(delta: float) -> void:
 	lifespan -= delta
@@ -71,7 +76,7 @@ func handle_collision() -> void:
 	if def.behavior and def.behavior.collision_behavior:
 		def.behavior.collision_behavior.execute(self)
 	
-	if pierce < 0:
+	if pierce <= 0:
 		destroy()
 
 func destroy() -> void:

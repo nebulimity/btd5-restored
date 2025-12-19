@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://sx8w5s6s581s"]
+[gd_scene load_steps=4 format=3 uid="uid://sx8w5s6s581s"]
 
 [ext_resource type="Script" uid="uid://c11xsvv1pmb1s" path="res://scripts/bloons/bloon.gd" id="1_hw2qi"]
 [ext_resource type="Texture2D" uid="uid://dtxk507vapcw4" path="res://assets/sprites/bloons/normal/1.svg" id="1_mhm5h"]
+[ext_resource type="Texture2D" uid="uid://cfiibrq84ft5x" path="res://assets/sprites/bloons/camo_overlay/1.svg" id="3_5u0ic"]
 
 [node name="Bloon" type="Node2D"]
 script = ExtResource("1_hw2qi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_mhm5h")
+
+[node name="CamoOverlay" type="Sprite2D" parent="."]
+texture = ExtResource("3_5u0ic")
+offset = Vector2(0, -1)

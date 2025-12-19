@@ -11,6 +11,7 @@ var range_of_visibility: float = 0.0
 var rotates: bool = true
 var weapons: Array[Weapon] = []
 var weapon_offsets: Array[Vector2] = []
+var target_mask: Array[int] = []
 var behavior: TowerBehaviorDef = null
 var position_offset: Vector2 = Vector2.ZERO
 var rotation_offset: float = -90.0
@@ -25,6 +26,8 @@ var requires_water: bool = false      # temp
 
 func _init(tower_name: String) -> void:
 	id = tower_name
+	target_mask.resize(Bloon.BloonImmunity.size())
+	target_mask.fill(Bloon.BloonImmunity.IMMUNITY_NO_DETECTION)
 
 func Display(value: String) -> TowerDef:
 	display = value
@@ -48,6 +51,10 @@ func OccupiedSpace(value: float) -> TowerDef:
 
 func RangeOfVisibility(value: float) -> TowerDef:
 	range_of_visibility = value
+	return self
+
+func TargetMask(value: Array[int]) -> TowerDef:
+	target_mask = value
 	return self
 
 func Rotates(value: bool) -> TowerDef:

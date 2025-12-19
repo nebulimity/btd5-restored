@@ -4,9 +4,14 @@ extends RefCounted
 var display: String = ""
 var pierce: int = 1
 var radius: float = 0.0
+var effect_mask: Array[int] = []
 var speed: float = 0.0
 var damage_effect: DamageEffectDef = null
 var behavior: ProjectileBehaviorDef = null
+
+func _init() -> void:
+	effect_mask.resize(Bloon.BloonImmunity.size())
+	effect_mask.fill(Bloon.BloonImmunity.IMMUNITY_NO_DETECTION)
 
 func Display(path: String) -> ProjectileDef:
 	display = path
@@ -18,6 +23,10 @@ func Pierce(value: int) -> ProjectileDef:
 
 func Radius(value: float) -> ProjectileDef:
 	radius = value
+	return self
+
+func EffectMask(value: Array[int]) -> ProjectileDef:
+	effect_mask = value
 	return self
 
 func Speed(value: float) -> ProjectileDef:

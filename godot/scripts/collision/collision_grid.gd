@@ -2,7 +2,11 @@ class_name CollisionGrid
 extends Node
 
 const CELL_SIZE: int = 40
-const GRID_OFFSET: int = -60 
+const GRID_OFFSET: int = -60
+const VISIBILITY_RADIUS_SPECIAL: int = 52
+
+var visible_bloon_buffer: Array[Bloon] = []
+var camo_bloon_buffer: Array[Bloon] = []
 
 var rows: int = 0
 var columns: int = 0
@@ -75,7 +79,7 @@ func get_cell_index(x: float, y: float) -> int:
 		
 	return r * columns + c
 
-func add_to_cell(bloon: Node2D, index: int) -> void:
+func add_to_cell(bloon: Bloon, index: int) -> void:
 	if index == -1: return
 	
 	if bloon.bloon_type < bloon.BloonType.MOAB:
@@ -87,7 +91,7 @@ func add_to_cell(bloon: Node2D, index: int) -> void:
 			cell_list.append(bloon)
 		bloon.set_meta("is_moab", true)
 
-func remove_from_cell(bloon: Node2D, index: int) -> void:
+func remove_from_cell(bloon: Bloon, index: int) -> void:
 	if index == -1: return
 	
 	if not bloon.get_meta("is_moab", false):
@@ -98,7 +102,7 @@ func remove_from_cell(bloon: Node2D, index: int) -> void:
 		for cell_list in neighbor_lists:
 			cell_list.erase(bloon)
 
-func switch_cells(bloon: Node2D, old_index: int, new_index: int) -> void:
+func switch_cells(bloon: Bloon, old_index: int, new_index: int) -> void:
 	if old_index != -1:
 		remove_from_cell(bloon, old_index)
 	if new_index != -1:
@@ -160,7 +164,55 @@ func process(delta: float) -> void:
 	process_projectile_collisions(delta)
 
 func update_bloon_detection() -> void:
-	pass # Not implemented
+	if not level: return
+	
+	var towers = level.placed_towers
+	var bloons_in_range: Array
+	var range_val: float
+	
+	visible_bloon_buffer.clear()
+	camo_bloon_buffer.clear()
+	
+	for tower in towers:
+		if not is_instance_valid(tower): continue
+		
+		range_val = tower.tower_def.range_of_visibility
+		
+		if is_special_visibility_tower(tower):
+			if has_visibility_upgrade(tower):
+				range_val = VISIBILITY_RADIUS_SPECIAL * (tower.tower_def.range_of_visibility / tower.tower_def.get("base_range", tower.tower_def.range_of_visibility))
+			else:
+				range_val = VISIBILITY_RADIUS_SPECIAL
+		
+		bloons_in_range = get_bloons_in_range(tower.global_position, range_val)
+		
+		for bloon in bloons_in_range:
+			bloon.is_in_general_vision = true
+			visible_bloon_buffer.append(bloon)
+			
+			var can_see_camo = false
+			if (Bloon.BloonImmunity.IMMUNITY_NO_DETECTION & tower.target_mask) == 0:
+				can_see_camo = true
+			
+			if can_see_camo:
+				bloon.is_in_camo_vision = true
+				camo_bloon_buffer.append(bloon)
+	
+	for bloon in level.bloons:
+		if not is_instance_valid(bloon): continue
+		
+		if not (bloon in visible_bloon_buffer):
+			bloon.is_in_general_vision = false
+			
+		if not (bloon in camo_bloon_buffer):
+			bloon.is_in_camo_vision = false
+
+func is_special_visibility_tower(tower: Tower) -> bool:
+	var id = tower.tower_type
+	return id == "SniperMonkey" or id == "MortarTower" or id == "DartlingGun"
+
+func has_visibility_upgrade(_tower: Tower) -> bool:
+	return false # not implemented
 
 func get_cell_and_adjacent_cells(x: float, y: float) -> Array:
 	var idx = get_cell_index(x, y)
@@ -191,6 +243,98 @@ func test_circle_line(u: Vector2, v: Vector2, c: Vector2, r: float) -> bool:
 	
 	return (dist_x * dist_x + dist_y * dist_y) < (r * r)
 
+func populate_tower_targets(tower: Tower) -> void:
+	tower.targets_by_priority.clear()
+	
+	if not level or level.active_bloons == 0:
+		return
+	
+	var range_val = tower.current_range
+	var pos = tower.global_position
+	
+	var min_col = max(int((pos.x - range_val - GRID_OFFSET) / CELL_SIZE), 0)
+	var max_col = min(int((pos.x + range_val - GRID_OFFSET) / CELL_SIZE), columns - 1)
+	var min_row = max(int((pos.y - range_val - GRID_OFFSET) / CELL_SIZE), 0)
+	var max_row = min(int((pos.y + range_val - GRID_OFFSET) / CELL_SIZE), rows - 1)
+	
+	for c in range(min_col, max_col + 1):
+		for r in range(min_row, max_row + 1):
+			var cell_list = cells[c + r * columns]
+			if cell_list.size() > 0:
+				get_targets(pos, range_val, tower.target_mask, tower.targets_by_priority, cell_list)
+	
+	if tower.targets_by_priority.size() > 1:
+		level.collision_grid.sort_targets_by_priority(tower.target_priority, tower.targets_by_priority, tower.global_position)
+
+func get_targets(pos: Vector2, range_val: float, mask: int, result_list: Array, cell_list: Array) -> void:
+	var dist_x: float
+	var dist_y: float
+	var dist_sq: float
+	var effective_range: float
+	var range_sq: float
+	
+	for bloon in cell_list:
+		if (mask & bloon.immunity) == 0:
+			if bloon.bloon_type != -1:
+				if not bloon.is_in_tunnel():
+					if range_val >= 1200:
+						result_list.append(bloon)
+					else:
+						dist_x = pos.x - bloon.global_position.x
+						dist_y = pos.y - bloon.global_position.y
+						dist_sq = dist_x * dist_x + dist_y * dist_y
+						
+						effective_range = range_val + bloon.target_addon
+						range_sq = effective_range * effective_range
+						
+						if dist_sq <= range_sq:
+							result_list.append(bloon)
+
+func sort_first_to_last(a: Bloon, b: Bloon) -> bool:
+	if a.overall_progress != b.overall_progress:
+		return a.overall_progress < b.overall_progress
+	return a.id < b.id
+
+func sort_last_to_first(a: Bloon, b: Bloon) -> bool:
+	if a.overall_progress != b.overall_progress:
+		return a.overall_progress > b.overall_progress
+	return a.id < b.id
+
+func sort_by_closeness(a: Bloon, b: Bloon) -> bool:
+	var dist_a_x = test_position.x - a.global_position.x
+	var dist_a_y = test_position.y - a.global_position.y
+	var dist_sq_a = dist_a_x * dist_a_x + dist_a_y * dist_a_y
+	
+	var dist_b_x = test_position.x - b.global_position.x
+	var dist_b_y = test_position.y - b.global_position.y
+	var dist_sq_b = dist_b_x * dist_b_x + dist_b_y * dist_b_y
+	
+	return dist_sq_a > dist_sq_b
+
+func sort_by_strength(a: Bloon, b: Bloon) -> bool:
+	if a.bloon_type != b.bloon_type:
+		return a.bloon_type < b.bloon_type
+		
+	if a.health != b.health:
+		return a.health < b.health
+		
+	if a.overall_progress != b.overall_progress:
+		return a.overall_progress < b.overall_progress
+		
+	return false
+
+func sort_targets_by_priority(priority_type: String, targets: Array, tower_pos: Vector2) -> void:
+	match priority_type:
+		"first":
+			targets.sort_custom(sort_first_to_last)
+		"last":
+			targets.sort_custom(sort_last_to_first)
+		"close":
+			test_position = tower_pos
+			targets.sort_custom(sort_by_closeness)
+		"strong":
+			targets.sort_custom(sort_by_strength)
+
 func process_projectile_collisions(delta: float) -> void:
 	var candidate_cells: Array
 	var radius: float
@@ -204,7 +348,8 @@ func process_projectile_collisions(delta: float) -> void:
 		if not is_instance_valid(proj) or proj.pierce <= 0:
 			continue
 		
-		# if proj.effect_mask == Bloon.IMMUNITY_ALL: continue
+		if proj.effect_mask == Bloon.BloonImmunity.IMMUNITY_ALL: 
+			continue
 		
 		radius = proj.radius
 		speed = proj.velocity.length()
@@ -227,21 +372,18 @@ func process_projectile_collisions(delta: float) -> void:
 		
 		else:
 			candidate_cells = get_cells_in_range_raw(proj.global_position.x, proj.global_position.y, radius)
-
+		
 		for cell_list in candidate_cells:
-			
 			for bloon: Bloon in cell_list:
 				if not is_instance_valid(bloon) or bloon.bloon_type == -1:
 					continue
 				
 				if bloon.is_camo:
-					var tower_sees_camo = false
 					if proj.owner_tower and proj.owner_tower.tower_def:
-						if proj.owner_tower.tower_def.get("camo_detection"): 
-							tower_sees_camo = true
-					
-					if not tower_sees_camo:
-						continue
+						print(proj.effect_mask)
+						print(bloon.immunity)
+						if (proj.effect_mask & bloon.immunity) != 0:
+							continue
 				
 				if bloon.is_in_tunnel():
 					continue
@@ -259,9 +401,7 @@ func process_projectile_collisions(delta: float) -> void:
 				self.c.y = bloon.global_position.y
 				
 				if test_circle_circle(self.u, radius + speed * delta, self.c, bloon.radius):
-					
-					if test_circle_circle(self.u, radius, self.c, bloon.radius) or \
-					   test_circle_line(self.u, self.v, self.c, bloon.radius + radius):
+					if test_circle_circle(self.u, radius, self.c, bloon.radius) or test_circle_line(self.u, self.v, self.c, bloon.radius + radius):
 						
 						bloon.handle_collision(proj)
 						proj.handle_collision()
@@ -269,7 +409,6 @@ func process_projectile_collisions(delta: float) -> void:
 						proj.hit_bloons.append(bloon.id)
 						
 						if proj.pierce <= 0 or proj.def == null:
-							proj.queue_free() 
 							break
 			
 			if not is_instance_valid(proj) or proj.pierce <= 0:

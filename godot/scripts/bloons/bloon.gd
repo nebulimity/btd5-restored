@@ -2,6 +2,7 @@ class_name Bloon
 extends Node2D
 
 enum BloonType {
+	INVALID = -1,
 	RED = 0,
 	BLUE = 1,
 	GREEN = 2,
@@ -16,6 +17,20 @@ enum BloonType {
 	MOAB = 11,
 	BFB = 12,
 	BOSS = 13
+}
+
+enum BloonImmunity {
+	IMMUNITY_NONE = 0,
+	IMMUNITY_NO_DETECTION = 1,
+	IMMUNITY_ICE = 2,
+	IMMUNITY_GLUE = 4,
+	IMMUNITY_SPLOSION = 8,
+	IMMUNITY_WIND = 16,
+	IMMUNITY_LEAD = 32,
+	IMMUNITY_MOAB = 64,
+	IMMUNITY_BFB = 128,
+	IMMUNITY_ZOMG = 256,
+	IMMUNITY_ALL = 65535,
 }
 
 static var speed_multiplier_by_type = [
@@ -103,6 +118,23 @@ static var spawn_order_offsets = [
 	1024  # BOSS (ZOMG)
 ]
 
+static var base_immunities_by_type = [
+	BloonImmunity.IMMUNITY_NONE,                                                             # RED
+	BloonImmunity.IMMUNITY_NONE,                                                             # BLUE
+	BloonImmunity.IMMUNITY_NONE,                                                             # GREEN
+	BloonImmunity.IMMUNITY_NONE,                                                             # YELLOW
+	BloonImmunity.IMMUNITY_NONE,                                                             # PINK
+	BloonImmunity.IMMUNITY_SPLOSION,                                                         # BLACK
+	BloonImmunity.IMMUNITY_ICE,                                                              # WHITE
+	BloonImmunity.IMMUNITY_LEAD,                                                             # LEAD
+	BloonImmunity.IMMUNITY_ICE | BloonImmunity.IMMUNITY_SPLOSION,                            # ZEBRA
+	BloonImmunity.IMMUNITY_NONE,                                                             # RAINBOW
+	BloonImmunity.IMMUNITY_NONE,                                                             # CERAMIC
+	BloonImmunity.IMMUNITY_GLUE | BloonImmunity.IMMUNITY_ICE | BloonImmunity.IMMUNITY_MOAB,  # MOAB
+	BloonImmunity.IMMUNITY_GLUE | BloonImmunity.IMMUNITY_ICE | BloonImmunity.IMMUNITY_BFB,   # BFB
+	BloonImmunity.IMMUNITY_GLUE | BloonImmunity.IMMUNITY_ICE | BloonImmunity.IMMUNITY_ZOMG,  # BOSS (ZOMG)
+]
+
 static var max_radius: float = 10.0
 
 static var cash_multiplier: float = 1.0
@@ -113,11 +145,20 @@ var tile_progress: float = 0.0
 var overall_progress: float = 0.0
 var collision_cell_index: int = -1
 
+var is_in_general_vision: bool = false
+var is_in_camo_vision: bool = false
+
 var bloon_type: BloonType = BloonType.RED
+var immunity: int = 0
+var target_addon: float = 0.0
 var health: int = 1
 var max_health: int = 1
 var is_camo: bool = false
 var is_regen: bool = false
+var regen_ceiling: int = 0
+var regen_countdown: float = 0.0
+var regen_interval: float = 3.0
+var was_white: bool = false
 var spawn_order_index: int = 0
 
 const BASE_SPEED: float = 70.0
@@ -167,6 +208,7 @@ var was_regenerated: bool = false
 var special_flag: bool = false
 
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var camo_overlay: Sprite2D = $CamoOverlay
 
 signal bloon_removed
 signal bloon_popped
@@ -174,12 +216,12 @@ static var next_id: int = 0
 var id: int = 0
 
 func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0, p_is_regen: bool = false, p_is_camo: bool = false, p_spawn_order: int = 0, _p_level: Level = null):
-	bloon_type = p_type
 	tile = start_tile
 	tile_progress = start_progress
 	overall_progress = 0.0
 	is_camo = p_is_camo
 	is_regen = p_is_regen
+	regen_ceiling = p_type
 	spawn_order_index = p_spawn_order
 
 	spawn_time = p_spawn_order
@@ -212,6 +254,7 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 		tile.update_bloon_position(self)
 		update_layer_order()
 	
+	set_type(p_type)
 	update_sprite()
 
 func process(delta: float) -> void:
@@ -236,6 +279,13 @@ func process(delta: float) -> void:
 	if new_index != collision_cell_index:
 		level.collision_grid.switch_cells(self, collision_cell_index, new_index)
 		collision_cell_index = new_index
+	
+	if is_regen:
+		if not is_frozen:
+			regen_countdown -= delta
+			if regen_countdown <= 0:
+				regen_countdown += regen_interval
+				regenerate()
 
 func create_children(amount: int, is_zebra: bool) -> void:
 	if amount <= 0:
@@ -308,6 +358,12 @@ func create_children(amount: int, is_zebra: bool) -> void:
 		inst.burnInterval = burnInterval
 		inst.burnLifeSpan = burnLifeSpan
 		inst.burnCash = burnCash
+		
+		inst.regen_ceiling = regen_ceiling
+		inst.regen_interval = regen_interval
+		inst.regen_countdown = regen_countdown
+		inst.was_white = was_white
+		inst.rotation = rotation
 		
 		inst.tile.update_bloon_position(inst)
 
@@ -411,7 +467,7 @@ func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop) -> void:
 		
 		remaining_layers -= 1
 	
-	bloon_type = cur_type as BloonType
+	set_type(cur_type)
 	
 	if bloon_type == -1:
 		destroy()
@@ -427,6 +483,21 @@ func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop) -> void:
 	parentIDs.append(id)
 	id = Bloon.next_id
 	Bloon.next_id += 1
+
+func regenerate() -> void:
+	if bloon_type < regen_ceiling:
+		if bloon_type == BloonType.PINK and was_white or bloon_type == BloonType.WHITE:
+			bloon_type = bloon_type + 1 as BloonType
+		elif bloon_type == BloonType.BLACK:
+			if regen_ceiling == BloonType.LEAD:
+				bloon_type = bloon_type + 1 as BloonType
+			else:
+				bloon_type = bloon_type + 2 as BloonType
+		
+		set_type(bloon_type + 1)
+		cash_awarded[bloon_type] = true
+		was_regenerated = true
+		update_sprite()
 
 func hit_previously(proj: Projectile) -> bool:
 	if id in proj.hit_bloons:
@@ -507,6 +578,17 @@ func destroy() -> void:
 	bloon_removed.emit()
 	queue_free()
 
+func calculate_immunity() -> void:
+	if bloon_type == -1:
+		return
+	
+	immunity = base_immunities_by_type[bloon_type]
+	
+	if is_camo:
+		immunity |= BloonImmunity.IMMUNITY_NO_DETECTION
+	if glueCountdown != 0:
+		immunity |= BloonImmunity.IMMUNITY_GLUE
+
 func get_pop_value() -> float:
 	return rbe_by_type[bloon_type] * cash_multiplier
 
@@ -548,8 +630,40 @@ func update_layer_order() -> void:
 	
 	z_index = tile.layer * 10
 
+func set_type(new_type: BloonType) -> void:
+	if is_regen:
+		if bloon_type == regen_ceiling:
+			regen_countdown = regen_interval
+	
+	bloon_type = new_type
+	max_health = health_by_type[new_type]
+	health = max_health
+	#progess_step = BASE_SPEED * (speed_multiplier_by_type[new_type] + difficulty_speed_modifier)
+	
+	if level.current_round >= 85 and new_type == BloonType.CERAMIC:
+		health = 38
+	if new_type >= BloonType.MOAB:
+		max_health = health * (1.5 + 0 * 0.02)
+		health = max_health
+	
+	if bloon_type == BloonType.WHITE:
+		was_white = true
+	
+	calculate_immunity()
+
 func update_sprite() -> void:
-	sprite.texture = AssetManager.grab("Bloon")[bloon_type]
+	if is_regen:
+		sprite.texture = AssetManager.grab("RegenBloon")[bloon_type]
+	else:
+		sprite.texture = AssetManager.grab("NormalBloon")[bloon_type]
+	
+	if is_camo and is_regen:
+		camo_overlay.texture = AssetManager.grab("CamoOverlay")[11]
+	elif is_camo:
+		camo_overlay.texture = AssetManager.grab("CamoOverlay")[bloon_type]
+	else: 
+		camo_overlay.texture = null
+	
 	if sprite.texture:
 		radius = sprite.texture.get_size().y / 2.0
 		if radius > Bloon.max_radius:
