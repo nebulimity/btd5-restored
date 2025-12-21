@@ -385,10 +385,10 @@ func process_projectile_collisions(delta: float) -> void:
 				
 				if bloon.is_camo:
 					if proj.owner_tower and proj.owner_tower.tower_def:
-						print(proj.effect_mask)
-						print(bloon.immunity)
 						if (proj.effect_mask & bloon.immunity) != 0:
 							continue
+				elif int(proj.effect_mask & bloon.immunity) != 0:
+					continue
 				
 				if bloon.is_in_tunnel():
 					continue

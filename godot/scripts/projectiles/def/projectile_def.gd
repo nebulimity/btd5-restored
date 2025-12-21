@@ -8,6 +8,7 @@ var effect_mask: Array[int] = []
 var speed: float = 0.0
 var damage_effect: DamageEffectDef = null
 var ice_effect: IceEffectDef = null
+var glue_effect: GlueEffectDef = null
 var behavior: ProjectileBehaviorDef = null
 
 func _init() -> void:
@@ -40,6 +41,10 @@ func DamageEffect(effect: DamageEffectDef) -> ProjectileDef:
 
 func IceEffect(effect: IceEffectDef) -> ProjectileDef:
 	ice_effect = effect
+	return self
+
+func GlueEffect(effect: GlueEffectDef) -> ProjectileDef:
+	glue_effect = effect
 	return self
 
 func Behavior(b: ProjectileBehaviorDef) -> ProjectileDef:

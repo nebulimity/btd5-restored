@@ -180,12 +180,14 @@ var arcticWind: float = 1.0
 var arcticWindCountdown: int = 0
 var iced_by = null
 
-var glueCountdown: float = 0.0
+var glue_effect_def: GlueEffectDef = null
+var glue_countdown: float = 0.0
 var glueCorrosionInterval: float = 0.0
 var glueCorrosionCountDown: float = 0.0
-var glueSpeedScale: float = 1.0
-var glueSoak: bool = false
+var glue_speed_scale: float = 1.0
+var glue_soak: bool = false
 var glueCash: float = 1.0
+var glue_tower = null
 
 var stunInherited: bool = false
 var stunCountDown: float = 0.0
@@ -211,6 +213,7 @@ var special_flag: bool = false
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var camo_effect: Sprite2D = $CamoEffect
 @onready var ice_effect: Sprite2D = $IceEffect
+@onready var glue_effect: Sprite2D = $GlueEffect
 
 signal bloon_removed
 signal bloon_popped
@@ -270,7 +273,17 @@ func process(delta: float) -> void:
 		ice_countdown -= delta
 		
 		if ice_countdown <= 0:
-			iced = false
+			reset_ice()
+			update_sprite()
+			calculate_immunity()
+	
+	if glued:
+		if bloon_type != BloonType.CERAMIC:
+			loc2 *= glue_speed_scale
+		
+		glue_countdown -= delta
+		if glue_countdown <= 0:
+			reset_glue()
 			update_sprite()
 			calculate_immunity()
 	
@@ -340,12 +353,13 @@ func create_children(amount: int, is_zebra: bool) -> void:
 		inst.arcticWind = arcticWind
 		inst.arcticWindCountdown = arcticWindCountdown
 		inst.glued = glued
-		inst.glueCountdown = glueCountdown
+		inst.glue_countdown = glue_countdown
 		inst.glueCorrosionInterval = glueCorrosionInterval
 		inst.glueCorrosionCountDown = glueCorrosionCountDown
-		inst.glueSpeedScale = glueSpeedScale
-		inst.glueSoak = glueSoak
+		inst.glue_speed_scale = glue_speed_scale
+		inst.glue_soak = glue_soak
 		inst.glueCash = glueCash
+		inst.glue_tower = glue_tower
 		
 		inst.overall_progress = overall_progress - offset_progress
 		
@@ -471,6 +485,10 @@ func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop) -> void:
 			cur_type -= 1
 		
 		remaining_layers -= 1
+		
+		if !glue_soak:
+			reset_glue()
+			calculate_immunity()
 	
 	set_type(cur_type)
 	
@@ -522,13 +540,13 @@ func handle_collision(proj: Projectile) -> void:
 	var tower = proj.owner_tower
 	var damage_effect = proj.def.damage_effect
 	var ice_effect: IceEffectDef = null
-	#var glue_effect: GlueEffectDef = null
+	var glue_effect: GlueEffectDef = null
 	
-	var _pop_cash_scale: float = proj.def.get("pop_cash_scale") if proj.def.get("pop_cash_scale") else 1.0
+	#var pop_cash_scale: float = proj.def.get("pop_cash_scale") if proj.def.get("pop_cash_scale") else 1.0
 	
 	if bloon_type < BloonType.MOAB:
 		ice_effect = proj.def.ice_effect
-		#glue_effect = proj.def.glue_effect
+		glue_effect = proj.def.glue_effect
 	
 	if damage_effect:
 		var can_damage_type = true
@@ -569,6 +587,17 @@ func handle_collision(proj: Projectile) -> void:
 			update_sprite()
 			calculate_immunity()
 	
+	if glue_effect:
+		glue_tower = proj.owner_tower
+		glue_effect_def = glue_effect
+		glued = true
+		glue_countdown = glue_effect.lifespan
+		glue_speed_scale = glue_effect.speed_scale
+		glue_soak = glue_effect.soak
+		#glueCash = pop_cash_scale
+		update_sprite()
+		calculate_immunity()
+	
 	if damage_effect:
 		var can_dmg = true
 		if damage_effect.cant_break_types and type_id in damage_effect.cant_break_types:
@@ -605,7 +634,7 @@ func calculate_immunity() -> void:
 	
 	if is_camo:
 		immunity |= BloonImmunity.IMMUNITY_NO_DETECTION
-	if glueCountdown != 0:
+	if glue_countdown != 0:
 		immunity |= BloonImmunity.IMMUNITY_GLUE
 
 func get_pop_value() -> float:
@@ -649,6 +678,17 @@ func update_layer_order() -> void:
 	
 	z_index = tile.layer * 10
 
+func reset_ice():
+	iced = false
+	ice_countdown = 0
+
+func reset_glue():
+	glue_countdown = 0
+	glued = false
+	glue_effect_def = null
+	glue_speed_scale = 1.0
+	glue_soak = false
+
 func set_type(new_type: BloonType) -> void:
 	if is_regen:
 		if bloon_type == regen_ceiling:
@@ -688,8 +728,15 @@ func update_sprite() -> void:
 		ice_effect.texture = AssetManager.grab("IceEffect")[11]
 	elif iced:
 		ice_effect.texture = AssetManager.grab("IceEffect")[bloon_type]
-	else: 
+	else:
 		ice_effect.texture = null
+	
+	if glued and is_regen:
+		glue_effect.texture = AssetManager.grab("GlueEffect")[11]
+	elif glued:
+		glue_effect.texture = AssetManager.grab("GlueEffect")[bloon_type]
+	else: 
+		glue_effect.texture = null
 	
 	if sprite.texture:
 		radius = sprite.texture.get_size().y / 2.0
