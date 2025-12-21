@@ -10,9 +10,11 @@ func preload_all() -> void:
 		"Shuriken": load_animation("res://assets/projectiles/shuriken"),
 		"Bomb": load_animation("res://assets/projectiles/bomb"),
 		"MediumExplosion": load_animation("res://assets/projectiles/medium_explosion"),
+		"IceBurst": load_animation("res://assets/projectiles/ice_burst"),
 		"NormalBloon": load_animation("res://assets/sprites/bloons/normal"),
 		"RegenBloon": load_animation("res://assets/sprites/bloons/regen"),
-		"CamoOverlay": load_animation("res://assets/sprites/bloons/camo_overlay"),
+		"CamoEffect": load_animation("res://assets/sprites/bloons/camo_effect"),
+		"IceEffect": load_animation("res://assets/sprites/bloons/ice_effect"),
 		"Burst": preload("res://assets/sprites/bloons/burst.svg"),
 		"DartMonkey": load_animation("res://assets/sprites/towers/dart_monkey"),
 		"TackShooter": load_animation("res://assets/sprites/towers/tack_shooter"),
@@ -22,6 +24,7 @@ func preload_all() -> void:
 		"BombTower": load_animation("res://assets/sprites/towers/bomb_tower"),
 		"IceTower": load_animation("res://assets/sprites/towers/ice_tower"),
 		"SuperMonkey": load_animation("res://assets/sprites/towers/super_monkey"),
+		"SnowFlakes": load_animation("res://assets/sprites/towers/snow_flakes"),
 	}
 
 func load_animation(path: String) -> Array:

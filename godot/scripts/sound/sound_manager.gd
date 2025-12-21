@@ -20,6 +20,7 @@ const SFX = {
 	"pop_4": preload("res://assets/audio/sfx/pop_4.mp3"),
 	"metal_bloon_hit": preload("res://assets/audio/sfx/metal_bloon_hit.mp3"),
 	"ceramic_bloon_hit": preload("res://assets/audio/sfx/ceramic_bloon_hit.mp3"),
+	"frozen_bloon_hit": preload("res://assets/audio/sfx/frozen_bloon_hit.mp3"),
 	"moab_damage_1": preload("res://assets/audio/sfx/moab_damage_1.mp3"),
 	"moab_damage_2": preload("res://assets/audio/sfx/moab_damage_2.mp3"),
 	"moab_damage_3": preload("res://assets/audio/sfx/moab_damage_3.mp3"),

@@ -7,6 +7,7 @@ var radius: float = 0.0
 var effect_mask: Array[int] = []
 var speed: float = 0.0
 var damage_effect: DamageEffectDef = null
+var ice_effect: IceEffectDef = null
 var behavior: ProjectileBehaviorDef = null
 
 func _init() -> void:
@@ -35,6 +36,10 @@ func Speed(value: float) -> ProjectileDef:
 
 func DamageEffect(effect: DamageEffectDef) -> ProjectileDef:
 	damage_effect = effect
+	return self
+
+func IceEffect(effect: IceEffectDef) -> ProjectileDef:
+	ice_effect = effect
 	return self
 
 func Behavior(b: ProjectileBehaviorDef) -> ProjectileDef:

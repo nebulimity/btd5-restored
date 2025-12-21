@@ -24,14 +24,17 @@ func tower_factory():
 	var shuriken = Single.new().SetRange(360).SetPower(630).SetReloadTime(0.6).SetProjectile(shuriken_projectile)
 	var bomb_projectile = ProjectileDef.new().Display("Bomb").Pierce(1).Radius(5).Behavior(ProjectileBehaviorDef.new().Collision(CollisionSpawnProjectile.new().SetProjectile(medium_explosion)))
 	var bomb = Single.new().SetRange(234).SetPower(455).SetReloadTime(1.54).SetProjectile(bomb_projectile)
+	var ice_projectile = ProjectileDef.new().Display("IceBurst").Pierce(50).Radius(60).EffectMask([Bloon.BloonImmunity.IMMUNITY_NO_DETECTION, Bloon.BloonImmunity.IMMUNITY_ICE]).IceEffect(IceEffectDef.new().Lifespan(1.43))
+	var ice = Surround.new().SetReloadTime(2.1).SetProjectile(ice_projectile).SetLifespan(0.1)
 	var super_dart = Single.new().SetRange(500).SetPower(700).SetReloadTime(0.058).SetProjectile(dart_projectile)
 	
 	var dart_monkey = TowerDef.new("DartMonkey").Label("Dart Monkey").Description("Shoots a single dart that pops a single bloon. A good, cheap tower suitable for the early rounds.").Display("DartMonkey").OccupiedSpace(small).RangeOfVisibility(100).Behavior(TowerBehaviorDef.new().Process(RotateToTarget.new())).Weapons([dart]).WeaponOffsets([Vector2(6, 9)]).PositionOffset(Vector2(-2.335, 3.335)).FireFrame(8).Cost(200)
-	var tack_shooter = TowerDef.new("TackShooter").Label("Tack Shooter").Description("Shoots 8 tacks spread in all directions, each tack can pop 1 bloon. Has short range and medium-slow fire rate.").Display("TackShooter").OccupiedSpace(small).RangeOfVisibility(70).Rotates(false).RotationOffset(0).Weapons([tack]).FireFrame(5).Cost(360)
+	var tack_shooter = TowerDef.new("TackShooter").Label("Tack Shooter").Description("Shoots 8 tacks spread in all directions, each tack can pop 1 bloon. Has short range and medium-slow fire rate.").Display("TackShooter").OccupiedSpace(small).RangeOfVisibility(70).Rotates(false).RotationOffset(0.0).Weapons([tack]).FireFrame(5).Cost(360)
 	var sniper_monkey = TowerDef.new("SniperMonkey").Label("Sniper Monkey").Description("Armed with a high-tech long range rifle, pops 2 layers off of bloons with unlimited range.").Display("SniperMonkey").OccupiedSpace(small).RangeOfVisibility(1200).Weapons([sniper]).PositionOffset(Vector2(22.5, -3.5)).FireFrame(2).Cost(350)
 	var boomerang_thrower = TowerDef.new("BoomerangThrower").Label("Boomerang Thrower").Description("Throws a single boomerang in an arc back round to the monkey. Each boomerang can pop 3 bloons.").Display("BoomerangThrower").OccupiedSpace(medium).RangeOfVisibility(130).Behavior(TowerBehaviorDef.new().Process(RotateToTarget.new())).Weapons([boomerang]).WeaponOffsets([Vector2(26, 8)]).PositionOffset(Vector2(-3.0, 8.5)).FireFrame(10).Cost(380)
 	var ninja_monkey = TowerDef.new("NinjaMonkey").Label("Ninja Monkey").Description("Stealthy tower that can see Camo Bloons and throws sharp shurikens rapidly.").Display("NinjaMonkey").OccupiedSpace(small).RangeOfVisibility(120).TargetMask([Bloon.BloonImmunity.IMMUNITY_NONE]).Weapons([shuriken]).Behavior(TowerBehaviorDef.new().Process(RotateToTarget.new())).FireFrame(3).Cost(500)
 	var bomb_tower = TowerDef.new("BombTower").Label("Bomb Tower").Description("Shoots a single bomb that explodes in a radius burst on impact. Good range, medium-slow fire rate. Can pop lead bloons but not black bloons.").Display("BombTower").OccupiedSpace(medium).RangeOfVisibility(120).Weapons([bomb]).Behavior(TowerBehaviorDef.new().Process(RotateToTarget.new())).PositionOffset(Vector2(13, -0.5)).FireFrame(2).Cost(650)
+	var ice_tower = TowerDef.new("IceTower").Label("Ice Tower").Description("Freezes bloons in its burst radius for a short time. Frozen bloons are immune to sharp objects.").Display("IceTower").OccupiedSpace(small).RangeOfVisibility(60).TargetMask([Bloon.BloonImmunity.IMMUNITY_NO_DETECTION, Bloon.BloonImmunity.IMMUNITY_ICE]).Rotates(false).RotationOffset(0.0).Weapons([ice]).DisplayAddons([DisplayAddonDef.new().Clip("SnowFlakes").Z(1)]).Cost(300)
 	var super_monkey = TowerDef.new("SuperMonkey").Label("Super Monkey").Description("Throws darts incredibly fast. Has long range and lots of insanely powerful upgrades.").Display("SuperMonkey").OccupiedSpace(large).RangeOfVisibility(140).Weapons([super_dart]).WeaponOffsets([Vector2(9, 14)]).PositionOffset(Vector2(-1.0, 1.5)).IdleFrame(1).FireFrame(2).Cost(3500)
 
 	base_towers.append(dart_monkey)
@@ -40,6 +43,7 @@ func tower_factory():
 	base_towers.append(boomerang_thrower)
 	base_towers.append(ninja_monkey)
 	base_towers.append(bomb_tower)
+	base_towers.append(ice_tower)
 	base_towers.append(super_monkey)
 
 func get_base_tower(tower_name: String) -> TowerDef:

@@ -41,6 +41,7 @@ func _init(_level: Level = null) -> void:
 	adjacency_data.resize(columns * rows)
 	
 	for r in range(rows):
+		@warning_ignore("shadowed_variable")
 		for c in range(columns):
 			var neighbors: Array = []
 			
@@ -71,6 +72,7 @@ func _init(_level: Level = null) -> void:
 			adjacency_data[c + r * columns] = neighbors
 
 func get_cell_index(x: float, y: float) -> int:
+	@warning_ignore("shadowed_variable")
 	var c: int = floor((x - GRID_OFFSET) / CELL_SIZE)
 	var r: int = floor((y - GRID_OFFSET) / CELL_SIZE)
 	
@@ -129,6 +131,7 @@ func get_cells_in_range_raw(x: float, y: float, radius: float) -> Array:
 	var min_col = max(int((x - radius - GRID_OFFSET) / CELL_SIZE), 0)
 	var max_col = min(int((x + radius - GRID_OFFSET) / CELL_SIZE), columns - 1)
 	
+	@warning_ignore("shadowed_variable")
 	for c in range(min_col, max_col + 1):
 		for r in range(min_row, max_row + 1):
 			var cell_x = c * CELL_SIZE + GRID_OFFSET
@@ -225,6 +228,7 @@ func test_circle_circle(p1: Vector2, r1: float, p2: Vector2, r2: float) -> bool:
 	var radius_sum = r1 + r2
 	return dist_sq < (radius_sum * radius_sum)
 
+@warning_ignore("shadowed_variable")
 func test_circle_line(u: Vector2, v: Vector2, c: Vector2, r: float) -> bool:
 	var v_len_sq = v.length_squared()
 	if v_len_sq == 0:
@@ -257,6 +261,7 @@ func populate_tower_targets(tower: Tower) -> void:
 	var min_row = max(int((pos.y - range_val - GRID_OFFSET) / CELL_SIZE), 0)
 	var max_row = min(int((pos.y + range_val - GRID_OFFSET) / CELL_SIZE), rows - 1)
 	
+	@warning_ignore("shadowed_variable")
 	for c in range(min_col, max_col + 1):
 		for r in range(min_row, max_row + 1):
 			var cell_list = cells[c + r * columns]

@@ -3,7 +3,7 @@ extends RefCounted
 
 var id: String = ""
 var display: String = ""
-var display_addons: String = ""
+var display_addons: Array[DisplayAddonDef] = []
 var label: String = ""
 var description: String = ""
 var occupied_space: float = 0.0
@@ -16,7 +16,7 @@ var behavior: TowerBehaviorDef = null
 var position_offset: Vector2 = Vector2.ZERO
 var rotation_offset: float = -90.0
 var idle_frame: int = -1
-var fire_frame: int = 0
+var fire_frame: int = -1
 
 var cost: int = 0                     # temp
 var can_place_on_water: bool = false  # temp
@@ -33,7 +33,7 @@ func Display(value: String) -> TowerDef:
 	display = value
 	return self
 
-func DisplayAddons(value: String) -> TowerDef:
+func DisplayAddons(value: Array[DisplayAddonDef]) -> TowerDef:
 	display_addons = value
 	return self
 

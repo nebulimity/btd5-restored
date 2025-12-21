@@ -141,6 +141,7 @@ static var cash_multiplier: float = 1.0
 var cash_awarded: Array[bool] = []
 
 var tile: Tile = null
+var progress_step: float = 0.0
 var tile_progress: float = 0.0
 var overall_progress: float = 0.0
 var collision_cell_index: int = -1
@@ -165,11 +166,11 @@ const BASE_SPEED: float = 70.0
 static var difficulty_speed_modifier: float = 0.0
 
 var speed_modifier: float = 1.0
-var is_frozen: bool = false
-var is_glued: bool = false
-var is_stunned: bool = false
+var iced: bool = false
+var glued: bool = false
+var stunned: bool = false
 
-var iceCountdown: float = 0.0
+var ice_countdown: float = 0.0
 var permaFrostSpeedScale: float = 1.0
 var viralIce: bool = false
 var viralDepth: int = 0
@@ -177,7 +178,7 @@ var iceShards: bool = false
 var freezeLayers: int = 1
 var arcticWind: float = 1.0
 var arcticWindCountdown: int = 0
-var icedBy = null
+var iced_by = null
 
 var glueCountdown: float = 0.0
 var glueCorrosionInterval: float = 0.0
@@ -208,7 +209,8 @@ var was_regenerated: bool = false
 var special_flag: bool = false
 
 @onready var sprite: Sprite2D = $Sprite2D
-@onready var camo_overlay: Sprite2D = $CamoOverlay
+@onready var camo_effect: Sprite2D = $CamoEffect
+@onready var ice_effect: Sprite2D = $IceEffect
 
 signal bloon_removed
 signal bloon_popped
@@ -261,15 +263,18 @@ func process(delta: float) -> void:
 	if tile == null or bloon_type == -1:
 		return
 	
-	var type_speed_mult = speed_multiplier_by_type[bloon_type]
-	var effective_speed = BASE_SPEED * (type_speed_mult + difficulty_speed_modifier) * speed_modifier
+	var loc2 = max(6.6 * ((level.current_round - 85) / (200.0 - 85.0)), 1.0)
 	
-	if is_frozen:
-		effective_speed = 0.0
-	elif is_stunned:
-		effective_speed = 0.0
+	if iced:
+		loc2 *= 0
+		ice_countdown -= delta
+		
+		if ice_countdown <= 0:
+			iced = false
+			update_sprite()
+			calculate_immunity()
 	
-	var distance = effective_speed * delta
+	var distance = progress_step * delta * loc2
 	tile_progress += distance
 	overall_progress += distance
 	
@@ -281,7 +286,7 @@ func process(delta: float) -> void:
 		collision_cell_index = new_index
 	
 	if is_regen:
-		if not is_frozen:
+		if not iced:
 			regen_countdown -= delta
 			if regen_countdown <= 0:
 				regen_countdown += regen_interval
@@ -325,16 +330,16 @@ func create_children(amount: int, is_zebra: bool) -> void:
 		for pid in parentIDs:
 			inst.parentIDs.append(pid)
 		
-		inst.is_frozen = is_frozen
-		inst.iceCountdown = iceCountdown
+		inst.iced = iced
+		inst.ice_countdown = ice_countdown
 		inst.permaFrostSpeedScale = permaFrostSpeedScale
 		inst.viralIce = viralIce
 		inst.iceShards = iceShards
-		inst.icedBy = icedBy
+		inst.iced_by = iced_by
 		inst.freezeLayers = freezeLayers
 		inst.arcticWind = arcticWind
 		inst.arcticWindCountdown = arcticWindCountdown
-		inst.is_glued = is_glued
+		inst.glued = glued
 		inst.glueCountdown = glueCountdown
 		inst.glueCorrosionInterval = glueCorrosionInterval
 		inst.glueCorrosionCountDown = glueCorrosionCountDown
@@ -345,11 +350,11 @@ func create_children(amount: int, is_zebra: bool) -> void:
 		inst.overall_progress = overall_progress - offset_progress
 		
 		if stunInherited:
-			inst.is_stunned = is_stunned
+			inst.stunned = stunned
 			inst.stunInherited = stunInherited
 			inst.stunCountDown = stunCountDown
 		else:
-			inst.is_stunned = false
+			inst.stunned = false
 			inst.stunCountDown = 0
 		inst.stunInherited = false
 		
@@ -516,21 +521,26 @@ func handle_collision(proj: Projectile) -> void:
 	var type_id = bloon_type
 	var tower = proj.owner_tower
 	var damage_effect = proj.def.damage_effect
+	var ice_effect: IceEffectDef = null
+	#var glue_effect: GlueEffectDef = null
 	
 	var _pop_cash_scale: float = proj.def.get("pop_cash_scale") if proj.def.get("pop_cash_scale") else 1.0
 	
+	if bloon_type < BloonType.MOAB:
+		ice_effect = proj.def.ice_effect
+		#glue_effect = proj.def.glue_effect
+	
 	if damage_effect:
 		var can_damage_type = true
-		var _can_break_ice = false
+		var can_break_ice = iced == false or damage_effect.can_break_ice
 		
 		if damage_effect.cant_break_types and type_id in damage_effect.cant_break_types:
 			can_damage_type = false
 		
-		var effective_can_break_ice = true 
-		
-		if can_damage_type and effective_can_break_ice:
+		if can_damage_type and can_break_ice:
 			proj.hit_bloons.append(id)
-		elif is_frozen:
+		elif iced:
+			SoundManager.play("frozen_bloon_hit")
 			proj.pierce = 0
 			return
 		elif type_id == BloonType.LEAD:
@@ -549,6 +559,15 @@ func handle_collision(proj: Projectile) -> void:
 	if proj.def.get("remove_regen"):
 		if is_regen:
 			is_regen = false
+	
+	if ice_effect:
+		iced_by = proj.owner_tower
+		
+		if proj.lifespan != 0:
+			iced = true
+			ice_countdown = ice_effect.lifespan
+			update_sprite()
+			calculate_immunity()
 	
 	if damage_effect:
 		var can_dmg = true
@@ -638,11 +657,12 @@ func set_type(new_type: BloonType) -> void:
 	bloon_type = new_type
 	max_health = health_by_type[new_type]
 	health = max_health
-	#progess_step = BASE_SPEED * (speed_multiplier_by_type[new_type] + difficulty_speed_modifier)
+	progress_step = BASE_SPEED * (speed_multiplier_by_type[bloon_type] + difficulty_speed_modifier) * speed_modifier
 	
 	if level.current_round >= 85 and new_type == BloonType.CERAMIC:
 		health = 38
 	if new_type >= BloonType.MOAB:
+		@warning_ignore("narrowing_conversion")
 		max_health = health * (1.5 + 0 * 0.02)
 		health = max_health
 	
@@ -658,11 +678,18 @@ func update_sprite() -> void:
 		sprite.texture = AssetManager.grab("NormalBloon")[bloon_type]
 	
 	if is_camo and is_regen:
-		camo_overlay.texture = AssetManager.grab("CamoOverlay")[11]
+		camo_effect.texture = AssetManager.grab("CamoEffect")[11]
 	elif is_camo:
-		camo_overlay.texture = AssetManager.grab("CamoOverlay")[bloon_type]
+		camo_effect.texture = AssetManager.grab("CamoEffect")[bloon_type]
 	else: 
-		camo_overlay.texture = null
+		camo_effect.texture = null
+	
+	if iced and is_regen:
+		ice_effect.texture = AssetManager.grab("IceEffect")[11]
+	elif iced:
+		ice_effect.texture = AssetManager.grab("IceEffect")[bloon_type]
+	else: 
+		ice_effect.texture = null
 	
 	if sprite.texture:
 		radius = sprite.texture.get_size().y / 2.0

@@ -51,6 +51,24 @@ func _ready() -> void:
 	sprite.animation_finished.connect(_on_animation_finished)
 	add_child(sprite)
 	
+	if tower_def.display_addons:
+		for clip in tower_def.display_addons:
+			var addon = AnimatedSprite2D.new()
+			addon.z_index = sprite.z_index + clip.z
+			
+			var addon_frames = SpriteFrames.new()
+			addon_frames.remove_animation("default")
+			addon_frames.add_animation("default")
+			addon_frames.set_animation_speed("default", 30.0)
+			
+			for texture in AssetManager.grab(clip.clip):
+				addon_frames.add_frame("default", texture)
+			
+			addon.sprite_frames = addon_frames
+			addon.animation_finished.connect(_on_animation_finished)
+			add_child(addon)
+			addon.play()
+	
 	outline_shader = ShaderMaterial.new()
 	outline_shader.shader = load("res://shaders/outline.gdshader")
 	outline_shader.set_shader_parameter("cutout", true)

@@ -36,6 +36,7 @@ func initialize(projectile_def: ProjectileDef) -> void:
 	for texture in AssetManager.grab(projectile_def["display"]):
 		sprite_frames.add_frame("default", texture)
 	
+	sprite.z_index = 3
 	sprite.sprite_frames = sprite_frames
 	sprite.play()
 	add_child(sprite)
@@ -66,11 +67,7 @@ func handle_collision() -> void:
 	if def == null:
 		return
 	
-	var is_arctic_wind = false
-	if def.get("ice_effect") and def.ice_effect.get("arctic_wind"):
-		is_arctic_wind = true
-	
-	if not is_arctic_wind:
+	if not (def.get("ice_effect") and def.ice_effect.get("arctic_wind")):
 		pierce -= 1
 	
 	if def.behavior and def.behavior.collision_behavior:
@@ -81,7 +78,7 @@ func handle_collision() -> void:
 
 func destroy() -> void:
 	if sprite.is_playing():
-		if def.display == "MediumExplosion":
+		if def.display == "MediumExplosion" or def.display == "IceBurst":
 			var clip: TrailClip = TrailClip.new()
 			clip.initialize(sprite.sprite_frames, sprite.frame)
 			clip.position = position
