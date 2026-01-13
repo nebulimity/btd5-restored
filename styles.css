@@ -5,6 +5,7 @@
   --accent: 99 102 241;
   --dot: 200 200 200;
 }
+
 html.dark {
   --surface: 11 12 13;
   --on-surface: 220 224 230;
@@ -12,14 +13,15 @@ html.dark {
   --accent: 96 165 250;
   --dot: 41 41 41;
 }
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 ::selection {
   background: #f21616;
-  color: white;
+  color: #fff;
 }
 
 html {
@@ -27,17 +29,15 @@ html {
   background-color: rgb(51, 51, 51);
   scrollbar-gutter: stable;
 }
-
 body {
   font-family: "Open Sans", sans-serif;
   color: rgb(204, 204, 204);
-
   overflow-x: hidden;
 }
 
 main {
   background-color: rgba(39, 43, 48, 0.8);
-  box-shadow: rgb(0, 0, 0) 0px 0px 10px 1px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 1);
   backdrop-filter: blur(10px);
 
   width: auto;
@@ -48,10 +48,6 @@ main {
 
 h1 {
   font-size: 50px;
-}
-
-iframe {
-  margin-top: 15px;
 }
 
 nav {
@@ -66,21 +62,17 @@ nav {
   left: 0;
   z-index: 100;
 }
-
 nav div {
   margin: 0 auto;
   width: auto;
   max-width: 800px;
   height: 100%;
-
   display: flex;
   align-items: center;
 }
-
 nav div h2 {
   margin-right: 10px;
 }
-
 nav div a {
   background: url(images/menu-divider.png) right top no-repeat;
   height: 56px;
@@ -91,7 +83,6 @@ nav div a {
   justify-content: center;
   line-height: 1;
   padding: 13px;
-
   color: white;
 }
 
@@ -99,19 +90,15 @@ a {
   color: #f21616;
   text-decoration: none;
   font-weight: 600;
-
   transition: all 0.5s;
 }
-
 a:hover {
   color: #f21616;
   text-shadow: 0 0 5px;
 }
-
 .small-nav a {
   color: rgb(0, 170, 213);
 }
-
 .small-nav a:hover {
   color: rgb(0, 204, 255);
 }
@@ -120,9 +107,8 @@ footer {
   font-size: 10px;
   color: rgb(102, 102, 102);
   border-top: 1px solid rgb(50, 55, 63);
-  padding: 10px 0 10px;
+  padding: 10px 0;
 }
-
 .small-nav {
   border-bottom: 1px solid rgb(20, 20, 20);
   padding: 10px 0;
@@ -130,7 +116,6 @@ footer {
   flex-wrap: wrap;
   gap: 15px;
 }
-
 .small-nav .right {
   margin-left: auto;
 }
@@ -138,7 +123,7 @@ footer {
 #game-container {
   width: 800px;
   max-width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4/3;
   background-color: #111;
   margin-top: 15px;
   display: flex;
@@ -156,25 +141,25 @@ footer {
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
   border-radius: 0.5rem;
-  border: 1px solid rgb(100, 100, 100, 0.5);
+  border: 1px solid rgba(100, 100, 100, 0.5);
   color: #e0e0e0;
   margin: 0 2rem;
   overflow: hidden;
   padding: 1rem;
   text-align: center;
-
   width: 100px;
-
   font-size: 24px;
   cursor: pointer;
   transition: all 0.2s;
 }
-
 #load-game-btn:hover {
   transform: scale(1.05);
   filter: brightness(1.1);
 }
 
+iframe {
+  margin-top: 15px;
+}
 #game-container iframe {
   display: block;
   margin: 0;
@@ -183,53 +168,45 @@ footer {
   border: 0;
 }
 
-@media screen and (prefers-color-scheme: dark) {
-  :root {
-    --surface: 11 12 13;
-    --on-surface: 220 224 230;
-    --muted: 148 163 184;
-    --accent: 96 165 250;
-    --dot: 41 41 41;
-  }
-}
-
-@media screen and (max-width: 830px) {
+@media (max-width: 830px) {
   main {
     width: 100%;
     min-height: calc(100vh - 56px);
     max-width: none;
   }
-
   nav {
     width: 100%;
     max-width: none;
     margin: 0;
     padding: 10px;
   }
-
   #game-container {
     width: 100%;
     max-width: 100%;
   }
-
   #game-container iframe {
     width: 100%;
     height: 100%;
   }
 }
-
-@media screen and (max-width: 491px) {
+@media (max-width: 491px) {
   nav {
     padding: 0;
   }
-
   nav div img {
     width: 0;
   }
 }
-
-@media screen and (max-width: 511px) {
+@media (max-width: 511px) {
   .small-nav .right {
     margin-left: 0;
   }
+}
+
+.game-fullscreen nav,
+.game-fullscreen main,
+.game-fullscreen #load-game-btn {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
 }
