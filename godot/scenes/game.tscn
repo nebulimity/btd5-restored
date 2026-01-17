@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://b54bixc6lxnii"]
+[gd_scene load_steps=75 format=3 uid="uid://b54bixc6lxnii"]
 
 [ext_resource type="Script" uid="uid://c6yn56v5ter2w" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://qcc8w0d0puor" path="res://scripts/levels/rounds/spawner.gd" id="2_lnu2h"]
@@ -195,6 +195,27 @@ font = SubResource("FontVariation_bhx41")
 font_color = Color(0, 0.6, 1, 1)
 outline_size = 4
 outline_color = Color(0.1882353, 0.2509804, 0.34509805, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fedci"]
+font = ExtResource("7_u5sy4")
+font_size = 12
+font_color = Color(0.25882354, 0.6862745, 0.9764706, 1)
+outline_size = 8
+outline_color = Color(0.078431375, 0.25490198, 0.36862746, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8qswn"]
+font = ExtResource("7_u5sy4")
+font_size = 12
+font_color = Color(0.48235294, 0.7019608, 0.1254902, 1)
+outline_size = 8
+outline_color = Color(0.1764706, 0.2627451, 0.02745098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rm0al"]
+font = ExtResource("7_u5sy4")
+font_size = 12
+font_color = Color(0.9607843, 0.94509804, 0.9254902, 1)
+outline_size = 6
+outline_color = Color(0.17254902, 0.10980392, 0.03137255, 1)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_yqjtg")
@@ -673,6 +694,7 @@ centered = false
 offset = Vector2(-50.95, 0)
 
 [node name="Default" type="Control" parent="InGameMenu/BottomPanel"]
+visible = false
 layout_mode = 3
 anchor_left = 0.058000002
 anchor_top = 0.049000002
@@ -852,6 +874,47 @@ metadata/default_texture = ExtResource("26_wljb1")
 metadata/pressed_texture = ExtResource("44_oaba0")
 metadata/default_outlined = ExtResource("27_v2yb1")
 metadata/pressed_outlined = ExtResource("45_458eo")
+
+[node name="UpgradePanel" type="Control" parent="InGameMenu/BottomPanel"]
+layout_mode = 3
+anchor_left = 0.058000002
+anchor_top = 0.049000002
+anchor_right = 0.058000002
+anchor_bottom = 0.049000002
+offset_left = -51.382004
+offset_top = 0.029999971
+offset_right = 647.568
+offset_bottom = 74.08
+
+[node name="TowerName" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel"]
+layout_mode = 0
+offset_left = 80.2
+offset_top = -3.05
+offset_right = 243.25
+offset_bottom = 34.25
+text = "Monkey Buccaneer
+Monkey Buccaneer"
+label_settings = SubResource("LabelSettings_fedci")
+vertical_alignment = 1
+
+[node name="PopCount" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel"]
+layout_mode = 0
+offset_left = 80.2
+offset_top = 23.35
+offset_right = 153.2
+offset_bottom = 43.0
+text = "Pop Count"
+label_settings = SubResource("LabelSettings_8qswn")
+vertical_alignment = 1
+
+[node name="ModeValue" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel"]
+layout_mode = 0
+offset_left = 154.65
+offset_top = 24.45
+offset_right = 238.15
+offset_bottom = 44.35
+text = "888888888"
+label_settings = SubResource("LabelSettings_rm0al")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(2, 0)
