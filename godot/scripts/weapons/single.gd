@@ -29,7 +29,7 @@ func execute(tower: Tower, source: Node2D, target: Node2D, weapon_offset: Vector
 	if not projectile:
 		return
 	
-	var proj = Projectile.new()
+	var proj = preload("res://scenes/entities/projectile.tscn").instantiate() as Projectile
 	proj.initialize(projectile)
 	proj.owner_tower = tower
 	proj.position = source.global_position

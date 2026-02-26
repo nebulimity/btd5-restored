@@ -36,7 +36,7 @@ func execute(tower: Tower, source: Node2D, target: Node2D, _weapon_offset: Vecto
 	var rotation_offset: float = 2.0 * PI / count
 	
 	for i in range(count):
-		var proj = Projectile.new()
+		var proj = preload("res://scenes/entities/projectile.tscn").instantiate() as Projectile
 		proj.initialize(projectile)
 		proj.owner_tower = tower
 		proj.position = source.global_position

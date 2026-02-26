@@ -46,7 +46,7 @@ func execute(tower: Tower, _source: Node2D, _target_arg: Node2D, _weapon_offset:
 		tower.in_throw_animation = false
 		return
 	
-	var proj = Projectile.new()
+	var proj = preload("res://scenes/entities/projectile.tscn").instantiate() as Projectile
 	proj.initialize(projectile)
 	proj.owner_tower = tower
 	

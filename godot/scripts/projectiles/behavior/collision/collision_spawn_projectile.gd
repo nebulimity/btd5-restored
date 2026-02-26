@@ -10,7 +10,7 @@ func SetProjectile(value: ProjectileDef) -> CollisionSpawnProjectile:
 func execute(projectile: Projectile) -> void:
 	projectile.pierce = 0
 	
-	var proj = Projectile.new()
+	var proj = preload("res://scenes/entities/projectile.tscn").instantiate() as Projectile
 	proj.initialize(new_projectile)
 	proj.owner_tower = projectile.owner_tower
 	proj.position = projectile.global_position

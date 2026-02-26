@@ -210,10 +210,11 @@ var spawn_time: float = 0.0
 var was_regenerated: bool = false
 var special_flag: bool = false
 
-@onready var sprite: Sprite2D = $Sprite2D
-@onready var camo_effect: Sprite2D = $CamoEffect
-@onready var ice_effect: Sprite2D = $IceEffect
-@onready var glue_effect: Sprite2D = $GlueEffect
+@onready var visuals: Node2D = $Visuals
+@onready var sprite: Sprite2D = $Visuals/Sprite2D
+@onready var camo_effect: Sprite2D = $Visuals/CamoEffect
+@onready var ice_effect: Sprite2D = $Visuals/IceEffect
+@onready var glue_effect: Sprite2D = $Visuals/GlueEffect
 
 signal bloon_removed
 signal bloon_popped
@@ -261,6 +262,7 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 	
 	set_type(p_type)
 	update_sprite()
+	InterpolationManager.register(self)
 
 func process(delta: float) -> void:
 	if tile == null or bloon_type == -1:
@@ -673,10 +675,10 @@ func update_layer_order() -> void:
 		return
 	
 	if bloon_type >= 11:
-		z_index = 4
+		visuals.z_index = 4
 		return
 	
-	z_index = tile.layer * 10
+	visuals.z_index = tile.layer * 10
 
 func reset_ice():
 	iced = false
@@ -744,5 +746,6 @@ func update_sprite() -> void:
 			Bloon.max_radius = radius
 
 func _exit_tree() -> void:
+	InterpolationManager.unregister(self)
 	if level and level.collision_grid:
 		level.collision_grid.remove_from_cell(self, collision_cell_index)

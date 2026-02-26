@@ -58,7 +58,7 @@ func _on_play_button_pressed() -> void:
 
 func _on_fast_forward_button_pressed() -> void:
 	SoundManager.play("select")
-	var is_fast_forward = Engine.time_scale > 1.0
+	var is_fast_forward = TimeManager.time_scale > 1.0
 	fast_forward_toggled.emit(not is_fast_forward)
 	update_fast_forward_button(not is_fast_forward)
 

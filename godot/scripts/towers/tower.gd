@@ -6,9 +6,6 @@ var tower_def: TowerDef
 var current_range: float
 var selected: bool
 var orientation: float
-var sprite: AnimatedSprite2D
-var outline: Sprite2D
-var outline_shader: ShaderMaterial
 var range_combo: Node2D
 var level: Level
 
@@ -26,16 +23,19 @@ var throw_sequence: int = 0
 
 var target_search_timer: float = 0.0
 
-func _init(type: String) -> void:
+@onready var visuals: Node2D = $Visuals
+@onready var sprite: AnimatedSprite2D = $Visuals/AnimatedSprite2D
+@onready var outline: Sprite2D = $Visuals/AnimatedSprite2D/Outline
+
+func initialize(type: String, pos: Vector2, lvl: Level) -> void:
 	tower_type = type
+	global_position = pos
+	level = lvl
 	tower_def = TowerFactory.get_base_tower(tower_type)
 	current_range = tower_def.range_of_visibility
 	orientation = tower_def.rotation_offset
 
-func _ready() -> void:
-	sprite = AnimatedSprite2D.new()
 	sprite.offset = tower_def.position_offset
-	sprite.z_index = 2
 	sprite.rotation_degrees = orientation
 	
 	var sprite_frames = SpriteFrames.new()
@@ -47,9 +47,8 @@ func _ready() -> void:
 	for texture in AssetManager.grab(tower_def.display):
 		sprite_frames.add_frame("default", texture)
 	
-	sprite.sprite_frames = sprite_frames
 	sprite.animation_finished.connect(_on_animation_finished)
-	add_child(sprite)
+	sprite.sprite_frames = sprite_frames
 	
 	if tower_def.display_addons:
 		for clip in tower_def.display_addons:
@@ -69,17 +68,8 @@ func _ready() -> void:
 			add_child(addon)
 			addon.play()
 	
-	outline_shader = ShaderMaterial.new()
-	outline_shader.shader = load("res://shaders/outline.gdshader")
-	outline_shader.set_shader_parameter("cutout", true)
-	outline = Sprite2D.new()
 	outline.offset = sprite.offset
 	outline.position = sprite.position
-	outline.z_index = 100
-	outline.z_as_relative = true
-	outline.material = outline_shader
-	outline.visible = false
-	sprite.add_child(outline)
 	
 	if current_range > 0 and current_range < 999999:
 		range_combo = RangeCombo.new()
@@ -99,6 +89,8 @@ func _ready() -> void:
 	for weapon in tower_def.weapons:
 		var timer = CustomTimer.new(weapon.reload_time)
 		reload_timers.append(timer)
+	
+	#InterpolationManager.register(self)
 
 func process(delta: float) -> void:
 	target_search_timer += delta

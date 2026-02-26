@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://hsmpxuvm0oon"]
+
+[ext_resource type="Shader" uid="uid://cgh1yokk03gv8" path="res://shaders/outline.gdshader" id="1_6ini6"]
+[ext_resource type="Script" uid="uid://cam3fhvofgrf2" path="res://scripts/towers/tower.gd" id="1_lq4cm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lq4cm"]
+shader = ExtResource("1_6ini6")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 1.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/cutout = true
+
+[node name="Tower" type="Node2D" unique_id=107158739]
+script = ExtResource("1_lq4cm")
+
+[node name="Visuals" type="Node2D" parent="." unique_id=473664916]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1508397734]
+z_index = 2
+
+[node name="Outline" type="Sprite2D" parent="Visuals/AnimatedSprite2D" unique_id=1423680459]
+visible = false
+z_index = 100
+material = SubResource("ShaderMaterial_lq4cm")

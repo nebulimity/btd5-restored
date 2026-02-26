@@ -39,6 +39,7 @@ var just_placed: bool
 var projectiles: Array[Projectile] = []
 var bloons: Array[Bloon] = []
 var collision_grid: CollisionGrid
+var time_accumulator: float = 0.0
 
 var terrain_node: Node2D
 var track_area: Area2D
@@ -79,20 +80,31 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	bursts_this_process = 0
+	time_accumulator += delta
 	
-	collision_grid.process(delta)
+	var fixed_step = TimeManager.max_frame_time
 	
-	for bloon in bloons:
-		if is_instance_valid(bloon):
-			bloon.process(delta)
+	while time_accumulator >= fixed_step:
+		InterpolationManager.save_previous_transforms()
+		
+		collision_grid.process(fixed_step)
+		
+		for bloon in bloons:
+			if is_instance_valid(bloon):
+				bloon.process(fixed_step)
+		
+		for tower in placed_towers:
+			if is_instance_valid(tower):
+				tower.process(fixed_step)
+		
+		for proj in projectiles:
+			if is_instance_valid(proj):
+				proj.process(fixed_step)
+		
+		time_accumulator -= fixed_step
 	
-	for tower in placed_towers:
-		if is_instance_valid(tower):
-			tower.process(delta)
-	
-	for proj in projectiles:
-		if is_instance_valid(proj):
-			proj.process(delta)
+	var fraction: float = time_accumulator / fixed_step
+	InterpolationManager.interpolate_all(fraction)
 
 func update_ui():
 	in_game_menu.update_money_display(money)
@@ -135,7 +147,7 @@ func check_round_complete():
 		add_cash(round_bonus)
 
 		in_game_menu.set_play_button_enabled(true)
-		Engine.time_scale = 1.0
+		TimeManager.time_scale = 1.0
 		current_round += 1
 		in_game_menu.update_fast_forward_button(false)
 
@@ -144,7 +156,7 @@ func add_cash(amount: int) -> void:
 	money += final_amount
 
 func _on_fast_forward_toggled(enabled: bool):
-	Engine.time_scale = 3.0 if enabled else 1.0
+	TimeManager.time_scale = 3.0 if enabled else 1.0
 
 func _on_tower_purchase_requested(tower_type: String):
 	var tower_def = TowerFactory.get_base_tower(tower_type)
@@ -175,14 +187,13 @@ func _on_tower_placed(tower_type: String, pos: Vector2):
 	
 	money -= tower_def.cost
 	
-	var tower = Tower.new(tower_type)
-	tower.global_position = pos
-	tower.level = self
-	just_placed = true
-	placed_towers.append(tower)
+	var tower = preload("res://scenes/entities/tower.tscn").instantiate() as Tower
 	update_selection(tower)
+	placed_towers.append(tower)
 	get_parent().get_node("Towers").add_child(tower)
+	tower.initialize(tower_type, pos, self)
 	
+	just_placed = true
 	current_place_state = null
 
 func _on_placement_cancelled():

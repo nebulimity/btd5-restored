@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://uy1djt7c3xjp"]
+
+[ext_resource type="Script" uid="uid://dkc2itystqcfj" path="res://scripts/projectiles/projectile.gd" id="1_2lp3u"]
+
+[node name="Projectile" type="Node2D" unique_id=890486723]
+script = ExtResource("1_2lp3u")
+
+[node name="Visuals" type="Node2D" parent="." unique_id=947081775]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1764323492]
+z_index = 3

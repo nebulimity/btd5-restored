@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://b54bixc6lxnii"]
+[gd_scene format=3 uid="uid://b54bixc6lxnii"]
 
 [ext_resource type="Script" uid="uid://c6yn56v5ter2w" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://qcc8w0d0puor" path="res://scripts/levels/rounds/spawner.gd" id="2_lnu2h"]
@@ -217,24 +217,24 @@ font_color = Color(0.9607843, 0.94509804, 0.9254902, 1)
 outline_size = 6
 outline_color = Color(0.17254902, 0.10980392, 0.03137255, 1)
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" unique_id=75469830]
 script = ExtResource("1_yqjtg")
 
-[node name="Spawner" type="Node" parent="."]
+[node name="Spawner" type="Node" parent="." unique_id=1393741205]
 script = ExtResource("2_lnu2h")
 
-[node name="Level" type="Node" parent="."]
+[node name="Level" type="Node" parent="." unique_id=1058013256]
 script = ExtResource("3_8ool0")
 
-[node name="Towers" type="Node2D" parent="."]
+[node name="Towers" type="Node2D" parent="." unique_id=2069125850]
 z_index = 1
 y_sort_enabled = true
 
-[node name="SpikeyBall" type="Sprite2D" parent="."]
+[node name="SpikeyBall" type="Sprite2D" parent="." unique_id=799275082]
 position = Vector2(-1068, 610)
 texture = ExtResource("9_0tnpc")
 
-[node name="Label" type="Label" parent="SpikeyBall"]
+[node name="Label" type="Label" parent="SpikeyBall" unique_id=1299698325]
 offset_left = -77.0
 offset_top = -133.0
 offset_right = 78.0
@@ -245,7 +245,7 @@ SpikeyBall
 R.I.P."
 horizontal_alignment = 1
 
-[node name="InGameMenu" type="Control" parent="."]
+[node name="InGameMenu" type="Control" parent="." unique_id=54588509]
 z_index = 5
 layout_mode = 3
 anchors_preset = 0
@@ -253,18 +253,18 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("7_gxtfn")
 
-[node name="SidePanel" type="Sprite2D" parent="InGameMenu"]
+[node name="SidePanel" type="Sprite2D" parent="InGameMenu" unique_id=18149238]
 position = Vector2(700, 0)
 texture = ExtResource("4_iywne")
 centered = false
 
-[node name="UI" type="Control" parent="InGameMenu/SidePanel"]
+[node name="UI" type="Control" parent="InGameMenu/SidePanel" unique_id=1595776714]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 103.0
 offset_bottom = 523.0
 
-[node name="PlayButton" type="TextureButton" parent="InGameMenu/SidePanel/UI"]
+[node name="PlayButton" type="TextureButton" parent="InGameMenu/SidePanel/UI" unique_id=702816261]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 452.0
@@ -275,7 +275,7 @@ texture_normal = ExtResource("6_kvuet")
 texture_hover = ExtResource("7_trtic")
 texture_click_mask = ExtResource("11_twgab")
 
-[node name="Label" type="Label" parent="InGameMenu/SidePanel/UI/PlayButton"]
+[node name="Label" type="Label" parent="InGameMenu/SidePanel/UI/PlayButton" unique_id=163411914]
 layout_mode = 0
 offset_left = 20.0
 offset_right = 77.05
@@ -285,19 +285,17 @@ label_settings = SubResource("LabelSettings_gee14")
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="GreenArrow" type="Sprite2D" parent="InGameMenu/SidePanel/UI/PlayButton"]
+[node name="GreenArrow" type="Sprite2D" parent="InGameMenu/SidePanel/UI/PlayButton" unique_id=1701358159]
 material = SubResource("ShaderMaterial_264po")
 position = Vector2(32.5, 33.050003)
 texture = ExtResource("8_gee14")
 centered = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/SidePanel/UI/PlayButton"]
-libraries = {
-&"": SubResource("AnimationLibrary_vtaks")
-}
-autoplay = "arrow"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/SidePanel/UI/PlayButton" unique_id=1315148532]
+libraries/ = SubResource("AnimationLibrary_vtaks")
+autoplay = &"arrow"
 
-[node name="FastForwardButton" type="TextureButton" parent="InGameMenu/SidePanel/UI"]
+[node name="FastForwardButton" type="TextureButton" parent="InGameMenu/SidePanel/UI" unique_id=733961887]
 visible = false
 layout_mode = 0
 offset_left = 1.0
@@ -309,14 +307,14 @@ texture_normal = ExtResource("6_kvuet")
 texture_hover = ExtResource("7_trtic")
 texture_click_mask = ExtResource("11_twgab")
 
-[node name="BlueArrows" type="Sprite2D" parent="InGameMenu/SidePanel/UI/FastForwardButton"]
+[node name="BlueArrows" type="Sprite2D" parent="InGameMenu/SidePanel/UI/FastForwardButton" unique_id=1616509918]
 material = SubResource("ShaderMaterial_js0lu")
 texture = ExtResource("11_v2yb1")
 centered = false
 metadata/default_texture = ExtResource("11_v2yb1")
 metadata/pressed_texture = ExtResource("12_js0lu")
 
-[node name="Money" type="TextureButton" parent="InGameMenu/SidePanel/UI"]
+[node name="Money" type="TextureButton" parent="InGameMenu/SidePanel/UI" unique_id=1988631090]
 z_index = 1
 layout_mode = 0
 offset_left = 2.6500244
@@ -327,7 +325,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("14_trtic")
 texture_hover = ExtResource("15_ir15t")
 
-[node name="Value" type="Label" parent="InGameMenu/SidePanel/UI/Money"]
+[node name="Value" type="Label" parent="InGameMenu/SidePanel/UI/Money" unique_id=1593342742]
 z_index = 5
 z_as_relative = false
 layout_mode = 0
@@ -339,7 +337,7 @@ text = "1234567"
 label_settings = SubResource("LabelSettings_ca42v")
 vertical_alignment = 2
 
-[node name="Lives" type="TextureButton" parent="InGameMenu/SidePanel/UI"]
+[node name="Lives" type="TextureButton" parent="InGameMenu/SidePanel/UI" unique_id=622140715]
 z_index = 1
 layout_mode = 0
 offset_left = 2.5
@@ -350,7 +348,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("12_rysoc")
 texture_hover = ExtResource("13_ssvqc")
 
-[node name="Value" type="Label" parent="InGameMenu/SidePanel/UI/Lives"]
+[node name="Value" type="Label" parent="InGameMenu/SidePanel/UI/Lives" unique_id=2074960684]
 z_index = 5
 z_as_relative = false
 layout_mode = 0
@@ -362,7 +360,7 @@ text = "12345"
 label_settings = SubResource("LabelSettings_ca42v")
 vertical_alignment = 2
 
-[node name="SmoothScrollContainer" type="ScrollContainer" parent="InGameMenu/SidePanel/UI"]
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="InGameMenu/SidePanel/UI" unique_id=1098413746]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 81.0
@@ -378,19 +376,19 @@ allow_horizontal_scroll = false
 allow_overdragging = false
 metadata/_custom_type_script = "uid://bgqglerkcylxx"
 
-[node name="MarginContainer" type="MarginContainer" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer" unique_id=743107883]
 layout_mode = 2
 theme_override_constants/margin_left = -1
 theme_override_constants/margin_top = -2
 
-[node name="GridContainer" type="GridContainer" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer" unique_id=1174628144]
 layout_mode = 2
 theme = SubResource("Theme_1kice")
 theme_override_constants/h_separation = -1
 theme_override_constants/v_separation = 1
 columns = 2
 
-[node name="DartTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="DartTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1963882556]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -398,12 +396,12 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartTower"]
+[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartTower" unique_id=639145932]
 material = SubResource("ShaderMaterial_bt5mj")
 texture = ExtResource("15_264po")
 centered = false
 
-[node name="TackTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="TackTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1876199226]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -411,12 +409,12 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/TackTower"]
+[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/TackTower" unique_id=7128271]
 material = SubResource("ShaderMaterial_bt5mj")
 texture = ExtResource("28_m4url")
 centered = false
 
-[node name="SniperTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="SniperTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1863157191]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -424,12 +422,12 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SniperTower"]
+[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SniperTower" unique_id=866674184]
 material = SubResource("ShaderMaterial_bt5mj")
 texture = ExtResource("24_0sl42")
 centered = false
 
-[node name="BoomerangTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="BoomerangTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=558366408]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -437,12 +435,12 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BoomerangTower"]
+[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BoomerangTower" unique_id=1883373247]
 material = SubResource("ShaderMaterial_bt5mj")
 texture = ExtResource("33_458eo")
 centered = false
 
-[node name="NinjaTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="NinjaTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1965595735]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -450,12 +448,12 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/NinjaTower"]
+[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/NinjaTower" unique_id=98505836]
 material = SubResource("ShaderMaterial_bt5mj")
 texture = ExtResource("34_h3rex")
 centered = false
 
-[node name="BombTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="BombTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=2136775923]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -463,12 +461,12 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BombTower"]
+[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BombTower" unique_id=292238969]
 material = SubResource("ShaderMaterial_bt5mj")
 texture = ExtResource("29_458eo")
 centered = false
 
-[node name="IceTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="IceTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=20705111]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -476,12 +474,12 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/IceTower"]
+[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/IceTower" unique_id=686294899]
 material = SubResource("ShaderMaterial_bt5mj")
 texture = ExtResource("30_h3rex")
 centered = false
 
-[node name="GlueTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="GlueTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1488052486]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -489,12 +487,12 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/GlueTower"]
+[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/GlueTower" unique_id=1255269574]
 material = SubResource("ShaderMaterial_bt5mj")
 texture = ExtResource("31_fedci")
 centered = false
 
-[node name="MonkeyBuccaneer" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="MonkeyBuccaneer" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1479445954]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -502,7 +500,7 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyBuccaneer"]
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyBuccaneer" unique_id=1751757168]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -514,7 +512,7 @@ label_settings = SubResource("LabelSettings_bt5mj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MonkeyAce" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="MonkeyAce" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=88032069]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -522,7 +520,7 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyAce"]
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyAce" unique_id=260756424]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -534,7 +532,7 @@ label_settings = SubResource("LabelSettings_bt5mj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SuperTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="SuperTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=2098169429]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -542,12 +540,12 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SuperTower"]
+[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SuperTower" unique_id=1857029620]
 material = SubResource("ShaderMaterial_bt5mj")
 texture = ExtResource("33_oaba0")
 centered = false
 
-[node name="MonkeyApprentice" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="MonkeyApprentice" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1001875812]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -555,7 +553,7 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyApprentice"]
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyApprentice" unique_id=1396038875]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -567,7 +565,7 @@ label_settings = SubResource("LabelSettings_bt5mj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MonkeyVillage" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="MonkeyVillage" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1812926887]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -575,7 +573,7 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyVillage"]
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyVillage" unique_id=1520503796]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -587,7 +585,7 @@ label_settings = SubResource("LabelSettings_bt5mj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BananaFarm" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="BananaFarm" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1576221389]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -595,7 +593,7 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BananaFarm"]
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BananaFarm" unique_id=1009057999]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -607,7 +605,7 @@ label_settings = SubResource("LabelSettings_bt5mj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MortarTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="MortarTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=962375264]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -615,7 +613,7 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MortarTower"]
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MortarTower" unique_id=1889034037]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -627,7 +625,7 @@ label_settings = SubResource("LabelSettings_bt5mj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DartlingGun" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="DartlingGun" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=785645918]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -635,7 +633,7 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartlingGun"]
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartlingGun" unique_id=1388586586]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -647,7 +645,7 @@ label_settings = SubResource("LabelSettings_bt5mj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SpikeFactory" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="SpikeFactory" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=73172947]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -655,7 +653,7 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SpikeFactory"]
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SpikeFactory" unique_id=1740369116]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -667,7 +665,7 @@ label_settings = SubResource("LabelSettings_bt5mj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MonkeySub" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer"]
+[node name="MonkeySub" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=417394309]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -675,7 +673,7 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeySub"]
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeySub" unique_id=1885245537]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -687,14 +685,13 @@ label_settings = SubResource("LabelSettings_bt5mj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BottomPanel" type="Sprite2D" parent="InGameMenu"]
+[node name="BottomPanel" type="Sprite2D" parent="InGameMenu" unique_id=1063356917]
 position = Vector2(0, 520)
 texture = ExtResource("5_p57ef")
 centered = false
 offset = Vector2(-50.95, 0)
 
-[node name="Default" type="Control" parent="InGameMenu/BottomPanel"]
-visible = false
+[node name="Default" type="Control" parent="InGameMenu/BottomPanel" unique_id=1863326561]
 layout_mode = 3
 anchor_left = 0.058000002
 anchor_top = 0.049000002
@@ -705,7 +702,7 @@ offset_top = 0.029999971
 offset_right = 647.568
 offset_bottom = 74.08
 
-[node name="SpecialAgents" type="Label" parent="InGameMenu/BottomPanel/Default"]
+[node name="SpecialAgents" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=1166645358]
 layout_mode = 0
 offset_left = 12.25
 offset_top = 2.5
@@ -715,7 +712,7 @@ text = "Special
 Agents"
 label_settings = SubResource("LabelSettings_kvuet")
 
-[node name="Round" type="Label" parent="InGameMenu/BottomPanel/Default"]
+[node name="Round" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=903672302]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 51.0
@@ -725,7 +722,7 @@ text = "Round"
 label_settings = SubResource("LabelSettings_trtic")
 horizontal_alignment = 2
 
-[node name="RoundValue" type="Label" parent="InGameMenu/BottomPanel/Default"]
+[node name="RoundValue" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=1441219897]
 layout_mode = 0
 offset_left = 64.5
 offset_top = 52.5
@@ -734,7 +731,7 @@ offset_bottom = 75.05
 text = "12345678"
 label_settings = SubResource("LabelSettings_ir15t")
 
-[node name="Mode" type="Label" parent="InGameMenu/BottomPanel/Default"]
+[node name="Mode" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=1386988288]
 layout_mode = 0
 offset_left = 153.95
 offset_top = 50.5
@@ -744,7 +741,7 @@ text = "Mode"
 label_settings = SubResource("LabelSettings_trtic")
 horizontal_alignment = 1
 
-[node name="ModeValue" type="Label" parent="InGameMenu/BottomPanel/Default"]
+[node name="ModeValue" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=1296358917]
 layout_mode = 0
 offset_left = 210.05
 offset_top = 52.0
@@ -753,7 +750,7 @@ offset_bottom = 75.55
 text = "fdsfd"
 label_settings = SubResource("LabelSettings_ir15t")
 
-[node name="RBE" type="Label" parent="InGameMenu/BottomPanel/Default"]
+[node name="RBE" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=990845927]
 layout_mode = 0
 offset_left = 313.95
 offset_top = 50.5
@@ -763,7 +760,7 @@ text = "RBE"
 label_settings = SubResource("LabelSettings_trtic")
 horizontal_alignment = 2
 
-[node name="RBEValue" type="Label" parent="InGameMenu/BottomPanel/Default"]
+[node name="RBEValue" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=1982108479]
 layout_mode = 0
 offset_left = 362.45
 offset_top = 52.0
@@ -772,7 +769,7 @@ offset_bottom = 75.55
 text = "1234567"
 label_settings = SubResource("LabelSettings_ir15t")
 
-[node name="Rank" type="Label" parent="InGameMenu/BottomPanel/Default"]
+[node name="Rank" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=579322716]
 layout_mode = 0
 offset_left = 427.95
 offset_top = 51.0
@@ -782,7 +779,7 @@ text = "Rank"
 label_settings = SubResource("LabelSettings_trtic")
 horizontal_alignment = 2
 
-[node name="RankValue" type="Label" parent="InGameMenu/BottomPanel/Default"]
+[node name="RankValue" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=985846915]
 layout_mode = 0
 offset_left = 481.95
 offset_top = 53.0
@@ -791,7 +788,7 @@ offset_bottom = 76.55
 text = "999"
 label_settings = SubResource("LabelSettings_ir15t")
 
-[node name="Misc" type="Control" parent="InGameMenu/BottomPanel"]
+[node name="Misc" type="Control" parent="InGameMenu/BottomPanel" unique_id=1624587909]
 layout_mode = 3
 anchor_left = 0.058000002
 anchor_top = 0.049000002
@@ -802,7 +799,7 @@ offset_top = -0.92001224
 offset_right = 750.568
 offset_bottom = 74.08
 
-[node name="Default" type="Control" parent="InGameMenu/BottomPanel/Misc"]
+[node name="Default" type="Control" parent="InGameMenu/BottomPanel/Misc" unique_id=1447006981]
 layout_mode = 1
 anchor_left = 0.058000002
 anchor_top = 0.049000002
@@ -813,7 +810,7 @@ offset_top = -3.675001
 offset_right = 97.026
 offset_bottom = 71.32501
 
-[node name="SaveButton" type="TextureButton" parent="InGameMenu/BottomPanel/Misc/Default"]
+[node name="SaveButton" type="TextureButton" parent="InGameMenu/BottomPanel/Misc/Default" unique_id=1025609913]
 layout_mode = 0
 offset_left = 0.5499878
 offset_top = -0.4000244
@@ -824,7 +821,7 @@ texture_normal = ExtResource("21_pl11u")
 texture_hover = ExtResource("22_bhx41")
 texture_click_mask = ExtResource("31_nepv3")
 
-[node name="Label" type="Label" parent="InGameMenu/BottomPanel/Misc/Default/SaveButton"]
+[node name="Label" type="Label" parent="InGameMenu/BottomPanel/Misc/Default/SaveButton" unique_id=2097849041]
 layout_mode = 0
 offset_left = 7.300003
 offset_top = 14.400002
@@ -834,7 +831,7 @@ rotation = -0.1308997
 text = "SAVE"
 label_settings = SubResource("LabelSettings_qnb83")
 
-[node name="MenuButton" type="TextureButton" parent="InGameMenu/BottomPanel/Misc/Default"]
+[node name="MenuButton" type="TextureButton" parent="InGameMenu/BottomPanel/Misc/Default" unique_id=103844570]
 layout_mode = 0
 offset_left = 1.4500122
 offset_top = 37.5
@@ -845,7 +842,7 @@ texture_normal = ExtResource("24_sww3w")
 texture_hover = ExtResource("25_suyxu")
 texture_click_mask = ExtResource("35_7025r")
 
-[node name="SfxButton" type="TextureButton" parent="InGameMenu/BottomPanel/Misc/Default"]
+[node name="SfxButton" type="TextureButton" parent="InGameMenu/BottomPanel/Misc/Default" unique_id=1691663473]
 layout_mode = 0
 offset_left = 65.45001
 offset_top = 37.5
@@ -860,7 +857,7 @@ metadata/pressed_texture = ExtResource("40_05nbr")
 metadata/default_outlined = ExtResource("29_gxtfn")
 metadata/pressed_outlined = ExtResource("41_0sl42")
 
-[node name="MusicButton" type="TextureButton" parent="InGameMenu/BottomPanel/Misc/Default"]
+[node name="MusicButton" type="TextureButton" parent="InGameMenu/BottomPanel/Misc/Default" unique_id=1287525375]
 layout_mode = 0
 offset_left = 33.45
 offset_top = 37.5
@@ -875,7 +872,8 @@ metadata/pressed_texture = ExtResource("44_oaba0")
 metadata/default_outlined = ExtResource("27_v2yb1")
 metadata/pressed_outlined = ExtResource("45_458eo")
 
-[node name="UpgradePanel" type="Control" parent="InGameMenu/BottomPanel"]
+[node name="UpgradePanel" type="Control" parent="InGameMenu/BottomPanel" unique_id=142731274]
+visible = false
 layout_mode = 3
 anchor_left = 0.058000002
 anchor_top = 0.049000002
@@ -886,7 +884,7 @@ offset_top = 0.029999971
 offset_right = 647.568
 offset_bottom = 74.08
 
-[node name="TowerName" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel"]
+[node name="TowerName" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=1933602784]
 layout_mode = 0
 offset_left = 80.2
 offset_top = -3.05
@@ -897,7 +895,7 @@ Monkey Buccaneer"
 label_settings = SubResource("LabelSettings_fedci")
 vertical_alignment = 1
 
-[node name="PopCount" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel"]
+[node name="PopCount" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=1264437776]
 layout_mode = 0
 offset_left = 80.2
 offset_top = 23.35
@@ -907,7 +905,7 @@ text = "Pop Count"
 label_settings = SubResource("LabelSettings_8qswn")
 vertical_alignment = 1
 
-[node name="ModeValue" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel"]
+[node name="ModeValue" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=437972294]
 layout_mode = 0
 offset_left = 154.65
 offset_top = 24.45
@@ -916,7 +914,7 @@ offset_bottom = 44.35
 text = "888888888"
 label_settings = SubResource("LabelSettings_rm0al")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1944019081]
 offset = Vector2(2, 0)
 anchor_mode = 0
 zoom = Vector2(0.678, 0.677)
