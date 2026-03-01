@@ -11,6 +11,7 @@ var glow: ShaderMaterial
 var range_combo: Node2D
 var footprint_area: Area2D
 var is_valid_placement: bool = false
+var _last_valid_state: bool = false
 
 var track_area: Area2D
 var land_area: Area2D
@@ -56,7 +57,10 @@ func _process(_delta: float) -> void:
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 	
 	update_placement_validity()
-	range_combo.redraw(tower_def.range_of_visibility, is_valid_placement)
+	
+	if is_valid_placement != _last_valid_state:
+		range_combo.redraw(tower_def.range_of_visibility, is_valid_placement)
+		_last_valid_state = is_valid_placement
 
 func update_placement_validity() -> void:
 	is_valid_placement = false
