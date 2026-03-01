@@ -38,28 +38,35 @@ void fragment() {
 		}
 		
 		float alpha = 0.0;
-		for (float y = 1.0; y <= outline_thickness; y++) {
-			for (float x = 0.0; x <= y; x++) {
-				if (length(vec2(x, y)) > outline_thickness + 0.5) break;
-				
-				float look_at_alpha;
-				vec2 look_at_uv[8] = {
-					uv + vec2(x, y) * TEXTURE_PIXEL_SIZE,
-					uv + vec2(-x, y) * TEXTURE_PIXEL_SIZE,
-					uv + vec2(x, -y) * TEXTURE_PIXEL_SIZE,
-					uv + vec2(-x, -y) * TEXTURE_PIXEL_SIZE,
-					uv + vec2(y, x) * TEXTURE_PIXEL_SIZE,
-					uv + vec2(-y, x) * TEXTURE_PIXEL_SIZE,
-					uv + vec2(y, -x) * TEXTURE_PIXEL_SIZE,
-					uv + vec2(-y, -x) * TEXTURE_PIXEL_SIZE
-				};
-				
-				for (int i = 0; i < 8; i++) {
-					if (is_inside_usquare(look_at_uv[i])) {
-						look_at_alpha = texture(TEXTURE, look_at_uv[i]).a;
-						alpha = max(alpha, look_at_alpha);
+		if (texture_color.a < 0.99 || cutout) {
+			for (float y = 1.0; y <= outline_thickness; y++) {
+				for (float x = 0.0; x <= y; x++) {
+					if (length(vec2(x, y)) > outline_thickness + 0.5) break;
+					
+					vec2 look_at_uv[8] = {
+						uv + vec2(x, y) * TEXTURE_PIXEL_SIZE,
+						uv + vec2(-x, y) * TEXTURE_PIXEL_SIZE,
+						uv + vec2(x, -y) * TEXTURE_PIXEL_SIZE,
+						uv + vec2(-x, -y) * TEXTURE_PIXEL_SIZE,
+						uv + vec2(y, x) * TEXTURE_PIXEL_SIZE,
+						uv + vec2(-y, x) * TEXTURE_PIXEL_SIZE,
+						uv + vec2(y, -x) * TEXTURE_PIXEL_SIZE,
+						uv + vec2(-y, -x) * TEXTURE_PIXEL_SIZE
+					};
+					
+					for (int i = 0; i < 8; i++) {
+						if (is_inside_usquare(look_at_uv[i])) {
+							float look_at_alpha = texture(TEXTURE, look_at_uv[i]).a;
+							alpha = max(alpha, look_at_alpha);
+						}
+					}
+					
+					if (alpha > 0.99) {
+						alpha = 1.0; 
+						break; 
 					}
 				}
+				if (alpha > 0.99) break;
 			}
 		}
 		
@@ -69,6 +76,7 @@ void fragment() {
 		} else {
 			COLOR = blend(vec4(outline_color.rgb, alpha * outline_color.a), texture_color);
 		}
+	   
 	} else {
 		COLOR = texture(TEXTURE, UV);
 	}
