@@ -74,6 +74,7 @@ func initialize(type: String, pos: Vector2, lvl: Level) -> void:
 	if current_range > 0 and current_range < 999999:
 		range_combo = RangeCombo.new()
 		add_child(range_combo)
+		range_combo.redraw(current_range, true)
 	
 	level = get_parent().get_node_or_null("Level")
 	if not level:
@@ -229,6 +230,7 @@ func select():
 	SoundManager.play("select")
 	if range_combo:
 		range_combo.visible = true
+		range_combo.redraw(tower_def.range_of_visibility, true)
 
 func deselect():
 	selected = false
