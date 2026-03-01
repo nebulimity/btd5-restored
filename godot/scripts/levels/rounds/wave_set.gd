@@ -43,11 +43,11 @@ func start_wave(round_number: int) -> void:
 	
 	rbe_changed.emit(current_wave.rbe)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if current_wave == null:
 		return
 	
-	time += delta
+	time += TimeManager.delta
 	current_wave.process(time, spawner_node, map_def)
 
 func is_running() -> bool:

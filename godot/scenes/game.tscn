@@ -917,7 +917,6 @@ label_settings = SubResource("LabelSettings_rm0al")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1944019081]
 offset = Vector2(2, 0)
 anchor_mode = 0
-zoom = Vector2(0.678, 0.677)
 
 [connection signal="child_entered_tree" from="Spawner" to="Level" method="_on_bloon_spawned"]
 [connection signal="rbe_changed" from="Spawner" to="Level" method="_on_rbe_changed"]

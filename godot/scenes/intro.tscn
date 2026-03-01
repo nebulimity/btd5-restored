@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://di2rdjwkum74f"]
+[gd_scene format=3 uid="uid://di2rdjwkum74f"]
 
 [ext_resource type="Texture2D" uid="uid://d4iffgjgxnilc" path="res://assets/animations/intro/sprites/background.svg" id="1_ioskq"]
 [ext_resource type="Script" uid="uid://dsyrp52grppm4" path="res://scripts/intro.gd" id="1_va21j"]
@@ -1008,20 +1008,20 @@ _data = {
 &"intro": SubResource("Animation_es01l")
 }
 
-[node name="Intro" type="Node2D"]
+[node name="Intro" type="Node2D" unique_id=1058074129]
 script = ExtResource("1_va21j")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=1814920669]
 position = Vector2(-2.45, 0.2)
 texture = ExtResource("1_ioskq")
 centered = false
 
-[node name="Stars" type="Sprite2D" parent="."]
+[node name="Stars" type="Sprite2D" parent="." unique_id=97922596]
 position = Vector2(-1, 0)
 texture = ExtResource("2_epycs")
 centered = false
 
-[node name="Moon" type="Sprite2D" parent="."]
+[node name="Moon" type="Sprite2D" parent="." unique_id=1818814864]
 modulate = Color(2, 2, 2, 1)
 position = Vector2(192.55, 103.8)
 scale = Vector2(0.331, 0.331)
@@ -1029,28 +1029,28 @@ texture = ExtResource("7_0naf5")
 centered = false
 offset = Vector2(64.5, 42.4)
 
-[node name="Glow" type="Sprite2D" parent="Moon"]
+[node name="Glow" type="Sprite2D" parent="Moon" unique_id=339579013]
 position = Vector2(243.05127, 218.12689)
 scale = Vector2(3.021148, 3.021148)
 texture = ExtResource("4_u5myo")
 
-[node name="Trees" type="Sprite2D" parent="."]
+[node name="Trees" type="Sprite2D" parent="." unique_id=1897665173]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(-114.6, 361.55)
 texture = ExtResource("2_yjqpq")
 centered = false
 
-[node name="Cloud" type="Sprite2D" parent="."]
+[node name="Cloud" type="Sprite2D" parent="." unique_id=1023209729]
 position = Vector2(-292.5, 288.05)
 texture = ExtResource("7_u05oh")
 centered = false
 
-[node name="Roof" type="Sprite2D" parent="."]
+[node name="Roof" type="Sprite2D" parent="." unique_id=1829825058]
 position = Vector2(246.5, 256.45)
 texture = ExtResource("4_wfs7u")
 centered = false
 
-[node name="Bloon" type="Sprite2D" parent="."]
+[node name="Bloon" type="Sprite2D" parent="." unique_id=1185553277]
 visible = false
 modulate = Color(0, 0, 0, 1)
 position = Vector2(241.75, 145.35)
@@ -1058,115 +1058,114 @@ texture = ExtResource("7_bu1yb")
 centered = false
 offset = Vector2(-0.05, 0)
 
-[node name="Neck" type="Sprite2D" parent="."]
+[node name="Neck" type="Sprite2D" parent="." unique_id=593506827]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(409.5, 207.45)
 texture = ExtResource("21_127wd")
 centered = false
 offset = Vector2(-3.05, -1.5)
 
-[node name="Head" type="Sprite2D" parent="."]
+[node name="Head" type="Sprite2D" parent="." unique_id=1876099549]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(394.7, 197.85)
 rotation = -0.3926991
 texture = ExtResource("21_366e5")
 centered = false
 
-[node name="Face" type="Sprite2D" parent="."]
+[node name="Face" type="Sprite2D" parent="." unique_id=1764634215]
 position = Vector2(397.8, 197.55)
 rotation = -0.3926991
 texture = ExtResource("26_y6kq6")
 centered = false
 
-[node name="Beak" type="Sprite2D" parent="."]
+[node name="Beak" type="Sprite2D" parent="." unique_id=1386599359]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(355.25, 202.9)
 rotation = -0.3926991
 texture = ExtResource("24_6ac85")
 centered = false
 
-[node name="Bandana1" type="Sprite2D" parent="."]
+[node name="Bandana1" type="Sprite2D" parent="." unique_id=107799865]
 position = Vector2(421.55, 206)
 rotation = -1.1082841
 texture = ExtResource("12_n6p8m")
 centered = false
 
-[node name="Bandana2" type="Sprite2D" parent="."]
+[node name="Bandana2" type="Sprite2D" parent="." unique_id=964852268]
 position = Vector2(419.4, 203.95)
 rotation = -0.6195919
 texture = ExtResource("12_n6p8m")
 centered = false
 
-[node name="Body" type="Sprite2D" parent="."]
+[node name="Body" type="Sprite2D" parent="." unique_id=1672871678]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(411.9, 216.25)
 texture = ExtResource("36_y7gtc")
 centered = false
 
-[node name="RightThigh" type="Sprite2D" parent="."]
+[node name="RightThigh" type="Sprite2D" parent="." unique_id=90582215]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(411.1, 240.55)
 texture = ExtResource("38_61bv4")
 centered = false
 offset = Vector2(0, -5.2)
 
-[node name="LeftThigh" type="Sprite2D" parent="."]
+[node name="LeftThigh" type="Sprite2D" parent="." unique_id=570170580]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(436.35, 248.75)
 texture = ExtResource("41_nhtyu")
 centered = false
 
-[node name="Pop2" type="Sprite2D" parent="."]
+[node name="Pop2" type="Sprite2D" parent="." unique_id=192938057]
 visible = false
 modulate = Color(18.892157, 18.892157, 18.892157, 1)
 position = Vector2(225.1, 132.5)
 texture = ExtResource("50_aotd0")
 centered = false
 
-[node name="Circle" type="ColorRect" parent="."]
+[node name="Circle" type="ColorRect" parent="." unique_id=1402401413]
 material = SubResource("ShaderMaterial_aotd0")
 offset_top = 0.2
 offset_right = 542.0
 offset_bottom = 406.40002
 color = Color(0, 0, 0, 1)
 
-[node name="Logo" type="Sprite2D" parent="."]
+[node name="Logo" type="Sprite2D" parent="." unique_id=1262009024]
 position = Vector2(177.55, 118.7)
 texture = ExtResource("47_nhtyu")
 centered = false
 offset = Vector2(0, -3)
 
-[node name="Shine" type="Sprite2D" parent="."]
-position = Vector2(203.83731, 126.210655)
+[node name="Shine" type="Sprite2D" parent="." unique_id=1206449668]
+position = Vector2(457.55, 198.7)
 texture = ExtResource("20_va21j")
 centered = false
 offset = Vector2(-87.1, -72)
 
-[node name="LogoMask" type="Sprite2D" parent="."]
+[node name="LogoMask" type="Sprite2D" parent="." unique_id=55521773]
 texture = ExtResource("21_pnkdl")
 centered = false
 offset = Vector2(0, -0.3)
 
-[node name="Crickets" type="AudioStreamPlayer" parent="."]
+[node name="Crickets" type="AudioStreamPlayer" parent="." unique_id=578936518]
 
-[node name="Step_1" type="AudioStreamPlayer" parent="."]
+[node name="Step_1" type="AudioStreamPlayer" parent="." unique_id=1899332718]
 
-[node name="Step_2" type="AudioStreamPlayer" parent="."]
+[node name="Step_2" type="AudioStreamPlayer" parent="." unique_id=1629279194]
 
-[node name="Step_3" type="AudioStreamPlayer" parent="."]
+[node name="Step_3" type="AudioStreamPlayer" parent="." unique_id=1337118216]
 
-[node name="Pop" type="AudioStreamPlayer" parent="."]
+[node name="Pop" type="AudioStreamPlayer" parent="." unique_id=2113787620]
 
-[node name="Schwing" type="AudioStreamPlayer" parent="."]
+[node name="Schwing" type="AudioStreamPlayer" parent="." unique_id=1647197516]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_wfs7u")
-}
-autoplay = "intro"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=375357222]
+libraries/ = SubResource("AnimationLibrary_wfs7u")
+autoplay = &"intro"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=729491373]
 position = Vector2(0, 0.2)
 anchor_mode = 0
+zoom = Vector2(1.476, 1.478)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

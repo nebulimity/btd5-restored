@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://ckactqtchofhj"]
+[gd_scene format=3 uid="uid://ckactqtchofhj"]
 
 [ext_resource type="Texture2D" uid="uid://cyxbtefecik4w" path="res://assets/maps/monkey_lane/background.png" id="1_w4170"]
 [ext_resource type="Texture2D" uid="uid://cga6jtjpiekyo" path="res://assets/maps/monkey_lane/windmill/shadow/1.png" id="4_5s6mp"]
@@ -67,6 +67,7 @@
 [ext_resource type="Texture2D" uid="uid://d2qkgsii2er7f" path="res://assets/maps/monkey_lane/windmill/rotor/30.svg" id="67_k7sop"]
 [ext_resource type="Texture2D" uid="uid://c7dyi8wrd5pmn" path="res://assets/maps/monkey_lane/windmill/rotor/31.svg" id="68_4oayb"]
 [ext_resource type="Texture2D" uid="uid://bwwrv48t2gh33" path="res://assets/maps/monkey_lane/windmill/rotor/32.svg" id="69_73pte"]
+[ext_resource type="Script" uid="uid://bjp8ype06g7as" path="res://scripts/utils/animation/animated_sprite_2d.gd" id="69_tax5y"]
 [ext_resource type="Texture2D" uid="uid://ckbqph4174tk0" path="res://assets/maps/monkey_lane/tunnel_cover.png" id="69_wl5al"]
 [ext_resource type="Texture2D" uid="uid://cmichi275bd0h" path="res://assets/maps/monkey_lane/windmill/rotor/33.svg" id="70_64jxs"]
 [ext_resource type="Texture2D" uid="uid://dw6tlmqcsmd7c" path="res://assets/maps/monkey_lane/tunnel_cover_2.png" id="70_fdq51"]
@@ -288,16 +289,16 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="MonkeyLane" type="Node2D"]
+[node name="MonkeyLane" type="Node2D" unique_id=2060388670]
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=70887413]
 z_index = -10
 scale = Vector2(0.333, 0.333)
 texture = ExtResource("1_w4170")
 centered = false
 offset = Vector2(-163.05, 0)
 
-[node name="WindmillShadow" type="AnimatedSprite2D" parent="."]
+[node name="WindmillShadow" type="AnimatedSprite2D" parent="." unique_id=10928452]
 sprite_frames = SubResource("SpriteFrames_jaofu")
 animation = &"spin"
 autoplay = "spin"
@@ -305,13 +306,14 @@ frame = 23
 frame_progress = 0.60019505
 centered = false
 offset = Vector2(-23, 9.55)
+script = ExtResource("69_tax5y")
 
-[node name="Windmill" type="Sprite2D" parent="."]
+[node name="Windmill" type="Sprite2D" parent="." unique_id=32254536]
 position = Vector2(-5.25, -15.1)
 texture = ExtResource("37_a38uq")
 centered = false
 
-[node name="WindmillRotor" type="AnimatedSprite2D" parent="."]
+[node name="WindmillRotor" type="AnimatedSprite2D" parent="." unique_id=761124389]
 z_index = 4
 position = Vector2(-16, 1)
 sprite_frames = SubResource("SpriteFrames_0goub")
@@ -321,77 +323,78 @@ frame = 2
 frame_progress = 0.74423957
 centered = false
 offset = Vector2(-34.25, -80.35)
+script = ExtResource("69_tax5y")
 
-[node name="TunnelCover" type="Sprite2D" parent="."]
+[node name="TunnelCover" type="Sprite2D" parent="." unique_id=1414076538]
 position = Vector2(-54, 0)
 scale = Vector2(0.333, 0.333)
 texture = ExtResource("69_wl5al")
 centered = false
 
-[node name="TunnelCover2" type="Sprite2D" parent="."]
+[node name="TunnelCover2" type="Sprite2D" parent="." unique_id=776789390]
 position = Vector2(-53.999996, 4.7683716e-07)
 scale = Vector2(0.333, 0.333)
 texture = ExtResource("70_fdq51")
 centered = false
 
-[node name="Trees" type="Sprite2D" parent="."]
+[node name="Trees" type="Sprite2D" parent="." unique_id=185066316]
 z_index = 4
 position = Vector2(-54, -82)
 texture = ExtResource("71_yiucl")
 centered = false
 
-[node name="Track" type="Sprite2D" parent="."]
+[node name="Track" type="Sprite2D" parent="." unique_id=1956295001]
 visible = false
 position = Vector2(0, 50)
 scale = Vector2(4, 4)
 texture = ExtResource("71_y64qo")
 centered = false
 
-[node name="Land" type="Sprite2D" parent="."]
+[node name="Land" type="Sprite2D" parent="." unique_id=1024250082]
 visible = false
 scale = Vector2(4, 4)
 texture = ExtResource("72_yiucl")
 centered = false
 
-[node name="Terrain" type="Node2D" parent="."]
+[node name="Terrain" type="Node2D" parent="." unique_id=1064556488]
 position = Vector2(0, 50)
 scale = Vector2(4, 4)
 
-[node name="Track" type="Area2D" parent="Terrain"]
+[node name="Track" type="Area2D" parent="Terrain" unique_id=787374270]
 collision_layer = 2
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/Track"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/Track" unique_id=51351890]
 polygon = PackedVector2Array(44, 0, 44, 1, 42, 1, 42, 2, 41, 2, 41, 5, 40, 5, 40, 24, 41, 24, 41, 25, 42, 25, 42, 26, 45, 26, 45, 25, 48, 25, 48, 26, 108, 26, 108, 27, 109, 27, 109, 34, 110, 34, 110, 64, 111, 64, 111, 65, 117, 65, 117, 64, 118, 64, 118, 25, 117, 25, 117, 24, 116, 24, 116, 23, 115, 23, 115, 22, 112, 22, 112, 21, 84, 21, 84, 20, 46, 20, 46, 7, 47, 7, 47, 6, 68, 6, 68, 5, 105, 5, 105, 6, 129, 6, 129, 7, 133, 7, 133, 10, 134, 10, 134, 23, 135, 23, 135, 24, 136, 24, 136, 25, 150, 25, 150, 26, 159, 26, 159, 28, 160, 28, 160, 39, 159, 39, 159, 41, 155, 41, 155, 42, 146, 42, 146, 43, 135, 43, 135, 44, 134, 44, 134, 51, 133, 51, 133, 75, 132, 75, 132, 79, 94, 79, 94, 80, 93, 80, 93, 81, 92, 81, 92, 86, 93, 86, 93, 87, 120, 87, 120, 86, 132, 86, 132, 85, 137, 85, 137, 84, 138, 84, 138, 83, 139, 83, 139, 80, 140, 80, 140, 62, 141, 62, 141, 49, 144, 49, 144, 48, 152, 48, 152, 47, 160, 47, 160, 46, 163, 46, 163, 45, 164, 45, 164, 44, 165, 44, 165, 22, 163, 22, 163, 21, 158, 21, 158, 20, 147, 20, 147, 19, 142, 19, 142, 17, 141, 17, 141, 3, 140, 3, 140, 2, 138, 2, 138, 1, 124, 1, 124, 0, 50, 0, 50, 1, 46, 1, 46, 0)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Terrain/Track"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Terrain/Track" unique_id=1606933974]
 polygon = PackedVector2Array(43, 40, 43, 41, 42, 41, 42, 42, 41, 42, 41, 48, 40, 48, 40, 57, 39, 57, 39, 61, 0, 61, 0, 67, 44, 67, 44, 66, 46, 66, 46, 65, 47, 65, 47, 57, 48, 57, 48, 47, 49, 47, 49, 46, 68, 46, 68, 47, 69, 47, 69, 111, 70, 111, 70, 112, 71, 112, 71, 113, 116, 113, 116, 112, 118, 112, 118, 107, 119, 107, 119, 102, 117, 102, 117, 101, 111, 101, 111, 102, 110, 102, 110, 107, 76, 107, 76, 43, 75, 43, 75, 42, 74, 42, 74, 41, 65, 41, 65, 40, 46, 40, 46, 41, 45, 41, 45, 40)
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Terrain/Track"]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Terrain/Track" unique_id=198747926]
 polygon = PackedVector2Array(42, 81, 42, 82, 41, 82, 41, 84, 40, 84, 40, 121, 39, 121, 39, 139, 40, 139, 40, 140, 45, 140, 45, 139, 46, 139, 46, 99, 47, 99, 47, 88, 51, 88, 51, 87, 52, 87, 52, 86, 53, 86, 53, 82, 52, 82, 52, 81)
 
-[node name="Land" type="Area2D" parent="Terrain"]
+[node name="Land" type="Area2D" parent="Terrain" unique_id=46081033]
 position = Vector2(0, -3.25)
 collision_layer = 2
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/Land"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/Land" unique_id=259510040]
 position = Vector2(0, -12.5)
 polygon = PackedVector2Array(0, 0, 0, 20, 1, 20, 1, 21, 2, 21, 2, 22, 3, 22, 3, 23, 4, 23, 4, 24, 5, 24, 5, 25, 6, 25, 6, 26, 7, 26, 7, 27, 8, 27, 8, 28, 18, 28, 18, 27, 20, 27, 20, 26, 22, 26, 22, 25, 23, 25, 23, 24, 25, 24, 25, 22, 26, 22, 26, 21, 27, 21, 27, 15, 26, 15, 26, 14, 27, 14, 27, 9, 26, 9, 26, 7, 25, 7, 25, 5, 24, 5, 24, 3, 23, 3, 23, 1, 21, 1, 21, 0)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Terrain/Land"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Terrain/Land" unique_id=1608760799]
 position = Vector2(0, -12.5)
 polygon = PackedVector2Array(2, 38, 2, 39, 1, 39, 1, 57, 2, 57, 2, 58, 8, 58, 8, 57, 12, 57, 12, 56, 14, 56, 14, 55, 15, 55, 15, 54, 16, 54, 16, 48, 15, 48, 15, 46, 14, 46, 14, 44, 13, 44, 13, 43, 12, 43, 12, 42, 11, 42, 11, 41, 10, 41, 10, 40, 8, 40, 8, 39, 3, 39, 3, 38)
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Terrain/Land"]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Terrain/Land" unique_id=1447492581]
 position = Vector2(0, -12.5)
 polygon = PackedVector2Array(188, 46, 188, 47, 185, 47, 185, 48, 183, 48, 183, 49, 182, 49, 182, 50, 181, 50, 181, 53, 180, 53, 180, 61, 181, 61, 181, 63, 182, 63, 182, 65, 183, 65, 183, 66, 184, 66, 184, 67, 186, 67, 186, 68, 188, 68, 188, 69, 197, 69, 197, 68, 199, 68, 199, 67, 200, 67, 200, 66, 201, 66, 201, 64, 202, 64, 202, 50, 201, 50, 201, 49, 200, 49, 200, 48, 199, 48, 199, 47, 197, 47, 197, 46)
 
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Terrain/Land"]
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Terrain/Land" unique_id=1114931532]
 position = Vector2(0, -12.5)
 polygon = PackedVector2Array(176, 87, 176, 88, 174, 88, 174, 89, 173, 89, 173, 91, 172, 91, 172, 99, 173, 99, 173, 100, 174, 100, 174, 101, 175, 101, 175, 102, 176, 102, 176, 103, 183, 103, 183, 102, 186, 102, 186, 101, 187, 101, 187, 100, 188, 100, 188, 91, 187, 91, 187, 90, 186, 90, 186, 89, 185, 89, 185, 88, 183, 88, 183, 87)
 
-[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Terrain/Land"]
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Terrain/Land" unique_id=210866913]
 position = Vector2(0, -12.5)
 polygon = PackedVector2Array(71, 137, 71, 138, 69, 138, 69, 139, 68, 139, 68, 140, 67, 140, 67, 142, 66, 142, 66, 143, 65, 143, 65, 149, 66, 149, 66, 150, 67, 150, 67, 151, 68, 151, 68, 152, 79, 152, 79, 151, 80, 151, 80, 150, 81, 150, 81, 148, 82, 148, 82, 142, 81, 142, 81, 141, 80, 141, 80, 140, 78, 140, 78, 139, 75, 139, 75, 138, 72, 138, 72, 137)
 
-[node name="Water" type="Area2D" parent="Terrain"]
+[node name="Water" type="Area2D" parent="Terrain" unique_id=2038294716]
 collision_layer = 2

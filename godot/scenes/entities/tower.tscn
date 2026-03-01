@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://cgh1yokk03gv8" path="res://shaders/outline.gdshader" id="1_6ini6"]
 [ext_resource type="Script" uid="uid://cam3fhvofgrf2" path="res://scripts/towers/tower.gd" id="1_lq4cm"]
+[ext_resource type="Script" uid="uid://bjp8ype06g7as" path="res://scripts/utils/animation/animated_sprite_2d.gd" id="2_qregn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lq4cm"]
 shader = ExtResource("1_6ini6")
@@ -17,6 +18,7 @@ script = ExtResource("1_lq4cm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1508397734]
 z_index = 2
+script = ExtResource("2_qregn")
 
 [node name="Outline" type="Sprite2D" parent="Visuals/AnimatedSprite2D" unique_id=1423680459]
 visible = false

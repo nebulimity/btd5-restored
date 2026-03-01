@@ -35,11 +35,11 @@ func is_round_complete() -> bool:
 func get_current_rbe() -> int:
 	return wave_set.get_current_rbe()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if active_spawners.is_empty():
 		return
 	
-	round_time += delta
+	round_time += TimeManager.delta
 	
 	for spawner_data in active_spawners:
 		var spawner_def = spawner_data.spawner_def

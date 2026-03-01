@@ -80,13 +80,13 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	bursts_this_process = 0
-	time_accumulator += delta
+	time_accumulator += TimeManager.delta
 	
-	var fixed_step = TimeManager.max_frame_time
+	var fixed_step = TimeManager.max_dt
 	
 	while time_accumulator >= fixed_step:
 		InterpolationManager.save_previous_transforms()
-		
+
 		collision_grid.process(fixed_step)
 		
 		for bloon in bloons:
@@ -100,6 +100,8 @@ func _process(delta: float) -> void:
 		for proj in projectiles:
 			if is_instance_valid(proj):
 				proj.process(fixed_step)
+		
+		get_tree().call_group("fixed_animators", "advance_time", fixed_step)
 		
 		time_accumulator -= fixed_step
 	
