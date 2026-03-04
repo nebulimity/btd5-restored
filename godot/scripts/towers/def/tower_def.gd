@@ -6,7 +6,7 @@ var display: String = ""
 var display_addons: Array[DisplayAddonDef] = []
 var label: String = ""
 var description: String = ""
-var occupied_space: float = 0.0
+var occupied_space: String = ""
 var range_of_visibility: float = 0.0
 var rotates: bool = true
 var weapons: Array[Weapon] = []
@@ -45,7 +45,7 @@ func Description(value: String) -> TowerDef:
 	description = value
 	return self
 
-func OccupiedSpace(value: float) -> TowerDef:
+func OccupiedSpace(value: String) -> TowerDef:
 	occupied_space = value
 	return self
 

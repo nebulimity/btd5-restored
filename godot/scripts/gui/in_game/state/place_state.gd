@@ -9,18 +9,23 @@ var tower_def: TowerDef
 var preview_sprite: Sprite2D
 var glow: ShaderMaterial
 var range_combo: Node2D
-var footprint_area: Area2D
+
 var is_valid_placement: bool = false
 var _last_valid_state: bool = false
 
-var track_area: Area2D
-var land_area: Area2D
-var water_area: Area2D
+var track_map: TerrainType
+var land_map: TerrainType
+var water_map: TerrainType
+var towers_map: TerrainType
+
+var candidate_footprint_img: Image
+var footprint_offset: Vector2 
 
 func setup(type: String) -> void:
 	tower_type = type
 	tower_def = TowerFactory.get_base_tower(tower_type)
 	_initialize_preview()
+	_initialize_footprint()
 
 func _initialize_preview() -> void:
 	preview_sprite = Sprite2D.new()
@@ -40,17 +45,18 @@ func _initialize_preview() -> void:
 		range_combo = RangeCombo.new()
 		add_child(range_combo)
 	
-	footprint_area = Area2D.new()
-	footprint_area.collision_layer = 0
-	footprint_area.collision_mask = 2
-	var collision_shape = CollisionShape2D.new()
-	var circle = CircleShape2D.new()
-	circle.radius = tower_def.occupied_space
-	collision_shape.shape = circle
-	footprint_area.add_child(collision_shape)
-	add_child(footprint_area)
-	
 	set_process(true)
+	
+func _initialize_footprint() -> void:
+	var footprint_tex = load("res://assets/occupied_space/" + tower_def.occupied_space + ".svg")
+	var true_size = footprint_tex.get_size()
+	
+	footprint_offset = -(true_size / 2.0)
+	
+	candidate_footprint_img = footprint_tex.get_image()
+	var sw = ceili(true_size.x * TerrainType.STANDARD_PRECISION_SCALE)
+	var sh = ceili(true_size.y * TerrainType.STANDARD_PRECISION_SCALE)
+	candidate_footprint_img.resize(sw, sh, Image.INTERPOLATE_BILINEAR)
 
 func _process(_delta: float) -> void:
 	global_position = get_global_mouse_position()
@@ -63,30 +69,37 @@ func _process(_delta: float) -> void:
 		_last_valid_state = is_valid_placement
 
 func update_placement_validity() -> void:
-	is_valid_placement = false
+	var pos = global_position
 	
-	var overlapping_areas = footprint_area.get_overlapping_areas()
-	var touching_land = overlapping_areas.has(land_area)
-	var touching_track = overlapping_areas.has(track_area)
-	var touching_water = water_area and overlapping_areas.has(water_area)
-		
+	var top_left_pos = pos + footprint_offset
+	
+	var tex_size = candidate_footprint_img.get_size() / TerrainType.STANDARD_PRECISION_SCALE
+	var left_edge = top_left_pos.x
+	var top_edge = top_left_pos.y
+	var right_edge = left_edge + tex_size.x
+	var bottom_edge = top_edge + tex_size.y
+	
+	if left_edge < 0 or top_edge < 0 or right_edge > TerrainType.PLAY_AREA_WIDTH or bottom_edge > TerrainType.PLAY_AREA_HEIGHT:
+		is_valid_placement = false
+		return
+	
 	if tower_def.requires_track:
-		if not touching_track:
-			return
-		is_valid_placement = true
+		var on_track = track_map.is_within(candidate_footprint_img, top_left_pos)
+		var outside_land = land_map.is_outside(candidate_footprint_img, top_left_pos)
+		is_valid_placement = on_track and outside_land
 		return
 	
 	if tower_def.requires_water:
-		if not touching_water:
-			return
-		is_valid_placement = true
+		is_valid_placement = water_map.is_within(candidate_footprint_img, top_left_pos)
 		return
+		
+	var outside_track = track_map.is_outside(candidate_footprint_img, top_left_pos)
+	var outside_water = water_map.is_outside(candidate_footprint_img, top_left_pos)
+	var outside_land = land_map.is_outside(candidate_footprint_img, top_left_pos)
+	var outside_towers = towers_map.is_outside(candidate_footprint_img, top_left_pos)
 	
-	if touching_land or touching_track or touching_water:
-		return
+	is_valid_placement = outside_track and outside_water and outside_land and outside_towers
 	
-	is_valid_placement = true
-
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

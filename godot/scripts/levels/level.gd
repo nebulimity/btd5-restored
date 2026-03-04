@@ -1,6 +1,8 @@
 class_name Level
 extends Node
 
+@export var map_name: String = "monkey_lane"
+
 var money: int = 650:
 	set(value):
 		money = value
@@ -42,9 +44,10 @@ var collision_grid: CollisionGrid
 var time_accumulator: float = 0.0
 
 var terrain_node: Node2D
-var track_area: Area2D
-var land_area: Area2D
-var water_area: Area2D
+var track_map: TerrainType
+var land_map: TerrainType
+var water_map: TerrainType
+var towers_map: TerrainType
 
 @onready var spawner: Node = $"../Spawner"
 @onready var in_game_menu: Control = $"../InGameMenu"
@@ -66,7 +69,7 @@ func _ready() -> void:
 	
 	spawner.setup(map_def)
 	
-	setup_terrain_areas()
+	setup_terrain_masks()
 	
 	in_game_menu.play_button_pressed.connect(_on_play_button_pressed)
 	in_game_menu.fast_forward_toggled.connect(_on_fast_forward_toggled)
@@ -114,12 +117,38 @@ func update_ui():
 	in_game_menu.update_round_display(current_round)
 	in_game_menu.update_rbe_display(rbe)
 
-func setup_terrain_areas():
+func setup_terrain_masks():
+	track_map = TerrainType.new()
+	land_map = TerrainType.new()
+	water_map = TerrainType.new()
+	towers_map = TerrainType.new()
+	
+	if not map.is_inside_tree():
+		await map.tree_entered
+		
 	terrain_node = map.get_node_or_null("Terrain")
 	if terrain_node:
-		track_area = terrain_node.get_node_or_null("Track")
-		land_area = terrain_node.get_node_or_null("Land")
-		water_area = terrain_node.get_node_or_null("Water")
+		var track_sprite = terrain_node.get_node_or_null("Track") as Sprite2D
+		var land_sprite = terrain_node.get_node_or_null("Land") as Sprite2D
+		var water_sprite = terrain_node.get_node_or_null("Water") as Sprite2D
+		
+		if track_sprite and track_sprite.texture:
+			var top_left = track_sprite.global_position
+			if track_sprite.centered:
+				top_left -= (track_sprite.texture.get_size() * track_sprite.global_scale) / 2.0
+			track_map.draw_to_map(track_sprite.texture, top_left, track_sprite.global_scale)
+			
+		if land_sprite and land_sprite.texture:
+			var top_left = land_sprite.global_position
+			if land_sprite.centered:
+				top_left -= (land_sprite.texture.get_size() * land_sprite.global_scale) / 2.0
+			land_map.draw_to_map(land_sprite.texture, top_left, land_sprite.global_scale)
+			
+		if water_sprite and water_sprite.texture:
+			var top_left = water_sprite.global_position
+			if water_sprite.centered:
+				top_left -= (water_sprite.texture.get_size() * water_sprite.global_scale) / 2.0
+			water_map.draw_to_map(water_sprite.texture, top_left, water_sprite.global_scale)
 
 func _on_rbe_changed(new_rbe: int):
 	rbe = new_rbe
@@ -174,10 +203,13 @@ func _on_tower_purchase_requested(tower_type: String):
 
 func enter_placement_mode(tower_type: String):
 	current_place_state = PlaceState.new()
+	
+	current_place_state.track_map = track_map
+	current_place_state.land_map = land_map
+	current_place_state.water_map = water_map
+	current_place_state.towers_map = towers_map
+	
 	current_place_state.setup(tower_type)
-	current_place_state.track_area = track_area
-	current_place_state.land_area = land_area
-	current_place_state.water_area = water_area
 	
 	current_place_state.placement_confirmed.connect(_on_tower_placed)
 	current_place_state.placement_cancelled.connect(_on_placement_cancelled)
@@ -186,9 +218,16 @@ func enter_placement_mode(tower_type: String):
 
 func _on_tower_placed(tower_type: String, pos: Vector2):
 	var tower_def: TowerDef = TowerFactory.get_base_tower(tower_type)
-	
 	money -= tower_def.cost
 	
+	var footprint_tex = load("res://assets/occupied_space/" + tower_def.occupied_space + ".svg")
+	var true_size = footprint_tex.get_size()
+		
+	var offset = -(true_size / 2.0) 
+	var top_left_pos = pos + offset
+		
+	towers_map.draw_to_map(footprint_tex, top_left_pos, Vector2.ONE)
+
 	var tower = preload("res://scenes/entities/tower.tscn").instantiate() as Tower
 	update_selection(tower)
 	placed_towers.append(tower)
