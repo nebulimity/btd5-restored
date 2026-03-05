@@ -23,6 +23,11 @@ func draw_to_map(texture: Texture2D, top_left_pos: Vector2, world_scale: Vector2
 	var sh = max(1, ceili(world_size.y * STANDARD_PRECISION_SCALE))
 	img.resize(sw, sh, Image.INTERPOLATE_BILINEAR)
 	
+	for y in range(sh):
+		for x in range(sw):
+			var c = img.get_pixel(x, y)
+			img.set_pixel(x, y, Color(1, 1, 1, 1.0 if c.a >= 0.1 else 0.0))
+	
 	var scaled_x = top_left_pos.x * STANDARD_PRECISION_SCALE
 	var scaled_y = top_left_pos.y * STANDARD_PRECISION_SCALE
 	

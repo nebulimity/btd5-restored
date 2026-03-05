@@ -133,19 +133,19 @@ func setup_terrain_masks():
 		var water_sprite = terrain_node.get_node_or_null("Water") as Sprite2D
 		
 		if track_sprite and track_sprite.texture:
-			var top_left = track_sprite.global_position
+			var top_left = track_sprite.global_position + track_sprite.offset
 			if track_sprite.centered:
 				top_left -= (track_sprite.texture.get_size() * track_sprite.global_scale) / 2.0
 			track_map.draw_to_map(track_sprite.texture, top_left, track_sprite.global_scale)
 			
 		if land_sprite and land_sprite.texture:
-			var top_left = land_sprite.global_position
+			var top_left = land_sprite.global_position + track_sprite.offset
 			if land_sprite.centered:
 				top_left -= (land_sprite.texture.get_size() * land_sprite.global_scale) / 2.0
 			land_map.draw_to_map(land_sprite.texture, top_left, land_sprite.global_scale)
 			
 		if water_sprite and water_sprite.texture:
-			var top_left = water_sprite.global_position
+			var top_left = water_sprite.global_position + track_sprite.offset
 			if water_sprite.centered:
 				top_left -= (water_sprite.texture.get_size() * water_sprite.global_scale) / 2.0
 			water_map.draw_to_map(water_sprite.texture, top_left, water_sprite.global_scale)
