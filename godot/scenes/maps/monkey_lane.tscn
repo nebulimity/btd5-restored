@@ -71,9 +71,9 @@
 [ext_resource type="Texture2D" uid="uid://ckbqph4174tk0" path="res://assets/maps/monkey_lane/tunnel_cover.png" id="69_wl5al"]
 [ext_resource type="Texture2D" uid="uid://cmichi275bd0h" path="res://assets/maps/monkey_lane/windmill/rotor/33.svg" id="70_64jxs"]
 [ext_resource type="Texture2D" uid="uid://dw6tlmqcsmd7c" path="res://assets/maps/monkey_lane/tunnel_cover_2.png" id="70_fdq51"]
-[ext_resource type="Texture2D" uid="uid://yyitemijio3h" path="res://assets/maps/monkey_lane/terrain/track.png" id="71_y64qo"]
 [ext_resource type="Texture2D" uid="uid://cjhrqxijh4ubp" path="res://assets/maps/monkey_lane/trees.svg" id="71_yiucl"]
-[ext_resource type="Texture2D" uid="uid://4c7tj8w8amuf" path="res://assets/maps/monkey_lane/terrain/land.png" id="72_yiucl"]
+[ext_resource type="Texture2D" uid="uid://r7xk2lye0sas" path="res://assets/maps/monkey_lane/terrain/track.svg" id="73_tax5y"]
+[ext_resource type="Texture2D" uid="uid://d4k64sx5cm7jy" path="res://assets/maps/monkey_lane/terrain/land.svg" id="74_23ykd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jaofu"]
 animations = [{
@@ -345,14 +345,13 @@ centered = false
 
 [node name="Terrain" type="Node2D" parent="." unique_id=1064556488]
 visible = false
-position = Vector2(0, 50)
-scale = Vector2(4, 4)
 
-[node name="Track" type="Sprite2D" parent="Terrain" unique_id=1956295001]
-texture = ExtResource("71_y64qo")
+[node name="Track" type="Sprite2D" parent="Terrain" unique_id=1570358343]
+texture = ExtResource("73_tax5y")
 centered = false
+offset = Vector2(-3.8, 50.45)
 
-[node name="Land" type="Sprite2D" parent="Terrain" unique_id=1024250082]
-position = Vector2(0, -12.5)
-texture = ExtResource("72_yiucl")
+[node name="Land" type="Sprite2D" parent="Terrain" unique_id=1485680465]
+texture = ExtResource("74_23ykd")
 centered = false
+offset = Vector2(-5.1, -13)

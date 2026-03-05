@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yyitemijio3h"
-path="res://.godot/imported/track.png-c27b4878f01f0099c02fe6560274116d.ctex"
+uid="uid://d4k64sx5cm7jy"
+path="res://.godot/imported/land.svg-07e544e03071471c0bee7542bd240204.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/maps/monkey_lane/terrain/track.png"
-dest_files=["res://.godot/imported/track.png-c27b4878f01f0099c02fe6560274116d.ctex"]
+source_file="res://assets/maps/monkey_lane/terrain/land.svg"
+dest_files=["res://.godot/imported/land.svg-07e544e03071471c0bee7542bd240204.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
