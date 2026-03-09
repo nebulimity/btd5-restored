@@ -77,7 +77,7 @@ func start() -> void:
 		spawn_order_offset += Bloon.spawn_order_offsets[cloned.type_index] * cloned.spawn_times.size()
 		active_spawners.append(cloned)
 
-func process(time: float, spawner_node: Node, map_def: MonkeyLaneDef) -> void:
+func process(time: float, spawner_node: Node, map_def: LevelDef) -> void:
 	for spawner in active_spawners:
 		while spawner.current_index < spawner.spawn_times.size():
 			if time >= spawner.spawn_times[spawner.current_index]:
@@ -86,7 +86,7 @@ func process(time: float, spawner_node: Node, map_def: MonkeyLaneDef) -> void:
 			else:
 				break
 
-func spawn_bloon(spawner: SpawnerInstance, time_offset: float, spawner_node: Node, map_def: MonkeyLaneDef) -> void:
+func spawn_bloon(spawner: SpawnerInstance, time_offset: float, spawner_node: Node, map_def: LevelDef) -> void:
 	var start_tile = map_def.get_start_tile()
 	if not start_tile:
 		return

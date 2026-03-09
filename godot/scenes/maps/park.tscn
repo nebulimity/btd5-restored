@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://ikxqr57y7a5i"]
+
+[ext_resource type="Texture2D" uid="uid://c121snaxy64jq" path="res://assets/maps/park/background.png" id="1_sdbgt"]
+[ext_resource type="Texture2D" uid="uid://x0xa8sw0ve3r" path="res://assets/maps/park/trees.png" id="2_wxe3j"]
+[ext_resource type="Texture2D" uid="uid://ksmu6uho3gqs" path="res://assets/maps/park/terrain/track.svg" id="3_5m2db"]
+[ext_resource type="Texture2D" uid="uid://0jfgfdpe7xoi" path="res://assets/maps/park/terrain/land.svg" id="4_hbrtr"]
+[ext_resource type="Texture2D" uid="uid://xlu8q3hpulfx" path="res://assets/maps/park/terrain/water.svg" id="5_p5eam"]
+
+[node name="Park" type="Node2D" unique_id=2060388670]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1958901789]
+z_index = -10
+position = Vector2(0, -3.0000005)
+scale = Vector2(0.278, 0.278)
+texture = ExtResource("1_sdbgt")
+centered = false
+offset = Vector2(-96.48, -120.42)
+
+[node name="Trees" type="Sprite2D" parent="." unique_id=881153298]
+z_index = 4
+scale = Vector2(0.278, 0.278)
+texture = ExtResource("2_wxe3j")
+centered = false
+offset = Vector2(-187.02, -350.28)
+
+[node name="Terrain" type="Node2D" parent="." unique_id=1064556488]
+visible = false
+
+[node name="Track" type="Sprite2D" parent="Terrain" unique_id=927969717]
+texture = ExtResource("3_5m2db")
+centered = false
+offset = Vector2(100.4, -31.3)
+
+[node name="Land" type="Sprite2D" parent="Terrain" unique_id=371172965]
+texture = ExtResource("4_hbrtr")
+centered = false
+offset = Vector2(-17.8, -20.4)
+
+[node name="Water" type="Sprite2D" parent="Terrain" unique_id=919336790]
+texture = ExtResource("5_p5eam")
+centered = false
+offset = Vector2(-27, -33)

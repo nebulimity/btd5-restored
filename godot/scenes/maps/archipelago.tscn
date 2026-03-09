@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cldsmnnghf37w"]
+
+[ext_resource type="Texture2D" uid="uid://dj4265s3wjs40" path="res://assets/maps/archipelago/background.png" id="1_jaum8"]
+[ext_resource type="Texture2D" uid="uid://0qy5x4hddnam" path="res://assets/maps/archipelago/trees.png" id="2_2sew7"]
+[ext_resource type="Texture2D" uid="uid://cwwdv5jjt6h5o" path="res://assets/maps/archipelago/terrain/track.svg" id="3_kjbb2"]
+[ext_resource type="Texture2D" uid="uid://cpvjkj0bkx7qt" path="res://assets/maps/archipelago/terrain/water.svg" id="4_gwgwg"]
+
+[node name="Archipelago" type="Node2D" unique_id=2060388670]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1958901789]
+z_index = -10
+scale = Vector2(0.278, 0.278)
+texture = ExtResource("1_jaum8")
+centered = false
+offset = Vector2(-526.32, -557.8)
+
+[node name="Trees" type="Sprite2D" parent="." unique_id=881153298]
+z_index = 4
+position = Vector2(16, 131)
+scale = Vector2(0.278, 0.278)
+texture = ExtResource("2_2sew7")
+centered = false
+offset = Vector2(-88.38, -350.28)
+
+[node name="Terrain" type="Node2D" parent="." unique_id=1064556488]
+visible = false
+
+[node name="Track" type="Sprite2D" parent="Terrain" unique_id=927969717]
+texture = ExtResource("3_kjbb2")
+centered = false
+offset = Vector2(-24.75, -10.25)
+
+[node name="Water" type="Sprite2D" parent="Terrain" unique_id=919336790]
+texture = ExtResource("4_gwgwg")
+centered = false

@@ -11,7 +11,7 @@ var glow: ShaderMaterial
 var range_combo: Node2D
 
 var is_valid_placement: bool = false
-var _last_valid_state: bool = false
+var _last_valid_state: bool = true
 
 var track_map: TerrainType
 var land_map: TerrainType
@@ -34,31 +34,35 @@ func _initialize_preview() -> void:
 	preview_sprite.offset = tower_def.position_offset
 	preview_sprite.z_index = 10
 	preview_sprite.rotate(deg_to_rad(tower_def.rotation_offset))
-
+	
 	glow = ShaderMaterial.new()
 	glow.shader = preload("res://shaders/glow.gdshader")
 	glow.set_shader_parameter("glow_color", Color(0.0, 0.0, 0.0, 0.7))
 	preview_sprite.material = glow
-
+	
 	add_child(preview_sprite)
-
+	
 	if tower_def.range_of_visibility > 0 and tower_def.range_of_visibility < 999999:
 		range_combo = RangeCombo.new()
 		add_child(range_combo)
-
+	
 	set_process(true)
 
 func _initialize_footprint() -> void:
 	var footprint_tex: Texture2D = load("res://assets/occupied_space/" + tower_def.occupied_space + ".svg")
-	
 	footprint_size = footprint_tex.get_size()
 	footprint_offset = -(footprint_size / 2.0)
-	
 	candidate_footprint_img = footprint_tex.get_image()
 	candidate_footprint_img.convert(Image.FORMAT_RGBA8)
+	
 	var sw = max(1, ceili(footprint_size.x * TerrainType.STANDARD_PRECISION_SCALE))
 	var sh = max(1, ceili(footprint_size.y * TerrainType.STANDARD_PRECISION_SCALE))
 	candidate_footprint_img.resize(sw, sh, Image.INTERPOLATE_BILINEAR)
+	
+	for y in range(sh):
+		for x in range(sw):
+			var c = candidate_footprint_img.get_pixel(x, y)
+			candidate_footprint_img.set_pixel(x, y, Color(1, 1, 1, 1.0 if c.a >= (1.0 / 255.0) else 0.0))
 
 func _process(_delta: float) -> void:
 	global_position = get_global_mouse_position()
@@ -77,18 +81,16 @@ func update_placement_validity() -> void:
 	
 	var right_edge = top_left_pos.x + footprint_size.x
 	var bottom_edge = top_left_pos.y + footprint_size.y
-	if top_left_pos.x < 0 or top_left_pos.y < 0 \
-			or right_edge > TerrainType.PLAY_AREA_WIDTH \
-			or bottom_edge > TerrainType.PLAY_AREA_HEIGHT:
+	if top_left_pos.x < 0 or top_left_pos.y < 0 or right_edge > TerrainType.PLAY_AREA_WIDTH or bottom_edge > TerrainType.PLAY_AREA_HEIGHT:
 		is_valid_placement = false
 		return
 	
 	if tower_def.requires_track:
-		var on_track = not track_map.is_within(candidate_footprint_img, top_left_pos)
+		is_valid_placement = not track_map.is_within(candidate_footprint_img, top_left_pos)
 		return
 	
 	if tower_def.requires_water:
-		is_valid_placement = water_map.is_within(candidate_footprint_img, top_left_pos)
+		is_valid_placement = water_map.is_within(candidate_footprint_img, top_left_pos) and track_map.is_outside(candidate_footprint_img, top_left_pos) and towers_map.is_outside(candidate_footprint_img, top_left_pos)
 		return
 	
 	var outside_track = track_map.is_outside(candidate_footprint_img, top_left_pos)

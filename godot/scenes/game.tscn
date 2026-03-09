@@ -11,7 +11,7 @@
 [ext_resource type="FontFile" uid="uid://br002hhqta44a" path="res://assets/fonts/oetztype.ttf" id="7_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://dvnsdc2v1aeax" path="res://assets/gui/big_button/play_button/arrow.svg" id="8_gee14"]
 [ext_resource type="Shader" uid="uid://c3ryj3gh8f7l2" path="res://shaders/shadow.gdshader" id="8_ssvqc"]
-[ext_resource type="Texture2D" uid="uid://cvvim8vwjnuud" path="res://assets/sprites/spikey_ball.svg" id="9_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://cvvim8vwjnuud" path="res://assets/towers/spikey_ball.svg" id="9_0tnpc"]
 [ext_resource type="BitMap" uid="uid://iqns1bau8u20" path="res://assets/gui/big_button/mask.svg" id="11_twgab"]
 [ext_resource type="Texture2D" uid="uid://bc41qugao8owb" path="res://assets/gui/big_button/fast_forward_button/default.svg" id="11_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://2uplxmb612qr" path="res://assets/gui/big_button/fast_forward_button/pressed.svg" id="12_js0lu"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://dgtajjls2tp8v" path="res://assets/gui/tower_buttons/ice_tower/default.svg" id="30_h3rex"]
 [ext_resource type="Texture2D" uid="uid://bhh7jhtedcgd7" path="res://assets/gui/tower_buttons/glue_tower/1.svg" id="31_fedci"]
 [ext_resource type="BitMap" uid="uid://rcw0avyfk02a" path="res://assets/gui/save_button/mask.svg" id="31_nepv3"]
+[ext_resource type="Texture2D" uid="uid://bwltcsb5tp3mh" path="res://assets/gui/tower_buttons/buccaneer/default.svg" id="32_8qswn"]
 [ext_resource type="Texture2D" uid="uid://bor23t2ldqr2o" path="res://assets/gui/tower_buttons/boomerang_tower/default.svg" id="33_458eo"]
 [ext_resource type="Texture2D" uid="uid://cqls336tsosk3" path="res://assets/gui/tower_buttons/super_tower/default.svg" id="33_oaba0"]
 [ext_resource type="Texture2D" uid="uid://dnxn0lhjd44ih" path="res://assets/gui/tower_buttons/ninja_tower/default.svg" id="34_h3rex"]
@@ -492,7 +493,7 @@ material = SubResource("ShaderMaterial_bt5mj")
 texture = ExtResource("31_fedci")
 centered = false
 
-[node name="MonkeyBuccaneer" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1479445954]
+[node name="BuccaneerTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1479445954]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -500,17 +501,10 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyBuccaneer" unique_id=1751757168]
-layout_mode = 0
-offset_left = 10.0
-offset_top = -1.0
-offset_right = 35.5
-offset_bottom = 56.4
-mouse_filter = 1
-text = "?"
-label_settings = SubResource("LabelSettings_bt5mj")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BuccaneerTower" unique_id=811272529]
+material = SubResource("ShaderMaterial_bt5mj")
+texture = ExtResource("32_8qswn")
+centered = false
 
 [node name="MonkeyAce" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=88032069]
 layout_mode = 2

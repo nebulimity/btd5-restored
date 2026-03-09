@@ -18,6 +18,7 @@ var in_throw_animation: bool = false
 var has_fired: bool = false
 
 var reload_timers: Array[CustomTimer] = []
+var addon_clips: Array[AnimatedSprite2D] = []
 
 var throw_sequence: int = 0 
 
@@ -34,7 +35,7 @@ func initialize(type: String, pos: Vector2, lvl: Level) -> void:
 	tower_def = TowerFactory.get_base_tower(tower_type)
 	current_range = tower_def.range_of_visibility
 	orientation = tower_def.rotation_offset
-
+	
 	sprite.offset = tower_def.position_offset
 	sprite.rotation_degrees = orientation
 	
@@ -50,23 +51,30 @@ func initialize(type: String, pos: Vector2, lvl: Level) -> void:
 	sprite.animation_finished.connect(_on_animation_finished)
 	sprite.sprite_frames = sprite_frames
 	
+	addon_clips.clear()
 	if tower_def.display_addons:
 		for clip in tower_def.display_addons:
 			var addon = AnimatedSprite2D.new()
-			addon.z_index = sprite.z_index + clip.z
+			addon.offset = clip.offset
+			addon.centered = false
+			addon.z_index = clip.z
+			addon.set_script(load("res://scripts/utils/animation/animated_sprite_2d.gd"))
 			
 			var addon_frames = SpriteFrames.new()
 			addon_frames.remove_animation("default")
 			addon_frames.add_animation("default")
+			addon_frames.set_animation_loop("default", clip.loop)
 			addon_frames.set_animation_speed("default", 30.0)
 			
 			for texture in AssetManager.grab(clip.clip):
 				addon_frames.add_frame("default", texture)
 			
 			addon.sprite_frames = addon_frames
-			addon.animation_finished.connect(_on_animation_finished)
-			add_child(addon)
-			addon.play()
+			sprite.add_child(addon)
+			addon_clips.append(addon)
+			
+			if clip.loop:
+				addon.play("default")
 	
 	outline.offset = sprite.offset
 	outline.position = sprite.position
@@ -221,7 +229,7 @@ func hide_range() -> void:
 
 func highlight():
 	outline.visible = true
-	
+
 func unhighlight():
 	outline.visible = false
 

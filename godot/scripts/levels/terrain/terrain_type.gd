@@ -15,29 +15,29 @@ func _init() -> void:
 	test_map = Image.create_empty(scaled_width, scaled_height, false, Image.FORMAT_RGBA8)
 
 func draw_to_map(texture: Texture2D, top_left_pos: Vector2, world_scale: Vector2 = Vector2.ONE) -> void:
-	var img := texture.get_image()
+	var img = texture.get_image()
 	img.convert(Image.FORMAT_RGBA8)
 	
-	var world_size := texture.get_size() * world_scale
+	var world_size = texture.get_size() * world_scale
 	var sw = max(1, ceili(world_size.x * STANDARD_PRECISION_SCALE))
 	var sh = max(1, ceili(world_size.y * STANDARD_PRECISION_SCALE))
 	img.resize(sw, sh, Image.INTERPOLATE_BILINEAR)
 	
 	for y in range(sh):
 		for x in range(sw):
-			var c := img.get_pixel(x, y)
+			var c = img.get_pixel(x, y)
 			img.set_pixel(x, y, Color(1, 1, 1, 1.0 if c.a >= (1.0 / 255.0) else 0.0))
 	
-	var scaled_x := top_left_pos.x * STANDARD_PRECISION_SCALE
-	var scaled_y := top_left_pos.y * STANDARD_PRECISION_SCALE
+	var scaled_x = top_left_pos.x * STANDARD_PRECISION_SCALE
+	var scaled_y = top_left_pos.y * STANDARD_PRECISION_SCALE
 	
 	for fy in range(sh):
-		var my := floori(scaled_y + fy)
+		var my = floori(scaled_y + fy)
 		if my < 0 or my >= scaled_height:
 			continue
 		for fx in range(sw):
 			if img.get_pixel(fx, fy).a > 0.0:
-				var mx := floori(scaled_x + fx)
+				var mx = floori(scaled_x + fx)
 				if mx >= 0 and mx < scaled_width:
 					test_map.set_pixel(mx, my, Color(1, 1, 1, 1))
 

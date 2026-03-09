@@ -29,7 +29,7 @@ func connect_tower_buttons() -> void:
 		"BombTower": "BombTower",
 		"IceTower": "IceTower",
 		"GlueTower": "GlueGunner",
-		"BuccaneerTower": "BuccaneerTower",
+		"BuccaneerTower": "MonkeyBuccaneer",
 		"PlaneTower": "MonkeyAce",
 		"SuperTower": "SuperMonkey",
 		"ApprenticeTower": "MonkeyApprentice",

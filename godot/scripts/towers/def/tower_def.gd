@@ -13,8 +13,11 @@ var weapons: Array[Weapon] = []
 var weapon_offsets: Array[Vector2] = []
 var target_mask: Array[int] = []
 var behavior: TowerBehaviorDef = null
+var is_boat: bool = false
+var is_land: bool = true
 var position_offset: Vector2 = Vector2.ZERO
 var rotation_offset: float = -90.0
+var rotation_correction: float = 0.0
 var idle_frame: int = -1
 var fire_frame: int = -1
 
@@ -69,6 +72,16 @@ func Behavior(value: TowerBehaviorDef) -> TowerDef:
 	behavior = value
 	return self
 
+func IsBoat(value: bool) -> TowerDef:
+	is_boat = value
+	can_place_on_water = true  # temp
+	requires_water = true      # temp
+	return self
+
+func IsLand(value: bool) -> TowerDef:
+	is_land = value
+	return self
+
 func WeaponOffsets(value: Array[Vector2]) -> TowerDef:
 	weapon_offsets = value
 	return self
@@ -79,6 +92,10 @@ func PositionOffset(value: Vector2) -> TowerDef:
 
 func RotationOffset(value: float) -> TowerDef:
 	rotation_offset = value
+	return self
+
+func RotationCorrection(value: float) -> TowerDef:
+	rotation_correction = value
 	return self
 
 func IdleFrame(value: int) -> TowerDef:

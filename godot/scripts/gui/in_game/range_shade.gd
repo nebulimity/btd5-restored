@@ -6,7 +6,7 @@ var color: Color
 var is_valid_placement: bool
 
 func _init() -> void:
-	z_index = 1
+	z_index = 0
 
 func redraw(target_range, is_valid) -> void:
 	tower_range = target_range

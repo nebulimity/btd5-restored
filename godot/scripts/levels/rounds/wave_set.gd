@@ -6,7 +6,7 @@ var current_wave: Wave = null
 var time: float = 0.0
 var round_factory: RoundFactory
 var spawner_node: Node
-var map_def: MonkeyLaneDef
+var map_def: LevelDef
 
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
@@ -18,7 +18,7 @@ func _ready():
 func initialize_from_rounds_def(p_rounds_def: Array[RoundFactory.RoundDef]):
 	rounds_def = p_rounds_def
 
-func setup(p_spawner_node: Node, p_map_def: MonkeyLaneDef, p_round_factory: RoundFactory):
+func setup(p_spawner_node: Node, p_map_def: LevelDef, p_round_factory: RoundFactory):
 	spawner_node = p_spawner_node
 	map_def = p_map_def
 	round_factory = p_round_factory

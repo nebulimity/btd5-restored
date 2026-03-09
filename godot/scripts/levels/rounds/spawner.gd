@@ -2,7 +2,7 @@ class_name Spawner
 extends Node
 
 var wave_set: WaveSet
-var map_def: MonkeyLaneDef
+var map_def: LevelDef
 var round_factory: RoundFactory
 
 var current_round: int = 0
@@ -22,7 +22,7 @@ func _ready():
 func _on_wave_set_rbe_changed(new_rbe: int):
 	rbe_changed.emit(new_rbe)
 
-func setup(p_map_def: MonkeyLaneDef):
+func setup(p_map_def: LevelDef):
 	map_def = p_map_def
 	wave_set.setup(self, map_def, round_factory)
 
@@ -56,15 +56,8 @@ func _process(_delta: float) -> void:
 				break
 
 func spawn_bloon(type: int, camo: bool = false, regen: bool = false):
-	if not map_def:
-		push_error("No map definition set for spawner")
-		return
-	
 	var start_tile = map_def.get_start_tile()
-	if not start_tile:
-		push_error("No start tile found in map definition")
-		return
-	
+
 	var bloon = wave_set.get_bloon_scene().instantiate() as Bloon
 	add_child(bloon)
 	bloon.get_parent().move_child(bloon, 0)

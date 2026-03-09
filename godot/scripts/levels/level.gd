@@ -1,7 +1,7 @@
 class_name Level
 extends Node
 
-@export var map_name: String = "monkey_lane"
+@export var map_name: String = "MonkeyLane"
 
 var money: int = 650:
 	set(value):
@@ -28,7 +28,7 @@ var cash_multiplier: float = 1.0
 var process_multiplier: int = 1
 var bursts_this_process: int = 0
 
-var map_def: MonkeyLaneDef
+var map_def: LevelDef
 var map_scene: PackedScene
 var map: Node
 
@@ -53,14 +53,13 @@ var towers_map: TerrainType
 @onready var in_game_menu: Control = $"../InGameMenu"
 
 func _ready() -> void:
-	map_scene = preload("res://scenes/maps/monkey_lane.tscn")
+	map_def = LevelDefSet.get_level_def(map_name)
+	
+	map_scene = load(map_def.scene_path)
 	map = map_scene.instantiate()
 	
 	collision_grid = CollisionGrid.new(self)
 	add_child(collision_grid)
-	
-	map_def = MonkeyLaneDef.new()
-	map_def.parse_monkey_lane()
 	
 	neutral_state = NeutralState.new()
 	add_child(neutral_state)
@@ -78,7 +77,7 @@ func _ready() -> void:
 	call_deferred("update_ui")
 	
 	AssetManager.preload_all()
-	SoundManager.play_music("main_theme")
+	SoundManager.play_music(map_def.music)
 	TowerFactory.tower_factory()
 
 func _process(delta: float) -> void:
@@ -89,7 +88,7 @@ func _process(delta: float) -> void:
 	
 	while time_accumulator >= fixed_step:
 		InterpolationManager.save_previous_transforms()
-
+		
 		collision_grid.process(fixed_step)
 		
 		for bloon in bloons:
@@ -139,13 +138,13 @@ func setup_terrain_masks():
 			track_map.draw_to_map(track_sprite.texture, top_left, track_sprite.global_scale)
 			
 		if land_sprite and land_sprite.texture:
-			var top_left = land_sprite.global_position + track_sprite.offset
+			var top_left = land_sprite.global_position + land_sprite.offset
 			if land_sprite.centered:
 				top_left -= (land_sprite.texture.get_size() * land_sprite.global_scale) / 2.0
 			land_map.draw_to_map(land_sprite.texture, top_left, land_sprite.global_scale)
 			
 		if water_sprite and water_sprite.texture:
-			var top_left = water_sprite.global_position + track_sprite.offset
+			var top_left = water_sprite.global_position + water_sprite.offset
 			if water_sprite.centered:
 				top_left -= (water_sprite.texture.get_size() * water_sprite.global_scale) / 2.0
 			water_map.draw_to_map(water_sprite.texture, top_left, water_sprite.global_scale)

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://sx8w5s6s581s"]
 
 [ext_resource type="Script" uid="uid://c11xsvv1pmb1s" path="res://scripts/bloons/bloon.gd" id="1_hw2qi"]
-[ext_resource type="Texture2D" uid="uid://dtxk507vapcw4" path="res://assets/sprites/bloons/normal/1.svg" id="1_mhm5h"]
-[ext_resource type="Texture2D" uid="uid://cfiibrq84ft5x" path="res://assets/sprites/bloons/camo_effect/1.svg" id="3_5u0ic"]
-[ext_resource type="Texture2D" uid="uid://bhbd6gnmru0om" path="res://assets/sprites/bloons/ice_effect/1.svg" id="4_q8o6p"]
-[ext_resource type="Texture2D" uid="uid://bfc1aru6inbkd" path="res://assets/sprites/bloons/glue_effect/1.svg" id="5_p15qu"]
+[ext_resource type="Texture2D" uid="uid://dtxk507vapcw4" path="res://assets/bloons/normal/1.svg" id="1_mhm5h"]
+[ext_resource type="Texture2D" uid="uid://cfiibrq84ft5x" path="res://assets/bloons/camo_effect/1.svg" id="3_5u0ic"]
+[ext_resource type="Texture2D" uid="uid://bhbd6gnmru0om" path="res://assets/bloons/ice_effect/1.svg" id="4_q8o6p"]
+[ext_resource type="Texture2D" uid="uid://bfc1aru6inbkd" path="res://assets/bloons/glue_effect/1.svg" id="5_p15qu"]
 
 [node name="Bloon" type="Node2D" unique_id=1991111488]
 script = ExtResource("1_hw2qi")
