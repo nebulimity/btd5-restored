@@ -17,6 +17,9 @@ var level: Level
 var radius: float = 0.0
 var prev_pos: Vector2
 
+var is_stationary: bool = false
+var locked_target: Bloon = null
+
 @onready var sprite: AnimatedSprite2D = $Visuals/AnimatedSprite2D
 
 func initialize(projectile_def: ProjectileDef) -> void:

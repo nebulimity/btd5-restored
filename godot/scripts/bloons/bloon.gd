@@ -235,6 +235,7 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 	special_flag = false
 	level = self.get_parent().get_parent().get_node("Level") #_p_level
 	collision_cell_index = level.collision_grid.get_cell_index(global_position.x, global_position.y)
+	level.collision_grid.add_to_cell(self, collision_cell_index)
 	
 	id = Bloon.next_id
 	Bloon.next_id += 1
@@ -679,6 +680,14 @@ func update_layer_order() -> void:
 		return
 	
 	visuals.z_index = tile.layer * 10
+
+func get_distance_to_end() -> float:
+	var base = tile.precalculated_distance_to_end if tile.precalculated_distance_to_end != -1 else tile.get_distance_to_end()
+	return base - tile_progress
+
+func get_distance_to_start() -> float:
+	var base = tile.precalculated_distance_to_start if tile.precalculated_distance_to_start != -1 else tile.get_distance_to_start()
+	return base - tile.tile_length + tile_progress
 
 func reset_ice():
 	iced = false

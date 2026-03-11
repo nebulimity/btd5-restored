@@ -125,28 +125,28 @@ func setup() -> void:
 		tile20.next_tiles.append(tile21)
 		tile21.next_tiles.append(tile22)
 		
-		tile1.previous_tile = tile0
-		tile2.previous_tile = tile1
-		tile3.previous_tile = tile2
-		tile4.previous_tile = tile3
-		tile5.previous_tile = tile4
-		tile6.previous_tile = tile5
-		tile7.previous_tile = tile6
-		tile8.previous_tile = tile7
-		tile9.previous_tile = tile8
-		tile10.previous_tile = tile9
-		tile11.previous_tile = tile10
-		tile12.previous_tile = tile11
-		tile13.previous_tile = tile12
-		tile14.previous_tile = tile13
-		tile15.previous_tile = tile14
-		tile16.previous_tile = tile15
-		tile17.previous_tile = tile16
-		tile18.previous_tile = tile17
-		tile19.previous_tile = tile18
-		tile20.previous_tile = tile19
-		tile21.previous_tile = tile20
-		tile22.previous_tile = tile21
+		tile1.previous_tiles.append(tile0)
+		tile2.previous_tiles.append(tile1)
+		tile3.previous_tiles.append(tile2)
+		tile4.previous_tiles.append(tile3)
+		tile5.previous_tiles.append(tile4)
+		tile6.previous_tiles.append(tile5)
+		tile7.previous_tiles.append(tile6)
+		tile8.previous_tiles.append(tile7)
+		tile9.previous_tiles.append(tile8)
+		tile10.previous_tiles.append(tile9)
+		tile11.previous_tiles.append(tile10)
+		tile12.previous_tiles.append(tile11)
+		tile13.previous_tiles.append(tile12)
+		tile14.previous_tiles.append(tile13)
+		tile15.previous_tiles.append(tile14)
+		tile16.previous_tiles.append(tile15)
+		tile17.previous_tiles.append(tile16)
+		tile18.previous_tiles.append(tile17)
+		tile19.previous_tiles.append(tile18)
+		tile20.previous_tiles.append(tile19)
+		tile21.previous_tiles.append(tile20)
+		tile22.previous_tiles.append(tile21)
 		
 		
 		tile_sets.append(tiles)

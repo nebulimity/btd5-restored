@@ -12,6 +12,7 @@ var rotates: bool = true
 var weapons: Array[Weapon] = []
 var weapon_offsets: Array[Vector2] = []
 var target_mask: Array[int] = []
+var shared_camo_vision: bool = false # temp?
 var behavior: TowerBehaviorDef = null
 var is_boat: bool = false
 var is_land: bool = true

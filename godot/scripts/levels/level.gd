@@ -1,7 +1,7 @@
 class_name Level
 extends Node
 
-@export var map_name: String = "MonkeyLane"
+@export var map_name: String = "Archipelago"
 
 var money: int = 650:
 	set(value):
@@ -232,6 +232,7 @@ func _on_tower_placed(tower_type: String, pos: Vector2):
 	placed_towers.append(tower)
 	get_parent().get_node("Towers").add_child(tower)
 	tower.initialize(tower_type, pos, self)
+	tower.root_id = tower_def.id
 	
 	just_placed = true
 	current_place_state = null
@@ -258,3 +259,14 @@ func add_projectile(proj: Projectile) -> void:
 
 func get_bloons() -> Array[Bloon]:
 	return bloons
+
+func get_bloons_in_range(x: float, y: float, radius: float) -> Array[Bloon]:
+	var result: Array[Bloon] = []
+	var radius_sq := radius * radius
+	for bloon: Bloon in bloons:
+		if not bloon.is_in_tunnel():
+			var dx := bloon.global_position.x - x
+			var dy := bloon.global_position.y - y
+			if dx * dx + dy * dy <= radius_sq:
+				result.append(bloon)
+	return result

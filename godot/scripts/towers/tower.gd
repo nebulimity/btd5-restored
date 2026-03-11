@@ -1,6 +1,11 @@
 class_name Tower
 extends Node2D
 
+const TARGET_FIRST: int = 0
+const TARGET_LAST: int = 1
+const TARGET_STRONG: int = 2
+const TARGET_CLOSE: int = 3
+
 var tower_type: String
 var tower_def: TowerDef
 var current_range: float
@@ -8,11 +13,13 @@ var selected: bool
 var orientation: float
 var range_combo: Node2D
 var level: Level
+var root_id: String = ""
 
 var targets_by_priority: Array[Bloon] = []
 var current_target: Bloon = null
-var target_priority: String = "first"
+var target_priority: int = TARGET_FIRST
 var target_mask: int = 0
+var collision_test_cells: Array = []
 
 var in_throw_animation: bool = false
 var has_fired: bool = false
@@ -100,6 +107,7 @@ func initialize(type: String, pos: Vector2, lvl: Level) -> void:
 		reload_timers.append(timer)
 	
 	#InterpolationManager.register(self)
+	level.collision_grid.register_tower(self)
 
 func process(delta: float) -> void:
 	target_search_timer += delta
@@ -164,11 +172,6 @@ func ready_fire() -> void:
 				if target_invalid:
 					current_target = null
 					
-					if level.collision_grid:
-						level.collision_grid.populate_tower_targets(self)
-						if targets_by_priority.size() > 1:
-							level.collision_grid.sort_targets_by_priority(target_priority, targets_by_priority, global_position)
-					
 					if targets_by_priority.size() > 0:
 						current_target = targets_by_priority.back()
 						target_found_this_frame = true
@@ -219,7 +222,7 @@ func find_targets() -> void:
 	if not level or not level.collision_grid:
 		return
 	
-	level.collision_grid.populate_tower_targets(self)
+	level.collision_grid.update_tower_targets(self)
 
 func show_range() -> void:
 	range_combo.visible = true
@@ -243,3 +246,6 @@ func select():
 func deselect():
 	selected = false
 	range_combo.visible = false
+
+func _exit_tree() -> void:
+	level.collision_grid.deregister_tower(self)
