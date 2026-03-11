@@ -1,7 +1,7 @@
 class_name Level
 extends Node
 
-@export var map_name: String = "Archipelago"
+@export var map_name: String = "MonkeyLane"
 
 var money: int = 650:
 	set(value):
