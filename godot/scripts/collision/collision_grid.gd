@@ -235,7 +235,10 @@ func _update_camo_tower_targets(tower: Tower) -> void:
 		tower.targets_by_priority.append(b)
 
 func get_targets(pos: Vector2, range_val: float, mask: int, result_list: Array, cell_list: Array) -> void:
-	for bloon: Bloon in cell_list:
+	for entry in cell_list:
+		if not is_instance_valid(entry):
+			continue
+		var bloon: Bloon = entry
 		if (mask & bloon.immunity) != 0:
 			continue
 		if bloon.bloon_type == -1:
@@ -306,7 +309,10 @@ func _process_projectile_collisions(delta: float) -> void:
 	if not level:
 		return
 	
-	for proj: Projectile in level.projectiles:
+	var projs: Array[Projectile] = []
+	projs.assign(level.projectiles)
+	
+	for proj: Projectile in projs:
 		if not is_instance_valid(proj):
 			continue
 		if proj.pierce <= 0 or proj.def == null:
@@ -338,12 +344,15 @@ func _process_projectile_collisions(delta: float) -> void:
 				candidate_cells = get_cell_and_adjacent_cells(proj.global_position.x, proj.global_position.y)
 		else:
 			candidate_cells = get_cells_in_range(proj.global_position.x, proj.global_position.y, radius)
-
+		
+		var candidates: Array = []
 		for cell_list in candidate_cells:
-			for bloon: Bloon in cell_list:
+			for entry in cell_list:
+				if not is_instance_valid(entry):
+					continue
+				var bloon: Bloon = entry
 				if bloon.bloon_type == -1:
 					continue
-				
 				if bloon.is_camo:
 					if proj.owner_tower != null and proj.owner_tower.tower_def != null:
 						if not (bloon.is_in_camo_vision and proj.owner_tower.tower_def.shared_camo_vision):
@@ -351,31 +360,29 @@ func _process_projectile_collisions(delta: float) -> void:
 								continue
 				elif (proj.effect_mask & bloon.immunity) != 0:
 					continue
-				
 				if bloon.is_in_tunnel():
 					continue
 				if bloon.hit_previously(proj):
 					continue
-				
 				if proj.locked_target != null and proj.locked_target.bloon_type != -1 and proj.locked_target != bloon:
 					continue
-				
-				_u.x = proj.global_position.x
-				_u.y = proj.global_position.y
-				_v.x = proj.velocity.x * delta
-				_v.y = proj.velocity.y * delta
-				_c.x = bloon.global_position.x
-				_c.y = bloon.global_position.y
-				
-				if _test_circle_circle(_u, radius + speed, _c, bloon.radius):
-					if _test_circle_circle(_u, radius, _c, bloon.radius) or _test_circle_line(_u, _v, _c, bloon.radius):
-						bloon.handle_collision(proj)
-						proj.handle_collision()
-						if proj.pierce <= 0 or proj.def == null:
-							break
-			
-			if not is_instance_valid(proj) or proj.pierce <= 0 or proj.def == null:
-				break
+				candidates.append(bloon)
+		
+		for bloon: Bloon in candidates:
+			if not is_instance_valid(bloon) or bloon.bloon_type == -1:
+				continue
+			_u.x = proj.global_position.x
+			_u.y = proj.global_position.y
+			_v.x = proj.velocity.x * delta
+			_v.y = proj.velocity.y * delta
+			_c.x = bloon.global_position.x
+			_c.y = bloon.global_position.y
+			if _test_circle_circle(_u, radius + speed, _c, bloon.radius):
+				if _test_circle_circle(_u, radius, _c, bloon.radius) or _test_circle_line(_u, _v, _c, bloon.radius):
+					bloon.handle_collision(proj)
+					proj.handle_collision()
+					if proj.pierce <= 0 or proj.def == null:
+						break
 
 func _circle_intersects_rect(cx: float, cy: float, cr: float,
 		rx: float, ry: float, rw: float, rh: float) -> bool:

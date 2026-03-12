@@ -234,6 +234,11 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 	was_regenerated = false
 	special_flag = false
 	level = self.get_parent().get_parent().get_node("Level") #_p_level
+	
+	if tile:
+		tile.update_bloon_position(self)
+		update_layer_order()
+
 	collision_cell_index = level.collision_grid.get_cell_index(global_position.x, global_position.y)
 	level.collision_grid.add_to_cell(self, collision_cell_index)
 	
@@ -256,10 +261,6 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 			max_health = 1
 	
 	health = max_health
-	
-	if tile:
-		tile.update_bloon_position(self)
-		update_layer_order()
 	
 	set_type(p_type)
 	update_sprite()
@@ -624,11 +625,6 @@ func handle_collision(proj: Projectile) -> void:
 			else:
 				damage(int(final_damage), 1, tower, damage_effect.show_pop)
 
-func destroy() -> void:
-	bloon_type = -1 as BloonType
-	bloon_removed.emit()
-	queue_free()
-
 func calculate_immunity() -> void:
 	if bloon_type == -1:
 		return
@@ -756,5 +752,10 @@ func update_sprite() -> void:
 
 func _exit_tree() -> void:
 	InterpolationManager.unregister(self)
+
+func destroy() -> void:
 	if level and level.collision_grid:
 		level.collision_grid.remove_from_cell(self, collision_cell_index)
+	bloon_type = -1 as BloonType
+	bloon_removed.emit()
+	queue_free()
