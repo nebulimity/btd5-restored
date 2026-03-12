@@ -650,8 +650,8 @@ func _unwind_progress(p_tile: Tile, p_progress: float) -> Dictionary:
 	var current_tile = p_tile
 	var current_progress = p_progress
 	
-	while current_progress < 0.0 and current_tile.previous_tile != null:
-		current_tile = current_tile.previous_tile
+	while current_progress < 0.0 and current_tile.previous_tiles.size() > 0:
+		current_tile = current_tile.previous_tiles[0]
 		current_progress += current_tile.tile_length
 	
 	if current_progress < 0.0:
