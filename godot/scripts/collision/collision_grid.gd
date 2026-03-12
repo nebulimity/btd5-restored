@@ -329,8 +329,8 @@ func _process_projectile_collisions(delta: float) -> void:
 				if idx_cur != -1:
 					_candidate_cells_scratch.append(cells[idx_cur])
 				var idx_next = get_cell_index(
-					proj.global_position.x + proj.velocity.x,
-					proj.global_position.y + proj.velocity.y)
+					proj.global_position.x + proj.velocity.x * delta,
+					proj.global_position.y + proj.velocity.y * delta)
 				if idx_next != -1 and idx_next != idx_cur:
 					_candidate_cells_scratch.append(cells[idx_next])
 				candidate_cells = _candidate_cells_scratch
@@ -339,7 +339,6 @@ func _process_projectile_collisions(delta: float) -> void:
 		else:
 			candidate_cells = get_cells_in_range(proj.global_position.x, proj.global_position.y, radius)
 
-		var broke_outer = false
 		for cell_list in candidate_cells:
 			for bloon: Bloon in cell_list:
 				if bloon.bloon_type == -1:
@@ -347,7 +346,7 @@ func _process_projectile_collisions(delta: float) -> void:
 				
 				if bloon.is_camo:
 					if proj.owner_tower != null and proj.owner_tower.tower_def != null:
-						if not (bloon.is_in_camo_vision and proj.owner_tower.tower_def.can_detect_camo):
+						if not (bloon.is_in_camo_vision and proj.owner_tower.tower_def.shared_camo_vision):
 							if (proj.effect_mask & bloon.immunity) != 0:
 								continue
 				elif (proj.effect_mask & bloon.immunity) != 0:
@@ -369,14 +368,13 @@ func _process_projectile_collisions(delta: float) -> void:
 				_c.y = bloon.global_position.y
 				
 				if _test_circle_circle(_u, radius + speed, _c, bloon.radius):
-					if _test_circle_circle(_u, radius, _c, bloon.radius) or _test_circle_line(_u, _v, _c, bloon.radius + radius):
+					if _test_circle_circle(_u, radius, _c, bloon.radius) or _test_circle_line(_u, _v, _c, bloon.radius):
 						bloon.handle_collision(proj)
 						proj.handle_collision()
 						if proj.pierce <= 0 or proj.def == null:
 							break
 			
 			if not is_instance_valid(proj) or proj.pierce <= 0 or proj.def == null:
-				broke_outer = true
 				break
 
 func _circle_intersects_rect(cx: float, cy: float, cr: float,
