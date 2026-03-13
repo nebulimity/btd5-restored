@@ -59,14 +59,13 @@ func _ready() -> void:
 	map = map_scene.instantiate()
 	
 	collision_grid = CollisionGrid.new(self)
-	add_child(collision_grid)
 	
-	neutral_state = NeutralState.new()
+	neutral_state = NeutralState.new(self)
 	add_child(neutral_state)
 	
 	get_parent().add_child.call_deferred(map)
 	
-	spawner.setup(map_def)
+	spawner.setup(map_def, self)
 	
 	setup_terrain_masks()
 	
@@ -159,18 +158,6 @@ func _on_play_button_pressed():
 func start_round(round_number: int):
 	spawner.start_round(round_number - 1)
 
-func _on_bloon_spawned(node: Node):
-	if node is Bloon:
-		active_bloons += 1
-		bloons.append(node)
-		node.bloon_removed.connect(_on_bloon_removed.bind(node))
-
-func _on_bloon_removed(bloon: Bloon = null):
-	active_bloons -= 1
-	if bloon and bloon in bloons:
-		bloons.erase(bloon)
-	check_round_complete()
-
 func check_round_complete():
 	if active_bloons == 0 and spawner.wave_set.current_wave != null and spawner.wave_set.current_wave.is_complete():
 		var round_bonus = 100 + (current_round - 1)
@@ -253,20 +240,40 @@ func update_selection(new_tower: Node2D) -> void:
 	else:
 		selected_tower = null
 
+func _on_bloon_spawned(node: Node):
+	if node is Bloon:
+		active_bloons += 1
+		bloons.append(node)
+		node.bloon_removed.connect(_on_bloon_removed.bind(node))
+
+func _on_bloon_removed(bloon: Bloon = null):
+	active_bloons -= 1
+	
+	if bloon.bloon_removed.is_connected(_on_bloon_removed):
+		bloon.bloon_removed.disconnect(_on_bloon_removed)
+	if bloon and bloon in bloons:
+		bloons.erase(bloon)
+	
+	check_round_complete()
+
 func add_projectile(proj: Projectile) -> void:
 	projectiles.append(proj)
 	get_parent().add_child(proj)
+
+func remove_projectile(proj: Projectile) -> void:
+	if proj and proj in projectiles:
+		projectiles.erase(proj)
 
 func get_bloons() -> Array[Bloon]:
 	return bloons
 
 func get_bloons_in_range(x: float, y: float, radius: float) -> Array[Bloon]:
 	var result: Array[Bloon] = []
-	var radius_sq := radius * radius
+	var radius_sq = radius * radius
 	for bloon: Bloon in bloons:
 		if not bloon.is_in_tunnel():
-			var dx := bloon.global_position.x - x
-			var dy := bloon.global_position.y - y
+			var dx = bloon.global_position.x - x
+			var dy = bloon.global_position.y - y
 			if dx * dx + dy * dy <= radius_sq:
 				result.append(bloon)
 	return result

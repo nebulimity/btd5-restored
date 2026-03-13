@@ -8,6 +8,7 @@ script = ExtResource("1_2lp3u")
 
 [node name="Visuals" type="Node2D" parent="." unique_id=947081775]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1764323492]
+[node name="FixedAnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1790893094]
 z_index = 3
 script = ExtResource("2_3jjhh")
+metadata/_custom_type_script = "uid://bjp8ype06g7as"

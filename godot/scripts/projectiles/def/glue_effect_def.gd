@@ -1,5 +1,5 @@
 class_name GlueEffectDef
-extends Node
+extends RefCounted
 
 var lifespan: float = 0.0
 var speed_scale: float = 0.0

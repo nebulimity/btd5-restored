@@ -729,7 +729,7 @@ texture = ExtResource("1_w4170")
 centered = false
 offset = Vector2(-195.66, 0)
 
-[node name="WindmillShadow" type="AnimatedSprite2D" parent="." unique_id=10928452]
+[node name="WindmillShadow" type="AnimatedSprite2D" parent="." unique_id=2114755469]
 sprite_frames = SubResource("SpriteFrames_jaofu")
 animation = &"spin"
 autoplay = "spin"
@@ -738,13 +738,14 @@ frame_progress = 0.60019505
 centered = false
 offset = Vector2(-23, 9.55)
 script = ExtResource("69_tax5y")
+metadata/_custom_type_script = "uid://bjp8ype06g7as"
 
 [node name="Windmill" type="Sprite2D" parent="." unique_id=32254536]
 position = Vector2(-5.25, -15.1)
 texture = ExtResource("37_a38uq")
 centered = false
 
-[node name="WindmillRotor" type="AnimatedSprite2D" parent="." unique_id=761124389]
+[node name="WindmillRotor" type="AnimatedSprite2D" parent="." unique_id=253421154]
 z_index = 4
 position = Vector2(-16, 1)
 sprite_frames = SubResource("SpriteFrames_0goub")
@@ -755,6 +756,7 @@ frame_progress = 0.74423957
 centered = false
 offset = Vector2(-34.25, -80.35)
 script = ExtResource("69_tax5y")
+metadata/_custom_type_script = "uid://bjp8ype06g7as"
 
 [node name="TunnelCover" type="Sprite2D" parent="." unique_id=1414076538]
 position = Vector2(-54, 0)

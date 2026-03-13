@@ -60,7 +60,7 @@ func execute(tower: Tower, source: Node2D, target: Node2D, weapon_offset: Vector
 		angle_step = angle / (count - 1)
 	
 	for i in range(count):
-		var proj = preload("res://scenes/entities/projectile.tscn").instantiate() as Projectile
+		var proj = Pool.get_obj(AssetManager.grab("projectile")) as Projectile
 		proj.initialize(projectile)
 		proj.owner_tower = tower
 		proj.position = source.global_position

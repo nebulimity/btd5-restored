@@ -8,7 +8,10 @@ var mouse_pos: Vector2 = Vector2(-1, -1)
 var last_mouse: Vector2 = Vector2(-1, -1)
 var highlighted_tower: Node2D = null
 
-@onready var level: Level = get_parent()
+var level: Level = null
+
+func _init(p_level) -> void:
+	level = p_level
 
 func _process(_delta: float) -> void:
 	mouse_pos = get_global_mouse_position()

@@ -210,11 +210,11 @@ var spawn_time: float = 0.0
 var was_regenerated: bool = false
 var special_flag: bool = false
 
-@onready var visuals: Node2D = $Visuals
-@onready var sprite: Sprite2D = $Visuals/Sprite2D
-@onready var camo_effect: Sprite2D = $Visuals/CamoEffect
-@onready var ice_effect: Sprite2D = $Visuals/IceEffect
-@onready var glue_effect: Sprite2D = $Visuals/GlueEffect
+var visuals: Node2D = null
+var sprite: Sprite2D = null
+var camo_effect: Sprite2D = null
+var ice_effect: Sprite2D = null
+var glue_effect: Sprite2D = null
 
 signal bloon_removed
 signal bloon_popped
@@ -222,28 +222,45 @@ static var next_id: int = 0
 var id: int = 0
 
 func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0, p_is_regen: bool = false, p_is_camo: bool = false, p_spawn_order: int = 0, _p_level: Level = null):
+	id = Bloon.next_id
+	Bloon.next_id += 1
+	
+	spawn_time = p_spawn_order
+	overall_progress = 0.0
+	was_regenerated = false
+	special_flag = false
+	was_white = false
+	parentIDs.clear()
+	
+	reset_status_effects()
+	
 	tile = start_tile
 	tile_progress = start_progress
-	overall_progress = 0.0
+	
 	is_camo = p_is_camo
 	is_regen = p_is_regen
 	regen_ceiling = p_type
 	spawn_order_index = p_spawn_order
-
-	spawn_time = p_spawn_order
-	was_regenerated = false
-	special_flag = false
-	level = self.get_parent().get_parent().get_node("Level") #_p_level
+	
+	level = _p_level
+	
+	if visuals == null:
+		visuals = get_node("Visuals")
+	if sprite == null:
+		sprite = get_node("Visuals/Sprite2D")
+	if camo_effect == null:
+		camo_effect = get_node("Visuals/CamoEffect")
+	if ice_effect == null:
+		ice_effect = get_node("Visuals/IceEffect")
+	if glue_effect == null:
+		glue_effect = get_node("Visuals/GlueEffect")
 	
 	if tile:
 		tile.update_bloon_position(self)
 		update_layer_order()
-
+	
 	collision_cell_index = level.collision_grid.get_cell_index(global_position.x, global_position.y)
 	level.collision_grid.add_to_cell(self, collision_cell_index)
-	
-	id = Bloon.next_id
-	Bloon.next_id += 1
 	
 	cash_awarded.resize(BloonType.size())
 	cash_awarded.fill(false)
@@ -259,12 +276,23 @@ func initialize(p_type: BloonType, start_tile: Tile, start_progress: float = 0.0
 			max_health = 4000
 		_:
 			max_health = 1
-	
+ 	
 	health = max_health
-	
+ 	
 	set_type(p_type)
 	update_sprite()
 	InterpolationManager.register(self)
+ 
+func reset_status_effects() -> void:
+	reset_ice()
+	permaFrostSpeedScale = 1.0
+	reset_glue()
+	stunned = false
+	stunCountDown = 0.0
+	burning = false
+	burnCountDown = 0.0
+	burnInterval = 0.0
+	burnLifeSpan = 0.0
 
 func process(delta: float) -> void:
 	if tile == null or bloon_type == -1:
@@ -313,7 +341,6 @@ func create_children(amount: int, is_zebra: bool) -> void:
 	if amount <= 0:
 		return
 	
-	var bloon_scene = preload("res://scenes/entities/bloon.tscn")
 	var parent_node = get_parent()
 	var base_progress = tile_progress
 	var progress_offset = min(60.0 / float(amount), 20.0)
@@ -323,7 +350,7 @@ func create_children(amount: int, is_zebra: bool) -> void:
 		var child_progress = base_progress - offset_progress
 		var unwound = _unwind_progress(tile, child_progress)
 		
-		var inst = bloon_scene.instantiate() as Bloon
+		var inst = Pool.get_obj(AssetManager.grab("bloon")) as Bloon
 		
 		var child_spawn_order = spawn_order_index + spawn_order_offsets[bloon_type] * i
 		if was_regenerated or child_spawn_order < 0:
@@ -337,7 +364,6 @@ func create_children(amount: int, is_zebra: bool) -> void:
 		parent_node.add_child(inst)
 		
 		inst.initialize(child_type, unwound.tile, unwound.progress, is_regen, is_camo, child_spawn_order, level)
-		#inst.initialize(child_type, tile, base_progress - offset_progress, is_regen, is_camo, child_spawn_order, level)
 		
 		inst.spawn_time = spawn_time
 		if was_regenerated or special_flag:
@@ -428,7 +454,7 @@ func degrade(layers: int, _cash_scale: float, tower: Tower, show_pop) -> void:
 		level.bursts_this_process += 1
 		SoundManager.play("pop_" + str(randi_range(1, 4)))
 		
-		var burst = Burst.new()
+		var burst = Pool.get_obj(AssetManager.grab("burst")) as Burst
 		burst.initialize()
 		burst.position = position
 		level.add_child(burst)
@@ -752,10 +778,15 @@ func update_sprite() -> void:
 
 func _exit_tree() -> void:
 	InterpolationManager.unregister(self)
-
+ 
 func destroy() -> void:
+	if bloon_type == BloonType.INVALID:
+		return
+ 	
 	if level and level.collision_grid:
 		level.collision_grid.remove_from_cell(self, collision_cell_index)
-	bloon_type = -1 as BloonType
+ 	
+	bloon_type = BloonType.INVALID
 	bloon_removed.emit()
-	queue_free()
+ 	
+	Pool.release(self)

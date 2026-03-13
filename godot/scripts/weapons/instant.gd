@@ -46,12 +46,12 @@ func execute(tower: Tower, _source: Node2D, _target_arg: Node2D, _weapon_offset:
 		tower.in_throw_animation = false
 		return
 	
-	var proj = preload("res://scenes/entities/projectile.tscn").instantiate() as Projectile
+	var proj = Pool.get_obj(AssetManager.grab("projectile")) as Projectile
 	proj.initialize(projectile)
 	proj.owner_tower = tower
 	
 	final_target.handle_collision(proj)
-	proj.queue_free()
+	Pool.release(proj)
 	
 	var direction = final_target.global_position - tower.global_position
 	tower.rotation = direction.angle() + deg_to_rad(90.0)

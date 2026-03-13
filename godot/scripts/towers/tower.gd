@@ -25,15 +25,15 @@ var in_throw_animation: bool = false
 var has_fired: bool = false
 
 var reload_timers: Array[CustomTimer] = []
-var addon_clips: Array[AnimatedSprite2D] = []
+var addon_clips: Array[FixedAnimatedSprite2D] = []
 
 var throw_sequence: int = 0 
 
 var target_search_timer: float = 0.0
 
 @onready var visuals: Node2D = $Visuals
-@onready var sprite: AnimatedSprite2D = $Visuals/AnimatedSprite2D
-@onready var outline: Sprite2D = $Visuals/AnimatedSprite2D/Outline
+@onready var sprite: FixedAnimatedSprite2D = $Visuals/FixedAnimatedSprite2D
+@onready var outline: Sprite2D = $Visuals/FixedAnimatedSprite2D/Outline
 
 func initialize(type: String, pos: Vector2, lvl: Level) -> void:
 	tower_type = type
@@ -61,11 +61,10 @@ func initialize(type: String, pos: Vector2, lvl: Level) -> void:
 	addon_clips.clear()
 	if tower_def.display_addons:
 		for clip in tower_def.display_addons:
-			var addon = AnimatedSprite2D.new()
+			var addon = FixedAnimatedSprite2D.new()
 			addon.offset = clip.offset
-			addon.centered = false
+			addon.centered = clip.centered
 			addon.z_index = clip.z
-			addon.set_script(load("res://scripts/utils/animation/animated_sprite_2d.gd"))
 			
 			var addon_frames = SpriteFrames.new()
 			addon_frames.remove_animation("default")

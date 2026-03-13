@@ -20,16 +20,24 @@ var prev_pos: Vector2
 var is_stationary: bool = false
 var locked_target: Bloon = null
 
-@onready var sprite: AnimatedSprite2D = $Visuals/AnimatedSprite2D
+var sprite: FixedAnimatedSprite2D = null
 
 func initialize(projectile_def: ProjectileDef) -> void:
 	def = projectile_def
 	pierce = def.pierce
 	radius = def.radius
 	damage_effect = def.damage_effect
+	effect_mask = 0
 	hit_bloons.clear()
-
-func _ready() -> void:
+	velocity = Vector2.ZERO
+	target = null
+	owner_tower = null
+	is_stationary = false
+	locked_target = null
+	
+	if sprite == null:
+		sprite = get_node("Visuals/FixedAnimatedSprite2D")
+	
 	var sprite_frames = SpriteFrames.new()
 	sprite_frames.remove_animation("default")
 	sprite_frames.add_animation("default")
@@ -41,16 +49,22 @@ func _ready() -> void:
 	
 	sprite.sprite_frames = sprite_frames
 	sprite.play()
-	
-	prev_pos = global_position
-	
+
 	if def.effect_mask:
 		for mask in def.effect_mask:
 			effect_mask |= mask
-	
+
+func _enter_tree() -> void:
+	prev_pos = global_position
 	InterpolationManager.register(self)
 
+func _exit_tree() -> void:
+	InterpolationManager.unregister(self)
+
 func process(delta: float) -> void:
+	if def == null:
+		return
+	
 	lifespan -= delta
 	
 	prev_pos = global_position
@@ -80,15 +94,19 @@ func handle_collision() -> void:
 		destroy()
 
 func destroy() -> void:
-	InterpolationManager.unregister(self)
+	if def == null:
+		return
 	
-	if sprite.is_playing():
+	if sprite and sprite.is_playing():
 		if def.display == "MediumExplosion" or def.display == "IceBurst":
 			var clip: TrailClip = TrailClip.new()
 			clip.initialize(sprite.sprite_frames, sprite.frame)
 			clip.position = position
 			clip.rotation = rotation
-			
 			get_parent().add_child(clip)
-		
-	queue_free()
+	
+	if owner_tower and owner_tower.level:
+		owner_tower.level.remove_projectile(self)
+	
+	def = null
+	Pool.release(self)

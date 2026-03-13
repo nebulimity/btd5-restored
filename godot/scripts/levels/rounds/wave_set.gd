@@ -8,6 +8,8 @@ var round_factory: RoundFactory
 var spawner_node: Node
 var map_def: LevelDef
 
+var level: Level = null
+
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 signal rbe_changed(new_rbe: int)
@@ -18,11 +20,12 @@ func _ready():
 func initialize_from_rounds_def(p_rounds_def: Array[RoundFactory.RoundDef]):
 	rounds_def = p_rounds_def
 
-func setup(p_spawner_node: Node, p_map_def: LevelDef, p_round_factory: RoundFactory):
+func setup(p_spawner_node: Node, p_map_def: LevelDef, p_round_factory: RoundFactory, p_level: Level):
 	spawner_node = p_spawner_node
 	map_def = p_map_def
 	round_factory = p_round_factory
 	rounds_def = []
+	level = p_level
 	for i in range(round_factory.get_total_rounds()):
 		rounds_def.append(round_factory.get_round(i))
 
@@ -33,7 +36,7 @@ func start_wave(round_number: int) -> void:
 		return
 	
 	if round_number < rounds_def.size():
-		current_wave = Wave.new()
+		current_wave = Wave.new(level)
 		current_wave.create_from_round_def(rounds_def[round_number])
 	else:
 		current_wave = create_freeplay_wave(round_number)
@@ -64,7 +67,7 @@ func get_current_wave_length() -> float:
 	return 0.0
 
 func create_freeplay_wave(round_number: int) -> Wave:
-	var wave = Wave.new()
+	var wave = Wave.new(level)
 	var rounds_past_85 = round_number - 85
 	
 	var total_waves = get_total_waves(rounds_past_85)

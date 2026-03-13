@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://fv772o3iq8om"]
+
+[ext_resource type="Texture2D" uid="uid://dg5k1wc6umh7r" path="res://assets/bloons/burst.svg" id="1_bivtm"]
+[ext_resource type="Script" uid="uid://c42iofo8hcfp6" path="res://scripts/effects/burst.gd" id="1_p2f66"]
+
+[node name="Burst" type="Node2D" unique_id=1434494466]
+script = ExtResource("1_p2f66")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1934625019]
+texture = ExtResource("1_bivtm")

@@ -1,5 +1,5 @@
 class_name CollisionGrid
-extends Node
+extends RefCounted
 
 const CELL_SIZE: int = 40
 const GRID_OFFSET: int = -60

@@ -27,7 +27,7 @@ func execute(tower: Tower, source: Node2D, _target: Node2D, _weapon_offset: Vect
 	if not projectile:
 		return
 	
-	var proj = preload("res://scenes/entities/projectile.tscn").instantiate() as Projectile
+	var proj = Pool.get_obj(AssetManager.grab("projectile")) as Projectile
 	proj.initialize(projectile)
 	proj.owner_tower = tower
 	proj.position = source.global_position

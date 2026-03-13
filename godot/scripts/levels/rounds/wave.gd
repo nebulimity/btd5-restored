@@ -37,10 +37,15 @@ var rbe: int = 0
 var rbe_density: float = 0.0
 var wave_length: float = 0.0
 
+var level: Level = null
+
 static func calculate_spawn_interval(round_number: int) -> float:
 	if round_number > 40:
 		return 1.0 - 0.4 - 0.0015 * round_number
 	return 1.0 - 0.01 * round_number
+
+func _init(p_level) -> void:
+	level = p_level
 
 func create_from_round_def(round_def: RoundFactory.RoundDef) -> void:
 	for group in round_def.groups:
@@ -94,11 +99,10 @@ func spawn_bloon(spawner: SpawnerInstance, time_offset: float, spawner_node: Nod
 	var initial_progress = time_offset * Bloon.speed_multiplier_by_type[spawner.type_index] * Bloon.BASE_SPEED
 	var spawn_order = spawner.spawn_order_offset + Bloon.spawn_order_offsets[spawner.type_index] * spawner.current_index
 	
-	var bloon_scene = preload("res://scenes/entities/bloon.tscn")
-	var bloon = bloon_scene.instantiate() as Bloon
+	var bloon = Pool.get_obj(AssetManager.grab("bloon")) as Bloon
+	bloon.initialize(spawner.type_index, start_tile, initial_progress, spawner.regen, spawner.camo, spawn_order, level)
 	spawner_node.add_child(bloon)
 	bloon.get_parent().move_child(bloon, 0)
-	bloon.initialize(spawner.type_index, start_tile, initial_progress, spawner.regen, spawner.camo, spawn_order)
 
 func is_complete() -> bool:
 	for spawner in active_spawners:

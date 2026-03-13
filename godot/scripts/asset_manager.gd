@@ -4,6 +4,11 @@ var assets = {}
 
 func preload_all() -> void:
 	assets = {
+		"bloon": preload("res://scenes/entities/bloon.tscn"),
+		"tower": preload("res://scenes/entities/tower.tscn"),
+		"projectile": preload("res://scenes/entities/projectile.tscn"),
+		"burst": preload("res://scenes/entities/burst.tscn"),
+		
 		"Dart": load_animation("res://assets/projectiles/dart/"),
 		"Tack": load_animation("res://assets/projectiles/tack/"),
 		"Boomerang": load_animation("res://assets/projectiles/boomerang/"),

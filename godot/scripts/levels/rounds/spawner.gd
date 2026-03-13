@@ -22,9 +22,10 @@ func _ready():
 func _on_wave_set_rbe_changed(new_rbe: int):
 	rbe_changed.emit(new_rbe)
 
-func setup(p_map_def: LevelDef):
+func setup(p_map_def: LevelDef, p_level: Level):
 	map_def = p_map_def
-	wave_set.setup(self, map_def, round_factory)
+	level = p_level
+	wave_set.setup(self, map_def, round_factory, level)
 
 func start_round(round_number: int):
 	wave_set.start_wave(round_number)
@@ -57,8 +58,8 @@ func _process(_delta: float) -> void:
 
 func spawn_bloon(type: int, camo: bool = false, regen: bool = false):
 	var start_tile = map_def.get_start_tile()
-
-	var bloon = wave_set.get_bloon_scene().instantiate() as Bloon
+	
+	var bloon = Pool.get_obj(AssetManager.grab("bloon")) as Bloon
+	bloon.initialize(type, start_tile, 0.0, regen, camo, 0, level)
 	add_child(bloon)
 	bloon.get_parent().move_child(bloon, 0)
-	bloon.initialize(type, start_tile, 0.0, regen, camo)

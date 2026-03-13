@@ -32,7 +32,7 @@ func execute(tower: Tower, source: Node2D, target: Node2D, _weapon_offset: Vecto
 	if not projectile:
 		return
 	
-	var proj = preload("res://scenes/entities/projectile.tscn").instantiate() as Projectile
+	var proj = Pool.get_obj(AssetManager.grab("projectile")) as Projectile
 	proj.initialize(projectile)
 	proj.owner_tower = tower
 	proj.position = source.global_position
@@ -69,7 +69,7 @@ func execute(tower: Tower, source: Node2D, target: Node2D, _weapon_offset: Vecto
 			spawn_offset.y = -70.0 if fire_side == fire_from_left else 70.0
 			spawn_offset = spawn_offset.rotated(tower.rotation + deg_to_rad(90.0))
 	else:
-		var shoot_angle = tower.rotation - deg_to_rad(90.0)
+		var shoot_angle = tower.rotation - deg_to_rad(180.0)
 		proj.velocity = Vector2(cos(shoot_angle), sin(shoot_angle)) * power
 	
 	proj.position = source.global_position + spawn_offset

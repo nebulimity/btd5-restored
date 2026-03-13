@@ -16,11 +16,12 @@ script = ExtResource("1_lq4cm")
 
 [node name="Visuals" type="Node2D" parent="." unique_id=473664916]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1508397734]
+[node name="FixedAnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=2030970066]
 z_index = 2
 script = ExtResource("2_qregn")
+metadata/_custom_type_script = "uid://bjp8ype06g7as"
 
-[node name="Outline" type="Sprite2D" parent="Visuals/AnimatedSprite2D" unique_id=1423680459]
+[node name="Outline" type="Sprite2D" parent="Visuals/FixedAnimatedSprite2D" unique_id=1423680459]
 visible = false
 z_index = 100
 material = SubResource("ShaderMaterial_lq4cm")
