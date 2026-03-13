@@ -6,5 +6,5 @@ document.getElementById("load-game-btn").addEventListener("click", function () {
   container.style.borderRadius = "0px";
 
   container.innerHTML =
-    '<iframe src="game/BTD5 Restored.html" frameborder="0" width="800px" height="600px" allowfullscreen allow="fullscreen"></iframe>';
+    '<iframe src="game/btd5-restored.html" frameborder="0" width="800px" height="600px" allowfullscreen allow="fullscreen"></iframe>';
 });
