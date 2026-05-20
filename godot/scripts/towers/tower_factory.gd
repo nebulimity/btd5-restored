@@ -12,7 +12,7 @@ func tower_factory():
 	var dart = Single.new().SetRange(161).SetPower(805).SetReloadTime(0.9).SetProjectile(dart_projectile)
 	var tack_projectile = ProjectileDef.new().Display("Tack").Pierce(1).DamageEffect(DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false))
 	var tack = Circular.new().SetRange(70).SetPower(350).SetReloadTime(1.66).SetProjectile(tack_projectile).SetCount(8)
-	var sniper_projectile = ProjectileDef.new().Display("Dart").DamageEffect(DamageEffectDef.new().Damage(2).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false))
+	var sniper_projectile = ProjectileDef.new().Display("Dart").DamageEffect(DamageEffectDef.new().Damage(2).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(true))
 	var sniper = Instant.new().SetReloadTime(2.2).SetProjectile(sniper_projectile)
 	var boomerang_projectile = ProjectileDef.new().Display("Boomerang").Pierce(3).Radius(10).DamageEffect(DamageEffectDef.new().Damage(1).CantBreak([Bloon.BloonType.LEAD]).CanBreakIce(false)).Behavior(ProjectileBehaviorDef.new().Process(path_behavior))
 	var boomerang = Spread.new().SetRange(520).SetPower(700).SetReloadTime(1.33).SetProjectile(boomerang_projectile).SetCount(1).SetAngle(0.5)
