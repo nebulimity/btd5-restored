@@ -9,7 +9,7 @@ The main goal of this project is to bring back the old vector artwork that was s
 
 ## Why rewrite?
 
-The GDScript version had performance issues. So much so, that it actually ran worse than the flash version (in some scenarios). Sounds crazy, but the simulation (collision grid, targeting and sorting) is too slow in GDScript during bloon rushes, especially with ceramics. AS3 in the flash version can do this faster.
+The GDScript version had performance issues. So much so, that it actually ran worse than the flash version (in some scenarios). Sounds crazy, but the simulation (collision grid, targeting and sorting) is too slow in GDScript during bloon rushes, especially with ceramics. ActionScript3 (what flash uses) doesn't have this issue, and neither does C#, so that's why I'm rewriting it.
 
 ## Building
 
