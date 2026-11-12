@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/right_leg_1.svg-9a460bbc0bc99f8c533c4bb91022f
 base_scale=1.0
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true

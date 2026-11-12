@@ -14,25 +14,21 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="BTD5 Restored"
+config/name="BTD5 Restored CSharp"
 run/main_scene="uid://di2rdjwkum74f"
-config/features=PackedStringArray("4.6")
+config/features=PackedStringArray("4.7", "C#")
 boot_splash/image="uid://dpyimxjhceom3"
 config/icon="res://icon.svg"
-
-[autoload]
-
-SoundManager="*res://scripts/sound/sound_manager.gd"
-AssetManager="*res://scripts/asset_manager.gd"
-TowerFactory="*res://scripts/towers/tower_factory.gd"
-TimeManager="*uid://5d7tly1ucmlt"
-InterpolationManager="*uid://ch5d4sp77wsms"
 
 [display]
 
 window/size/viewport_width=800
 window/size/viewport_height=600
 window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="BTD5 Restored CSharp"
 
 [editor_plugins]
 

@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/beak_1.svg-c4ebfbe49aa658ec9f6782ee31a23210.d
 base_scale=1.0
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true

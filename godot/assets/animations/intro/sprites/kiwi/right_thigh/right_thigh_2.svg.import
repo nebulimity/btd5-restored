@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/right_thigh_2.svg-47196b3efd78cea88390be9c18a
 base_scale=1.0
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true

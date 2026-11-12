@@ -1,12 +1,9 @@
 [gd_scene format=3 uid="uid://b54bixc6lxnii"]
 
-[ext_resource type="Script" uid="uid://c6yn56v5ter2w" path="res://scripts/game.gd" id="1_yqjtg"]
-[ext_resource type="Script" uid="uid://qcc8w0d0puor" path="res://scripts/levels/rounds/spawner.gd" id="2_lnu2h"]
-[ext_resource type="Script" uid="uid://b2rfnhxh07kdl" path="res://scripts/levels/level.gd" id="3_8ool0"]
+[ext_resource type="Script" uid="uid://c07u1gx671rjn" path="res://scripts/Game.cs" id="1_458eo"]
 [ext_resource type="Texture2D" uid="uid://c48fwu2o20e4u" path="res://assets/gui/side_panel.svg" id="4_iywne"]
 [ext_resource type="Texture2D" uid="uid://bmn0ag000gmv5" path="res://assets/gui/bottom_panel.svg" id="5_p57ef"]
 [ext_resource type="Texture2D" uid="uid://ln6lpeyp7xmn" path="res://assets/gui/big_button/default.svg" id="6_kvuet"]
-[ext_resource type="Script" uid="uid://sb7eaf6gujrg" path="res://scripts/gui/in_game/in_game_menu.gd" id="7_gxtfn"]
 [ext_resource type="Texture2D" uid="uid://dtk7cjaao34sq" path="res://assets/gui/big_button/outlined.svg" id="7_trtic"]
 [ext_resource type="FontFile" uid="uid://br002hhqta44a" path="res://assets/fonts/oetztype.ttf" id="7_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://dvnsdc2v1aeax" path="res://assets/gui/big_button/play_button/arrow.svg" id="8_gee14"]
@@ -219,13 +216,11 @@ outline_size = 6
 outline_color = Color(0.17254902, 0.10980392, 0.03137255, 1)
 
 [node name="Game" type="Node2D" unique_id=75469830]
-script = ExtResource("1_yqjtg")
+script = ExtResource("1_458eo")
 
 [node name="Spawner" type="Node" parent="." unique_id=1393741205]
-script = ExtResource("2_lnu2h")
 
 [node name="Level" type="Node" parent="." unique_id=1058013256]
-script = ExtResource("3_8ool0")
 
 [node name="Towers" type="Node2D" parent="." unique_id=2069125850]
 z_index = 1
@@ -252,7 +247,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("7_gxtfn")
 
 [node name="SidePanel" type="Sprite2D" parent="InGameMenu" unique_id=18149238]
 position = Vector2(700, 0)
@@ -912,8 +906,6 @@ label_settings = SubResource("LabelSettings_rm0al")
 offset = Vector2(2, 0)
 anchor_mode = 0
 
-[connection signal="child_entered_tree" from="Spawner" to="Level" method="_on_bloon_spawned"]
-[connection signal="rbe_changed" from="Spawner" to="Level" method="_on_rbe_changed"]
 [connection signal="pressed" from="InGameMenu/SidePanel/UI/PlayButton" to="InGameMenu" method="_on_play_button_pressed"]
 [connection signal="pressed" from="InGameMenu/SidePanel/UI/FastForwardButton" to="InGameMenu" method="_on_fast_forward_button_pressed"]
 [connection signal="pressed" from="InGameMenu/BottomPanel/Misc/Default/SfxButton" to="InGameMenu" method="_on_sfx_button_pressed"]

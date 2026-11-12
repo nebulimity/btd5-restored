@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/face_2.svg-3e007ebf8a9b02b9c2832a429be6d856.d
 base_scale=1.0
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true

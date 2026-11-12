@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/bloon.svg-5a1f64f403c457dab34ebd11b6e91ee3.dp
 base_scale=1.0
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true

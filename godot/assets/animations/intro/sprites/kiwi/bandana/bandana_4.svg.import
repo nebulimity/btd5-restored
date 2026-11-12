@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/bandana_4.svg-580c022584bb9ce60632649b7997028
 base_scale=1.0
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true

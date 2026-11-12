@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/spikey_ball.svg-52636a29c922058cde4daa3be6c07
 base_scale=1.0
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true

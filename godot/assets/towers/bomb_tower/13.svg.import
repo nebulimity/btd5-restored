@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/13.svg-f54f8296f424be456fb560c051a54f71.dpite
 base_scale=1.0
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true

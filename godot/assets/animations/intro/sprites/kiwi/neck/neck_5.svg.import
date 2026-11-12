@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/neck_5.svg-c941429f764bbc271829f02aee1ff9cb.d
 base_scale=1.0
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true
