@@ -1,10 +1,28 @@
 # btd5-restored <img src="godot/icon.svg" width="45" align="absbottom"/> 
 
-<img src="thumbnail.png" alt="thumbnail" style="width:800px;"/>
-
 The original **Flash** version of _Bloons Tower Defense 5_ ported to Godot 4!
 
 The main goal of this project is to bring back the old vector artwork that was sadly scrapped in favor of the new png art for the Steam/mobile version of BTD5. It also aims to have some extra quality-of-life features and much better performance than the original flash version.
+
+> [!WARNING]
+> **This is the `csharp` branch: a work-in-progress rewrite in C#.** It is not playable yet.
+
+## Why rewrite?
+
+The GDScript version had performance issues. So much so, that it actually ran worse than the flash version (in some scenarios). Sounds crazy, but the simulation (collision grid, targeting and sorting) is too slow in GDScript during bloon rushes, especially with ceramics. AS3 in the flash version can do this faster.
+
+## Building
+
+- Godot 4.x, **.NET edition**
+- .NET SDK 9.0+
+
+Open `godot/project.godot` in Godot .NET and press Build.
+
+### Web export/limitations
+
+Sadly, Godot doesn't officially support web export for C# projects yet. However, it *is* possible through the experimental [godot-dotnet-web-export](https://github.com/ComplexRobot/godot-dotnet-web-export) build.
+
+Hopefully, by the time this rewrite is done/on par with the main branch, C# support will be much better. With the speed that Godot's development is moving at, this is very likely.
 
 # Disclaimer
 

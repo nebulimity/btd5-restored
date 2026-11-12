@@ -1,7 +1,6 @@
 using Godot;
 
-public partial class Intro : Node2D
-{
+public partial class Intro : Node2D {
 	public override void _Input(InputEvent @event) {
 		if (@event.IsActionPressed("fullscreen")) {
 			DisplayServer.WindowMode mode = DisplayServer.WindowGetMode();
