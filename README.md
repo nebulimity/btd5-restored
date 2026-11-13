@@ -13,7 +13,7 @@ The GDScript version had performance issues. So much so, that it actually ran wo
 
 ## Building
 
-- Godot 4.x, **.NET edition**
+- Godot 4.5+, **.NET edition**
 - .NET SDK 9.0+
 
 Open `godot/project.godot` in Godot .NET and press Build.
