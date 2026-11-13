@@ -1,3 +1,5 @@
+using System;
+
 public class GameTimer : IProcessable
 {
 	public double Delay;
@@ -5,6 +7,9 @@ public class GameTimer : IProcessable
 	public bool Running = false;
 	public int Repeat = 1;
 	public int InitialRepeat = 1;
+
+	public event Action<GameTimer> Completed;
+	public event Action<GameTimer> Destoyed;
 
 	public GameTimer(double delay, int repeat = 1)
 	{
@@ -36,7 +41,7 @@ public class GameTimer : IProcessable
 
 	public virtual void Destroy()
 	{
-		// DispatchEvent Destroyed
+		Destoyed?.Invoke(this);
 	}
 
 	public void Start()
@@ -84,7 +89,7 @@ public class GameTimer : IProcessable
 				Destroy();
 			}
 
-			// DispatchEvent Complete
+			Completed?.Invoke(this);
 
 			if (Repeat <= 0)
 			{
