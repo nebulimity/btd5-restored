@@ -218,10 +218,6 @@ outline_color = Color(0.17254902, 0.10980392, 0.03137255, 1)
 [node name="Game" type="Node2D" unique_id=75469830]
 script = ExtResource("1_458eo")
 
-[node name="Spawner" type="Node" parent="." unique_id=1393741205]
-
-[node name="Level" type="Node" parent="." unique_id=1058013256]
-
 [node name="Towers" type="Node2D" parent="." unique_id=2069125850]
 z_index = 1
 y_sort_enabled = true
