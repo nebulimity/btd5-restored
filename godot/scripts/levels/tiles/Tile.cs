@@ -24,8 +24,8 @@ public class Tile
 
 	private int _pathAlternator;
 
-	public bool Initialized = false;
-	public bool IsWind = false;
+	public bool Initialized;
+	public bool IsWind;
 
 	private List<Tile> _precalculatedAllPreviousTiles = null;
 

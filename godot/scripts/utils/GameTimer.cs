@@ -4,7 +4,7 @@ public class GameTimer : IProcessable
 {
 	public double Delay;
 	public double Current;
-	public bool Running = false;
+	public bool Running;
 	public int Repeat = 1;
 	public int InitialRepeat = 1;
 
