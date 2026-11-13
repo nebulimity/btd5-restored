@@ -65,14 +65,14 @@ public class GameTimer : IProcessable
 		Start();
 	}
 
-	public virtual void Process(double dt)
+	public virtual void Process(double delta)
 	{
 		if (Delay <= 0.011)
 		{
 			Delay = 0.011;
 		}
 
-		Current += dt;
+		Current += delta;
 		while (Current >= Delay)
 		{
 			Current -= Delay;

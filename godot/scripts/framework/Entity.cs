@@ -14,8 +14,8 @@ public class Entity : IProcessable
 		}
 	}
 
-	public virtual void Process(double dt)
+	public virtual void Process(double delta)
 	{
-		
+
 	}
 }

@@ -12,20 +12,21 @@ public partial class Main : Node
 
 	public override void _Process(double delta)
 	{
+		Level.Process(delta);
 	}
 
-	public override void _Input(InputEvent @event) 
+	public override void _Input(InputEvent @event)
 	{
-		if (@event.IsActionPressed("fullscreen")) 
+		if (@event.IsActionPressed("fullscreen"))
 		{
 			DisplayServer.WindowMode mode = DisplayServer.WindowGetMode();
 			bool isWindowed = mode != DisplayServer.WindowMode.Fullscreen;
-			
-			if (isWindowed) 
+
+			if (isWindowed)
 			{
 				DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
-			} 
-			else 
+			}
+			else
 			{
 				DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
 			}

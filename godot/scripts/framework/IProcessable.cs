@@ -1,4 +1,4 @@
 public interface IProcessable
 {
-	void Process(double dt);
+	void Process(double delta);
 }

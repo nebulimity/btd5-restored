@@ -3,27 +3,27 @@ using System.Collections.Generic;
 
 public class Scene : IProcessable
 {
-	List<IProcessable> processables = new List<IProcessable>();
-	HashSet<IProcessable> culled = new HashSet<IProcessable>();
-	HashSet<IProcessable> removed = new HashSet<IProcessable>();
-	Predicate<IProcessable> shouldRemove;
+	private List<IProcessable> _processables = new List<IProcessable>();
+	private HashSet<IProcessable> _culled = new HashSet<IProcessable>();
+	private HashSet<IProcessable> _removed = new HashSet<IProcessable>();
+	private Predicate<IProcessable> _shouldRemove;
 
 	public Scene()
 	{
-		shouldRemove = processable => culled.Contains(processable) && removed.Add(processable);
+		_shouldRemove = processable => _culled.Contains(processable) && _removed.Add(processable);
 	}
 
-	public virtual void Process(double dt)
+	public virtual void Process(double delta)
 	{
-		for (int i = 0; i < processables.Count; i++)
+		for (int i = 0; i < _processables.Count; i++)
 		{
-			if (!culled.Contains(processables[i]))
+			if (!_culled.Contains(_processables[i]))
 			{
-				processables[i].Process(dt);
+				_processables[i].Process(delta);
 			}
 		}
 
-		foreach (var processable in culled)
+		foreach (var processable in _culled)
 		{
 			if (processable is GameTimer timer)
 			{
@@ -31,14 +31,14 @@ public class Scene : IProcessable
 			}
 		}
 
-		processables.RemoveAll(shouldRemove);
-		culled.Clear();
-		removed.Clear();
+		_processables.RemoveAll(_shouldRemove);
+		_culled.Clear();
+		_removed.Clear();
 	}
 
 	public void Clear()
 	{
-		foreach (var processable in processables)
+		foreach (var processable in _processables)
 		{
 			if (processable is GameTimer timer)
 			{
@@ -46,23 +46,23 @@ public class Scene : IProcessable
 			}
 		}
 
-		processables.Clear();
+		_processables.Clear();
 	}
 
 	public void AddProcessable(IProcessable processable)
 	{
-		processables.Add(processable);
+		_processables.Add(processable);
 	}
 
 	public void AddEntity(Entity entity)
 	{
 		entity.Scene = this;
-		processables.Add(entity);
-		
+		_processables.Add(entity);
+
 	}
 
 	public void Cull(IProcessable processable)
 	{
-		culled.Add(processable);
+		_culled.Add(processable);
 	}
 }
