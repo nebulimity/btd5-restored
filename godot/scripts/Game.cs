@@ -1,4 +1,5 @@
 using Godot;
+using System;
 
 public partial class Game : Node2D
 {
@@ -15,7 +16,7 @@ public partial class Game : Node2D
 
 	public override void _Process(double delta)
 	{
-		_accumulator += System.Math.Min(delta, TickLength);
+		_accumulator += Math.Min(delta, TickLength);
 		while (_accumulator >= TickLength)
 		{
 			Level.Process(TickLength);
