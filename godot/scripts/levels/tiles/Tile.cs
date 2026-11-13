@@ -4,7 +4,7 @@ public enum TransitionTypes
 {
 	Road = 0,
 	Underpass = 1,
-	Teleport = 2,
+	Teleport = 2
 }
 
 public class Tile

@@ -12,6 +12,8 @@ public partial class Game : Node2D
 		Level = new Level();
 		Main.Instance.Level = Level;
 		Level.Initialize();
+
+		LevelDef.Load("MonkeyLane");
 	}
 
 	public override void _Process(double delta)
