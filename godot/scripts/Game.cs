@@ -13,7 +13,13 @@ public partial class Game : Node2D
 		Main.Instance.Level = Level;
 		Level.Initialize();
 
-		LevelDef.Load("MonkeyLane");
+		LevelDef levelDef = LevelDef.Load("MonkeyLane");
+		Level.InitializeLevel(levelDef);
+
+		// temp
+		PackedScene mapScene = GD.Load<PackedScene>("res://scenes/maps/monkey_lane.tscn");
+		Node2D map = mapScene.Instantiate<Node2D>();
+		AddChild(map);
 	}
 
 	public override void _Process(double delta)

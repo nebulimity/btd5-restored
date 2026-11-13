@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 public enum TransitionTypes
@@ -32,6 +33,28 @@ public class Tile
 	public double DistanceAtTileStart = -1;
 	public double PrecalculatedDistanceToEnd = -1;
 	public double PrecalculatedDistanceToStart = -1;
+
+	// not in as3
+	public static Tile FromDef(TileDef def)
+	{
+		Tile tile;
+		switch (def.Type)
+		{
+			case "straight":
+				tile = new StraightTile(new Vec2(def.Start[0], def.Start[1]), new Vec2(def.End[0], def.End[1]));
+				break;
+			case "arc":
+				tile = new ArcTile(new Vec2(def.Center[0], def.Center[1]), new Vec2(def.Start[0], def.Start[1]), new Vec2(def.End[0], def.End[1]), def.Reflex);
+				break;
+			default:
+				throw new InvalidOperationException($"unknown tile type of '{def.Type}' used");
+		}
+
+		tile.NextTileIndices = new List<int>(def.Next);
+		tile.TransitionType = (TransitionTypes)def.Transition;
+		tile.Layer = def.Layer;
+		return tile;
+	}
 
 	public virtual void Initialize(List<Tile> tileSet)
 	{
