@@ -9,7 +9,7 @@ public class GameTimer : IProcessable
 	public int InitialRepeat = 1;
 
 	public event Action<GameTimer> Completed;
-	public event Action<GameTimer> Destoyed;
+	public event Action<GameTimer> Destroyed;
 
 	public GameTimer(double delay, int repeat = 1)
 	{
@@ -41,7 +41,7 @@ public class GameTimer : IProcessable
 
 	public virtual void Destroy()
 	{
-		Destoyed?.Invoke(this);
+		Destroyed?.Invoke(this);
 	}
 
 	public void Start()

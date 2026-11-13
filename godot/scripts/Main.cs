@@ -10,11 +10,6 @@ public partial class Main : Node
 		Instance = this;
 	}
 
-	public override void _Process(double delta)
-	{
-		Level.Process(delta);
-	}
-
 	public override void _Input(InputEvent @event)
 	{
 		if (@event.IsActionPressed("fullscreen"))
