@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b54bixc6lxnii"]
 
 [ext_resource type="Script" uid="uid://c07u1gx671rjn" path="res://scripts/Game.cs" id="1_458eo"]
-[ext_resource type="Script" uid="uid://1ydmng6wi0hr" path="res://scripts/bloons/BloonLayer.cs" id="2_458eo"]
+[ext_resource type="Script" uid="uid://1ydmng6wi0hr" path="res://scripts/display/BloonLayer.cs" id="2_458eo"]
 [ext_resource type="Texture2D" uid="uid://c48fwu2o20e4u" path="res://assets/gui/side_panel.svg" id="4_iywne"]
 [ext_resource type="Texture2D" uid="uid://bmn0ag000gmv5" path="res://assets/gui/bottom_panel.svg" id="5_p57ef"]
 [ext_resource type="Texture2D" uid="uid://ln6lpeyp7xmn" path="res://assets/gui/big_button/default.svg" id="6_kvuet"]

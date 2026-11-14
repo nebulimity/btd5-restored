@@ -781,8 +781,8 @@ scale = Vector2(0.278, 0.278)
 texture = ExtResource("69_wl5al")
 
 [node name="TunnelCover2" type="Sprite2D" parent="." unique_id=110915962]
-position = Vector2(454, 381.78)
-scale = Vector2(0.278, 0.278)
+position = Vector2(454, 382.12448)
+scale = Vector2(0.278, 0.27930245)
 texture = ExtResource("74_ufox8")
 
 [node name="Trees" type="Sprite2D" parent="." unique_id=185066316]

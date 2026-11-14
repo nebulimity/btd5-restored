@@ -58,8 +58,8 @@ public class Bloon : Entity
 
 	// sounds and stuff
 
-	private const int WindLayer = 3;
-	private const int MoabLayer = 1200;
+	public const int WindLayer = 3;
+	public const int MoabLayer = 1200;
 
 	public static readonly int[] SpawnOrderStrideByType = { 1, 1, 1, 1, 1, 2, 2, 4, 4, 8, 16, 64, 256, 1024 };
 	public bool Sabotaged;
