@@ -119,6 +119,10 @@ public class Bloon : Entity
 		SetType(type);
 
 		tile.UpdateBloonPosition(this);
+		Vec2 start = tile.Waypoints[0];
+		Vec2 next = tile.Waypoints[1];
+		Rotation = Math.Atan2(next.Y - start.Y, next.X - start.X);
+
 		PrevX = X;
 		PrevY = Y;
 		PrevRot = Rotation;
