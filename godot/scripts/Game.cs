@@ -4,8 +4,11 @@ using System;
 public partial class Game : Node2D
 {
 	public Level Level;
+	private BloonLayer _bloonLayer;
+
 	private double _accumulator;
 	const double TickLength = 1.0 / 30.0;
+	private double _alpha;
 
 	public override void _Ready()
 	{
@@ -15,6 +18,9 @@ public partial class Game : Node2D
 
 		LevelDef levelDef = LevelDef.Load("MonkeyLane");
 		Level.InitializeLevel(levelDef, GameMode.Easy);
+
+		_bloonLayer = GetNode<BloonLayer>("BloonLayer");
+		_bloonLayer.Initialize(Level);
 
 		// temp
 		PackedScene mapScene = GD.Load<PackedScene>("res://scenes/maps/monkey_lane.tscn");
@@ -34,6 +40,9 @@ public partial class Game : Node2D
 			Level.Process(TickLength);
 			_accumulator -= TickLength;
 		}
+
+		_alpha = _accumulator / TickLength;
+		_bloonLayer.SyncAll(_alpha);
 	}
 
 	public override void _ExitTree()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 public enum GameMode
@@ -23,6 +24,8 @@ public class Level : Scene
 	private static readonly double[] BloonSpeedModsByMode = { 0, 0.05, 0.125, 0, 0, 0 };
 
 	public List<Bloon> AllBloons = new List<Bloon>();
+	public event Action<Bloon> BloonAdded;
+	public event Action<Bloon> BloonRemoved;
 
 	public int UpdateMultiplier = 1;
 	public double RoundTime = 0;
@@ -60,6 +63,14 @@ public class Level : Scene
 
 	public override void Process(double delta)
 	{
+		for (int i = 0; i < AllBloons.Count; i++) // for BloonView interpolation only
+		{
+			Bloon bloon = AllBloons[i];
+			bloon.PrevX = bloon.X;
+			bloon.PrevY = bloon.Y;
+			bloon.PrevRot = bloon.Rotation;
+		}
+
 		int tick = 0;
 		while (tick < UpdateMultiplier)
 		{
@@ -81,6 +92,7 @@ public class Level : Scene
 	{
 		bloon.Scene = this;
 		AllBloons.Add(bloon);
+		BloonAdded?.Invoke(bloon);
 		// CollisionGrid.AddToCell(bloon, bloon.CollisionCellIndex);
 		// menu tips/bloon warning popups
 	}
@@ -93,7 +105,7 @@ public class Level : Scene
 			// CollisionGrid.RemoveFromCell(bloon, bloon.CollisionCellIndex);
 			Cull(bloon);
 			bloon.Tile = null;
-			// dispatchEvent bloon removed
+			BloonRemoved?.Invoke(bloon);
 			// Pool.Release(bloon);
 			// CheckForRoundOver()
 		}
@@ -102,7 +114,7 @@ public class Level : Scene
 	public void LoseLives(int RBE = 1)
 	{
 		// return if sandbox or co-op
-		
+
 		Health -= RBE;
 		if (Health < 0)
 		{

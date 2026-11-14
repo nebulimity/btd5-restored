@@ -104,6 +104,9 @@ public class Bloon : Entity
 	public int SpawnOrderIndex;
 
 	private Vec2 _lastPosition = new Vec2();
+	public double PrevX;
+	public double PrevY;
+	public double PrevRot;
 
 	public void Initialize(BloonType type, Tile tile, double tileProgress)
 	{
@@ -116,6 +119,9 @@ public class Bloon : Entity
 		SetType(type);
 
 		tile.UpdateBloonPosition(this);
+		PrevX = X;
+		PrevY = Y;
+		PrevRot = Rotation;
 	}
 
 	public void SetType(BloonType newType)
@@ -193,8 +199,6 @@ public class Bloon : Entity
 		Destroy();
 		Main.Instance.Level.LoseLives(RBE);
 		// dispatchEvent attack
-
-		Godot.GD.Print(Main.Instance.Level.RoundTime);
 	}
 
 	public override void Process(double delta)
@@ -215,6 +219,14 @@ public class Bloon : Entity
 		// if (Iced)
 		// if (Glued)
 		// if (Burning)
+
+		_lastPosition.X = X;
+		_lastPosition.Y = Y;
+
+		if (_tile == null || Type == BloonType.Invalid)
+		{
+			return;
+		}
 
 		if (IsMoving)
 		{

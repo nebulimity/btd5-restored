@@ -69,7 +69,6 @@
 [ext_resource type="Texture2D" uid="uid://d2qkgsii2er7f" path="res://assets/maps/monkey_lane/windmill/rotor/30.svg" id="67_k7sop"]
 [ext_resource type="Texture2D" uid="uid://c7dyi8wrd5pmn" path="res://assets/maps/monkey_lane/windmill/rotor/31.svg" id="68_4oayb"]
 [ext_resource type="Texture2D" uid="uid://bwwrv48t2gh33" path="res://assets/maps/monkey_lane/windmill/rotor/32.svg" id="69_73pte"]
-[ext_resource type="Script" uid="uid://bjp8ype06g7as" path="res://scripts/utils/animation/animated_sprite_2d.gd" id="69_tax5y"]
 [ext_resource type="Texture2D" uid="uid://duyvj5q2w6tue" path="res://assets/maps/monkey_lane/tunnel_cover.png" id="69_wl5al"]
 [ext_resource type="Texture2D" uid="uid://cmichi275bd0h" path="res://assets/maps/monkey_lane/windmill/rotor/33.svg" id="70_64jxs"]
 [ext_resource type="Texture2D" uid="uid://r7xk2lye0sas" path="res://assets/maps/monkey_lane/terrain/track.svg" id="73_tax5y"]
@@ -179,7 +178,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("36_eh3op")
 }],
-"loop": true,
+"loop": 1,
 "name": &"spin",
 "speed": 30.0
 }]
@@ -286,7 +285,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("70_64jxs")
 }],
-"loop": true,
+"loop": 1,
 "name": &"spin",
 "speed": 30.0
 }]
@@ -723,6 +722,7 @@ _source = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>
 "
 
 [node name="MonkeyLane" type="Node2D" unique_id=2060388670]
+z_index = -1
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1383418003]
 z_index = -10
@@ -757,8 +757,6 @@ frame = 23
 frame_progress = 0.60019505
 centered = false
 offset = Vector2(-23, 9.55)
-script = ExtResource("69_tax5y")
-metadata/_custom_type_script = "uid://bjp8ype06g7as"
 
 [node name="Windmill" type="Sprite2D" parent="." unique_id=32254536]
 position = Vector2(-5.25, -15.1)
@@ -775,7 +773,6 @@ frame = 2
 frame_progress = 0.74423957
 centered = false
 offset = Vector2(-34.25, -80.35)
-script = ExtResource("69_tax5y")
 metadata/_custom_type_script = "uid://bjp8ype06g7as"
 
 [node name="TunnelCover" type="Sprite2D" parent="." unique_id=869181813]

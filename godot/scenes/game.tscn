@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b54bixc6lxnii"]
 
 [ext_resource type="Script" uid="uid://c07u1gx671rjn" path="res://scripts/Game.cs" id="1_458eo"]
+[ext_resource type="Script" uid="uid://1ydmng6wi0hr" path="res://scripts/bloons/BloonLayer.cs" id="2_458eo"]
 [ext_resource type="Texture2D" uid="uid://c48fwu2o20e4u" path="res://assets/gui/side_panel.svg" id="4_iywne"]
 [ext_resource type="Texture2D" uid="uid://bmn0ag000gmv5" path="res://assets/gui/bottom_panel.svg" id="5_p57ef"]
 [ext_resource type="Texture2D" uid="uid://ln6lpeyp7xmn" path="res://assets/gui/big_button/default.svg" id="6_kvuet"]
@@ -14,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://f3wclmbpmkuj" path="res://assets/gui/lives/default.svg" id="12_rysoc"]
 [ext_resource type="Texture2D" uid="uid://c3lvo86g4ex6c" path="res://assets/gui/lives/outlined.svg" id="13_ssvqc"]
 [ext_resource type="Texture2D" uid="uid://c2xwv7c87b3vp" path="res://assets/gui/money/default.svg" id="14_trtic"]
-[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="15_37s47"]
+[ext_resource type="Script" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="15_37s47"]
 [ext_resource type="Texture2D" uid="uid://crfhapbcbw8i1" path="res://assets/gui/tower_buttons/dart_tower/default.svg" id="15_264po"]
 [ext_resource type="Texture2D" uid="uid://cgirn0ygc2sr6" path="res://assets/gui/money/outlined.svg" id="15_ir15t"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="16_bt5mj"]
@@ -317,6 +318,9 @@ script = ExtResource("1_458eo")
 [node name="Towers" type="Node2D" parent="." unique_id=2069125850]
 z_index = 1
 y_sort_enabled = true
+
+[node name="BloonLayer" type="Node2D" parent="." unique_id=49594363]
+script = ExtResource("2_458eo")
 
 [node name="SpikeyBall" type="Sprite2D" parent="." unique_id=799275082]
 position = Vector2(-1068, 610)
