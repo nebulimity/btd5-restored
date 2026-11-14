@@ -253,7 +253,26 @@ public class Bloon : Entity
 			}
 		}
 
-		// if (Type == BloonType.MOAB)
+		if (Type >= BloonType.MOAB && _lastPosition.X != X || _lastPosition.Y != Y)
+		{
+			double targetRotation = Math.Atan2(Y - _lastPosition.Y, X - _lastPosition.X);
+			while (targetRotation - Rotation > Math.PI)
+			{
+				targetRotation -= 2 * Math.PI;
+			}
+			while (targetRotation - Rotation <= -Math.PI)
+			{
+				targetRotation += 2 * Math.PI;
+			}
+			if (targetRotation > Rotation)
+			{
+				Rotation = Math.Min(targetRotation, Rotation + MaxDeltaRotation);
+			}
+			else if (targetRotation < Rotation)
+			{
+				Rotation = Math.Max(targetRotation, Rotation - MaxDeltaRotation);
+			}
+		}
 
 		// collision grid stuff
 		// if (IsRegen)
