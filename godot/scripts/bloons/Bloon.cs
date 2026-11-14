@@ -61,7 +61,7 @@ public class Bloon : Entity
 	private const int WindLayer = 3;
 	private const int MoabLayer = 1200;
 
-	public static readonly int[] SpawnOrderIndexByType = { 1, 1, 1, 1, 1, 2, 2, 4, 4, 8, 16, 64, 256, 1024 };
+	public static readonly int[] SpawnOrderStrideByType = { 1, 1, 1, 1, 1, 2, 2, 4, 4, 8, 16, 64, 256, 1024 };
 	public bool Sabotaged;
 
 	private Tile _tile;
