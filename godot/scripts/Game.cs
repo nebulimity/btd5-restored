@@ -4,6 +4,7 @@ using System;
 public partial class Game : Node2D
 {
 	public Level Level;
+	private Spawner _spawner;
 	private BloonLayer _bloonLayer;
 
 	private double _accumulator;
@@ -18,6 +19,8 @@ public partial class Game : Node2D
 
 		LevelDef levelDef = LevelDef.Load("MonkeyLane");
 		Level.InitializeLevel(levelDef, GameMode.Easy);
+
+		_spawner = new Spawner(20, 0, 0.5, BloonType.Red, false, false);
 
 		_bloonLayer = GetNode<BloonLayer>("BloonLayer");
 		_bloonLayer.Initialize(Level);
@@ -42,6 +45,8 @@ public partial class Game : Node2D
 		}
 
 		_alpha = _accumulator / TickLength;
+
+		_spawner.Process(Level.RoundTime);
 		_bloonLayer.SyncAll(_alpha);
 	}
 
