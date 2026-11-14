@@ -14,12 +14,16 @@ public partial class Game : Node2D
 		Level.Initialize();
 
 		LevelDef levelDef = LevelDef.Load("MonkeyLane");
-		Level.InitializeLevel(levelDef);
+		Level.InitializeLevel(levelDef, GameMode.Easy);
 
 		// temp
 		PackedScene mapScene = GD.Load<PackedScene>("res://scenes/maps/monkey_lane.tscn");
 		Node2D map = mapScene.Instantiate<Node2D>();
 		AddChild(map);
+
+		Bloon testBloon = new Bloon();
+		testBloon.Initialize(BloonType.Red, Level.StartTile, 0);
+		Level.AddBloon(testBloon);
 	}
 
 	public override void _Process(double delta)

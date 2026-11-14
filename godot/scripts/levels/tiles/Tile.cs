@@ -73,7 +73,79 @@ public class Tile
 		Initialized = true;
 	}
 
-	// UpdateBloonPosition()
+	public void UpdateBloonPosition(Bloon bloon)
+	{
+		if (bloon.TileProgress < 0)
+		{
+			if (PreviousTiles.Count != 0)
+			{
+				Tile previousTile = PreviousTiles[0];
+				if (previousTile.TransitionType != TransitionTypes.Teleport)
+				{
+					bloon.TileProgress += previousTile.TileLength;
+				}
+
+				bloon.Tile = previousTile;
+				previousTile.UpdateBloonPosition(bloon);
+			}
+			else
+			{
+				bloon.X = -5000;
+			}
+
+			return;
+		}
+
+		if (bloon.Type == BloonType.Invalid)
+		{
+			return;
+		}
+		if (TransitionType == TransitionTypes.Teleport)
+		{
+			bloon.TileProgress += TileLength;
+		}
+
+		int sectionIndex = (int)Math.Floor((Waypoints.Count - 1) * bloon.TileProgress / TileLength);
+		double sectionProgress = (bloon.TileProgress - sectionIndex * SectionLength) / SectionLength;
+
+		Tile nextTile;
+		if (sectionIndex >= Waypoints.Count - 1)
+		{
+			bloon.TileProgress -= TileLength;
+			if (NextTiles.Count != 0)
+			{
+				if (NextTiles.Count == 1)
+				{
+					nextTile = this.NextTiles[0];
+				}
+				else if (false == false)
+				{
+					++_pathAlternator;
+					nextTile = NextTiles[_pathAlternator % NextTiles.Count];
+				}
+
+				if (bloon.Tile.IsWind)
+				{
+					bloon.OverallProgress = GetOverallProgress();
+				}
+
+				bloon.Tile = nextTile;
+				nextTile.UpdateBloonPosition(bloon);
+			}
+			else
+			{
+				bloon.CompletePath();
+			}
+			return;
+		}
+
+		Vec2 sectionStart = Waypoints[sectionIndex];
+		Vec2 sectionEnd = Waypoints[sectionIndex + 1];
+
+		bloon.X = sectionStart.X + (sectionEnd.X - sectionStart.X) * sectionProgress;
+		bloon.Y = sectionStart.Y + (sectionEnd.Y - sectionStart.Y) * sectionProgress;
+	}
+
 	// UpdateBloonTrapPosition()
 
 	public virtual double StartAngle
