@@ -15,9 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://f3wclmbpmkuj" path="res://assets/gui/lives/default.svg" id="12_rysoc"]
 [ext_resource type="Texture2D" uid="uid://c3lvo86g4ex6c" path="res://assets/gui/lives/outlined.svg" id="13_ssvqc"]
 [ext_resource type="Texture2D" uid="uid://c2xwv7c87b3vp" path="res://assets/gui/money/default.svg" id="14_trtic"]
-[ext_resource type="Script" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="15_37s47"]
 [ext_resource type="Texture2D" uid="uid://crfhapbcbw8i1" path="res://assets/gui/tower_buttons/dart_tower/default.svg" id="15_264po"]
 [ext_resource type="Texture2D" uid="uid://cgirn0ygc2sr6" path="res://assets/gui/money/outlined.svg" id="15_ir15t"]
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="16_458eo"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="16_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://dnddkj8vxo3d6" path="res://assets/gui/tower_buttons/default.svg" id="17_37s47"]
 [ext_resource type="Texture2D" uid="uid://bbwd3j0o3i3rc" path="res://assets/gui/tower_buttons/outlined.svg" id="18_bt5mj"]
@@ -233,12 +233,11 @@ VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_e1j6l")
 VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_pl11u")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_bhx41")
 
-[sub_resource type="Resource" id="Resource_37s47"]
+[sub_resource type="Resource" id="Resource_h3rex"]
 script = ExtResource("16_bt5mj")
 friction = 7.0
-metadata/_custom_type_script = "uid://b7h0k2h2qwlqv"
 
-[sub_resource type="Resource" id="Resource_pl11u"]
+[sub_resource type="Resource" id="Resource_fedci"]
 script = ExtResource("16_bt5mj")
 
 [sub_resource type="Theme" id="Theme_1kice"]
@@ -459,9 +458,9 @@ offset_right = 103.0
 offset_bottom = 375.0
 theme = SubResource("Theme_qnb83")
 horizontal_scroll_mode = 0
-script = ExtResource("15_37s47")
-wheel_scroll_damper = SubResource("Resource_37s47")
-dragging_scroll_damper = SubResource("Resource_pl11u")
+script = ExtResource("16_458eo")
+wheel_scroll_damper = SubResource("Resource_h3rex")
+dragging_scroll_damper = SubResource("Resource_fedci")
 drag_with_mouse = false
 allow_horizontal_scroll = false
 allow_overdragging = false
