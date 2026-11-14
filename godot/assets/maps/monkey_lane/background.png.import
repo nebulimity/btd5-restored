@@ -2,21 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bomhmm8yk366g"
-path="res://.godot/imported/background.png-75ea694292f66c21d083040a4fe8f896.ctex"
+uid="uid://b1q8rkpqiiovn"
+path.bptc="res://.godot/imported/background.png-75ea694292f66c21d083040a4fe8f896.bptc.ctex"
+path.astc="res://.godot/imported/background.png-75ea694292f66c21d083040a4fe8f896.astc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/maps/monkey_lane/background.png"
-dest_files=["res://.godot/imported/background.png-75ea694292f66c21d083040a4fe8f896.ctex"]
+dest_files=["res://.godot/imported/background.png-75ea694292f66c21d083040a4fe8f896.bptc.ctex", "res://.godot/imported/background.png-75ea694292f66c21d083040a4fe8f896.astc.ctex"]
 
 [params]
 
-compress/mode=0
-compress/high_quality=false
+compress/mode=2
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

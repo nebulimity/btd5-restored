@@ -47,17 +47,15 @@ void fragment() {
 			rgb = (rgb - 0.5) * v_contrast + 0.5;
 		}
 		
-		if (v_saturation != 0.0 || v_hue != 0.0) {
+		if (v_saturation != 0.0) {
+			float s = v_saturation + 1.0;
+			float lum = dot(rgb, vec3(0.3086, 0.6094, 0.0820));
+			rgb = mix(vec3(lum), rgb, s);
+		}
+
+		if (v_hue != 0.0) {
 			vec3 hsv = rgb_to_hsv(rgb);
-			
-			if (v_saturation != 0.0) {
-				hsv.y = clamp(hsv.y + v_saturation, 0.0, 1.0);
-			}
-			
-			if (v_hue != 0.0) {
-				hsv.x = fract(hsv.x + v_hue);
-			}
-			
+			hsv.x = fract(hsv.x + v_hue);
 			rgb = hsv_to_rgb(hsv);
 		}
 		

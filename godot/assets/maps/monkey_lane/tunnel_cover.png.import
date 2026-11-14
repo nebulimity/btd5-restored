@@ -2,21 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckbqph4174tk0"
-path="res://.godot/imported/tunnel_cover.png-bc4e546a2d8d7caa09a9f2fa26706c53.ctex"
+uid="uid://duyvj5q2w6tue"
+path.bptc="res://.godot/imported/tunnel_cover.png-bc4e546a2d8d7caa09a9f2fa26706c53.bptc.ctex"
+path.astc="res://.godot/imported/tunnel_cover.png-bc4e546a2d8d7caa09a9f2fa26706c53.astc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/maps/monkey_lane/tunnel_cover.png"
-dest_files=["res://.godot/imported/tunnel_cover.png-bc4e546a2d8d7caa09a9f2fa26706c53.ctex"]
+dest_files=["res://.godot/imported/tunnel_cover.png-bc4e546a2d8d7caa09a9f2fa26706c53.bptc.ctex", "res://.godot/imported/tunnel_cover.png-bc4e546a2d8d7caa09a9f2fa26706c53.astc.ctex"]
 
 [params]
 
-compress/mode=0
-compress/high_quality=false
+compress/mode=2
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

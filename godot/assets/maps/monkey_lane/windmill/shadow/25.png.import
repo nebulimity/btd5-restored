@@ -3,20 +3,22 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3s3ibl20fvdv"
-path="res://.godot/imported/25.png-219cb226cb2477d604bd2ee6e91058de.ctex"
+path.bptc="res://.godot/imported/25.png-219cb226cb2477d604bd2ee6e91058de.bptc.ctex"
+path.astc="res://.godot/imported/25.png-219cb226cb2477d604bd2ee6e91058de.astc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/maps/monkey_lane/windmill/shadow/25.png"
-dest_files=["res://.godot/imported/25.png-219cb226cb2477d604bd2ee6e91058de.ctex"]
+dest_files=["res://.godot/imported/25.png-219cb226cb2477d604bd2ee6e91058de.bptc.ctex", "res://.godot/imported/25.png-219cb226cb2477d604bd2ee6e91058de.astc.ctex"]
 
 [params]
 
-compress/mode=0
-compress/high_quality=false
+compress/mode=2
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

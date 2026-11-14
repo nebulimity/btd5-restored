@@ -2,20 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh3sqen6mr7je"
-path="res://.godot/imported/trees.png-de52b5b315050bb2a6d1c8d205016261.ctex"
+uid="uid://dix2uvullrke1"
+path.s3tc="res://.godot/imported/shading.png-106d46c92aa77a1a79dbf3b2467efdc6.s3tc.ctex"
+path.etc2="res://.godot/imported/shading.png-106d46c92aa77a1a79dbf3b2467efdc6.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://assets/maps/rink/trees.png"
-dest_files=["res://.godot/imported/trees.png-de52b5b315050bb2a6d1c8d205016261.ctex"]
+source_file="res://assets/maps/monkey_lane/shading.png"
+dest_files=["res://.godot/imported/shading.png-106d46c92aa77a1a79dbf3b2467efdc6.s3tc.ctex", "res://.godot/imported/shading.png-106d46c92aa77a1a79dbf3b2467efdc6.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

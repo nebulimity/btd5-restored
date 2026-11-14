@@ -2,20 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0qy5x4hddnam"
-path="res://.godot/imported/trees.png-d4ce90de7f513b9ae1450a47951a9727.ctex"
+uid="uid://tk6xjos0dsep"
+path.s3tc="res://.godot/imported/shadows.png-764e8b3e88f840cb0b58f2148aae403a.s3tc.ctex"
+path.etc2="res://.godot/imported/shadows.png-764e8b3e88f840cb0b58f2148aae403a.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://assets/maps/archipelago/trees.png"
-dest_files=["res://.godot/imported/trees.png-d4ce90de7f513b9ae1450a47951a9727.ctex"]
+source_file="res://assets/maps/monkey_lane/shadows.png"
+dest_files=["res://.godot/imported/shadows.png-764e8b3e88f840cb0b58f2148aae403a.s3tc.ctex", "res://.godot/imported/shadows.png-764e8b3e88f840cb0b58f2148aae403a.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

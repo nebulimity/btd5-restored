@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://ckactqtchofhj"]
 
-[ext_resource type="Texture2D" uid="uid://bomhmm8yk366g" path="res://assets/maps/monkey_lane/background.png" id="1_w4170"]
+[ext_resource type="Texture2D" uid="uid://b1q8rkpqiiovn" path="res://assets/maps/monkey_lane/background.png" id="1_w4170"]
+[ext_resource type="Texture2D" uid="uid://bwp5hnfevtwtb" path="res://assets/maps/monkey_lane/track.png" id="3_23ykd"]
 [ext_resource type="Texture2D" uid="uid://cga6jtjpiekyo" path="res://assets/maps/monkey_lane/windmill/shadow/1.png" id="4_5s6mp"]
+[ext_resource type="Texture2D" uid="uid://dix2uvullrke1" path="res://assets/maps/monkey_lane/shading.png" id="4_ufox8"]
 [ext_resource type="Texture2D" uid="uid://cu8e57w0auw5u" path="res://assets/maps/monkey_lane/windmill/shadow/2.png" id="5_cej8w"]
 [ext_resource type="Texture2D" uid="uid://bev287vquytt2" path="res://assets/maps/monkey_lane/windmill/shadow/3.png" id="6_xflcw"]
 [ext_resource type="Texture2D" uid="uid://bf1gf86boe8ja" path="res://assets/maps/monkey_lane/windmill/shadow/4.png" id="7_wyg6o"]
@@ -68,11 +70,12 @@
 [ext_resource type="Texture2D" uid="uid://c7dyi8wrd5pmn" path="res://assets/maps/monkey_lane/windmill/rotor/31.svg" id="68_4oayb"]
 [ext_resource type="Texture2D" uid="uid://bwwrv48t2gh33" path="res://assets/maps/monkey_lane/windmill/rotor/32.svg" id="69_73pte"]
 [ext_resource type="Script" uid="uid://bjp8ype06g7as" path="res://scripts/utils/animation/animated_sprite_2d.gd" id="69_tax5y"]
-[ext_resource type="Texture2D" uid="uid://ckbqph4174tk0" path="res://assets/maps/monkey_lane/tunnel_cover.png" id="69_wl5al"]
+[ext_resource type="Texture2D" uid="uid://duyvj5q2w6tue" path="res://assets/maps/monkey_lane/tunnel_cover.png" id="69_wl5al"]
 [ext_resource type="Texture2D" uid="uid://cmichi275bd0h" path="res://assets/maps/monkey_lane/windmill/rotor/33.svg" id="70_64jxs"]
-[ext_resource type="Texture2D" uid="uid://dw6tlmqcsmd7c" path="res://assets/maps/monkey_lane/tunnel_cover_2.png" id="70_fdq51"]
 [ext_resource type="Texture2D" uid="uid://r7xk2lye0sas" path="res://assets/maps/monkey_lane/terrain/track.svg" id="73_tax5y"]
 [ext_resource type="Texture2D" uid="uid://d4k64sx5cm7jy" path="res://assets/maps/monkey_lane/terrain/land.svg" id="74_23ykd"]
+[ext_resource type="Texture2D" uid="uid://cvh8ty63p6aij" path="res://assets/maps/monkey_lane/tunnel_cover_2.png" id="74_ufox8"]
+[ext_resource type="Texture2D" uid="uid://tk6xjos0dsep" path="res://assets/maps/monkey_lane/shadows.png" id="75_23ykd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jaofu"]
 animations = [{
@@ -723,11 +726,28 @@ _source = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1383418003]
 z_index = -10
-position = Vector2(-6.999999, -0.9999995)
+position = Vector2(0, -1)
 scale = Vector2(0.278, 0.278)
 texture = ExtResource("1_w4170")
 centered = false
-offset = Vector2(-195.66, 0)
+
+[node name="Shadows" type="Sprite2D" parent="." unique_id=1023289532]
+z_index = -10
+position = Vector2(420.00003, 401)
+scale = Vector2(0.278, 0.278)
+texture = ExtResource("75_23ykd")
+
+[node name="Track" type="Sprite2D" parent="." unique_id=200331857]
+z_index = -10
+position = Vector2(400, 299)
+scale = Vector2(0.278, 0.278)
+texture = ExtResource("3_23ykd")
+
+[node name="Shading" type="Sprite2D" parent="." unique_id=213058840]
+z_index = -10
+position = Vector2(362, 397.00003)
+scale = Vector2(0.278, 0.278)
+texture = ExtResource("4_ufox8")
 
 [node name="WindmillShadow" type="AnimatedSprite2D" parent="." unique_id=2114755469]
 sprite_frames = SubResource("SpriteFrames_jaofu")
@@ -758,17 +778,15 @@ offset = Vector2(-34.25, -80.35)
 script = ExtResource("69_tax5y")
 metadata/_custom_type_script = "uid://bjp8ype06g7as"
 
-[node name="TunnelCover" type="Sprite2D" parent="." unique_id=1414076538]
-position = Vector2(-54, 0)
-scale = Vector2(0.333, 0.333)
+[node name="TunnelCover" type="Sprite2D" parent="." unique_id=869181813]
+position = Vector2(286, 382)
+scale = Vector2(0.278, 0.278)
 texture = ExtResource("69_wl5al")
-centered = false
 
-[node name="TunnelCover2" type="Sprite2D" parent="." unique_id=776789390]
-position = Vector2(-53.999996, 4.7683716e-07)
-scale = Vector2(0.333, 0.333)
-texture = ExtResource("70_fdq51")
-centered = false
+[node name="TunnelCover2" type="Sprite2D" parent="." unique_id=110915962]
+position = Vector2(454, 381.78)
+scale = Vector2(0.278, 0.278)
+texture = ExtResource("74_ufox8")
 
 [node name="Trees" type="Sprite2D" parent="." unique_id=185066316]
 z_index = 4
