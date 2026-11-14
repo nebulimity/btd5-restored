@@ -1,0 +1,1574 @@
+{
+	"rounds": [
+		{
+			"flavorText": "Easy peasy.",
+			"groups": [
+				{
+					"bloon": {"type": "Red", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 17.5125, "count": 20}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Have fun unlocking and discovering what all the new tower upgrades do.",
+			"groups": [
+				{
+					"bloon": {"type": "Red", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 16.558999999999997, "count": 30}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Besides having more layers, the different colored bloons also move faster.",
+			"groups": [
+				{
+					"bloon": {"type": "Red", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 5.138999999999999, "count": 10},
+						{"start": 8.564999999999998, "length": 5.138999999999999, "count": 10}
+					]
+				},
+				{
+					"bloon": {"type": "Blue", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 5.709999999999999, "length": 2.284, "count": 5}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Keep playing Bloons TD5 regularly to check for new updates, tracks, towers, game modes and other awesomeness.",
+			"groups": [
+				{
+					"bloon": {"type": "Red", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 10.848999999999998, "count": 20},
+						{"start": 19.985, "length": 2.887499999999998, "count": 10}
+					]
+				},
+				{
+					"bloon": {"type": "Blue", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 11.419999999999998, "length": 7.994, "count": 15}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "First Green Bloons are coming next round.",
+			"groups": [
+				{
+					"bloon": {"type": "Blue", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 5.138999999999999, "count": 10},
+						{"start": 8.564999999999998, "length": 7.994, "count": 15}
+					]
+				},
+				{
+					"bloon": {"type": "Red", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 5.709999999999999, "length": 2.284, "count": 5}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "The more you use a certain tower, the more upgrades you will unlock for it.",
+			"groups": [
+				{
+					"bloon": {"type": "Green", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 1.7129999999999999, "count": 4}
+					]
+				},
+				{
+					"bloon": {"type": "Red", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 2.284, "length": 7.993999999999999, "count": 15}
+					]
+				},
+				{
+					"bloon": {"type": "Blue", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 10.849, "length": 7.994, "count": 15}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Each tower has 2 upgrade paths, but you can only get the 3rd and 4th upgrades on one of the paths, because they are special.",
+			"groups": [
+				{
+					"bloon": {"type": "Blue", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 5.138999999999999, "count": 10},
+						{"start": 22.816666666666663, "length": 3.991666666666665, "count": 15}
+					]
+				},
+				{
+					"bloon": {"type": "Green", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 5.709999999999999, "length": 4.95, "count": 5}
+					]
+				},
+				{
+					"bloon": {"type": "Red", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 11.8125, "length": 10.848999999999997, "count": 20}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "The bloons are now more organised, they may come in tight bunches to break through quickly, or come spread out to confound your area weapons.",
+			"groups": [
+				{
+					"bloon": {"type": "Blue", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 10.848999999999998, "count": 20}
+					]
+				},
+				{
+					"bloon": {"type": "Green", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 11.419999999999998, "length": 0.5709999999999997, "count": 2},
+						{"start": 18.272, "length": 10.658333333333331, "count": 12}
+					]
+				},
+				{
+					"bloon": {"type": "Red", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 12.561999999999998, "length": 1.970833333333334, "count": 10}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Coming up next are some Blue Bloons, then some more, then some more, then some more.",
+			"groups": [
+				{
+					"bloon": {"type": "Green", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 18.957407407407405, "count": 30}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Good old Yellow Bloons. Quite fast, quite big, and quite dangerous without a good defense.",
+			"groups": [
+				{
+					"bloon": {"type": "Blue", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 35, "count": 60}
+					]
+				},
+				{
+					"bloon": {"type": "Blue", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 35, "length": 9, "count": 20}
+					]
+				},
+				{
+					"bloon": {"type": "Blue", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 44, "length": 3.987500000000002, "count": 22}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Take a moment to admire the sumptuous and awesome artwork this game has.",
+			"groups": [
+				{
+					"bloon": {"type": "Yellow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 0.571, "count": 2}
+					]
+				},
+				{
+					"bloon": {"type": "Green", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 3.8083333333333336, "length": 6.281000000000001, "count": 12}
+					]
+				},
+				{
+					"bloon": {"type": "Blue", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 10.241666666666667, "length": 3.804166666666667, "count": 10}
+					]
+				},
+				{
+					"bloon": {"type": "Red", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 13.616666666666667, "length": 4.575000000000001, "count": 10}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "If you have not played more Ninja Kiwi games, you should - because those games are fun, and fun is good.",
+			"groups": [
+				{
+					"bloon": {"type": "Green", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 5.138999999999999, "count": 10}
+					]
+				},
+				{
+					"bloon": {"type": "Blue", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 5.709999999999999, "length": 6.075, "count": 15}
+					]
+				},
+				{
+					"bloon": {"type": "Yellow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 14.274999999999999, "length": 3.116666666666667, "count": 5}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Once you unlock a new tower, it will be unlocked permanently - provided you are logged in to your account...",
+			"groups": [
+				{
+					"bloon": {"type": "Red", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 27.420394736842105, "count": 100}
+					]
+				},
+				{
+					"bloon": {"type": "Yellow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 11.419999999999998, "length": 1.3541666666666667, "count": 4}
+					]
+				},
+				{
+					"bloon": {"type": "Green", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 17.129999999999995, "length": 13.704, "count": 23}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Use each tower type more to unlock all its upgrades.",
+			"groups": [
+				{
+					"bloon": {"type": "Red", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 9.707, "count": 18},
+						{"start": 9.5, "length": 17.13, "count": 31}
+					]
+				},
+				{
+					"bloon": {"type": "Blue", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 2.8549999999999995, "length": 1.1166666666666665, "count": 5},
+						{"start": 15.9625, "length": 1.3874999999999982, "count": 10}
+					]
+				},
+				{
+					"bloon": {"type": "Green", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 5.709999999999999, "length": 1.1166666666666671, "count": 5},
+						{"start": 19.8375, "length": 1.3874999999999982, "count": 5}
+					]
+				},
+				{
+					"bloon": {"type": "Yellow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 8.564999999999998, "length": 0.9500000000000004, "count": 4},
+						{"start": 23.708333333333332, "length": 1.5541666666666647, "count": 5}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Red", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 10.848999999999998, "count": 20}
+					]
+				},
+				{
+					"bloon": {"type": "Pink", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 12.416666666666666, "length": 0.8333333333333334, "count": 3}
+					]
+				},
+				{
+					"bloon": {"type": "Green", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 15.129166666666668, "length": 7.993999999999998, "count": 12}
+					]
+				},
+				{
+					"bloon": {"type": "Yellow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 23.195833333333336, "length": 2.6472222222222204, "count": 5}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Green", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 10.848999999999998, "count": 20}
+					]
+				},
+				{
+					"bloon": {"type": "Yellow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 13.583333333333334, "length": 1.4333333333333325, "count": 8}
+					]
+				},
+				{
+					"bloon": {"type": "Pink", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 1.675, "length": 14.5875, "count": 4}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Have some free money with 80 greens coming up next.",
+			"groups": [
+				{
+					"bloon": {"type": "Yellow", "camo": false, "regen": true},
+					"spawners": [
+						{"start": 0, "length": 3.997, "count": 8}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Green", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 25, "count": 60}
+					]
+				},
+				{
+					"bloon": {"type": "Green", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 25, "length": 1.8166666666666675, "count": 20}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Green", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 2.8874999999999997, "count": 10}
+					]
+				},
+				{
+					"bloon": {"type": "Yellow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 13.479166666666666, "length": 2.283999999999999, "count": 4}
+					]
+				},
+				{
+					"bloon": {"type": "Pink", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 5.958333333333333, "length": 7.616666666666667, "count": 7}
+					]
+				},
+				{
+					"bloon": {"type": "Yellow", "camo": false, "regen": true},
+					"spawners": [
+						{"start": 2.3333333333333335, "length": 2.855, "count": 5}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Black", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 5.245833333333334, "count": 6}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "White Bloons incoming.",
+			"groups": [
+				{
+					"bloon": {"type": "Pink", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 5.138999999999999, "count": 10},
+						{"start": 5.709999999999999, "length": 1.4375, "count": 4}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "White", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 4.568, "count": 8}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Black", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 1.9375, "count": 5}
+					]
+				},
+				{
+					"bloon": {"type": "White", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 5.758333333333333, "length": 1.854166666666666, "count": 4}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "That was just one Camo Bloon. Easy enough to pop with road spikes if your towers missed it. There will be more next time so beware!",
+			"groups": [
+				{
+					"bloon": {"type": "Green", "camo": true, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 1.142, "count": 1}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Yellow", "camo": false, "regen": true},
+					"spawners": [
+						{"start": 0, "length": 17.13, "count": 31}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Pink", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 8.700000000000001, "count": 23}
+					]
+				},
+				{
+					"bloon": {"type": "Zebra", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 11.083333333333334, "length": 3.4259999999999997, "count": 4}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Leads are slow and easily dealt with if you have the right towers. Otherwise, they could cause you some grief...",
+			"groups": [
+				{
+					"bloon": {"type": "Yellow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 7.725, "count": 45}
+					]
+				},
+				{
+					"bloon": {"type": "Green", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 9.416666666666666, "length": 7.345833333333334, "count": 45}
+					]
+				},
+				{
+					"bloon": {"type": "Blue", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 19, "length": 5.529166666666669, "count": 55}
+					]
+				},
+				{
+					"bloon": {"type": "Red", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 24.583333333333332, "length": 6.4375, "count": 120}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Lead", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 4.008333333333334, "count": 4}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Yellow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 9.033333333333331, "count": 25}
+					]
+				},
+				{
+					"bloon": {"type": "Pink", "camo": false, "regen": true},
+					"spawners": [
+						{"start": 13.5, "length": 2.1124999999999994, "count": 12}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Next round are many Zebra Bloons. Some of them will be heart-shaped Regen Bloons. Get ready!",
+			"groups": [
+				{
+					"bloon": {"type": "Lead", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 13.070098039215686, "count": 9}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Zebra", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 5.085294117647059, "count": 8}
+					]
+				},
+				{
+					"bloon": {"type": "Zebra", "camo": false, "regen": true},
+					"spawners": [
+						{"start": 5.916666666666667, "length": 1.713, "count": 2}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Next round there are lots of Camo Bloons, make sure you have a couple of Ninja Monkeys or other towers that can detect Camo Bloons!",
+			"groups": [
+				{
+					"bloon": {"type": "Black", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 13.703999999999999, "count": 25}
+					]
+				},
+				{
+					"bloon": {"type": "White", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 14.274999999999999, "length": 16.558999999999997, "count": 28}
+					]
+				},
+				{
+					"bloon": {"type": "Lead", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 31.404999999999998, "length": 3.9970000000000034, "count": 8}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Yellow", "camo": true, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 25.541666666666668, "count": 20}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Rainbow Bloons, pretty fast, pretty mean and pretty pretty. They're rainbows after all, right?",
+			"groups": [
+				{
+					"bloon": {"type": "Zebra", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 7.5, "length": 18.083333333333332, "count": 5}
+					]
+				},
+				{
+					"bloon": {"type": "Yellow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 34.11291666666666, "count": 140}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Beware round 42...",
+			"groups": [
+				{
+					"bloon": {"type": "White", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 10.033333333333331, "count": 25}
+					]
+				},
+				{
+					"bloon": {"type": "Rainbow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 14.354166666666666, "length": 2.283999999999999, "count": 5}
+					]
+				},
+				{
+					"bloon": {"type": "Pink", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 19.2125, "length": 6.995833333333333, "count": 35}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Pink", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 3.5, "length": 1.5125, "count": 20}
+					]
+				},
+				{
+					"bloon": {"type": "Pink", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 11.916666666666666, "length": 1.345833333333334, "count": 20}
+					]
+				},
+				{
+					"bloon": {"type": "Pink", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 20.416666666666668, "length": 2.833333333333329, "count": 41}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Black", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 10.848999999999998, "count": 20}
+					]
+				},
+				{
+					"bloon": {"type": "White", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 11.419999999999998, "length": 10.849, "count": 20}
+					]
+				},
+				{
+					"bloon": {"type": "Lead", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 22.839999999999996, "length": 7.994, "count": 15}
+					]
+				},
+				{
+					"bloon": {"type": "Zebra", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 31.404999999999994, "length": 5.138999999999999, "count": 10}
+					]
+				},
+				{
+					"bloon": {"type": "White", "camo": true, "regen": false},
+					"spawners": [
+						{"start": 41.916666666666664, "length": 1.5916666666666686, "count": 7}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "In a couple of rounds there will be more Camo Bloons. You have been warned.",
+			"groups": [
+				{
+					"bloon": {"type": "White", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 3.595833333333333, "count": 17}
+					]
+				},
+				{
+					"bloon": {"type": "Lead", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 4.833333333333333, "length": 8.565, "count": 14}
+					]
+				},
+				{
+					"bloon": {"type": "Zebra", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 12.0875, "length": 6.280999999999999, "count": 10}
+					]
+				},
+				{
+					"bloon": {"type": "Rainbow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 25.725, "length": 2.8550000000000018, "count": 4}
+					]
+				},
+				{
+					"bloon": {"type": "Pink", "camo": false, "regen": true},
+					"spawners": [
+						{"start": 2, "length": 23.411, "count": 42}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Black", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 5.138999999999999, "count": 10}
+					]
+				},
+				{
+					"bloon": {"type": "White", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 5.709999999999999, "length": 5.138999999999999, "count": 10}
+					]
+				},
+				{
+					"bloon": {"type": "Lead", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 11.419999999999998, "length": 7.2625, "count": 20}
+					]
+				},
+				{
+					"bloon": {"type": "Zebra", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 22.839999999999996, "length": 10.848999999999997, "count": 20}
+					]
+				},
+				{
+					"bloon": {"type": "Rainbow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 34.25999999999999, "length": 9.707, "count": 18}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Rainbow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 5.138999999999999, "count": 10}
+					]
+				},
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 7.9625, "length": 1.713000000000001, "count": 4}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "This next round coming up will separate the strong from the weak. Make sure you have good Camo Detection by now and burst damage to deal with Regrowers too.",
+			"groups": [
+				{
+					"bloon": {"type": "Black", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 18.770833333333332, "count": 60}
+					]
+				},
+				{
+					"bloon": {"type": "Zebra", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 18.845833333333335, "length": 27.358333333333334, "count": 60}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Rainbow", "camo": false, "regen": true},
+					"spawners": [
+						{"start": 0, "length": 5, "count": 6}
+					]
+				},
+				{
+					"bloon": {"type": "Rainbow", "camo": true, "regen": false},
+					"spawners": [
+						{"start": 6, "length": 5, "count": 6}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Rainbow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 5.138999999999999, "count": 10}
+					]
+				},
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 5.709999999999999, "length": 3.554166666666667, "count": 7}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Zebra", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 10, "count": 10},
+						{"start": 9.916666666666666, "length": 7, "count": 10},
+						{"start": 16.833333333333332, "length": 4, "count": 10},
+						{"start": 20.75, "length": 2, "count": 10},
+						{"start": 22.666666666666668, "length": 1, "count": 10}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Rainbow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 13.703999999999999, "count": 25}
+					]
+				},
+				{
+					"bloon": {"type": "Pink", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 14.274999999999999, "length": 60.729166666666664, "count": 200}
+					]
+				},
+				{
+					"bloon": {"type": "Lead", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 75, "length": 3.9969999999999857, "count": 8}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Building up a bit of a nest egg are we? Think carefully about what to spend it on - money tends to get a bit tighter the higher you go in this game. Just sayin'.",
+			"groups": [
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 0, "count": 1}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 6.281, "count": 12}
+					]
+				},
+				{
+					"bloon": {"type": "Pink", "camo": true, "regen": false},
+					"spawners": [
+						{"start": 6.5, "length": 18.145833333333332, "count": 70}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Got any Super Monkeys yet?",
+			"groups": [
+				{
+					"bloon": {"type": "Pink", "camo": false, "regen": true},
+					"spawners": [
+						{"start": 0, "length": 39.69583333333333, "count": 120}
+					]
+				},
+				{
+					"bloon": {"type": "Rainbow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 39.68333333333333, "length": 23.39166666666667, "count": 50}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Rainbow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 4, "length": 5.138999999999999, "count": 10},
+						{"start": 43.03333333333333, "length": 5.138999999999999, "count": 10}
+					]
+				},
+				{
+					"bloon": {"type": "Rainbow", "camo": false, "regen": true},
+					"spawners": [
+						{"start": 43.03333333333333, "length": 5.138999999999999, "count": 10}
+					]
+				},
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 15.5, "length": 6.537499999999999, "count": 18}
+					]
+				},
+				{
+					"bloon": {"type": "Zebra", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 29.275, "length": 3.512499999999998, "count": 20}
+					]
+				},
+				{
+					"bloon": {"type": "Green", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 55.34391891891892, "count": 343}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 0, "count": 1},
+						{"start": 27.978999999999996, "length": 0, "count": 1}
+					]
+				},
+				{
+					"bloon": {"type": "Lead", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0.571, "length": 3.997, "count": 8}
+					]
+				},
+				{
+					"bloon": {"type": "Red", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 9.8875, "length": 1.3458333333333332, "count": 20}
+					]
+				},
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 16.558999999999997, "length": 10.848999999999997, "count": 20}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Ok, let's ramp things up a bit shall we?",
+			"groups": [
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 15.416999999999998, "count": 28}
+					]
+				},
+				{
+					"bloon": {"type": "Rainbow", "camo": false, "regen": true},
+					"spawners": [
+						{"start": 15.988, "length": 5.138999999999999, "count": 10}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Rainbow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 13.703999999999999, "count": 25}
+					]
+				},
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 14.274999999999999, "length": 0, "count": 1},
+						{"start": 17.700999999999997, "length": 0, "count": 1}
+					]
+				},
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 14.845999999999998, "length": 2.2840000000000007, "count": 5},
+						{"start": 18.272, "length": 2.283999999999999, "count": 5}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Pink", "camo": true, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 45.109, "count": 80}
+					]
+				},
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 27.9625, "length": 0, "count": 1},
+						{"start": 31.976, "length": 0, "count": 1},
+						{"start": 35.733333333333334, "length": 0, "count": 1}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 19.414, "count": 35}
+					]
+				},
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 6.229166666666667, "length": 0, "count": 1},
+						{"start": 11.991, "length": 0, "count": 1}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Ring a round the rosie, a pocketful of - Rainbow Bloons.",
+			"groups": [
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 28.78333333333333, "length": 0, "count": 1}
+					]
+				},
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 1.1666666666666667, "length": 1.6375, "count": 10},
+						{"start": 7.833333333333333, "length": 1.470833333333334, "count": 10},
+						{"start": 14.416666666666666, "length": 1.470833333333334, "count": 10},
+						{"start": 22.166666666666668, "length": 0.9083333333333314, "count": 15}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Rainbow", "camo": false, "regen": true},
+					"spawners": [
+						{"start": 0, "length": 12, "count": 40}
+					]
+				},
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 15.179166666666667, "length": 0, "count": 1}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 0.571, "count": 2},
+						{"start": 12.561999999999998, "length": 0.5709999999999997, "count": 2}
+					]
+				},
+				{
+					"bloon": {"type": "Rainbow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0.975, "length": 25.258333333333336, "count": 40}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Camo + Lead = much pain. Hope you're ready.",
+			"groups": [
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 43.98333333333333, "count": 5}
+					]
+				},
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 44.15416666666667, "count": 29}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 27.979, "count": 50}
+					]
+				},
+				{
+					"bloon": {"type": "Lead", "camo": true, "regen": false},
+					"spawners": [
+						{"start": 10.166666666666666, "length": 7.450961538461541, "count": 28}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Enjoy that BFB did you?",
+			"groups": [
+				{
+					"bloon": {"type": "BFB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 0, "count": 1}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Zebra", "camo": false, "regen": true},
+					"spawners": [
+						{"start": 0, "length": 20, "count": 150}
+					]
+				},
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 1.9166666666666667, "length": 14.033333333333331, "count": 5}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Next round will be @#$*% hard.",
+			"groups": [
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 1.0833333333333333, "length": 25, "count": 6}
+					]
+				},
+				{
+					"bloon": {"type": "Pink", "camo": true, "regen": false},
+					"spawners": [
+						{"start": 1.142, "length": 56.52899999999999, "count": 300}
+					]
+				},
+				{
+					"bloon": {"type": "Rainbow", "camo": true, "regen": true},
+					"spawners": [
+						{"start": 57.5, "length": 7.994, "count": 15}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 3.8791666666666664, "length": 0.2, "count": 40},
+						{"start": 20.083333333333332, "length": 0.2, "count": 40},
+						{"start": 36.416666666666664, "length": 0.2, "count": 42}
+					]
+				},
+				{
+					"bloon": {"type": "Lead", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 42.254, "count": 75}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Last level for Medium difficulty.",
+			"groups": [
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 5.758333333333333, "count": 9}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Zebra", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 32.358333333333334, "count": 100}
+					]
+				},
+				{
+					"bloon": {"type": "Rainbow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 32.59583333333333, "length": 14.308333333333335, "count": 70}
+					]
+				},
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 47.31666666666666, "length": 10.849000000000004, "count": 50}
+					]
+				},
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 58.56666666666666, "length": 0.570999999999998, "count": 3}
+					]
+				},
+				{
+					"bloon": {"type": "BFB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 60, "length": 2, "count": 2}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "If you keep playing you'll keep unlocking new stuff and ultimately get better at the game. Remember to take breaks occasionally to do non-BTD5 things.",
+			"groups": [
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 0.5, "count": 2},
+						{"start": 7, "length": 0.5, "count": 2},
+						{"start": 13.916666666666666, "length": 1, "count": 4},
+						{"start": 20.75, "length": 0.75, "count": 4}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 2.284, "count": 5},
+						{"start": 24.15416666666667, "length": 2.283999999999999, "count": 5}
+					]
+				},
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 9.095833333333331, "length": 7.994, "count": 15}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 1.7129999999999999, "count": 4}
+					]
+				},
+				{
+					"bloon": {"type": "BFB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 7.441666666666666, "length": 0, "count": 1}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "If you were a bloon, wouldn't you rather get popped instead of slowly leaking and withering to an undignified husk? I guess we'll never know since they can't speak.",
+			"groups": [
+				{
+					"bloon": {"type": "Lead", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 16.558999999999997, "count": 60}
+					]
+				},
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": true},
+					"spawners": [
+						{"start": 17.13, "length": 41.94166666666666, "count": 70}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Rainbow", "camo": true, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 40, "count": 200}
+					]
+				},
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 40, "length": 1.141999999999996, "count": 4}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 4.416666666666667, "length": 5, "count": 10}
+					]
+				},
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 16.558999999999997, "count": 30}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "BFB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 3.4166666666666665, "length": 0, "count": 1},
+						{"start": 16.116666666666667, "length": 0, "count": 1}
+					]
+				},
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": true},
+					"spawners": [
+						{"start": 0, "length": 21.697999999999993, "count": 38}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 2.284, "count": 7},
+						{"start": 26.383333333333336, "length": 0.5710000000000015, "count": 2}
+					]
+				},
+				{
+					"bloon": {"type": "BFB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 13.4, "length": 3, "count": 2}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 56.528999999999996, "count": 100},
+						{"start": 56.3375, "length": 27.52500000000001, "count": 100}
+					]
+				},
+				{
+					"bloon": {"type": "BFB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 41.42916666666667, "length": 0, "count": 1}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Next level will be fun, a whole bunch of Ceramic Bloons are going to charge right through your defenses and pretty much make you lose.",
+			"groups": [
+				{
+					"bloon": {"type": "BFB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 0, "count": 1},
+						{"start": 9.706999999999999, "length": 0, "count": 1},
+						{"start": 22.4875, "length": 0, "count": 1}
+					]
+				},
+				{
+					"bloon": {"type": "Lead", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0.571, "length": 7.422999999999999, "count": 14},
+						{"start": 10.277999999999999, "length": 7.422999999999998, "count": 14}
+					]
+				},
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 8.565, "length": 0.5709999999999997, "count": 2},
+						{"start": 18.272, "length": 0.5710000000000015, "count": 2}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": true},
+					"spawners": [
+						{"start": 0, "length": 1.7708333333333333, "count": 60}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 58.92083333333333, "count": 14}
+					]
+				},
+				{
+					"bloon": {"type": "BFB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 26.666666666666668, "length": 4.554166666666665, "count": 5}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Rainbow", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 90, "count": 150}
+					]
+				},
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 10, "length": 1.1666666666666667, "count": 75}
+					]
+				},
+				{
+					"bloon": {"type": "Ceramic", "camo": true, "regen": false},
+					"spawners": [
+						{"start": 77.91666666666667, "length": 1.2041666666666655, "count": 72}
+					]
+				},
+				{
+					"bloon": {"type": "BFB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 44.083333333333336, "length": 1.713, "count": 1}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Rainbow", "camo": false, "regen": true},
+					"spawners": [
+						{"start": 0, "length": 60, "count": 500}
+					]
+				},
+				{
+					"bloon": {"type": "BFB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 3.1666666666666665, "length": 52.95, "count": 7}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 20, "count": 31}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Regen AND Camo coming up. Not very fun or fair really is it?",
+			"groups": [
+				{
+					"bloon": {"type": "BFB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 20, "count": 9}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Rainbow", "camo": true, "regen": true},
+					"spawners": [
+						{"start": 0, "length": 60, "count": 400}
+					]
+				},
+				{
+					"bloon": {"type": "BFB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 20, "count": 10}
+					]
+				}
+			]
+		},
+		{
+			"groups": [
+				{
+					"bloon": {"type": "Ceramic", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 60, "count": 50},
+						{"start": 0.1, "length": 60, "count": 50},
+						{"start": 0.2, "length": 60, "count": 50}
+					]
+				},
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 10, "length": 10, "count": 30}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "If you're playing on Hard, you've done well to get this far, but it will all end next level.",
+			"groups": [
+				{
+					"bloon": {"type": "MOAB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 25, "count": 50}
+					]
+				},
+				{
+					"bloon": {"type": "BFB", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 5, "length": 20, "count": 10}
+					]
+				}
+			]
+		},
+		{
+			"flavorText": "Freeplay, freeplay, freeplay. Have fun!",
+			"groups": [
+				{
+					"bloon": {"type": "Boss", "camo": false, "regen": false},
+					"spawners": [
+						{"start": 0, "length": 0, "count": 1}
+					]
+				}
+			]
+		}
+	]
+}

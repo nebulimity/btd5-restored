@@ -61,8 +61,11 @@ public class Bloon : Entity
 	public const int WindLayer = 3;
 	public const int MoabLayer = 1200;
 
+	public static uint counter = 0;
+
 	public static readonly int[] SpawnOrderStrideByType = { 1, 1, 1, 1, 1, 2, 2, 4, 4, 8, 16, 64, 256, 1024 };
 	public bool Sabotaged;
+	public double SpawnTime;
 
 	private Tile _tile;
 	public Tile Tile
@@ -108,13 +111,19 @@ public class Bloon : Entity
 	public double PrevY;
 	public double PrevRot;
 
-	public void Initialize(BloonType type, Tile tile, double tileProgress)
+	public void Initialize(BloonType type, Tile tile, double tileProgress, bool regen = false, bool camo = false, float spawnTime = 0)
 	{
+		Id = counter++;
+		LifetimeId = Id;
+		SpawnTime = spawnTime;
 		OverallProgress = 0;
 		WasWhite = false;
 		_tile = tile;
 		TileProgress = tileProgress;
 		ParentIds.Clear();
+
+		IsCamo = camo && type < BloonType.MOAB;
+		IsRegen = regen && type < BloonType.MOAB;
 		RegenCeiling = type;
 		SetType(type);
 
