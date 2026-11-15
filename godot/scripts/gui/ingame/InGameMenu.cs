@@ -2,13 +2,10 @@ using Godot;
 
 public partial class InGameMenu : Node
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+	[Export] private TextureButton _playButton;
+	[Export] private TextureButton _fastForwardButton;
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+	[Export] private Sprite2D _blueArrows;
+	[Export] private DpiTexture _defaultTexture;
+	[Export] private DpiTexture _pressedTexture;
 }
