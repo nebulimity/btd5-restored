@@ -59,6 +59,10 @@ public class Level : Scene
 		StartTile = CurrentTileSet[0];
 
 		Bloon.DifficultySpeedModifier = BloonSpeedModsByMode[(int)mode];
+
+		Spawner.ApplyCamoToo = null;
+		Spawner.ApplyRegenToo = null;
+		Spawner.BloonLevelOffsets = null;
 	}
 
 	public override void Process(double delta)

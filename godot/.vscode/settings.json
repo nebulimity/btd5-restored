@@ -1,9 +1,11 @@
 {
-	"godotTools.editorPath.godot4": "/Users/koenkruk/Downloads/Godot_mono.app",
+	"godotTools.editorPath.godot4": "/Applications/Godot_mono.app",
 	"editor.acceptSuggestionOnCommitCharacter": false,
 	"[csharp]": {
 		"editor.codeLens": false,
 		"editor.formatOnSave": true,
-		"editor.formatOnPaste": true
+		"editor.formatOnPaste": true,
+		"files.insertFinalNewline": true,
+		"files.trimFinalNewlines": true
 	}
 }
