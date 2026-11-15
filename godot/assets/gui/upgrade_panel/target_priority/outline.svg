@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   ffdec:objectType="frame"
+   height="31.6px"
+   width="58.6px"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="10.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:ffdec="https://www.free-decompiler.com/flash">
+  <sodipodi:namedview
+     id="namedview12"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="13.056861"
+     inkscape:cx="64.295699"
+     inkscape:cy="31.592586"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3" />
+  <g
+     transform="matrix(1.0, 0.0, 0.0, 1.0, 2.65, 3.25)"
+     id="g3">
+    <use
+       ffdec:characterId="5746"
+       height="31.6"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, -2.65, -3.25)"
+       width="58.6"
+       xlink:href="#shape0"
+       id="use1" />
+    <filter
+       id="filter5"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feColorMatrix
+         in="SourceGraphic"
+         result="filterResult0"
+         type="matrix"
+         values="0 0 0 0 0.25490198,0 0 0 0 0.16078432,0 0 0 0 0.05490196,0 0 0 1 0"
+         id="feColorMatrix1" />
+      <feConvolveMatrix
+         divisor="4.0"
+         in="filterResult0"
+         kernelMatrix="1 1 1 1"
+         order="2 2"
+         result="filterResult1"
+         id="feConvolveMatrix1" />
+      <feConvolveMatrix
+         divisor="4.0"
+         in="filterResult1"
+         kernelMatrix="1 1 1 1"
+         order="2 2"
+         result="filterResult2"
+         id="feConvolveMatrix2" />
+      <feConvolveMatrix
+         divisor="4.0"
+         in="filterResult2"
+         kernelMatrix="1 1 1 1"
+         order="2 2"
+         result="filterResult3"
+         id="feConvolveMatrix3" />
+      <feComposite
+         in="SourceGraphic"
+         in2="filterResult3"
+         operator="over"
+         result="filterResult4"
+         id="feComposite3" />
+    </filter>
+  </g>
+  <defs
+     id="defs12">
+    <g
+       id="shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 2.65, 3.25)">
+      <path
+         d="M49.1 25.45 L1.5 26.35 -0.5 -1.2 53.6 0.65 49.1 25.45"
+         fill="#ffffff"
+         fill-opacity="0.49803922"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path3" />
+      <path
+         d="M49.1 25.45 L1.5 26.35 -0.5 -1.2 53.6 0.65 49.1 25.45 Z"
+         fill="none"
+         stroke="#ffffff"
+         stroke-linecap="butt"
+         stroke-linejoin="miter-clip"
+         stroke-miterlimit="3.0"
+         stroke-width="4.0"
+         id="path4" />
+    </g>
+    <g
+       id="text0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, -0.5, 1.2)">
+      <g
+         transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)"
+         id="g8">
+        <use
+           fill="#ffffff"
+           height="12.0"
+           transform="matrix(0.0127, 0.0, 0.0, 0.0127, 0.0, 10.0)"
+           width="34.05"
+           xlink:href="#font_Oetztype_F0"
+           id="use4" />
+        <use
+           fill="#ffffff"
+           height="12.0"
+           transform="matrix(0.0127, 0.0, 0.0, 0.0127, 5.7, 10.0)"
+           width="34.05"
+           xlink:href="#font_Oetztype_I0"
+           id="use5" />
+        <use
+           fill="#ffffff"
+           height="12.0"
+           transform="matrix(0.0127, 0.0, 0.0, 0.0127, 9.25, 10.0)"
+           width="34.05"
+           xlink:href="#font_Oetztype_R0"
+           id="use6" />
+        <use
+           fill="#ffffff"
+           height="12.0"
+           transform="matrix(0.0127, 0.0, 0.0, 0.0127, 16.5, 10.0)"
+           width="34.05"
+           xlink:href="#font_Oetztype_S0"
+           id="use7" />
+        <use
+           fill="#ffffff"
+           height="12.0"
+           transform="matrix(0.0127, 0.0, 0.0, 0.0127, 22.9, 10.0)"
+           width="34.05"
+           xlink:href="#font_Oetztype_T0"
+           id="use8" />
+      </g>
+    </g>
+    <g
+       id="font_Oetztype_F0">
+      <path
+         d="M39.95 0.0 L39.95 -579.6 Q231.25 -601.1 426.35 -601.1 426.35 -548.85 398.7 -439.0 394.1 -420.2 394.1 -422.5 391.8 -417.5 374.5 -412.5 357.2 -407.55 346.05 -405.2 327.25 -400.25 308.45 -395.6 264.25 -384.5 256.6 -382.95 252.35 -382.2 240.85 -383.7 185.5 -389.45 178.6 -389.45 178.6 -360.3 207.05 -295.0 208.55 -295.0 211.65 -294.2 L217.0 -294.2 Q246.95 -294.2 301.5 -316.1 356.45 -338.4 386.4 -338.4 L386.4 -328.0 385.65 -311.5 Q383.7 -293.45 383.7 -284.6 L382.2 -256.6 Q379.1 -219.3 376.05 -193.6 L374.5 -181.7 250.05 -181.7 Q250.05 -180.15 249.3 -175.55 246.2 -153.25 246.2 -147.1 258.1 -104.45 266.55 -83.35 273.1 -63.4 279.25 -43.4 284.6 -24.2 286.55 -19.6 288.85 -15.0 288.85 0.0 L39.95 0.0"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path8" />
+    </g>
+    <g
+       id="font_Oetztype_I0">
+      <path
+         d="M39.95 -589.95 L65.3 -589.95 Q145.55 -589.95 236.6 -560.0 246.95 -556.95 246.95 -550.8 L246.95 -520.85 Q246.95 -530.05 240.85 -430.2 236.6 -377.55 232.75 -321.1 224.7 -215.1 216.25 -109.45 L210.1 -36.85 207.8 -9.6 197.45 0.0 39.95 0.0 39.95 -589.95"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path9" />
+    </g>
+    <g
+       id="font_Oetztype_R0">
+      <path
+         d="M192.8 -363.35 L212.4 -358.0 Q227.4 -353.35 242.35 -348.4 274.65 -339.15 291.15 -334.15 L300.35 -334.15 Q317.65 -341.45 320.35 -343.75 332.65 -360.3 339.9 -371.4 355.65 -394.85 359.5 -402.9 L360.3 -405.2 Q361.05 -406.75 361.05 -408.3 361.05 -409.05 360.3 -411.35 L359.5 -412.9 Q358.75 -413.65 354.15 -421.75 331.1 -448.25 320.35 -461.7 306.9 -478.2 300.35 -481.25 L298.85 -482.05 Q296.5 -482.8 295.75 -482.8 295.0 -482.8 293.45 -482.05 L291.15 -481.25 Q249.3 -449.0 228.9 -430.2 181.7 -387.15 181.7 -378.35 181.7 -377.55 182.45 -376.05 L182.45 -373.75 Q187.45 -368.35 192.8 -363.35 M227.4 -196.65 L227.4 -39.2 35.35 -39.2 35.35 -570.4 39.95 -571.9 Q52.6 -576.55 74.9 -579.6 L135.2 -588.45 Q197.45 -596.1 228.9 -601.1 L271.55 -605.7 300.35 -609.55 320.35 -609.55 Q433.25 -556.95 507.4 -511.25 L507.4 -487.05 Q507.4 -364.1 487.8 -314.55 484.75 -306.1 473.6 -300.35 470.5 -298.85 454.0 -292.7 427.9 -282.3 427.9 -265.05 427.9 -249.3 437.5 -232.75 449.0 -210.1 474.35 -182.45 L517.0 -136.75 Q547.35 -99.85 547.35 -78.75 L547.35 -74.15 Q546.55 -69.9 546.55 -68.35 441.35 -24.2 389.45 0.0 L387.95 0.75 384.1 0.75 381.4 0.75 379.1 0.0 369.9 -9.6 Q349.9 -39.2 339.15 -54.15 315.35 -88.75 291.9 -123.7 270.8 -154.0 261.2 -166.7 250.8 -177.05 244.65 -182.45 229.7 -195.1 227.4 -196.65"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path10" />
+    </g>
+    <g
+       id="font_Oetztype_S0">
+      <path
+         d="M37.65 -166.7 Q157.5 -166.7 295.75 -137.5 L295.75 -152.5 Q295.75 -161.3 295.0 -174.0 289.6 -225.85 256.6 -225.85 L226.6 -220.85 Q195.9 -216.25 197.45 -216.25 L190.5 -216.25 178.6 -216.25 165.95 -215.5 155.95 -215.5 139.45 -216.25 128.3 -216.25 29.95 -314.55 Q29.2 -327.25 29.2 -330.3 29.2 -388.7 55.7 -495.5 L59.9 -511.25 63.75 -514.3 Q66.85 -517.0 71.45 -520.05 76.45 -523.15 81.05 -526.2 85.65 -529.3 88.75 -530.8 L122.55 -553.85 Q144.8 -568.1 158.25 -570.4 283.1 -590.75 455.55 -590.75 455.55 -511.25 413.65 -442.1 L378.35 -440.55 324.95 -437.5 236.6 -432.5 Q231.25 -432.5 226.6 -430.95 L213.95 -427.9 Q198.95 -424.05 197.45 -422.5 195.9 -412.9 195.9 -409.85 195.9 -385.65 207.05 -382.95 L242.35 -377.55 295.75 -369.1 348.4 -360.3 383.7 -354.15 Q385.65 -354.15 390.25 -352.2 406.0 -346.85 413.65 -343.75 L421.75 -326.5 Q433.25 -299.6 445.15 -273.1 454.0 -253.1 458.6 -243.15 L464.75 -227.4 Q472.8 -207.8 472.8 -206.25 L473.6 -198.2 473.6 -186.65 473.6 -177.05 Q472.8 -169.75 472.8 -166.7 433.25 -111.75 394.1 -56.45 L374.5 -29.2 359.5 -14.2 351.85 -6.9 344.55 0.0 256.6 0.0 228.15 -1.55 185.5 -4.6 Q140.95 -7.7 117.9 -10.35 95.25 -12.7 76.45 -17.3 69.15 -18.8 68.35 -21.15 66.85 -26.9 65.3 -31.5 56.45 -59.9 53.4 -74.9 37.65 -132.15 37.65 -166.7"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path11" />
+    </g>
+    <g
+       id="font_Oetztype_T0">
+      <path
+         d="M77.95 -15.0 Q77.95 -15.75 78.75 -17.3 79.5 -18.8 79.5 -19.6 81.8 -30.75 87.2 -54.15 L114.1 -167.45 Q143.25 -291.15 147.9 -314.55 149.4 -321.1 150.2 -326.5 155.95 -358.0 158.25 -373.75 101.4 -353.35 28.4 -353.35 28.4 -454.0 49.55 -560.0 162.1 -579.6 354.9 -579.6 L454.75 -579.6 Q472.8 -579.6 472.8 -561.55 472.8 -470.5 442.85 -402.9 436.7 -388.7 433.25 -388.7 L334.95 -388.7 320.35 -373.75 320.35 0.0 88.75 0.0 79.5 -9.6 Q77.95 -13.45 77.95 -15.0"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path12" />
+    </g>
+  </defs>
+</svg>

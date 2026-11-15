@@ -48,6 +48,9 @@ public class Level : Scene
 	//public ChallengeDef Challenge;
 	public LevelDef LevelDef;
 
+	public event Action<Level> RoundStarted;
+	public event Action<Level> RoundEnded;
+
 	public void Initialize()
 	{
 
@@ -177,11 +180,13 @@ public class Level : Scene
 		Bloon.Counter = 0;
 
 		RoundTime = 0;
+		RoundStarted.Invoke(this);
 	}
 
 	public void RoundOver()
 	{
 		BetweenRounds = true;
+		RoundEnded.Invoke(this);
 
 		WaveSet.CurrentWave = null;
 		WaveIndex += 1;

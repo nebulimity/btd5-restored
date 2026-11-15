@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   ffdec:objectType="frame"
+   height="63.5"
+   width="103.45922"
+   version="1.1"
+   id="svg15"
+   sodipodi:docname="14.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:ffdec="https://www.free-decompiler.com/flash">
+  <sodipodi:namedview
+     id="namedview15"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="6.1125453"
+     inkscape:cx="91.04227"
+     inkscape:cy="28.22065"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="use1" />
+  <g
+     transform="translate(-0.5,-5.2)"
+     id="g3">
+    <g
+       id="use1">
+      <path
+         d="M 2.5,7.2 V 66.7 H 89.35 L 77,55.6 100.75,7.2 H 2.5"
+         fill="#ebffcb"
+         fill-opacity="0.709804"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path28" />
+    </g>
+    <clipPath
+       id="clipPath0">
+      <path
+         d="m 1.5,5.85 v 61.5 H 92.75 L 78.5,55.9 102.25,5.85 Z"
+         id="path1" />
+    </clipPath>
+    <g
+       clip-path="url(#clipPath0)"
+       id="g1">
+      <use
+         ffdec:characterId="49"
+         height="0"
+         id="holder_mc"
+         transform="translate(87.75,36)"
+         width="0"
+         xlink:href="#sprite0" />
+    </g>
+    <filter
+       id="filter6"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feColorMatrix
+         in="SourceGraphic"
+         result="filterResult0"
+         type="matrix"
+         values="0 0 0 0 0.1764706,0 0 0 0 0.2627451,0 0 0 0 0.02745098,0 0 0 1 0"
+         id="feColorMatrix1" />
+      <feConvolveMatrix
+         divisor="9.0"
+         in="filterResult0"
+         kernelMatrix="1 1 1 1 1 1 1 1 1"
+         order="3 3"
+         result="filterResult1"
+         id="feConvolveMatrix1" />
+      <feConvolveMatrix
+         divisor="9.0"
+         in="filterResult1"
+         kernelMatrix="1 1 1 1 1 1 1 1 1"
+         order="3 3"
+         result="filterResult2"
+         id="feConvolveMatrix2" />
+      <feConvolveMatrix
+         divisor="9.0"
+         in="filterResult2"
+         kernelMatrix="1 1 1 1 1 1 1 1 1"
+         order="3 3"
+         result="filterResult3"
+         id="feConvolveMatrix3" />
+      <feComposite
+         in="SourceGraphic"
+         in2="filterResult3"
+         operator="over"
+         result="filterResult4"
+         id="feComposite3" />
+    </filter>
+    <g
+       id="hit_btn"
+       transform="translate(-1,5.85)">
+      <g
+         id="use15">
+        <path
+           d="M 2.5,0 H 103.25 L 79.5,50.05 93.75,61.5 H 2.5 V 0"
+           fill="#ffffff"
+           fill-opacity="0"
+           fill-rule="evenodd"
+           stroke="none"
+           id="path16" />
+      </g>
+    </g>
+  </g>
+  <defs
+     id="defs15">
+    <g
+       id="morphshape0"
+       transform="translate(1.5,-3.2)">
+      <path
+         d="M 2.5,7.2 V 66.7 H 89.35 L 77,55.6 100.75,7.2 H 2.5"
+         fill="#ebffcb"
+         fill-opacity="0.709804"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path3" />
+      <path
+         d="m 2.5,7.2 h 98.25 L 77,55.6 89.35,66.7 H 2.5 V 7.2 h 98.25 L 77,55.6 89.35,66.7 H 2.5 Z"
+         fill="none"
+         stroke="#000000"
+         stroke-linecap="butt"
+         stroke-linejoin="miter-clip"
+         stroke-miterlimit="3"
+         stroke-opacity="0.25098"
+         stroke-width="4"
+         id="path4" />
+    </g>
+    <g
+       id="text0"
+       transform="translate(-0.6,1.05)">
+      <g
+         id="g9">
+        <use
+           fill="#9bd500"
+           height="13.85"
+           transform="matrix(0.0152,0,0,0.0152,0,12)"
+           width="57.950001"
+           xlink:href="#font_Oetztype_B0"
+           id="use4" />
+        <use
+           fill="#9bd500"
+           height="13.85"
+           transform="matrix(0.0152,0,0,0.0152,8.5,12)"
+           width="57.950001"
+           xlink:href="#font_Oetztype_O0"
+           id="use5" />
+        <use
+           fill="#9bd500"
+           height="13.85"
+           transform="matrix(0.0152,0,0,0.0152,18.1,12)"
+           width="57.950001"
+           xlink:href="#font_Oetztype_U0"
+           id="use6" />
+        <use
+           fill="#9bd500"
+           height="13.85"
+           transform="matrix(0.0152,0,0,0.0152,27.3,12)"
+           width="57.950001"
+           xlink:href="#font_Oetztype_G0"
+           id="use7" />
+        <use
+           fill="#9bd500"
+           height="13.85"
+           transform="matrix(0.0152,0,0,0.0152,36,12)"
+           width="57.950001"
+           xlink:href="#font_Oetztype_H0"
+           id="use8" />
+        <use
+           fill="#9bd500"
+           height="13.85"
+           transform="matrix(0.0152,0,0,0.0152,44.8,12)"
+           width="57.950001"
+           xlink:href="#font_Oetztype_T0"
+           id="use9" />
+      </g>
+    </g>
+    <g
+       id="font_Oetztype_B0">
+      <path
+         d="m 156.7,-384.5 q 0,1.55 0.8,5.4 v 5.35 q 6.1,39.6 10.75,59.2 14.95,88.7 28.4,157.05 8.85,42.65 19.6,59.15 9.6,2.35 29.95,2.35 h 18.05 q 13.45,0 30.75,-21.9 13.45,-15.75 26.85,-32.3 14.25,-19.55 14.25,-37.6 0,-1.95 -1.15,-5 -0.8,-3.1 -0.8,-3.85 -48.4,-53.8 -96.4,-107.95 43.4,-49.15 87.2,-98.3 0,-0.8 -3.1,-7.7 -13.4,-28.4 -26.85,-51.1 -6.15,-11.1 -24.2,-11.1 h -7.3 l -7.7,0.75 q -26.9,19.6 -39.55,29.95 l -23.45,17.3 q -11.1,8.8 -15.75,11.9 -7.3,5.35 -13.8,11.9 -6.55,6.15 -6.55,16.5 M 39.2,-560 q 14.95,-5 29.95,-10.4 l 16.5,-2.3 39.55,-3.85 172.1,-18.05 q 27.65,-2.3 47.25,-4.95 h 19.55 q 1.55,0.75 7.3,5.75 18.05,17.25 32.3,33.8 l 19.55,22.65 q 69.15,83.35 78.75,95.25 1.55,3.1 1.55,19.6 0,16.5 -1.55,19.6 -8.05,8.8 -14.2,14.95 l -10.35,8.85 -5.4,5.35 q -3.85,4.65 -16.5,18.85 l -35.35,41.85 q -6.55,6.95 -7.3,8.45 v 9.6 h 29.95 q 0.8,0 8.1,6.15 29.55,28.45 51.05,53 7.7,9.25 11.55,13.05 19.2,19.25 19.2,36.5 0,1.55 -1.15,4.6 -0.8,3.1 -0.8,5 0,1.95 -11.5,25.75 -5,9.2 -9.6,18.8 -5.4,10.4 -7.7,14.25 l -24.55,43.75 -25,44.95 -5,9.6 -3.05,6.15 q -1.55,2.3 -1.55,3.85 Q 433.25,0 432.5,0 H 39.2 v -560"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path9" />
+    </g>
+    <g
+       id="font_Oetztype_O0">
+      <path
+         d="m 203.55,-363.35 v 9.2 q 0,2.7 2.7,30.75 l 6.15,71.8 q 0.75,11.55 0.75,15.75 2.35,15 14.25,24.2 6.15,6.15 24.95,15 8.85,3.85 18.45,9.6 l 53.4,29.55 q 12.65,7.3 17.25,10.4 0.8,0 2.3,0.75 h 2.3 q 0.8,0 3.1,-0.75 h 1.55 q 8.05,-5.4 19.95,-19.6 16.5,-23.05 24.2,-34.55 15,-23.05 15,-24.6 v -137.5 q 0,-2.3 -19.6,-19.6 l -11.9,-10.35 -47.25,-39.2 -6.9,-0.75 h -8.1 q -23.4,0 -63.75,30.35 l -10,8.05 q -32.25,24.95 -38.8,31.5 m -176.65,0 q 0,-0.75 -0.8,-2.7 -0.75,-1.9 -0.75,-3.05 0,-0.8 0.75,-3.1 l 0.8,-1.55 q 3.85,-9.2 19.6,-29.15 L 84.1,-449 q 74.9,-92.2 129.05,-140.95 h 10.4 q 15.75,2.3 37.65,4.6 l 93.7,12.65 42.25,5.4 q 45.7,7.3 42.65,7.3 9.6,4.6 19.6,9.2 l 147.1,187.45 0.75,3.05 v 5.4 q 0,18.05 -18.05,78.75 -16.5,54.15 -41.85,112.55 -25,58.35 -39.2,65.25 L 303.8,3.85 l -188.95,-63 q -6.9,-2.3 -11.9,-8.45 -6.95,-8.05 -10.75,-18.8 -2.7,-6.55 -6.55,-21.55 -8.45,-37.25 -17.3,-74.5 -28.4,-120.2 -41.45,-180.9"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path10" />
+    </g>
+    <g
+       id="font_Oetztype_U0">
+      <path
+         d="m 29.2,-137.5 q 24.55,-196.65 49.55,-393.3 2.3,-18.05 19.6,-29.2 39.15,-6.55 59.15,-10.4 l 35.3,-6.15 23.45,-3.05 q 11.9,-4.25 19.6,-5.75 l 19.95,-4.6 13.85,-0.8 q 0,54.95 -17.7,163.65 -17.65,108.7 -17.65,163.6 0,26.15 12.65,62.25 14.25,44.55 36.9,44.55 l 5.75,-0.8 h 5.4 q 3.05,-0.75 14.2,-4.6 l 22.65,-8.45 41.9,-15.75 q 14.2,-5.75 14.2,-10.35 V -530.8 q 7.3,-5 14.95,-9.6 0.8,-0.8 17.3,-4.65 l 40.7,-8.05 48.8,-9.2 q 20.35,-4.25 41.1,-8.1 h 5.35 q 14.25,0 14.25,18.05 v 11.95 q 0,-4.65 -3.1,57.6 -4.2,75.65 -8.05,151.7 -2.3,39.95 -3.85,72.2 -4.6,72.6 -4.6,81.85 l -1.55,18.8 q -1.9,11.9 -3.45,23.05 -3.85,25.75 -5.4,27.25 -59.15,49.2 -117.9,98.35 -1.55,0.75 -11.15,1.9 L 364.1,-1.55 Q 351.45,0 343.75,0 h -11.9 L 306.9,0.75 H 281.55 243.9 218.55 L 193.6,0 h -16.55 q -9.2,-7.7 -18.05,-15.75 -63,-54.9 -71.05,-63 l -51.85,-51.85 -6.9,-6.9"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path11" />
+    </g>
+    <g
+       id="font_Oetztype_G0">
+      <path
+         d="m 29.2,-339.15 q 0,-17.3 1.55,-30.75 v -3.85 q 0.75,-9.95 8.45,-22.65 32.25,-44.95 50.3,-65.3 3.45,-3.8 11.15,-16.5 20.35,-34.55 48,-72.6 11.9,-13.05 19.6,-19.6 199.7,-20.35 367.55,-20.35 0,23.45 -23.4,81.45 -23.05,57.6 -39.6,67.2 -18.4,5.4 -36.85,11.15 -92.2,27.25 -149.8,48 -27.25,10 -34.55,15 -15.75,9.95 -18.85,30.35 l -5.35,33 q -3.1,23.05 -4.6,36.5 -1.95,11.9 -3.5,24.2 l -2.3,18.05 v 9.6 q 49.55,54.15 78.75,69.15 0,-3.1 -0.75,-9.6 v -10 q 0,-3.05 0.75,-10.35 v -9.25 q 0.75,-5.75 5.4,-19.2 19.95,-52.6 41.85,-95.65 16.5,-33 21.9,-33 H 512 V -9.6 H 394.1 q -15,0 -25,-20.35 -10.35,-20.35 -23.05,-20.35 -19.55,0 -49.9,26.5 -30.35,26.1 -58.4,26.1 h -7.3 L 220.85,1.55 207.8,0 q -3.45,-0.75 -14.2,-5.4 l -49.55,-18.8 q -11.9,-4.2 -15,-5 l -29.2,-10.75 q -33,-11.9 -39.95,-58.4 -5.35,-33.8 -10.35,-67.6 -3.05,-21.1 -6.15,-44.15 -5.35,-37.65 -10.35,-75.3 -2.3,-14.2 -2.3,-19.2 v -5.35 q -1.55,-12.7 -1.55,-29.2"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path12" />
+    </g>
+    <g
+       id="font_Oetztype_H0">
+      <path
+         d="m 65.3,-560 q 81.8,-31.5 172.45,-31.5 v 237.35 H 360.3 q 11.1,-112.55 21.9,-225.45 h 155.15 v 560 h -198.2 q 0,-96 11.55,-166.7 h -14.6 q -20.75,0 -42.65,4.6 -29.95,6.15 -55.7,25 -10.35,7.3 -10.35,9.6 v 127.5 l -4.6,1.55 q -13.45,4.6 -39.6,8.45 Q 110.25,2.3 36.1,2.3 v -21.9 q 0,-10.35 3.1,-67.6 2.3,-43.4 4.2,-86.8 4.6,-119.45 7.7,-179.35 l 3.05,-66.1 q 0.8,-24.95 1.55,-33 0.75,-15 1.9,-21.9 5.4,-56.45 7.7,-85.65"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path13" />
+    </g>
+    <g
+       id="font_Oetztype_T0">
+      <path
+         d="m 77.95,-15 q 0,-0.75 0.8,-2.3 0.75,-1.5 0.75,-2.3 2.3,-11.15 7.7,-34.55 l 26.9,-113.3 q 29.15,-123.7 33.8,-147.1 1.5,-6.55 2.3,-11.95 5.75,-31.5 8.05,-47.25 -56.85,20.4 -129.85,20.4 Q 28.4,-454 49.55,-560 162.1,-579.6 354.9,-579.6 h 99.85 q 18.05,0 18.05,18.05 0,91.05 -29.95,158.65 -6.15,14.2 -9.6,14.2 h -98.3 l -14.6,14.95 V 0 H 88.75 L 79.5,-9.6 q -1.55,-3.85 -1.55,-5.4"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path14" />
+    </g>
+    <g
+       id="sprite1"
+       transform="translate(-2.5)">
+      <use
+         ffdec:characterId="5769"
+         height="61.5"
+         transform="translate(2.5)"
+         width="100.75"
+         xlink:href="#shape0"
+         id="use14" />
+    </g>
+    <g
+       id="shape0"
+       transform="translate(-2.5)">
+      <path
+         d="M 2.5,0 H 103.25 L 79.5,50.05 93.75,61.5 H 2.5 V 0"
+         fill="#ffffff"
+         fill-opacity="0"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path15" />
+    </g>
+  </defs>
+</svg>

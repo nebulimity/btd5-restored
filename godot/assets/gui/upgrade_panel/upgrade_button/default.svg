@@ -1,0 +1,3778 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   ffdec:objectType="frame"
+   height="74.300003"
+   width="104.45461"
+   version="1.1"
+   id="svg289"
+   sodipodi:docname="1.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:ffdec="https://www.free-decompiler.com/flash">
+  <sodipodi:namedview
+     id="namedview289"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="1.6704839"
+     inkscape:cx="3.8910881"
+     inkscape:cy="-130.80042"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="upgradePath1" />
+  <g
+     transform="translate(-402.9954,0.4)"
+     id="g9">
+    <g
+       id="upgradePath1"
+       transform="translate(322.1,-8)">
+      <g
+         id="use362"
+         transform="translate(83.35,2.6)">
+        <g
+           id="use408">
+          <path
+             d="M 100,77.3 H 25.25 L 0,54.25 23,7.2 h 77 v 70.1"
+             fill="#9cd600"
+             fill-opacity="0.498039"
+             fill-rule="evenodd"
+             stroke="none"
+             id="path415" />
+          <path
+             d="M 100,77.3 H 25.25 L 0,54.25 23,7.2 h 77 z"
+             fill="none"
+             stroke="#000000"
+             stroke-linecap="butt"
+             stroke-linejoin="miter-clip"
+             stroke-miterlimit="3"
+             stroke-opacity="0.25098"
+             stroke-width="4"
+             id="path416" />
+        </g>
+        <clipPath
+           id="clipPath409">
+          <path
+             d="M 23.5,5 0.5,53.3 25.75,77 H 100.5 V 5 Z"
+             id="path409" />
+        </clipPath>
+        <g
+           clip-path="url(#clipPath1)"
+           id="g409">
+          <use
+             ffdec:characterId="49"
+             height="0"
+             id="use409"
+             transform="translate(128.75,36)"
+             width="0"
+             xlink:href="#sprite7" />
+        </g>
+        <filter
+           id="filter411"
+           x="0"
+           y="0"
+           width="1"
+           height="1">
+          <feColorMatrix
+             in="SourceGraphic"
+             result="filterResult25"
+             type="matrix"
+             values="0 0 0 0 0.1764706,0 0 0 0 0.2627451,0 0 0 0 0.02745098,0 0 0 1 0"
+             id="feColorMatrix409" />
+          <feConvolveMatrix
+             divisor="9.0"
+             in="filterResult25"
+             kernelMatrix="1 1 1 1 1 1 1 1 1"
+             order="3 3"
+             result="filterResult26"
+             id="feConvolveMatrix409" />
+          <feConvolveMatrix
+             divisor="9.0"
+             in="filterResult26"
+             kernelMatrix="1 1 1 1 1 1 1 1 1"
+             order="3 3"
+             result="filterResult27"
+             id="feConvolveMatrix410" />
+          <feConvolveMatrix
+             divisor="9.0"
+             in="filterResult27"
+             kernelMatrix="1 1 1 1 1 1 1 1 1"
+             order="3 3"
+             result="filterResult28"
+             id="feConvolveMatrix411" />
+          <feComposite
+             in="SourceGraphic"
+             in2="filterResult28"
+             operator="over"
+             result="filterResult29"
+             id="feComposite411" />
+        </filter>
+        <filter
+           id="filter414"
+           x="0"
+           y="0"
+           width="1"
+           height="1">
+          <feColorMatrix
+             in="SourceGraphic"
+             result="filterResult30"
+             type="matrix"
+             values="0 0 0 0 0.1764706,0 0 0 0 0.2627451,0 0 0 0 0.02745098,0 0 0 1 0"
+             id="feColorMatrix411" />
+          <feConvolveMatrix
+             divisor="9.0"
+             in="filterResult30"
+             kernelMatrix="1 1 1 1 1 1 1 1 1"
+             order="3 3"
+             result="filterResult31"
+             id="feConvolveMatrix412" />
+          <feConvolveMatrix
+             divisor="9.0"
+             in="filterResult31"
+             kernelMatrix="1 1 1 1 1 1 1 1 1"
+             order="3 3"
+             result="filterResult32"
+             id="feConvolveMatrix413" />
+          <feConvolveMatrix
+             divisor="9.0"
+             in="filterResult32"
+             kernelMatrix="1 1 1 1 1 1 1 1 1"
+             order="3 3"
+             result="filterResult33"
+             id="feConvolveMatrix414" />
+          <feComposite
+             in="SourceGraphic"
+             in2="filterResult33"
+             operator="over"
+             result="filterResult34"
+             id="feComposite414" />
+        </filter>
+        <g
+           id="use415"
+           transform="translate(0.5,5)">
+          <g
+             id="use440">
+            <path
+               d="M 100,72 H 25.25 L 0,48.3 23,0 h 77 v 72"
+               fill="#ffffff"
+               fill-opacity="0"
+               fill-rule="evenodd"
+               stroke="none"
+               id="path441" />
+          </g>
+        </g>
+      </g>
+    </g>
+    <filter
+       id="filter99"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feColorMatrix
+         in="SourceGraphic"
+         result="filterResult35"
+         type="matrix"
+         values="0 0 0 0 0.078431375,0 0 0 0 0.25490198,0 0 0 0 0.36862746,0 0 0 1 0"
+         id="feColorMatrix1" />
+      <feConvolveMatrix
+         divisor="9.0"
+         in="filterResult35"
+         kernelMatrix="1 1 1 1 1 1 1 1 1"
+         order="3 3"
+         result="filterResult36"
+         id="feConvolveMatrix1" />
+      <feConvolveMatrix
+         divisor="9.0"
+         in="filterResult36"
+         kernelMatrix="1 1 1 1 1 1 1 1 1"
+         order="3 3"
+         result="filterResult37"
+         id="feConvolveMatrix2" />
+      <feConvolveMatrix
+         divisor="9.0"
+         in="filterResult37"
+         kernelMatrix="1 1 1 1 1 1 1 1 1"
+         order="3 3"
+         result="filterResult38"
+         id="feConvolveMatrix3" />
+      <feComposite
+         in="SourceGraphic"
+         in2="filterResult38"
+         operator="over"
+         result="filterResult39"
+         id="feComposite3" />
+    </filter>
+    <filter
+       id="filter108"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feColorMatrix
+         in="SourceGraphic"
+         result="filterResult40"
+         type="matrix"
+         values="0 0 0 0 0.1764706,0 0 0 0 0.2627451,0 0 0 0 0.02745098,0 0 0 1 0"
+         id="feColorMatrix3" />
+      <feConvolveMatrix
+         divisor="9.0"
+         in="filterResult40"
+         kernelMatrix="1 1 1 1 1 1 1 1 1"
+         order="3 3"
+         result="filterResult41"
+         id="feConvolveMatrix4" />
+      <feConvolveMatrix
+         divisor="9.0"
+         in="filterResult41"
+         kernelMatrix="1 1 1 1 1 1 1 1 1"
+         order="3 3"
+         result="filterResult42"
+         id="feConvolveMatrix5" />
+      <feConvolveMatrix
+         divisor="9.0"
+         in="filterResult42"
+         kernelMatrix="1 1 1 1 1 1 1 1 1"
+         order="3 3"
+         result="filterResult43"
+         id="feConvolveMatrix6" />
+      <feComposite
+         in="SourceGraphic"
+         in2="filterResult43"
+         operator="over"
+         result="filterResult44"
+         id="feComposite6" />
+    </filter>
+    <filter
+       id="filter118"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feColorMatrix
+         in="SourceGraphic"
+         result="filterResult45"
+         type="matrix"
+         values="0 0 0 0 0.17254902,0 0 0 0 0.10980392,0 0 0 0 0.03137255,0 0 0 1 0"
+         id="feColorMatrix6" />
+      <feConvolveMatrix
+         divisor="4.0"
+         in="filterResult45"
+         kernelMatrix="1 1 1 1"
+         order="2 2"
+         result="filterResult46"
+         id="feConvolveMatrix7" />
+      <feConvolveMatrix
+         divisor="4.0"
+         in="filterResult46"
+         kernelMatrix="1 1 1 1"
+         order="2 2"
+         result="filterResult47"
+         id="feConvolveMatrix8" />
+      <feConvolveMatrix
+         divisor="4.0"
+         in="filterResult47"
+         kernelMatrix="1 1 1 1"
+         order="2 2"
+         result="filterResult48"
+         id="feConvolveMatrix9" />
+      <feComposite
+         in="SourceGraphic"
+         in2="filterResult48"
+         operator="over"
+         result="filterResult49"
+         id="feComposite9" />
+    </filter>
+    <use
+       ffdec:characterId="49"
+       height="0"
+       id="holder_mc"
+       transform="translate(40,37)"
+       width="0"
+       xlink:href="#sprite7" />
+  </g>
+  <defs
+     id="defs289">
+    <g
+       id="shape0"
+       transform="translate(-2.1,0.3)">
+      <path
+         d="M 4.2,2.15 76.8,6.8 70.75,69.05 6.85,71.3 4.2,2.15"
+         fill="#ffffff"
+         fill-opacity="0.498039"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path9" />
+      <path
+         d="M 4.2,2.15 76.8,6.8 70.75,69.05 6.85,71.3 Z"
+         fill="none"
+         stroke="#000000"
+         stroke-linecap="butt"
+         stroke-linejoin="miter-clip"
+         stroke-miterlimit="3"
+         stroke-opacity="0.498039"
+         stroke-width="4"
+         id="path10" />
+    </g>
+    <g
+       id="sprite0"
+       transform="translate(2.65,3.25)">
+      <use
+         ffdec:characterId="5744"
+         height="31.6"
+         transform="translate(-2.65,-3.25)"
+         width="58.599998"
+         xlink:href="#shape1"
+         id="use10" />
+      <filter
+         id="filter5"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult0"
+           type="matrix"
+           values="0 0 0 0 0.25490198,0 0 0 0 0.16078432,0 0 0 0 0.05490196,0 0 0 1 0"
+           id="feColorMatrix10" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult0"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult1"
+           id="feConvolveMatrix10" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult1"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult2"
+           id="feConvolveMatrix11" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult2"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult3"
+           id="feConvolveMatrix12" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult3"
+           operator="over"
+           result="filterResult4"
+           id="feComposite12" />
+      </filter>
+      <use
+         ffdec:characterId="5745"
+         filter="url(#filter5)"
+         height="12"
+         transform="translate(11.3,5.65)"
+         width="34.049999"
+         xlink:href="#text0"
+         id="use12" />
+    </g>
+    <g
+       id="shape1"
+       transform="translate(2.65,3.25)">
+      <path
+         d="m 49.1,25.45 -47.6,0.9 -2,-27.55 54.1,1.85 -4.5,24.8"
+         fill="#ffffff"
+         fill-opacity="0.498039"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path12" />
+      <path
+         d="M 49.1,25.45 1.5,26.35 -0.5,-1.2 53.6,0.65 Z"
+         fill="none"
+         stroke="#000000"
+         stroke-linecap="butt"
+         stroke-linejoin="miter-clip"
+         stroke-miterlimit="3"
+         stroke-opacity="0.498039"
+         stroke-width="4"
+         id="path13" />
+    </g>
+    <g
+       id="text0"
+       transform="translate(-0.5,1.2)">
+      <g
+         id="g17">
+        <use
+           fill="#d0a067"
+           height="12"
+           transform="matrix(0.0127,0,0,0.0127,0,10)"
+           width="34.049999"
+           xlink:href="#font_Oetztype_F0"
+           id="use13" />
+        <use
+           fill="#d0a067"
+           height="12"
+           transform="matrix(0.0127,0,0,0.0127,5.7,10)"
+           width="34.049999"
+           xlink:href="#font_Oetztype_I0"
+           id="use14" />
+        <use
+           fill="#d0a067"
+           height="12"
+           transform="matrix(0.0127,0,0,0.0127,9.25,10)"
+           width="34.049999"
+           xlink:href="#font_Oetztype_R0"
+           id="use15" />
+        <use
+           fill="#d0a067"
+           height="12"
+           transform="matrix(0.0127,0,0,0.0127,16.5,10)"
+           width="34.049999"
+           xlink:href="#font_Oetztype_S0"
+           id="use16" />
+        <use
+           fill="#d0a067"
+           height="12"
+           transform="matrix(0.0127,0,0,0.0127,22.9,10)"
+           width="34.049999"
+           xlink:href="#font_Oetztype_T0"
+           id="use17" />
+      </g>
+    </g>
+    <g
+       id="font_Oetztype_F0">
+      <path
+         d="m 39.95,0 v -579.6 q 191.3,-21.5 386.4,-21.5 0,52.25 -27.65,162.1 -4.6,18.8 -4.6,16.5 -2.3,5 -19.6,10 -17.3,4.95 -28.45,7.3 -18.8,4.95 -37.6,9.6 -44.2,11.1 -51.85,12.65 -4.25,0.75 -15.75,-0.75 -55.35,-5.75 -62.25,-5.75 0,29.15 28.45,94.45 1.5,0 4.6,0.8 H 217 q 29.95,0 84.5,-21.9 54.95,-22.3 84.9,-22.3 v 10.4 l -0.75,16.5 q -1.95,18.05 -1.95,26.9 l -1.5,28 q -3.1,37.3 -6.15,63 l -1.55,11.9 H 250.05 q 0,1.55 -0.75,6.15 -3.1,22.3 -3.1,28.45 11.9,42.65 20.35,63.75 6.55,19.95 12.7,39.95 5.35,19.2 7.3,23.8 2.3,4.6 2.3,19.6 H 39.95"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path17" />
+    </g>
+    <g
+       id="font_Oetztype_I0">
+      <path
+         d="M 39.95,-589.95 H 65.3 q 80.25,0 171.3,29.95 10.35,3.05 10.35,9.2 v 29.95 q 0,-9.2 -6.1,90.65 -4.25,52.65 -8.1,109.1 -8.05,106 -16.5,211.65 L 210.1,-36.85 207.8,-9.6 197.45,0 H 39.95 v -589.95"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path18" />
+    </g>
+    <g
+       id="font_Oetztype_R0">
+      <path
+         d="m 192.8,-363.35 19.6,5.35 q 15,4.65 29.95,9.6 32.3,9.25 48.8,14.25 h 9.2 q 17.3,-7.3 20,-9.6 12.3,-16.55 19.55,-27.65 15.75,-23.45 19.6,-31.5 l 0.8,-2.3 q 0.75,-1.55 0.75,-3.1 0,-0.75 -0.75,-3.05 l -0.8,-1.55 q -0.75,-0.75 -5.35,-8.85 -23.05,-26.5 -33.8,-39.95 -13.45,-16.5 -20,-19.55 l -1.5,-0.8 q -2.35,-0.75 -3.1,-0.75 -0.75,0 -2.3,0.75 l -2.3,0.8 q -41.85,32.25 -62.25,51.05 -47.2,43.05 -47.2,51.85 0,0.8 0.75,2.3 v 2.3 q 5,5.4 10.35,10.4 m 34.6,166.7 V -39.2 H 35.35 v -531.2 l 4.6,-1.5 q 12.65,-4.65 34.95,-7.7 l 60.3,-8.85 q 62.25,-7.65 93.7,-12.65 l 42.65,-4.6 28.8,-3.85 h 20 q 112.9,52.6 187.05,98.3 v 24.2 q 0,122.95 -19.6,172.5 -3.05,8.45 -14.2,14.2 -3.1,1.5 -19.6,7.65 -26.1,10.4 -26.1,27.65 0,15.75 9.6,32.3 11.5,22.65 36.85,50.3 l 42.65,45.7 q 30.35,36.9 30.35,58 v 4.6 q -0.8,4.25 -0.8,5.8 Q 441.35,-24.2 389.45,0 l -1.5,0.75 h -3.85 -2.7 L 379.1,0 369.9,-9.6 q -20,-29.6 -30.75,-44.55 -23.8,-34.6 -47.25,-69.55 -21.1,-30.3 -30.7,-43 -10.4,-10.35 -16.55,-15.75 -14.95,-12.65 -17.25,-14.2"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path19" />
+    </g>
+    <g
+       id="font_Oetztype_S0">
+      <path
+         d="m 37.65,-166.7 q 119.85,0 258.1,29.2 v -15 q 0,-8.8 -0.75,-21.5 -5.4,-51.85 -38.4,-51.85 l -30,5 q -30.7,4.6 -29.15,4.6 h -6.95 -11.9 l -12.65,0.75 h -10 l -16.5,-0.75 H 128.3 l -98.35,-98.3 q -0.75,-12.7 -0.75,-15.75 0,-58.4 26.5,-165.2 l 4.2,-15.75 3.85,-3.05 q 3.1,-2.7 7.7,-5.75 5,-3.1 9.6,-6.15 4.6,-3.1 7.7,-4.6 l 33.8,-23.05 q 22.25,-14.25 35.7,-16.55 124.85,-20.35 297.3,-20.35 0,79.5 -41.9,148.65 l -35.3,1.55 -53.4,3.05 -88.35,5 q -5.35,0 -10,1.55 l -12.65,3.05 q -15,3.85 -16.5,5.4 -1.55,9.6 -1.55,12.65 0,24.2 11.15,26.9 l 35.3,5.4 53.4,8.45 52.65,8.8 35.3,6.15 q 1.95,0 6.55,1.95 15.75,5.35 23.4,8.45 l 8.1,17.25 q 11.5,26.9 23.4,53.4 8.85,20 13.45,29.95 l 6.15,15.75 q 8.05,19.6 8.05,21.15 l 0.8,8.05 v 11.55 9.6 q -0.8,7.3 -0.8,10.35 -39.55,54.95 -78.7,110.25 l -19.6,27.25 -15,15 -7.65,7.3 -7.3,6.9 H 256.6 L 228.15,-1.55 185.5,-4.6 q -44.55,-3.1 -67.6,-5.75 -22.65,-2.35 -41.45,-6.95 -7.3,-1.5 -8.1,-3.85 -1.5,-5.75 -3.05,-10.35 -8.85,-28.4 -11.9,-43.4 -15.75,-57.25 -15.75,-91.8"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20" />
+    </g>
+    <g
+       id="font_Oetztype_T0">
+      <path
+         d="m 77.95,-15 q 0,-0.75 0.8,-2.3 0.75,-1.5 0.75,-2.3 2.3,-11.15 7.7,-34.55 l 26.9,-113.3 q 29.15,-123.7 33.8,-147.1 1.5,-6.55 2.3,-11.95 5.75,-31.5 8.05,-47.25 -56.85,20.4 -129.85,20.4 Q 28.4,-454 49.55,-560 162.1,-579.6 354.9,-579.6 h 99.85 q 18.05,0 18.05,18.05 0,91.05 -29.95,158.65 -6.15,14.2 -9.6,14.2 h -98.3 l -14.6,14.95 V 0 H 88.75 L 79.5,-9.6 q -1.55,-3.85 -1.55,-5.4"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21" />
+    </g>
+    <g
+       id="sprite1"
+       transform="translate(2.65,3.25)">
+      <use
+         ffdec:characterId="5744"
+         height="31.6"
+         transform="translate(-2.65,-3.25)"
+         width="58.599998"
+         xlink:href="#shape1"
+         id="use21" />
+      <filter
+         id="filter10"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult5"
+           type="matrix"
+           values="0 0 0 0 0.25490198,0 0 0 0 0.16078432,0 0 0 0 0.05490196,0 0 0 1 0"
+           id="feColorMatrix21" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult5"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult6"
+           id="feConvolveMatrix21" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult6"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult7"
+           id="feConvolveMatrix22" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult7"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult8"
+           id="feConvolveMatrix23" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult8"
+           operator="over"
+           result="filterResult9"
+           id="feComposite23" />
+      </filter>
+      <use
+         ffdec:characterId="5749"
+         filter="url(#filter10)"
+         height="12.05"
+         transform="translate(11.3,5.65)"
+         width="30.299999"
+         xlink:href="#text1"
+         id="use23" />
+    </g>
+    <g
+       id="text1"
+       transform="translate(-0.5,1.2)">
+      <g
+         id="g27">
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,0,10)"
+           width="30.299999"
+           xlink:href="#font_Oetztype_L0"
+           id="use24" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,5.2,10)"
+           width="30.299999"
+           xlink:href="#font_Oetztype_A0"
+           id="use25" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,12.75,10)"
+           width="30.299999"
+           xlink:href="#font_Oetztype_S0"
+           id="use26" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,19.15,10)"
+           width="30.299999"
+           xlink:href="#font_Oetztype_T0"
+           id="use27" />
+      </g>
+    </g>
+    <g
+       id="font_Oetztype_L0">
+      <path
+         d="m 255.8,-563.1 q -24.95,202.8 -49.55,405.6 -5,10 -9.6,20 h 9.6 l 58.8,-20.75 q 39.55,-12.3 59.15,-18.8 l 16.5,-0.8 h 7.7 l 5.75,0.8 q 0.75,0.75 4.6,11.9 4.6,17.25 10.35,43.4 18.85,89.5 24.2,112.15 0,1.9 0.8,5 V 0 H 39.2 v -540.4 q 22.25,-4.65 61.45,-9.65 45.7,-5.35 96,-9.95 3.1,-0.8 11.9,-1.55 l 17.3,-0.75 29.95,-0.8"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path27" />
+    </g>
+    <g
+       id="font_Oetztype_A0">
+      <path
+         d="m 224.3,-465.5 q 0,3.05 0.8,11.5 v 26.1 q 0.75,16.55 0.75,25 l 2.3,38 q 0.75,22.65 2.3,44.55 4.6,66.45 4.6,55.3 5.4,9.65 10.4,19.6 h 7.65 l 11.95,0.8 q 74.85,0 96,-28.45 11.9,-14.95 20.35,-48 l 11.15,-52.65 q 0,-1.5 0.75,-4.6 v -4.6 q 0,-17.3 -37.65,-38 -32.25,-16.55 -75.65,-31.5 -39.15,-13.05 -55.7,-13.05 m 153.25,338 -24.2,-10 -118.3,21.9 v 106 H 29.95 q 38.8,-265.4 78,-530.8 3.8,-29.2 6.9,-33.8 6.9,-15.75 29.2,-15.75 h 22.65 l 56.85,2.3 142.1,5.35 37.25,2.7 27.3,1.55 q 34.55,3.05 59.9,6.15 l 11.15,1.5 q 29.2,260.8 58.75,521.6 l 0.8,15.75 q 0,21.15 -10.75,23.45 -63.8,12.65 -172.5,12.65 V -127.5"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path28" />
+    </g>
+    <g
+       id="sprite2"
+       transform="translate(2.65,3.25)">
+      <use
+         ffdec:characterId="5744"
+         height="31.6"
+         transform="translate(-2.65,-3.25)"
+         width="58.599998"
+         xlink:href="#shape1"
+         id="use28" />
+      <filter
+         id="filter16"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult10"
+           type="matrix"
+           values="0 0 0 0 0.25490198,0 0 0 0 0.16078432,0 0 0 0 0.05490196,0 0 0 1 0"
+           id="feColorMatrix28" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult10"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult11"
+           id="feConvolveMatrix28" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult11"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult12"
+           id="feConvolveMatrix29" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult12"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult13"
+           id="feConvolveMatrix30" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult13"
+           operator="over"
+           result="filterResult14"
+           id="feComposite30" />
+      </filter>
+      <use
+         ffdec:characterId="5752"
+         filter="url(#filter16)"
+         height="12.05"
+         transform="translate(8.6,5.65)"
+         width="37.849998"
+         xlink:href="#text2"
+         id="use30" />
+    </g>
+    <g
+       id="text2"
+       transform="translate(-0.3,1.2)">
+      <g
+         id="g35">
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,0,10)"
+           width="37.849998"
+           xlink:href="#font_Oetztype_C0"
+           id="use31" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,7.1,10)"
+           width="37.849998"
+           xlink:href="#font_Oetztype_L0"
+           id="use32" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,12.3,10)"
+           width="37.849998"
+           xlink:href="#font_Oetztype_O0"
+           id="use33" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,20.3,10)"
+           width="37.849998"
+           xlink:href="#font_Oetztype_S0"
+           id="use34" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,26.7,10)"
+           width="37.849998"
+           xlink:href="#font_Oetztype_E0"
+           id="use35" />
+      </g>
+    </g>
+    <g
+       id="font_Oetztype_C0">
+      <path
+         d="m 23.45,-334.15 q 0,-1.55 -0.8,-5 v -4.6 q 0,-23.45 22.3,-48.8 53.4,-59.9 66.05,-76.45 l 21.15,-27.25 21.1,-28.45 q 22.3,-27.65 33.8,-42.6 l 8.85,-8.45 7.3,-7.3 q 5.35,-4.6 7.65,-6.9 h 7.7 l 11.9,-0.8 h 11.9 17.3 11.9 l 11.55,0.8 q 74.5,11.5 148.6,22.65 28.45,5 44.2,7.3 2.3,0 8.05,1.5 21.15,5.4 31.1,7.7 v 20 l -5.35,27.25 q -3.85,19.6 -8.45,41.1 -4.6,20.75 -8.85,41.5 -4.6,19.95 -6.15,27.65 l -17.25,0.75 h -17.3 q -22.3,0 -64.55,-5.75 -42.6,-6.15 -64.5,-6.15 -18.85,0 -38.05,7.3 -46.85,18.05 -93.3,72.95 h 39.15 q 0,5 1.55,17.3 5.75,47.25 8.05,71.05 5.4,36.1 8.45,51.85 l 1.55,6.95 7.3,1.5 q 6.9,1.55 16.5,3.1 9.6,1.9 19.6,3.45 l 15.75,2.3 h 8.45 l 11.9,0.75 q 33.8,0 83.75,-34.95 49.9,-34.95 67.95,-34.95 20,0 33.05,30.35 11.9,26.9 11.9,47.25 v 15 q 0,-0.8 -11.15,25.35 -2.3,4.6 -10.75,31.5 -7.3,19.55 -13.45,29.95 -11.1,18.05 -54.15,27.25 l -33,7.3 Q 332.65,-6.9 289.6,0 l -5.75,0.75 h -5.4 -4.6 L 269.65,0 258.9,-5.4 235.85,-16.5 q -12.3,-6.15 -25,-12.7 -18.8,-9.2 -39.55,-21.1 -46.1,-25.35 -69.15,-37.65 l -4.6,-5.75 q -6.9,-9.25 -8.05,-14.25 -10.75,-33 -16.5,-49.55 -2.35,-7.65 -10,-35.3 l -29.95,-106.05 -9.6,-35.3"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path35" />
+    </g>
+    <g
+       id="font_Oetztype_O0">
+      <path
+         d="m 203.55,-363.35 v 9.2 q 0,2.7 2.7,30.75 l 6.15,71.8 q 0.75,11.55 0.75,15.75 2.35,15 14.25,24.2 6.15,6.15 24.95,15 8.85,3.85 18.45,9.6 l 53.4,29.55 q 12.65,7.3 17.25,10.4 0.8,0 2.3,0.75 h 2.3 q 0.8,0 3.1,-0.75 h 1.55 q 8.05,-5.4 19.95,-19.6 16.5,-23.05 24.2,-34.55 15,-23.05 15,-24.6 v -137.5 q 0,-2.3 -19.6,-19.6 l -11.9,-10.35 -47.25,-39.2 -6.9,-0.75 h -8.1 q -23.4,0 -63.75,30.35 l -10,8.05 q -32.25,24.95 -38.8,31.5 m -176.65,0 q 0,-0.75 -0.8,-2.7 -0.75,-1.9 -0.75,-3.05 0,-0.8 0.75,-3.1 l 0.8,-1.55 q 3.85,-9.2 19.6,-29.15 L 84.1,-449 q 74.9,-92.2 129.05,-140.95 h 10.4 q 15.75,2.3 37.65,4.6 l 93.7,12.65 42.25,5.4 q 45.7,7.3 42.65,7.3 9.6,4.6 19.6,9.2 l 147.1,187.45 0.75,3.05 v 5.4 q 0,18.05 -18.05,78.75 -16.5,54.15 -41.85,112.55 -25,58.35 -39.2,65.25 L 303.8,3.85 l -188.95,-63 q -6.9,-2.3 -11.9,-8.45 -6.95,-8.05 -10.75,-18.8 -2.7,-6.55 -6.55,-21.55 -8.45,-37.25 -17.3,-74.5 -28.4,-120.2 -41.45,-180.9"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path36" />
+    </g>
+    <g
+       id="font_Oetztype_E0">
+      <path
+         d="m 87.95,-382.95 20,-25.35 H 26.9 l 0.75,-8.45 q 0.75,-23.8 1.55,-35.35 0.75,-11.1 3.05,-29.95 l 4.6,-33.8 q 4.25,-29.2 11.95,-63.75 148.65,-19.95 337.6,-19.95 l 14.6,-0.8 q 8.85,0 11.9,13.45 2.3,10.35 3.85,20.35 9.6,48 14.95,94.5 0,3.05 0.8,9.2 0.75,5.8 0.75,8.85 0,17.3 -46.1,23.8 -57.6,7.7 -86.8,10.75 -46.1,11.15 -46.1,41.1 v 6.15 q 0,5 1.55,9.6 2.3,13.45 9.25,13.45 h 127.5 q 0.75,0 2.3,6.9 l 2.3,18.05 5.75,39.6 v 39.15 q -89.1,39.95 -128.25,68.4 -9.6,9.6 -9.6,10.35 0,6.9 1.5,16.5 l 1.55,10 q 0.75,5 0.75,7.3 h 174.8 q 0,11.9 -1.55,15 l -7.7,29.95 q -5,18.05 -9.6,35.35 -11.9,42.25 -12.65,43 L 402.9,0 H 87.95 v -382.95"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path37" />
+    </g>
+    <g
+       id="sprite3"
+       transform="translate(2.65,3.25)">
+      <use
+         ffdec:characterId="5744"
+         height="31.6"
+         transform="translate(-2.65,-3.25)"
+         width="58.599998"
+         xlink:href="#shape1"
+         id="use37" />
+      <filter
+         id="filter23"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult15"
+           type="matrix"
+           values="0 0 0 0 0.25490198,0 0 0 0 0.16078432,0 0 0 0 0.05490196,0 0 0 1 0"
+           id="feColorMatrix37" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult15"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult16"
+           id="feConvolveMatrix37" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult16"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult17"
+           id="feConvolveMatrix38" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult17"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult18"
+           id="feConvolveMatrix39" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult18"
+           operator="over"
+           result="filterResult19"
+           id="feComposite39" />
+      </filter>
+      <use
+         ffdec:characterId="5755"
+         filter="url(#filter23)"
+         height="12.05"
+         transform="translate(3.65,5.65)"
+         width="48.5"
+         xlink:href="#text3"
+         id="use39" />
+    </g>
+    <g
+       id="text3"
+       transform="translate(-0.35,1.2)">
+      <g
+         id="g45">
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,0,10)"
+           width="48.5"
+           xlink:href="#font_Oetztype_S0"
+           id="use40" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,6.4,10)"
+           width="48.5"
+           xlink:href="#font_Oetztype_T0"
+           id="use41" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,12.65,10)"
+           width="48.5"
+           xlink:href="#font_Oetztype_R0"
+           id="use42" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,19.9,10)"
+           width="48.5"
+           xlink:href="#font_Oetztype_O0"
+           id="use43" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,27.9,10)"
+           width="48.5"
+           xlink:href="#font_Oetztype_N0"
+           id="use44" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,36.2,10)"
+           width="48.5"
+           xlink:href="#font_Oetztype_G0"
+           id="use45" />
+      </g>
+    </g>
+    <g
+       id="font_Oetztype_N0">
+      <path
+         d="m 332.65,-9.6 -63,-197.45 -15.4,-48.75 q 0,-0.8 -4.95,-19.6 -4.65,-18.8 -4.65,-19.6 l -6.9,-21.1 q -21.5,-63 -23.05,-66.85 -2.3,-8.05 -14.2,-19.95 V -19.6 H 37.65 V -560 q 0,-7.3 10.75,-10.4 10.75,-3.05 18.45,-4.6 l 20.7,-5 13.1,-2.3 27.65,-2.3 35.3,-3.85 100.65,-11.1 h 5.4 q 8.8,0 15.35,11.9 6.9,11.9 8.45,17.25 l 13.45,34.6 q 28.8,82.2 58,164.4 9.6,26.85 16.5,47.2 14.2,40.35 15.75,47.25 8.05,41.1 24.6,51.1 0,-10.75 0.75,-33.8 l 1.55,-50.3 q 0.75,-27.65 2.3,-59.15 l 4.6,-142.15 2.3,-19.55 q 1.15,-11.15 2.7,-22.3 3.85,-26.5 5.4,-26.5 H 623 l -63.75,530.8 q -2.3,21.15 -10,29.2 -17.65,8.45 -29.2,10 Q 442.85,0.75 369.9,0.75 l -8.1,0.8 q -5.35,0.75 -11.9,0 -16.5,-2.3 -17.25,-11.15"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path45" />
+    </g>
+    <g
+       id="font_Oetztype_G0">
+      <path
+         d="m 29.2,-339.15 q 0,-17.3 1.55,-30.75 v -3.85 q 0.75,-9.95 8.45,-22.65 32.25,-44.95 50.3,-65.3 3.45,-3.8 11.15,-16.5 20.35,-34.55 48,-72.6 11.9,-13.05 19.6,-19.6 199.7,-20.35 367.55,-20.35 0,23.45 -23.4,81.45 -23.05,57.6 -39.6,67.2 -18.4,5.4 -36.85,11.15 -92.2,27.25 -149.8,48 -27.25,10 -34.55,15 -15.75,9.95 -18.85,30.35 l -5.35,33 q -3.1,23.05 -4.6,36.5 -1.95,11.9 -3.5,24.2 l -2.3,18.05 v 9.6 q 49.55,54.15 78.75,69.15 0,-3.1 -0.75,-9.6 v -10 q 0,-3.05 0.75,-10.35 v -9.25 q 0.75,-5.75 5.4,-19.2 19.95,-52.6 41.85,-95.65 16.5,-33 21.9,-33 H 512 V -9.6 H 394.1 q -15,0 -25,-20.35 -10.35,-20.35 -23.05,-20.35 -19.55,0 -49.9,26.5 -30.35,26.1 -58.4,26.1 h -7.3 L 220.85,1.55 207.8,0 q -3.45,-0.75 -14.2,-5.4 l -49.55,-18.8 q -11.9,-4.2 -15,-5 l -29.2,-10.75 q -33,-11.9 -39.95,-58.4 -5.35,-33.8 -10.35,-67.6 -3.05,-21.1 -6.15,-44.15 -5.35,-37.65 -10.35,-75.3 -2.3,-14.2 -2.3,-19.2 v -5.35 q -1.55,-12.7 -1.55,-29.2"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path46" />
+    </g>
+    <g
+       id="sprite4"
+       transform="translate(2.35,2.05)">
+      <use
+         ffdec:characterId="5758"
+         height="40.5"
+         transform="translate(-2.35,-2.05)"
+         width="75.099998"
+         xlink:href="#shape2"
+         id="use46" />
+      <filter
+         id="filter34"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult20"
+           type="matrix"
+           values="0 0 0 0 0.17254902,0 0 0 0 0.10980392,0 0 0 0 0.03137255,0 0 0 1 0"
+           id="feColorMatrix46" />
+        <feConvolveMatrix
+           divisor="9.0"
+           in="filterResult20"
+           kernelMatrix="1 1 1 1 1 1 1 1 1"
+           order="3 3"
+           result="filterResult21"
+           id="feConvolveMatrix46" />
+        <feConvolveMatrix
+           divisor="9.0"
+           in="filterResult21"
+           kernelMatrix="1 1 1 1 1 1 1 1 1"
+           order="3 3"
+           result="filterResult22"
+           id="feConvolveMatrix47" />
+        <feConvolveMatrix
+           divisor="9.0"
+           in="filterResult22"
+           kernelMatrix="1 1 1 1 1 1 1 1 1"
+           order="3 3"
+           result="filterResult23"
+           id="feConvolveMatrix48" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult23"
+           operator="over"
+           result="filterResult24"
+           id="feComposite48" />
+      </filter>
+      <use
+         ffdec:characterId="5759"
+         filter="url(#filter34)"
+         height="35.799999"
+         id="sellLabel"
+         transform="translate(-2,1.65)"
+         width="72"
+         xlink:href="#text4" />
+    </g>
+    <g
+       id="shape2"
+       transform="translate(2.35,2.05)">
+      <path
+         d="m 4.95,36.45 -5,-36.5 h 70.5 l -5,36.5 H 4.95"
+         fill="#ff0000"
+         fill-opacity="0.498039"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path48" />
+      <path
+         d="m 4.95,36.45 -5,-36.5 h 70.5 l -5,36.5 z"
+         fill="none"
+         stroke="#000000"
+         stroke-linecap="butt"
+         stroke-linejoin="miter-clip"
+         stroke-miterlimit="3"
+         stroke-opacity="0.501961"
+         stroke-width="4"
+         id="path49" />
+    </g>
+    <g
+       id="text4"
+       transform="translate(-40.65,2)">
+      <g
+         transform="translate(40.65,-2)"
+         id="g52">
+        <use
+           fill="#f5f1ec"
+           height="35.799999"
+           transform="matrix(0.0117,0,0,0.0117,12.1,11.8)"
+           width="72"
+           xlink:href="#font_Oetztype_S0"
+           id="use49" />
+        <use
+           fill="#f5f1ec"
+           height="35.799999"
+           transform="matrix(0.0117,0,0,0.0117,19.75,11.8)"
+           width="72"
+           xlink:href="#font_Oetztype_e0"
+           id="use50" />
+        <use
+           fill="#f5f1ec"
+           height="35.799999"
+           transform="matrix(0.0117,0,0,0.0117,27,11.8)"
+           width="72"
+           xlink:href="#font_Oetztype_l0"
+           id="use51" />
+        <use
+           fill="#f5f1ec"
+           height="35.799999"
+           transform="matrix(0.0117,0,0,0.0117,30.75,11.8)"
+           width="72"
+           xlink:href="#font_Oetztype_l0"
+           id="use52" />
+      </g>
+      <g
+         transform="translate(40.65,-2)"
+         id="g55">
+        <use
+           fill="#f5f1ec"
+           height="35.799999"
+           transform="matrix(0.0117,0,0,0.0117,40.5,11.8)"
+           width="72"
+           xlink:href="#font_Oetztype_f0"
+           id="use53" />
+        <use
+           fill="#f5f1ec"
+           height="35.799999"
+           transform="matrix(0.0117,0,0,0.0117,45.95,11.8)"
+           width="72"
+           xlink:href="#font_Oetztype_o0"
+           id="use54" />
+        <use
+           fill="#f5f1ec"
+           height="35.799999"
+           transform="matrix(0.0117,0,0,0.0117,53.9,11.8)"
+           width="72"
+           xlink:href="#font_Oetztype_r0"
+           id="use55" />
+      </g>
+      <g
+         transform="translate(40.65,-2)"
+         id="g58">
+        <use
+           fill="#f5f1ec"
+           height="35.799999"
+           transform="matrix(0.0117,0,0,0.0117,26.15,27.7)"
+           width="72"
+           xlink:href="#font_Oetztype__1"
+           id="use56" />
+        <use
+           fill="#f5f1ec"
+           height="35.799999"
+           transform="matrix(0.0117,0,0,0.0117,34.2,27.7)"
+           width="72"
+           xlink:href="#font_Oetztype_10"
+           id="use57" />
+        <use
+           fill="#f5f1ec"
+           height="35.799999"
+           transform="matrix(0.0117,0,0,0.0117,38.9,27.7)"
+           width="72"
+           xlink:href="#font_Oetztype_20"
+           id="use58" />
+      </g>
+    </g>
+    <g
+       id="font_Oetztype_e0">
+      <path
+         d="m 154,-284.6 q 26.15,9.95 29.2,59.5 0.8,11.95 0,18.85 l 10.4,0.75 h 9.2 l 20,-0.75 q 40.7,-5.4 88.7,-29.6 0,-1.5 0.75,-5 v -4.6 q 0,-17.25 -26.1,-48.75 -25.75,-31.5 -42.25,-31.5 -25.35,0 -50.3,9.6 -29.2,10.75 -39.6,31.5 m -127.9,58.75 q 0,-2.3 -0.75,-7.7 v -7.3 q 0,-20.35 34.55,-84.1 34.6,-63.75 54.95,-77.95 25.35,-5.4 51.85,-10 83.35,-12.7 125.2,-19.6 h 4.6 l 10.4,-0.75 h 10 9.6 16.5 l 17.3,0.75 q 7.65,11.55 10.35,19.2 2.3,7.3 8.45,25.35 l 15.75,43.4 q 15.75,46.5 24.6,69.15 0.75,0.75 2.3,3.85 l 3.05,6.5 q 4.6,9.25 4.6,10 0,1.15 0.8,4.25 v 5.35 q 0,11.9 -10.75,19.6 -6.55,5 -11.15,8.05 -19.6,14.25 -48,31.5 -34.6,19.6 -51.85,28.8 -34.6,23.05 -34.6,39.6 H 449 v 78.7 l -10,10 q -1.5,1.55 -18.8,5.75 Q 349.15,-6.15 291.9,0 h -8.05 L 268.1,0.75 h -16.5 -13.85 q -85.25,0 -122.9,-10.35 -4.6,0 -10.4,-10 -38.4,-67.6 -78.35,-206.25"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path58" />
+    </g>
+    <g
+       id="font_Oetztype_l0">
+      <path
+         d="m 36.85,0 v -560 q 5.4,-5 10.4,-10.4 l 157.1,-29.15 6.9,-0.8 6.55,-0.75 q 0,22.25 -1.55,59.9 l -1.55,35.35 q -0.75,18.05 -0.75,24.6 -6.55,91.4 -13.45,183.2 l -7.7,102.95 q -3.8,46.45 -8.05,92.95 -7.7,90.25 -10,92.55 L 165.15,0 H 36.85"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path59" />
+    </g>
+    <g
+       id="font_Oetztype_f0">
+      <path
+         d="m 88.75,-378.35 v -132.9 q 22.25,-12.65 61.45,-44.15 39.55,-31.5 61.45,-44.15 H 222 l 36.9,4.95 31.5,4.65 q 16.5,3.05 24.15,5.35 15,4.25 15,5 v 78.35 q 0,4.25 -7.7,6.55 l -37.25,9.2 q -21.1,6.55 -34.55,17.3 -28.05,23.05 -28.05,66.05 v 6.55 q 0,3.8 1.55,7.65 2.3,9.6 7.7,9.6 h 98.3 v 117.95 h -98.3 q 9.6,47.25 14.95,69.9 22.65,114.05 34.55,170.9 v 10 q -2.65,3.05 -5.35,5.75 -3.1,3.1 -4.6,3.85 H 98.35 v -245.45 q 0,-6.15 -14.25,-10.35 -19.55,-3.1 -29.95,-3.85 -25.75,-2.3 -28.05,-4.6 -2.65,-2.3 -6.5,-25.35 l -3.1,-18.85 q -1.5,-9.2 -1.5,-15.75 0,-9.2 -0.8,-27.25 -0.75,-18.45 -0.75,-26.9 h 75.3"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path60" />
+    </g>
+    <g
+       id="font_Oetztype_o0">
+      <path
+         d="m 144.8,-245.45 q 6.15,22.65 10,34.6 l 6.5,20.35 5.4,20.75 3.05,9.2 q 5,14.2 5,13.45 7.7,19.6 9.25,19.6 h 117.9 q 0.75,0 4.2,-3.85 7.7,-10.4 15.75,-26.15 12.3,-39.15 19.6,-58.75 0,-1.55 0.8,-4.6 0.75,-3.45 0.75,-5 0,-1.55 -0.75,-5 -0.8,-3.45 -0.8,-5 -3.05,-5 -11.15,-15.75 l -18.05,-23.8 -29.95,-39.15 q -14.95,-20.4 -29.2,-20.4 -9.2,0 -24.2,10 -33,23.8 -61.45,54.15 l -22.65,25.35 m -118.7,94.5 q 0,-46.5 6.95,-93.7 6.5,-44.95 13.45,-89.5 5.35,-36.5 44.15,-56.1 24.2,-12.3 48.8,-24.2 16.5,-8.8 35.3,-18.05 17.7,-9.2 35.35,-18.05 16.5,-8.05 23.45,-11.15 h 4.95 q 3.85,0 11.55,2.3 28.4,11.15 42.65,17.3 48,16.5 72.95,23.45 49.55,19.2 64.55,44.9 28.4,53.4 41.85,80.3 26.5,53.4 26.5,57.6 v 10 q 0,1.55 -18.8,39.55 -7.7,16.15 -15.75,32.3 -7.7,14.95 -14.2,26.5 -17.3,33 -22.7,40.3 -14.2,18.85 -36.1,28.05 -25.35,9.6 -38.4,14.2 -11.9,4.6 -23.8,8.85 -11.9,4.6 -16.55,6.9 -31.5,11.15 -47.2,15.75 -13.1,4.25 -25.75,8.85 -11.9,3.85 -15.75,4.6 h -9.6 l -8.45,-4.6 q -10.4,-4.25 -11.15,-5 -10,-6.15 -19.6,-12.3 -59.9,-38 -89.1,-56.85 -12.65,-7.65 -24.2,-14.2 -35.35,-18.8 -35.35,-58"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path61" />
+    </g>
+    <g
+       id="font_Oetztype_r0">
+      <path
+         d="m 96,-393.3 q 19.6,0 27.7,29.95 8.45,33.8 20.35,39.15 2.3,-2.3 9.2,-7.65 26.1,-21.5 39.55,-31.5 9.6,-7.3 19.6,-14.2 13.45,-9.6 29.2,-20.35 37.65,-26.15 44.55,-26.15 l 3.45,0.8 1.55,0.75 q 7.7,3.05 15.75,7.3 11.5,5.75 23.4,11.5 l 39.6,20.75 q 0,5.4 0.75,16.9 0.75,11.15 0.75,16.9 0,5.4 -0.75,17.3 -0.75,11.5 -0.75,18.05 0,6.15 -1.95,17.3 l -3.05,21.85 -2.7,19.25 q -1.15,8.45 -1.9,9.6 -0.8,1.15 -7.7,5.75 -28.4,20.75 -51.45,33.8 h -1.55 q -2.3,0.75 -3.1,0.75 -1.5,0 -3.05,-0.75 h -2.3 Q 272.3,-215.5 261.95,-222 l -18.8,-9.25 q -8.85,-3.8 -10.75,-4.2 l -5,-1.15 h -4.6 q -30.75,0 -30.75,44.55 0,17.3 4.6,37.25 21.9,77.6 35.35,115.6 0.75,0.8 2.3,3.85 1.55,3.1 3.45,6.15 l 4.6,9.6 v 10 Q 237.75,0 232,0 H 35.35 v -373.75 q 0,-6.9 8.05,-10.75 15.75,-8.8 52.6,-8.8"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path62" />
+    </g>
+    <g
+       id="font_Oetztype__1">
+      <path
+         d="m 113.3,-402.9 q 17.3,29.95 59.15,29.95 19.6,0 19.6,-10 v -78.75 q -39.55,0 -78.75,58.8 m 271.2,77.2 q -28.05,0 -46.1,11.9 -51.1,32.25 -51.1,121 l 12.3,-0.8 24.6,-1.5 24.95,-1.55 9.6,-9.6 q 18.8,-28.05 19.6,-29.6 11.1,-21.5 16.5,-31.5 4.25,-8.8 8.85,-17.25 3.85,-8.1 4.2,-10 l 1.15,-5 v -5 q 0,-21.1 -24.55,-21.1 M 172.45,-54.15 H 30.75 q 0,-25.35 7.3,-47.65 7.65,-22.65 16.1,-45.3 6.55,-16.5 11.15,-27.65 7.7,-17.3 8.85,-17.3 H 181.7 v -60.3 q -3.1,0 -14.6,-2.3 -11.15,-1.95 -14.6,-1.15 -2.3,0 -10,5.35 -8.05,5 -9.6,5 H 126 l -8.1,0.8 -6.9,-0.8 h -8.05 Q 71.45,-295 24.2,-393.3 q 0,-1.55 -0.75,-4.6 v -5 q 0,-1.55 0.75,-5.4 v -4.6 q 2.7,-4.6 5,-9.6 18.05,-33.8 24.95,-49.55 l 7.3,-13.45 q 20.35,-36.85 32.25,-54.9 9.25,-15 17.3,-26.15 15,-21.1 21.9,-23.4 l 14.2,-3.1 q 34.6,-6.5 59.15,-6.5 v -53.4 h 9.25 l 74.9,3.85 q 31.45,3.45 28.8,44.15 h 141.7 v 12.65 q -0.75,6.95 -2.3,24.6 -1.55,17.65 -1.55,27.3 l -9.6,9.6 -21.85,10.75 -96.05,48 q -21.1,11.15 -18.05,41.1 0.75,8.45 0.75,16.5 18.05,0 51.85,-5 33.8,-4.6 51.9,-4.6 31.45,0 61.8,35.75 30.35,36.1 30.35,67.95 0,4.25 -0.75,12.7 -0.8,8.8 -0.8,12.65 l -29.15,87.95 q -6.15,19.25 -10,30 -2.7,4.6 -5.75,12.65 l -6.15,15.75 q -8.1,19.6 -8.1,21.15 -6.9,9.6 -21.1,16.5 -57.25,23.05 -87.2,32.25 -18.8,8.1 -34.55,16.55 l -5,3.05 q -1.55,3.45 -3.1,11.15 -4.6,18.05 -6.1,36.1 -0.8,8.85 0,11.9 h -9.65 l -13.4,0.75 h -13.1 -20.7 -13.45 L 207.8,0 h -6.55 q -25.7,-1.55 -28.8,-36.1 -1.15,-9.6 0,-18.05"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path63" />
+    </g>
+    <g
+       id="font_Oetztype_10">
+      <path
+         d="M 74.15,-19.6 V -27.65 -39.2 Q 73,-47.25 73,-51.1 v -8.05 q 0,-79.1 13.4,-158.65 l 26.9,-155.95 q 4.6,-6.9 9.25,-19.55 1.9,-3.85 0,-9.6 L 121,-408.3 H 34.55 q -3.05,-7.7 -4.6,-13.45 L 26.9,-432.5 q -1.55,-5 -2.7,-9.6 l -6.9,-35.35 q -3.1,-12.65 -3.1,-30.7 v -10.4 q 0,-3.05 2.3,-5.35 10.4,-4.6 18.05,-6.9 70.7,-23.85 141.75,-47.25 29.2,-10.4 35.35,-11.9 40.7,-11.95 59.15,-11.95 V 2.3 h -9.6 L 231.25,0.75 220.85,0 192.05,-3.05 Q 111,-12.7 74.15,-19.6"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path64" />
+    </g>
+    <g
+       id="font_Oetztype_20">
+      <path
+         d="m 255.05,-422.5 q -42.65,17.3 -96.05,51.1 -23.8,14.55 -47.25,29.15 l -44.15,27.7 q -0.75,0 -2.3,0.75 H 63 q -0.8,0 -2.3,-0.75 h -2.3 q -7.3,-3.85 -10.4,-9.65 -20.35,-79.5 -20.35,-120.95 0,-3.85 0.75,-10.4 v -6.15 l 98.35,-98.3 q 0,-0.8 6.9,-2.3 18.05,-2.7 36.1,-5.8 l 15.75,-2.3 20,-1.5 q 78.35,-7.7 98.3,-7.7 h 10.75 q 13.45,0 18.85,9.2 0,1.55 2.7,7.3 l 11.5,29.6 q 3.85,8.8 5.75,12.65 27.3,63 41.5,94.5 26.9,60.7 26.9,92.2 0,20.35 -9.6,29.55 -83.75,83.75 -167.5,167.1 -6.15,6.15 -9.6,19.6 0,1.5 0.8,5 0.75,3.45 0.75,4.95 h 8.05 q 73.75,-24.55 147.9,-49.55 h 21.9 v 33.8 q 0,76.45 -12.3,114.1 -5,9.6 -9.6,9.6 h -358 q 0,-14.2 3.85,-19.6 0.8,-3.05 6.55,-13.45 l 23.4,-47.25 q 6.55,-13.4 9.6,-18.05 L 146.35,-222 215.5,-343.75 q 11.9,-18.85 23,-37.65 12.3,-23.05 16.55,-41.1"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path65" />
+    </g>
+    <g
+       id="sprite5"
+       transform="translate(1.5,616.1)">
+      <use
+         ffdec:characterId="5775"
+         ffdec:characterName="InGameMenu_fla_fla.NotUpgraded_61"
+         height="67.5"
+         id="current"
+         transform="translate(-1.5,5.6)"
+         width="126.2"
+         xlink:href="#sprite6" />
+      <use
+         ffdec:characterId="5781"
+         ffdec:characterName="InGameMenu_fla_fla.upgradeBar1_mc_63"
+         height="10.5"
+         id="upgradeBar1_mc"
+         transform="translate(2.65,71.3)"
+         width="97.25"
+         xlink:href="#sprite9" />
+      <use
+         ffdec:characterId="5801"
+         ffdec:characterName="InGameMenu_fla_fla.panelupgrade1_64"
+         height="698"
+         id="next"
+         transform="translate(80.9,-616.1)"
+         width="222.95"
+         xlink:href="#sprite10" />
+    </g>
+    <g
+       id="sprite6"
+       transform="translate(1.5,-3.2)">
+      <use
+         ffdec:characterId="5764"
+         height="63.5"
+         transform="translate(0.5,5.2)"
+         width="103.45"
+         xlink:href="#shape3"
+         id="use65" />
+      <clipPath
+         id="clipPath0">
+        <path
+           d="m 1.5,5.85 v 61.5 H 92.75 L 78.5,55.9 102.25,5.85 Z"
+           id="path66" />
+      </clipPath>
+      <g
+         clip-path="url(#clipPath0)"
+         id="g66">
+        <use
+           ffdec:characterId="49"
+           height="0"
+           id="use66"
+           transform="translate(44.75,36)"
+           width="0"
+           xlink:href="#sprite7" />
+      </g>
+      <use
+         ffdec:characterId="5766"
+         height="13.85"
+         transform="translate(4.85,51.55)"
+         width="45.650002"
+         xlink:href="#text5"
+         id="use67" />
+      <use
+         ffdec:characterId="5767"
+         height="19.9"
+         id="pathNo_txt"
+         transform="translate(40.8,50.6)"
+         width="45.150002"
+         xlink:href="#text6" />
+      <use
+         ffdec:characterId="5768"
+         height="17.950001"
+         transform="translate(4.85,6.8)"
+         width="91.849998"
+         xlink:href="#text7"
+         id="use68" />
+      <use
+         ffdec:characterId="5770"
+         ffdec:characterName="upgrade_over_btn"
+         height="61.5"
+         id="hit_btn"
+         transform="translate(1.5,5.85)"
+         width="100.75"
+         xlink:href="#sprite8" />
+    </g>
+    <g
+       id="shape3"
+       transform="translate(-0.5,-5.2)">
+      <path
+         d="m 2.5,7.2 h 98.25 L 77,55.6 89.35,66.7 H 2.5 V 7.2"
+         fill="#000000"
+         fill-opacity="0.498039"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path68" />
+      <path
+         d="m 2.5,7.2 h 98.25 L 77,55.6 89.35,66.7 H 2.5 Z"
+         fill="none"
+         stroke="#000000"
+         stroke-linecap="butt"
+         stroke-linejoin="miter-clip"
+         stroke-miterlimit="3"
+         stroke-opacity="0.25098"
+         stroke-width="4"
+         id="path69" />
+    </g>
+    <g
+       id="text5"
+       transform="translate(-0.55,1.05)">
+      <g
+         id="g72">
+        <use
+           fill="#999999"
+           height="13.85"
+           transform="matrix(0.0152,0,0,0.0152,0,12)"
+           width="45.650002"
+           xlink:href="#font_Oetztype_P0"
+           id="use69" />
+        <use
+           fill="#999999"
+           height="13.85"
+           transform="matrix(0.0152,0,0,0.0152,8.55,12)"
+           width="45.650002"
+           xlink:href="#font_Oetztype_A0"
+           id="use70" />
+        <use
+           fill="#999999"
+           height="13.85"
+           transform="matrix(0.0152,0,0,0.0152,17.65,12)"
+           width="45.650002"
+           xlink:href="#font_Oetztype_T0"
+           id="use71" />
+        <use
+           fill="#999999"
+           height="13.85"
+           transform="matrix(0.0152,0,0,0.0152,25.15,12)"
+           width="45.650002"
+           xlink:href="#font_Oetztype_H0"
+           id="use72" />
+      </g>
+    </g>
+    <g
+       id="font_Oetztype_P0">
+      <path
+         d="m 231.25,-472.05 q -9.25,9.6 -10.4,18.8 -0.75,9.6 -3.85,30 -9.95,69.9 -14.95,118.65 -0.8,2.7 -0.8,9.6 -1.5,22.7 -1.5,31.5 v 10.4 q 14.95,0 22.25,-2.7 l 15.75,-3.1 q 25.75,-5.35 62.6,-16.5 16.55,-4.6 26.9,-18.8 11.9,-18.05 19.6,-48.05 l 12.65,-51.05 q -14.2,-18.85 -59.9,-49.2 -45.35,-30.3 -64.55,-30.3 h -2.3 l -1.5,0.75 M 34.55,-540.4 v -10.4 q 9.6,-9.2 18.85,-10 l 29.2,-3.05 43.4,-5.75 51.05,-6.15 51.1,-6.55 72.2,-7.65 h 20 q 32.25,19.55 48.75,28.4 17.3,10 34.6,20.35 80.25,48 83.35,49.55 l 11.5,7.7 q 8.85,6.15 17.3,11.9 19.95,13.45 29.95,19.6 v 29.95 q -1.55,8.85 -3.85,29.2 l -15.75,117.9 q -5.35,16.5 -19.6,29.95 -7.3,6.15 -15.75,14.2 -65.25,57.25 -72.2,64.55 -1.9,0.75 -5.75,4.6 l -4.6,4.6 q -27.65,20 -96.8,20 h -30.75 l -14.95,10 v 107.9 l -3.85,1.55 q -14.2,5.35 -30.7,8.45 Q 174,0.75 100.65,0.75 H 84.1 L 74.15,0 q -5,-29.6 -9.6,-59.15 L 63,-84.9 39.95,-455.55 34.55,-540.4"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path72" />
+    </g>
+    <g
+       id="font_Oetztype_H0">
+      <path
+         d="m 65.3,-560 q 81.8,-31.5 172.45,-31.5 v 237.35 H 360.3 q 11.1,-112.55 21.9,-225.45 h 155.15 v 560 h -198.2 q 0,-96 11.55,-166.7 h -14.6 q -20.75,0 -42.65,4.6 -29.95,6.15 -55.7,25 -10.35,7.3 -10.35,9.6 v 127.5 l -4.6,1.55 q -13.45,4.6 -39.6,8.45 Q 110.25,2.3 36.1,2.3 v -21.9 q 0,-10.35 3.1,-67.6 2.3,-43.4 4.2,-86.8 4.6,-119.45 7.7,-179.35 l 3.05,-66.1 q 0.8,-24.95 1.55,-33 0.75,-15 1.9,-21.9 5.4,-56.45 7.7,-85.65"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path73" />
+    </g>
+    <g
+       id="text6"
+       transform="translate(2,2)">
+      <g
+         transform="translate(-2,-2)"
+         id="g76">
+        <use
+           fill="#999999"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,0,11.75)"
+           width="45.150002"
+           xlink:href="#font_Oetztype_P1"
+           id="use73" />
+        <use
+           fill="#999999"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,8.55,11.75)"
+           width="45.150002"
+           xlink:href="#font_Oetztype_A1"
+           id="use74" />
+        <use
+           fill="#999999"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,17.65,11.75)"
+           width="45.150002"
+           xlink:href="#font_Oetztype_T1"
+           id="use75" />
+        <use
+           fill="#999999"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,25.15,11.75)"
+           width="45.150002"
+           xlink:href="#font_Oetztype_H1"
+           id="use76" />
+      </g>
+    </g>
+    <g
+       id="font_Oetztype_P1">
+      <path
+         d="m 220.85,-453.25 q -0.75,9.6 -3.85,30 -9.95,69.9 -14.95,118.65 -0.8,2.7 -0.8,9.6 -1.5,22.7 -1.5,31.5 v 10.4 q 14.95,0 22.25,-2.7 l 15.75,-3.1 q 25.75,-5.35 62.6,-16.5 16.55,-4.6 26.9,-18.8 11.9,-18.05 19.6,-48.05 l 12.65,-51.05 q -14.2,-18.85 -59.9,-49.2 -45.35,-30.3 -64.55,-30.3 h -2.3 l -1.5,0.75 q -9.25,9.6 -10.4,18.8 M 34.55,-540.4 v -10.4 q 9.6,-9.2 18.85,-10 l 29.2,-3.05 43.4,-5.75 51.05,-6.15 51.1,-6.55 72.2,-7.65 h 20 q 32.25,19.55 48.75,28.4 17.3,10 34.6,20.35 80.25,48 83.35,49.55 l 11.5,7.7 q 8.85,6.15 17.3,11.9 19.95,13.45 29.95,19.6 v 29.95 q -1.55,8.85 -3.85,29.2 l -15.75,117.9 q -5.35,16.5 -19.6,29.95 -7.3,6.15 -15.75,14.2 -65.25,57.25 -72.2,64.55 -1.9,0.75 -5.75,4.6 l -4.6,4.6 q -27.65,20 -96.8,20 h -30.75 l -14.95,10 v 107.9 l -3.85,1.55 q -14.2,5.35 -30.7,8.45 Q 174,0.75 100.65,0.75 H 84.1 L 74.15,0 q -5,-29.6 -9.6,-59.15 L 63,-84.9 39.95,-455.55 34.55,-540.4"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path76" />
+    </g>
+    <g
+       id="font_Oetztype_A1">
+      <path
+         d="m 224.3,-465.5 q 0,3.05 0.8,11.5 v 26.1 q 0.75,16.55 0.75,25 l 2.3,38 q 0.75,22.65 2.3,44.55 4.6,66.45 4.6,55.3 5.4,9.65 10.4,19.6 h 7.65 l 11.95,0.8 q 74.85,0 96,-28.45 11.9,-14.95 20.35,-48 l 11.15,-52.65 q 0,-1.5 0.75,-4.6 v -4.6 q 0,-17.3 -37.65,-38 -32.25,-16.55 -75.65,-31.5 -39.15,-13.05 -55.7,-13.05 m 153.25,338 -24.2,-10 -118.3,21.9 v 106 H 29.95 q 38.8,-265.4 78,-530.8 3.8,-29.2 6.9,-33.8 6.9,-15.75 29.2,-15.75 h 22.65 l 56.85,2.3 142.1,5.35 37.25,2.7 27.3,1.55 q 34.55,3.05 59.9,6.15 l 11.15,1.5 q 29.2,260.8 58.75,521.6 l 0.8,15.75 q 0,21.15 -10.75,23.45 -63.8,12.65 -172.5,12.65 V -127.5"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path77" />
+    </g>
+    <g
+       id="font_Oetztype_T1">
+      <path
+         d="m 77.95,-15 q 0,-0.75 0.8,-2.3 0.75,-1.5 0.75,-2.3 2.3,-11.15 7.7,-34.55 l 26.9,-113.3 q 29.15,-123.7 33.8,-147.1 1.5,-6.55 2.3,-11.95 5.75,-31.5 8.05,-47.25 -56.85,20.4 -129.85,20.4 Q 28.4,-454 49.55,-560 162.1,-579.6 354.9,-579.6 h 99.85 q 18.05,0 18.05,18.05 0,91.05 -29.95,158.65 -6.15,14.2 -9.6,14.2 h -98.3 l -14.6,14.95 V 0 H 88.75 L 79.5,-9.6 q -1.55,-3.85 -1.55,-5.4"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path78" />
+    </g>
+    <g
+       id="font_Oetztype_H1">
+      <path
+         d="m 65.3,-560 q 81.8,-31.5 172.45,-31.5 v 237.35 H 360.3 q 11.1,-112.55 21.9,-225.45 h 155.15 v 560 h -198.2 q 0,-96 11.55,-166.7 h -14.6 q -20.75,0 -42.65,4.6 -29.95,6.15 -55.7,25 -10.35,7.3 -10.35,9.6 v 127.5 l -4.6,1.55 q -13.45,4.6 -39.6,8.45 Q 110.25,2.3 36.1,2.3 v -21.9 q 0,-10.35 3.1,-67.6 2.3,-43.4 4.2,-86.8 4.6,-119.45 7.7,-179.35 l 3.05,-66.1 q 0.8,-24.95 1.55,-33 0.75,-15 1.9,-21.9 5.4,-56.45 7.7,-85.65"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path79" />
+    </g>
+    <g
+       id="text7"
+       transform="translate(-0.55,1.05)">
+      <g
+         id="g89">
+        <use
+           fill="#999999"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,0,12)"
+           width="91.849998"
+           xlink:href="#font_Oetztype_N0"
+           id="use79" />
+        <use
+           fill="#999999"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,9.5,12)"
+           width="91.849998"
+           xlink:href="#font_Oetztype_o0"
+           id="use80" />
+        <use
+           fill="#999999"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,16.95,12)"
+           width="91.849998"
+           xlink:href="#font_Oetztype_t0"
+           id="use81" />
+        <use
+           fill="#999999"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,27.8,12)"
+           width="91.849998"
+           xlink:href="#font_Oetztype_U0"
+           id="use82" />
+        <use
+           fill="#999999"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,36.5,12)"
+           width="91.849998"
+           xlink:href="#font_Oetztype_p0"
+           id="use83" />
+        <use
+           fill="#999999"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,44.4,12)"
+           width="91.849998"
+           xlink:href="#font_Oetztype_g0"
+           id="use84" />
+        <use
+           fill="#999999"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,51.85,12)"
+           width="91.849998"
+           xlink:href="#font_Oetztype_r0"
+           id="use85" />
+        <use
+           fill="#999999"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,57.3,12)"
+           width="91.849998"
+           xlink:href="#font_Oetztype_a0"
+           id="use86" />
+        <use
+           fill="#999999"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,63.6,12)"
+           width="91.849998"
+           xlink:href="#font_Oetztype_d0"
+           id="use87" />
+        <use
+           fill="#999999"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,71.5,12)"
+           width="91.849998"
+           xlink:href="#font_Oetztype_e0"
+           id="use88" />
+        <use
+           fill="#999999"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,78.25,12)"
+           width="91.849998"
+           xlink:href="#font_Oetztype_d0"
+           id="use89" />
+      </g>
+    </g>
+    <g
+       id="font_Oetztype_t0">
+      <path
+         d="m 87.2,-68.35 v -30 q 0,-77.2 19.95,-177.05 h -91.4 q 0,-77.95 12.65,-117.9 3.1,0 11.55,-1.55 34.2,-4.6 47.25,-8.05 l 5.75,-5.4 q 3.05,-3.05 3.85,-4.6 2.3,-4.6 5,-19.6 2.65,-14.95 5.75,-20.75 2.7,-5.35 8.85,-8.45 2.3,-0.75 14.95,-6.5 l 28.45,-10.75 54.9,-22.3 q 29.2,-11.5 54.15,-11.5 v 99.85 q 7.7,7.3 15,15 h 78.75 v 107.5 h -98.35 v 157.5 h 89.9 v 6.15 q 0,5.75 -1.55,8.85 -3.45,25.7 -5,39.15 -4.6,33.05 -4.6,29.95 -2.3,9.6 -33.05,20.4 -15.75,6.5 -40.3,12.65 -63.4,16.5 -84.9,16.5 Q 154,0.75 129.05,-21.9 108.7,-45.7 87.2,-68.35"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path89" />
+    </g>
+    <g
+       id="font_Oetztype_U0">
+      <path
+         d="m 29.2,-137.5 q 24.55,-196.65 49.55,-393.3 2.3,-18.05 19.6,-29.2 39.15,-6.55 59.15,-10.4 l 35.3,-6.15 23.45,-3.05 q 11.9,-4.25 19.6,-5.75 l 19.95,-4.6 13.85,-0.8 q 0,54.95 -17.7,163.65 -17.65,108.7 -17.65,163.6 0,26.15 12.65,62.25 14.25,44.55 36.9,44.55 l 5.75,-0.8 h 5.4 q 3.05,-0.75 14.2,-4.6 l 22.65,-8.45 41.9,-15.75 q 14.2,-5.75 14.2,-10.35 V -530.8 q 7.3,-5 14.95,-9.6 0.8,-0.8 17.3,-4.65 l 40.7,-8.05 48.8,-9.2 q 20.35,-4.25 41.1,-8.1 h 5.35 q 14.25,0 14.25,18.05 v 11.95 q 0,-4.65 -3.1,57.6 -4.2,75.65 -8.05,151.7 -2.3,39.95 -3.85,72.2 -4.6,72.6 -4.6,81.85 l -1.55,18.8 q -1.9,11.9 -3.45,23.05 -3.85,25.75 -5.4,27.25 -59.15,49.2 -117.9,98.35 -1.55,0.75 -11.15,1.9 L 364.1,-1.55 Q 351.45,0 343.75,0 h -11.9 L 306.9,0.75 H 281.55 243.9 218.55 L 193.6,0 h -16.55 q -9.2,-7.7 -18.05,-15.75 -63,-54.9 -71.05,-63 l -51.85,-51.85 -6.9,-6.9"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path90" />
+    </g>
+    <g
+       id="font_Oetztype_p0">
+      <path
+         d="m 211.65,-139.05 q 0,1.55 0.75,4.6 v 3.85 q 29.95,10.4 46.5,14.2 26.5,7.7 62.2,15 h 9.2 l 69.15,-68.35 v -20 l -88.7,-78.35 q -35.35,37.65 -54.15,61.05 -44.95,55.35 -44.95,68 M 34.55,-388.7 H 46.5 l 36.1,1.55 11.9,0.75 q 6.15,0 19.6,1.9 l 27.65,3.1 41.45,4.6 q 23.05,4.6 19.6,33.05 -0.75,8.05 0,13.45 0.75,14.2 15,14.2 7.3,0 15.75,-15.75 9.6,-17.3 18.8,-34.6 Q 280,-416 296.5,-416 h 4.65 q 1.5,1.55 9.6,5.4 l 6.15,3.05 q 2.3,1.55 5.35,2.35 l 19.2,4.95 33.8,9.25 q 35.35,9.6 53.4,14.2 27.65,9.6 69.15,86.4 39.55,74.15 39.55,100.65 v 9.6 q 0,6.9 -10.35,29.95 -3.85,8.45 -10,21.15 -32.25,62.2 -58.4,111 -9.2,16.5 -18.05,33.05 l -11.9,21.1 -6.9,0.75 -7.3,0.8 -7.3,-0.8 -7.7,-0.75 Q 376.05,31.5 352.6,21.9 328.8,12.3 305.35,2.3 245.45,-22.65 207.8,-22.65 h -15 l 19.6,19.6 v 206.6 H 65.3 L 54.95,193.6 51.1,92.95 Q 48.8,48 47.25,-9.6 41.5,-168.25 35.35,-327.25 v -11.9 -18.05 q -0.8,-12.7 -0.8,-18.85 v -12.65"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path91" />
+    </g>
+    <g
+       id="font_Oetztype_g0">
+      <path
+         d="m 220.1,-275.4 q -8.45,0 -23.45,5.75 -17.3,6.15 -17.3,14.6 v 89.1 q 0,0.8 3.85,3.85 l 8.1,8.85 q 27.25,27.25 47.2,27.25 12.3,0 25.35,-7.3 13.1,-7.65 28.05,-23.4 l 25,-28.8 -88,-89.15 -3.05,-0.75 h -5.75 m -41.5,389.5 q 0,0.75 0.75,3.05 v 1.55 q 4.65,7.65 9.65,14.95 21.85,34.6 44.55,34.6 h 4.95 l 25,-7.7 q 14.95,-4.6 29.2,-9.6 34.55,-11.5 34.55,-12.7 V 118.7 l -83.35,-73 -64.55,63.75 v 2.3 q -0.75,1.55 -0.75,2.35 M 21.9,148.65 v -10.4 q 3.45,-7.65 5.75,-13.8 4.6,-14.2 4.6,-15 Q 36.85,89.5 41.85,69.9 48,44.15 51.85,30.75 56.45,11.9 59.9,4.6 l 1.55,-3.85 h 137.5 q -3.05,-11.9 -11.9,-21.1 -2.3,-3.1 -17.3,-18.05 -26.5,-22.3 -39.15,-33.8 -38.4,-33.8 -39.2,-34.95 -29.55,-29.2 -59.15,-58.8 v -10.35 q 0,-1.55 4.6,-15.75 l 3.1,-8.45 q 1.15,-2.3 1.9,-5 5.4,-11.5 17.3,-35.35 26.5,-53 53.4,-106 14.2,-29.2 18.45,-36.5 4.2,-7.65 16.9,-12.25 6.1,-2.3 21.85,-6.55 24.6,-5.4 38.8,-9.2 l 141.35,-30.75 32.3,-6.9 q 11.1,-2.7 13.4,-2.7 h 39.6 q 28.8,64.15 58,128.3 H 346.85 l 8.05,5.75 q 18.85,15 31.5,23.45 18.8,10.35 28.8,14.2 l 19.2,9.2 10.75,6.55 q 32.3,21.1 31.5,78.75 -0.75,15.75 -0.75,28.8 v 10.35 q -1.55,21.15 -1.55,39.2 -4.6,3.45 -18.05,8.8 -49.55,21.15 -80.25,30.75 -5.4,1.55 -23.45,1.55 -19.2,0 -25.35,-1.55 3.05,6.15 9.6,9.2 7.7,5.8 27.25,18.45 l 41.9,26.5 q 45.7,29.2 68.35,44.2 V 45.7 q 0,6.15 -1.55,20.35 -6.5,57.65 -21.85,102.2 -12.7,36.1 -25.35,39.55 l -240.1,63 Q 109.1,219.3 32.25,168.25 28.4,164.4 21.9,148.65"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path92" />
+    </g>
+    <g
+       id="font_Oetztype_a0">
+      <path
+         d="m 144.05,-147.1 q 18.8,21.9 30.7,30.7 21.9,18.85 38.4,18.85 l 10.4,-0.8 q 13.05,-11.1 18.8,-19.55 2.3,-2.3 7.7,-9.6 21.5,-25.75 31.5,-39.2 -11.9,-13.45 -18.85,-20.35 -15.75,-15.75 -20.35,-19.2 l -1.5,-0.8 q -1.55,-0.75 -3.1,-0.75 -18.45,0 -51.45,23.05 -27.3,18.8 -42.25,37.65 M 26.1,-107.95 v -9.95 q 8.45,-51.85 16.55,-71.1 15.75,-36.85 52.6,-46.85 l 29.2,-8.05 q 44.15,-11.9 88.7,-23.45 20.4,-5.75 30.35,-8.45 9.6,-2.65 9.6,-23.8 v -6.5 q 0,-5.4 -0.75,-10.8 -3.05,-12.65 -10,-12.65 H 75.65 q -11.1,0 -11.1,-35.35 v -9.6 -6.9 q -2.35,-19.6 11.1,-21.5 39.2,-13.85 58.8,-20.35 17.65,-5.8 35.3,-11.95 16.55,-5.35 23.85,-6.9 l 3.85,-0.75 5.35,-0.8 5.4,0.8 q 3.45,0.75 4.95,0.75 l 52.65,10.4 61.45,12.25 q 25.75,5.8 51.1,11.15 18.05,3.85 21.1,5.4 l 10.4,9.6 q 0,1.5 0.75,8.8 0.75,21.15 0.75,35.35 v 36.1 27.65 l -0.75,25.75 q -0.75,11.15 -0.75,14.2 -3.85,57.65 -5.4,86.45 -1.9,24.95 -4.2,49.55 -2.35,24.55 -3.85,44.15 -4.6,44.15 -6.15,45.7 l -10.4,10 H 291.9 q -10.35,-30.35 -24.55,-30.35 h -3.1 l -2.3,0.75 Q 174.75,0.75 123.7,0.75 117.9,0.75 95.25,0 85.65,-1.55 55.7,-48.4 26.1,-95.25 26.1,-107.95"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path93" />
+    </g>
+    <g
+       id="font_Oetztype_d0">
+      <path
+         d="m 187.8,-185.5 q 0,23.4 24.6,42.25 10.4,8.05 44.95,25.35 h 5.35 q 19.6,0 59.15,-13.45 43.8,-14.2 43.8,-29.95 v -5.4 q -0.75,-7.3 -2.3,-18.05 L 358,-226.6 q -1.55,-7.7 -2.35,-9.25 0,-6.5 -9.6,-9.6 -21.1,-11.15 -42.25,-21.9 -29.95,-14.95 -36.45,-17.25 l -6.95,-0.8 -7.3,-0.75 q -26.5,0 -46.85,37.65 -18.45,33.8 -18.45,63 M 11.15,-217 q 0,-1.55 0.75,-5.8 v -3.05 q 0,-0.75 3.85,-6.15 11.9,-17.3 25.35,-33.05 l 40.7,-49.5 28.45,-34.6 q 14.95,-18.05 28,-34.55 l 24.6,-29.95 q 10.4,-12.7 15.75,-18.85 l 6.9,-0.75 h 8.1 q 29.2,0 81.05,39.55 51.85,39.55 76.05,39.55 h 4.95 q -41.1,-105.25 -41.1,-255.4 h 198.2 V -19.6 h -132.1 v -48.75 q -15,1.5 -26.5,12.65 -5,3.85 -20.35,21.9 -15.4,18.05 -47.65,24.95 -39.2,9.6 -112.15,9.6 h -7.3 -10 L 146.35,0 h -6.9 q -12.7,-19.6 -20,-29.2 0,-0.75 -1.55,-3.85 l -3.05,-6.15 -4.6,-9.6 q -2.3,-3.05 -8.85,-14.2 l -54.9,-85.65 q -18.85,-29.2 -25.35,-37.65 -10,-18.05 -10,-30.7"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path94" />
+    </g>
+    <g
+       id="sprite8"
+       transform="translate(-2.5)">
+      <use
+         ffdec:characterId="5769"
+         height="61.5"
+         transform="translate(2.5)"
+         width="100.75"
+         xlink:href="#shape4"
+         id="use94" />
+    </g>
+    <g
+       id="shape4"
+       transform="translate(-2.5)">
+      <path
+         d="M 2.5,0 H 103.25 L 79.5,50.05 93.75,61.5 H 2.5 V 0"
+         fill="#ffffff"
+         fill-opacity="0"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path95" />
+    </g>
+    <g
+       id="sprite9"
+       transform="translate(2,2)">
+      <use
+         ffdec:characterId="5776"
+         height="10.5"
+         transform="translate(-2,-2)"
+         width="97.25"
+         xlink:href="#shape5"
+         id="use95" />
+    </g>
+    <g
+       id="shape5"
+       transform="translate(2,2)">
+      <path
+         d="M 90,6.5 H 0 V 0 H 82.6 L 90,6.5"
+         fill="#000000"
+         fill-opacity="0.498039"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path96" />
+      <path
+         d="M 90,6.5 H 0 V 0 h 82.6 z"
+         fill="none"
+         stroke="#000000"
+         stroke-linecap="butt"
+         stroke-linejoin="miter-clip"
+         stroke-miterlimit="3"
+         stroke-opacity="0.498039"
+         stroke-width="4"
+         id="path97" />
+      <path
+         d="M 89.95,6.5 H 67.55 V 0 h 15 l 7.4,6.5 M 43.3,6.5 H 22.5 V 0 h 20.8 v 6.5 m 1.75,0 V 0 H 65.8 V 6.5 H 45.05 M 20.75,0 V 6.5 H 0 V 0 h 20.75"
+         fill="#ffffff"
+         fill-opacity="0.498039"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path98" />
+    </g>
+    <g
+       id="sprite10"
+       transform="translate(2.45,618.7)">
+      <use
+         ffdec:characterId="5782"
+         height="74.099998"
+         transform="translate(-2.45,5.2)"
+         width="104.45"
+         xlink:href="#shape6"
+         id="use98" />
+      <clipPath
+         id="clipPath1">
+        <path
+           d="M 23.5,5 0.5,53.3 25.75,77 H 100.5 V 5 Z"
+           id="path99" />
+      </clipPath>
+      <g
+         clip-path="url(#clipPath1)"
+         id="g99">
+        <use
+           ffdec:characterId="49"
+           height="0"
+           id="use99"
+           transform="translate(128.75,36)"
+           width="0"
+           xlink:href="#sprite7" />
+      </g>
+      <filter
+         id="filter57"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult25"
+           type="matrix"
+           values="0 0 0 0 0.1764706,0 0 0 0 0.2627451,0 0 0 0 0.02745098,0 0 0 1 0"
+           id="feColorMatrix99" />
+        <feConvolveMatrix
+           divisor="9.0"
+           in="filterResult25"
+           kernelMatrix="1 1 1 1 1 1 1 1 1"
+           order="3 3"
+           result="filterResult26"
+           id="feConvolveMatrix99" />
+        <feConvolveMatrix
+           divisor="9.0"
+           in="filterResult26"
+           kernelMatrix="1 1 1 1 1 1 1 1 1"
+           order="3 3"
+           result="filterResult27"
+           id="feConvolveMatrix100" />
+        <feConvolveMatrix
+           divisor="9.0"
+           in="filterResult27"
+           kernelMatrix="1 1 1 1 1 1 1 1 1"
+           order="3 3"
+           result="filterResult28"
+           id="feConvolveMatrix101" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult28"
+           operator="over"
+           result="filterResult29"
+           id="feComposite101" />
+      </filter>
+      <use
+         ffdec:characterId="5784"
+         filter="url(#filter57)"
+         height="13.85"
+         transform="matrix(0.9913,-0.1313,0.1313,0.9913,28.7643,8.3473)"
+         width="32.400002"
+         xlink:href="#text8"
+         id="use101" />
+      <filter
+         id="filter68"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult30"
+           type="matrix"
+           values="0 0 0 0 0.1764706,0 0 0 0 0.2627451,0 0 0 0 0.02745098,0 0 0 1 0"
+           id="feColorMatrix101" />
+        <feConvolveMatrix
+           divisor="9.0"
+           in="filterResult30"
+           kernelMatrix="1 1 1 1 1 1 1 1 1"
+           order="3 3"
+           result="filterResult31"
+           id="feConvolveMatrix102" />
+        <feConvolveMatrix
+           divisor="9.0"
+           in="filterResult31"
+           kernelMatrix="1 1 1 1 1 1 1 1 1"
+           order="3 3"
+           result="filterResult32"
+           id="feConvolveMatrix103" />
+        <feConvolveMatrix
+           divisor="9.0"
+           in="filterResult32"
+           kernelMatrix="1 1 1 1 1 1 1 1 1"
+           order="3 3"
+           result="filterResult33"
+           id="feConvolveMatrix104" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult33"
+           operator="over"
+           result="filterResult34"
+           id="feComposite104" />
+      </filter>
+      <use
+         ffdec:characterId="5785"
+         filter="url(#filter68)"
+         height="19.9"
+         id="cost_txt"
+         transform="translate(14.15,58.1)"
+         width="85.849998"
+         xlink:href="#text9" />
+      <use
+         ffdec:characterId="5788"
+         ffdec:characterName="upgrade_select_btn"
+         height="76"
+         id="use104"
+         transform="translate(-1.9,3)"
+         width="104.4"
+         xlink:href="#sprite11" />
+    </g>
+    <g
+       id="shape6"
+       transform="translate(2.45,-5.2)">
+      <path
+         d="M 100,77.3 H 25.25 L 0,54.25 23,7.2 h 77 v 70.1"
+         fill="#9cd600"
+         fill-opacity="0.498039"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path104" />
+      <path
+         d="M 100,77.3 H 25.25 L 0,54.25 23,7.2 h 77 z"
+         fill="none"
+         stroke="#000000"
+         stroke-linecap="butt"
+         stroke-linejoin="miter-clip"
+         stroke-miterlimit="3"
+         stroke-opacity="0.25098"
+         stroke-width="4"
+         id="path105" />
+    </g>
+    <g
+       id="text8"
+       transform="translate(-28.65,1.05)">
+      <g
+         id="g107">
+        <use
+           fill="#9cd600"
+           height="13.85"
+           transform="matrix(0.0152,0,0,0.0152,28,12)"
+           width="32.400002"
+           xlink:href="#font_Oetztype_B0"
+           id="use105" />
+        <use
+           fill="#9cd600"
+           height="13.85"
+           transform="matrix(0.0152,0,0,0.0152,36.5,12)"
+           width="32.400002"
+           xlink:href="#font_Oetztype_U0"
+           id="use106" />
+        <use
+           fill="#9cd600"
+           height="13.85"
+           transform="matrix(0.0152,0,0,0.0152,45.7,12)"
+           width="32.400002"
+           xlink:href="#font_Oetztype_Y0"
+           id="use107" />
+      </g>
+    </g>
+    <g
+       id="font_Oetztype_B0">
+      <path
+         d="m 156.7,-384.5 q 0,1.55 0.8,5.4 v 5.35 q 6.1,39.6 10.75,59.2 14.95,88.7 28.4,157.05 8.85,42.65 19.6,59.15 9.6,2.35 29.95,2.35 h 18.05 q 13.45,0 30.75,-21.9 13.45,-15.75 26.85,-32.3 14.25,-19.55 14.25,-37.6 0,-1.95 -1.15,-5 -0.8,-3.1 -0.8,-3.85 -48.4,-53.8 -96.4,-107.95 43.4,-49.15 87.2,-98.3 0,-0.8 -3.1,-7.7 -13.4,-28.4 -26.85,-51.1 -6.15,-11.1 -24.2,-11.1 h -7.3 l -7.7,0.75 q -26.9,19.6 -39.55,29.95 l -23.45,17.3 q -11.1,8.8 -15.75,11.9 -7.3,5.35 -13.8,11.9 -6.55,6.15 -6.55,16.5 M 39.2,-560 q 14.95,-5 29.95,-10.4 l 16.5,-2.3 39.55,-3.85 172.1,-18.05 q 27.65,-2.3 47.25,-4.95 h 19.55 q 1.55,0.75 7.3,5.75 18.05,17.25 32.3,33.8 l 19.55,22.65 q 69.15,83.35 78.75,95.25 1.55,3.1 1.55,19.6 0,16.5 -1.55,19.6 -8.05,8.8 -14.2,14.95 l -10.35,8.85 -5.4,5.35 q -3.85,4.65 -16.5,18.85 l -35.35,41.85 q -6.55,6.95 -7.3,8.45 v 9.6 h 29.95 q 0.8,0 8.1,6.15 29.55,28.45 51.05,53 7.7,9.25 11.55,13.05 19.2,19.25 19.2,36.5 0,1.55 -1.15,4.6 -0.8,3.1 -0.8,5 0,1.95 -11.5,25.75 -5,9.2 -9.6,18.8 -5.4,10.4 -7.7,14.25 l -24.55,43.75 -25,44.95 -5,9.6 -3.05,6.15 q -1.55,2.3 -1.55,3.85 Q 433.25,0 432.5,0 H 39.2 v -560"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path107" />
+    </g>
+    <g
+       id="font_Oetztype_Y0">
+      <path
+         d="m 180.9,-157.5 v -9.2 q -10.35,-20.35 -39.95,-40.35 -11.9,-7.65 -50.3,-28.8 -68,-35.7 -68,-78.7 0,-3.1 0.8,-9.65 v -9.95 L 37.65,-397.9 48,-442.85 q 20.35,-93.75 24.2,-107.95 5.75,-20.35 8.85,-25.75 l 1.55,-3.05 h 166.7 v 255.4 l -9.25,19.6 117.95,-29.55 q 11.1,-3.45 11.1,-21.5 v -7.7 q 0,-25.35 -21.1,-79.15 -20.75,-53.75 -20.75,-78.35 0,-15.75 39.2,-33.8 27.65,-12.65 76.4,-26.5 37.65,-10.35 50.35,-10.35 l 7.3,0.75 4.6,0.8 69.1,246.2 q 0,1.5 0.8,4.6 v 5.75 q 0,17.3 -49.55,52.65 -15.75,11.1 -46.85,31.85 -31.15,20.75 -46.1,31.1 -50.3,36.1 -50.3,51.1 v 147.1 l -6.95,1.55 q -23.8,5.35 -56.85,8.45 l -78.35,8.05 Q 198.95,2.3 159,2.3 q 0,-5.35 1.15,-15.75 1.15,-10 1.15,-15.75 l 9.25,-64.5 6.5,-39.95 3.85,-23.85"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path108" />
+    </g>
+    <g
+       id="text9"
+       transform="translate(2,2)">
+      <g
+         transform="translate(-2,-2)"
+         id="g117">
+        <use
+           fill="#9cd600"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,7.1,11.75)"
+           width="85.849998"
+           xlink:href="#font_Oetztype__2"
+           id="use108" />
+        <use
+           fill="#9cd600"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,15.15,11.75)"
+           width="85.849998"
+           xlink:href="#font_Oetztype_11"
+           id="use109" />
+        <use
+           fill="#9cd600"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,19.85,11.75)"
+           width="85.849998"
+           xlink:href="#font_Oetztype_21"
+           id="use110" />
+        <use
+           fill="#9cd600"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,26.75,11.75)"
+           width="85.849998"
+           xlink:href="#font_Oetztype_30"
+           id="use111" />
+        <use
+           fill="#9cd600"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,32.55,11.75)"
+           width="85.849998"
+           xlink:href="#font_Oetztype_40"
+           id="use112" />
+        <use
+           fill="#9cd600"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,40.85,11.75)"
+           width="85.849998"
+           xlink:href="#font_Oetztype_50"
+           id="use113" />
+        <use
+           fill="#9cd600"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,48.15,11.75)"
+           width="85.849998"
+           xlink:href="#font_Oetztype_60"
+           id="use114" />
+        <use
+           fill="#9cd600"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,55.85,11.75)"
+           width="85.849998"
+           xlink:href="#font_Oetztype_70"
+           id="use115" />
+        <use
+           fill="#9cd600"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,62.4,11.75)"
+           width="85.849998"
+           xlink:href="#font_Oetztype_80"
+           id="use116" />
+        <use
+           fill="#9cd600"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,70.7,11.75)"
+           width="85.849998"
+           xlink:href="#font_Oetztype_90"
+           id="use117" />
+      </g>
+    </g>
+    <g
+       id="font_Oetztype__2">
+      <path
+         d="m 113.3,-402.9 q 17.3,29.95 59.15,29.95 19.6,0 19.6,-10 v -78.75 q -39.55,0 -78.75,58.8 m 271.2,77.2 q -28.05,0 -46.1,11.9 -51.1,32.25 -51.1,121 l 12.3,-0.8 24.6,-1.5 24.95,-1.55 9.6,-9.6 q 18.8,-28.05 19.6,-29.6 11.1,-21.5 16.5,-31.5 4.25,-8.8 8.85,-17.25 3.85,-8.1 4.2,-10 l 1.15,-5 v -5 q 0,-21.1 -24.55,-21.1 M 172.45,-54.15 H 30.75 q 0,-25.35 7.3,-47.65 7.65,-22.65 16.1,-45.3 6.55,-16.5 11.15,-27.65 7.7,-17.3 8.85,-17.3 H 181.7 v -60.3 q -3.1,0 -14.6,-2.3 -11.15,-1.95 -14.6,-1.15 -2.3,0 -10,5.35 -8.05,5 -9.6,5 H 126 l -8.1,0.8 -6.9,-0.8 h -8.05 Q 71.45,-295 24.2,-393.3 q 0,-1.55 -0.75,-4.6 v -5 q 0,-1.55 0.75,-5.4 v -4.6 q 2.7,-4.6 5,-9.6 18.05,-33.8 24.95,-49.55 l 7.3,-13.45 q 20.35,-36.85 32.25,-54.9 9.25,-15 17.3,-26.15 15,-21.1 21.9,-23.4 l 14.2,-3.1 q 34.6,-6.5 59.15,-6.5 v -53.4 h 9.25 l 74.9,3.85 q 31.45,3.45 28.8,44.15 h 141.7 v 12.65 q -0.75,6.95 -2.3,24.6 -1.55,17.65 -1.55,27.3 l -9.6,9.6 -21.85,10.75 -96.05,48 q -21.1,11.15 -18.05,41.1 0.75,8.45 0.75,16.5 18.05,0 51.85,-5 33.8,-4.6 51.9,-4.6 31.45,0 61.8,35.75 30.35,36.1 30.35,67.95 0,4.25 -0.75,12.7 -0.8,8.8 -0.8,12.65 l -29.15,87.95 q -6.15,19.25 -10,30 -2.7,4.6 -5.75,12.65 l -6.15,15.75 q -8.1,19.6 -8.1,21.15 -6.9,9.6 -21.1,16.5 -57.25,23.05 -87.2,32.25 -18.8,8.1 -34.55,16.55 l -5,3.05 q -1.55,3.45 -3.1,11.15 -4.6,18.05 -6.1,36.1 -0.8,8.85 0,11.9 h -9.65 l -13.4,0.75 h -13.1 -20.7 -13.45 L 207.8,0 h -6.55 q -25.7,-1.55 -28.8,-36.1 -1.15,-9.6 0,-18.05"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path117" />
+    </g>
+    <g
+       id="font_Oetztype_11">
+      <path
+         d="M 74.15,-19.6 V -27.65 -39.2 Q 73,-47.25 73,-51.1 v -8.05 q 0,-79.1 13.4,-158.65 l 26.9,-155.95 q 4.6,-6.9 9.25,-19.55 1.9,-3.85 0,-9.6 L 121,-408.3 H 34.55 q -3.05,-7.7 -4.6,-13.45 L 26.9,-432.5 q -1.55,-5 -2.7,-9.6 l -6.9,-35.35 q -3.1,-12.65 -3.1,-30.7 v -10.4 q 0,-3.05 2.3,-5.35 10.4,-4.6 18.05,-6.9 70.7,-23.85 141.75,-47.25 29.2,-10.4 35.35,-11.9 40.7,-11.95 59.15,-11.95 V 2.3 h -9.6 L 231.25,0.75 220.85,0 192.05,-3.05 Q 111,-12.7 74.15,-19.6"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path118" />
+    </g>
+    <g
+       id="font_Oetztype_21">
+      <path
+         d="m 255.05,-422.5 q -42.65,17.3 -96.05,51.1 -23.8,14.55 -47.25,29.15 l -44.15,27.7 q -0.75,0 -2.3,0.75 H 63 q -0.8,0 -2.3,-0.75 h -2.3 q -7.3,-3.85 -10.4,-9.65 -20.35,-79.5 -20.35,-120.95 0,-3.85 0.75,-10.4 v -6.15 l 98.35,-98.3 q 0,-0.8 6.9,-2.3 18.05,-2.7 36.1,-5.8 l 15.75,-2.3 20,-1.5 q 78.35,-7.7 98.3,-7.7 h 10.75 q 13.45,0 18.85,9.2 0,1.55 2.7,7.3 l 11.5,29.6 q 3.85,8.8 5.75,12.65 27.3,63 41.5,94.5 26.9,60.7 26.9,92.2 0,20.35 -9.6,29.55 -83.75,83.75 -167.5,167.1 -6.15,6.15 -9.6,19.6 0,1.5 0.8,5 0.75,3.45 0.75,4.95 h 8.05 q 73.75,-24.55 147.9,-49.55 h 21.9 v 33.8 q 0,76.45 -12.3,114.1 -5,9.6 -9.6,9.6 h -358 q 0,-14.2 3.85,-19.6 0.8,-3.05 6.55,-13.45 l 23.4,-47.25 q 6.55,-13.4 9.6,-18.05 L 146.35,-222 215.5,-343.75 q 11.9,-18.85 23,-37.65 12.3,-23.05 16.55,-41.1"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path119" />
+    </g>
+    <g
+       id="font_Oetztype_30">
+      <path
+         d="m 48.8,-99.85 q 0,-31.5 54.15,-63 49.55,-28.45 84.1,-33.8 -2.3,-1.55 -7.7,-6.15 -18.8,-14.2 -31.45,-23.05 -26.15,-15.75 -39.2,-23.45 -30.75,-18.05 -30.75,-30.7 0,-0.75 0.8,-2.3 0.75,-1.55 0.75,-2.3 14.2,-16.55 31.5,-35.75 74.5,-84.1 106,-112.15 l -12.65,-0.75 h -12.3 q -27.65,0 -81.05,11.5 -53.4,11.9 -81.05,11.9 V -550.8 l 10,-9.2 q 1.9,-0.8 15.75,-3.85 61.45,-12.7 111.75,-15.75 3.1,0 6.55,-0.75 15,-0.8 33.05,-0.8 h 30.7 q 17.3,0 28.05,10.75 3.05,2.3 12.65,12.7 l 56.5,66.05 q 20.7,24.2 20.7,39.2 v 5 q -0.75,3.8 -0.75,5.35 -9.6,19.6 -13.45,29.95 -4.6,11.15 -9.6,21.9 l -6.9,16.5 q -12.7,27.7 -18.05,41.1 -15,28.05 -30.75,37.65 l 7.7,5.4 q 25.35,20.75 31.5,24.55 9.6,4.65 21.5,12.7 18.05,11.5 18.05,21.1 v 5.4 q -3.85,16.15 -7.3,32.25 -20.35,90.65 -22.65,104.5 -2.3,13.45 -9.6,20.75 L 99.1,0 H 93.7 Q 77.95,0 62.2,-43.4 48.8,-80.3 48.8,-99.85"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path120" />
+    </g>
+    <g
+       id="font_Oetztype_40">
+      <path
+         d="m 235.05,-154 q -5.35,0 -17.65,-1.55 -11.9,-1.95 -19.2,-1.95 -29.95,5.8 -44.2,8.1 -48.35,9.2 -96.4,18.8 -12.65,2.3 -17.25,3.45 -4.25,1.15 -19.2,1.15 v -40.7 l 68.35,-384.1 19.95,-19.6 78.35,-6.9 30,-2.3 h 12.65 q 0,48.8 -10.35,145.55 -10,96.45 -10,145.2 l 11.9,0.8 16.5,1.9 28.05,1.55 q 2.3,0 6.55,-4.25 3.85,-3.85 3.85,-6.15 l 30.7,-245.4 h 116.4 V -295 H 524.7 q 0,22.7 -3.85,44.2 -3.85,22.25 -8.1,44.55 -0.75,2.7 -2.3,10.35 l -5.35,23.45 q -1.55,4.2 -1.95,5.75 -0.35,1.55 -20.35,9.2 -7.65,3.5 -10,4.25 -39.55,15 -43.4,15.75 V 0 H 225.85 q 0,-26.1 4.6,-77.2 4.6,-51.1 4.6,-76.8"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path121" />
+    </g>
+    <g
+       id="font_Oetztype_50">
+      <path
+         d="m 29.95,-87.95 q 0,-1.55 0.8,-5.4 0.75,-3.45 0.75,-5 148.65,-19.55 216.25,-107.9 l -27.65,-7.7 q -41.1,-11.9 -82.6,-23.4 -23.4,-6.55 -27.25,-8.1 Q 93.7,-250.8 77.2,-256.6 l -26.1,-8.45 q -11.15,-4.6 -11.15,-14.2 v -26.1 q 0,-2.3 1.15,-7.7 v -7.3 -3.85 q 5.4,-43.75 8.45,-66.8 l 5.4,-47.25 q 11.1,-87.2 15.7,-112.55 0,-3.85 5,-18.05 3.85,-10.75 4.65,-10.75 h 344.5 q 3.1,0 9.6,9.2 v 10.4 q -3.45,25.7 -5,39.15 -4.6,33.05 -4.6,29.2 0,3.1 -10.35,10.4 -39.2,12.25 -58.8,19.55 -41.45,9.6 -82.55,19.6 -56.1,13.45 -84.1,19.6 0,3.05 -1.2,10 -0.75,6.5 -0.75,9.6 0,30.7 11.15,48.75 l 17.3,0.8 h 17.25 q 19.6,0 57.65,-5 37.6,-5 57.2,-5 h 8.05 q 1.55,0.75 5.4,3.85 16.5,16.5 24.6,25.35 l 13.8,19.6 q 53,76.05 53.8,78.35 0.75,1.9 1.5,4.95 v 5.4 q 0,13.45 -10.35,29.2 -26.9,39.95 -40.7,59.9 l -27.65,39.2 q -10.4,15.75 -20.4,29.2 -4.2,5.35 -5.75,7.65 -14.95,18.85 -23.4,31.5 l -5.4,5.75 q -3.45,3.1 -5,3.85 -43.8,15 -103.7,18.05 Q 189,0 107.15,0 82.6,0 56.1,-33.05 q -26.15,-33 -26.15,-54.9"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path122" />
+    </g>
+    <g
+       id="font_Oetztype_60">
+      <path
+         d="m 142.5,-260.4 v 4.6 q 9.6,29.55 19.6,59.15 l 19.6,59.15 9.6,0.75 h 9.95 q 25.35,0 69.55,-23.05 43.75,-22.65 69.9,-22.65 0,-2.3 -1.55,-3.85 l -10.35,-15.75 -9.6,-14.2 -70.7,-71.05 -18.05,-17.3 q -48,14.2 -51.1,15.75 -36.85,14.2 -36.85,28.45 M 22.65,-295.75 q 0,-21.9 5,-38.4 6.15,-23.05 24.2,-51.5 l 31.5,-46.85 q 39.2,-65.3 40.35,-66.05 21.85,-29.95 58,-41.85 15.75,-5.4 30.7,-9.65 26.5,-7.65 52.65,-15.7 56.05,-15.4 83.35,-24.2 l 5.75,-1.55 9.2,-3.1 q 14.2,-4.95 15,-4.95 h 5.35 q 11.15,0 38.8,34.95 24.95,33.8 24.95,43.75 v 5 q -0.75,3.1 -0.75,4.6 -6.9,5.4 -24.95,18.05 l -38.05,26.9 q -33.8,23.45 -64.5,43.8 l -33.8,23.05 q -18.05,11.5 -35.35,21.1 h 157.5 q 7.65,0 24.95,54.15 19.2,63 29.95,111.8 15,67.6 15,87.2 v 10.35 l -0.8,6.9 q -9.2,9.6 -29.95,20 -10.75,5.35 -21.9,10.75 l -35.35,17.3 q -18.05,9.2 -36.1,18.05 l -23.4,11.9 Q 319.2,-24.2 313.8,-21.9 274.65,-4.6 260.4,0 l -3.8,0.75 h -5.8 q -22.65,0 -55.7,-14.95 -26.1,-12.7 -52.6,-25 -2.3,-0.75 -12.7,-5.75 Q 92.95,-62.2 73,-68.35 61.45,-74.9 53.4,-78.75 q -3.1,-6.9 -4.6,-13.45 -4.65,-13.8 -4.65,-15.75 -21.5,-120.2 -21.5,-187.8"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path123" />
+    </g>
+    <g
+       id="font_Oetztype_70">
+      <path
+         d="m 215.5,-412.9 h -15 q -29.2,0 -85.25,16.15 -56.1,16.1 -86.05,16.1 V -570.4 h 353.75 q 1.9,6.15 4.2,11.9 17.3,64.55 25,96.8 v 9.25 q 0,16.5 -9.25,39.55 -6.9,17.3 -13.45,34.55 l -21.5,52.65 q -11.9,30.35 -24.2,60.65 -13.45,32.3 -24.55,61.5 l -34.6,85.65 -28,66.8 Q 234.3,0 225.85,0 H 84.9 q 0,-37.65 11.1,-88.75 11.15,-44.15 21.15,-88.3 5.4,-30 11.15,-60.3 6.9,-35.75 18.8,-57.65 6.15,-11.9 13.45,-23.4 10,-18.05 20.35,-35.75 22.65,-39.15 34.6,-58.75"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path124" />
+    </g>
+    <g
+       id="font_Oetztype_80">
+      <path
+         d="m 193.6,-431.7 q 2.3,41.45 3.85,61.8 8.05,36.5 31.45,36.5 0.8,0 3.1,-0.75 h 1.55 l 7.3,-3.45 q 16.5,-6.95 32.25,-16.55 5.35,-3.05 7.65,-4.6 l 9.65,-6.15 q 4.6,-3.05 8.45,-6.5 l 3.05,-2.35 q 17.3,-23.4 29.2,-49.5 15.75,-36.15 15.75,-60.7 -21.9,0 -25,2.7 l -23,5.35 -95.3,23.45 q -11.5,4.2 -9.95,20.75 m -9.6,274.2 q 39.55,20 78.7,39.6 2.35,1.5 6.95,3.05 l 9.6,3.1 q 11.9,3.8 13.45,3.8 18.05,0 38.75,-12.65 21.15,-13.05 21.15,-29.6 0,-24.55 -13.45,-57.6 -15.75,-37.65 -35.35,-37.65 l -38,1.55 q -83.35,8.05 -83.35,62.2 0,3.85 0.75,12.3 0.8,8.1 0.8,11.9 M 96,-19.6 Q 73,-33.05 49.55,-102.15 26.1,-169 26.1,-198.2 q 0,-1.55 0.8,-4.6 v -3.45 l 58.75,-58.8 q 2.3,-2.3 2.3,-13.4 0,-18.05 -16.9,-47.65 -16.9,-29.55 -16.9,-48.4 0,-23.4 2.3,-28.4 L 115.6,-560 q 3.85,-7.3 9.6,-10.4 14.25,-3.05 22.7,-4.6 22.65,-4.6 26.85,-4.6 53.4,-7.3 81.05,-9.6 69.9,-6.15 105.25,-10.35 h 10.35 q 58.8,59.15 117.95,118.3 1.5,1.5 1.5,17.25 0,30.75 -30.3,77.2 -30.35,46.9 -30.35,47.65 v 5 q 4.2,10.75 9.6,19.6 6.9,3.05 10.35,8.8 3.85,6.15 13.85,16.9 l 54.55,63 q 0,2.3 0.75,7.3 0.75,4.6 0.75,6.9 0,2.3 -0.75,7.7 -0.75,5 -0.75,6.9 0,1.95 -2.7,7.3 -10.75,22.3 -17.3,32.25 -0.75,2.7 -4.6,12.7 -16.5,37.65 -24.2,56.85 Q 449.8,-48.8 430.2,-9.6 425.6,0 420.2,0 H 391 L 357.2,-2.3 130.6,-17.3 96,-19.6"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path125" />
+    </g>
+    <g
+       id="font_Oetztype_90">
+      <path
+         d="m 261.2,-472.8 h -2.3 l -81.05,50.3 q -9.6,6.5 -9.6,19.6 -2.3,26.85 -2.3,40.3 l -0.8,23.45 q -0.75,11.9 -0.75,16.5 92.95,0 150.95,-11.5 1.55,-0.8 5.75,-5 l 4.6,-4.6 v -5.4 q 0,-21.5 -21.9,-70.3 -25.35,-53.35 -42.6,-53.35 m 34.55,217 q -6.9,0 -6.9,10.35 0,9.6 6.9,9.6 8.05,0 8.05,-9.6 0,-10.35 -8.05,-10.35 M 137.5,-23.45 q 0,-1.9 0.75,-4.2 v -1.55 q 5,-14.2 10.4,-19.6 10.35,-13.8 20.35,-27.65 45.7,-63.75 97.55,-129.8 0.8,-1.55 5.4,-5.4 4.2,-3.85 4.2,-4.6 0.8,-2.3 -1.15,-9.2 -1.9,-6.55 -1.9,-8.1 -26.15,0 -72.6,23.85 -46.5,24.2 -73.75,24.2 l -17.3,-0.8 q -0.75,-0.75 -3.45,-5 -20.35,-31.5 -28.8,-48.75 -31.5,-62.6 -46.45,-94.1 -11.15,-23.05 -11.15,-39.6 0,-13.4 8.8,-32.25 49.55,-90.25 78.75,-134.4 l 11.55,-19.6 15.75,-3.85 q 19.55,-5 23.8,-6.55 91.05,-20.35 154,-20.35 h 27.65 q 14.25,0 25,11.15 68.75,68.75 137.9,137.5 l 0.75,3.85 q 0.75,11.9 0.75,19.6 v 8.8 q 0,76.45 -31.5,223.55 l -16.9,17.3 q -11.5,11.5 -16.9,17.3 -10.35,9.95 -20.35,20.35 l -30.7,27.65 q -49.55,43.8 -72.6,64.5 -15,13.1 -29.2,26.5 -17.3,13.45 -36.85,13.45 -24.2,0 -62.25,-6.15 -49.55,-8.05 -49.55,-18.05"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path126" />
+    </g>
+    <g
+       id="sprite11"
+       transform="translate(2.4,2)">
+      <use
+         ffdec:characterId="5786"
+         height="72"
+         width="100"
+         xlink:href="#shape7"
+         id="use126" />
+    </g>
+    <g
+       id="shape7">
+      <path
+         d="M 100,72 H 25.25 L 0,48.3 23,0 h 77 v 72"
+         fill="#ffffff"
+         fill-opacity="0"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path127" />
+    </g>
+    <g
+       id="text10"
+       transform="translate(2,2)">
+      <g
+         transform="translate(-2,-2)"
+         id="g132">
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,0,8.7)"
+           width="163.05"
+           xlink:href="#font_Oetztype_M0"
+           id="use127" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,12.25,8.7)"
+           width="163.05"
+           xlink:href="#font_Oetztype_o0"
+           id="use128" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,20.2,8.7)"
+           width="163.05"
+           xlink:href="#font_Oetztype_n0"
+           id="use129" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,27.95,8.7)"
+           width="163.05"
+           xlink:href="#font_Oetztype_k0"
+           id="use130" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,34.9,8.7)"
+           width="163.05"
+           xlink:href="#font_Oetztype_e0"
+           id="use131" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,42.15,8.7)"
+           width="163.05"
+           xlink:href="#font_Oetztype_y0"
+           id="use132" />
+      </g>
+      <g
+         transform="translate(-2,-2)"
+         id="g141">
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,56.2,8.7)"
+           width="163.05"
+           xlink:href="#font_Oetztype_B0"
+           id="use133" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,64.7,8.7)"
+           width="163.05"
+           xlink:href="#font_Oetztype_u0"
+           id="use134" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,72.6,8.7)"
+           width="163.05"
+           xlink:href="#font_Oetztype_c0"
+           id="use135" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,78.55,8.7)"
+           width="163.05"
+           xlink:href="#font_Oetztype_c0"
+           id="use136" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,84.5,8.7)"
+           width="163.05"
+           xlink:href="#font_Oetztype_a0"
+           id="use137" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,91.3,8.7)"
+           width="163.05"
+           xlink:href="#font_Oetztype_n0"
+           id="use138" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,99.05,8.7)"
+           width="163.05"
+           xlink:href="#font_Oetztype_e0"
+           id="use139" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,106.3,8.7)"
+           width="163.05"
+           xlink:href="#font_Oetztype_e0"
+           id="use140" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,113.55,8.7)"
+           width="163.05"
+           xlink:href="#font_Oetztype_r0"
+           id="use141" />
+      </g>
+      <g
+         transform="translate(-2,-2)"
+         id="g147">
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,0,21.5)"
+           width="163.05"
+           xlink:href="#font_Oetztype_M0"
+           id="use142" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,12.25,21.5)"
+           width="163.05"
+           xlink:href="#font_Oetztype_o0"
+           id="use143" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,20.2,21.5)"
+           width="163.05"
+           xlink:href="#font_Oetztype_n0"
+           id="use144" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,27.95,21.5)"
+           width="163.05"
+           xlink:href="#font_Oetztype_k0"
+           id="use145" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,34.9,21.5)"
+           width="163.05"
+           xlink:href="#font_Oetztype_e0"
+           id="use146" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,42.15,21.5)"
+           width="163.05"
+           xlink:href="#font_Oetztype_y0"
+           id="use147" />
+      </g>
+      <g
+         transform="translate(-2,-2)"
+         id="g156">
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,56.2,21.5)"
+           width="163.05"
+           xlink:href="#font_Oetztype_B0"
+           id="use148" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,64.7,21.5)"
+           width="163.05"
+           xlink:href="#font_Oetztype_u0"
+           id="use149" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,72.6,21.5)"
+           width="163.05"
+           xlink:href="#font_Oetztype_c0"
+           id="use150" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,78.55,21.5)"
+           width="163.05"
+           xlink:href="#font_Oetztype_c0"
+           id="use151" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,84.5,21.5)"
+           width="163.05"
+           xlink:href="#font_Oetztype_a0"
+           id="use152" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,91.3,21.5)"
+           width="163.05"
+           xlink:href="#font_Oetztype_n0"
+           id="use153" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,99.05,21.5)"
+           width="163.05"
+           xlink:href="#font_Oetztype_e0"
+           id="use154" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,106.3,21.5)"
+           width="163.05"
+           xlink:href="#font_Oetztype_e0"
+           id="use155" />
+        <use
+           fill="#42aff9"
+           height="32.700001"
+           transform="matrix(0.0117,0,0,0.0117,113.55,21.5)"
+           width="163.05"
+           xlink:href="#font_Oetztype_r0"
+           id="use156" />
+      </g>
+    </g>
+    <g
+       id="font_Oetztype_M0">
+      <path
+         d="m 250.8,-29.2 -4.6,-99.1 -3.05,-58.75 q -1.55,-28.45 -1.55,-38.8 -0.75,-20.35 0,-31.5 0.75,-14.95 0.75,-28.8 0,-31.5 -11.1,-57.6 l -5.4,24.55 q -10.35,41.5 -18.05,76.85 -2.7,13.05 -5.75,26.1 l -8.45,43.8 q -8.85,45.7 -12.7,68.75 l -5.35,28.05 -3.1,16.5 q -4.2,18.45 -9.2,28.8 -5,10.75 -10.75,10.75 H 44.95 q -0.8,0 -5,-3.85 l -5.4,-5.75 v -10 l 7.3,-83.35 q 12.3,-148.6 25,-296.9 7.3,-84.85 7.3,-91.8 l 9.95,-48.75 11.9,-2.3 30,-6.55 q 67.95,-11.9 135.95,-24.2 l 38.4,-6.5 h 5.75 q 9.25,0 16.55,22.25 12.3,42.25 20.35,132.15 l 6.9,82.55 q 8.1,95.25 19.2,126.75 22.7,-77.95 54.95,-154.4 66.05,-159.8 80.25,-185.5 l 2.3,-3.85 h 258.9 v 28.05 l -1.55,89.1 q -0.75,21.9 -1.5,29.95 -1.95,39.95 -2.7,62.6 l -7.7,159.8 q -2.3,41.1 -3.85,74.15 -1.5,26.85 -3.45,54.15 -1.5,21.1 -2.3,22.65 l -9.2,39.55 h -167.5 v -334.55 l -7.65,7.3 -7.3,6.95 q -11.15,11.1 -14.2,15.7 -3.1,8.1 -5.8,14.25 -2.3,8.8 -4.6,14.95 -33,74.9 -65.3,149.45 Q 421.75,-59.9 388.7,0 h -9.6 L 366.45,-0.75 343,-3.05 q -30.75,-2.35 -57.6,-8.85 -29.6,-6.9 -34.6,-17.3"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path156" />
+    </g>
+    <g
+       id="font_Oetztype_n0">
+      <path
+         d="m 36.1,0 v -373.75 q 0,-7.65 38.05,-14.95 30.3,-5.4 46.85,-5.4 22.25,0 28.4,35.35 8.1,45.7 14.2,54.15 6.95,-12.3 10.4,-19.6 l 6.15,-21.1 q 3.85,-14.2 13.45,-18.05 3.05,-0.75 14.95,-5.75 42.25,-16.55 63.75,-24.2 48.8,-20.35 64.55,-20.35 h 8.45 q 4.6,0 15,10.75 l 117.9,127.5 v 19.6 Q 452.1,-127.9 425.6,0 H 306.1 v -186.3 q -36.85,-34.55 -73.35,-69.5 h -19.6 q -1.5,0 -6.1,6.5 -23.85,33.8 -33.05,52.65 v 7.65 q 0,31.5 5.75,94.5 5.75,63 5.75,94.5 H 36.1"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path157" />
+    </g>
+    <g
+       id="font_Oetztype_k0">
+      <path
+         d="m 288.05,-147.1 q -7.65,-5 -14.95,-10.4 H 179.35 V -19.6 H 36.85 v -570.35 q 30.75,-5.8 61.5,-11.95 24.2,-4.6 51.05,-9.2 l 44.95,-8.05 5.75,-0.8 6.15,-0.75 q 0,50.3 -6.15,151.35 -5.75,101.4 -5.75,151.7 13.45,0 24.95,-10.35 16.55,-13.45 35.75,-42.65 15.75,-23.45 30.35,-48 25.35,-34.6 46.45,-34.6 14.2,0 27.65,10.4 10.4,10.35 21.15,20.35 l 30.7,28.4 q 18.85,18.85 18.85,20.35 v 19.6 q -5.4,5 -18.05,17.3 l -53.4,53.75 q -11.15,10.8 -16.5,17.3 -5.4,6.15 -10.4,20.35 8.05,4.6 14.2,6.95 19.6,5.75 39.6,11.1 22.65,7.3 31.85,23.85 12.7,24.2 12.7,105.2 V -19.6 Q 419.45,-10.35 401,-6.15 366.45,2.3 321.85,2.3 h -33.8 v -149.4"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path158" />
+    </g>
+    <g
+       id="font_Oetztype_y0">
+      <path
+         d="m 113.3,77.2 q 13.45,0 29.2,3.85 59.55,17.3 88.75,27.65 11.1,-5 16.5,-29.2 1.55,-3.85 6.5,-34.55 9.25,-63 36.15,-84.15 L 122.55,0 Q 121,0 117.9,0.75 h -4.6 Q 97.55,0.75 93.7,-9.6 81.8,-65.3 77.2,-92.95 l -25.35,-118.7 q -11.9,-54.9 -17.3,-83.35 -11.9,-54.9 -11.9,-87.95 h 193.6 v 255.45 q 0,10.35 23.05,10.35 h 6.9 q 24.6,0 33.8,-29.95 0.75,-7.7 3.1,-25.35 2.65,-19.2 5.75,-38.4 2.3,-21.15 6.15,-44.95 10.35,-71.45 14.95,-107.55 0,-8.85 4.6,-27.65 5.8,-21.9 18.85,-21.9 h 5.75 l 34.6,4.6 43,6.15 59.9,8.85 q 10.4,1.5 20.75,4.2 10.75,2.7 10.75,15.35 0,7.3 -1.55,10.4 -28.4,113.3 -58.35,225.85 -29.6,113.3 -59.55,226.25 l -5.75,19.95 q -6.15,18.8 -33.8,39.2 l -23.45,17.25 q -35.3,26.9 -70.65,53.4 l -23.8,17.3 -6.95,0.75 h -8.05 q -15.75,0 -58,-23.45 Q 113.3,187.8 113.3,177.05 V 77.2"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path159" />
+    </g>
+    <g
+       id="font_Oetztype_u0">
+      <path
+         d="m 30.75,-170.55 q 0,-5 0.75,-13.45 0.75,-8.8 0.75,-12.65 l 3.1,-16.5 q 2.3,-12.7 6.5,-30 l 7.7,-37.6 q 12.65,-61.5 21.9,-102.2 0,-1.55 5,-15.75 l 4.6,-14.2 h 5.35 l 8.85,-0.75 h 8.45 7.3 q 39.95,0 69.9,4.6 48.8,8.05 48.8,28.4 0,29.2 -20.75,91.45 -21.15,62.6 -21.15,92.55 0,4.6 1.2,11.9 l 0.75,7.7 q 34.2,19.55 68.35,39.55 3.1,3.05 19.6,-9.6 l 10.35,-7.7 q 13.1,-11.15 20.4,-18.45 l 3.8,-3.8 V -393.3 h 162.1 q 10.4,0 10.4,18.05 v 11.9 q 0,5.35 -4.25,72.95 l -5.35,87.6 q -3.1,44.55 -4.65,84.9 -0.75,6.9 -3.05,44.9 -2.7,26.5 -2.7,43.8 l -10,9.6 h -117.9 q 0,-10.35 -9.6,-29.2 -3.05,-1.5 -3.85,-1.5 -1.55,0 -4.2,0.75 l -2.3,0.75 -10,6.95 Q 285.4,-26.1 258.1,-9.6 239.3,2.3 226.6,1.55 l -15.75,-0.8 q -29.15,0 -52.6,-2.3 -33.05,-2.3 -47.25,-8.05 -26.9,-10 -54.55,-73.75 -25.7,-58.4 -25.7,-87.2"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path160" />
+    </g>
+    <g
+       id="font_Oetztype_c0">
+      <path
+         d="m 26.9,-154 v -7.3 q 0,-3.1 0.75,-10 v -9.6 -5.4 q 2.3,-23.05 6.9,-57.6 4.65,-33.8 9.6,-67.6 10.8,-79.5 13.45,-81.8 l 9.25,-9.6 q 2.3,-0.8 29.95,-5.4 l 69.9,-11.15 155.95,-22.65 h 10 q 9.6,6.15 9.6,9.6 V -295 h -157.5 q -9.6,5 -19.6,10.4 13.45,6.15 19.6,19.55 l 0.75,1.55 q 0.8,1.55 0.8,3.1 0,0.75 -0.8,2.3 l -7.65,20.75 q -21.9,53.35 -32.3,79.85 v 5 q 0,25.75 66.1,25.75 l 6.15,-0.75 h 6.5 q 49.2,-24.6 98.35,-49.55 h 10 q 1.5,1.9 3.45,3.8 11.5,23.85 16.5,35.75 10.75,26.5 10.75,39.95 0,9.6 -11.5,19.2 -11.15,10 -25.35,25.75 Q 276.95,0.75 234.3,0.75 L 214.7,0 201.25,-3.05 Q 180.9,-7.7 153.25,-15 l -17.3,-4.6 q -13.4,-3.85 -19.55,-9.6 L 87.2,-54.95 Q 71.45,-68.35 58.4,-84.1 26.9,-121 26.9,-154"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path161" />
+    </g>
+    <g
+       id="text11"
+       transform="translate(-0.55,1.05)">
+      <g
+         id="g168">
+        <use
+           fill="#7bb320"
+           height="16.9"
+           transform="matrix(0.0152,0,0,0.0152,0,12)"
+           width="74.550003"
+           xlink:href="#font_Oetztype_P0"
+           id="use161" />
+        <use
+           fill="#7bb320"
+           height="16.9"
+           transform="matrix(0.0152,0,0,0.0152,8.55,12)"
+           width="74.550003"
+           xlink:href="#font_Oetztype_o0"
+           id="use162" />
+        <use
+           fill="#7bb320"
+           height="16.9"
+           transform="matrix(0.0152,0,0,0.0152,16.5,12)"
+           width="74.550003"
+           xlink:href="#font_Oetztype_p0"
+           id="use163" />
+        <use
+           fill="#7bb320"
+           height="16.9"
+           transform="matrix(0.0152,0,0,0.0152,30.9,12)"
+           width="74.550003"
+           xlink:href="#font_Oetztype_C0"
+           id="use164" />
+        <use
+           fill="#7bb320"
+           height="16.9"
+           transform="matrix(0.0152,0,0,0.0152,39.4,12)"
+           width="74.550003"
+           xlink:href="#font_Oetztype_o0"
+           id="use165" />
+        <use
+           fill="#7bb320"
+           height="16.9"
+           transform="matrix(0.0152,0,0,0.0152,47.35,12)"
+           width="74.550003"
+           xlink:href="#font_Oetztype_u0"
+           id="use166" />
+        <use
+           fill="#7bb320"
+           height="16.9"
+           transform="matrix(0.0152,0,0,0.0152,55.25,12)"
+           width="74.550003"
+           xlink:href="#font_Oetztype_n0"
+           id="use167" />
+        <use
+           fill="#7bb320"
+           height="16.9"
+           transform="matrix(0.0152,0,0,0.0152,63,12)"
+           width="74.550003"
+           xlink:href="#font_Oetztype_t0"
+           id="use168" />
+      </g>
+    </g>
+    <g
+       id="text12"
+       transform="translate(2,2)">
+      <g
+         transform="translate(-2,-2)"
+         id="g177">
+        <use
+           fill="#f5f1ec"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,0,16.75)"
+           width="83.5"
+           xlink:href="#font_Oetztype_80"
+           id="use169" />
+        <use
+           fill="#f5f1ec"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,8.3,16.75)"
+           width="83.5"
+           xlink:href="#font_Oetztype_80"
+           id="use170" />
+        <use
+           fill="#f5f1ec"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,16.6,16.75)"
+           width="83.5"
+           xlink:href="#font_Oetztype_80"
+           id="use171" />
+        <use
+           fill="#f5f1ec"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,24.9,16.75)"
+           width="83.5"
+           xlink:href="#font_Oetztype_80"
+           id="use172" />
+        <use
+           fill="#f5f1ec"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,33.2,16.75)"
+           width="83.5"
+           xlink:href="#font_Oetztype_80"
+           id="use173" />
+        <use
+           fill="#f5f1ec"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,41.5,16.75)"
+           width="83.5"
+           xlink:href="#font_Oetztype_80"
+           id="use174" />
+        <use
+           fill="#f5f1ec"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,49.8,16.75)"
+           width="83.5"
+           xlink:href="#font_Oetztype_80"
+           id="use175" />
+        <use
+           fill="#f5f1ec"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,58.1,16.75)"
+           width="83.5"
+           xlink:href="#font_Oetztype_80"
+           id="use176" />
+        <use
+           fill="#f5f1ec"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,66.4,16.75)"
+           width="83.5"
+           xlink:href="#font_Oetztype_80"
+           id="use177" />
+      </g>
+    </g>
+    <g
+       id="sprite12"
+       transform="translate(-2.45,2.05)">
+      <use
+         ffdec:characterId="5808"
+         ffdec:characterName="buttonmousetarget"
+         height="31.6"
+         id="targetMouse"
+         transform="translate(56.7,-1.3)"
+         width="58.599998"
+         xlink:href="#sprite13" />
+      <filter
+         id="filter132"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult55"
+           type="matrix"
+           values="0 0 0 0 0.1764706,0 0 0 0 0.2627451,0 0 0 0 0.02745098,0 0 0 1 0"
+           id="feColorMatrix177" />
+        <feConvolveMatrix
+           divisor="9.0"
+           in="filterResult55"
+           kernelMatrix="1 1 1 1 1 1 1 1 1"
+           order="3 3"
+           result="filterResult56"
+           id="feConvolveMatrix177" />
+        <feConvolveMatrix
+           divisor="9.0"
+           in="filterResult56"
+           kernelMatrix="1 1 1 1 1 1 1 1 1"
+           order="3 3"
+           result="filterResult57"
+           id="feConvolveMatrix178" />
+        <feConvolveMatrix
+           divisor="9.0"
+           in="filterResult57"
+           kernelMatrix="1 1 1 1 1 1 1 1 1"
+           order="3 3"
+           result="filterResult58"
+           id="feConvolveMatrix179" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult58"
+           operator="over"
+           result="filterResult59"
+           id="feComposite179" />
+      </filter>
+      <use
+         ffdec:characterId="5809"
+         filter="url(#filter132)"
+         height="17.950001"
+         transform="translate(2.45,4.35)"
+         width="50.450001"
+         xlink:href="#text14"
+         id="use179" />
+      <use
+         ffdec:characterId="5812"
+         ffdec:characterName="buttonreticletarget"
+         height="31.6"
+         id="targetFixed"
+         transform="translate(117.95,-2.05)"
+         width="58.599998"
+         xlink:href="#sprite14" />
+    </g>
+    <g
+       id="sprite13"
+       transform="translate(2.65,3.25)">
+      <use
+         ffdec:characterId="5744"
+         height="31.6"
+         transform="translate(-2.65,-3.25)"
+         width="58.599998"
+         xlink:href="#shape1"
+         id="use180" />
+      <filter
+         id="filter124"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult50"
+           type="matrix"
+           values="0 0 0 0 0.25490198,0 0 0 0 0.16078432,0 0 0 0 0.05490196,0 0 0 1 0"
+           id="feColorMatrix180" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult50"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult51"
+           id="feConvolveMatrix180" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult51"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult52"
+           id="feConvolveMatrix181" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult52"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult53"
+           id="feConvolveMatrix182" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult53"
+           operator="over"
+           result="filterResult54"
+           id="feComposite182" />
+      </filter>
+      <use
+         ffdec:characterId="5806"
+         filter="url(#filter124)"
+         height="12.05"
+         transform="translate(6.25,5.65)"
+         width="43.25"
+         xlink:href="#text13"
+         id="use182" />
+    </g>
+    <g
+       id="text13"
+       transform="translate(-0.45,1.2)">
+      <g
+         id="g187">
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,0,10)"
+           width="43.25"
+           xlink:href="#font_Oetztype_M0"
+           id="use183" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,10.2,10)"
+           width="43.25"
+           xlink:href="#font_Oetztype_O0"
+           id="use184" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,18.2,10)"
+           width="43.25"
+           xlink:href="#font_Oetztype_U0"
+           id="use185" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,25.85,10)"
+           width="43.25"
+           xlink:href="#font_Oetztype_S0"
+           id="use186" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,32.25,10)"
+           width="43.25"
+           xlink:href="#font_Oetztype_E0"
+           id="use187" />
+      </g>
+    </g>
+    <g
+       id="text14"
+       transform="translate(-0.45,1.05)">
+      <g
+         id="g194">
+        <use
+           fill="#7bb320"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,0,12)"
+           width="50.450001"
+           xlink:href="#font_Oetztype_T0"
+           id="use188" />
+        <use
+           fill="#7bb320"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,7.5,12)"
+           width="50.450001"
+           xlink:href="#font_Oetztype_a0"
+           id="use189" />
+        <use
+           fill="#7bb320"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,14.3,12)"
+           width="50.450001"
+           xlink:href="#font_Oetztype_r0"
+           id="use190" />
+        <use
+           fill="#7bb320"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,20.25,12)"
+           width="50.450001"
+           xlink:href="#font_Oetztype_g0"
+           id="use191" />
+        <use
+           fill="#7bb320"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,28.2,12)"
+           width="50.450001"
+           xlink:href="#font_Oetztype_e0"
+           id="use192" />
+        <use
+           fill="#7bb320"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,35.45,12)"
+           width="50.450001"
+           xlink:href="#font_Oetztype_t0"
+           id="use193" />
+        <use
+           fill="#7bb320"
+           height="17.950001"
+           transform="matrix(0.0152,0,0,0.0152,41.3,12)"
+           width="50.450001"
+           xlink:href="#font_Oetztype_:0"
+           id="use194" />
+      </g>
+    </g>
+    <g
+       id="font_Oetztype_:0">
+      <path
+         d="m 29.95,-324.2 q 0,-2.3 0.8,-6.5 0.75,-4.25 0.75,-6.9 l 49.55,-48.8 4.6,-0.75 h 8.05 q 31.5,0 59.55,10.35 37.25,15 37.25,36.9 0,67.6 -19.6,89.85 -19.2,21.9 -86,21.9 -13.45,0 -21.9,-8.45 -12.7,-11.9 -20.35,-33.05 -5.8,-19.2 -11.15,-38 0,-2.3 -0.75,-7.7 -0.8,-5.75 -0.8,-8.85 m 0.8,262 q 0,-30.75 11.1,-43.8 3.85,-5 9.25,-10.4 36.1,-36.1 39.55,-38.4 h 10 q 20.35,0 44.9,5.4 33.8,7.65 33.8,23.4 v 98.35 q 0,11.9 -37.6,22.25 Q 108.7,3.05 96,3.05 30.75,3.05 30.75,-62.2"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path194" />
+    </g>
+    <g
+       id="sprite14"
+       transform="translate(2.65,3.25)">
+      <use
+         ffdec:characterId="5744"
+         height="31.6"
+         transform="translate(-2.65,-3.25)"
+         width="58.599998"
+         xlink:href="#shape1"
+         id="use195" />
+      <filter
+         id="filter138"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult60"
+           type="matrix"
+           values="0 0 0 0 0.25490198,0 0 0 0 0.16078432,0 0 0 0 0.05490196,0 0 0 1 0"
+           id="feColorMatrix195" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult60"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult61"
+           id="feConvolveMatrix195" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult61"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult62"
+           id="feConvolveMatrix196" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult62"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult63"
+           id="feConvolveMatrix197" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult63"
+           operator="over"
+           result="filterResult64"
+           id="feComposite197" />
+      </filter>
+      <use
+         ffdec:characterId="5810"
+         filter="url(#filter138)"
+         height="12.1"
+         transform="translate(10.3,5.65)"
+         width="35.400002"
+         xlink:href="#text15"
+         id="use197" />
+    </g>
+    <g
+       id="text15"
+       transform="translate(-0.5,1.2)">
+      <g
+         id="g202">
+        <use
+           fill="#d0a067"
+           height="12.1"
+           transform="matrix(0.0127,0,0,0.0127,0,10)"
+           width="35.400002"
+           xlink:href="#font_Oetztype_F0"
+           id="use198" />
+        <use
+           fill="#d0a067"
+           height="12.1"
+           transform="matrix(0.0127,0,0,0.0127,5.7,10)"
+           width="35.400002"
+           xlink:href="#font_Oetztype_I0"
+           id="use199" />
+        <use
+           fill="#d0a067"
+           height="12.1"
+           transform="matrix(0.0127,0,0,0.0127,9.25,10)"
+           width="35.400002"
+           xlink:href="#font_Oetztype_X0"
+           id="use200" />
+        <use
+           fill="#d0a067"
+           height="12.1"
+           transform="matrix(0.0127,0,0,0.0127,17.45,10)"
+           width="35.400002"
+           xlink:href="#font_Oetztype_E0"
+           id="use201" />
+        <use
+           fill="#d0a067"
+           height="12.1"
+           transform="matrix(0.0127,0,0,0.0127,23.5,10)"
+           width="35.400002"
+           xlink:href="#font_Oetztype_D0"
+           id="use202" />
+      </g>
+    </g>
+    <g
+       id="font_Oetztype_X0">
+      <path
+         d="m 390.25,-19.6 q -2.3,-8.8 -9.6,-29.95 l -29.95,-88.7 q -5.4,-16.55 -10,-28.45 -8.85,-22.3 -19.6,-29.95 -15.75,25.35 -27.65,67.6 l -21.15,69.9 q -11.9,23.8 -17.25,34.95 -1.55,2.3 -2.7,4.6 H 21.9 q 0,-8.05 4.2,-19.6 13.1,-30.7 31.5,-59.9 l 35.35,-56.45 q 43,-69.55 61.05,-119.85 0.8,-14.2 0.8,-17.3 0,-23.4 -7.7,-53.35 -13.45,-49.55 -41.85,-117.15 -10,-24.2 -20.35,-48.05 0,-1.5 -4.6,-9.2 -4.65,-7.3 -4.65,-10 0,-3.05 -0.75,-8.05 -0.75,-5 -0.75,-7.3 0,-2.3 0.75,-7.3 0.75,-4.6 0.75,-6.9 8.45,-2.3 31.5,-7.3 62.6,-11.15 125.6,-22.65 h 10.4 q 18.05,0 30.7,39.9 13.45,53.05 18.85,79.55 11.9,47.25 28.4,57.6 1.55,-2.3 4.6,-8.05 9.25,-16.55 15,-31.5 9.2,-25.75 20.35,-58.8 5.75,-17.65 11.9,-35.3 5.4,-16.55 6.9,-23.85 4.65,-11.9 33.05,-17.25 9.6,-1.55 39.55,-3.85 46.1,-3.85 100.65,-6.15 l 32.25,-1.9 33.05,-1.55 q 0,21.5 -15,47.25 -13.45,21.5 -26.85,42.6 0,0.8 -1.55,3.85 l -3.1,6.15 -4.6,9.6 -12.65,21.9 q -11.15,18.45 -21.9,37.25 -29.2,48.8 -34.95,58.75 -10.75,21.55 -10.75,44.2 0,15 6.15,33.05 27.65,67.6 44.15,99.85 3.85,8.85 9.2,19.6 32.3,64.5 40.35,78.7 2.3,3.85 2.3,15 0,19.6 -35.35,29.2 -26.85,9.2 -39.55,15.75 -81.8,33.8 -94.85,38.4 -0.8,0 -2.7,0.75 h -2.3 -2.3 L 409.85,0 q -13.45,-6.15 -19.6,-19.6"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path202" />
+    </g>
+    <g
+       id="font_Oetztype_D0">
+      <path
+         d="m 211.65,-137.5 q -7.7,9.6 -15,19.6 h 5.4 q 19.95,0 72.2,-22.7 52.25,-22.25 59.9,-36.45 0.8,-0.8 2.7,-5.4 l 3.05,-9.6 4.65,-14.2 q 0.75,-3.1 5.35,-14.6 19.2,-45.7 23.85,-63.75 2.3,-2.7 2.3,-23.05 0,-15 -2.3,-16.55 L 265.8,-432.5 h -10 q -11.15,2.3 -29.2,10 -14.95,6.5 -14.95,9.6 v 275.4 M 39.2,-530.8 l 10.35,-9.6 12.65,-2.35 q 25,-3.8 75.3,-10.35 l 49.55,-6.15 88.35,-11.15 H 295 q 2.3,0.8 12.65,5.8 51.1,27.25 66.1,33.8 7.65,4.6 24.15,13.05 l 33.8,19.2 q 33.05,18.05 50.35,26.5 12.65,8.05 19.95,29.95 1.55,8.05 4.6,28.45 5.8,44.15 11.95,88.7 2.3,21.15 3.05,29.95 v 8.85 q 0,5.4 0.75,17.3 v 17.25 27.3 15.75 q -0.75,9.6 -0.75,14.95 v 7.3 l -8.05,15.75 -11.55,23.45 q -16.5,29.2 -24.55,44.15 -7.7,13.85 -15.75,27.3 l -8.1,15.35 q -1.15,1.9 -2.65,5.35 -1.95,3.1 -3.5,6.15 -3.05,5.4 -4.6,9.6 -5.35,5.4 -25.35,11.55 -22.65,8.05 -24.2,8.05 -28.4,6.9 -60.65,11.9 L 285.4,0 Q 238.5,3.05 213.95,3.05 L 162.85,4.6 111.75,6.15 68.35,6.9 H 39.2 v -537.7"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path203" />
+    </g>
+    <g
+       id="sprite15"
+       transform="translate(2.3,-2.5)">
+      <use
+         ffdec:characterId="5820"
+         ffdec:characterName="buttonfirstbuttondasdd"
+         height="27.4"
+         id="horiz_btn"
+         transform="translate(-2.3,2.5)"
+         width="75.900002"
+         xlink:href="#sprite16" />
+      <use
+         ffdec:characterId="5821"
+         ffdec:characterName="buttonlastbuttonasdasdsd"
+         height="22.1"
+         id="vert_btn"
+         transform="translate(78.1,2.5)"
+         width="75.900002"
+         xlink:href="#sprite17" />
+      <use
+         ffdec:characterId="5824"
+         ffdec:characterName="buttonclosebuttondasdasdasd"
+         height="22.1"
+         id="circle_btn"
+         transform="translate(158.5,2.7)"
+         width="75.900002"
+         xlink:href="#sprite18" />
+    </g>
+    <g
+       id="sprite16"
+       transform="translate(2.3,2)">
+      <use
+         ffdec:characterId="5814"
+         height="22.1"
+         transform="translate(-2.3,-2)"
+         width="75.900002"
+         xlink:href="#shape8"
+         id="use203" />
+      <filter
+         id="filter143"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult65"
+           type="matrix"
+           values="0 0 0 0 0.25490198,0 0 0 0 0.16078432,0 0 0 0 0.05490196,0 0 0 1 0"
+           id="feColorMatrix203" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult65"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult66"
+           id="feConvolveMatrix203" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult66"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult67"
+           id="feConvolveMatrix204" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult67"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult68"
+           id="feConvolveMatrix205" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult68"
+           operator="over"
+           result="filterResult69"
+           id="feComposite205" />
+      </filter>
+      <use
+         ffdec:characterId="5815"
+         filter="url(#filter143)"
+         height="12.05"
+         transform="translate(9.95,2)"
+         width="33.25"
+         xlink:href="#text16"
+         id="use205" />
+      <filter
+         id="filter145"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult70"
+           type="matrix"
+           values="0 0 0 0 0.25490198,0 0 0 0 0.16078432,0 0 0 0 0.05490196,0 0 0 1 0"
+           id="feColorMatrix205" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult70"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult71"
+           id="feConvolveMatrix206" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult71"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult72"
+           id="feConvolveMatrix207" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult72"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult73"
+           id="feConvolveMatrix208" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult73"
+           operator="over"
+           result="filterResult74"
+           id="feComposite208" />
+      </filter>
+      <use
+         ffdec:characterId="5816"
+         filter="url(#filter145)"
+         height="16"
+         transform="rotate(90,27.5,32.85)"
+         width="20.049999"
+         xlink:href="#text17"
+         id="use208" />
+    </g>
+    <g
+       id="shape8"
+       transform="translate(2.3,2)">
+      <path
+         d="M 64.85,17.5 2.65,18.1 0,0 70.75,1.25 64.85,17.5"
+         fill="#ffffff"
+         fill-opacity="0.498039"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path208" />
+      <path
+         d="M 64.85,17.5 2.65,18.1 0,0 70.75,1.25 Z"
+         fill="none"
+         stroke="#000000"
+         stroke-linecap="butt"
+         stroke-linejoin="miter-clip"
+         stroke-miterlimit="3"
+         stroke-opacity="0.498039"
+         stroke-width="4"
+         id="path209" />
+    </g>
+    <g
+       id="text16"
+       transform="translate(-0.45,1.2)">
+      <g
+         id="g212">
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,0,10)"
+           width="33.25"
+           xlink:href="#font_Oetztype_P0"
+           id="use209" />
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,7.15,10)"
+           width="33.25"
+           xlink:href="#font_Oetztype_A0"
+           id="use210" />
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,14.7,10)"
+           width="33.25"
+           xlink:href="#font_Oetztype_T0"
+           id="use211" />
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,20.95,10)"
+           width="33.25"
+           xlink:href="#font_Oetztype_H0"
+           id="use212" />
+      </g>
+    </g>
+    <g
+       id="text17"
+       transform="translate(-0.8,-4.25)">
+      <g
+         id="g213">
+        <use
+           fill="#cf9f66"
+           height="16"
+           transform="matrix(0.0195,0,0,0.0195,0,19)"
+           width="20.049999"
+           xlink:href="#font_Calibri_80"
+           id="use213" />
+      </g>
+    </g>
+    <g
+       id="font_Calibri_80">
+      <path
+         d="m 390,-157 q 0,46 -32.5,73 -33,26.5 -97,26.5 -66,0 -99,-26.5 -33.5,-26.5 -33.5,-75 0,-22 8,-40 7.5,-18.5 23,-35 15,-16.5 39,-32 23.5,-15.5 55,-31 34,16.5 60,32 25.5,15 43,31.5 17,16 25.5,35 8.5,18.5 8.5,41.5 m -21,-341 q 0,38 -27,69.5 -27,31.5 -77.5,57.5 -30,-15.5 -51.5,-29.5 -22,-14.5 -36,-29.5 -14.5,-15 -21,-31.5 -7,-17 -7,-36.5 0,-42.5 28,-67 27.5,-24.5 81.5,-24.5 26.5,0 47.5,6.5 20.5,6 34.5,18 14,12 21.5,29 7,17 7,38 m 108,332 q 0,-28.5 -9.5,-52 -10,-24 -28.5,-45 -19,-21.5 -46.5,-40 -28,-18.5 -63.5,-36 30,-16 53.5,-34 23,-18.5 39,-39.5 16,-21 24.5,-44.5 8,-23.5 8,-49 0,-31.5 -11,-59 -11,-27.5 -34,-47.5 -23.5,-20.5 -59,-32 -36,-12 -85,-12 -51,0 -89,13 -38.5,12.5 -63,34.5 -25,22 -37,52 -12.5,29.5 -12.5,63.5 0,27 8.5,50 8,23 24,43.5 16,20 39,37.5 23,17 53,32.5 -34.5,17 -62,36 -27.5,18.5 -46,40 -19,21.5 -29,47 -10,25.5 -10,56 0,38.5 14.5,68.5 14.5,30 42,50.5 27.5,20.5 67,31 39.5,10.5 89.5,10.5 53.5,0 95,-11.5 41.5,-11.5 70,-34 28,-22.5 43,-55 15,-33 15,-75"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path213" />
+    </g>
+    <g
+       id="sprite17"
+       transform="translate(2.3,2)">
+      <use
+         ffdec:characterId="5814"
+         height="22.1"
+         transform="translate(-2.3,-2)"
+         width="75.900002"
+         xlink:href="#shape8"
+         id="use214" />
+      <filter
+         id="filter146"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult75"
+           type="matrix"
+           values="0 0 0 0 0.25490198,0 0 0 0 0.16078432,0 0 0 0 0.05490196,0 0 0 1 0"
+           id="feColorMatrix214" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult75"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult76"
+           id="feConvolveMatrix214" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult76"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult77"
+           id="feConvolveMatrix215" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult77"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult78"
+           id="feConvolveMatrix216" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult78"
+           operator="over"
+           result="filterResult79"
+           id="feComposite216" />
+      </filter>
+      <use
+         ffdec:characterId="5815"
+         filter="url(#filter146)"
+         height="12.05"
+         transform="translate(11.7,2)"
+         width="33.25"
+         xlink:href="#text16"
+         id="use216" />
+      <filter
+         id="filter147"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult80"
+           type="matrix"
+           values="0 0 0 0 0.25490198,0 0 0 0 0.16078432,0 0 0 0 0.05490196,0 0 0 1 0"
+           id="feColorMatrix216" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult80"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult81"
+           id="feConvolveMatrix217" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult81"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult82"
+           id="feConvolveMatrix218" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult82"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult83"
+           id="feConvolveMatrix219" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult83"
+           operator="over"
+           result="filterResult84"
+           id="feComposite219" />
+      </filter>
+      <use
+         ffdec:characterId="5816"
+         filter="url(#filter147)"
+         height="16"
+         transform="translate(49.8,1.75)"
+         width="20.049999"
+         xlink:href="#text17"
+         id="use219" />
+    </g>
+    <g
+       id="sprite18"
+       transform="translate(2.3,2)">
+      <use
+         ffdec:characterId="5814"
+         height="22.1"
+         transform="translate(-2.3,-2)"
+         width="75.900002"
+         xlink:href="#shape8"
+         id="use220" />
+      <filter
+         id="filter148"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult85"
+           type="matrix"
+           values="0 0 0 0 0.25490198,0 0 0 0 0.16078432,0 0 0 0 0.05490196,0 0 0 1 0"
+           id="feColorMatrix220" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult85"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult86"
+           id="feConvolveMatrix220" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult86"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult87"
+           id="feConvolveMatrix221" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult87"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult88"
+           id="feConvolveMatrix222" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult88"
+           operator="over"
+           result="filterResult89"
+           id="feComposite222" />
+      </filter>
+      <use
+         ffdec:characterId="5815"
+         filter="url(#filter148)"
+         height="12.05"
+         transform="translate(10.7,2)"
+         width="33.25"
+         xlink:href="#text16"
+         id="use222" />
+      <filter
+         id="filter150"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult90"
+           type="matrix"
+           values="0 0 0 0 0.25490198,0 0 0 0 0.16078432,0 0 0 0 0.05490196,0 0 0 1 0"
+           id="feColorMatrix222" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult90"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult91"
+           id="feConvolveMatrix223" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult91"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult92"
+           id="feConvolveMatrix224" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult92"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult93"
+           id="feConvolveMatrix225" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult93"
+           operator="over"
+           result="filterResult94"
+           id="feComposite225" />
+      </filter>
+      <use
+         ffdec:characterId="5822"
+         filter="url(#filter150)"
+         height="16"
+         transform="matrix(1,0,0,0.7711,47.4,2.1273)"
+         width="23"
+         xlink:href="#text18"
+         id="use225" />
+    </g>
+    <g
+       id="text18"
+       transform="translate(-0.95,-4.25)">
+      <g
+         id="g226">
+        <use
+           fill="#cf9f66"
+           height="16"
+           transform="matrix(0.0195,0,0,0.0195,0,19)"
+           width="23"
+           xlink:href="#font_Calibri_O0"
+           id="use226" />
+      </g>
+    </g>
+    <g
+       id="font_Calibri_O0">
+      <path
+         d="m 537,-325 q 0,52.5 -10,99.5 -10,47 -33.5,83 -23.5,35.5 -62,56.5 -38.5,21 -94.5,21 -57,0 -95,-19 -37.5,-19.5 -60,-54 -22.5,-35 -32,-83 -9.5,-48 -9.5,-105 0,-51.5 10,-98 10.5,-47 34,-82 24,-35 62,-56 38,-21 94,-21 55.5,0 93.5,19.5 38,19.5 61,54.5 22.5,34.5 32.5,82 9.5,47 9.5,102 m 91,-6 q 0,-78.5 -17,-139 -17.5,-61 -52.5,-102 -35.5,-41.5 -88.5,-63 -53,-21.5 -124.5,-21.5 -74,0 -129.5,24 -55.5,23.5 -92.5,67.5 -37,43.5 -55.5,106 -18.5,62.5 -18.5,139 0,80 17,141.5 17,61.5 52,103 34.5,41.5 88,63.5 53,21.5 126,21.5 74,0 129.5,-23.5 55.5,-24 92.5,-68 36.5,-44.5 55,-107.5 18.5,-63 18.5,-141.5"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path226" />
+    </g>
+    <g
+       id="sprite19"
+       transform="translate(2.65,2)">
+      <use
+         ffdec:characterId="5826"
+         height="21.549999"
+         transform="translate(-2.65,-2)"
+         width="251.95"
+         xlink:href="#shape9"
+         id="use227" />
+      <filter
+         id="filter166"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult95"
+           type="matrix"
+           values="0 0 0 0 0.25490198,0 0 0 0 0.16078432,0 0 0 0 0.05490196,0 0 0 1 0"
+           id="feColorMatrix227" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult95"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult96"
+           id="feConvolveMatrix227" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult96"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult97"
+           id="feConvolveMatrix228" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult97"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult98"
+           id="feConvolveMatrix229" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult98"
+           operator="over"
+           result="filterResult99"
+           id="feComposite229" />
+      </filter>
+      <use
+         ffdec:characterId="5827"
+         filter="url(#filter166)"
+         height="12.05"
+         transform="translate(10.55,2)"
+         width="106.65"
+         xlink:href="#text19"
+         id="use229" />
+      <filter
+         id="filter178"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult100"
+           type="matrix"
+           values="0 0 0 0 0.25490198,0 0 0 0 0.16078432,0 0 0 0 0.05490196,0 0 0 1 0"
+           id="feColorMatrix229" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult100"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult101"
+           id="feConvolveMatrix230" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult101"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult102"
+           id="feConvolveMatrix231" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult102"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult103"
+           id="feConvolveMatrix232" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult103"
+           operator="over"
+           result="filterResult104"
+           id="feComposite232" />
+      </filter>
+      <use
+         ffdec:characterId="5828"
+         filter="url(#filter178)"
+         height="19.9"
+         id="balance_txt"
+         transform="translate(116.75,-0.3)"
+         width="124.3"
+         xlink:href="#text20" />
+    </g>
+    <g
+       id="shape9"
+       transform="translate(2.65,2)">
+      <path
+         d="M 239.25,17.5 H 5.25 L 0,0 246.3,1.25 239.25,17.5"
+         fill="#ffffff"
+         fill-opacity="0.501961"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path232" />
+      <path
+         d="M 239.25,17.5 H 5.25 L 0,0 246.3,1.25 Z"
+         fill="none"
+         stroke="#000000"
+         stroke-linecap="butt"
+         stroke-linejoin="miter-clip"
+         stroke-miterlimit="3"
+         stroke-opacity="0.498039"
+         stroke-width="4"
+         id="path233" />
+    </g>
+    <g
+       id="text19"
+       transform="translate(-0.3,1.2)">
+      <g
+         id="g247">
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,0,10)"
+           width="106.65"
+           xlink:href="#font_Oetztype_C0"
+           id="use233" />
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,7.1,10)"
+           width="106.65"
+           xlink:href="#font_Oetztype_O0"
+           id="use234" />
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,15.1,10)"
+           width="106.65"
+           xlink:href="#font_Oetztype_L0"
+           id="use235" />
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,20.3,10)"
+           width="106.65"
+           xlink:href="#font_Oetztype_L0"
+           id="use236" />
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,25.5,10)"
+           width="106.65"
+           xlink:href="#font_Oetztype_E0"
+           id="use237" />
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,31.55,10)"
+           width="106.65"
+           xlink:href="#font_Oetztype_C0"
+           id="use238" />
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,38.65,10)"
+           width="106.65"
+           xlink:href="#font_Oetztype_T0"
+           id="use239" />
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,49.9,10)"
+           width="106.65"
+           xlink:href="#font_Oetztype_B0"
+           id="use240" />
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,57,10)"
+           width="106.65"
+           xlink:href="#font_Oetztype_A0"
+           id="use241" />
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,64.55,10)"
+           width="106.65"
+           xlink:href="#font_Oetztype_L0"
+           id="use242" />
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,69.75,10)"
+           width="106.65"
+           xlink:href="#font_Oetztype_A0"
+           id="use243" />
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,77.3,10)"
+           width="106.65"
+           xlink:href="#font_Oetztype_N0"
+           id="use244" />
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,85.6,10)"
+           width="106.65"
+           xlink:href="#font_Oetztype_C0"
+           id="use245" />
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,92.7,10)"
+           width="106.65"
+           xlink:href="#font_Oetztype_E0"
+           id="use246" />
+        <use
+           fill="#cf9f66"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,98.75,10)"
+           width="106.65"
+           xlink:href="#font_Oetztype_:0"
+           id="use247" />
+      </g>
+    </g>
+    <g
+       id="text20"
+       transform="translate(2,2)">
+      <g
+         transform="translate(-2,-2)"
+         id="g258">
+        <use
+           fill="#f3ede5"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,0,11.75)"
+           width="124.3"
+           xlink:href="#font_Oetztype__2"
+           id="use248" />
+        <use
+           fill="#f3ede5"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,8.05,11.75)"
+           width="124.3"
+           xlink:href="#font_Oetztype_11"
+           id="use249" />
+        <use
+           fill="#f3ede5"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,12.75,11.75)"
+           width="124.3"
+           xlink:href="#font_Oetztype_21"
+           id="use250" />
+        <use
+           fill="#f3ede5"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,19.65,11.75)"
+           width="124.3"
+           xlink:href="#font_Oetztype_30"
+           id="use251" />
+        <use
+           fill="#f3ede5"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,25.45,11.75)"
+           width="124.3"
+           xlink:href="#font_Oetztype_40"
+           id="use252" />
+        <use
+           fill="#f3ede5"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,33.75,11.75)"
+           width="124.3"
+           xlink:href="#font_Oetztype_50"
+           id="use253" />
+        <use
+           fill="#f3ede5"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,41.05,11.75)"
+           width="124.3"
+           xlink:href="#font_Oetztype_60"
+           id="use254" />
+        <use
+           fill="#f3ede5"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,48.75,11.75)"
+           width="124.3"
+           xlink:href="#font_Oetztype_70"
+           id="use255" />
+        <use
+           fill="#f3ede5"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,55.3,11.75)"
+           width="124.3"
+           xlink:href="#font_Oetztype_80"
+           id="use256" />
+        <use
+           fill="#f3ede5"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,63.6,11.75)"
+           width="124.3"
+           xlink:href="#font_Oetztype_90"
+           id="use257" />
+        <use
+           fill="#f3ede5"
+           height="19.9"
+           transform="matrix(0.0117,0,0,0.0117,71.65,11.75)"
+           width="124.3"
+           xlink:href="#font_Oetztype_00"
+           id="use258" />
+      </g>
+    </g>
+    <g
+       id="font_Oetztype_00">
+      <path
+         d="m 178.6,-220.1 v 13.05 q -1.55,9.6 11.15,20.75 4.6,4.6 12.3,10 38.8,31.5 56.05,48.8 1.55,0.75 5.4,4.95 l 4.6,4.65 q 10.35,6.9 15.75,10.75 l 13.45,8.8 6.5,0.8 q 3.1,0 6.15,-6.15 11.9,-28.45 17.3,-43.4 59.9,-107.95 68.35,-128.3 v -4.6 q 0,-69.9 -45.7,-100.65 -20.35,-13.45 -54.15,-25.35 -6.9,-2.3 -57.25,-16.5 h -9.6 q -1.5,0.75 -4.6,3.85 -2.7,3.05 -5.75,5.75 l -25.75,95.25 q -14.2,55.7 -14.2,97.55 m -156.7,3.85 v -9.6 q 0,-2.3 19.2,-54.9 9.6,-26.9 19.6,-53.4 9.95,-29.95 21.1,-60.7 l 38.4,-106.4 q 5.8,-14.6 10.4,-19.6 11.9,-6.15 18.05,-9.95 16.5,-8.85 21.1,-9.6 8.1,-3.1 29.2,-10.4 l 89.1,-29.55 q 20.4,-7.3 28.85,-9.6 l 5.75,-0.8 h 4.6 q 20.35,0 48.8,30.75 l 23.4,24.95 q 42.65,48.8 63.75,72.6 l 70.3,79.5 q 15.75,18.85 16.55,21.15 4.6,8.45 4.6,27.65 0,3.05 -0.8,9.6 -0.75,6.9 -0.75,10 -3.05,8.45 -10.35,30.7 -20.4,65.3 -38.45,126.35 -5,15 -5.75,20 l -9.2,34.55 q -9.6,36.1 -15,54.15 -6.15,13.45 -9.6,19.6 l -29.55,5 -29.2,4.6 -22.3,2.3 L 257.35,-6.15 217,-2.3 189.75,0 H 159.8 Q 140.2,-28.4 123.7,-54.95 89.9,-108.3 56.45,-161.3 L 21.9,-216.25"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path258" />
+    </g>
+    <g
+       id="sprite20"
+       transform="translate(-9.95,1)">
+      <use
+         ffdec:characterId="5835"
+         height="35"
+         transform="translate(9.95,-1)"
+         width="30.75"
+         xlink:href="#sprite21"
+         id="use259" />
+      <filter
+         id="filter181"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult105"
+           type="matrix"
+           values="0 0 0 0 0.15686275,0 0 0 0 0.15686275,0 0 0 0 0.15686275,0 0 0 1 0"
+           id="feColorMatrix259" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult105"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult106"
+           id="feConvolveMatrix259" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult106"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult107"
+           id="feConvolveMatrix260" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult107"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult108"
+           id="feConvolveMatrix261" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult108"
+           operator="over"
+           result="filterResult109"
+           id="feComposite261" />
+      </filter>
+      <use
+         ffdec:characterId="5836"
+         filter="url(#filter181)"
+         height="25.200001"
+         id="time_txt"
+         transform="translate(40.75,6.85)"
+         width="42.200001"
+         xlink:href="#text21" />
+    </g>
+    <g
+       id="sprite21"
+       transform="translate(-23.35,-57.95)">
+      <use
+         ffdec:characterId="5834"
+         height="35"
+         transform="translate(23.35,57.95)"
+         width="30.75"
+         xlink:href="#shape10"
+         id="use261" />
+    </g>
+    <g
+       id="shape10"
+       transform="translate(-23.35,-57.95)">
+      <path
+         d="m 34.95,63.15 12.85,3.4 q -1.2,5.8 -8.3,9.15 4.6,6.1 3.15,11.95 L 29.8,84.25 q 1.2,-5.75 8.05,-9 -4.45,-6.15 -2.9,-12.1"
+         fill="#9fdaee"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path261" />
+      <path
+         d="m 34.95,63.15 12.85,3.4 q -1.2,5.8 -8.3,9.15 4.6,6.1 3.15,11.95 L 29.8,84.25 q 1.2,-5.75 8.05,-9 -4.45,-6.15 -2.9,-12.1 z"
+         fill="none"
+         stroke="#25a8d3"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="1"
+         id="path262" />
+      <path
+         d="m 32.2,62.3 2.1,0.55 -5.7,21.3 -2.1,-0.55 5.7,-21.3 m 19.1,5.1 -5.7,21.3 -2.2,-0.6 5.75,-21.3 2.15,0.6"
+         fill="#875a00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path263" />
+      <path
+         d="m 32.2,62.3 2.1,0.55 -5.7,21.3 -2.1,-0.55 m 19.1,5.1 -2.2,-0.6 5.75,-21.3 2.15,0.6"
+         fill="none"
+         stroke="#664400"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="1"
+         id="path264" />
+      <path
+         d="m 26.5,83.6 5.7,-21.3 m 19.1,5.1 -5.7,21.3"
+         fill="none"
+         stroke="#543800"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         id="path265" />
+      <path
+         d="m 32.6,59 19.5,5.25 0.8,0.7 q 0.3,0.55 0.1,1.25 v 0.05 q -0.15,0.65 -0.75,1 -0.45,0.4 -1,0.25 l -19.5,-5.25 -0.9,-0.75 q -0.2,-0.55 -0.05,-1.2 v -0.05 q 0.2,-0.7 0.7,-1.05 0.55,-0.35 1.1,-0.2"
+         fill="#875a00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path266" />
+      <path
+         d="m 32.6,59 19.5,5.25 0.8,0.7 q 0.3,0.55 0.1,1.25 v 0.05 q -0.15,0.65 -0.75,1 -0.45,0.4 -1,0.25 l -19.5,-5.25 -0.9,-0.75 q -0.2,-0.55 -0.05,-1.2 v -0.05 q 0.2,-0.7 0.7,-1.05 0.55,-0.35 1.1,-0.2 z"
+         fill="none"
+         stroke="#543800"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         id="path267" />
+      <path
+         d="m 44.85,91.9 -19.5,-5.25 q -0.55,-0.15 -0.8,-0.7 -0.3,-0.55 -0.1,-1.25 v -0.05 q 0.15,-0.65 0.75,-1 0.45,-0.4 1,-0.25 l 19.5,5.25 0.9,0.75 q 0.2,0.55 0.05,1.2 v 0.05 q -0.2,0.7 -0.7,1.05 l -1.1,0.2"
+         fill="#875a00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path268" />
+      <path
+         d="m 44.85,91.9 -19.5,-5.25 q -0.55,-0.15 -0.8,-0.7 -0.3,-0.55 -0.1,-1.25 v -0.05 q 0.15,-0.65 0.75,-1 0.45,-0.4 1,-0.25 l 19.5,5.25 0.9,0.75 q 0.2,0.55 0.05,1.2 v 0.05 q -0.2,0.7 -0.7,1.05 z"
+         fill="none"
+         stroke="#543800"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         id="path269" />
+      <path
+         d="M 37.55,80.05 37.5,79.5 38.65,74.4 q -2.55,-3.1 -3.3,-6.05 l 9.6,2.6 q -2.05,2.25 -5.25,3.5 l -1.55,4.7 -0.45,1.15 v 0.5 l -0.15,0.4 v 0.1 q 3.6,3 4.4,5.55 l -11.25,-3 q 2.05,-2.05 6.4,-2.7 L 36.95,80.6 q 0.2,-0.65 0.6,-0.55"
+         fill="#996600"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path270" />
+      <path
+         d="m 35.45,64 11.35,3.05 q -4,-0.45 -7.5,1.05 -1.8,3.1 -0.55,6.4 -4.6,-6.05 -3.3,-10.5 m -5,19.8 q 1.3,-4.5 7.55,-7.4 -2.1,2.35 -2.05,5.75 2.25,3.1 6,4.7 L 30.45,83.8"
+         fill="#ffffff"
+         fill-opacity="0.498039"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path271" />
+      <path
+         d="m 32.35,59.65 19.75,5.3 0.3,0.25 0.05,0.35 -0.25,0.25 -0.3,0.05 -19.75,-5.3 -0.3,-0.2 V 60 l 0.2,-0.25 q 0.1,-0.15 0.3,-0.1"
+         fill="#ffffff"
+         fill-opacity="0.498039"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path272" />
+      <path
+         d="m 26.5,83.6 19.2,5.15 0.35,0.3 0.1,0.45 -0.05,0.1 -0.3,0.35 -0.45,0.1 -19.2,-5.15 -0.4,-0.3 -0.05,-0.45 0.05,-0.1 Q 25.8,83.8 26,83.7 l 0.5,-0.1"
+         fill="#ffffff"
+         fill-opacity="0.498039"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path273" />
+      <path
+         d="m 33,62.6 h 0.05 l 0.25,0.2 0.05,0.3 -5.45,20.4 -0.2,0.3 H 27.35 27.3 l -0.25,-0.2 -0.1,-0.35 5.45,-20.4 0.25,-0.25 H 33"
+         fill="#ffffff"
+         fill-opacity="0.498039"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path274" />
+      <path
+         d="m 49.7,67.55 0.2,0.15 0.05,0.3 -5.35,19.95 -0.15,0.15 -0.3,0.1 -0.2,-0.25 -0.05,-0.2 5.35,-19.95 0.15,-0.25 h 0.3"
+         fill="#ffffff"
+         fill-opacity="0.498039"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path275" />
+    </g>
+    <g
+       id="text21"
+       transform="translate(2,2)">
+      <g
+         transform="translate(-2,-2)"
+         id="g276">
+        <use
+           fill="#ffffff"
+           height="25.200001"
+           transform="matrix(0.0156,0,0,0.0156,0,15.7)"
+           width="42.200001"
+           xlink:href="#font_Oetztype_11"
+           id="use275" />
+        <use
+           fill="#ffffff"
+           height="25.200001"
+           transform="matrix(0.0156,0,0,0.0156,6.3,15.7)"
+           width="42.200001"
+           xlink:href="#font_Oetztype_00"
+           id="use276" />
+      </g>
+    </g>
+    <g
+       id="sprite22"
+       transform="translate(2.45,-3.25)">
+      <use
+         ffdec:characterId="5838"
+         height="25.85"
+         transform="translate(-0.05,5.25)"
+         width="70.5"
+         xlink:href="#shape11"
+         id="use277" />
+      <use
+         ffdec:characterId="5839"
+         height="30.049999"
+         transform="translate(-2.45,3.25)"
+         width="75.300003"
+         xlink:href="#shape12"
+         id="use278" />
+      <filter
+         id="filter190"
+         x="0"
+         y="0"
+         width="1"
+         height="1">
+        <feColorMatrix
+           in="SourceGraphic"
+           result="filterResult110"
+           type="matrix"
+           values="0 0 0 0 0.25490198,0 0 0 0 0.16078432,0 0 0 0 0.05490196,0 0 0 1 0"
+           id="feColorMatrix278" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult110"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult111"
+           id="feConvolveMatrix278" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult111"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult112"
+           id="feConvolveMatrix279" />
+        <feConvolveMatrix
+           divisor="4.0"
+           in="filterResult112"
+           kernelMatrix="1 1 1 1"
+           order="2 2"
+           result="filterResult113"
+           id="feConvolveMatrix280" />
+        <feComposite
+           in="SourceGraphic"
+           in2="filterResult113"
+           operator="over"
+           result="filterResult114"
+           id="feComposite280" />
+      </filter>
+      <use
+         ffdec:characterId="5840"
+         filter="url(#filter190)"
+         height="12.05"
+         transform="translate(5.4,11.4)"
+         width="63"
+         xlink:href="#text22"
+         id="use280" />
+    </g>
+    <g
+       id="shape11"
+       transform="translate(0.05,-5.25)">
+      <path
+         d="m 4.95,31.1 -5,-25.85 h 70.5 l -5,25.85 H 4.95"
+         fill="#493012"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path280" />
+    </g>
+    <g
+       id="shape12"
+       transform="translate(2.45,-3.25)">
+      <path
+         d="m 4.95,31.1 -5,-25.85 h 70.5 l -5,25.85 H 4.95"
+         fill="#ffffff"
+         fill-opacity="0.498039"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path281" />
+      <path
+         d="m 4.95,31.1 -5,-25.85 h 70.5 l -5,25.85 z"
+         fill="none"
+         stroke="#000000"
+         stroke-linecap="butt"
+         stroke-linejoin="miter-clip"
+         stroke-miterlimit="3"
+         stroke-opacity="0.501961"
+         stroke-width="4"
+         id="path282" />
+    </g>
+    <g
+       id="text22"
+       transform="translate(16,1.2)">
+      <g
+         transform="translate(-16.35)"
+         id="g289">
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,0,10)"
+           width="63"
+           xlink:href="#font_Oetztype_S0"
+           id="use282" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,6.4,10)"
+           width="63"
+           xlink:href="#font_Oetztype_U0"
+           id="use283" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,14.05,10)"
+           width="63"
+           xlink:href="#font_Oetztype_B0"
+           id="use284" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,21.15,10)"
+           width="63"
+           xlink:href="#font_Oetztype_M0"
+           id="use285" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,31.35,10)"
+           width="63"
+           xlink:href="#font_Oetztype_E0"
+           id="use286" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,37.4,10)"
+           width="63"
+           xlink:href="#font_Oetztype_R0"
+           id="use287" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,44.65,10)"
+           width="63"
+           xlink:href="#font_Oetztype_G0"
+           id="use288" />
+        <use
+           fill="#d0a067"
+           height="12.05"
+           transform="matrix(0.0127,0,0,0.0127,51.9,10)"
+           width="63"
+           xlink:href="#font_Oetztype_E0"
+           id="use289" />
+      </g>
+    </g>
+  </defs>
+</svg>
