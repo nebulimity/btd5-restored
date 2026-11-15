@@ -4,7 +4,6 @@ using System;
 public partial class Game : Node2D
 {
 	public Level Level;
-	private Spawner _spawner;
 	private BloonLayer _bloonLayer;
 
 	private double _accumulator;
@@ -18,7 +17,7 @@ public partial class Game : Node2D
 		Level.Initialize();
 
 		LevelDef levelDef = LevelDef.Load("MonkeyLane");
-		Level.InitializeLevel(levelDef, GameModes.Easy);
+		Level.InitializeLevel(levelDef, GameMode.Easy);
 
 		_bloonLayer = GetNode<BloonLayer>("BloonLayer");
 		_bloonLayer.Initialize(Level);
@@ -28,7 +27,7 @@ public partial class Game : Node2D
 		Node2D map = mapScene.Instantiate<Node2D>();
 		AddChild(map);
 
-		Level.WaveSet.StartWave(72);
+		Level.StartRound();
 	}
 
 	public override void _Process(double delta)

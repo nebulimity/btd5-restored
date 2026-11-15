@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-public enum Difficulties
+public enum Difficulty
 {
 	Beginner = 1,
 	Intermediate = 2,
@@ -13,7 +13,7 @@ public enum Difficulties
 
 public class LevelDef
 {
-	public Difficulties Difficulty { get; set; }
+	public Difficulty Difficulty { get; set; }
 
 	public string Id { get; set; }
 	public string Name { get; set; }

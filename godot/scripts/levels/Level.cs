@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-public enum GameModes
+public enum GameMode
 {
 	Easy = 0,
 	Medium = 1,
@@ -23,7 +23,9 @@ public class Level : Scene
 	public int Health;
 	public double Cash;
 
-	private static readonly double[] BloonSpeedModsByMode = { 0, 0.05, 0.125, 0, 0, 0 };
+	private static readonly int[] InitialCashByMode = [650, 650, 650, int.MaxValue, 50000, 650];
+	private static readonly int[] InitialHealthByMode = [200, 150, 100, 200, 150, 150];
+	private static readonly double[] BloonSpeedModsByMode = [0, 0.05, 0.125, 0, 0, 0];
 
 	public List<Bloon> AllBloons = new List<Bloon>();
 	public event Action<Bloon> BloonAdded;
@@ -34,12 +36,24 @@ public class Level : Scene
 
 	public bool WaveHasCamo;
 
+	public double CashMultiplier;
+
+	private GameTimer _endWaveTimer;
+	public bool BetweenRounds = true;
+
+	public GameMode Mode;
+	public bool Reverse;
+	public bool FastTrack;
+	public bool IsGameOver;
+	//public ChallengeDef Challenge;
+	public LevelDef LevelDef;
+
 	public void Initialize()
 	{
 
 	}
 
-	public void InitializeLevel(LevelDef def, GameModes mode)
+	public void InitializeLevel(LevelDef def, GameMode mode)
 	{
 		TileSets = new List<List<Tile>>();
 
@@ -59,17 +73,33 @@ public class Level : Scene
 			TileSets.Add(tiles);
 		}
 
+		Mode = mode;
+		Reverse = false;
+		FastTrack = false;
+		IsGameOver = false;
+		LevelDef = def;
+
+		BetweenRounds = true;
+
+		Spawner.ApplyCamoToo = null;
+		Spawner.ApplyRegenToo = null;
+		Spawner.BloonLevelOffsets = null;
+
+		if (def.Music != null)
+		{
+			// #playdat
+		}
+
+		Cash = InitialCashByMode[(int)mode];
+		CashMultiplier = 1; // TODO
+		Health = InitialHealthByMode[(int)mode];
+		Bloon.DifficultySpeedModifier = BloonSpeedModsByMode[(int)mode];
+
 		CurrentTileSet = TileSets[0];
 		StartTile = CurrentTileSet[0];
 		WaveSet = new WaveSet();
 		WaveSet.InitializeFromRoundsDef(Main.Instance.DefaultRounds);
 		AddProcessable(WaveSet);
-
-		Bloon.DifficultySpeedModifier = BloonSpeedModsByMode[(int)mode];
-
-		Spawner.ApplyCamoToo = null;
-		Spawner.ApplyRegenToo = null;
-		Spawner.BloonLevelOffsets = null;
 	}
 
 	public override void Process(double delta)
@@ -82,8 +112,7 @@ public class Level : Scene
 			bloon.PrevRot = bloon.Rotation;
 		}
 
-		int tick = 0;
-		while (tick < UpdateMultiplier)
+		for (int tick = 0; tick < UpdateMultiplier; tick++)
 		{
 			RoundTime += delta;
 
@@ -95,7 +124,6 @@ public class Level : Scene
 			}
 
 			base.Process(delta);
-			tick++;
 		}
 	}
 
@@ -107,6 +135,7 @@ public class Level : Scene
 		// CollisionGrid.AddToCell(bloon, bloon.CollisionCellIndex);
 		// menu tips/bloon warning popups
 	}
+
 	public void RemoveBloon(Bloon bloon)
 	{
 		int index = AllBloons.IndexOf(bloon);
@@ -118,13 +147,86 @@ public class Level : Scene
 			bloon.Tile = null;
 			BloonRemoved?.Invoke(bloon);
 			// Pool.Release(bloon);
-			// CheckForRoundOver()
+			CheckForRoundOver();
+		}
+	}
+
+	public void CheckForRoundOver()
+	{
+		if (_endWaveTimer == null && !IsRoundInProgress && (Health > 0 || Mode == GameMode.Sandbox))
+		{
+			_endWaveTimer = new GameTimer(0.5);
+			_endWaveTimer.Completed += _ =>
+			{
+				RoundOver();
+				_endWaveTimer = null;
+			};
+		}
+	}
+
+	public void StartRound()
+	{
+		BetweenRounds = false;
+		WaveHasCamo = false;
+
+		if (Mode != GameMode.Sandbox)
+		{
+			WaveSet.StartWave(WaveIndex);
+		}
+
+		Bloon.Counter = 0;
+
+		RoundTime = 0;
+	}
+
+	public void RoundOver()
+	{
+		BetweenRounds = true;
+
+		WaveSet.CurrentWave = null;
+		WaveIndex += 1;
+
+		if (Mode == GameMode.Sandbox && WaveIndex > 84)
+		{
+			WaveIndex = 0;
+		}
+		if (Mode == GameMode.Apopalypse)
+		{
+			StartRound();
+		}
+		else
+		{
+			AddCash(100 + WaveIndex - 1);
+		}
+	}
+
+	public bool IsRoundInProgress
+	{
+		get
+		{
+			if (WaveSet == null)
+			{
+				return false;
+			}
+			if (Mode == GameMode.Sandbox && AllBloons.Count > 0)
+			{
+				return true;
+			}
+			if (WaveSet.CurrentWave != null)
+			{
+				return !(WaveSet.CurrentWave.Complete && (AllBloons.Count == 0 || Mode == GameMode.Apopalypse));
+			}
+
+			return false;
 		}
 	}
 
 	public void LoseLives(int RBE = 1)
 	{
-		// return if sandbox or co-op
+		if (Mode == GameMode.Sandbox)
+		{
+			return;
+		}
 
 		Health -= RBE;
 		if (Health < 0)
@@ -132,6 +234,28 @@ public class Level : Scene
 			Health = 0;
 		}
 
+		CheckForGameOver();
 		// dispatchEvent health changed
+	}
+
+	public void CheckForGameOver()
+	{
+		if (Mode != GameMode.Sandbox)
+		{
+			if (!IsGameOver && Health <= 0)
+			{
+				SetGameOver();
+			}
+		}
+	}
+
+	public void SetGameOver()
+	{
+		IsGameOver = true;
+	}
+
+	public void AddCash(double amount)
+	{
+		Cash += amount * CashMultiplier;
 	}
 }

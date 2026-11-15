@@ -24,23 +24,14 @@
 [ext_resource type="Texture2D" uid="uid://betp47d556be0" path="res://assets/gui/save_button/default.svg" id="21_pl11u"]
 [ext_resource type="Texture2D" uid="uid://po4xu7dbajki" path="res://assets/gui/save_button/outlined.svg" id="22_bhx41"]
 [ext_resource type="FontFile" uid="uid://cvtrg54kisg7g" path="res://assets/fonts/nb_obese.ttf" id="23_bhx41"]
-[ext_resource type="Texture2D" uid="uid://bs7jxb4sfn2j7" path="res://assets/gui/tower_buttons/sniper_tower/default.svg" id="24_0sl42"]
 [ext_resource type="Texture2D" uid="uid://wn3icr8ptd41" path="res://assets/gui/menu/default.svg" id="24_sww3w"]
 [ext_resource type="Texture2D" uid="uid://bmfyw85urpwy1" path="res://assets/gui/menu/outlined.svg" id="25_suyxu"]
 [ext_resource type="BitMap" uid="uid://dyggydn2lkit3" path="res://assets/gui/tower_buttons/mask.svg" id="26_02fa5"]
 [ext_resource type="Texture2D" uid="uid://c5m0qjpi8uhl7" path="res://assets/gui/music/on/default.svg" id="26_wljb1"]
 [ext_resource type="Texture2D" uid="uid://bcvbddanvqxfq" path="res://assets/gui/music/on/outlined.svg" id="27_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://cd5rmvpje5nqa" path="res://assets/gui/sfx/on/default.svg" id="28_js0lu"]
-[ext_resource type="Texture2D" uid="uid://cqclgwwflc7ru" path="res://assets/gui/tower_buttons/tack_tower/default.svg" id="28_m4url"]
-[ext_resource type="Texture2D" uid="uid://bherte7k5usq5" path="res://assets/gui/tower_buttons/bomb_tower/default.svg" id="29_458eo"]
 [ext_resource type="Texture2D" uid="uid://8hsgmfjqk03u" path="res://assets/gui/sfx/on/outlined.svg" id="29_gxtfn"]
-[ext_resource type="Texture2D" uid="uid://dgtajjls2tp8v" path="res://assets/gui/tower_buttons/ice_tower/default.svg" id="30_h3rex"]
-[ext_resource type="Texture2D" uid="uid://bhh7jhtedcgd7" path="res://assets/gui/tower_buttons/glue_tower/1.svg" id="31_fedci"]
 [ext_resource type="BitMap" uid="uid://rcw0avyfk02a" path="res://assets/gui/save_button/mask.svg" id="31_nepv3"]
-[ext_resource type="Texture2D" uid="uid://bwltcsb5tp3mh" path="res://assets/gui/tower_buttons/buccaneer/default.svg" id="32_8qswn"]
-[ext_resource type="Texture2D" uid="uid://bor23t2ldqr2o" path="res://assets/gui/tower_buttons/boomerang_tower/default.svg" id="33_458eo"]
-[ext_resource type="Texture2D" uid="uid://cqls336tsosk3" path="res://assets/gui/tower_buttons/super_tower/default.svg" id="33_oaba0"]
-[ext_resource type="Texture2D" uid="uid://dnxn0lhjd44ih" path="res://assets/gui/tower_buttons/ninja_tower/default.svg" id="34_h3rex"]
 [ext_resource type="BitMap" uid="uid://dl5xgg2c5oxnc" path="res://assets/gui/sfx/mask.svg" id="35_7025r"]
 [ext_resource type="Texture2D" uid="uid://cfutrdkf1dwbo" path="res://assets/gui/sfx/off/default.svg" id="40_05nbr"]
 [ext_resource type="Texture2D" uid="uid://bjur1rvi756u5" path="res://assets/gui/sfx/off/outlined.svg" id="41_0sl42"]
@@ -499,10 +490,18 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/TackTower" unique_id=7128271]
-material = SubResource("ShaderMaterial_bt5mj")
-texture = ExtResource("28_m4url")
-centered = false
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/TackTower" unique_id=2084092998]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="SniperTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1863157191]
 layout_mode = 2
@@ -512,10 +511,18 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SniperTower" unique_id=866674184]
-material = SubResource("ShaderMaterial_bt5mj")
-texture = ExtResource("24_0sl42")
-centered = false
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SniperTower" unique_id=505338446]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="BoomerangTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=558366408]
 layout_mode = 2
@@ -525,10 +532,18 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BoomerangTower" unique_id=1883373247]
-material = SubResource("ShaderMaterial_bt5mj")
-texture = ExtResource("33_458eo")
-centered = false
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BoomerangTower" unique_id=392707672]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="NinjaTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1965595735]
 layout_mode = 2
@@ -538,10 +553,18 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/NinjaTower" unique_id=98505836]
-material = SubResource("ShaderMaterial_bt5mj")
-texture = ExtResource("34_h3rex")
-centered = false
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/NinjaTower" unique_id=1812318045]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="BombTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=2136775923]
 layout_mode = 2
@@ -551,10 +574,18 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BombTower" unique_id=292238969]
-material = SubResource("ShaderMaterial_bt5mj")
-texture = ExtResource("29_458eo")
-centered = false
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BombTower" unique_id=655113378]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="IceTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=20705111]
 layout_mode = 2
@@ -564,10 +595,18 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/IceTower" unique_id=686294899]
-material = SubResource("ShaderMaterial_bt5mj")
-texture = ExtResource("30_h3rex")
-centered = false
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/IceTower" unique_id=320162886]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="GlueTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1488052486]
 layout_mode = 2
@@ -577,10 +616,18 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/GlueTower" unique_id=1255269574]
-material = SubResource("ShaderMaterial_bt5mj")
-texture = ExtResource("31_fedci")
-centered = false
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/GlueTower" unique_id=1835086079]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="BuccaneerTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1479445954]
 layout_mode = 2
@@ -590,10 +637,18 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BuccaneerTower" unique_id=811272529]
-material = SubResource("ShaderMaterial_bt5mj")
-texture = ExtResource("32_8qswn")
-centered = false
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BuccaneerTower" unique_id=307291539]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="MonkeyAce" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=88032069]
 layout_mode = 2
@@ -623,10 +678,18 @@ texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SuperTower" unique_id=1857029620]
-material = SubResource("ShaderMaterial_bt5mj")
-texture = ExtResource("33_oaba0")
-centered = false
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SuperTower" unique_id=325142591]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 35.5
+offset_bottom = 56.4
+mouse_filter = 1
+text = "?"
+label_settings = SubResource("LabelSettings_bt5mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="MonkeyApprentice" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1001875812]
 layout_mode = 2

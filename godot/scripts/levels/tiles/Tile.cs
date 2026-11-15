@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-public enum TransitionTypes
+public enum TransitionType
 {
 	Road = 0,
 	Underpass = 1,
@@ -10,7 +10,7 @@ public enum TransitionTypes
 
 public class Tile
 {
-	public TransitionTypes TransitionType;
+	public TransitionType TransitionType;
 	public int Layer;
 
 	public List<int> NextTileIndices = new List<int>();
@@ -51,7 +51,7 @@ public class Tile
 		}
 
 		tile.NextTileIndices = new List<int>(def.Next);
-		tile.TransitionType = (TransitionTypes)def.Transition;
+		tile.TransitionType = (TransitionType)def.Transition;
 		tile.Layer = def.Layer;
 		return tile;
 	}
@@ -80,7 +80,7 @@ public class Tile
 			if (PreviousTiles.Count != 0)
 			{
 				Tile previousTile = PreviousTiles[0];
-				if (previousTile.TransitionType != TransitionTypes.Teleport)
+				if (previousTile.TransitionType != TransitionType.Teleport)
 				{
 					bloon.TileProgress += previousTile.TileLength;
 				}
@@ -100,7 +100,7 @@ public class Tile
 		{
 			return;
 		}
-		if (TransitionType == TransitionTypes.Teleport)
+		if (TransitionType == TransitionType.Teleport)
 		{
 			bloon.TileProgress += TileLength;
 		}
@@ -172,7 +172,7 @@ public class Tile
 		foreach (var tile in PreviousTiles)
 		{
 			tile.GetAllPreviousTiles(result);
-			if (tile.TransitionType == TransitionTypes.Road)
+			if (tile.TransitionType == TransitionType.Road)
 			{
 				result.Add(tile);
 			}
@@ -207,7 +207,7 @@ public class Tile
 			return PrecalculatedDistanceToEnd;
 		}
 
-		double distance = TransitionType == TransitionTypes.Teleport ? 0 : TileLength;
+		double distance = TransitionType == TransitionType.Teleport ? 0 : TileLength;
 		double longest = 0;
 		double nextDistance;
 
@@ -232,7 +232,7 @@ public class Tile
 			return PrecalculatedDistanceToStart;
 		}
 
-		double distance = TransitionType == TransitionTypes.Teleport ? 0 : TileLength;
+		double distance = TransitionType == TransitionType.Teleport ? 0 : TileLength;
 		// double longest = 0;
 		double previousDistance = 0;
 
