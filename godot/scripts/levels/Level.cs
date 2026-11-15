@@ -30,6 +30,9 @@ public class Level : Scene
 	public int UpdateMultiplier = 1;
 	public double RoundTime = 0;
 
+	// temp
+	public RoundsDef Rounds;
+
 	public void Initialize()
 	{
 
@@ -57,12 +60,21 @@ public class Level : Scene
 
 		CurrentTileSet = TileSets[0];
 		StartTile = CurrentTileSet[0];
+		// WaveSet
 
 		Bloon.DifficultySpeedModifier = BloonSpeedModsByMode[(int)mode];
 
 		Spawner.ApplyCamoToo = null;
 		Spawner.ApplyRegenToo = null;
 		Spawner.BloonLevelOffsets = null;
+
+		Rounds = RoundsDef.Load("default");
+		Godot.GD.Print(Rounds.Rounds.Count);
+		Godot.GD.Print(Rounds.Rounds[0].Groups[0].Bloon.Type);
+		Godot.GD.Print(Rounds.Rounds[0].Groups[0].Spawners[0].Start);
+		Godot.GD.Print(Rounds.Rounds[0].Groups[0].Spawners[0].Length);
+		Godot.GD.Print(Rounds.Rounds[0].Groups[0].Spawners[0].Count);
+		Godot.GD.Print(Rounds.Rounds[84].Groups[0].Bloon.Type);
 	}
 
 	public override void Process(double delta)

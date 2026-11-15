@@ -1,6 +1,6 @@
 public class SpawnerDef
 {
-	private double _start { get; set; }
-	private double _length { get; set; }
-	private int _count { get; set; } = 1;
+	public double Start { get; set; }
+	public double Length { get; set; }
+	public int Count { get; set; } = 1;
 }
