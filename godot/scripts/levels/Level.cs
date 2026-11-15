@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-public enum GameMode
+public enum GameModes
 {
 	Easy = 0,
 	Medium = 1,
@@ -17,6 +17,8 @@ public class Level : Scene
 	public List<Tile> CurrentTileSet;
 	public List<List<Tile>> TileSets;
 
+	public WaveSet WaveSet;
+
 	public int WaveIndex;
 	public int Health;
 	public double Cash;
@@ -30,15 +32,14 @@ public class Level : Scene
 	public int UpdateMultiplier = 1;
 	public double RoundTime = 0;
 
-	// temp
-	public RoundsDef Rounds;
+	public bool WaveHasCamo;
 
 	public void Initialize()
 	{
 
 	}
 
-	public void InitializeLevel(LevelDef def, GameMode mode)
+	public void InitializeLevel(LevelDef def, GameModes mode)
 	{
 		TileSets = new List<List<Tile>>();
 
@@ -60,21 +61,15 @@ public class Level : Scene
 
 		CurrentTileSet = TileSets[0];
 		StartTile = CurrentTileSet[0];
-		// WaveSet
+		WaveSet = new WaveSet();
+		WaveSet.InitializeFromRoundsDef(Main.Instance.DefaultRounds);
+		AddProcessable(WaveSet);
 
 		Bloon.DifficultySpeedModifier = BloonSpeedModsByMode[(int)mode];
 
 		Spawner.ApplyCamoToo = null;
 		Spawner.ApplyRegenToo = null;
 		Spawner.BloonLevelOffsets = null;
-
-		Rounds = RoundsDef.Load("default");
-		Godot.GD.Print(Rounds.Rounds.Count);
-		Godot.GD.Print(Rounds.Rounds[0].Groups[0].Bloon.Type);
-		Godot.GD.Print(Rounds.Rounds[0].Groups[0].Spawners[0].Start);
-		Godot.GD.Print(Rounds.Rounds[0].Groups[0].Spawners[0].Length);
-		Godot.GD.Print(Rounds.Rounds[0].Groups[0].Spawners[0].Count);
-		Godot.GD.Print(Rounds.Rounds[84].Groups[0].Bloon.Type);
 	}
 
 	public override void Process(double delta)

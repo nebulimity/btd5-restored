@@ -148,76 +148,14 @@ public class Tile
 
 	// UpdateBloonTrapPosition()
 
-	public virtual double StartAngle
-	{
-		get { return 0; }
-	}
-	public virtual double EndAngle
-	{
-		get { return 0; }
-	}
+	public virtual double StartAngle { get; set; }
+	public virtual double EndAngle { get; set; }
+	public virtual double StartX { get; set; }
+	public virtual double StartY { get; set; }
+	public virtual double EndX { get; set; }
+	public virtual double EndY { get; set; }
 
-	public virtual double StartX
-	{
-		get { return 0; }
-	}
-	public virtual double StartY
-	{
-		get { return 0; }
-	}
-
-	public virtual double EndX
-	{
-		get { return 0; }
-	}
-	public virtual double EndY
-	{
-		get { return 0; }
-	}
-
-	// these are unused for some reason
-
-	// public bool IsTunnelStart
-	// {
-	// 	get
-	// 	{
-	// 		if (TransitionType == TransitionTypes.Underpass)
-	// 		{
-	// 			return false;
-	// 		}
-
-	// 		foreach (var tile in NextTiles)
-	// 		{
-	// 			if (tile.TransitionType == TransitionTypes.Underpass)
-	// 			{
-	// 				return true;
-	// 			}
-	// 		}
-
-	// 		return false;
-	// 	}
-	// }
-
-	// public bool IsTunnelEnd
-	// {
-	// 	get
-	// 	{
-	// 		if (TransitionType == TransitionTypes.Underpass)
-	// 		{
-	// 			return false;
-	// 		}
-
-	// 		foreach (var tile in PreviousTiles)
-	// 		{
-	// 			if (tile.TransitionType == TransitionTypes.Underpass)
-	// 			{
-	// 				return true;
-	// 			}
-	// 		}
-
-	// 		return false;
-	// 	}
-	// }
+	// IsTunnelStart() & IsTunnelEnd() are unused
 
 	public void GetAllPreviousTiles(List<Tile> result)
 	{

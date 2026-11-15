@@ -18,9 +18,7 @@ public partial class Game : Node2D
 		Level.Initialize();
 
 		LevelDef levelDef = LevelDef.Load("MonkeyLane");
-		Level.InitializeLevel(levelDef, GameMode.Easy);
-
-		_spawner = new Spawner(20, 0, 0.5, BloonType.Red, false, false);
+		Level.InitializeLevel(levelDef, GameModes.Easy);
 
 		_bloonLayer = GetNode<BloonLayer>("BloonLayer");
 		_bloonLayer.Initialize(Level);
@@ -30,9 +28,7 @@ public partial class Game : Node2D
 		Node2D map = mapScene.Instantiate<Node2D>();
 		AddChild(map);
 
-		Bloon testBloon = new Bloon();
-		testBloon.Initialize(BloonType.Red, Level.StartTile, 0);
-		Level.AddBloon(testBloon);
+		Level.WaveSet.StartWave(72);
 	}
 
 	public override void _Process(double delta)
@@ -45,8 +41,6 @@ public partial class Game : Node2D
 		}
 
 		_alpha = _accumulator / TickLength;
-
-		_spawner.Process(Level.RoundTime);
 		_bloonLayer.SyncAll(_alpha);
 	}
 

@@ -3,11 +3,16 @@ using Godot;
 public partial class Main : Node
 {
 	public static Main Instance { get; private set; }
+
+	public RoundsDef DefaultRounds;
+
 	public Level Level;
 
 	public override void _Ready()
 	{
 		Instance = this;
+
+		DefaultRounds = RoundsDef.Load("default");
 	}
 
 	public override void _Input(InputEvent @event)
