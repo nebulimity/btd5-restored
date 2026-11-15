@@ -34,10 +34,24 @@
 [ext_resource type="BitMap" uid="uid://rcw0avyfk02a" path="res://assets/gui/save_button/mask.svg" id="31_nepv3"]
 [ext_resource type="BitMap" uid="uid://dl5xgg2c5oxnc" path="res://assets/gui/sfx/mask.svg" id="35_7025r"]
 [ext_resource type="Shader" uid="uid://hhv72h2rxkuo" path="res://shaders/adjust_color.gdshader" id="38_nepv3"]
+[ext_resource type="Texture2D" uid="uid://ba887eda0iv3b" path="res://assets/gui/upgrade_panel/background.svg" id="38_pf7vy"]
+[ext_resource type="Texture2D" uid="uid://qqpkgd4alwir" path="res://assets/gui/upgrade_panel/play_ui/dart_monkey.svg" id="39_o8ni1"]
+[ext_resource type="Texture2D" uid="uid://b0bs8ggro2e8o" path="res://assets/gui/upgrade_panel/target_priority/default.svg" id="40_3hbvx"]
 [ext_resource type="Texture2D" uid="uid://cfutrdkf1dwbo" path="res://assets/gui/sfx/off/default.svg" id="40_05nbr"]
 [ext_resource type="Texture2D" uid="uid://bjur1rvi756u5" path="res://assets/gui/sfx/off/outlined.svg" id="41_0sl42"]
+[ext_resource type="Texture2D" uid="uid://cf0lw1sdpcjci" path="res://assets/gui/upgrade_panel/target_priority/outline.svg" id="41_q8j3a"]
+[ext_resource type="Texture2D" uid="uid://cv3nouo5ujxjr" path="res://assets/gui/upgrade_panel/sell/default.svg" id="42_ms3bu"]
+[ext_resource type="Texture2D" uid="uid://c0daww5vwd5h7" path="res://assets/gui/upgrade_panel/sell/outlined.svg" id="43_7ixpq"]
+[ext_resource type="Texture2D" uid="uid://bfnomkdorgux3" path="res://assets/gui/upgrade_panel/previous_upgrade/not_upgraded.svg" id="44_bk1p3"]
 [ext_resource type="Texture2D" uid="uid://dq7jebuwqx6mb" path="res://assets/gui/music/off/default.svg" id="44_oaba0"]
 [ext_resource type="Texture2D" uid="uid://c1f746kogr1k7" path="res://assets/gui/music/off/outlined.svg" id="45_458eo"]
+[ext_resource type="Texture2D" uid="uid://csi7cr4boa4ut" path="res://assets/gui/upgrade_panel/previous_upgrade/background.svg" id="45_n8ral"]
+[ext_resource type="Texture2D" uid="uid://bw33wblc48giw" path="res://assets/gui/upgrade_panel/previous_upgrade/color.svg" id="46_yd4ix"]
+[ext_resource type="Texture2D" uid="uid://bmcjjobf62cdf" path="res://assets/gui/upgrade_panel/previous_upgrade/mask.svg" id="47_66xif"]
+[ext_resource type="Texture2D" uid="uid://lyj0x7e4xokx" path="res://assets/gui/upgrade_panel/tier_bar/1.svg" id="48_bnuda"]
+[ext_resource type="Texture2D" uid="uid://b51aeir7cj5bp" path="res://assets/gui/upgrade_panel/upgrade_button/default.svg" id="49_0rmfi"]
+[ext_resource type="Texture2D" uid="uid://n2cfvspghp2k" path="res://assets/gui/upgrade_panel/upgrade_button/cantbuy.svg" id="50_xbak0"]
+[ext_resource type="Texture2D" uid="uid://d2kiggkg6xd6d" path="res://assets/gui/upgrade_panel/upgrade_button/max.svg" id="52_3x28f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gee14"]
 font = ExtResource("7_u5sy4")
@@ -282,35 +296,35 @@ font_color = Color(0, 0.6, 1, 1)
 outline_size = 4
 outline_color = Color(0.1882353, 0.2509804, 0.34509805, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_05nbr"]
+[sub_resource type="LabelSettings" id="LabelSettings_l6q63"]
 font = ExtResource("7_u5sy4")
 font_size = 12
 font_color = Color(0.25882354, 0.6862745, 0.9764706, 1)
 outline_size = 8
 outline_color = Color(0.078431375, 0.25490198, 0.36862746, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_0sl42"]
+[sub_resource type="LabelSettings" id="LabelSettings_mmvbu"]
 font = ExtResource("7_u5sy4")
 font_size = 12
 font_color = Color(0.48235294, 0.7019608, 0.1254902, 1)
 outline_size = 8
 outline_color = Color(0.1764706, 0.2627451, 0.02745098, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_oaba0"]
+[sub_resource type="LabelSettings" id="LabelSettings_weeiq"]
 font = ExtResource("7_u5sy4")
 font_size = 12
 font_color = Color(0.9607843, 0.94509804, 0.9254902, 1)
 outline_size = 6
 outline_color = Color(0.17254902, 0.10980392, 0.03137255, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_458eo"]
+[sub_resource type="LabelSettings" id="LabelSettings_uxocx"]
 font = ExtResource("7_u5sy4")
 font_size = 10
 font_color = Color(0.8156863, 0.627451, 0.40392157, 1)
 outline_size = 4
 outline_color = Color(0.25490198, 0.16078432, 0.05490196, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_h3rex"]
+[sub_resource type="LabelSettings" id="LabelSettings_7nv0b"]
 line_spacing = 0.0
 font = ExtResource("7_u5sy4")
 font_size = 12
@@ -318,7 +332,7 @@ font_color = Color(0.9607843, 0.94509804, 0.9254902, 1)
 outline_size = 8
 outline_color = Color(0.17254902, 0.10980392, 0.03137255, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_fedci"]
+[sub_resource type="LabelSettings" id="LabelSettings_o8oq8"]
 font = ExtResource("7_u5sy4")
 font_size = 11
 font_color = Color(0.6, 0.6, 0.6, 1)
@@ -378,20 +392,20 @@ tracks/1/keys = {
 "values": [Color(0.5686275, 0.9098039, 0.16078432, 0.49803922), Color(1, 1, 1, 1), Color(0.5686275, 0.9098039, 0.16078432, 0.49803922)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8qswn"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sxt1d"]
 _data = {
 &"RESET": SubResource("Animation_mmvbu"),
 &"bought": SubResource("Animation_l6q63")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_rm0al"]
+[sub_resource type="LabelSettings" id="LabelSettings_2iuns"]
 font = ExtResource("7_u5sy4")
 font_size = 12
 font_color = Color(0.60784316, 0.8352941, 0, 1)
 outline_size = 8
 outline_color = Color(0.1764706, 0.2627451, 0.02745098, 1)
 
-[sub_resource type="DPITexture" id="DPITexture_i4re6"]
+[sub_resource type="DPITexture" id="DPITexture_7gkqi"]
 _source = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>
 <svg
    ffdec:objectType=\"frame\"
@@ -3386,7 +3400,7 @@ _source = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>
        id=\"use1\" /></g></svg>
 "
 
-[sub_resource type="LabelSettings" id="LabelSettings_pf7vy"]
+[sub_resource type="LabelSettings" id="LabelSettings_753oq"]
 font = ExtResource("7_u5sy4")
 font_size = 12
 font_color = Color(0.6117647, 0.8392157, 0, 1)
@@ -3424,34 +3438,34 @@ tracks/0/keys = {
 "values": [128.75, 113.2, 99.5, 87.65, 77.6, 69.35, 62.95, 58.4, 55.65, 54.75]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_o8ni1"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3x338"]
 _data = {
 &"RESET": SubResource("Animation_n8ral"),
 &"purchase": SubResource("Animation_yd4ix")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3hbvx"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1yg85"]
 shader = ExtResource("38_nepv3")
 shader_parameter/brightness = 0.0
 shader_parameter/contrast = 0.0
 shader_parameter/saturation = -100.0
 shader_parameter/hue = 0.0
 
-[sub_resource type="LabelSettings" id="LabelSettings_q8j3a"]
+[sub_resource type="LabelSettings" id="LabelSettings_s0g06"]
 font = ExtResource("7_u5sy4")
 font_size = 12
 font_color = Color(1, 0, 0, 1)
 outline_size = 8
 outline_color = Color(0.2901961, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_ms3bu"]
+[sub_resource type="LabelSettings" id="LabelSettings_2gnni"]
 font = ExtResource("7_u5sy4")
 font_size = 12
 font_color = Color(1, 0, 0, 1)
 outline_size = 8
 outline_color = Color(0.2901961, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_7ixpq"]
+[sub_resource type="LabelSettings" id="LabelSettings_vgxg3"]
 line_spacing = -1.0
 font = ExtResource("7_u5sy4")
 font_size = 12
@@ -3459,7 +3473,7 @@ font_color = Color(0.8, 0.8, 0.8, 1)
 outline_size = 8
 outline_color = Color(0.2, 0.2, 0.2, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_bk1p3"]
+[sub_resource type="LabelSettings" id="LabelSettings_4nbsr"]
 line_spacing = -1.0
 font = ExtResource("7_u5sy4")
 font_size = 12
@@ -4211,7 +4225,7 @@ metadata/pressed_texture = ExtResource("44_oaba0")
 metadata/default_outlined = ExtResource("27_v2yb1")
 metadata/pressed_outlined = ExtResource("45_458eo")
 
-[node name="UpgradePanel" type="Control" parent="InGameMenu/BottomPanel" unique_id=706137503]
+[node name="UpgradePanel" type="Control" parent="InGameMenu/BottomPanel" unique_id=1543204309]
 visible = false
 layout_mode = 3
 anchor_left = 0.058000002
@@ -4223,249 +4237,267 @@ offset_top = 0.029999971
 offset_right = 647.568
 offset_bottom = 74.08
 
-[node name="TowerName" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=1355057783]
+[node name="TowerName" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=1022768758]
 layout_mode = 0
 offset_left = 85.95
 offset_top = -0.95002437
 offset_right = 249.0
 offset_bottom = 36.349976
 text = "Dart Monkey"
-label_settings = SubResource("LabelSettings_05nbr")
+label_settings = SubResource("LabelSettings_l6q63")
 
-[node name="PopCount" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=7145152]
+[node name="PopCount" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=1334032059]
 layout_mode = 0
 offset_left = 85.95
 offset_top = 24.050013
 offset_right = 158.95
 offset_bottom = 43.700012
 text = "Pop Count"
-label_settings = SubResource("LabelSettings_0sl42")
+label_settings = SubResource("LabelSettings_mmvbu")
 vertical_alignment = 1
 
-[node name="Count" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/PopCount" unique_id=634870858]
+[node name="Count" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/PopCount" unique_id=995886537]
 layout_mode = 0
 offset_left = 75.0
 offset_top = 3.0
 offset_right = 158.5
 offset_bottom = 22.899998
 text = "0"
-label_settings = SubResource("LabelSettings_oaba0")
+label_settings = SubResource("LabelSettings_weeiq")
 
-[node name="DetailView" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=888954556]
+[node name="DetailView" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=1175597300]
 layout_mode = 0
 offset_left = 5.95
 offset_top = 0.5
 offset_right = 5.95
 offset_bottom = 0.5
+texture = ExtResource("38_pf7vy")
 
-[node name="Image" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/DetailView" unique_id=1392829035]
+[node name="Image" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/DetailView" unique_id=1778125575]
 position = Vector2(38.5, 36.5)
+texture = ExtResource("39_o8ni1")
 
-[node name="First" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=931634433]
+[node name="First" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=716624760]
 layout_mode = 0
 offset_left = 79.95
 offset_top = 41.049988
 offset_right = 138.95
 offset_bottom = 81.04999
 mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_3hbvx")
+texture_hover = ExtResource("41_q8j3a")
 
-[node name="Text" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/First" unique_id=1523492919]
+[node name="Text" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/First" unique_id=369645202]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 7.0
 offset_right = 50.0
 offset_bottom = 30.0
 text = "FIRST"
-label_settings = SubResource("LabelSettings_458eo")
+label_settings = SubResource("LabelSettings_uxocx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Last" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=14613800]
+[node name="Last" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=1287114536]
 layout_mode = 0
 offset_left = 140.95
 offset_top = 41.049988
 offset_right = 199.95
 offset_bottom = 81.04999
 mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_3hbvx")
+texture_hover = ExtResource("41_q8j3a")
 
-[node name="Text" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Last" unique_id=137696330]
+[node name="Text" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Last" unique_id=1621970747]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 7.0
 offset_right = 48.0
 offset_bottom = 30.0
 text = "LAST"
-label_settings = SubResource("LabelSettings_458eo")
+label_settings = SubResource("LabelSettings_uxocx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Close" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=1253338536]
+[node name="Close" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=3395456]
 layout_mode = 0
 offset_left = 201.95
 offset_top = 41.049988
 offset_right = 260.95
 offset_bottom = 81.04999
 mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_3hbvx")
+texture_hover = ExtResource("41_q8j3a")
 
-[node name="Text" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Close" unique_id=147610042]
+[node name="Text" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Close" unique_id=1679822858]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 7.0
 offset_right = 49.0
 offset_bottom = 30.0
 text = "CLOSE"
-label_settings = SubResource("LabelSettings_458eo")
+label_settings = SubResource("LabelSettings_uxocx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Strong" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=270568898]
+[node name="Strong" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=2002364323]
 layout_mode = 0
 offset_left = 262.95
 offset_top = 41.049988
 offset_right = 321.95
 offset_bottom = 81.04999
 mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_3hbvx")
+texture_hover = ExtResource("41_q8j3a")
 
-[node name="Text" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Strong" unique_id=152448491]
+[node name="Text" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Strong" unique_id=1310383708]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 7.0
 offset_right = 51.0
 offset_bottom = 30.0
 text = "STRONG"
-label_settings = SubResource("LabelSettings_458eo")
+label_settings = SubResource("LabelSettings_uxocx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Sell" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=327779183]
+[node name="Sell" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=1909931360]
 layout_mode = 0
 offset_left = 246.95001
 offset_top = -1.9500122
 offset_right = 321.95
 offset_bottom = 39.049988
 mouse_default_cursor_shape = 2
+texture_normal = ExtResource("42_ms3bu")
+texture_hover = ExtResource("43_7ixpq")
 
-[node name="Text" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Sell" unique_id=419250983]
+[node name="Text" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Sell" unique_id=764375705]
 layout_mode = 0
 offset_left = 4.9999847
 offset_top = 5.0
 offset_right = 70.99997
 offset_bottom = 42.0
 text = "SELL FOR $327"
-label_settings = SubResource("LabelSettings_h3rex")
+label_settings = SubResource("LabelSettings_7nv0b")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Path1" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=1454029964]
+[node name="Path1" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=776454459]
 anchors_preset = 0
 offset_left = 327.5
 offset_top = 0.049987793
 offset_right = 511.95
 offset_bottom = 74.04999
 
-[node name="PreviousUpgrade" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=2042305951]
+[node name="PreviousUpgrade" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=1621809625]
 anchors_preset = 0
 offset_right = 103.0
 offset_bottom = 74.0
 
-[node name="NotUpgraded" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade" unique_id=566516710]
+[node name="NotUpgraded" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade" unique_id=1807097769]
 anchors_preset = 0
 offset_right = 103.0
 offset_bottom = 64.0
 
-[node name="Background" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/NotUpgraded" unique_id=2011221630]
+[node name="Background" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/NotUpgraded" unique_id=1515517659]
 layout_mode = 0
+texture = ExtResource("44_bk1p3")
 
-[node name="NotUpgraded" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/NotUpgraded" unique_id=1382303737]
+[node name="NotUpgraded" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/NotUpgraded" unique_id=225206140]
 layout_mode = 0
 offset_left = 4.450012
 offset_top = 3.0
 offset_right = 89.45001
 offset_bottom = 26.0
 text = "Not Upgraded"
-label_settings = SubResource("LabelSettings_fedci")
+label_settings = SubResource("LabelSettings_o8oq8")
 
-[node name="Path" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/NotUpgraded" unique_id=1979896042]
+[node name="Path" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/NotUpgraded" unique_id=1688917271]
 layout_mode = 0
 offset_left = 4.450012
 offset_top = 47.0
 offset_right = 89.45001
 offset_bottom = 70.0
 text = "PATH"
-label_settings = SubResource("LabelSettings_fedci")
+label_settings = SubResource("LabelSettings_o8oq8")
 
-[node name="PathNumber" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/NotUpgraded" unique_id=1802553517]
+[node name="PathNumber" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/NotUpgraded" unique_id=564929175]
 layout_mode = 0
 offset_left = 42.450012
 offset_top = 47.0
 offset_right = 75.45001
 offset_bottom = 70.0
 text = "1"
-label_settings = SubResource("LabelSettings_fedci")
+label_settings = SubResource("LabelSettings_o8oq8")
 
-[node name="Bought" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade" unique_id=339558029]
+[node name="Bought" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade" unique_id=313976472]
 visible = false
 anchors_preset = 0
 offset_right = 103.0
 offset_bottom = 64.0
 
-[node name="Background" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought" unique_id=2082901004]
+[node name="Background" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought" unique_id=1537358133]
 layout_mode = 0
+texture = ExtResource("45_n8ral")
 
-[node name="Color" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought" unique_id=1412669816]
+[node name="Color" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought" unique_id=1383429696]
 modulate = Color(0.5764706, 0.91764706, 0.16470589, 0.49803922)
 layout_mode = 0
+texture = ExtResource("46_yd4ix")
 
-[node name="ClipMask" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought" unique_id=1690625916]
+[node name="ClipMask" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought" unique_id=1669123725]
 clip_children = 1
 layout_mode = 0
+texture = ExtResource("47_66xif")
 
-[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought/ClipMask" unique_id=1361142399]
+[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought/ClipMask" unique_id=1145558016]
 position = Vector2(124.7, 36)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought/ClipMask" unique_id=1667502754]
-libraries/ = SubResource("AnimationLibrary_8qswn")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought/ClipMask" unique_id=223525910]
+libraries/ = SubResource("AnimationLibrary_sxt1d")
 
-[node name="Bought" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought" unique_id=1140126832]
+[node name="Bought" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought" unique_id=343986834]
 layout_mode = 0
 offset_left = 6.450012
 offset_top = 3.0
 offset_right = 91.45001
 offset_bottom = 26.0
 text = "BOUGHT"
-label_settings = SubResource("LabelSettings_rm0al")
+label_settings = SubResource("LabelSettings_2iuns")
 
-[node name="TierBar" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade" unique_id=240283054]
+[node name="TierBar" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade" unique_id=1478499570]
 anchors_preset = 0
 offset_left = 2.0
 offset_top = 63.0
 offset_right = 99.0
 offset_bottom = 74.0
 
-[node name="Bar" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/TierBar" unique_id=1750647200]
+[node name="Bar" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/TierBar" unique_id=994669528]
 layout_mode = 0
 offset_right = 97.0
 offset_bottom = 11.0
+texture = ExtResource("48_bnuda")
 
-[node name="Buy" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=905023136]
+[node name="Buy" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=624597285]
 anchors_preset = 0
 offset_left = 80.5
 offset_right = 184.5
 offset_bottom = 74.0
 
-[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/Buy" unique_id=1777082865]
+[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/Buy" unique_id=8217350]
 clip_contents = true
 layout_mode = 0
 offset_right = 104.0
 offset_bottom = 74.0
 mouse_default_cursor_shape = 2
-texture_hover = SubResource("DPITexture_i4re6")
+texture_normal = ExtResource("49_0rmfi")
+texture_hover = SubResource("DPITexture_7gkqi")
 
-[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/Buy/Button" unique_id=240291591]
+[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/Buy/Button" unique_id=1465340556]
 position = Vector2(54.75, 36)
 
-[node name="Buy" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/Buy/Button" unique_id=415564164]
+[node name="Buy" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/Buy/Button" unique_id=734426365]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 6.0
@@ -4473,41 +4505,42 @@ offset_right = 57.0
 offset_bottom = 29.0
 rotation = -0.1308997
 text = "BUY"
-label_settings = SubResource("LabelSettings_pf7vy")
+label_settings = SubResource("LabelSettings_753oq")
 horizontal_alignment = 2
 
-[node name="Cost" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/Buy/Button" unique_id=1843192298]
+[node name="Cost" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/Buy/Button" unique_id=1085326338]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 55.0
 offset_right = 96.0
 offset_bottom = 78.0
 text = "$140"
-label_settings = SubResource("LabelSettings_pf7vy")
+label_settings = SubResource("LabelSettings_753oq")
 horizontal_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/Buy/Button" unique_id=1045570965]
-libraries/ = SubResource("AnimationLibrary_o8ni1")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/Buy/Button" unique_id=1035209895]
+libraries/ = SubResource("AnimationLibrary_3x338")
 
-[node name="CantAfford" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=663634162]
+[node name="CantAfford" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=486511104]
 visible = false
 anchors_preset = 0
 offset_left = 80.5
 offset_right = 184.5
 offset_bottom = 74.0
 
-[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford" unique_id=186686608]
+[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford" unique_id=1277430581]
 clip_contents = true
 layout_mode = 0
 offset_right = 104.0
 offset_bottom = 74.0
 mouse_default_cursor_shape = 2
+texture_normal = ExtResource("50_xbak0")
 
-[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford/Button" unique_id=1323888458]
-material = SubResource("ShaderMaterial_3hbvx")
+[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford/Button" unique_id=1195344555]
+material = SubResource("ShaderMaterial_1yg85")
 position = Vector2(54.75, 36)
 
-[node name="CantAfford" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford/Button" unique_id=695922919]
+[node name="CantAfford" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford/Button" unique_id=1050464135]
 layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
@@ -4515,37 +4548,38 @@ offset_right = 102.0
 offset_bottom = 33.0
 rotation = -0.1308997
 text = "CANT AFFORD"
-label_settings = SubResource("LabelSettings_q8j3a")
+label_settings = SubResource("LabelSettings_s0g06")
 horizontal_alignment = 2
 
-[node name="Cost" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford/Button" unique_id=1059656549]
+[node name="Cost" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford/Button" unique_id=2074894937]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 55.0
 offset_right = 96.0
 offset_bottom = 78.0
 text = "$140"
-label_settings = SubResource("LabelSettings_ms3bu")
+label_settings = SubResource("LabelSettings_2gnni")
 horizontal_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford/Button" unique_id=1945678995]
-libraries/ = SubResource("AnimationLibrary_o8ni1")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford/Button" unique_id=1796855648]
+libraries/ = SubResource("AnimationLibrary_3x338")
 
-[node name="PathClosed" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=947776553]
+[node name="PathClosed" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=275015225]
 visible = false
 anchors_preset = 0
 offset_left = 80.5
 offset_right = 184.5
 offset_bottom = 74.0
 
-[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PathClosed" unique_id=1892687660]
+[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PathClosed" unique_id=1101566269]
 clip_contents = true
 layout_mode = 0
 offset_right = 104.0
 offset_bottom = 74.0
 mouse_default_cursor_shape = 2
+texture_normal = ExtResource("50_xbak0")
 
-[node name="PathClosed" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PathClosed/Button" unique_id=1609736588]
+[node name="PathClosed" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PathClosed/Button" unique_id=1812058429]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 17.0
@@ -4553,25 +4587,26 @@ offset_right = 92.0
 offset_bottom = 74.0
 rotation = -0.1308997
 text = "UPGRADE PATH CLOSED"
-label_settings = SubResource("LabelSettings_7ixpq")
+label_settings = SubResource("LabelSettings_vgxg3")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="MaxUpgrades" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=351824143]
+[node name="MaxUpgrades" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=603634803]
 visible = false
 anchors_preset = 0
 offset_left = 80.5
 offset_right = 184.5
 offset_bottom = 74.0
 
-[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/MaxUpgrades" unique_id=1232021827]
+[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/MaxUpgrades" unique_id=4718424]
 clip_contents = true
 layout_mode = 0
 offset_right = 104.0
 offset_bottom = 74.0
 mouse_default_cursor_shape = 2
+texture_normal = ExtResource("52_3x28f")
 
-[node name="PathClosed" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/MaxUpgrades/Button" unique_id=841589649]
+[node name="PathClosed" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/MaxUpgrades/Button" unique_id=1054781961]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 19.0
@@ -4579,119 +4614,125 @@ offset_right = 89.0
 offset_bottom = 76.0
 rotation = -0.1308997
 text = "MAX UPGRADES"
-label_settings = SubResource("LabelSettings_bk1p3")
+label_settings = SubResource("LabelSettings_4nbsr")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Path2" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=189214508]
+[node name="Path2" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=1298853064]
 anchors_preset = 0
 offset_left = 512.5
 offset_top = 0.05
 offset_right = 696.95
 offset_bottom = 74.05
 
-[node name="PreviousUpgrade" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=608700162]
+[node name="PreviousUpgrade" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=2099069043]
 anchors_preset = 0
 offset_right = 103.0
 offset_bottom = 74.0
 
-[node name="NotUpgraded" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade" unique_id=294458774]
+[node name="NotUpgraded" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade" unique_id=1558180198]
 anchors_preset = 0
 offset_right = 103.0
 offset_bottom = 64.0
 
-[node name="Background" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/NotUpgraded" unique_id=241331852]
+[node name="Background" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/NotUpgraded" unique_id=1790776215]
 layout_mode = 0
+texture = ExtResource("44_bk1p3")
 
-[node name="NotUpgraded" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/NotUpgraded" unique_id=185585155]
+[node name="NotUpgraded" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/NotUpgraded" unique_id=1062822367]
 layout_mode = 0
 offset_left = 4.450012
 offset_top = 3.0
 offset_right = 89.45001
 offset_bottom = 26.0
 text = "Not Upgraded"
-label_settings = SubResource("LabelSettings_fedci")
+label_settings = SubResource("LabelSettings_o8oq8")
 
-[node name="Path" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/NotUpgraded" unique_id=1053528740]
+[node name="Path" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/NotUpgraded" unique_id=743182641]
 layout_mode = 0
 offset_left = 4.450012
 offset_top = 47.0
 offset_right = 89.45001
 offset_bottom = 70.0
 text = "PATH"
-label_settings = SubResource("LabelSettings_fedci")
+label_settings = SubResource("LabelSettings_o8oq8")
 
-[node name="PathNumber" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/NotUpgraded" unique_id=1436743644]
+[node name="PathNumber" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/NotUpgraded" unique_id=434909750]
 layout_mode = 0
 offset_left = 42.450012
 offset_top = 47.0
 offset_right = 75.45001
 offset_bottom = 70.0
 text = "2"
-label_settings = SubResource("LabelSettings_fedci")
+label_settings = SubResource("LabelSettings_o8oq8")
 
-[node name="Bought" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade" unique_id=1083983435]
+[node name="Bought" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade" unique_id=1938963298]
 visible = false
 anchors_preset = 0
 offset_right = 103.0
 offset_bottom = 64.0
 
-[node name="Background" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought" unique_id=828366647]
+[node name="Background" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought" unique_id=1887461355]
 layout_mode = 0
+texture = ExtResource("45_n8ral")
 
-[node name="Color" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought" unique_id=409473221]
+[node name="Color" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought" unique_id=1482778514]
 modulate = Color(0.5764706, 0.91764706, 0.16470589, 0.49803922)
 layout_mode = 0
+texture = ExtResource("46_yd4ix")
 
-[node name="ClipMask" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought" unique_id=2144694853]
+[node name="ClipMask" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought" unique_id=570215274]
 clip_children = 1
 layout_mode = 0
+texture = ExtResource("47_66xif")
 
-[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought/ClipMask" unique_id=384026565]
+[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought/ClipMask" unique_id=1473927221]
 position = Vector2(124.7, 36)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought/ClipMask" unique_id=172980439]
-libraries/ = SubResource("AnimationLibrary_8qswn")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought/ClipMask" unique_id=1864520566]
+libraries/ = SubResource("AnimationLibrary_sxt1d")
 
-[node name="Bought" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought" unique_id=1875685903]
+[node name="Bought" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought" unique_id=1314134383]
 layout_mode = 0
 offset_left = 6.450012
 offset_top = 3.0
 offset_right = 91.45001
 offset_bottom = 26.0
 text = "BOUGHT"
-label_settings = SubResource("LabelSettings_rm0al")
+label_settings = SubResource("LabelSettings_2iuns")
 
-[node name="TierBar" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade" unique_id=79486886]
+[node name="TierBar" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade" unique_id=1888422513]
 anchors_preset = 0
 offset_left = 2.0
 offset_top = 63.0
 offset_right = 99.0
 offset_bottom = 74.0
 
-[node name="Bar" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/TierBar" unique_id=1083494103]
+[node name="Bar" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/TierBar" unique_id=485394434]
 layout_mode = 0
 offset_right = 97.0
 offset_bottom = 11.0
+texture = ExtResource("48_bnuda")
 
-[node name="Buy" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=1854674535]
+[node name="Buy" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=439095458]
 anchors_preset = 0
 offset_left = 80.5
 offset_right = 184.5
 offset_bottom = 74.0
 
-[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/Buy" unique_id=881781680]
+[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/Buy" unique_id=1442768166]
 clip_contents = true
 layout_mode = 0
 offset_right = 104.0
 offset_bottom = 74.0
 mouse_default_cursor_shape = 2
-texture_hover = SubResource("DPITexture_i4re6")
+texture_normal = ExtResource("49_0rmfi")
+texture_hover = SubResource("DPITexture_7gkqi")
 
-[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/Buy/Button" unique_id=1456913978]
+[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/Buy/Button" unique_id=779432623]
 position = Vector2(54.75, 36)
 
-[node name="Buy" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/Buy/Button" unique_id=319770071]
+[node name="Buy" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/Buy/Button" unique_id=917585071]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 6.0
@@ -4699,41 +4740,42 @@ offset_right = 57.0
 offset_bottom = 29.0
 rotation = -0.1308997
 text = "BUY"
-label_settings = SubResource("LabelSettings_pf7vy")
+label_settings = SubResource("LabelSettings_753oq")
 horizontal_alignment = 2
 
-[node name="Cost" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/Buy/Button" unique_id=1686331456]
+[node name="Cost" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/Buy/Button" unique_id=1311048256]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 55.0
 offset_right = 96.0
 offset_bottom = 78.0
 text = "$140"
-label_settings = SubResource("LabelSettings_pf7vy")
+label_settings = SubResource("LabelSettings_753oq")
 horizontal_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/Buy/Button" unique_id=2052665397]
-libraries/ = SubResource("AnimationLibrary_o8ni1")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/Buy/Button" unique_id=1118584634]
+libraries/ = SubResource("AnimationLibrary_3x338")
 
-[node name="CantAfford" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=1660281699]
+[node name="CantAfford" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=1131863904]
 visible = false
 anchors_preset = 0
 offset_left = 80.5
 offset_right = 184.5
 offset_bottom = 74.0
 
-[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford" unique_id=476790362]
+[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford" unique_id=835077338]
 clip_contents = true
 layout_mode = 0
 offset_right = 104.0
 offset_bottom = 74.0
 mouse_default_cursor_shape = 2
+texture_normal = ExtResource("50_xbak0")
 
-[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford/Button" unique_id=1783824874]
-material = SubResource("ShaderMaterial_3hbvx")
+[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford/Button" unique_id=157828318]
+material = SubResource("ShaderMaterial_1yg85")
 position = Vector2(54.75, 36)
 
-[node name="CantAfford" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford/Button" unique_id=733848957]
+[node name="CantAfford" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford/Button" unique_id=472509286]
 layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
@@ -4741,37 +4783,38 @@ offset_right = 102.0
 offset_bottom = 33.0
 rotation = -0.1308997
 text = "CANT AFFORD"
-label_settings = SubResource("LabelSettings_q8j3a")
+label_settings = SubResource("LabelSettings_s0g06")
 horizontal_alignment = 2
 
-[node name="Cost" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford/Button" unique_id=1772919204]
+[node name="Cost" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford/Button" unique_id=525878555]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 55.0
 offset_right = 96.0
 offset_bottom = 78.0
 text = "$140"
-label_settings = SubResource("LabelSettings_ms3bu")
+label_settings = SubResource("LabelSettings_2gnni")
 horizontal_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford/Button" unique_id=392970002]
-libraries/ = SubResource("AnimationLibrary_o8ni1")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford/Button" unique_id=795517160]
+libraries/ = SubResource("AnimationLibrary_3x338")
 
-[node name="PathClosed" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=237761910]
+[node name="PathClosed" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=2086249951]
 visible = false
 anchors_preset = 0
 offset_left = 80.5
 offset_right = 184.5
 offset_bottom = 74.0
 
-[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PathClosed" unique_id=1709809533]
+[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PathClosed" unique_id=570359609]
 clip_contents = true
 layout_mode = 0
 offset_right = 104.0
 offset_bottom = 74.0
 mouse_default_cursor_shape = 2
+texture_normal = ExtResource("50_xbak0")
 
-[node name="PathClosed" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PathClosed/Button" unique_id=1010208735]
+[node name="PathClosed" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PathClosed/Button" unique_id=854847710]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 17.0
@@ -4779,25 +4822,26 @@ offset_right = 92.0
 offset_bottom = 74.0
 rotation = -0.1308997
 text = "UPGRADE PATH CLOSED"
-label_settings = SubResource("LabelSettings_7ixpq")
+label_settings = SubResource("LabelSettings_vgxg3")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="MaxUpgrades" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=881909294]
+[node name="MaxUpgrades" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=139809768]
 visible = false
 anchors_preset = 0
 offset_left = 80.5
 offset_right = 184.5
 offset_bottom = 74.0
 
-[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/MaxUpgrades" unique_id=2071281344]
+[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/MaxUpgrades" unique_id=1675339565]
 clip_contents = true
 layout_mode = 0
 offset_right = 104.0
 offset_bottom = 74.0
 mouse_default_cursor_shape = 2
+texture_normal = ExtResource("52_3x28f")
 
-[node name="PathClosed" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/MaxUpgrades/Button" unique_id=2013794746]
+[node name="PathClosed" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/MaxUpgrades/Button" unique_id=518580514]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 19.0
@@ -4805,7 +4849,7 @@ offset_right = 89.0
 offset_bottom = 76.0
 rotation = -0.1308997
 text = "MAX UPGRADES"
-label_settings = SubResource("LabelSettings_bk1p3")
+label_settings = SubResource("LabelSettings_4nbsr")
 horizontal_alignment = 1
 autowrap_mode = 2
 
