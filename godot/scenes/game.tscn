@@ -4876,5 +4876,7 @@ autowrap_mode = 2
 offset = Vector2(2, 0)
 anchor_mode = 0
 
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1664626899]
+
 [connection signal="pressed" from="InGameMenu/SidePanel/UI/PlayButton" to="InGameMenu" method="OnPlayButtonPressed"]
 [connection signal="pressed" from="InGameMenu/SidePanel/UI/FastForwardButton" to="InGameMenu" method="OnFastForwardButtonPressed"]

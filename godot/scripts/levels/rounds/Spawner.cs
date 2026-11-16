@@ -68,7 +68,7 @@ public class Spawner
 	public void Spawn(double overshoot, int spawnOrderIndex)
 	{
 		Level level = Main.Instance.Level;
-		Bloon bloon = new Bloon(); // Pool.get(Bloon)
+		Bloon bloon = Pool<Bloon>.Get();
 		double tileProgress = overshoot * Bloon.SpeedMultiplierByType[(int)Type] * Bloon.BaseSpeed; // as3 uses base speed only
 
 		bloon.SpawnOrderIndex = spawnOrderIndex;

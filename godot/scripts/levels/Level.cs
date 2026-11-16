@@ -153,7 +153,7 @@ public class Level : Scene
 			Cull(bloon);
 			bloon.Tile = null;
 			BloonRemoved?.Invoke(bloon);
-			// Pool.Release(bloon);
+			Pool<Bloon>.Release(bloon);
 			CheckForRoundOver();
 		}
 	}

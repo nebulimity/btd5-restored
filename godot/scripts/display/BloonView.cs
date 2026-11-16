@@ -4,7 +4,7 @@ public partial class BloonView : Sprite2D
 {
 	private Bloon _bloon;
 	private BloonType _lastType;
-	// private bool _wasRegen;
+	private bool _wasRegen;
 	// private bool _wasCamo;
 	// private int _lastDamageFrame;
 	private int _lastLayer;
@@ -13,6 +13,7 @@ public partial class BloonView : Sprite2D
 	{
 		_bloon = bloon;
 		_lastType = bloon.Type;
+		_wasRegen = bloon.IsRegen;
 		_lastLayer = bloon.Tile.Layer;
 
 		Texture = GD.Load<Texture2D>($"res://assets/bloons/normal/{(int)bloon.Type + 1}.svg"); // TODO: use an asset manager in the future
