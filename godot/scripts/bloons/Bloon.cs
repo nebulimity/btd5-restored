@@ -36,12 +36,11 @@ public enum Immunities
 	All = 65535
 }
 
-
 public class Bloon : Entity
 {
 	public const int BloonCount = 14;
 
-	public static readonly BloonType[] AllBloonTypes = { BloonType.Red, BloonType.Blue, BloonType.Green, BloonType.Yellow, BloonType.Pink, BloonType.Black, BloonType.White, BloonType.Lead, BloonType.Zebra, BloonType.Rainbow, BloonType.Ceramic, BloonType.MOAB, BloonType.BFB, BloonType.Boss };
+	public static readonly BloonType[] AllBloonTypes = [BloonType.Red, BloonType.Blue, BloonType.Green, BloonType.Yellow, BloonType.Pink, BloonType.Black, BloonType.White, BloonType.Lead, BloonType.Zebra, BloonType.Rainbow, BloonType.Ceramic, BloonType.MOAB, BloonType.BFB, BloonType.Boss];
 
 	public static bool WeakMoabs;
 
@@ -49,12 +48,12 @@ public class Bloon : Entity
 	public static double DifficultySpeedModifier;
 	private const double MaxDeltaRotation = 0.12;
 
-	private static readonly int[] MaxHealthByType = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 200, 700, 4000 };
-	public static readonly double[] SpeedMultiplierByType = { 1, 1.4, 1.8, 3.2, 3.5, 1.8, 2, 1, 1.8, 2.2, 2.5, 1, 0.25, 0.18 };
-	private static readonly Immunities[] BaseImmunitiesByType = { Immunities.None, Immunities.None, Immunities.None, Immunities.None, Immunities.None, Immunities.Splosion, Immunities.Ice, Immunities.Lead, Immunities.Ice | Immunities.Splosion, Immunities.None, Immunities.None, Immunities.Glue | Immunities.Ice | Immunities.MOAB, Immunities.Glue | Immunities.Ice | Immunities.BFB, Immunities.Glue | Immunities.Ice | Immunities.ZOMG };
-	public static readonly int[] RBEByType = { 1, 2, 3, 4, 5, 11, 11, 23, 23, 47, 104, 616, 3164, 16656 };
-	private static readonly int[] ChildCountByType = { 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 4, 4, 4 };
-	public static readonly double[] TargetRangeAddonsByType = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 110, 140 };
+	private static readonly int[] MaxHealthByType = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 200, 700, 4000];
+	public static readonly double[] SpeedMultiplierByType = [1, 1.4, 1.8, 3.2, 3.5, 1.8, 2, 1, 1.8, 2.2, 2.5, 1, 0.25, 0.18];
+	private static readonly Immunities[] BaseImmunitiesByType = [Immunities.None, Immunities.None, Immunities.None, Immunities.None, Immunities.None, Immunities.Splosion, Immunities.Ice, Immunities.Lead, Immunities.Ice | Immunities.Splosion, Immunities.None, Immunities.None, Immunities.Glue | Immunities.Ice | Immunities.MOAB, Immunities.Glue | Immunities.Ice | Immunities.BFB, Immunities.Glue | Immunities.Ice | Immunities.ZOMG];
+	public static readonly int[] RBEByType = [1, 2, 3, 4, 5, 11, 11, 23, 23, 47, 104, 616, 3164, 16656];
+	private static readonly int[] ChildCountByType = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 4, 4, 4];
+	public static readonly double[] TargetRangeAddonsByType = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 110, 140];
 
 	// sounds and stuff
 
@@ -63,7 +62,7 @@ public class Bloon : Entity
 
 	public static uint Counter = 0;
 
-	public static readonly int[] SpawnOrderStrideByType = { 1, 1, 1, 1, 1, 2, 2, 4, 4, 8, 16, 64, 256, 1024 };
+	public static readonly int[] SpawnOrderStrideByType = [1, 1, 1, 1, 1, 2, 2, 4, 4, 8, 16, 64, 256, 1024];
 	public bool Sabotaged;
 	public double SpawnTime;
 
