@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Main="*uid://trmyunkadeww"
+BGM="*uid://d26t7njrqsx6f"
 
 [display]
 

@@ -21,6 +21,11 @@ public partial class Game : Node2D
 		LevelDef levelDef = LevelDef.Load("MonkeyLane");
 		Level.InitializeLevel(levelDef, GameMode.Easy);
 
+		if (levelDef.Music != null)
+		{
+			BGM.Instance.PlayTrack(levelDef.Music);
+		}
+
 		_bloonLayer = GetNode<BloonLayer>("BloonLayer");
 		_bloonLayer.Initialize(Level);
 

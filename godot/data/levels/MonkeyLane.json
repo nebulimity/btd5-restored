@@ -4,7 +4,7 @@
 	"difficulty": "Beginner",
 	"asset": "assets.maps.MonkeyLane",
 	"terrain": "assets.maps.MonkeyLaneTerrain",
-	"music": "assets.music.MainTheme",
+	"music": "res://assets/audio/music/main_theme.ogg",
 	"tileSets": [
 		[
 			{"type": "straight", "start": [-100, 305], "end": [134, 305], "next": [1]},

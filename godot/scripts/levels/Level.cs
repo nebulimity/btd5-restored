@@ -92,11 +92,6 @@ public class Level : Scene
 		Spawner.ApplyRegenToo = null;
 		Spawner.BloonLevelOffsets = null;
 
-		if (def.Music != null)
-		{
-			// #playdat
-		}
-
 		Cash = InitialCashByMode[(int)mode];
 		CashMultiplier = 1; // TODO
 		Health = InitialHealthByMode[(int)mode];
