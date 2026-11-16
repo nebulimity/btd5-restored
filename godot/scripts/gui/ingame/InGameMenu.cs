@@ -37,6 +37,8 @@ public partial class InGameMenu : Control
 	{
 		_playButton.Visible = false;
 		_fastForwardButton.Visible = true;
+		_blueArrowsDefault.Visible = true;
+		_blueArrowsPressed.Visible = false;
 
 		if (_level.WaveIndex + 1 <= _level.EndRound)
 		{
