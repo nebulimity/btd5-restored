@@ -7,7 +7,7 @@ public class Machine
 		State state;
 		if (CurrentState != null)
 		{
-			state = CurrentState.Message(message);
+			state = CurrentState.HandleMessage(message);
 			if (state != null)
 			{
 				ChangeState(state, message);

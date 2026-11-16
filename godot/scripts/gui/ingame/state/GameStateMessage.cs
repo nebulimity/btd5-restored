@@ -7,7 +7,7 @@ public enum GameStateMessageType
 	TowerPlacing = 5
 }
 
-public partial class GameStateMessage : Message
+public class GameStateMessage : Message
 {
 	public GameStateMessageType Type;
 	// public TowerPickerDef TowerPickerDef;

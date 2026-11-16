@@ -2,7 +2,7 @@ public abstract class State
 {
 	public Machine Machine;
 
-	public State Message(Message message)
+	public virtual State HandleMessage(Message message)
 	{
 		return null;
 	}
