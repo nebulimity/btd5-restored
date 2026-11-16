@@ -13,7 +13,7 @@ public class WaveSet : IProcessable
 		// rndm.Seed = 0;
 	}
 
-	public int GetCurrentRBE
+	public int CurrentRBE
 	{
 		get
 		{

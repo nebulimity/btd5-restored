@@ -3482,8 +3482,9 @@ font_color = Color(0.4862745, 0.7058824, 0.12941177, 1)
 outline_size = 8
 outline_color = Color(0.1764706, 0.2627451, 0.02745098, 1)
 
-[node name="Game" type="Node2D" unique_id=75469830]
+[node name="Game" type="Node2D" unique_id=75469830 node_paths=PackedStringArray("_inGameMenu")]
 script = ExtResource("1_458eo")
+_inGameMenu = NodePath("InGameMenu")
 
 [node name="Towers" type="Node2D" parent="." unique_id=2069125850]
 z_index = 1
@@ -3507,16 +3508,22 @@ SpikeyBall
 R.I.P."
 horizontal_alignment = 1
 
-[node name="InGameMenu" type="Control" parent="." unique_id=54588509 node_paths=PackedStringArray("_playButton", "_fastForwardButton", "_blueArrows")]
+[node name="InGameMenu" type="Control" parent="." unique_id=54588509 node_paths=PackedStringArray("_cashValue", "_healthValue", "_playButton", "_fastForwardButton", "_blueArrowsDefault", "_blueArrowsPressed", "_roundValue", "_modeValue", "_rbeValue")]
 z_index = 5
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_o8ni1")
+_cashValue = NodePath("SidePanel/UI/Cash/Value")
+_healthValue = NodePath("SidePanel/UI/Health/Value")
 _playButton = NodePath("SidePanel/UI/PlayButton")
 _fastForwardButton = NodePath("SidePanel/UI/FastForwardButton")
-_blueArrows = NodePath("SidePanel/UI/FastForwardButton/BlueArrows")
+_blueArrowsDefault = NodePath("SidePanel/UI/FastForwardButton/BlueArrowsDefault")
+_blueArrowsPressed = NodePath("SidePanel/UI/FastForwardButton/BlueArrowsPressed")
+_roundValue = NodePath("BottomPanel/Default/RoundValue")
+_modeValue = NodePath("BottomPanel/Default/ModeValue")
+_rbeValue = NodePath("BottomPanel/Default/RBEValue")
 
 [node name="SidePanel" type="Sprite2D" parent="InGameMenu" unique_id=18149238]
 position = Vector2(700, 0)
@@ -3572,14 +3579,21 @@ texture_normal = ExtResource("6_kvuet")
 texture_hover = ExtResource("7_trtic")
 texture_click_mask = ExtResource("11_twgab")
 
-[node name="BlueArrows" type="Sprite2D" parent="InGameMenu/SidePanel/UI/FastForwardButton" unique_id=1616509918]
+[node name="BlueArrowsDefault" type="Sprite2D" parent="InGameMenu/SidePanel/UI/FastForwardButton" unique_id=1616509918]
 material = SubResource("ShaderMaterial_js0lu")
 texture = ExtResource("11_v2yb1")
 centered = false
 metadata/default_texture = ExtResource("11_v2yb1")
 metadata/pressed_texture = ExtResource("12_js0lu")
 
-[node name="Money" type="TextureButton" parent="InGameMenu/SidePanel/UI" unique_id=1988631090]
+[node name="BlueArrowsPressed" type="Sprite2D" parent="InGameMenu/SidePanel/UI/FastForwardButton" unique_id=1329563849]
+visible = false
+texture = ExtResource("12_js0lu")
+centered = false
+metadata/default_texture = ExtResource("11_v2yb1")
+metadata/pressed_texture = ExtResource("12_js0lu")
+
+[node name="Cash" type="TextureButton" parent="InGameMenu/SidePanel/UI" unique_id=1988631090]
 z_index = 1
 layout_mode = 0
 offset_left = 2.6500244
@@ -3590,7 +3604,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("14_trtic")
 texture_hover = ExtResource("15_ir15t")
 
-[node name="Value" type="Label" parent="InGameMenu/SidePanel/UI/Money" unique_id=1593342742]
+[node name="Value" type="Label" parent="InGameMenu/SidePanel/UI/Cash" unique_id=1593342742]
 z_index = 5
 z_as_relative = false
 layout_mode = 0
@@ -3602,7 +3616,7 @@ text = "1234567"
 label_settings = SubResource("LabelSettings_ca42v")
 vertical_alignment = 2
 
-[node name="Lives" type="TextureButton" parent="InGameMenu/SidePanel/UI" unique_id=622140715]
+[node name="Health" type="TextureButton" parent="InGameMenu/SidePanel/UI" unique_id=622140715]
 z_index = 1
 layout_mode = 0
 offset_left = 2.5
@@ -3613,7 +3627,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("12_rysoc")
 texture_hover = ExtResource("13_ssvqc")
 
-[node name="Value" type="Label" parent="InGameMenu/SidePanel/UI/Lives" unique_id=2074960684]
+[node name="Value" type="Label" parent="InGameMenu/SidePanel/UI/Health" unique_id=2074960684]
 z_index = 5
 z_as_relative = false
 layout_mode = 0
@@ -4861,3 +4875,6 @@ autowrap_mode = 2
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1944019081]
 offset = Vector2(2, 0)
 anchor_mode = 0
+
+[connection signal="pressed" from="InGameMenu/SidePanel/UI/PlayButton" to="InGameMenu" method="OnPlayButtonPressed"]
+[connection signal="pressed" from="InGameMenu/SidePanel/UI/FastForwardButton" to="InGameMenu" method="OnFastForwardButtonPressed"]

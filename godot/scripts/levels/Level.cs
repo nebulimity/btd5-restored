@@ -26,6 +26,7 @@ public class Level : Scene
 	private static readonly int[] InitialCashByMode = [650, 650, 650, int.MaxValue, 50000, 650];
 	private static readonly int[] InitialHealthByMode = [200, 150, 100, 200, 150, 150];
 	private static readonly double[] BloonSpeedModsByMode = [0, 0.05, 0.125, 0, 0, 0];
+	private static readonly int[] RoundsByMode = [50, 65, 85, 300, 300, 300];
 
 	public List<Bloon> AllBloons = new List<Bloon>();
 	public event Action<Bloon> BloonAdded;
@@ -45,11 +46,13 @@ public class Level : Scene
 	public bool Reverse;
 	public bool FastTrack;
 	public bool IsGameOver;
-	//public ChallengeDef Challenge;
+	// public ChallengeDef Challenge;
 	public LevelDef LevelDef;
 
-	public event Action<Level> RoundStarted;
-	public event Action<Level> RoundEnded;
+	public event Action RoundStarted;
+	public event Action RoundEnded;
+	public event Action CashChanged;
+	public event Action HealthChanged;
 
 	public void Initialize()
 	{
@@ -80,6 +83,7 @@ public class Level : Scene
 		Reverse = false;
 		FastTrack = false;
 		IsGameOver = false;
+		// Challenge = ;
 		LevelDef = def;
 
 		BetweenRounds = true;
@@ -180,13 +184,13 @@ public class Level : Scene
 		Bloon.Counter = 0;
 
 		RoundTime = 0;
-		RoundStarted.Invoke(this);
+		RoundStarted?.Invoke();
 	}
 
 	public void RoundOver()
 	{
 		BetweenRounds = true;
-		RoundEnded.Invoke(this);
+		RoundEnded?.Invoke();
 
 		WaveSet.CurrentWave = null;
 		WaveIndex += 1;
@@ -203,6 +207,11 @@ public class Level : Scene
 		{
 			AddCash(100 + WaveIndex - 1);
 		}
+	}
+
+	public int EndRound // temp: use ChallengeDef.EndRound instead of this (once challenges are ported)
+	{
+		get { return RoundsByMode[(int)Mode]; }
 	}
 
 	public bool IsRoundInProgress
@@ -240,7 +249,7 @@ public class Level : Scene
 		}
 
 		CheckForGameOver();
-		// dispatchEvent health changed
+		HealthChanged?.Invoke();
 	}
 
 	public void CheckForGameOver()
@@ -262,5 +271,6 @@ public class Level : Scene
 	public void AddCash(double amount)
 	{
 		Cash += amount * CashMultiplier;
+		CashChanged?.Invoke();
 	}
 }
