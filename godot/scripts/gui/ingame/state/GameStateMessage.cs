@@ -11,7 +11,7 @@ public class GameStateMessage : Message
 {
 	public GameStateMessageType Type;
 	// public TowerPickerDef TowerPickerDef;
-	// public Tower Tower;
+	public Tower Tower;
 
 	public GameStateMessage(GameStateMessageType type)
 	{

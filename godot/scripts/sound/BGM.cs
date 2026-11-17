@@ -46,7 +46,11 @@ public partial class BGM : AudioStreamPlayer
 	{
 		if (Playing)
 		{
-			if (_queued == null)
+			if (Stream == stream)
+			{
+				return;
+			}
+			else if (_queued == null)
 			{
 				FadeOut();
 			}

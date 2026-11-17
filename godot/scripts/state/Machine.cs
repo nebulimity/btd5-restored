@@ -2,7 +2,7 @@ public class Machine
 {
 	public State CurrentState;
 
-	public void Message(Message message)
+	public void Send(Message message)
 	{
 		State state;
 		if (CurrentState != null)
