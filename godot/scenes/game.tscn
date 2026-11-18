@@ -3507,6 +3507,7 @@ SpikeyBall
 2007 - 2009
 R.I.P."
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="InGameMenu" type="Control" parent="." unique_id=54588509 node_paths=PackedStringArray("_cashValue", "_healthValue", "_playButton", "_fastForwardButton", "_blueArrowsDefault", "_blueArrowsPressed", "_roundValue", "_modeValue", "_rbeValue")]
 z_index = 5
@@ -3524,6 +3525,11 @@ _blueArrowsPressed = NodePath("SidePanel/UI/FastForwardButton/BlueArrowsPressed"
 _roundValue = NodePath("BottomPanel/Default/RoundValue")
 _modeValue = NodePath("BottomPanel/Default/ModeValue")
 _rbeValue = NodePath("BottomPanel/Default/RBEValue")
+
+[node name="SelectionArea" type="Control" parent="InGameMenu" unique_id=294946457]
+anchors_preset = 0
+offset_right = 700.0
+offset_bottom = 520.0
 
 [node name="SidePanel" type="Sprite2D" parent="InGameMenu" unique_id=18149238]
 position = Vector2(700, 0)

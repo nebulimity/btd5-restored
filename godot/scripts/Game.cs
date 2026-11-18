@@ -20,6 +20,9 @@ public partial class Game : Node2D
 
 		LevelDef levelDef = LevelDef.Load("MonkeyLane");
 		Level.InitializeLevel(levelDef, GameMode.Easy);
+		PackedScene mapScene = GD.Load<PackedScene>(levelDef.Asset);
+		Node2D map = mapScene.Instantiate<Node2D>();
+		AddChild(map);
 
 		if (levelDef.Music != null)
 		{
@@ -30,11 +33,6 @@ public partial class Game : Node2D
 		_bloonLayer.Initialize(Level);
 
 		_inGameMenu.Initialize(Level);
-
-		// temp
-		PackedScene mapScene = GD.Load<PackedScene>("res://scenes/maps/monkey_lane.tscn");
-		Node2D map = mapScene.Instantiate<Node2D>();
-		AddChild(map);
 	}
 
 	public override void _Process(double delta)
