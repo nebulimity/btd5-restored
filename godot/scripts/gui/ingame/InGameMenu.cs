@@ -4,6 +4,12 @@ public partial class InGameMenu : Control
 {
 	private Level _level;
 
+	public Machine StateMachine;
+	public NeutralState NeutralState;
+	public PlaceState PlaceState;
+	public TowerSelectedState TowerSelectedState;
+	public TowerNotSelectedState TowerNotSelectedState;
+
 	[Export] private Label _cashValue;
 	[Export] private Label _healthValue;
 
@@ -20,6 +26,13 @@ public partial class InGameMenu : Control
 	public void Initialize(Level level)
 	{
 		_level = level;
+		StateMachine = new Machine();
+
+		PlaceState = new PlaceState(this);
+		TowerSelectedState = new TowerSelectedState(this);
+		TowerNotSelectedState = new TowerNotSelectedState(this);
+		NeutralState = new NeutralState(this);
+		StateMachine.ChangeState(NeutralState, null);
 
 		_level.RoundStarted += OnRoundStarted;
 		_level.RoundEnded += OnRoundEnded;

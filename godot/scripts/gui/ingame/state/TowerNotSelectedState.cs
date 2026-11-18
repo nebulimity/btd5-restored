@@ -10,7 +10,7 @@ public class TowerNotSelectedState : InGameMenuState
 		GameStateMessage gameStateMessage = (GameStateMessage)message;
 		if (gameStateMessage.Tower != null)
 		{
-			// return Menu.TowerSelectedState;
+			return Menu.TowerSelectedState;
 		}
 
 		return null;

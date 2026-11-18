@@ -10,7 +10,7 @@ public enum GameStateMessageType
 public class GameStateMessage : Message
 {
 	public GameStateMessageType Type;
-	// public TowerPickerDef TowerPickerDef;
+	public TowerPickerDef TowerPickerDef;
 	public Tower Tower;
 
 	public GameStateMessage(GameStateMessageType type)

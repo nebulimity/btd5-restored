@@ -1,6 +1,6 @@
 public class TowerSelectedState : InGameMenuState
 {
-	public Tower tower;
+	public Tower Tower;
 
 	public TowerSelectedState(InGameMenu menu) : base(menu)
 	{
@@ -10,6 +10,21 @@ public class TowerSelectedState : InGameMenuState
 	public override void Enter(Message message)
 	{
 		// play select sound
-		tower = ((GameStateMessage)message).Tower;
+		Tower = ((GameStateMessage)message).Tower;
+	}
+
+	public override State HandleMessage(Message message)
+	{
+		switch (((GameStateMessage)message).Type)
+		{
+			case GameStateMessageType.TowerSelected:
+				return Menu.TowerSelectedState;
+			case GameStateMessageType.TowerNotSelected:
+				return Menu.TowerNotSelectedState;
+			case GameStateMessageType.Cancel:
+				return Menu.TowerNotSelectedState;
+			default:
+				return null;
+		}
 	}
 }
