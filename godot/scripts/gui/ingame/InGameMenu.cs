@@ -4,7 +4,7 @@ public partial class InGameMenu : Control
 {
 	private Level _level;
 
-	public Machine StateMachine;
+	private Machine _stateMachine;
 	public NeutralState NeutralState;
 	public PlaceState PlaceState;
 	public TowerSelectedState TowerSelectedState;
@@ -23,16 +23,35 @@ public partial class InGameMenu : Control
 	[Export] private Label _modeValue;
 	[Export] private Label _rbeValue;
 
+	[Export] private TextureButton _dartTower;
+	[Export] private TextureButton _tackTower;
+	[Export] private TextureButton _sniperMonkey;
+	[Export] private TextureButton _boomerangTower;
+	[Export] private TextureButton _ninjaMonkey;
+	[Export] private TextureButton _bombTower;
+	[Export] private TextureButton _iceTower;
+	[Export] private TextureButton _glueTower;
+	[Export] private TextureButton _buccaneerTower;
+	[Export] private TextureButton _aceTower;
+	[Export] private TextureButton _superTower;
+	[Export] private TextureButton _wizardTower;
+	[Export] private TextureButton _villageTower;
+	[Export] private TextureButton _farmTower;
+	[Export] private TextureButton _mortarTower;
+	[Export] private TextureButton _dartlingTower;
+	[Export] private TextureButton _spikeFactory;
+	[Export] private TextureButton _monkeySub;
+
 	public void Initialize(Level level)
 	{
 		_level = level;
-		StateMachine = new Machine();
+		_stateMachine = new Machine();
 
 		PlaceState = new PlaceState(this);
 		TowerSelectedState = new TowerSelectedState(this);
 		TowerNotSelectedState = new TowerNotSelectedState(this);
 		NeutralState = new NeutralState(this);
-		StateMachine.ChangeState(NeutralState, null);
+		_stateMachine.ChangeState(NeutralState, null);
 
 		_level.RoundStarted += OnRoundStarted;
 		_level.RoundEnded += OnRoundEnded;
@@ -44,6 +63,11 @@ public partial class InGameMenu : Control
 		_roundValue.Text = "-";
 		_modeValue.Text = _level.Mode.ToString();
 		_rbeValue.Text = "-";
+
+		TowerPickerDef topMenu = new TowerPickerDef
+		{
+			
+		};
 	}
 
 	private void OnRoundStarted()
@@ -91,6 +115,24 @@ public partial class InGameMenu : Control
 
 		_blueArrowsDefault.Visible = !isFastForward;
 		_blueArrowsPressed.Visible = isFastForward;
+	}
+
+	public void Cancel()
+	{
+		_stateMachine.Send(new GameStateMessage(GameStateMessageType.Cancel));
+	}
+
+	public void Place(TowerPickerDef towerPickerDef)
+	{
+		Cancel();
+		GameStateMessage gameStateMessage = new GameStateMessage(GameStateMessageType.TowerPlacing) { TowerPickerDef = towerPickerDef };
+		_stateMachine.Send(gameStateMessage);
+	}
+
+	public void PlaceUp(Tower tower)
+	{
+		GameStateMessage gameStateMessage = new GameStateMessage(GameStateMessageType.TowerPlaced) { Tower = tower };
+		_stateMachine.Send(gameStateMessage);
 	}
 
 	public override void _ExitTree()

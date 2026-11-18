@@ -1,6 +1,6 @@
 public class TowerPickerDef
 {
-	public TowerDef Tower { set; get; }
-	public int Cost;
-	public string ConsumeableId;
+	public TowerDef Tower { get; set; }
+	public int Cost { get; set; }
+	public string ConsumableId { get; set; }
 }

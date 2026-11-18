@@ -18,6 +18,8 @@ public class PlaceState : InGameMenuState
 		LastTowerPlaced = ((GameStateMessage)message).TowerPickerDef.Tower.Id;
 
 		_pickerDef = ((GameStateMessage)message).TowerPickerDef;
+
+		GD.Print("place state");
 	}
 
 	public override State HandleMessage(Message message)

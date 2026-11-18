@@ -1,0 +1,24 @@
+{
+	"towersInMenu": [
+		{"towerId": "DartMonkey", "button": "DartTower", "cost": 200, "unlockedAtRank": 1, "nkUpgradeId": 56, "hotKey": "q"},
+		{"towerId": "TackTower", "button": "TackTower", "cost": 360, "unlockedAtRank": 2, "nkUpgradeId": 57, "hotKey": "w"},
+		{"towerId": "SniperMonkey", "button": "SniperMonkey", "cost": 350, "unlockedAtRank": 3, "nkUpgradeId": 70, "hotKey": "e"},
+		{"towerId": "BoomerangThrower", "button": "BoomerangTower", "cost": 380, "unlockedAtRank": 4, "nkUpgradeId": 58, "hotKey": "r"},
+		{"towerId": "NinjaMonkey", "button": "NinjaMonkey", "cost": 500, "unlockedAtRank": 6, "nkUpgradeId": 71, "hotKey": "t"},
+		{"towerId": "BombTower", "button": "BombTower", "cost": 650, "unlockedAtRank": 7, "nkUpgradeId": 59, "hotKey": "y"},
+		{"towerId": "IceTower", "button": "IceTower", "cost": 300, "unlockedAtRank": 8, "nkUpgradeId": 60, "hotKey": "a"},
+		{"towerId": "GlueGunner", "button": "GlueTower", "cost": 270, "unlockedAtRank": 9, "nkUpgradeId": 61, "hotKey": "s"},
+		{"towerId": "MonkeyBuccaneer", "button": "BuccaneerTower", "cost": 500, "unlockedAtRank": 11, "nkUpgradeId": 62, "hotKey": "d"},
+		{"towerId": "MonkeyAce", "button": "AceTower", "cost": 900, "unlockedAtRank": 12, "nkUpgradeId": 63, "hotKey": "f"},
+		{"towerId": "SuperMonkey", "button": "SuperTower", "cost": 3500, "unlockedAtRank": 13, "nkUpgradeId": 64, "hotKey": "g"},
+		{"towerId": "MonkeyApprentice", "button": "WizardTower", "cost": 550, "unlockedAtRank": 14, "nkUpgradeId": 65, "hotKey": "h"},
+		{"towerId": "MonkeyVillage", "button": "VillageTower", "cost": 1600, "unlockedAtRank": 15, "nkUpgradeId": 66, "hotKey": "c"},
+		{"towerId": "BananaFarm", "button": "FarmTower", "cost": 1000, "unlockedAtRank": 16, "nkUpgradeId": 67, "hotKey": "v"},
+		{"towerId": "MortarTower", "button": "MortarTower", "cost": 750, "unlockedAtRank": 17, "nkUpgradeId": 68, "hotKey": "b"},
+		{"towerId": "DartlingGun", "button": "DartlingTower", "cost": 950, "unlockedAtRank": 18, "nkUpgradeId": 69, "hotKey": "n"},
+		{"towerId": "SpikeFactory", "button": "SpikeFactory", "cost": 750, "unlockedAtRank": 19, "nkUpgradeId": 103, "hotKey": "m"},
+		{"towerId": "MonkeySub", "button": "MonkeySub", "cost": 350, "unlockedAtRank": 20, "nkUpgradeId": 714, "hotKey": "j"},
+		{"towerId": "RoadSpikes", "button": "RoadSpikes", "cost": 30, "unlockedAtRank": 5, "hotKey": "z"},
+		{"towerId": "ExplodingPineapple", "button": "Pineapple", "cost": 25, "unlockedAtRank": 10, "hotKey": "x"}
+	]
+}

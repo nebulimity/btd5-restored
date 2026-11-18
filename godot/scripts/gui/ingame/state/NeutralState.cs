@@ -15,7 +15,7 @@ public class NeutralState : InGameMenuState
 
 	public override void Enter(Message message)
 	{
-
+		GD.Print("neutral state");
 	}
 
 	public override State HandleMessage(Message message)

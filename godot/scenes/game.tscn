@@ -3509,7 +3509,7 @@ R.I.P."
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="InGameMenu" type="Control" parent="." unique_id=54588509 node_paths=PackedStringArray("_cashValue", "_healthValue", "_playButton", "_fastForwardButton", "_blueArrowsDefault", "_blueArrowsPressed", "_roundValue", "_modeValue", "_rbeValue")]
+[node name="InGameMenu" type="Control" parent="." unique_id=54588509 node_paths=PackedStringArray("_cashValue", "_healthValue", "_playButton", "_fastForwardButton", "_blueArrowsDefault", "_blueArrowsPressed", "_roundValue", "_modeValue", "_rbeValue", "_dartTower", "_tackTower", "_sniperMonkey", "_boomerangTower", "_ninjaMonkey", "_bombTower", "_iceTower", "_glueTower", "_buccaneerTower", "_aceTower", "_superTower", "_wizardTower", "_villageTower", "_farmTower", "_mortarTower", "_dartlingTower", "_spikeFactory", "_monkeySub")]
 z_index = 5
 layout_mode = 3
 anchors_preset = 0
@@ -3525,6 +3525,24 @@ _blueArrowsPressed = NodePath("SidePanel/UI/FastForwardButton/BlueArrowsPressed"
 _roundValue = NodePath("BottomPanel/Default/RoundValue")
 _modeValue = NodePath("BottomPanel/Default/ModeValue")
 _rbeValue = NodePath("BottomPanel/Default/RBEValue")
+_dartTower = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartTower")
+_tackTower = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/TackTower")
+_sniperMonkey = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SniperMonkey")
+_boomerangTower = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BoomerangTower")
+_ninjaMonkey = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/NinjaMonkey")
+_bombTower = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BombTower")
+_iceTower = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/IceTower")
+_glueTower = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/GlueTower")
+_buccaneerTower = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BuccaneerTower")
+_aceTower = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/AceTower")
+_superTower = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SuperTower")
+_wizardTower = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/WizardTower")
+_villageTower = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/VillageTower")
+_farmTower = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/FarmTower")
+_mortarTower = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MortarTower")
+_dartlingTower = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartlingTower")
+_spikeFactory = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SpikeFactory")
+_monkeySub = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeySub")
 
 [node name="SelectionArea" type="Control" parent="InGameMenu" unique_id=294946457]
 anchors_preset = 0
@@ -3711,7 +3729,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="SniperTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1863157191]
+[node name="SniperMonkey" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1863157191]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3720,7 +3738,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SniperTower" unique_id=505338446]
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SniperMonkey" unique_id=505338446]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3755,7 +3773,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="NinjaTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1965595735]
+[node name="NinjaMonkey" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1965595735]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3764,7 +3782,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/NinjaTower" unique_id=1812318045]
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/NinjaMonkey" unique_id=1812318045]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3865,7 +3883,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="MonkeyAce" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=88032069]
+[node name="AceTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=88032069]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3874,7 +3892,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyAce" unique_id=260756424]
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/AceTower" unique_id=260756424]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3909,7 +3927,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="MonkeyApprentice" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1001875812]
+[node name="WizardTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1001875812]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3918,7 +3936,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyApprentice" unique_id=1396038875]
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/WizardTower" unique_id=1396038875]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3931,7 +3949,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="MonkeyVillage" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1812926887]
+[node name="VillageTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1812926887]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3940,7 +3958,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeyVillage" unique_id=1520503796]
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/VillageTower" unique_id=1520503796]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3953,7 +3971,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="BananaFarm" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1576221389]
+[node name="FarmTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1576221389]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3962,7 +3980,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BananaFarm" unique_id=1009057999]
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/FarmTower" unique_id=1009057999]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3997,7 +4015,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="DartlingGun" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=785645918]
+[node name="DartlingTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=785645918]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -4006,7 +4024,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartlingGun" unique_id=1388586586]
+[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartlingTower" unique_id=1388586586]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0

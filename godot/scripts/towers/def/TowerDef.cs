@@ -1,4 +1,4 @@
 public class TowerDef
 {
-	public string Id { set; get; }
+	public string Id { get; set; }
 }
