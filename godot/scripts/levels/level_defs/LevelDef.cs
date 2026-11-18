@@ -17,7 +17,7 @@ public class LevelDef
 
 	public string Id { get; set; }
 	public string Name { get; set; }
-	public string Asset { get; set; }
+	public string Scene { get; set; }
 	public string Terrain { get; set; }
 	public string Music { get; set; }
 

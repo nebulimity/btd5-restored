@@ -2,7 +2,7 @@
 	"id": "MonkeyLane",
 	"name": "Monkey Lane",
 	"difficulty": "Beginner",
-	"asset": "res://scenes/maps/monkey_lane.tscn",
+	"scene": "res://scenes/maps/monkey_lane.tscn",
 	"terrain": "assets.maps.MonkeyLaneTerrain",
 	"music": "res://assets/audio/music/main_theme.ogg",
 	"tileSets": [
