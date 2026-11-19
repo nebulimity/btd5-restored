@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /game/
+Allow: /game/btd5-restored.icon.png
+
+Sitemap: https://btd5restored.com/sitemap.xml

@@ -1,19 +1,3 @@
-:root {
-  --surface: 255, 255, 255;
-  --on-surface: 15 23 42;
-  --muted: 100 116 139;
-  --accent: 99 102 241;
-  --dot: 200 200 200;
-}
-
-html.dark {
-  --surface: 11 12 13;
-  --on-surface: 220 224 230;
-  --muted: 148 163 184;
-  --accent: 96 165 250;
-  --dot: 41 41 41;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -70,9 +54,6 @@ nav div {
   display: flex;
   align-items: center;
 }
-nav div h2 {
-  margin-right: 10px;
-}
 nav div a {
   background: url(images/menu-divider.png) right top no-repeat;
   height: 56px;
@@ -84,6 +65,14 @@ nav div a {
   line-height: 1;
   padding: 13px;
   color: white;
+}
+nav div a[aria-current="page"] {
+  color: #fff;
+  box-shadow: inset 0 -3px 0 #fff;
+}
+nav div img {
+  height: 50px;
+  width: auto;
 }
 
 a {
@@ -194,7 +183,7 @@ iframe {
     padding: 0;
   }
   nav div img {
-    width: 0;
+    display: none;
   }
 }
 @media (max-width: 511px) {

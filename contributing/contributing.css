@@ -13,6 +13,19 @@ p {
   border-bottom: 1px solid rgb(20, 20, 20);
 }
 
+p.no-border {
+  border-bottom: 0;
+}
+
+ol {
+  padding: 0 10px 15px 35px;
+  border-bottom: 1px solid rgb(20, 20, 20);
+}
+
+ol li {
+  padding-bottom: 5px;
+}
+
 .small-nav {
   border-top: 1px solid rgb(50, 55, 63);
   border-bottom: 0;
