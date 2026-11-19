@@ -1,6 +1,6 @@
 # btd5-restored-csharp <img src="godot/icon.svg" width="45" align="absbottom"/> 
 
-The original **Flash** version of _Bloons Tower Defense 5_ ported to Godot 4!
+The original **Flash** version of _Bloons TD 5_ ported to Godot 4!
 
 The main goal of this project is to bring back the old vector artwork that was sadly scrapped in favor of the new png art for the Steam/mobile version of BTD5. It also aims to have some extra quality-of-life features and much better performance than the original flash version.
 
