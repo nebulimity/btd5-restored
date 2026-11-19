@@ -1,3 +1,4 @@
+using System.Linq;
 using Godot;
 
 public partial class InGameMenu : Control
@@ -23,24 +24,8 @@ public partial class InGameMenu : Control
 	[Export] private Label _modeValue;
 	[Export] private Label _rbeValue;
 
-	[Export] private TextureButton _dartTower;
-	[Export] private TextureButton _tackTower;
-	[Export] private TextureButton _sniperMonkey;
-	[Export] private TextureButton _boomerangTower;
-	[Export] private TextureButton _ninjaMonkey;
-	[Export] private TextureButton _bombTower;
-	[Export] private TextureButton _iceTower;
-	[Export] private TextureButton _glueTower;
-	[Export] private TextureButton _buccaneerTower;
-	[Export] private TextureButton _aceTower;
-	[Export] private TextureButton _superTower;
-	[Export] private TextureButton _wizardTower;
-	[Export] private TextureButton _villageTower;
-	[Export] private TextureButton _farmTower;
-	[Export] private TextureButton _mortarTower;
-	[Export] private TextureButton _dartlingTower;
-	[Export] private TextureButton _spikeFactory;
-	[Export] private TextureButton _monkeySub;
+	[Export] private GridContainer _towerContainer;
+	[Export] private TextureButton[] _towerButtons;
 
 	public void Initialize(Level level)
 	{
@@ -63,11 +48,6 @@ public partial class InGameMenu : Control
 		_roundValue.Text = "-";
 		_modeValue.Text = _level.Mode.ToString();
 		_rbeValue.Text = "-";
-
-		TowerPickerDef topMenu = new TowerPickerDef
-		{
-			
-		};
 	}
 
 	private void OnRoundStarted()
