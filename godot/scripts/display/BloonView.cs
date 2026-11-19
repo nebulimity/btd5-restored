@@ -18,7 +18,7 @@ public partial class BloonView : Sprite2D
 
 		Texture = GD.Load<Texture2D>($"res://assets/bloons/normal/{(int)bloon.Type + 1}.svg"); // TODO: use an asset manager in the future
 		Rotation = (float)bloon.Rotation;
-		ZIndex = _lastType >= BloonType.MOAB ? Bloon.MoabLayer : _lastLayer;
+		ZIndex = _lastType >= BloonType.MOAB ? Bloon.MoabLayer : _lastLayer * 2;
 		Visible = true;
 	}
 
@@ -45,7 +45,7 @@ public partial class BloonView : Sprite2D
 			}
 			else
 			{
-				ZIndex = layer;
+				ZIndex = layer * 2;
 			}
 		}
 		if (_bloon.Type >= BloonType.MOAB)
