@@ -759,6 +759,7 @@ centered = false
 offset = Vector2(-23, 9.55)
 
 [node name="Windmill" type="Sprite2D" parent="." unique_id=32254536]
+z_index = -100
 position = Vector2(-5.25, -15.1)
 texture = ExtResource("37_a38uq")
 centered = false
@@ -769,8 +770,7 @@ position = Vector2(-16, 1)
 sprite_frames = SubResource("SpriteFrames_0goub")
 animation = &"spin"
 autoplay = "spin"
-frame = 2
-frame_progress = 0.74423957
+frame_progress = 0.63531774
 centered = false
 offset = Vector2(-34.25, -80.35)
 
