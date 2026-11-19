@@ -1,0 +1,8 @@
+{
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/faq/index.html", "destination": "/faq/", "permanent": true },
+    { "source": "/contributing/index.html", "destination": "/contributing/", "permanent": true }
+  ]
+}
