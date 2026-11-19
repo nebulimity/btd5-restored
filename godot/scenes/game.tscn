@@ -3484,7 +3484,7 @@ outline_color = Color(0.1764706, 0.2627451, 0.02745098, 1)
 
 [node name="Game" type="Node2D" unique_id=75469830 node_paths=PackedStringArray("_inGameMenu")]
 script = ExtResource("1_458eo")
-_inGameMenu = NodePath("InGameMenu")
+_inGameMenu = NodePath("UILayer/InGameMenu")
 
 [node name="Towers" type="Node2D" parent="." unique_id=2069125850]
 z_index = 1
@@ -3509,8 +3509,9 @@ R.I.P."
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="InGameMenu" type="Control" parent="." unique_id=54588509 node_paths=PackedStringArray("_selectionArea", "_cashValue", "_healthValue", "_playButton", "_fastForwardButton", "_blueArrowsDefault", "_blueArrowsPressed", "_roundValue", "_modeValue", "_rbeValue", "_towerButtons")]
-z_index = 5
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1834070986]
+
+[node name="InGameMenu" type="Control" parent="UILayer" unique_id=54588509 node_paths=PackedStringArray("_selectionArea", "_cashValue", "_healthValue", "_playButton", "_fastForwardButton", "_blueArrowsDefault", "_blueArrowsPressed", "_roundValue", "_modeValue", "_rbeValue", "_towerButtons")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 800.0
@@ -3528,23 +3529,23 @@ _modeValue = NodePath("BottomPanel/Default/ModeValue")
 _rbeValue = NodePath("BottomPanel/Default/RBEValue")
 _towerButtons = [NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/TackTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SniperMonkey"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BoomerangTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/NinjaMonkey"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BombTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/IceTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/GlueTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BuccaneerTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/AceTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SuperTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/WizardTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/VillageTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/FarmTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MortarTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartlingTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SpikeFactory"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeySub")]
 
-[node name="SelectionArea" type="Control" parent="InGameMenu" unique_id=294946457]
+[node name="SelectionArea" type="Control" parent="UILayer/InGameMenu" unique_id=294946457]
 anchors_preset = 0
 offset_right = 700.0
 offset_bottom = 520.0
 
-[node name="SidePanel" type="Sprite2D" parent="InGameMenu" unique_id=18149238]
+[node name="SidePanel" type="Sprite2D" parent="UILayer/InGameMenu" unique_id=18149238]
 position = Vector2(700, 0)
 texture = ExtResource("4_iywne")
 centered = false
 
-[node name="UI" type="Control" parent="InGameMenu/SidePanel" unique_id=1595776714]
+[node name="UI" type="Control" parent="UILayer/InGameMenu/SidePanel" unique_id=1595776714]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 103.0
 offset_bottom = 523.0
 
-[node name="PlayButton" type="TextureButton" parent="InGameMenu/SidePanel/UI" unique_id=702816261]
+[node name="PlayButton" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI" unique_id=702816261]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 452.0
@@ -3555,7 +3556,7 @@ texture_normal = ExtResource("6_kvuet")
 texture_hover = ExtResource("7_trtic")
 texture_click_mask = ExtResource("11_twgab")
 
-[node name="Label" type="Label" parent="InGameMenu/SidePanel/UI/PlayButton" unique_id=163411914]
+[node name="Label" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/PlayButton" unique_id=163411914]
 layout_mode = 0
 offset_left = 20.0
 offset_right = 77.05
@@ -3565,17 +3566,17 @@ label_settings = SubResource("LabelSettings_gee14")
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="GreenArrow" type="Sprite2D" parent="InGameMenu/SidePanel/UI/PlayButton" unique_id=1701358159]
+[node name="GreenArrow" type="Sprite2D" parent="UILayer/InGameMenu/SidePanel/UI/PlayButton" unique_id=1701358159]
 material = SubResource("ShaderMaterial_264po")
 position = Vector2(32.5, 33.050003)
 texture = ExtResource("8_gee14")
 centered = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/SidePanel/UI/PlayButton" unique_id=1315148532]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UILayer/InGameMenu/SidePanel/UI/PlayButton" unique_id=1315148532]
 libraries/ = SubResource("AnimationLibrary_vtaks")
 autoplay = &"arrow"
 
-[node name="FastForwardButton" type="TextureButton" parent="InGameMenu/SidePanel/UI" unique_id=733961887]
+[node name="FastForwardButton" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI" unique_id=733961887]
 visible = false
 layout_mode = 0
 offset_left = 1.0
@@ -3587,21 +3588,21 @@ texture_normal = ExtResource("6_kvuet")
 texture_hover = ExtResource("7_trtic")
 texture_click_mask = ExtResource("11_twgab")
 
-[node name="BlueArrowsDefault" type="Sprite2D" parent="InGameMenu/SidePanel/UI/FastForwardButton" unique_id=1616509918]
+[node name="BlueArrowsDefault" type="Sprite2D" parent="UILayer/InGameMenu/SidePanel/UI/FastForwardButton" unique_id=1616509918]
 material = SubResource("ShaderMaterial_js0lu")
 texture = ExtResource("11_v2yb1")
 centered = false
 metadata/default_texture = ExtResource("11_v2yb1")
 metadata/pressed_texture = ExtResource("12_js0lu")
 
-[node name="BlueArrowsPressed" type="Sprite2D" parent="InGameMenu/SidePanel/UI/FastForwardButton" unique_id=1329563849]
+[node name="BlueArrowsPressed" type="Sprite2D" parent="UILayer/InGameMenu/SidePanel/UI/FastForwardButton" unique_id=1329563849]
 visible = false
 texture = ExtResource("12_js0lu")
 centered = false
 metadata/default_texture = ExtResource("11_v2yb1")
 metadata/pressed_texture = ExtResource("12_js0lu")
 
-[node name="Cash" type="TextureButton" parent="InGameMenu/SidePanel/UI" unique_id=1988631090]
+[node name="Cash" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI" unique_id=1988631090]
 z_index = 1
 layout_mode = 0
 offset_left = 2.6500244
@@ -3612,7 +3613,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("14_trtic")
 texture_hover = ExtResource("15_ir15t")
 
-[node name="Value" type="Label" parent="InGameMenu/SidePanel/UI/Cash" unique_id=1593342742]
+[node name="Value" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/Cash" unique_id=1593342742]
 z_index = 5
 z_as_relative = false
 layout_mode = 0
@@ -3624,7 +3625,7 @@ text = "1234567"
 label_settings = SubResource("LabelSettings_ca42v")
 vertical_alignment = 2
 
-[node name="Health" type="TextureButton" parent="InGameMenu/SidePanel/UI" unique_id=622140715]
+[node name="Health" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI" unique_id=622140715]
 z_index = 1
 layout_mode = 0
 offset_left = 2.5
@@ -3635,7 +3636,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("12_rysoc")
 texture_hover = ExtResource("13_ssvqc")
 
-[node name="Value" type="Label" parent="InGameMenu/SidePanel/UI/Health" unique_id=2074960684]
+[node name="Value" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/Health" unique_id=2074960684]
 z_index = 5
 z_as_relative = false
 layout_mode = 0
@@ -3647,7 +3648,7 @@ text = "12345"
 label_settings = SubResource("LabelSettings_ca42v")
 vertical_alignment = 2
 
-[node name="SmoothScrollContainer" type="ScrollContainer" parent="InGameMenu/SidePanel/UI" unique_id=1098413746]
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="UILayer/InGameMenu/SidePanel/UI" unique_id=1098413746]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 81.0
@@ -3663,13 +3664,13 @@ allow_horizontal_scroll = false
 allow_overdragging = false
 metadata/_custom_type_script = "uid://bgqglerkcylxx"
 
-[node name="MarginContainer" type="MarginContainer" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer" unique_id=743107883]
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer" unique_id=743107883]
 layout_mode = 2
 theme_override_constants/margin_left = -1
 theme_override_constants/margin_top = -2
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="GridContainer" type="GridContainer" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer" unique_id=1174628144]
+[node name="GridContainer" type="GridContainer" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer" unique_id=1174628144]
 layout_mode = 2
 theme = SubResource("Theme_1kice")
 theme_override_constants/h_separation = -1
@@ -3677,7 +3678,7 @@ theme_override_constants/v_separation = 1
 columns = 2
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="DartTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1963882556]
+[node name="DartTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1963882556]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3686,12 +3687,12 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Icon" type="Sprite2D" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartTower" unique_id=639145932]
+[node name="Icon" type="Sprite2D" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartTower" unique_id=639145932]
 material = SubResource("ShaderMaterial_bt5mj")
 texture = ExtResource("15_264po")
 centered = false
 
-[node name="TackTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1876199226]
+[node name="TackTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1876199226]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3701,7 +3702,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/TackTower" unique_id=2084092998]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/TackTower" unique_id=2084092998]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3714,7 +3715,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="SniperMonkey" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1863157191]
+[node name="SniperMonkey" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1863157191]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3724,7 +3725,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SniperMonkey" unique_id=505338446]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SniperMonkey" unique_id=505338446]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3737,7 +3738,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="BoomerangTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=558366408]
+[node name="BoomerangTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=558366408]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3747,7 +3748,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BoomerangTower" unique_id=392707672]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BoomerangTower" unique_id=392707672]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3760,7 +3761,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="NinjaMonkey" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1965595735]
+[node name="NinjaMonkey" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1965595735]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3770,7 +3771,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/NinjaMonkey" unique_id=1812318045]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/NinjaMonkey" unique_id=1812318045]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3783,7 +3784,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="BombTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=2136775923]
+[node name="BombTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=2136775923]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3793,7 +3794,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BombTower" unique_id=655113378]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BombTower" unique_id=655113378]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3806,7 +3807,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="IceTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=20705111]
+[node name="IceTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=20705111]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3816,7 +3817,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/IceTower" unique_id=320162886]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/IceTower" unique_id=320162886]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3829,7 +3830,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="GlueTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1488052486]
+[node name="GlueTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1488052486]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3839,7 +3840,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/GlueTower" unique_id=1835086079]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/GlueTower" unique_id=1835086079]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3852,7 +3853,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="BuccaneerTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1479445954]
+[node name="BuccaneerTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1479445954]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3862,7 +3863,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BuccaneerTower" unique_id=307291539]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BuccaneerTower" unique_id=307291539]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3875,7 +3876,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="AceTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=88032069]
+[node name="AceTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=88032069]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3885,7 +3886,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/AceTower" unique_id=260756424]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/AceTower" unique_id=260756424]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3898,7 +3899,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="SuperTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=2098169429]
+[node name="SuperTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=2098169429]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3908,7 +3909,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SuperTower" unique_id=325142591]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SuperTower" unique_id=325142591]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3921,7 +3922,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="WizardTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1001875812]
+[node name="WizardTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1001875812]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3931,7 +3932,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/WizardTower" unique_id=1396038875]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/WizardTower" unique_id=1396038875]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3944,7 +3945,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="VillageTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1812926887]
+[node name="VillageTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1812926887]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3954,7 +3955,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/VillageTower" unique_id=1520503796]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/VillageTower" unique_id=1520503796]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3967,7 +3968,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="FarmTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1576221389]
+[node name="FarmTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1576221389]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -3977,7 +3978,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/FarmTower" unique_id=1009057999]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/FarmTower" unique_id=1009057999]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -3990,7 +3991,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="MortarTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=962375264]
+[node name="MortarTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=962375264]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -4000,7 +4001,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MortarTower" unique_id=1889034037]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MortarTower" unique_id=1889034037]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -4013,7 +4014,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="DartlingTower" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=785645918]
+[node name="DartlingTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=785645918]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -4023,7 +4024,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartlingTower" unique_id=1388586586]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartlingTower" unique_id=1388586586]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -4036,7 +4037,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="SpikeFactory" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=73172947]
+[node name="SpikeFactory" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=73172947]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -4046,7 +4047,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SpikeFactory" unique_id=1740369116]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SpikeFactory" unique_id=1740369116]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -4059,7 +4060,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="MonkeySub" type="TextureButton" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=417394309]
+[node name="MonkeySub" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=417394309]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -4069,7 +4070,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeySub" unique_id=1885245537]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeySub" unique_id=1885245537]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -4082,13 +4083,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="BottomPanel" type="Sprite2D" parent="InGameMenu" unique_id=1687022566]
+[node name="BottomPanel" type="Sprite2D" parent="UILayer/InGameMenu" unique_id=1687022566]
 position = Vector2(0, 520)
 texture = ExtResource("5_p57ef")
 centered = false
 offset = Vector2(-50.95, 0)
 
-[node name="Default" type="Control" parent="InGameMenu/BottomPanel" unique_id=47416990]
+[node name="Default" type="Control" parent="UILayer/InGameMenu/BottomPanel" unique_id=47416990]
 layout_mode = 3
 anchor_left = 0.058000002
 anchor_top = 0.049000002
@@ -4099,7 +4100,7 @@ offset_top = 0.029999971
 offset_right = 647.568
 offset_bottom = 74.08
 
-[node name="SpecialAgents" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=1134641947]
+[node name="SpecialAgents" type="Label" parent="UILayer/InGameMenu/BottomPanel/Default" unique_id=1134641947]
 layout_mode = 0
 offset_left = 12.25
 offset_top = 2.5
@@ -4109,7 +4110,7 @@ text = "Special
 Agents"
 label_settings = SubResource("LabelSettings_7025r")
 
-[node name="Round" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=1126107485]
+[node name="Round" type="Label" parent="UILayer/InGameMenu/BottomPanel/Default" unique_id=1126107485]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 51.0
@@ -4119,7 +4120,7 @@ text = "Round"
 label_settings = SubResource("LabelSettings_m4url")
 horizontal_alignment = 2
 
-[node name="RoundValue" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=1278775506]
+[node name="RoundValue" type="Label" parent="UILayer/InGameMenu/BottomPanel/Default" unique_id=1278775506]
 layout_mode = 0
 offset_left = 64.5
 offset_top = 52.5
@@ -4128,7 +4129,7 @@ offset_bottom = 75.05
 text = "12345678"
 label_settings = SubResource("LabelSettings_8ool0")
 
-[node name="Mode" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=442717442]
+[node name="Mode" type="Label" parent="UILayer/InGameMenu/BottomPanel/Default" unique_id=442717442]
 layout_mode = 0
 offset_left = 153.95
 offset_top = 50.5
@@ -4138,7 +4139,7 @@ text = "Mode"
 label_settings = SubResource("LabelSettings_m4url")
 horizontal_alignment = 1
 
-[node name="ModeValue" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=1450418430]
+[node name="ModeValue" type="Label" parent="UILayer/InGameMenu/BottomPanel/Default" unique_id=1450418430]
 layout_mode = 0
 offset_left = 210.05
 offset_top = 52.0
@@ -4147,7 +4148,7 @@ offset_bottom = 75.55
 text = "fdsfd"
 label_settings = SubResource("LabelSettings_8ool0")
 
-[node name="RBE" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=1495599528]
+[node name="RBE" type="Label" parent="UILayer/InGameMenu/BottomPanel/Default" unique_id=1495599528]
 layout_mode = 0
 offset_left = 313.95
 offset_top = 50.5
@@ -4157,7 +4158,7 @@ text = "RBE"
 label_settings = SubResource("LabelSettings_m4url")
 horizontal_alignment = 2
 
-[node name="RBEValue" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=754540442]
+[node name="RBEValue" type="Label" parent="UILayer/InGameMenu/BottomPanel/Default" unique_id=754540442]
 layout_mode = 0
 offset_left = 362.45
 offset_top = 52.0
@@ -4166,7 +4167,7 @@ offset_bottom = 75.55
 text = "1234567"
 label_settings = SubResource("LabelSettings_8ool0")
 
-[node name="Rank" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=928219076]
+[node name="Rank" type="Label" parent="UILayer/InGameMenu/BottomPanel/Default" unique_id=928219076]
 layout_mode = 0
 offset_left = 427.95
 offset_top = 51.0
@@ -4176,7 +4177,7 @@ text = "Rank"
 label_settings = SubResource("LabelSettings_m4url")
 horizontal_alignment = 2
 
-[node name="RankValue" type="Label" parent="InGameMenu/BottomPanel/Default" unique_id=1583875818]
+[node name="RankValue" type="Label" parent="UILayer/InGameMenu/BottomPanel/Default" unique_id=1583875818]
 layout_mode = 0
 offset_left = 481.95
 offset_top = 53.0
@@ -4185,7 +4186,7 @@ offset_bottom = 76.55
 text = "999"
 label_settings = SubResource("LabelSettings_8ool0")
 
-[node name="Misc" type="Control" parent="InGameMenu/BottomPanel" unique_id=591304579]
+[node name="Misc" type="Control" parent="UILayer/InGameMenu/BottomPanel" unique_id=591304579]
 layout_mode = 3
 anchor_left = 0.058000002
 anchor_top = 0.049000002
@@ -4196,7 +4197,7 @@ offset_top = -0.92001224
 offset_right = 750.568
 offset_bottom = 74.08
 
-[node name="Default" type="Control" parent="InGameMenu/BottomPanel/Misc" unique_id=133370570]
+[node name="Default" type="Control" parent="UILayer/InGameMenu/BottomPanel/Misc" unique_id=133370570]
 layout_mode = 1
 anchor_left = 0.058000002
 anchor_top = 0.049000002
@@ -4207,7 +4208,7 @@ offset_top = -3.675001
 offset_right = 97.026
 offset_bottom = 71.32501
 
-[node name="SaveButton" type="TextureButton" parent="InGameMenu/BottomPanel/Misc/Default" unique_id=1369328247]
+[node name="SaveButton" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/Misc/Default" unique_id=1369328247]
 layout_mode = 0
 offset_left = 0.5499878
 offset_top = -0.4000244
@@ -4218,7 +4219,7 @@ texture_normal = ExtResource("21_pl11u")
 texture_hover = ExtResource("22_bhx41")
 texture_click_mask = ExtResource("31_nepv3")
 
-[node name="Label" type="Label" parent="InGameMenu/BottomPanel/Misc/Default/SaveButton" unique_id=488412549]
+[node name="Label" type="Label" parent="UILayer/InGameMenu/BottomPanel/Misc/Default/SaveButton" unique_id=488412549]
 layout_mode = 0
 offset_left = 7.300003
 offset_top = 14.400002
@@ -4228,7 +4229,7 @@ rotation = -0.1308997
 text = "SAVE"
 label_settings = SubResource("LabelSettings_pr1ej")
 
-[node name="MenuButton" type="TextureButton" parent="InGameMenu/BottomPanel/Misc/Default" unique_id=930588828]
+[node name="MenuButton" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/Misc/Default" unique_id=930588828]
 layout_mode = 0
 offset_left = 1.4500122
 offset_top = 37.5
@@ -4239,7 +4240,7 @@ texture_normal = ExtResource("24_sww3w")
 texture_hover = ExtResource("25_suyxu")
 texture_click_mask = ExtResource("35_7025r")
 
-[node name="SfxButton" type="TextureButton" parent="InGameMenu/BottomPanel/Misc/Default" unique_id=1766881860]
+[node name="SfxButton" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/Misc/Default" unique_id=1766881860]
 layout_mode = 0
 offset_left = 65.45001
 offset_top = 37.5
@@ -4254,7 +4255,7 @@ metadata/pressed_texture = ExtResource("40_05nbr")
 metadata/default_outlined = ExtResource("29_gxtfn")
 metadata/pressed_outlined = ExtResource("41_0sl42")
 
-[node name="MusicButton" type="TextureButton" parent="InGameMenu/BottomPanel/Misc/Default" unique_id=1076911557]
+[node name="MusicButton" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/Misc/Default" unique_id=1076911557]
 layout_mode = 0
 offset_left = 33.45
 offset_top = 37.5
@@ -4269,7 +4270,7 @@ metadata/pressed_texture = ExtResource("44_oaba0")
 metadata/default_outlined = ExtResource("27_v2yb1")
 metadata/pressed_outlined = ExtResource("45_458eo")
 
-[node name="UpgradePanel" type="Control" parent="InGameMenu/BottomPanel" unique_id=1543204309]
+[node name="UpgradePanel" type="Control" parent="UILayer/InGameMenu/BottomPanel" unique_id=1543204309]
 visible = false
 layout_mode = 3
 anchor_left = 0.058000002
@@ -4281,7 +4282,7 @@ offset_top = 0.029999971
 offset_right = 647.568
 offset_bottom = 74.08
 
-[node name="TowerName" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=1022768758]
+[node name="TowerName" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=1022768758]
 layout_mode = 0
 offset_left = 85.95
 offset_top = -0.95002437
@@ -4290,7 +4291,7 @@ offset_bottom = 36.349976
 text = "Dart Monkey"
 label_settings = SubResource("LabelSettings_l6q63")
 
-[node name="PopCount" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=1334032059]
+[node name="PopCount" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=1334032059]
 layout_mode = 0
 offset_left = 85.95
 offset_top = 24.050013
@@ -4300,7 +4301,7 @@ text = "Pop Count"
 label_settings = SubResource("LabelSettings_mmvbu")
 vertical_alignment = 1
 
-[node name="Count" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/PopCount" unique_id=995886537]
+[node name="Count" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/PopCount" unique_id=995886537]
 layout_mode = 0
 offset_left = 75.0
 offset_top = 3.0
@@ -4309,7 +4310,7 @@ offset_bottom = 22.899998
 text = "0"
 label_settings = SubResource("LabelSettings_weeiq")
 
-[node name="DetailView" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=1175597300]
+[node name="DetailView" type="TextureRect" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=1175597300]
 layout_mode = 0
 offset_left = 5.95
 offset_top = 0.5
@@ -4317,11 +4318,11 @@ offset_right = 5.95
 offset_bottom = 0.5
 texture = ExtResource("38_pf7vy")
 
-[node name="Image" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/DetailView" unique_id=1778125575]
+[node name="Image" type="Sprite2D" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/DetailView" unique_id=1778125575]
 position = Vector2(38.5, 36.5)
 texture = ExtResource("39_o8ni1")
 
-[node name="First" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=716624760]
+[node name="First" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=716624760]
 layout_mode = 0
 offset_left = 79.95
 offset_top = 41.049988
@@ -4331,7 +4332,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("40_3hbvx")
 texture_hover = ExtResource("41_q8j3a")
 
-[node name="Text" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/First" unique_id=369645202]
+[node name="Text" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/First" unique_id=369645202]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 7.0
@@ -4342,7 +4343,7 @@ label_settings = SubResource("LabelSettings_uxocx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Last" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=1287114536]
+[node name="Last" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=1287114536]
 layout_mode = 0
 offset_left = 140.95
 offset_top = 41.049988
@@ -4352,7 +4353,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("40_3hbvx")
 texture_hover = ExtResource("41_q8j3a")
 
-[node name="Text" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Last" unique_id=1621970747]
+[node name="Text" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Last" unique_id=1621970747]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 7.0
@@ -4363,7 +4364,7 @@ label_settings = SubResource("LabelSettings_uxocx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Close" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=3395456]
+[node name="Close" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=3395456]
 layout_mode = 0
 offset_left = 201.95
 offset_top = 41.049988
@@ -4373,7 +4374,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("40_3hbvx")
 texture_hover = ExtResource("41_q8j3a")
 
-[node name="Text" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Close" unique_id=1679822858]
+[node name="Text" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Close" unique_id=1679822858]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 7.0
@@ -4384,7 +4385,7 @@ label_settings = SubResource("LabelSettings_uxocx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Strong" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=2002364323]
+[node name="Strong" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=2002364323]
 layout_mode = 0
 offset_left = 262.95
 offset_top = 41.049988
@@ -4394,7 +4395,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("40_3hbvx")
 texture_hover = ExtResource("41_q8j3a")
 
-[node name="Text" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Strong" unique_id=1310383708]
+[node name="Text" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Strong" unique_id=1310383708]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 7.0
@@ -4405,7 +4406,7 @@ label_settings = SubResource("LabelSettings_uxocx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Sell" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=1909931360]
+[node name="Sell" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=1909931360]
 layout_mode = 0
 offset_left = 246.95001
 offset_top = -1.9500122
@@ -4415,7 +4416,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("42_ms3bu")
 texture_hover = ExtResource("43_7ixpq")
 
-[node name="Text" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Sell" unique_id=764375705]
+[node name="Text" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Sell" unique_id=764375705]
 layout_mode = 0
 offset_left = 4.9999847
 offset_top = 5.0
@@ -4427,28 +4428,28 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Path1" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=776454459]
+[node name="Path1" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=776454459]
 anchors_preset = 0
 offset_left = 327.5
 offset_top = 0.049987793
 offset_right = 511.95
 offset_bottom = 74.04999
 
-[node name="PreviousUpgrade" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=1621809625]
+[node name="PreviousUpgrade" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=1621809625]
 anchors_preset = 0
 offset_right = 103.0
 offset_bottom = 74.0
 
-[node name="NotUpgraded" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade" unique_id=1807097769]
+[node name="NotUpgraded" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade" unique_id=1807097769]
 anchors_preset = 0
 offset_right = 103.0
 offset_bottom = 64.0
 
-[node name="Background" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/NotUpgraded" unique_id=1515517659]
+[node name="Background" type="TextureRect" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/NotUpgraded" unique_id=1515517659]
 layout_mode = 0
 texture = ExtResource("44_bk1p3")
 
-[node name="NotUpgraded" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/NotUpgraded" unique_id=225206140]
+[node name="NotUpgraded" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/NotUpgraded" unique_id=225206140]
 layout_mode = 0
 offset_left = 4.450012
 offset_top = 3.0
@@ -4457,7 +4458,7 @@ offset_bottom = 26.0
 text = "Not Upgraded"
 label_settings = SubResource("LabelSettings_o8oq8")
 
-[node name="Path" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/NotUpgraded" unique_id=1688917271]
+[node name="Path" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/NotUpgraded" unique_id=1688917271]
 layout_mode = 0
 offset_left = 4.450012
 offset_top = 47.0
@@ -4466,7 +4467,7 @@ offset_bottom = 70.0
 text = "PATH"
 label_settings = SubResource("LabelSettings_o8oq8")
 
-[node name="PathNumber" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/NotUpgraded" unique_id=564929175]
+[node name="PathNumber" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/NotUpgraded" unique_id=564929175]
 layout_mode = 0
 offset_left = 42.450012
 offset_top = 47.0
@@ -4475,33 +4476,33 @@ offset_bottom = 70.0
 text = "1"
 label_settings = SubResource("LabelSettings_o8oq8")
 
-[node name="Bought" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade" unique_id=313976472]
+[node name="Bought" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade" unique_id=313976472]
 visible = false
 anchors_preset = 0
 offset_right = 103.0
 offset_bottom = 64.0
 
-[node name="Background" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought" unique_id=1537358133]
+[node name="Background" type="TextureRect" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought" unique_id=1537358133]
 layout_mode = 0
 texture = ExtResource("45_n8ral")
 
-[node name="Color" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought" unique_id=1383429696]
+[node name="Color" type="TextureRect" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought" unique_id=1383429696]
 modulate = Color(0.5764706, 0.91764706, 0.16470589, 0.49803922)
 layout_mode = 0
 texture = ExtResource("46_yd4ix")
 
-[node name="ClipMask" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought" unique_id=1669123725]
+[node name="ClipMask" type="TextureRect" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought" unique_id=1669123725]
 clip_children = 1
 layout_mode = 0
 texture = ExtResource("47_66xif")
 
-[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought/ClipMask" unique_id=1145558016]
+[node name="Thumbnail" type="Sprite2D" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought/ClipMask" unique_id=1145558016]
 position = Vector2(124.7, 36)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought/ClipMask" unique_id=223525910]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought/ClipMask" unique_id=223525910]
 libraries/ = SubResource("AnimationLibrary_sxt1d")
 
-[node name="Bought" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought" unique_id=343986834]
+[node name="Bought" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/Bought" unique_id=343986834]
 layout_mode = 0
 offset_left = 6.450012
 offset_top = 3.0
@@ -4510,26 +4511,26 @@ offset_bottom = 26.0
 text = "BOUGHT"
 label_settings = SubResource("LabelSettings_2iuns")
 
-[node name="TierBar" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade" unique_id=1478499570]
+[node name="TierBar" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade" unique_id=1478499570]
 anchors_preset = 0
 offset_left = 2.0
 offset_top = 63.0
 offset_right = 99.0
 offset_bottom = 74.0
 
-[node name="Bar" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/TierBar" unique_id=994669528]
+[node name="Bar" type="TextureRect" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/PreviousUpgrade/TierBar" unique_id=994669528]
 layout_mode = 0
 offset_right = 97.0
 offset_bottom = 11.0
 texture = ExtResource("48_bnuda")
 
-[node name="Buy" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=624597285]
+[node name="Buy" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=624597285]
 anchors_preset = 0
 offset_left = 80.5
 offset_right = 184.5
 offset_bottom = 74.0
 
-[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/Buy" unique_id=8217350]
+[node name="Button" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/Buy" unique_id=8217350]
 clip_contents = true
 layout_mode = 0
 offset_right = 104.0
@@ -4538,10 +4539,10 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("49_0rmfi")
 texture_hover = SubResource("DPITexture_7gkqi")
 
-[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/Buy/Button" unique_id=1465340556]
+[node name="Thumbnail" type="Sprite2D" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/Buy/Button" unique_id=1465340556]
 position = Vector2(54.75, 36)
 
-[node name="Buy" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/Buy/Button" unique_id=734426365]
+[node name="Buy" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/Buy/Button" unique_id=734426365]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 6.0
@@ -4552,7 +4553,7 @@ text = "BUY"
 label_settings = SubResource("LabelSettings_753oq")
 horizontal_alignment = 2
 
-[node name="Cost" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/Buy/Button" unique_id=1085326338]
+[node name="Cost" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/Buy/Button" unique_id=1085326338]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 55.0
@@ -4562,17 +4563,17 @@ text = "$140"
 label_settings = SubResource("LabelSettings_753oq")
 horizontal_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/Buy/Button" unique_id=1035209895]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/Buy/Button" unique_id=1035209895]
 libraries/ = SubResource("AnimationLibrary_3x338")
 
-[node name="CantAfford" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=486511104]
+[node name="CantAfford" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=486511104]
 visible = false
 anchors_preset = 0
 offset_left = 80.5
 offset_right = 184.5
 offset_bottom = 74.0
 
-[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford" unique_id=1277430581]
+[node name="Button" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford" unique_id=1277430581]
 clip_contents = true
 layout_mode = 0
 offset_right = 104.0
@@ -4580,11 +4581,11 @@ offset_bottom = 74.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("50_xbak0")
 
-[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford/Button" unique_id=1195344555]
+[node name="Thumbnail" type="Sprite2D" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford/Button" unique_id=1195344555]
 material = SubResource("ShaderMaterial_1yg85")
 position = Vector2(54.75, 36)
 
-[node name="CantAfford" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford/Button" unique_id=1050464135]
+[node name="CantAfford" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford/Button" unique_id=1050464135]
 layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
@@ -4595,7 +4596,7 @@ text = "CANT AFFORD"
 label_settings = SubResource("LabelSettings_s0g06")
 horizontal_alignment = 2
 
-[node name="Cost" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford/Button" unique_id=2074894937]
+[node name="Cost" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford/Button" unique_id=2074894937]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 55.0
@@ -4605,17 +4606,17 @@ text = "$140"
 label_settings = SubResource("LabelSettings_2gnni")
 horizontal_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford/Button" unique_id=1796855648]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/CantAfford/Button" unique_id=1796855648]
 libraries/ = SubResource("AnimationLibrary_3x338")
 
-[node name="PathClosed" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=275015225]
+[node name="PathClosed" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=275015225]
 visible = false
 anchors_preset = 0
 offset_left = 80.5
 offset_right = 184.5
 offset_bottom = 74.0
 
-[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PathClosed" unique_id=1101566269]
+[node name="Button" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/PathClosed" unique_id=1101566269]
 clip_contents = true
 layout_mode = 0
 offset_right = 104.0
@@ -4623,7 +4624,7 @@ offset_bottom = 74.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("50_xbak0")
 
-[node name="PathClosed" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/PathClosed/Button" unique_id=1812058429]
+[node name="PathClosed" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/PathClosed/Button" unique_id=1812058429]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 17.0
@@ -4635,14 +4636,14 @@ label_settings = SubResource("LabelSettings_vgxg3")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="MaxUpgrades" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=603634803]
+[node name="MaxUpgrades" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=603634803]
 visible = false
 anchors_preset = 0
 offset_left = 80.5
 offset_right = 184.5
 offset_bottom = 74.0
 
-[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/MaxUpgrades" unique_id=4718424]
+[node name="Button" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/MaxUpgrades" unique_id=4718424]
 clip_contents = true
 layout_mode = 0
 offset_right = 104.0
@@ -4650,7 +4651,7 @@ offset_bottom = 74.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("52_3x28f")
 
-[node name="PathClosed" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path1/MaxUpgrades/Button" unique_id=1054781961]
+[node name="PathClosed" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1/MaxUpgrades/Button" unique_id=1054781961]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 19.0
@@ -4662,28 +4663,28 @@ label_settings = SubResource("LabelSettings_4nbsr")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Path2" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel" unique_id=1298853064]
+[node name="Path2" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=1298853064]
 anchors_preset = 0
 offset_left = 512.5
 offset_top = 0.05
 offset_right = 696.95
 offset_bottom = 74.05
 
-[node name="PreviousUpgrade" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=2099069043]
+[node name="PreviousUpgrade" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=2099069043]
 anchors_preset = 0
 offset_right = 103.0
 offset_bottom = 74.0
 
-[node name="NotUpgraded" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade" unique_id=1558180198]
+[node name="NotUpgraded" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade" unique_id=1558180198]
 anchors_preset = 0
 offset_right = 103.0
 offset_bottom = 64.0
 
-[node name="Background" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/NotUpgraded" unique_id=1790776215]
+[node name="Background" type="TextureRect" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/NotUpgraded" unique_id=1790776215]
 layout_mode = 0
 texture = ExtResource("44_bk1p3")
 
-[node name="NotUpgraded" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/NotUpgraded" unique_id=1062822367]
+[node name="NotUpgraded" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/NotUpgraded" unique_id=1062822367]
 layout_mode = 0
 offset_left = 4.450012
 offset_top = 3.0
@@ -4692,7 +4693,7 @@ offset_bottom = 26.0
 text = "Not Upgraded"
 label_settings = SubResource("LabelSettings_o8oq8")
 
-[node name="Path" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/NotUpgraded" unique_id=743182641]
+[node name="Path" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/NotUpgraded" unique_id=743182641]
 layout_mode = 0
 offset_left = 4.450012
 offset_top = 47.0
@@ -4701,7 +4702,7 @@ offset_bottom = 70.0
 text = "PATH"
 label_settings = SubResource("LabelSettings_o8oq8")
 
-[node name="PathNumber" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/NotUpgraded" unique_id=434909750]
+[node name="PathNumber" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/NotUpgraded" unique_id=434909750]
 layout_mode = 0
 offset_left = 42.450012
 offset_top = 47.0
@@ -4710,33 +4711,33 @@ offset_bottom = 70.0
 text = "2"
 label_settings = SubResource("LabelSettings_o8oq8")
 
-[node name="Bought" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade" unique_id=1938963298]
+[node name="Bought" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade" unique_id=1938963298]
 visible = false
 anchors_preset = 0
 offset_right = 103.0
 offset_bottom = 64.0
 
-[node name="Background" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought" unique_id=1887461355]
+[node name="Background" type="TextureRect" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought" unique_id=1887461355]
 layout_mode = 0
 texture = ExtResource("45_n8ral")
 
-[node name="Color" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought" unique_id=1482778514]
+[node name="Color" type="TextureRect" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought" unique_id=1482778514]
 modulate = Color(0.5764706, 0.91764706, 0.16470589, 0.49803922)
 layout_mode = 0
 texture = ExtResource("46_yd4ix")
 
-[node name="ClipMask" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought" unique_id=570215274]
+[node name="ClipMask" type="TextureRect" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought" unique_id=570215274]
 clip_children = 1
 layout_mode = 0
 texture = ExtResource("47_66xif")
 
-[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought/ClipMask" unique_id=1473927221]
+[node name="Thumbnail" type="Sprite2D" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought/ClipMask" unique_id=1473927221]
 position = Vector2(124.7, 36)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought/ClipMask" unique_id=1864520566]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought/ClipMask" unique_id=1864520566]
 libraries/ = SubResource("AnimationLibrary_sxt1d")
 
-[node name="Bought" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought" unique_id=1314134383]
+[node name="Bought" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/Bought" unique_id=1314134383]
 layout_mode = 0
 offset_left = 6.450012
 offset_top = 3.0
@@ -4745,26 +4746,26 @@ offset_bottom = 26.0
 text = "BOUGHT"
 label_settings = SubResource("LabelSettings_2iuns")
 
-[node name="TierBar" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade" unique_id=1888422513]
+[node name="TierBar" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade" unique_id=1888422513]
 anchors_preset = 0
 offset_left = 2.0
 offset_top = 63.0
 offset_right = 99.0
 offset_bottom = 74.0
 
-[node name="Bar" type="TextureRect" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/TierBar" unique_id=485394434]
+[node name="Bar" type="TextureRect" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/PreviousUpgrade/TierBar" unique_id=485394434]
 layout_mode = 0
 offset_right = 97.0
 offset_bottom = 11.0
 texture = ExtResource("48_bnuda")
 
-[node name="Buy" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=439095458]
+[node name="Buy" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=439095458]
 anchors_preset = 0
 offset_left = 80.5
 offset_right = 184.5
 offset_bottom = 74.0
 
-[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/Buy" unique_id=1442768166]
+[node name="Button" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/Buy" unique_id=1442768166]
 clip_contents = true
 layout_mode = 0
 offset_right = 104.0
@@ -4773,10 +4774,10 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("49_0rmfi")
 texture_hover = SubResource("DPITexture_7gkqi")
 
-[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/Buy/Button" unique_id=779432623]
+[node name="Thumbnail" type="Sprite2D" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/Buy/Button" unique_id=779432623]
 position = Vector2(54.75, 36)
 
-[node name="Buy" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/Buy/Button" unique_id=917585071]
+[node name="Buy" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/Buy/Button" unique_id=917585071]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 6.0
@@ -4787,7 +4788,7 @@ text = "BUY"
 label_settings = SubResource("LabelSettings_753oq")
 horizontal_alignment = 2
 
-[node name="Cost" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/Buy/Button" unique_id=1311048256]
+[node name="Cost" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/Buy/Button" unique_id=1311048256]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 55.0
@@ -4797,17 +4798,17 @@ text = "$140"
 label_settings = SubResource("LabelSettings_753oq")
 horizontal_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/Buy/Button" unique_id=1118584634]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/Buy/Button" unique_id=1118584634]
 libraries/ = SubResource("AnimationLibrary_3x338")
 
-[node name="CantAfford" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=1131863904]
+[node name="CantAfford" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=1131863904]
 visible = false
 anchors_preset = 0
 offset_left = 80.5
 offset_right = 184.5
 offset_bottom = 74.0
 
-[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford" unique_id=835077338]
+[node name="Button" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford" unique_id=835077338]
 clip_contents = true
 layout_mode = 0
 offset_right = 104.0
@@ -4815,11 +4816,11 @@ offset_bottom = 74.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("50_xbak0")
 
-[node name="Thumbnail" type="Sprite2D" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford/Button" unique_id=157828318]
+[node name="Thumbnail" type="Sprite2D" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford/Button" unique_id=157828318]
 material = SubResource("ShaderMaterial_1yg85")
 position = Vector2(54.75, 36)
 
-[node name="CantAfford" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford/Button" unique_id=472509286]
+[node name="CantAfford" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford/Button" unique_id=472509286]
 layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
@@ -4830,7 +4831,7 @@ text = "CANT AFFORD"
 label_settings = SubResource("LabelSettings_s0g06")
 horizontal_alignment = 2
 
-[node name="Cost" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford/Button" unique_id=525878555]
+[node name="Cost" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford/Button" unique_id=525878555]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 55.0
@@ -4840,17 +4841,17 @@ text = "$140"
 label_settings = SubResource("LabelSettings_2gnni")
 horizontal_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford/Button" unique_id=795517160]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/CantAfford/Button" unique_id=795517160]
 libraries/ = SubResource("AnimationLibrary_3x338")
 
-[node name="PathClosed" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=2086249951]
+[node name="PathClosed" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=2086249951]
 visible = false
 anchors_preset = 0
 offset_left = 80.5
 offset_right = 184.5
 offset_bottom = 74.0
 
-[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PathClosed" unique_id=570359609]
+[node name="Button" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/PathClosed" unique_id=570359609]
 clip_contents = true
 layout_mode = 0
 offset_right = 104.0
@@ -4858,7 +4859,7 @@ offset_bottom = 74.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("50_xbak0")
 
-[node name="PathClosed" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/PathClosed/Button" unique_id=854847710]
+[node name="PathClosed" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/PathClosed/Button" unique_id=854847710]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 17.0
@@ -4870,14 +4871,14 @@ label_settings = SubResource("LabelSettings_vgxg3")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="MaxUpgrades" type="Control" parent="InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=139809768]
+[node name="MaxUpgrades" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=139809768]
 visible = false
 anchors_preset = 0
 offset_left = 80.5
 offset_right = 184.5
 offset_bottom = 74.0
 
-[node name="Button" type="TextureButton" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/MaxUpgrades" unique_id=1675339565]
+[node name="Button" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/MaxUpgrades" unique_id=1675339565]
 clip_contents = true
 layout_mode = 0
 offset_right = 104.0
@@ -4885,7 +4886,7 @@ offset_bottom = 74.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("52_3x28f")
 
-[node name="PathClosed" type="Label" parent="InGameMenu/BottomPanel/UpgradePanel/Path2/MaxUpgrades/Button" unique_id=518580514]
+[node name="PathClosed" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2/MaxUpgrades/Button" unique_id=518580514]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 19.0
@@ -4901,6 +4902,6 @@ autowrap_mode = 2
 offset = Vector2(2, 0)
 anchor_mode = 0
 
-[connection signal="gui_input" from="InGameMenu/SelectionArea" to="InGameMenu" method="OnSelectionAreaGuiInput"]
-[connection signal="pressed" from="InGameMenu/SidePanel/UI/PlayButton" to="InGameMenu" method="OnPlayButtonPressed"]
-[connection signal="pressed" from="InGameMenu/SidePanel/UI/FastForwardButton" to="InGameMenu" method="OnFastForwardButtonPressed"]
+[connection signal="gui_input" from="UILayer/InGameMenu/SelectionArea" to="UILayer/InGameMenu" method="OnSelectionAreaGuiInput"]
+[connection signal="pressed" from="UILayer/InGameMenu/SidePanel/UI/PlayButton" to="UILayer/InGameMenu" method="OnPlayButtonPressed"]
+[connection signal="pressed" from="UILayer/InGameMenu/SidePanel/UI/FastForwardButton" to="UILayer/InGameMenu" method="OnFastForwardButtonPressed"]

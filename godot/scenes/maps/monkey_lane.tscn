@@ -722,34 +722,34 @@ _source = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>
 "
 
 [node name="MonkeyLane" type="Node2D" unique_id=2060388670]
-z_index = -1
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1383418003]
-z_index = -10
+z_index = -100
 position = Vector2(0, -1)
 scale = Vector2(0.278, 0.278)
 texture = ExtResource("1_w4170")
 centered = false
 
 [node name="Shadows" type="Sprite2D" parent="." unique_id=1023289532]
-z_index = -10
+z_index = -100
 position = Vector2(420.00003, 401)
 scale = Vector2(0.278, 0.278)
 texture = ExtResource("75_23ykd")
 
 [node name="Track" type="Sprite2D" parent="." unique_id=200331857]
-z_index = -10
+z_index = -100
 position = Vector2(400, 299)
 scale = Vector2(0.278, 0.278)
 texture = ExtResource("3_23ykd")
 
 [node name="Shading" type="Sprite2D" parent="." unique_id=213058840]
-z_index = -10
+z_index = -100
 position = Vector2(362, 397.00003)
 scale = Vector2(0.278, 0.278)
 texture = ExtResource("4_ufox8")
 
 [node name="WindmillShadow" type="AnimatedSprite2D" parent="." unique_id=2114755469]
+z_index = -100
 sprite_frames = SubResource("SpriteFrames_jaofu")
 animation = &"spin"
 autoplay = "spin"
@@ -764,7 +764,7 @@ texture = ExtResource("37_a38uq")
 centered = false
 
 [node name="WindmillRotor" type="AnimatedSprite2D" parent="." unique_id=253421154]
-z_index = 4
+z_index = 60
 position = Vector2(-16, 1)
 sprite_frames = SubResource("SpriteFrames_0goub")
 animation = &"spin"
@@ -773,20 +773,21 @@ frame = 2
 frame_progress = 0.74423957
 centered = false
 offset = Vector2(-34.25, -80.35)
-metadata/_custom_type_script = "uid://bjp8ype06g7as"
 
 [node name="TunnelCover" type="Sprite2D" parent="." unique_id=869181813]
+z_index = -3
 position = Vector2(286, 382)
 scale = Vector2(0.278, 0.278)
 texture = ExtResource("69_wl5al")
 
 [node name="TunnelCover2" type="Sprite2D" parent="." unique_id=110915962]
+z_index = -1
 position = Vector2(454, 382.12448)
 scale = Vector2(0.278, 0.27930245)
 texture = ExtResource("74_ufox8")
 
 [node name="Trees" type="Sprite2D" parent="." unique_id=185066316]
-z_index = 4
+z_index = 60
 position = Vector2(-54, -82)
 texture = SubResource("DPITexture_yiucl")
 centered = false
