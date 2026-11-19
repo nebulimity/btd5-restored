@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/windmill.svg-820f3d5fa5e270fd60cb180a165270ab
 base_scale=1.0
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true
