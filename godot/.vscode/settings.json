@@ -7,5 +7,9 @@
 		"editor.formatOnPaste": true,
 		"files.insertFinalNewline": true,
 		"files.trimFinalNewlines": true
+	},
+
+	"files.exclude": {
+		"**/*.uid": true
 	}
 }
