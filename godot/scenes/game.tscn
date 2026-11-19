@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c07u1gx671rjn" path="res://scripts/Game.cs" id="1_458eo"]
 [ext_resource type="Script" uid="uid://1ydmng6wi0hr" path="res://scripts/display/BloonLayer.cs" id="2_458eo"]
+[ext_resource type="Script" uid="uid://3l6s2rd7umw2" path="res://scripts/gui/ingame/RangeCombo.cs" id="3_3hbvx"]
 [ext_resource type="Texture2D" uid="uid://c48fwu2o20e4u" path="res://assets/ui/side_panel.svg" id="4_iywne"]
 [ext_resource type="Script" uid="uid://dj5hpf6pytn4b" path="res://scripts/gui/ingame/InGameMenu.cs" id="4_o8ni1"]
 [ext_resource type="Texture2D" uid="uid://bmn0ag000gmv5" path="res://assets/ui/bottom_panel.svg" id="5_p57ef"]
@@ -53,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://b51aeir7cj5bp" path="res://assets/ui/upgrade_panel/upgrade_button/default.svg" id="49_0rmfi"]
 [ext_resource type="Texture2D" uid="uid://n2cfvspghp2k" path="res://assets/ui/upgrade_panel/upgrade_button/cantbuy.svg" id="50_xbak0"]
 [ext_resource type="Texture2D" uid="uid://d2kiggkg6xd6d" path="res://assets/ui/upgrade_panel/upgrade_button/max.svg" id="52_3x28f"]
+[ext_resource type="Shader" uid="uid://b2x5qulw0cd30" path="res://shaders/glow.gdshader" id="55_q8j3a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gee14"]
 font = ExtResource("7_u5sy4")
@@ -3447,10 +3449,11 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1yg85"]
 shader = ExtResource("38_nepv3")
-shader_parameter/brightness = 0.0
-shader_parameter/contrast = 0.0
-shader_parameter/saturation = -100.0
-shader_parameter/hue = 0.0
+shader_parameter/red_row = Vector4(1, 0, 0, 0)
+shader_parameter/green_row = Vector4(0, 1, 0, 0)
+shader_parameter/blue_row = Vector4(0, 0, 1, 0)
+shader_parameter/alpha_row = Vector4(0, 0, 0, 1)
+shader_parameter/offsets = Vector4(0, 0, 0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_s0g06"]
 font = ExtResource("7_u5sy4")
@@ -3482,6 +3485,17 @@ font_color = Color(0.4862745, 0.7058824, 0.12941177, 1)
 outline_size = 8
 outline_color = Color(0.1764706, 0.2627451, 0.02745098, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3hbvx"]
+shader = ExtResource("55_q8j3a")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/blur_x = 6.0000000894072
+shader_parameter/blur_y = 6.0000000894072
+shader_parameter/strength = 1.999999955296
+shader_parameter/quality = 1
+shader_parameter/glow_color = Color(0, 0, 0, 0.3)
+shader_parameter/knockout = false
+shader_parameter/scale_blur_with_oversampling = true
+
 [node name="Game" type="Node2D" unique_id=75469830 node_paths=PackedStringArray("_inGameMenu")]
 script = ExtResource("1_458eo")
 _inGameMenu = NodePath("UILayer/InGameMenu")
@@ -3492,6 +3506,12 @@ y_sort_enabled = true
 
 [node name="BloonLayer" type="Node2D" parent="." unique_id=49594363]
 script = ExtResource("2_458eo")
+
+[node name="TowerPlaceView" type="Node2D" parent="." unique_id=1506401353]
+visible = false
+
+[node name="RangeCombo" type="Node2D" parent="TowerPlaceView" unique_id=143024830]
+script = ExtResource("3_3hbvx")
 
 [node name="SpikeyBall" type="Sprite2D" parent="." unique_id=799275082]
 position = Vector2(-1068, 610)
@@ -4897,6 +4917,15 @@ text = "MAX UPGRADES"
 label_settings = SubResource("LabelSettings_4nbsr")
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="GhostLayer" type="CanvasLayer" parent="." unique_id=1944183608]
+layer = 2
+follow_viewport_enabled = true
+
+[node name="Ghost" type="Node2D" parent="GhostLayer" unique_id=72183060]
+
+[node name="Tower" type="Sprite2D" parent="GhostLayer/Ghost" unique_id=1776137768]
+material = SubResource("ShaderMaterial_3hbvx")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1944019081]
 offset = Vector2(2, 0)

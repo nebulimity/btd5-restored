@@ -1,12 +1,18 @@
 shader_type canvas_item;
 
 uniform bool allow_out_of_bounds = true;
-uniform float shadow_distance: hint_range(0.0, 32.0, 1.0) = 4.0;
-uniform float shadow_angle: hint_range(0.0, 360.0, 1.0) = 135.0;
-uniform float shadow_strength: hint_range(0.0, 1.0, 0.01) = 0.75;
-uniform vec4 shadow_color: source_color = vec4(0.0, 0.0, 0.0, 1.0);
-uniform float blur_x: hint_range(0.0, 16.0, 0.1) = 0.0;
-uniform float blur_y: hint_range(0.0, 16.0, 0.1) = 0.0;
+uniform float shadow_distance : hint_range(0.0, 64.0, 0.1) = 4.0;
+uniform float shadow_angle : hint_range(0.0, 360.0, 1.0) = 135.0;
+uniform float shadow_strength : hint_range(0.0, 255.0, 0.01) = 0.75; // flash strength (1.0 = 100%)
+uniform vec4 shadow_color : source_color = vec4(0.0, 0.0, 0.0, 1.0);
+uniform float blur_x : hint_range(0.0, 255.0, 0.1) = 0.0;
+uniform float blur_y : hint_range(0.0, 255.0, 0.1) = 0.0;
+uniform bool inner = false;
+uniform bool knockout = false;
+uniform bool hide_object = false;
+
+varying flat vec2 v_pad;
+varying flat vec2 v_node_scale;
 
 bool is_inside_usquare(vec2 x) {
 	return x == clamp(x, vec2(0.0), vec2(1.0));
@@ -19,77 +25,119 @@ vec4 blend(vec4 bottom, vec4 top) {
 	return vec4(color, alpha);
 }
 
+float fixed16(float v) {
+	return trunc(v * 65536.0) / 65536.0;
+}
+
+vec2 flash_offset() {
+	float a = fixed16(radians(shadow_angle));
+	float d = fixed16(shadow_distance);
+	return vec2(cos(a), sin(a)) * d;
+}
+
+float blur_pad(float blur, float s) {
+	return blur > 1.0 ? ceil((blur - 1.0) / (2.0 * s) + 1.0 / s + 1.0) : 0.0;
+}
+
+vec3 box_kernel(float width) {
+	width = min(width, 255.0);
+	if (width <= 1.0) return vec3(0.0);
+	float radius = (width - 1.0) * 0.5;
+	float m = ceil(radius) - 1.0;
+	float edge = floor((radius - m) * 255.0);
+	return vec3(m, edge, width);
+}
+
+int floor_div(int num, float den) {
+	int q = int(floor(float(num) / den));
+	if (float(q + 1) * den <= float(num)) {
+		q += 1;
+	} else if (float(q) * den > float(num)) {
+		q -= 1;
+	}
+	return q;
+}
+
+int alpha_byte(sampler2D tex, ivec2 p, ivec2 size) {
+	if (p.x < 0 || p.y < 0 || p.x >= size.x || p.y >= size.y) return 0;
+	return int(round(texelFetch(tex, p, 0).a * 255.0));
+}
+
+int hblur(sampler2D tex, ivec2 p, ivec2 size, vec3 k) {
+	if (k.z <= 0.0) return alpha_byte(tex, p, size);
+	int m = int(k.x);
+	int sum = alpha_byte(tex, p, size) * 255;
+	for (int i = 1; i <= m; i++) {
+		sum += (alpha_byte(tex, p + ivec2(i, 0), size) + alpha_byte(tex, p - ivec2(i, 0), size)) * 255;
+	}
+	ivec2 e = ivec2(m + 1, 0);
+	sum += (alpha_byte(tex, p + e, size) + alpha_byte(tex, p - e, size)) * int(k.y);
+	return floor_div(sum, 255.0 * k.z);
+}
+
+int box_blur_alpha(sampler2D tex, ivec2 p, ivec2 size, vec3 kx, vec3 ky) {
+	if (ky.z <= 0.0) return hblur(tex, p, size, kx);
+	int m = int(ky.x);
+	int sum = hblur(tex, p, size, kx) * 255;
+	for (int i = 1; i <= m; i++) {
+		sum += (hblur(tex, p + ivec2(0, i), size, kx) + hblur(tex, p - ivec2(0, i), size, kx)) * 255;
+	}
+	ivec2 e = ivec2(0, m + 1);
+	sum += (hblur(tex, p + e, size, kx) + hblur(tex, p - e, size, kx)) * int(ky.y);
+	return floor_div(sum, 255.0 * ky.z);
+}
+
 void vertex() {
+	v_node_scale = max(vec2(length(MODEL_MATRIX[0].xy), length(MODEL_MATRIX[1].xy)), vec2(1e-4));
+	v_pad = vec2(0.0);
 	if (allow_out_of_bounds) {
-		float max_expansion = shadow_distance + max(blur_x, blur_y);
-		VERTEX += (UV * 2.0 - 1.0) * max_expansion;
+		vec2 off = abs(flash_offset()) / v_node_scale;
+		vec2 off_pad = vec2(off.x > 0.0 ? ceil(off.x + 1.0) : 0.0, off.y > 0.0 ? ceil(off.y + 1.0) : 0.0);
+		v_pad = vec2(blur_pad(blur_x, v_node_scale.x), blur_pad(blur_y, v_node_scale.y)) + off_pad;
+		VERTEX += (UV * 2.0 - 1.0) * v_pad;
 	}
 }
 
 void fragment() {
-	vec2 uv = UV;
-	vec4 texture_color = texture(TEXTURE, UV);
-	
-	if (allow_out_of_bounds) {
-		float max_expansion = shadow_distance + max(blur_x, blur_y);
-		vec2 texture_pixel_size = vec2(1.0) / (vec2(1.0) / TEXTURE_PIXEL_SIZE + vec2(max_expansion * 2.0));
-		uv = (uv - texture_pixel_size * max_expansion) * TEXTURE_PIXEL_SIZE / texture_pixel_size;
-		
-		if (is_inside_usquare(uv)) {
-			texture_color = texture(TEXTURE, uv);
+	vec2 base_size = 1.0 / TEXTURE_PIXEL_SIZE;
+	ivec2 isize = textureSize(TEXTURE, 0);
+	vec2 raster_size = vec2(isize);
+	vec2 ovs = raster_size / base_size;
+
+	vec2 width = ((vec2(blur_x, blur_y) - 1.0) * ovs + 1.0) / v_node_scale;
+	width = round(width * 65536.0) / 65536.0;
+	vec3 kx = box_kernel(width.x);
+	vec3 ky = box_kernel(width.y);
+
+	float d_scale = fixed16(ovs.y);
+	vec2 off_screen = flash_offset() * d_scale;
+	vec2 off_raster = round(off_screen / v_node_scale * 65536.0) / 65536.0;
+	ivec2 shift = ivec2(floor(0.5 - off_raster));
+
+	vec2 uv = (UV * (base_size + 2.0 * v_pad) - v_pad) / base_size;
+	vec4 src = is_inside_usquare(uv) ? texture(TEXTURE, uv) : vec4(0.0);
+
+	ivec2 p = ivec2(floor(uv * raster_size));
+	float blur = float(box_blur_alpha(TEXTURE, p + shift, isize, kx, ky)) / 255.0;
+
+	float q_strength = floor(shadow_strength * 256.0 + 1e-4) / 256.0;
+	float q_alpha = floor(shadow_color.a * 255.0 + 1e-3) / 255.0;
+
+	if (inner) {
+		float a = q_alpha * clamp((1.0 - blur) * q_strength, 0.0, 1.0);
+		if (knockout || hide_object) {
+			COLOR = vec4(shadow_color.rgb, a * src.a);
 		} else {
-			texture_color = vec4(0.0);
-		}
-	}
-	
-	float angle_rad = radians(shadow_angle);
-	vec2 shadow_offset = vec2(cos(angle_rad), sin(angle_rad)) * shadow_distance * TEXTURE_PIXEL_SIZE;
-	
-	vec4 shadow = vec4(0.0);
-	
-	if (blur_x > 0.0 || blur_y > 0.0) {
-		float total_weight = 0.0;
-		float shadow_alpha_sum = 0.0;
-		
-		int samples_x = int(ceil(blur_x)) * 2 + 1;
-		int samples_y = int(ceil(blur_y)) * 2 + 1;
-		
-		float half_x = float(samples_x - 1) * 0.5;
-		float half_y = float(samples_y - 1) * 0.5;
-		float div_x = max(1.0, float(samples_x - 1));
-		float div_y = max(1.0, float(samples_y - 1));
-		
-		for (int y = 0; y < samples_y; y++) {
-			float offset_y = (float(y) - half_y) * (blur_y / div_y) * 2.0;
-			float weight_y = exp(-(offset_y * offset_y) * 0.5);
-			
-			for (int x = 0; x < samples_x; x++) {
-				float offset_x = (float(x) - half_x) * (blur_x / div_x) * 2.0;
-				
-				float weight = exp(-(offset_x * offset_x) * 0.5) * weight_y;
-				total_weight += weight;
-				
-				vec2 blur_offset = vec2(offset_x, offset_y) * TEXTURE_PIXEL_SIZE;
-				vec2 sample_uv = uv - shadow_offset + blur_offset;
-				
-				if (is_inside_usquare(sample_uv)) {
-					shadow_alpha_sum += texture(TEXTURE, sample_uv).a * weight;
-				}
-			}
-		}
-		
-		if (total_weight > 0.0) {
-			float shadow_alpha = shadow_alpha_sum / total_weight;
-			shadow = vec4(shadow_color.rgb, shadow_alpha * shadow_color.a * shadow_strength);
+			COLOR = vec4(mix(src.rgb, shadow_color.rgb, a), src.a);
 		}
 	} else {
-		vec2 shadow_uv = uv - shadow_offset;
-		
-		if (is_inside_usquare(shadow_uv)) {
-			float shadow_alpha = texture(TEXTURE, shadow_uv).a;
-			shadow = vec4(shadow_color.rgb, shadow_alpha * shadow_color.a * shadow_strength);
+		float a = q_alpha * clamp(blur * q_strength, 0.0, 1.0);
+		if (knockout) {
+			COLOR = vec4(shadow_color.rgb, a * (1.0 - src.a));
+		} else if (hide_object) {
+			COLOR = vec4(shadow_color.rgb, a);
+		} else {
+			COLOR = blend(vec4(shadow_color.rgb, a), src);
 		}
 	}
-	
-	COLOR = blend(shadow, texture_color);
 }

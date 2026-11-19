@@ -15,7 +15,7 @@ public static class ZIndices
 	public const int Moab = 70;               // 1200
 	public const int Phoenix = 80;            // 1500
 	public const int AceAircraft = 90;        // 2000
-	public const int FulscreenEffects = 100;  // 3000
+	public const int FullscreenEffects = 100;  // 3000
 	public const int BloonsdayRay = 110;      // 9999
 	public const int EntryMarkers = 130;      // 100000
 	public const int TowerHighlight = 140;    // 9999999
