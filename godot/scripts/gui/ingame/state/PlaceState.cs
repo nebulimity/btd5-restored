@@ -41,6 +41,13 @@ public class PlaceState : InGameMenuState
 
 	public override void HandleInput(InputEvent e)
 	{
-
+		if (e is InputEventMouseButton mouseEvent && mouseEvent.ButtonIndex == MouseButton.Right && mouseEvent.Pressed)
+		{
+			Menu.Cancel();
+		}
+		else if (e is InputEventKey keyEvent && keyEvent.Keycode == Key.Escape && keyEvent.Pressed && !keyEvent.Echo)
+		{
+			Menu.Cancel();
+		}
 	}
 }

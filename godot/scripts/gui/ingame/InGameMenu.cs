@@ -1,4 +1,4 @@
-using System.Linq;
+using System.Collections.Generic;
 using Godot;
 
 public partial class InGameMenu : Control
@@ -10,6 +10,8 @@ public partial class InGameMenu : Control
 	public PlaceState PlaceState;
 	public TowerSelectedState TowerSelectedState;
 	public TowerNotSelectedState TowerNotSelectedState;
+
+	[Export] private Control _selectionArea;
 
 	[Export] private Label _cashValue;
 	[Export] private Label _healthValue;
@@ -24,7 +26,6 @@ public partial class InGameMenu : Control
 	[Export] private Label _modeValue;
 	[Export] private Label _rbeValue;
 
-	[Export] private GridContainer _towerContainer;
 	[Export] private TextureButton[] _towerButtons;
 
 	public void Initialize(Level level)
@@ -48,6 +49,19 @@ public partial class InGameMenu : Control
 		_roundValue.Text = "-";
 		_modeValue.Text = _level.Mode.ToString();
 		_rbeValue.Text = "-";
+
+		Dictionary<string, TextureButton> buttonsByName = new();
+		foreach (var button in _towerButtons)
+		{
+			buttonsByName.Add(button.Name.ToString(), button);
+		}
+		foreach (var def in Main.Instance.TowerMenu.TowersInMenu)
+		{
+			if (buttonsByName.TryGetValue(def.Button, out TextureButton button))
+			{
+				button.Pressed += () => Place(def);
+			}
+		}
 	}
 
 	private void OnRoundStarted()
@@ -113,6 +127,31 @@ public partial class InGameMenu : Control
 	{
 		GameStateMessage gameStateMessage = new GameStateMessage(GameStateMessageType.TowerPlaced) { Tower = tower };
 		_stateMachine.Send(gameStateMessage);
+	}
+
+	private void OnSelectionAreaGuiInput(InputEvent e)
+	{
+		if (_stateMachine.CurrentState is InGameMenuState state)
+		{
+			state.HandleInput(e);
+		}
+	}
+
+	public override void _Process(double delta)
+	{
+		if (_stateMachine.CurrentState is InGameMenuState state)
+		{
+			state.Process(delta);
+		}
+	}
+
+	public override void _UnhandledInput(InputEvent e)
+	{
+		if (e is InputEventKey && _stateMachine.CurrentState is InGameMenuState state)
+		{
+			GetViewport().SetInputAsHandled();
+			state.HandleInput(e);
+		}
 	}
 
 	public override void _ExitTree()

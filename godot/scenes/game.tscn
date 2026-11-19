@@ -3509,13 +3509,14 @@ R.I.P."
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="InGameMenu" type="Control" parent="." unique_id=54588509 node_paths=PackedStringArray("_cashValue", "_healthValue", "_playButton", "_fastForwardButton", "_blueArrowsDefault", "_blueArrowsPressed", "_roundValue", "_modeValue", "_rbeValue", "_towerContainer", "_towerButtons")]
+[node name="InGameMenu" type="Control" parent="." unique_id=54588509 node_paths=PackedStringArray("_selectionArea", "_cashValue", "_healthValue", "_playButton", "_fastForwardButton", "_blueArrowsDefault", "_blueArrowsPressed", "_roundValue", "_modeValue", "_rbeValue", "_towerContainer", "_towerButtons")]
 z_index = 5
 layout_mode = 3
 anchors_preset = 0
 offset_right = 800.0
 offset_bottom = 600.0
 script = ExtResource("4_o8ni1")
+_selectionArea = NodePath("SelectionArea")
 _cashValue = NodePath("SidePanel/UI/Cash/Value")
 _healthValue = NodePath("SidePanel/UI/Health/Value")
 _playButton = NodePath("SidePanel/UI/PlayButton")
@@ -3526,7 +3527,7 @@ _roundValue = NodePath("BottomPanel/Default/RoundValue")
 _modeValue = NodePath("BottomPanel/Default/ModeValue")
 _rbeValue = NodePath("BottomPanel/Default/RBEValue")
 _towerContainer = NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer")
-_towerButtons = [NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/TackTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SniperMonkey"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BoomerangTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/NinjaMonkey"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BombTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/IceTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/GlueTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BuccaneerTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/AceTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SuperTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/WizardTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/VillageTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/FarmTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MortarTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartlingTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SpikeFactory"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeySub"), null, null]
+_towerButtons = [NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/TackTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SniperMonkey"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BoomerangTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/NinjaMonkey"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BombTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/IceTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/GlueTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/BuccaneerTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/AceTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SuperTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/WizardTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/VillageTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/FarmTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MortarTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartlingTower"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/SpikeFactory"), NodePath("SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/MonkeySub")]
 
 [node name="SelectionArea" type="Control" parent="InGameMenu" unique_id=294946457]
 anchors_preset = 0
@@ -4884,5 +4885,6 @@ autowrap_mode = 2
 offset = Vector2(2, 0)
 anchor_mode = 0
 
+[connection signal="gui_input" from="InGameMenu/SelectionArea" to="InGameMenu" method="OnSelectionAreaGuiInput"]
 [connection signal="pressed" from="InGameMenu/SidePanel/UI/PlayButton" to="InGameMenu" method="OnPlayButtonPressed"]
 [connection signal="pressed" from="InGameMenu/SidePanel/UI/FastForwardButton" to="InGameMenu" method="OnFastForwardButtonPressed"]
