@@ -61,7 +61,9 @@ public class Level : Scene
 	public event Action RoundEnded;
 	public event Action CashChanged;
 	public event Action HealthChanged;
+
 	public event Action<Tower> TowerAdded;
+	public event Action<Tower> TowerRemoved;
 
 	public void Initialize()
 	{
@@ -220,6 +222,8 @@ public class Level : Scene
 				TerrainSet.RemoveTower(tower, AllTowers);
 				// CollisionGrid.DeregisterTower(tower);
 			}
+
+			TowerRemoved?.Invoke(tower);
 		}
 	}
 

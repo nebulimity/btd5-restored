@@ -16,7 +16,6 @@ public partial class TowerPlaceView : Node2D
         _occupiedSpace = space;
 
         _tower.Texture = GD.Load<Texture2D>($"res://assets/towers/{def.Display}/1.svg");
-        _tower.Offset = new Vector2(-2.15f, 3.3f);
         _glow.Texture = _tower.Texture;
         _glow.Offset = _tower.Offset;
 

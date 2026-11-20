@@ -4,13 +4,14 @@ using System;
 public partial class Game : Node2D
 {
 	public Level Level;
-	private BloonLayer _bloonLayer;
-
-	[Export] private InGameMenu _inGameMenu;
 
 	private double _accumulator;
 	const double TickLength = 1.0 / 30.0;
 	private double _alpha;
+
+	[Export] private BloonLayer _bloonLayer;
+	[Export] private TowerLayer _towerLayer;
+	[Export] private InGameMenu _inGameMenu;
 
 	public override void _Ready()
 	{
@@ -30,9 +31,8 @@ public partial class Game : Node2D
 			BGM.Instance.PlayTrack(levelDef.Music);
 		}
 
-		_bloonLayer = GetNode<BloonLayer>("BloonLayer");
 		_bloonLayer.Initialize(Level);
-
+		_towerLayer.Initialize(Level);
 		_inGameMenu.Initialize(Level);
 	}
 
@@ -47,6 +47,7 @@ public partial class Game : Node2D
 
 		_alpha = _accumulator / TickLength;
 		_bloonLayer.SyncAll(_alpha);
+		_towerLayer.SyncAll(_alpha);
 	}
 
 	public override void _ExitTree()
