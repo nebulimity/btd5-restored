@@ -3558,6 +3558,7 @@ offset_bottom = 520.0
 position = Vector2(700, 0)
 texture = ExtResource("4_iywne")
 centered = false
+offset = Vector2(-1.5, -1.5)
 
 [node name="UI" type="Control" parent="UILayer/InGameMenu/SidePanel" unique_id=1595776714]
 layout_mode = 3
@@ -3567,10 +3568,10 @@ offset_bottom = 523.0
 
 [node name="PlayButton" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI" unique_id=702816261]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 452.0
-offset_right = 101.0
-offset_bottom = 522.0
+offset_left = -0.05
+offset_top = 450.75
+offset_right = 99.95
+offset_bottom = 520.75
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("6_kvuet")
 texture_hover = ExtResource("7_trtic")
@@ -3578,17 +3579,18 @@ texture_click_mask = ExtResource("11_twgab")
 
 [node name="Label" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/PlayButton" unique_id=163411914]
 layout_mode = 0
-offset_left = 20.0
-offset_right = 77.05
-offset_bottom = 40.45
+offset_left = 21.05
+offset_right = 78.1
+offset_bottom = 41.7
 text = "GO!"
 label_settings = SubResource("LabelSettings_gee14")
 horizontal_alignment = 1
 vertical_alignment = 2
+offset_top = 1.25
 
 [node name="GreenArrow" type="Sprite2D" parent="UILayer/InGameMenu/SidePanel/UI/PlayButton" unique_id=1701358159]
 material = SubResource("ShaderMaterial_264po")
-position = Vector2(32.5, 33.050003)
+position = Vector2(32.05, 32.95)
 texture = ExtResource("8_gee14")
 centered = false
 
@@ -3599,10 +3601,10 @@ autoplay = &"arrow"
 [node name="FastForwardButton" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI" unique_id=733961887]
 visible = false
 layout_mode = 0
-offset_left = 1.0
-offset_top = 452.0
-offset_right = 101.0
-offset_bottom = 522.0
+offset_left = -0.05
+offset_top = 450.75
+offset_right = 99.95
+offset_bottom = 520.75
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("6_kvuet")
 texture_hover = ExtResource("7_trtic")
@@ -3625,10 +3627,10 @@ metadata/pressed_texture = ExtResource("12_js0lu")
 [node name="Cash" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI" unique_id=1988631090]
 z_index = 1
 layout_mode = 0
-offset_left = 2.6500244
-offset_top = 4.1
-offset_right = 99.650024
-offset_bottom = 28.1
+offset_left = 0.9
+offset_top = 2.5
+offset_right = 97.9
+offset_bottom = 26.5
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("14_trtic")
 texture_hover = ExtResource("15_ir15t")
@@ -3637,10 +3639,10 @@ texture_hover = ExtResource("15_ir15t")
 z_index = 5
 z_as_relative = false
 layout_mode = 0
-offset_left = 23.8
-offset_top = -0.54999995
-offset_right = 97.95
-offset_bottom = 22.0
+offset_left = 23.55
+offset_top = 1.05
+offset_right = 97.7
+offset_bottom = 23.6
 text = "1234567"
 label_settings = SubResource("LabelSettings_ca42v")
 vertical_alignment = 2
@@ -3648,10 +3650,10 @@ vertical_alignment = 2
 [node name="Health" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI" unique_id=622140715]
 z_index = 1
 layout_mode = 0
-offset_left = 2.5
-offset_top = 28.0
-offset_right = 99.5
-offset_bottom = 52.0
+offset_left = 0.75
+offset_top = 26.4
+offset_right = 97.75
+offset_bottom = 50.4
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("12_rysoc")
 texture_hover = ExtResource("13_ssvqc")
@@ -3660,20 +3662,20 @@ texture_hover = ExtResource("13_ssvqc")
 z_index = 5
 z_as_relative = false
 layout_mode = 0
-offset_left = 23.8
-offset_top = -0.54999995
-offset_right = 97.95
-offset_bottom = 22.0
+offset_left = 23.55
+offset_top = 1.05
+offset_right = 97.7
+offset_bottom = 23.6
 text = "12345"
 label_settings = SubResource("LabelSettings_ca42v")
 vertical_alignment = 2
 
 [node name="SmoothScrollContainer" type="ScrollContainer" parent="UILayer/InGameMenu/SidePanel/UI" unique_id=1098413746]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 81.0
-offset_right = 103.0
-offset_bottom = 375.0
+offset_left = 2.2
+offset_top = 79.9
+offset_right = 100.2
+offset_bottom = 373.9
 theme = SubResource("Theme_qnb83")
 horizontal_scroll_mode = 0
 script = ExtResource("16_458eo")
@@ -3686,9 +3688,10 @@ metadata/_custom_type_script = "uid://bgqglerkcylxx"
 
 [node name="MarginContainer" type="MarginContainer" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer" unique_id=743107883]
 layout_mode = 2
-theme_override_constants/margin_left = -1
+theme_override_constants/margin_left = -2
 theme_override_constants/margin_top = -2
 metadata/_smooth_scroll_default_mouse_filter_set = true
+theme_override_constants/margin_bottom = 3
 
 [node name="GridContainer" type="GridContainer" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer" unique_id=1174628144]
 layout_mode = 2
@@ -4103,22 +4106,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="BottomPanel" type="Sprite2D" parent="UILayer/InGameMenu" unique_id=1687022566]
+[node name="BottomPanel" type="Node2D" parent="UILayer/InGameMenu" unique_id=1687022566]
 position = Vector2(0, 520)
+
+[node name="Background" type="Sprite2D" parent="UILayer/InGameMenu/BottomPanel" unique_id=719191743]
+scale = Vector2(1, 1.022)
 texture = ExtResource("5_p57ef")
 centered = false
-offset = Vector2(-50.95, 0)
+offset = Vector2(-52.45, -1.5)
 
 [node name="Default" type="Control" parent="UILayer/InGameMenu/BottomPanel" unique_id=47416990]
 layout_mode = 3
-anchor_left = 0.058000002
-anchor_top = 0.049000002
-anchor_right = 0.058000002
-anchor_bottom = 0.049000002
-offset_left = -51.382004
-offset_top = 0.029999971
-offset_right = 647.568
-offset_bottom = 74.08
+offset_left = 1.05
+offset_top = 3.95
+offset_right = 700.0
+offset_bottom = 78.0
 
 [node name="SpecialAgents" type="Label" parent="UILayer/InGameMenu/BottomPanel/Default" unique_id=1134641947]
 layout_mode = 0
@@ -4208,14 +4210,10 @@ label_settings = SubResource("LabelSettings_8ool0")
 
 [node name="Misc" type="Control" parent="UILayer/InGameMenu/BottomPanel" unique_id=591304579]
 layout_mode = 3
-anchor_left = 0.058000002
-anchor_top = 0.049000002
-anchor_right = 0.058000002
-anchor_bottom = 0.049000002
-offset_left = 647.568
-offset_top = -0.92001224
-offset_right = 750.568
-offset_bottom = 74.08
+offset_left = 700.55
+offset_top = 2.6
+offset_right = 803.55
+offset_bottom = 77.6
 
 [node name="Default" type="Control" parent="UILayer/InGameMenu/BottomPanel/Misc" unique_id=133370570]
 layout_mode = 1
@@ -4230,10 +4228,10 @@ offset_bottom = 71.32501
 
 [node name="SaveButton" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/Misc/Default" unique_id=1369328247]
 layout_mode = 0
-offset_left = 0.5499878
-offset_top = -0.4000244
-offset_right = 102.54999
-offset_bottom = 40.599976
+offset_left = -1.5
+offset_top = 0.0
+offset_right = 100.5
+offset_bottom = 41.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("21_pl11u")
 texture_hover = ExtResource("22_bhx41")
@@ -4251,10 +4249,10 @@ label_settings = SubResource("LabelSettings_pr1ej")
 
 [node name="MenuButton" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/Misc/Default" unique_id=930588828]
 layout_mode = 0
-offset_left = 1.4500122
-offset_top = 37.5
-offset_right = 35.450012
-offset_bottom = 70.5
+offset_left = -0.9
+offset_top = 38.5
+offset_right = 33.1
+offset_bottom = 71.5
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("24_sww3w")
 texture_hover = ExtResource("25_suyxu")
@@ -4262,10 +4260,10 @@ texture_click_mask = ExtResource("35_7025r")
 
 [node name="SfxButton" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/Misc/Default" unique_id=1766881860]
 layout_mode = 0
-offset_left = 65.45001
-offset_top = 37.5
-offset_right = 99.45001
-offset_bottom = 70.5
+offset_left = 63.1
+offset_top = 38.5
+offset_right = 97.1
+offset_bottom = 71.5
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("28_js0lu")
 texture_hover = ExtResource("29_gxtfn")
@@ -4277,10 +4275,10 @@ metadata/pressed_outlined = ExtResource("41_0sl42")
 
 [node name="MusicButton" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/Misc/Default" unique_id=1076911557]
 layout_mode = 0
-offset_left = 33.45
-offset_top = 37.5
-offset_right = 67.45
-offset_bottom = 70.5
+offset_left = 31.1
+offset_top = 38.5
+offset_right = 65.1
+offset_bottom = 71.5
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("26_wljb1")
 texture_hover = ExtResource("27_v2yb1")
@@ -4293,30 +4291,26 @@ metadata/pressed_outlined = ExtResource("45_458eo")
 [node name="UpgradePanel" type="Control" parent="UILayer/InGameMenu/BottomPanel" unique_id=1543204309]
 visible = false
 layout_mode = 3
-anchor_left = 0.058000002
-anchor_top = 0.049000002
-anchor_right = 0.058000002
-anchor_bottom = 0.049000002
-offset_left = -51.382004
-offset_top = 0.029999971
-offset_right = 647.568
-offset_bottom = 74.08
+offset_left = 3.35
+offset_top = 2.95
+offset_right = 702.3
+offset_bottom = 77.0
 
 [node name="TowerName" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=1022768758]
 layout_mode = 0
-offset_left = 85.95
-offset_top = -0.95002437
-offset_right = 249.0
-offset_bottom = 36.349976
+offset_left = 83.26
+offset_top = -0.49
+offset_right = 246.31
+offset_bottom = 36.81
 text = "Dart Monkey"
 label_settings = SubResource("LabelSettings_l6q63")
 
 [node name="PopCount" type="Label" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=1334032059]
 layout_mode = 0
-offset_left = 85.95
-offset_top = 24.050013
-offset_right = 158.95
-offset_bottom = 43.700012
+offset_left = 83.26
+offset_top = 24.51
+offset_right = 156.26
+offset_bottom = 44.16
 text = "Pop Count"
 label_settings = SubResource("LabelSettings_mmvbu")
 vertical_alignment = 1
@@ -4332,10 +4326,10 @@ label_settings = SubResource("LabelSettings_weeiq")
 
 [node name="DetailView" type="TextureRect" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=1175597300]
 layout_mode = 0
-offset_left = 5.95
-offset_top = 0.5
-offset_right = 5.95
-offset_bottom = 0.5
+offset_left = 3.26
+offset_top = 0.96
+offset_right = 3.26
+offset_bottom = 0.96
 texture = ExtResource("38_pf7vy")
 
 [node name="Image" type="Sprite2D" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/DetailView" unique_id=1778125575]
@@ -4344,10 +4338,10 @@ texture = ExtResource("39_o8ni1")
 
 [node name="First" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=716624760]
 layout_mode = 0
-offset_left = 79.95
-offset_top = 41.049988
-offset_right = 138.95
-offset_bottom = 81.04999
+offset_left = 77.5
+offset_top = 41.45
+offset_right = 136.5
+offset_bottom = 81.45
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("40_3hbvx")
 texture_hover = ExtResource("41_q8j3a")
@@ -4365,10 +4359,10 @@ vertical_alignment = 1
 
 [node name="Last" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=1287114536]
 layout_mode = 0
-offset_left = 140.95
-offset_top = 41.049988
-offset_right = 199.95
-offset_bottom = 81.04999
+offset_left = 138.45
+offset_top = 41.45
+offset_right = 197.45
+offset_bottom = 81.45
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("40_3hbvx")
 texture_hover = ExtResource("41_q8j3a")
@@ -4386,10 +4380,10 @@ vertical_alignment = 1
 
 [node name="Close" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=3395456]
 layout_mode = 0
-offset_left = 201.95
-offset_top = 41.049988
-offset_right = 260.95
-offset_bottom = 81.04999
+offset_left = 199.4
+offset_top = 41.45
+offset_right = 258.4
+offset_bottom = 81.45
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("40_3hbvx")
 texture_hover = ExtResource("41_q8j3a")
@@ -4407,10 +4401,10 @@ vertical_alignment = 1
 
 [node name="Strong" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=2002364323]
 layout_mode = 0
-offset_left = 262.95
-offset_top = 41.049988
-offset_right = 321.95
-offset_bottom = 81.04999
+offset_left = 260.35
+offset_top = 41.45
+offset_right = 319.35
+offset_bottom = 81.45
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("40_3hbvx")
 texture_hover = ExtResource("41_q8j3a")
@@ -4428,10 +4422,10 @@ vertical_alignment = 1
 
 [node name="Sell" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=1909931360]
 layout_mode = 0
-offset_left = 246.95001
-offset_top = -1.9500122
-offset_right = 321.95
-offset_bottom = 39.049988
+offset_left = 243.6
+offset_top = -1.25
+offset_right = 318.6
+offset_bottom = 39.75
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("42_ms3bu")
 texture_hover = ExtResource("43_7ixpq")
@@ -4450,10 +4444,10 @@ autowrap_mode = 2
 
 [node name="Path1" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=776454459]
 anchors_preset = 0
-offset_left = 327.5
-offset_top = 0.049987793
-offset_right = 511.95
-offset_bottom = 74.04999
+offset_left = 322.6
+offset_top = -0.4
+offset_right = 507.05
+offset_bottom = 73.6
 
 [node name="PreviousUpgrade" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path1" unique_id=1621809625]
 anchors_preset = 0
@@ -4685,10 +4679,10 @@ autowrap_mode = 2
 
 [node name="Path2" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel" unique_id=1298853064]
 anchors_preset = 0
-offset_left = 512.5
-offset_top = 0.05
-offset_right = 696.95
-offset_bottom = 74.05
+offset_left = 508.65
+offset_top = -0.4
+offset_right = 693.1
+offset_bottom = 73.6
 
 [node name="PreviousUpgrade" type="Control" parent="UILayer/InGameMenu/BottomPanel/UpgradePanel/Path2" unique_id=2099069043]
 anchors_preset = 0
