@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public enum GameMode
 {
@@ -60,7 +61,7 @@ public class Level : Scene
 	public event Action RoundEnded;
 	public event Action CashChanged;
 	public event Action HealthChanged;
-	public event Action TowerAdded;
+	public event Action<Tower> TowerAdded;
 
 	public void Initialize()
 	{
@@ -198,11 +199,35 @@ public class Level : Scene
 		AddEntity(tower);
 		AllTowers.Add(tower);
 
-		// if not roadspikes and not pineapple
-		// TerrainSet.AddTower(tower);
-		// CollisionGrid.RegisterTower(tower);
+		if (tower.RootId != TowerFactory.RoadSpikes && tower.RootId != TowerFactory.Pineapple)
+		{
+			TerrainSet.AddTower(tower, AllTowers);
+			// CollisionGrid.RegisterTower(tower);
+		}
 
-		TowerAdded?.Invoke();
+		TowerAdded?.Invoke(tower);
+	}
+
+	public void RemoveTower(Tower tower)
+	{
+		int towerIndex = AllTowers.IndexOf(tower);
+		if (towerIndex != -1)
+		{
+			AllTowers.RemoveAt(towerIndex);
+			Cull(tower);
+			if (tower.Def != null && tower.RootId != TowerFactory.RoadSpikes && tower.RootId != TowerFactory.Pineapple)
+			{
+				TerrainSet.RemoveTower(tower, AllTowers);
+				// CollisionGrid.DeregisterTower(tower);
+			}
+		}
+	}
+
+	public void sellTower(Tower tower)
+	{
+		RemoveTower(tower);
+		tower.Destroy();
+		// InGameMenu.SellSound.Play();
 	}
 
 	public bool IsPlaceable(OccupiedSpace space, bool isBoat = false, bool canPlaceOnTrack = false, bool isAmphibious = false)

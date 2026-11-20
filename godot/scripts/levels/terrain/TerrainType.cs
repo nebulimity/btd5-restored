@@ -61,6 +61,24 @@ public class TerrainType
 			}
 		}
 	}
+	public TerrainType(OccupiedSpace space)
+	{
+		int px = space.DirectPixelX;
+		int py = space.DirectPixelY;
+
+		foreach (FootprintCell cell in space.Footprint.GetCells(px, py))
+		{
+			int cx = (px >> 2) + cell.Dx;
+			int cy = (py >> 2) + cell.Dy;
+
+			if (cx < 0 || cy < 0 || cx >= Width || cy >= Height)
+			{
+				continue;
+			}
+
+			_cells[cy * Width + cx] = cell.Count == 16 ? CellState.Full : CellState.Touched;
+		}
+	}
 
 	public static TerrainType InverseOf(TerrainType map)
 	{
@@ -96,6 +114,25 @@ public class TerrainType
 			if (other._cells[i] != CellState.Empty && _cells[i] == CellState.Empty)
 			{
 				_cells[i] = CellState.Touched;
+			}
+		}
+	}
+	public void MarkTouched(Footprint footprint, int px, int py)
+	{
+		foreach (FootprintCell cell in footprint.GetCells(px, py))
+		{
+			int cx = (px >> 2) + cell.Dx;
+			int cy = (py >> 2) + cell.Dy;
+
+			if (cx < 0 || cy < 0 || cx >= Width || cy >= Height)
+			{
+				continue;
+			}
+
+			int index = cy * Width + cx;
+			if (_cells[index] == CellState.Empty)
+			{
+				_cells[index] = CellState.Touched;
 			}
 		}
 	}

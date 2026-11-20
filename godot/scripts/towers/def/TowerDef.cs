@@ -1,3 +1,10 @@
+public enum TerrainChange : uint
+{
+	No = 0,
+	Water = 1,
+	Land = 2
+}
+
 public class TowerDef
 {
 	public string Id { get; set; }
@@ -12,4 +19,7 @@ public class TowerDef
 	public bool CanPriorityTarget { get; set; } = true;
 	public bool CanPlaceOnTrack { get; set; }
 	public bool RequiresTarget { get; set; } = true;
+
+	public TerrainChange ChangesTerrain { get; set; }
+	public bool IsPlatform { get; set; }
 }

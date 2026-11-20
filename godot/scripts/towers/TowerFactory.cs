@@ -4,6 +4,10 @@ using System.Text.Json.Serialization;
 
 public class TowerFactory
 {
+	public const string RoadSpikes = "RoadSpikes";
+	public const string Pineapple = "ExplodingPineapple";
+	public const string SuperTemple = "TempleOfTheMonkeyGod";
+
 	private class TowerIndex
 	{
 		public List<string> Towers { get; set; }
