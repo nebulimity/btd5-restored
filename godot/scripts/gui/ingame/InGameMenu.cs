@@ -46,7 +46,7 @@ public partial class InGameMenu : Control
 
 		_cashValue.Text = _level.Cash.ToString();
 		_healthValue.Text = _level.Health.ToString();
-		_roundValue.Text = "-";
+		_roundValue.Text = (_level.WaveIndex + 1).ToString() + " of " + _level.EndRound;
 		_modeValue.Text = _level.Mode.ToString();
 		_rbeValue.Text = "-";
 
