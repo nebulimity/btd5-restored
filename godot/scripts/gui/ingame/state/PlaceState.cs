@@ -21,11 +21,13 @@ public class PlaceState : InGameMenuState
 
 		GD.Print("place state");
 		Menu.TowerPlaceView.ShowView(_pickerDef.Tower);
+		Menu.SetHandCursor(true);
 	}
 
 	public override void Exit()
 	{
 		Menu.TowerPlaceView.HideView();
+		Menu.SetHandCursor(false);
 	}
 
 	public override State HandleMessage(Message message)

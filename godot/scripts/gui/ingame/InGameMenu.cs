@@ -139,6 +139,11 @@ public partial class InGameMenu : Control
 		}
 	}
 
+	public void SetHandCursor(bool on)
+	{
+		_selectionArea.MouseDefaultCursorShape = on ? CursorShape.PointingHand : CursorShape.Arrow;
+	}
+
 	public override void _Process(double delta)
 	{
 		if (_stateMachine.CurrentState is InGameMenuState state)
