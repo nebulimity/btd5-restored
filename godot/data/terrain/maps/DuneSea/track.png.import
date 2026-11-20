@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cb0rute1f74or"
+path="res://.godot/imported/track.png-e2ab03cf82ce6bf3117ce7534f367fab.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/DuneSea/track.png"
+dest_files=["res://.godot/imported/track.png-e2ab03cf82ce6bf3117ce7534f367fab.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b3cbamdmi0bdf"
+path="res://.godot/imported/dead_zone.png-284af47c8481b19942ddb22386245df9.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Archipelago/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-284af47c8481b19942ddb22386245df9.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cwo4t0iborqgo"
+path="res://.godot/imported/track.png-66a6ef20653ba257dd9c020b1119aeb8.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/SpaceTruckin/track.png"
+dest_files=["res://.godot/imported/track.png-66a6ef20653ba257dd9c020b1119aeb8.image"]
+
+[params]
+

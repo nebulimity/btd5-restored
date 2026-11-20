@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://d0ft18cn3sxrb"
+path="res://.godot/imported/dead_zone.png-57934b81e770f370b62d4741d49f4237.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/LavaFields/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-57934b81e770f370b62d4741d49f4237.image"]
+
+[params]
+

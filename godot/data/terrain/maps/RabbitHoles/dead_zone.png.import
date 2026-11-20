@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://c2y7tmwugjgia"
+path="res://.godot/imported/dead_zone.png-9296bed35478944c13253728a1edeb48.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/RabbitHoles/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-9296bed35478944c13253728a1edeb48.image"]
+
+[params]
+

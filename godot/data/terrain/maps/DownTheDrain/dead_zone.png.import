@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://u88meegoxa6k"
+path="res://.godot/imported/dead_zone.png-72ed8c22d6079ee8fd7b94418e085805.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/DownTheDrain/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-72ed8c22d6079ee8fd7b94418e085805.image"]
+
+[params]
+

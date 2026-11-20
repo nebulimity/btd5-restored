@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://croxg107dxcvq"
+path="res://.godot/imported/dead_zone.png-262459b7eb3835cd6ea0494af3d1201e.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Candyland/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-262459b7eb3835cd6ea0494af3d1201e.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://t7kg71ig0fle"
+path="res://.godot/imported/track.png-7202e348d54bea2c01a890230676775f.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Canyon/track.png"
+dest_files=["res://.godot/imported/track.png-7202e348d54bea2c01a890230676775f.image"]
+
+[params]
+

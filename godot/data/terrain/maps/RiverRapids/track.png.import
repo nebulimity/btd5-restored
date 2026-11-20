@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://tadlf85gqjq0"
+path="res://.godot/imported/track.png-265acb1b5fe4d1a8b2ae30717ef97448.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/RiverRapids/track.png"
+dest_files=["res://.godot/imported/track.png-265acb1b5fe4d1a8b2ae30717ef97448.image"]
+
+[params]
+

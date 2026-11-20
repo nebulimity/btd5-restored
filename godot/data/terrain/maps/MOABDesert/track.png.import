@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b833ew5tah5vx"
+path="res://.godot/imported/track.png-038eb0e7d59063a1c5f5371f098769fb.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/MOABDesert/track.png"
+dest_files=["res://.godot/imported/track.png-038eb0e7d59063a1c5f5371f098769fb.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://q167yygsvf1e"
+path="res://.godot/imported/dead_zone.png-715d1fdf56402950e5eb8d64bbe84c70.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/TreeTops/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-715d1fdf56402950e5eb8d64bbe84c70.image"]
+
+[params]
+

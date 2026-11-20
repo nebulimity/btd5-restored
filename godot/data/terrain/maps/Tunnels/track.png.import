@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://daaw4qc0r4sr8"
+path="res://.godot/imported/track.png-753cffb0ad53029be0ac72612a60e8d3.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Tunnels/track.png"
+dest_files=["res://.godot/imported/track.png-753cffb0ad53029be0ac72612a60e8d3.image"]
+
+[params]
+

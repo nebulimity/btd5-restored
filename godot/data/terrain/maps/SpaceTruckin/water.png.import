@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dceo3c7t7x4k"
+path="res://.godot/imported/water.png-35d68f4566c18b938fe25b17b7a374d7.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/SpaceTruckin/water.png"
+dest_files=["res://.godot/imported/water.png-35d68f4566c18b938fe25b17b7a374d7.image"]
+
+[params]
+

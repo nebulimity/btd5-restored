@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://jjqrdsci7hgk"
+path="res://.godot/imported/dead_zone.png-de1769261b19b9eb87f479cd3e94f294.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/SantasWorkshop/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-de1769261b19b9eb87f479cd3e94f294.image"]
+
+[params]
+

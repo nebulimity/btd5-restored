@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://co7k6olhg5sq0"
+path="res://.godot/imported/track.png-eb1c130f5a784b09baf0d3684ab24fe3.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/GreatSwitch/track.png"
+dest_files=["res://.godot/imported/track.png-eb1c130f5a784b09baf0d3684ab24fe3.image"]
+
+[params]
+

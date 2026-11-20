@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://g48k6pje1hdq"
+path="res://.godot/imported/water.png-91d673879221032ae8c22fb31a31a499.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/SnowyBackyard/water.png"
+dest_files=["res://.godot/imported/water.png-91d673879221032ae8c22fb31a31a499.image"]
+
+[params]
+

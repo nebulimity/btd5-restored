@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://c32esgh28xygi"
+path="res://.godot/imported/dead_zone.png-f37bf9b6d13b67501fd8101559460cf7.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/BattleKnot/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-f37bf9b6d13b67501fd8101559460cf7.image"]
+
+[params]
+

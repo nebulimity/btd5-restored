@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b8dg3tfqcb2st"
+path="res://.godot/imported/dead_zone.png-ee1824057b0207a51f212db27741010e.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/IceFlow/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-ee1824057b0207a51f212db27741010e.image"]
+
+[params]
+

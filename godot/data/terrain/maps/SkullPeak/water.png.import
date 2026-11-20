@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dty4eikymxqm0"
+path="res://.godot/imported/water.png-bf6e99129194f5a3334dce09d926f310.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/SkullPeak/water.png"
+dest_files=["res://.godot/imported/water.png-bf6e99129194f5a3334dce09d926f310.image"]
+
+[params]
+

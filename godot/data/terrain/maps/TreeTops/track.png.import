@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://di1mq084lqie3"
+path="res://.godot/imported/track.png-0bb4947d7f3ff153551a924de8316b1b.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/TreeTops/track.png"
+dest_files=["res://.godot/imported/track.png-0bb4947d7f3ff153551a924de8316b1b.image"]
+
+[params]
+

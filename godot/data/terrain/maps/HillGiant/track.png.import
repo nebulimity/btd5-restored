@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://ihu4ghv6brcq"
+path="res://.godot/imported/track.png-3da60621f66c369feb98220613d98dba.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/HillGiant/track.png"
+dest_files=["res://.godot/imported/track.png-3da60621f66c369feb98220613d98dba.image"]
+
+[params]
+

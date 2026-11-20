@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://c8lwssc7y1dg5"
+path="res://.godot/imported/water.png-bce05187ac01b32380f07b603c08d5cd.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Pyramids/water.png"
+dest_files=["res://.godot/imported/water.png-bce05187ac01b32380f07b603c08d5cd.image"]
+
+[params]
+

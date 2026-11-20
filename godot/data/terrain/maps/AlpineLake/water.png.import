@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cm6xya25bntv7"
+path="res://.godot/imported/water.png-e181a14b7ccb18d87680e40763edf07e.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/AlpineLake/water.png"
+dest_files=["res://.godot/imported/water.png-e181a14b7ccb18d87680e40763edf07e.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://kvr4plwxa4k5"
+path="res://.godot/imported/water.png-0ecd69b39e1da0ccc188f9c851ec6972.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Candyland/water.png"
+dest_files=["res://.godot/imported/water.png-0ecd69b39e1da0ccc188f9c851ec6972.image"]
+
+[params]
+

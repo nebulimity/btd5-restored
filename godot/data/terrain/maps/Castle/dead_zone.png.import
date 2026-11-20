@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://du0nlmfjxwo4t"
+path="res://.godot/imported/dead_zone.png-51a5a5f65827892392fe33d760f00bf5.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Castle/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-51a5a5f65827892392fe33d760f00bf5.image"]
+
+[params]
+

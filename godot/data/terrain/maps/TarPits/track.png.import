@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://ch74wbbpe6n0j"
+path="res://.godot/imported/track.png-2013d89e2c3bbc4fac3bfefee4bd5c8e.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/TarPits/track.png"
+dest_files=["res://.godot/imported/track.png-2013d89e2c3bbc4fac3bfefee4bd5c8e.image"]
+
+[params]
+

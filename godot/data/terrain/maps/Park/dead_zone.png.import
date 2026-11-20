@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://rmdiiqr6y2au"
+path="res://.godot/imported/dead_zone.png-b27a74f52669dd65a34fbc763e0185a9.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Park/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-b27a74f52669dd65a34fbc763e0185a9.image"]
+
+[params]
+

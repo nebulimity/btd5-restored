@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dpsbkvloadod8"
+path="res://.godot/imported/track.png-72232d7dfaa3150fbd9fbdffc1daa72e.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/TrickOrTreat/track.png"
+dest_files=["res://.godot/imported/track.png-72232d7dfaa3150fbd9fbdffc1daa72e.image"]
+
+[params]
+

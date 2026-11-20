@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dpn70swrd238b"
+path="res://.godot/imported/dead_zone.png-0e31f71dd7b42bae893b30fe032f7ac5.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Tunnels/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-0e31f71dd7b42bae893b30fe032f7ac5.image"]
+
+[params]
+

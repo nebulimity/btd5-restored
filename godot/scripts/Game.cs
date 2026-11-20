@@ -19,7 +19,8 @@ public partial class Game : Node2D
 		Level.Initialize();
 
 		LevelDef levelDef = LevelDef.Load("MonkeyLane");
-		Level.InitializeLevel(levelDef, GameMode.Easy);
+		TerrainSet terrainSet = TerrainLoader.LoadTerrainSet(levelDef);
+		Level.InitializeLevel(levelDef, GameMode.Easy, terrainSet);
 		PackedScene mapScene = GD.Load<PackedScene>(levelDef.Scene);
 		Node2D map = mapScene.Instantiate<Node2D>();
 		AddChild(map);

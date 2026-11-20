@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://ddyda3ksrgk4s"
+path="res://.godot/imported/dead_zone.png-7ae0ddc7301ed619b99c5ec1fbfd2927.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/SkullPeak/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-7ae0ddc7301ed619b99c5ec1fbfd2927.image"]
+
+[params]
+

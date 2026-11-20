@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cvovxiekpd6y2"
+path="res://.godot/imported/water.png-9cc80d29b7ea27e6c2987a63c085e85c.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/DarkForest/water.png"
+dest_files=["res://.godot/imported/water.png-9cc80d29b7ea27e6c2987a63c085e85c.image"]
+
+[params]
+

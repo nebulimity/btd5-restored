@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://clfx6lyuti8op"
+path="res://.godot/imported/dead_zone.png-d2886277a239615dd2482fa291b665ba.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/RiverRapids/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-d2886277a239615dd2482fa291b665ba.image"]
+
+[params]
+

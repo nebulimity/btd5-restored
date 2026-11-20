@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://2vdjoogk5xbp"
+path="res://.godot/imported/dead_zone.png-293b46d5add29bd2ee0e2c856013aa93.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/TheGreatDivide/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-293b46d5add29bd2ee0e2c856013aa93.image"]
+
+[params]
+

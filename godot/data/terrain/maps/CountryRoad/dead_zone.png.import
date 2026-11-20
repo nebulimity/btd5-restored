@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://coa8dmtbaqm7o"
+path="res://.godot/imported/dead_zone.png-4951ed33db3097ca3ce23954a3b96f14.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/CountryRoad/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-4951ed33db3097ca3ce23954a3b96f14.image"]
+
+[params]
+

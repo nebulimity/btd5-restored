@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://vi5n1opnjhoy"
+path="res://.godot/imported/water.png-2dcbedffb21e89b2497ed0020deb1d09.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/ExpressShipping/water.png"
+dest_files=["res://.godot/imported/water.png-2dcbedffb21e89b2497ed0020deb1d09.image"]
+
+[params]
+

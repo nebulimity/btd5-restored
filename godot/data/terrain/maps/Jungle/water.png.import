@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bx5jtqr66scby"
+path="res://.godot/imported/water.png-bb010d75c0282dbd49a8496b6273e4ed.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Jungle/water.png"
+dest_files=["res://.godot/imported/water.png-bb010d75c0282dbd49a8496b6273e4ed.image"]
+
+[params]
+

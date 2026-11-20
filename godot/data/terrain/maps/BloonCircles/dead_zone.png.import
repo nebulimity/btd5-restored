@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bi1wxlaj7a436"
+path="res://.godot/imported/dead_zone.png-b930ed42765e6762d36dfa3cd046ffae.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/BloonCircles/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-b930ed42765e6762d36dfa3cd046ffae.image"]
+
+[params]
+

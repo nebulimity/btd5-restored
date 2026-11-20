@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cvvuextj1nbpc"
+path="res://.godot/imported/track.png-201e487725b8dfb7d57afd951034c7c7.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/WaterHazard/track.png"
+dest_files=["res://.godot/imported/track.png-201e487725b8dfb7d57afd951034c7c7.image"]
+
+[params]
+

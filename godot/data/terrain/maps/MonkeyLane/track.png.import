@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b718s7ajwyr4t"
+path="res://.godot/imported/track.png-ac4cc32d4ce81d3e5658f16d67bedece.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/MonkeyLane/track.png"
+dest_files=["res://.godot/imported/track.png-ac4cc32d4ce81d3e5658f16d67bedece.image"]
+
+[params]
+

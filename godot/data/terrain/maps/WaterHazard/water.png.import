@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://c5nteayn05tx2"
+path="res://.godot/imported/water.png-6520dd78fcce205e36a66f6fa3ec803c.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/WaterHazard/water.png"
+dest_files=["res://.godot/imported/water.png-6520dd78fcce205e36a66f6fa3ec803c.image"]
+
+[params]
+

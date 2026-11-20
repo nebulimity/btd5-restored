@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://d4lgwb6dhfkci"
+path="res://.godot/imported/track.png-70163522415d51a9fb2f82c7018e0ef9.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/DarkForest/track.png"
+dest_files=["res://.godot/imported/track.png-70163522415d51a9fb2f82c7018e0ef9.image"]
+
+[params]
+

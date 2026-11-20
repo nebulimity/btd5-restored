@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cmotcjiyc5exj"
+path="res://.godot/imported/water.png-4ff79ef3b6726e14143e3636335c4262.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Maze/water.png"
+dest_files=["res://.godot/imported/water.png-4ff79ef3b6726e14143e3636335c4262.image"]
+
+[params]
+

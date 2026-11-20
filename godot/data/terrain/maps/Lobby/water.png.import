@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bitf7lteqrvh"
+path="res://.godot/imported/water.png-21271f04acbf18d8e7b8b2dffa8d066a.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Lobby/water.png"
+dest_files=["res://.godot/imported/water.png-21271f04acbf18d8e7b8b2dffa8d066a.image"]
+
+[params]
+

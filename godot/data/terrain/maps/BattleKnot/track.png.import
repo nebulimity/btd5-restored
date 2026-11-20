@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://ymboxvspddid"
+path="res://.godot/imported/track.png-fb18e7ac3b5cb6e21b96034ad39d2d7f.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/BattleKnot/track.png"
+dest_files=["res://.godot/imported/track.png-fb18e7ac3b5cb6e21b96034ad39d2d7f.image"]
+
+[params]
+

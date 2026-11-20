@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cjs61o8p0gcdt"
+path="res://.godot/imported/dead_zone.png-e3e3165a3fee32145adec7473db71860.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Dollar/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-e3e3165a3fee32145adec7473db71860.image"]
+
+[params]
+

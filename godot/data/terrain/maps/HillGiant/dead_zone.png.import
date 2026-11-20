@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b2t88qstai36c"
+path="res://.godot/imported/dead_zone.png-77dece42e37bdbf025b89bb18237f104.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/HillGiant/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-77dece42e37bdbf025b89bb18237f104.image"]
+
+[params]
+

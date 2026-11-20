@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://2ojgolrw38wr"
+path="res://.godot/imported/dead_zone.png-ca404665e31c078af660739e29a036c6.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/TheEye/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-ca404665e31c078af660739e29a036c6.image"]
+
+[params]
+

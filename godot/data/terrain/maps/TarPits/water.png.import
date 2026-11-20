@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dklo18h0qjaar"
+path="res://.godot/imported/water.png-6a7c25c65f407bbda80129c64e368d1e.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/TarPits/water.png"
+dest_files=["res://.godot/imported/water.png-6a7c25c65f407bbda80129c64e368d1e.image"]
+
+[params]
+

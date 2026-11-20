@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://boviw0arreucd"
+path="res://.godot/imported/track.png-f1667c4eb4cb6e864adaaf29df4c6fdf.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Pyramids/track.png"
+dest_files=["res://.godot/imported/track.png-f1667c4eb4cb6e864adaaf29df4c6fdf.image"]
+
+[params]
+

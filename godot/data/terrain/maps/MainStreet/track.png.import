@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://masq7s2jfusk"
+path="res://.godot/imported/track.png-11879535dbaddb72068438396f4abdca.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/MainStreet/track.png"
+dest_files=["res://.godot/imported/track.png-11879535dbaddb72068438396f4abdca.image"]
+
+[params]
+

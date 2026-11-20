@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://fwcrmest47fd"
+path="res://.godot/imported/dead_zone.png-8432bd77f4c5ab0d488c2081ef05ea23.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Rink/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-8432bd77f4c5ab0d488c2081ef05ea23.image"]
+
+[params]
+

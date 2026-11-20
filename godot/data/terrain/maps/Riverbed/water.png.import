@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://wvd3jhi4c2pr"
+path="res://.godot/imported/water.png-bd5a930236e5cda838c3ac2d8acf23ee.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Riverbed/water.png"
+dest_files=["res://.godot/imported/water.png-bd5a930236e5cda838c3ac2d8acf23ee.image"]
+
+[params]
+

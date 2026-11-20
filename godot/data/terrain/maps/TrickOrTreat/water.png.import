@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b1ff2aj34eywi"
+path="res://.godot/imported/water.png-74b268c10baa7c90db60c67aa19cf502.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/TrickOrTreat/water.png"
+dest_files=["res://.godot/imported/water.png-74b268c10baa7c90db60c67aa19cf502.image"]
+
+[params]
+

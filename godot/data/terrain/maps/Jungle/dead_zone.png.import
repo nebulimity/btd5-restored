@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://30yhx1qf10r5"
+path="res://.godot/imported/dead_zone.png-b56fe5d8a135a754fff3f22f46760ea4.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Jungle/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-b56fe5d8a135a754fff3f22f46760ea4.image"]
+
+[params]
+

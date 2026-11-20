@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://ujnow13tfwkq"
+path="res://.godot/imported/track.png-0336b7f4ee1ec9cbe2eb683f2e45beb8.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/CryptKeeper/track.png"
+dest_files=["res://.godot/imported/track.png-0336b7f4ee1ec9cbe2eb683f2e45beb8.image"]
+
+[params]
+

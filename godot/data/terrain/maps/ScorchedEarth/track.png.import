@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://chwd1lsd814dk"
+path="res://.godot/imported/track.png-e9ee5937a63448ab757aacd5dbea8540.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/ScorchedEarth/track.png"
+dest_files=["res://.godot/imported/track.png-e9ee5937a63448ab757aacd5dbea8540.image"]
+
+[params]
+

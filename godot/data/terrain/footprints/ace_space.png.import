@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cbwqj52o531w3"
+path="res://.godot/imported/ace_space.png-6840ebebff19daecab85e6c49b7d20ef.image"
+
+[deps]
+
+source_file="res://data/terrain/footprints/ace_space.png"
+dest_files=["res://.godot/imported/ace_space.png-6840ebebff19daecab85e6c49b7d20ef.image"]
+
+[params]
+

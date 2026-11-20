@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cxt8d1j0swibl"
+path="res://.godot/imported/track.png-21d9b2e5a302445d49e6cf5a8c0e582b.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Runway/track.png"
+dest_files=["res://.godot/imported/track.png-21d9b2e5a302445d49e6cf5a8c0e582b.image"]
+
+[params]
+

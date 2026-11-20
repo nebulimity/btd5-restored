@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://p5ndes1vahp"
+path="res://.godot/imported/large.png-c36f558ab5debcbbe0783ab511281b8b.image"
+
+[deps]
+
+source_file="res://data/terrain/footprints/large.png"
+dest_files=["res://.godot/imported/large.png-c36f558ab5debcbbe0783ab511281b8b.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b5i8ba4eesw3u"
+path="res://.godot/imported/water.png-5989ecf60b384eab269d3128acb35e25.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Tunnels/water.png"
+dest_files=["res://.godot/imported/water.png-5989ecf60b384eab269d3128acb35e25.image"]
+
+[params]
+

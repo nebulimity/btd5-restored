@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cm8sfewy15d3e"
+path="res://.godot/imported/water.png-294d4e038f37d6396fe7430d1f4d4a6f.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/DownTheDrain/water.png"
+dest_files=["res://.godot/imported/water.png-294d4e038f37d6396fe7430d1f4d4a6f.image"]
+
+[params]
+

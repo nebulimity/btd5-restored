@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cuxrbbs5h628r"
+path="res://.godot/imported/water.png-01008d2aeefe84ff9153ba9b2c3db420.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Dockside/water.png"
+dest_files=["res://.godot/imported/water.png-01008d2aeefe84ff9153ba9b2c3db420.image"]
+
+[params]
+

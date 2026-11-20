@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://u443qn26gg3y"
+path="res://.godot/imported/dead_zone.png-f3fd7ab892fff6b5bd4d65f70b46f86f.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Hearthside/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-f3fd7ab892fff6b5bd4d65f70b46f86f.image"]
+
+[params]
+

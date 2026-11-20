@@ -13,6 +13,7 @@ public enum GameMode
 
 public class Level : Scene
 {
+	public TerrainSet TerrainSet;
 	public Tile StartTile;
 	public List<Tile> CurrentTileSet;
 	public List<List<Tile>> TileSets;
@@ -59,7 +60,7 @@ public class Level : Scene
 
 	}
 
-	public void InitializeLevel(LevelDef def, GameMode mode)
+	public void InitializeLevel(LevelDef def, GameMode mode, TerrainSet terrainSet)
 	{
 		TileSets = new List<List<Tile>>();
 
@@ -96,6 +97,8 @@ public class Level : Scene
 		CashMultiplier = 1; // TODO
 		Health = InitialHealthByMode[(int)mode];
 		Bloon.DifficultySpeedModifier = BloonSpeedModsByMode[(int)mode];
+
+		TerrainSet = terrainSet;
 
 		CurrentTileSet = TileSets[0];
 		StartTile = CurrentTileSet[0];
@@ -164,6 +167,16 @@ public class Level : Scene
 				_endWaveTimer = null;
 			};
 		}
+	}
+
+	public bool IsPlaceable(OccupiedSpace space, bool isBoat = false, bool canPlaceOnTrack = false, bool isAmphibious = false)
+	{
+		if (canPlaceOnTrack)
+		{
+			return TerrainSet.IsOnTrack(space);
+		}
+
+		return TerrainSet.CanPlace(space, isBoat, isAmphibious);
 	}
 
 	public void StartRound()

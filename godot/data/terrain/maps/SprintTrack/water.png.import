@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cl8e4bhgku5pq"
+path="res://.godot/imported/water.png-2663d27c3933a2d1daff5c3c1ab23fbf.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/SprintTrack/water.png"
+dest_files=["res://.godot/imported/water.png-2663d27c3933a2d1daff5c3c1ab23fbf.image"]
+
+[params]
+

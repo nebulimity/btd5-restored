@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://xhqr2rio5f7d"
+path="res://.godot/imported/track.png-ac6b68bbe60361e75c060f0bb71057b7.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/RabbitHoles/track.png"
+dest_files=["res://.godot/imported/track.png-ac6b68bbe60361e75c060f0bb71057b7.image"]
+
+[params]
+

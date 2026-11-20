@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://kmg275dkw2hn"
+path="res://.godot/imported/water.png-027cff6a3a39ce8b92352146cdfe78e2.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/RiverRapids/water.png"
+dest_files=["res://.godot/imported/water.png-027cff6a3a39ce8b92352146cdfe78e2.image"]
+
+[params]
+

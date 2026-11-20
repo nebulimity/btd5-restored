@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b82lh4v7pbrsk"
+path="res://.godot/imported/water.png-f8f0547a45af2158cd44b0e217e5d9f3.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/HauntedSwamp/water.png"
+dest_files=["res://.godot/imported/water.png-f8f0547a45af2158cd44b0e217e5d9f3.image"]
+
+[params]
+

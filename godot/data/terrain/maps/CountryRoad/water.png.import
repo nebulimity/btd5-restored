@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dpm013bplqxsa"
+path="res://.godot/imported/water.png-a32aa46e28acecedd343f3263da0bc1d.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/CountryRoad/water.png"
+dest_files=["res://.godot/imported/water.png-a32aa46e28acecedd343f3263da0bc1d.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bq2m6io23bskw"
+path="res://.godot/imported/track.png-314d86931a4c7ea3fef8a550abe0e249.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Blooms/track.png"
+dest_files=["res://.godot/imported/track.png-314d86931a4c7ea3fef8a550abe0e249.image"]
+
+[params]
+

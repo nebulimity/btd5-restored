@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dwmdncmtse0qt"
+path="res://.godot/imported/track.png-b7736b1d2b1922799e74a067b02d9fed.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/BrickWall/track.png"
+dest_files=["res://.godot/imported/track.png-b7736b1d2b1922799e74a067b02d9fed.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dsu4q0sgk0tsu"
+path="res://.godot/imported/temple_space.png-b94668df6cd8d00a989577bef8607255.image"
+
+[deps]
+
+source_file="res://data/terrain/footprints/temple_space.png"
+dest_files=["res://.godot/imported/temple_space.png-b94668df6cd8d00a989577bef8607255.image"]
+
+[params]
+

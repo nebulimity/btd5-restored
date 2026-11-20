@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dpslnnmg6n3yk"
+path="res://.godot/imported/dead_zone.png-3c61b61d33bb0dcee548f4039621ac35.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/PumpkinPatch/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-3c61b61d33bb0dcee548f4039621ac35.image"]
+
+[params]
+

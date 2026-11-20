@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://d2f62vsuucqkr"
+path="res://.godot/imported/water.png-e265036cc091b253c6c40f7b860678f1.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Archipelago/water.png"
+dest_files=["res://.godot/imported/water.png-e265036cc091b253c6c40f7b860678f1.image"]
+
+[params]
+

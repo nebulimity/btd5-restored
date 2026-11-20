@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bepsatj7aggnw"
+path="res://.godot/imported/mortar_monkey_space.png-e498d3d306d0ca7672e353956185ebb8.image"
+
+[deps]
+
+source_file="res://data/terrain/footprints/mortar_monkey_space.png"
+dest_files=["res://.godot/imported/mortar_monkey_space.png-e498d3d306d0ca7672e353956185ebb8.image"]
+
+[params]
+

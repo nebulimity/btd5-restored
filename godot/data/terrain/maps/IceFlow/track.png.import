@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://defy6xc0lubfw"
+path="res://.godot/imported/track.png-690006eed5c2b53f66610ae100f50ca2.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/IceFlow/track.png"
+dest_files=["res://.godot/imported/track.png-690006eed5c2b53f66610ae100f50ca2.image"]
+
+[params]
+

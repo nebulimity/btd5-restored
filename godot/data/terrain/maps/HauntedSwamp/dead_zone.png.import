@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dx6gej38s65b1"
+path="res://.godot/imported/dead_zone.png-15d6066a5477a79454aca5c39bc4eb0e.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/HauntedSwamp/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-15d6066a5477a79454aca5c39bc4eb0e.image"]
+
+[params]
+

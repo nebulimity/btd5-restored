@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cfe4fnjmj63v2"
+path="res://.godot/imported/dead_zone.png-ea9b1c9bbfff472ee58f48d007bdfc34.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Slalom/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-ea9b1c9bbfff472ee58f48d007bdfc34.image"]
+
+[params]
+

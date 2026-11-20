@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dyb3ji2rkgqc"
+path="res://.godot/imported/water.png-569886d4ff3eb23e2e9c11b99b31d03b.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/SantasWorkshop/water.png"
+dest_files=["res://.godot/imported/water.png-569886d4ff3eb23e2e9c11b99b31d03b.image"]
+
+[params]
+

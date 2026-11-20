@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://pdp22ct8ia41"
+path="res://.godot/imported/medium.png-94ae54c4a7ee72ca55e64c3c557ddb98.image"
+
+[deps]
+
+source_file="res://data/terrain/footprints/medium.png"
+dest_files=["res://.godot/imported/medium.png-94ae54c4a7ee72ca55e64c3c557ddb98.image"]
+
+[params]
+

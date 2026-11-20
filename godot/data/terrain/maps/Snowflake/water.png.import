@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cb2hldmaulhm6"
+path="res://.godot/imported/water.png-17f78c9cf1f7fa839adf0374f996cfcf.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Snowflake/water.png"
+dest_files=["res://.godot/imported/water.png-17f78c9cf1f7fa839adf0374f996cfcf.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dodw82va3sujy"
+path="res://.godot/imported/track.png-0872d4ca8f2288438b02b51e94a1feb5.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Snowflake/track.png"
+dest_files=["res://.godot/imported/track.png-0872d4ca8f2288438b02b51e94a1feb5.image"]
+
+[params]
+

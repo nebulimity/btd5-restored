@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dauaaxt5rdr2f"
+path="res://.godot/imported/track.png-a8c6a6dc109dabc2a89ff2fd5e03e848.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Rink/track.png"
+dest_files=["res://.godot/imported/track.png-a8c6a6dc109dabc2a89ff2fd5e03e848.image"]
+
+[params]
+

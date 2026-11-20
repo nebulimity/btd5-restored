@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dewwf53tq5c4d"
+path="res://.godot/imported/track.png-c8cc24fcd9fc021b05734d0fa34d0908.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/BloonCircles/track.png"
+dest_files=["res://.godot/imported/track.png-c8cc24fcd9fc021b05734d0fa34d0908.image"]
+
+[params]
+

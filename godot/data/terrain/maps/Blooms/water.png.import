@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://8ybl3sbbbhqb"
+path="res://.godot/imported/water.png-d7aea38e3b18fbb77612f7eabaf65658.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Blooms/water.png"
+dest_files=["res://.godot/imported/water.png-d7aea38e3b18fbb77612f7eabaf65658.image"]
+
+[params]
+

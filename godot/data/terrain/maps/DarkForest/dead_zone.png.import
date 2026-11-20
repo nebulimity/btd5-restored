@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bpl5uej516umg"
+path="res://.godot/imported/dead_zone.png-17435479d939ac228e57f1d427b0c5cc.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/DarkForest/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-17435479d939ac228e57f1d427b0c5cc.image"]
+
+[params]
+

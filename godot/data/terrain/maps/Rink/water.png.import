@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://c2dko87cw2s54"
+path="res://.godot/imported/water.png-8aac6bf274fda2d7b67d33fa2a6c4c50.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Rink/water.png"
+dest_files=["res://.godot/imported/water.png-8aac6bf274fda2d7b67d33fa2a6c4c50.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://ci3ebjgjw6xi8"
+path="res://.godot/imported/track.png-c343218383ac29cb553e00924a0b2e6a.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Candyland/track.png"
+dest_files=["res://.godot/imported/track.png-c343218383ac29cb553e00924a0b2e6a.image"]
+
+[params]
+

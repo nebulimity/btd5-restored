@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b3l8y7sgte0at"
+path="res://.godot/imported/dead_zone.png-e86358ac8c5142229fb88a9a254a74bb.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/CryptKeeper/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-e86358ac8c5142229fb88a9a254a74bb.image"]
+
+[params]
+

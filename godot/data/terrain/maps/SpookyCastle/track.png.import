@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cowfyn8uqhc4a"
+path="res://.godot/imported/track.png-f3a36d157c2f09e5a74e497bdb46f27f.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/SpookyCastle/track.png"
+dest_files=["res://.godot/imported/track.png-f3a36d157c2f09e5a74e497bdb46f27f.image"]
+
+[params]
+

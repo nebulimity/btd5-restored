@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bk0xelethhlvc"
+path="res://.godot/imported/water.png-99e047e16f9041563125364b1febfebd.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/BrickWall/water.png"
+dest_files=["res://.godot/imported/water.png-99e047e16f9041563125364b1febfebd.image"]
+
+[params]
+

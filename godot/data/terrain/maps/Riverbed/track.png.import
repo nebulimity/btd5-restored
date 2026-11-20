@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://biaxx1hylje76"
+path="res://.godot/imported/track.png-afc15e13c7dbdc436dbefe0db5b1f4d1.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Riverbed/track.png"
+dest_files=["res://.godot/imported/track.png-afc15e13c7dbdc436dbefe0db5b1f4d1.image"]
+
+[params]
+

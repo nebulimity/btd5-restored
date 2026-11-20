@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cq6w1a0xqmexn"
+path="res://.godot/imported/water.png-5f251b8a371f65ec33858ff9c5c25a57.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/BattleKnot/water.png"
+dest_files=["res://.godot/imported/water.png-5f251b8a371f65ec33858ff9c5c25a57.image"]
+
+[params]
+

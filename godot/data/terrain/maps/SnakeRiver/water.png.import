@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://8bwhaef61o3f"
+path="res://.godot/imported/water.png-647080651e657c478063fdfc20c5ccab.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/SnakeRiver/water.png"
+dest_files=["res://.godot/imported/water.png-647080651e657c478063fdfc20c5ccab.image"]
+
+[params]
+

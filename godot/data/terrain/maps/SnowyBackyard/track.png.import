@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://i5pm1f7ctpif"
+path="res://.godot/imported/track.png-34f5d0394d0441b97266dd7965b365fc.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/SnowyBackyard/track.png"
+dest_files=["res://.godot/imported/track.png-34f5d0394d0441b97266dd7965b365fc.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://k155logm61o"
+path="res://.godot/imported/pontoon_space.png-e13be52bf7f2284e0d28b6f4c7820b80.image"
+
+[deps]
+
+source_file="res://data/terrain/footprints/pontoon_space.png"
+dest_files=["res://.godot/imported/pontoon_space.png-e13be52bf7f2284e0d28b6f4c7820b80.image"]
+
+[params]
+

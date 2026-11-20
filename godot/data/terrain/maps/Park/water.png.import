@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://c4qbqe6l8h6yu"
+path="res://.godot/imported/water.png-e75ab68dd9587f6b801366965bf2d7bf.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Park/water.png"
+dest_files=["res://.godot/imported/water.png-e75ab68dd9587f6b801366965bf2d7bf.image"]
+
+[params]
+

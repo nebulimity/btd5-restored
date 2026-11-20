@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://xn751pn1l35i"
+path="res://.godot/imported/track.png-162b70f14d7b33649870dc37cef0d3b4.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/LavaFields/track.png"
+dest_files=["res://.godot/imported/track.png-162b70f14d7b33649870dc37cef0d3b4.image"]
+
+[params]
+

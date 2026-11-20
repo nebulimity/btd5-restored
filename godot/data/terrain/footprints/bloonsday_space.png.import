@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dcoreo4hugs5g"
+path="res://.godot/imported/bloonsday_space.png-086ca8a99d6f7406e1a0bc8dc941a4da.image"
+
+[deps]
+
+source_file="res://data/terrain/footprints/bloonsday_space.png"
+dest_files=["res://.godot/imported/bloonsday_space.png-086ca8a99d6f7406e1a0bc8dc941a4da.image"]
+
+[params]
+

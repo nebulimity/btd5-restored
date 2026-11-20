@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b6g6on5wl2olr"
+path="res://.godot/imported/dead_zone.png-4c117f755e97990d988f404639028a41.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/SpookyCastle/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-4c117f755e97990d988f404639028a41.image"]
+
+[params]
+

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Godot;
 
 public partial class Main : Node
@@ -9,6 +10,8 @@ public partial class Main : Node
 	public TowerFactory TowerFactory;
 	public TowerMenuSet TowerMenu;
 
+	public Dictionary<string, Footprint> Footprints;
+
 	public override void _Ready()
 	{
 		Instance = this;
@@ -16,6 +19,8 @@ public partial class Main : Node
 		DefaultRounds = RoundsDef.Load("default");
 		TowerFactory = TowerFactory.Load();
 		TowerMenu = TowerMenuSet.Load(TowerFactory);
+
+		Footprints = TerrainLoader.LoadFootprints();
 	}
 
 	public override void _Input(InputEvent @event)

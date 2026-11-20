@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cbkpcrfjqmla6"
+path="res://.godot/imported/track.png-de6ef7f0ee9ff18109b5c98a4b3cfafb.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/AlpineLake/track.png"
+dest_files=["res://.godot/imported/track.png-de6ef7f0ee9ff18109b5c98a4b3cfafb.image"]
+
+[params]
+

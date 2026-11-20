@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bp8noe6ann50o"
+path="res://.godot/imported/track.png-2fe5a63fc45b4ec8183e0ce85c2bcb99.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/SprintTrack/track.png"
+dest_files=["res://.godot/imported/track.png-2fe5a63fc45b4ec8183e0ce85c2bcb99.image"]
+
+[params]
+

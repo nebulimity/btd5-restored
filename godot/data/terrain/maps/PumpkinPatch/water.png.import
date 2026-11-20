@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cp2n7rtuqavxi"
+path="res://.godot/imported/water.png-3682bdfd0c175b12c6f0e564e051e67d.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/PumpkinPatch/water.png"
+dest_files=["res://.godot/imported/water.png-3682bdfd0c175b12c6f0e564e051e67d.image"]
+
+[params]
+

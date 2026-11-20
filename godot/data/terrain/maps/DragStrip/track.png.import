@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://v3e1l011sg8c"
+path="res://.godot/imported/track.png-3ca80466a2136732ffde7a1f746502bd.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/DragStrip/track.png"
+dest_files=["res://.godot/imported/track.png-3ca80466a2136732ffde7a1f746502bd.image"]
+
+[params]
+

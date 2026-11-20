@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bwmdhy3va7mt2"
+path="res://.godot/imported/banana_farm_space.png-6451777c8a696767d02a464a92e81b08.image"
+
+[deps]
+
+source_file="res://data/terrain/footprints/banana_farm_space.png"
+dest_files=["res://.godot/imported/banana_farm_space.png-6451777c8a696767d02a464a92e81b08.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://78ir400k3jjq"
+path="res://.godot/imported/dead_zone.png-384ea8c865c8d90921a36b72bee276c4.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Pyramids/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-384ea8c865c8d90921a36b72bee276c4.image"]
+
+[params]
+

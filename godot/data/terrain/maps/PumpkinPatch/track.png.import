@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dpa6o48jyyfgy"
+path="res://.godot/imported/track.png-15f9eff25706a5e5accea66d8341276b.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/PumpkinPatch/track.png"
+dest_files=["res://.godot/imported/track.png-15f9eff25706a5e5accea66d8341276b.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bsfm8ih7y8244"
+path="res://.godot/imported/track.png-2960d1b512f072d255cb1bff493508f8.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/ExpressShipping/track.png"
+dest_files=["res://.godot/imported/track.png-2960d1b512f072d255cb1bff493508f8.image"]
+
+[params]
+

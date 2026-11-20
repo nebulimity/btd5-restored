@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bugj4bg1i72qn"
+path="res://.godot/imported/water.png-f2f591e0cd573621478e3f0efb3211dd.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/CryptKeeper/water.png"
+dest_files=["res://.godot/imported/water.png-f2f591e0cd573621478e3f0efb3211dd.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://eh1autb6s4vk"
+path="res://.godot/imported/track.png-3c0a8cfd0c7b5d1e42a1dd574b6f97b3.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/SantasWorkshop/track.png"
+dest_files=["res://.godot/imported/track.png-3c0a8cfd0c7b5d1e42a1dd574b6f97b3.image"]
+
+[params]
+

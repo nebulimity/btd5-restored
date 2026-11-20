@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bsk8erq5of71a"
+path="res://.godot/imported/track.png-3cf3fbea58d0e01737618ba45cd10762.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/SnakeRiver/track.png"
+dest_files=["res://.godot/imported/track.png-3cf3fbea58d0e01737618ba45cd10762.image"]
+
+[params]
+

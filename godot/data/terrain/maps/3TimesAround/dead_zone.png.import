@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://c1dax0xhixqd0"
+path="res://.godot/imported/dead_zone.png-d417cba17aba128887bdbbc07c2c707f.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/3TimesAround/dead_zone.png"
+dest_files=["res://.godot/imported/dead_zone.png-d417cba17aba128887bdbbc07c2c707f.image"]
+
+[params]
+

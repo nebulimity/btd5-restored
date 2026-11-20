@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cnpm83o34gtap"
+path="res://.godot/imported/track.png-a68067b665f71e76c611ce0d12a1d40d.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/DownTheDrain/track.png"
+dest_files=["res://.godot/imported/track.png-a68067b665f71e76c611ce0d12a1d40d.image"]
+
+[params]
+

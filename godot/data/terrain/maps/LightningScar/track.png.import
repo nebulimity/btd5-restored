@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dr62rq00ia3n6"
+path="res://.godot/imported/track.png-ca05594131a15dba9128e754994d79ca.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/LightningScar/track.png"
+dest_files=["res://.godot/imported/track.png-ca05594131a15dba9128e754994d79ca.image"]
+
+[params]
+

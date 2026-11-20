@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cqwmdi0xlg3g0"
+path="res://.godot/imported/track.png-26c5b2be2c2e70370895bfbcbd9cdc31.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/3TimesAround/track.png"
+dest_files=["res://.godot/imported/track.png-26c5b2be2c2e70370895bfbcbd9cdc31.image"]
+
+[params]
+

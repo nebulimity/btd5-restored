@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://blxw8xlpkwufj"
+path="res://.godot/imported/water.png-23d63c1fea35956df7c01827a0d0a5d0.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Slalom/water.png"
+dest_files=["res://.godot/imported/water.png-23d63c1fea35956df7c01827a0d0a5d0.image"]
+
+[params]
+

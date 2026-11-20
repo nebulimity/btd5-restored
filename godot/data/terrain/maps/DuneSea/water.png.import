@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://df57o4m7bqxur"
+path="res://.godot/imported/water.png-2a1423ea33c606446f16d1ff48967045.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/DuneSea/water.png"
+dest_files=["res://.godot/imported/water.png-2a1423ea33c606446f16d1ff48967045.image"]
+
+[params]
+

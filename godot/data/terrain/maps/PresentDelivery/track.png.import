@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://be4t51wbawruv"
+path="res://.godot/imported/track.png-ae4b6b7c01190bf0c7b9f2d4f38fcf17.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/PresentDelivery/track.png"
+dest_files=["res://.godot/imported/track.png-ae4b6b7c01190bf0c7b9f2d4f38fcf17.image"]
+
+[params]
+

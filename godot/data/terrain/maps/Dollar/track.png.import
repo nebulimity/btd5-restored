@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cira50mpn8jiu"
+path="res://.godot/imported/track.png-fe33df8fdd74dea6a7b40275249acc65.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/Dollar/track.png"
+dest_files=["res://.godot/imported/track.png-fe33df8fdd74dea6a7b40275249acc65.image"]
+
+[params]
+

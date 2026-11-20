@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bi2pb8ufivm6t"
+path="res://.godot/imported/track.png-c85868706e29af25248fee1a3985daed.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/SkullPeak/track.png"
+dest_files=["res://.godot/imported/track.png-c85868706e29af25248fee1a3985daed.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://da37x0nnifkje"
+path="res://.godot/imported/portable_lake_space_exceptions.png-319a102b251c8a4b225e97457329817f.image"
+
+[deps]
+
+source_file="res://data/terrain/footprints/portable_lake_space_exceptions.png"
+dest_files=["res://.godot/imported/portable_lake_space_exceptions.png-319a102b251c8a4b225e97457329817f.image"]
+
+[params]
+

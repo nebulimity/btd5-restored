@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b2062endutequ"
+path="res://.godot/imported/track.png-a6235ac2e1736a129da2a446b33263a2.image"
+
+[deps]
+
+source_file="res://data/terrain/maps/TheEye/track.png"
+dest_files=["res://.godot/imported/track.png-a6235ac2e1736a129da2a446b33263a2.image"]
+
+[params]
+
