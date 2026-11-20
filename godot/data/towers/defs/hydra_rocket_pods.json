@@ -1,0 +1,62 @@
+{
+	"id": "HydraRocketPods",
+	"label": "Hydra Rocket Pods",
+	"description": "",
+	"display": "hydra_rocket_pods",
+	"detailSmall": "hydra_rockets",
+	"detail": "hydra_rockets",
+	"occupiedSpace": "large",
+	"rangeOfVisibility": 1250,
+	"canPriorityTarget": false,
+	"targetMask": [
+		"None"
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToMouse"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "FireAtMouse",
+			"range": 1250,
+			"power": 1225,
+			"reloadTime": 0.2,
+			"projectile": {
+				"display": "hydra_missile",
+				"pierce": 1,
+				"radius": 8,
+				"effectMask": [
+					"None"
+				],
+				"behavior": {
+					"collision": {
+						"$type": "CollisionSpawnProjectile",
+						"projectile": {
+							"display": "medium_explosion",
+							"pierce": 40,
+							"radius": 60,
+							"effectMask": [
+								"None"
+							],
+							"damageEffect": {
+								"damage": 1,
+								"canBreakIce": true,
+								"showPop": false
+							}
+						}
+					}
+				}
+			},
+			"spread": 0.4
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 40,
+			"y": 0
+		}
+	],
+	"targetingSystem": 1,
+	"requiresTarget": false
+}

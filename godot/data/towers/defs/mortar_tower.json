@@ -1,0 +1,51 @@
+{
+	"id": "MortarTower",
+	"label": "Mortar Tower",
+	"description": "Targets a specific bit of ground anywhere on the screen. Launches explosive mortar shells to that spot. Useful for placing far away from the track to make room for other towers.",
+	"display": "mortar_tower",
+	"detail": "mortar_monkey",
+	"detailSmall": "mortar_monkey",
+	"occupiedSpace": "mortar_monkey_space",
+	"rangeOfVisibility": 1250,
+	"canPriorityTarget": false,
+	"sacrificeType": "Explosion",
+	"weapons": [
+		{
+			"$type": "FireAtReticle",
+			"id": "mortarWeapon",
+			"range": 1250,
+			"power": 600,
+			"reloadTime": 2.1,
+			"projectile": {
+				"display": "MovieClip",
+				"pierce": 1,
+				"radius": 5,
+				"effectMask": [
+					"All"
+				],
+				"behavior": {
+					"destroy": {
+						"$type": "SpawnProjectile",
+						"projectile": {
+							"display": "large_explosion",
+							"pierce": 40,
+							"radius": 75,
+							"damageEffect": {
+								"damage": 1,
+								"canBreakIce": true,
+								"cantBreak": [
+									"Black",
+									"Zebra"
+								],
+								"showPop": false
+							}
+						}
+					}
+				}
+			},
+			"spread": 60
+		}
+	],
+	"targetingSystem": 2,
+	"requiresTarget": false
+}

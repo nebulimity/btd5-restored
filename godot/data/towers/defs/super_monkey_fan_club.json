@@ -1,0 +1,53 @@
+{
+	"id": "SuperMonkeyFanClub",
+	"label": "Dart Monkey",
+	"display": "dart_super_call",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 100,
+	"detail": "fan_club",
+	"detailSmall": "fan_club",
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Spread",
+			"range": 161,
+			"power": 805,
+			"reloadTime": 0.9,
+			"projectile": {
+				"display": "dart",
+				"pierce": 4,
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"angle": 0.43,
+			"count": 3
+		}
+	],
+	"abilities": [
+		{
+			"$type": "SuperMonkeyFanClubDef",
+			"id": "SuperMonkeyFanClub",
+			"cooldown": 45,
+			"sound": "super_hero_upgrade",
+			"thumb": "activated_ability_dart_monkey",
+			"label": "Super Monkey Fan Club Ability",
+			"description": "Converts up to 10 nearby dart monkeys into Super Monkeys for 15 seconds",
+			"abilityClass": "SuperMonkeyFanClub"
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 6,
+			"y": 9
+		}
+	]
+}

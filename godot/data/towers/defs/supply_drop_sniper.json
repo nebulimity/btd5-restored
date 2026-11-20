@@ -1,0 +1,43 @@
+{
+	"id": "SupplyDropSniper",
+	"label": "Supply Drop Sniper",
+	"description": "",
+	"display": "sniper_supply",
+	"occupiedSpace": "small",
+	"detailSmall": "supply_drop",
+	"detail": "supply_drop",
+	"rangeOfVisibility": 1200,
+	"targetMask": [
+		"None"
+	],
+	"weapons": [
+		{
+			"$type": "Instant",
+			"id": "sniperAutomaticWeapon",
+			"reloadTime": 0.5,
+			"projectile": {
+				"display": "dart",
+				"pierce": 1,
+				"effectMask": [
+					"None"
+				],
+				"damageEffect": {
+					"damage": 2
+				}
+			}
+		}
+	],
+	"abilities": [
+		{
+			"$type": "SupplyDropDef",
+			"id": "SupplyDrop",
+			"cooldown": 60,
+			"sound": "crate_drop_plane_entrance",
+			"effect": "sniper_beacon",
+			"thumb": "activated_ability_sniper_monkey",
+			"label": "Supply Drop Ability",
+			"description": "Drops a crate full of cash.",
+			"abilityClass": "SupplyDrop"
+		}
+	]
+}

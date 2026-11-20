@@ -1,0 +1,33 @@
+{
+	"id": "TackTower",
+	"label": "Tack Shooter",
+	"description": "Shoots 8 tacks spread in all directions, each tack can pop 1 bloon. Has short range and medium-slow fire rate.",
+	"display": "tack_tower",
+	"detail": "tack_tower",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 70,
+	"detailSmall": "tack_tower",
+	"canPriorityTarget": false,
+	"rotates": false,
+	"weapons": [
+		{
+			"$type": "Circular",
+			"id": "tackWeapon",
+			"range": 70,
+			"power": 350,
+			"reloadTime": 1.66,
+			"projectile": {
+				"display": "tack",
+				"pierce": 1,
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"count": 8
+		}
+	]
+}

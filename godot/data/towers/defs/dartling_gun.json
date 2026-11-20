@@ -1,0 +1,51 @@
+{
+	"id": "DartlingGun",
+	"label": "Dartling Gun",
+	"description": "Shoots darts like a machine gun, super fast but not very accurate. The Dartling Gun will shoot towards wherever your mouse is, so you control how effective it is!",
+	"display": "dartling_gun",
+	"detail": "dartling_gun",
+	"detailSmall": "dartling_gun",
+	"occupiedSpace": "large",
+	"canPriorityTarget": false,
+	"rangeOfVisibility": 1250,
+	"targetMask": [
+		"None"
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToMouse"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "FireAtMouse",
+			"range": 1050,
+			"power": 875,
+			"reloadTime": 0.2,
+			"projectile": {
+				"display": "dart",
+				"pierce": 1,
+				"radius": 5,
+				"effectMask": [
+					"None"
+				],
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"spread": 0.4
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 40,
+			"y": 0
+		}
+	],
+	"targetingSystem": 1,
+	"requiresTarget": false
+}

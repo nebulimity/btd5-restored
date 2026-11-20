@@ -1,0 +1,48 @@
+{
+	"id": "BombTower",
+	"label": "Bomb Tower",
+	"description": "Shoots a single bomb that explodes in a radius burst on impact. Good range, medium-slow fire rate. Can pop lead bloons but not black bloons.",
+	"display": "bomb_tower",
+	"detail": "bomb_tower",
+	"occupiedSpace": "medium",
+	"rangeOfVisibility": 120,
+	"detailSmall": "bomb_tower",
+	"sacrificeType": "Explosion",
+	"weapons": [
+		{
+			"$type": "Single",
+			"range": 234,
+			"power": 455,
+			"reloadTime": 1.54,
+			"projectile": {
+				"display": "bomb",
+				"pierce": 1,
+				"radius": 5,
+				"behavior": {
+					"collision": {
+						"$type": "CollisionSpawnProjectile",
+						"projectile": {
+							"display": "medium_explosion",
+							"pierce": 40,
+							"radius": 60,
+							"damageEffect": {
+								"damage": 1,
+								"canBreakIce": true,
+								"cantBreak": [
+									"Black",
+									"Zebra"
+								],
+								"showPop": false
+							}
+						}
+					}
+				}
+			}
+		}
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	}
+}

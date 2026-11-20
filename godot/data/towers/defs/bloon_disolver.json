@@ -1,0 +1,48 @@
+{
+	"id": "BloonDisolver",
+	"label": "Bloon Dissolver",
+	"description": "",
+	"display": "bloon_dissolver",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 140,
+	"detail": "bloon_dissolver",
+	"detailSmall": "bloon_dissolver",
+	"targetMask": [
+		"NoDetection",
+		"Glue"
+	],
+	"sacrificeType": "Glue",
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Single",
+			"range": 225,
+			"power": 630,
+			"reloadTime": 1,
+			"projectile": {
+				"display": "disslover_shot",
+				"pierce": 1,
+				"effectMask": [
+					"NoDetection",
+					"Glue"
+				],
+				"glueEffect": {
+					"lifespan": 11.43,
+					"speedScale": 0.5,
+					"soak": true,
+					"corrosionInterval": 0.5
+				}
+			}
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 10,
+			"y": 5
+		}
+	]
+}

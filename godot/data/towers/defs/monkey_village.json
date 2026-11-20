@@ -1,0 +1,17 @@
+{
+	"id": "MonkeyVillage",
+	"label": "Monkey Village",
+	"description": "Monkey Village does not attack bloons but instead lowers cost of all towers and upgrades in radius by 10%. Has many useful upgrades that help nearby towers.",
+	"display": "monkey_village",
+	"detail": "monkey_village",
+	"occupiedSpace": "village_space",
+	"rangeOfVisibility": 120,
+	"detailSmall": "monkey_village",
+	"canPriorityTarget": false,
+	"rotates": false,
+	"areaEffects": [
+		{
+			"costScale": 0.9
+		}
+	]
+}

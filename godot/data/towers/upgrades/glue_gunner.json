@@ -1,0 +1,155 @@
+{
+	"base": "GlueGunner",
+	"upgrades": [
+		[
+			{
+				"label": "Glue Soak",
+				"description": "Glue soaks through all layers of bloons.",
+				"cost": 200,
+				"xpGate": 75,
+				"thumb": "glue_soak",
+				"add": {
+					"display": [
+						{
+							"useFor": "glue_gunner",
+							"display": "glue_sticky_soak"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"glueEffectMod": {
+								"soak": true
+							}
+						}
+					},
+					"detail": "glue_soak",
+					"detailSmall": "glue_soak"
+				}
+			},
+			{
+				"label": "Corrosive Glue",
+				"description": "Makes the glue become corrosive, popping bloons every few seconds while glued.",
+				"cost": 300,
+				"xpGate": 705,
+				"thumb": "corrosive_glue",
+				"add": {
+					"display": [
+						{
+							"useFor": "glue_sticky_soak",
+							"display": "corrosive_glue"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"glueEffectMod": {
+								"soak": true,
+								"corrosionInterval": 2.29
+							}
+						}
+					},
+					"detail": "corrosive_glue",
+					"detailSmall": "corrosive_glue"
+				}
+			},
+			{
+				"label": "Bloon Dissolver",
+				"description": "Glue contains an extreme solvent that melts bloons. While glued, bloons will pop twice every second.",
+				"cost": 3300,
+				"xpGate": 3095,
+				"thumb": "bloon_dissolver",
+				"assign": "BloonDisolver"
+			},
+			{
+				"label": "Bloon Liquefier",
+				"description": "Pops bloons once before glueing. Contains a super strong dissolving glue that pops bloons ten times every second!",
+				"cost": 12500,
+				"xpGate": 13335,
+				"rankGate": 27,
+				"thumb": "bloon_liquefier",
+				"assign": "BloonLiquefier"
+			}
+		],
+		[
+			{
+				"label": "Stickier Glue",
+				"description": "Makes glue effect last much longer.",
+				"cost": 120,
+				"xpGate": 275,
+				"thumb": "stickier_glue",
+				"add": {
+					"display": [
+						{
+							"useFor": "glue_gunner",
+							"display": "glue_sticky_soak"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"glueEffectMod": {
+								"lifespan": 11.43
+							}
+						}
+					},
+					"detail": "stickier_glue",
+					"detailSmall": "stickier_glue"
+				}
+			},
+			{
+				"label": "Glue Splatter",
+				"description": "Instead of glueing 1 bloon at a time, splatters 6 bloons at a time.",
+				"cost": 2200,
+				"xpGate": 1165,
+				"thumb": "glue_splatter",
+				"add": {
+					"display": [
+						{
+							"useFor": "glue_sticky_soak",
+							"display": "glue_splatter"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"behaviorMod": {
+								"addCollision": {
+									"$type": "CollisionSpawnProjectile",
+									"projectile": {
+										"display": "glue_splat",
+										"pierce": 5,
+										"radius": 60,
+										"effectMask": [
+											"NoDetection",
+											"Glue"
+										],
+										"glueEffect": {
+											"lifespan": 11.43,
+											"speedScale": 0.5
+										}
+									}
+								}
+							}
+						}
+					},
+					"detail": "glue_splatter",
+					"detailSmall": "glue_splatter"
+				}
+			},
+			{
+				"label": "Glue Hose",
+				"description": "Shoots glue more than 3x as fast!",
+				"cost": 3250,
+				"xpGate": 6175,
+				"thumb": "glue_hose",
+				"assign": "GlueHose"
+			},
+			{
+				"label": "Glue Striker",
+				"description": "Glue Strike Ability: glues all bloons on the screen.",
+				"cost": 5500,
+				"xpGate": 22445,
+				"rankGate": 27,
+				"thumb": "glue_striker",
+				"assign": "GlueStriker"
+			}
+		]
+	]
+}

@@ -1,0 +1,107 @@
+{
+	"id": "FirstStrikeCapability",
+	"label": "First Strike Capability",
+	"display": "sub_first_strike",
+	"occupiedSpace": "small",
+	"detail": "first_strike_capability",
+	"detailSmall": "first_strike_capability",
+	"rangeOfVisibility": 125,
+	"behavior": {
+		"processExtraFirst": {
+			"$type": "SpawnBallisticMissile",
+			"originOffset": {
+				"x": -20,
+				"y": 0
+			}
+		}
+	},
+	"abilities": [
+		{
+			"$type": "MoabAssassinDef",
+			"id": "FirstStrikeCapability",
+			"cooldown": 60,
+			"effect": "first_strike_capability_pulse",
+			"sound": "moab_assassin_missile",
+			"thumb": "activated_ability_first_strike_capability",
+			"label": "First Strike Capability",
+			"description": "Activated Ability: First Strike Capability - a devastating missile strike on the largest bloon on screen destroys up to a ZOMG bloon in one go, or many lesser bloons. 60 second cooldown.",
+			"abilityClass": "FirstStrikeCapabilityAbility"
+		}
+	],
+	"weapons": [
+		{
+			"$type": "SingleMonkeySubAirburst",
+			"id": "AirburstWeapon",
+			"rangeAirburst": 850,
+			"powerAirburst": 420,
+			"reloadTimeAirburst": 0.76,
+			"projectileAirburst": {
+				"display": "sub_dart_barbed",
+				"pierce": 1,
+				"behavior": {
+					"process": {
+						"$type": "TargetFixedThenClosest",
+						"turnTime": 0.08,
+						"seekAngle": 1.2566370614359172,
+						"seekTarget": true
+					},
+					"destroy": {
+						"$type": "SpawnSpreadAngleDestroy",
+						"spawnedProjectileDef": {
+							"display": "sub_airburst_dart_split",
+							"pierce": 3,
+							"damageEffect": {
+								"damage": 1,
+								"cantBreak": [
+									"Lead"
+								],
+								"canBreakIce": false
+							}
+						},
+						"angleSpacing": 0.43,
+						"count": 3
+					}
+				},
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"offsetSequenceAirburst": [
+				{
+					"x": 36,
+					"y": -5
+				},
+				{
+					"x": 36,
+					"y": 5
+				}
+			]
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 44,
+			"y": 0
+		}
+	],
+	"isBoat": true,
+	"isLand": false,
+	"displayAddons": [
+		{
+			"clip": "sub_first_strike_gun_left",
+			"z": 1,
+			"ref": "ballistic_gun_left",
+			"loop": false
+		},
+		{
+			"clip": "sub_first_strike_gun_right",
+			"z": 1,
+			"ref": "ballistic_gun_left",
+			"loop": false
+		}
+	]
+}

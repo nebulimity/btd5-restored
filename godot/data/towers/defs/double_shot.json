@@ -1,0 +1,44 @@
+{
+	"id": "DoubleShot",
+	"label": "Ninja Monkey",
+	"description": "",
+	"display": "ninja_double",
+	"detailSmall": "double_shurikens",
+	"detail": "double_shurikens",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 140,
+	"targetMask": [
+		"None"
+	],
+	"weapons": [
+		{
+			"$type": "Spread",
+			"range": 360,
+			"power": 630,
+			"reloadTime": 0.475,
+			"projectile": {
+				"display": "shuriken",
+				"pierce": 4,
+				"radius": 4,
+				"effectMask": [
+					"None"
+				],
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"count": 2,
+			"angle": 0.2,
+			"offset": 0.2
+		}
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	}
+}

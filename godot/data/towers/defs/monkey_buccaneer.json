@@ -1,0 +1,48 @@
+{
+	"id": "MonkeyBuccaneer",
+	"label": "Monkey Buccaneer",
+	"description": "Monkey Buccaneers can only be placed on water. Shoots a single, heavy dart that can pop up to 5 bloons each.",
+	"display": "monkey_buccaneer",
+	"detail": "buccaneer",
+	"occupiedSpace": "medium",
+	"detailSmall": "buccaneer",
+	"rangeOfVisibility": 180,
+	"isBoat": true,
+	"isLand": false,
+	"displayAddons": [
+		{
+			"clip": "buccaneer_cannons_right",
+			"z": -1,
+			"ref": "cannon_right",
+			"loop": false
+		},
+		{
+			"clip": "buccaneer_cannons_left",
+			"z": -1,
+			"ref": "cannon_left",
+			"loop": false
+		}
+	],
+	"weapons": [
+		{
+			"$type": "SideSingle",
+			"range": 300,
+			"power": 525,
+			"reloadTime": 1,
+			"projectile": {
+				"display": "buccaneer_dart",
+				"pierce": 5,
+				"radius": 8,
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"fireFromRight": "cannon_right",
+			"fireFromLeft": "cannon_left"
+		}
+	]
+}

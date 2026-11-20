@@ -1,0 +1,85 @@
+{
+	"id": "AircraftCarrier",
+	"label": "Aircraft Carrier",
+	"description": "",
+	"display": "aircraft_carrier",
+	"occupiedSpace": "medium",
+	"detailSmall": "carrier",
+	"detail": "carrier",
+	"rangeOfVisibility": 9999,
+	"rotates": false,
+	"isBoat": true,
+	"isLand": false,
+	"weapons": [
+		{
+			"$type": "LaunchAircraft",
+			"reloadTime": 2,
+			"aircraftWeapon": [
+				{
+					"$type": "Spread",
+					"reloadTime": 0.6,
+					"angle": 5.497787143782138,
+					"count": 8,
+					"projectile": {
+						"display": "dart",
+						"pierce": 15,
+						"damageEffect": {
+							"damage": 1,
+							"cantBreak": [
+								"Lead"
+							],
+							"canBreakIce": false
+						}
+					},
+					"power": 200,
+					"range": 1235,
+					"rotate": false
+				},
+				{
+					"$type": "Single",
+					"reloadTime": 0.15,
+					"projectile": {
+						"display": "dart",
+						"pierce": 15,
+						"damageEffect": {
+							"damage": 1,
+							"cantBreak": [
+								"Lead"
+							],
+							"canBreakIce": false
+						}
+					},
+					"power": 500,
+					"range": 1235,
+					"rotate": false
+				},
+				{
+					"$type": "Single",
+					"reloadTime": 0.15,
+					"projectile": {
+						"display": "dart",
+						"pierce": 15,
+						"damageEffect": {
+							"damage": 1,
+							"cantBreak": [
+								"Lead"
+							],
+							"canBreakIce": false
+						}
+					},
+					"power": 500,
+					"range": 1235,
+					"rotate": false
+				}
+			]
+		}
+	],
+	"behavior": {
+		"initialise": {
+			"$type": "ResetRotation"
+		},
+		"roundOver": {
+			"$type": "StopAnimation"
+		}
+	}
+}

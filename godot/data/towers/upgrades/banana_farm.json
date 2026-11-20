@@ -1,0 +1,123 @@
+{
+	"base": "BananaFarm",
+	"upgrades": [
+		[
+			{
+				"id": "MoreBananas",
+				"label": "More Bananas",
+				"description": "Grows 6 bananas each round instead of 4.",
+				"cost": 300,
+				"xpGate": 250,
+				"thumb": "more_bananas",
+				"add": {
+					"display": [
+						{
+							"useFor": "banana_farm",
+							"display": "more_bananas"
+						}
+					],
+					"behavior": {
+						"bananaMod": {
+							"cashPerRound": 40
+						}
+					},
+					"detail": "more_bananas",
+					"detailSmall": "more_bananas"
+				}
+			},
+			{
+				"id": "BananaPlantation",
+				"label": "Banana Plantation",
+				"description": "Grows 13 bananas each round.",
+				"cost": 1400,
+				"xpGate": 2250,
+				"thumb": "banana_plantation",
+				"add": {
+					"display": [
+						{
+							"useFor": "more_bananas",
+							"display": "banana_plantation"
+						}
+					],
+					"behavior": {
+						"bananaMod": {
+							"cashPerRound": 140
+						}
+					},
+					"detail": "banana_plantation",
+					"detailSmall": "banana_plantation"
+				}
+			},
+			{
+				"label": "Banana Republic",
+				"description": "Generates 25 bananas every round!",
+				"cost": 3200,
+				"xpGate": 10250,
+				"thumb": "banana_republic",
+				"assign": "BananaRepublic"
+			},
+			{
+				"label": "Banana Research Facility",
+				"description": "Produces 10 boxes of bananas every round. Each box is worth 200 cash.",
+				"cost": 14000,
+				"xpGate": 37550,
+				"rankGate": 36,
+				"thumb": "banana_research_facility",
+				"assign": "BananaResearchFacility"
+			}
+		],
+		[
+			{
+				"id": "LongLifeBananas",
+				"label": "Long Life Bananas",
+				"description": "Bananas last 20 seconds instead of the usual 10.",
+				"cost": 500,
+				"xpGate": 875,
+				"thumb": "long_life_bananas",
+				"add": {
+					"behavior": {
+						"bananaMod": {
+							"lifespan": 10
+						}
+					},
+					"detail": "long_life_nanas",
+					"detailSmall": "long_life_nanas"
+				}
+			},
+			{
+				"id": "ValuableBananas",
+				"label": "Valuable Bananas",
+				"description": "Each banana or box of bananas is worth 50% more cash.",
+				"cost": 4000,
+				"xpGate": 3750,
+				"thumb": "valuable_bananas2",
+				"add": {
+					"behavior": {
+						"bananaMod": {
+							"cashScale": 0.5
+						}
+					},
+					"detail": "valuable_nanas",
+					"detailSmall": "valuable_nanas"
+				}
+			},
+			{
+				"label": "Monkey Bank",
+				"description": "Generates $450 cash each round which gets stored. Earns 10% interest each round and holds up to 5000 cash. Withdraw the cash at any time.",
+				"cost": 4200,
+				"xpGate": 18350,
+				"thumb": "monkey_bank",
+				"assign": "MonkeyBank"
+			},
+			{
+				"label": "Banana Investments Advisory",
+				"description": "The investments advisory generates $1000 each round and earns 20% interest on uncollected funds. Withdraw the cash at any time, can hold up to $20,000.",
+				"cost": 5500,
+				"xpGate": 63250,
+				"rankGate": 36,
+				"thumb": "banana_investments_advisory",
+				"assign": "BananaInvestmentsAdvisory"
+			}
+		]
+	]
+}

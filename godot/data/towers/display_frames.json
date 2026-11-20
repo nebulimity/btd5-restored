@@ -1,0 +1,1474 @@
+{
+	"towers": {
+		"absolute_zero": {
+			"frameCount": 16.0,
+			"labels": {
+				"Throw": 3.0
+			}
+		},
+		"air_base": {
+			"frameCount": 24.0,
+			"labels": {}
+		},
+		"aircraft_carrier": {
+			"frameCount": 60.0,
+			"labels": {}
+		},
+		"antenna_base": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"arctic_wind": {
+			"frameCount": 13.0,
+			"labels": {
+				"Ambient": 0.0
+			}
+		},
+		"artillery_battery": {
+			"frameCount": 52.0,
+			"labels": {
+				"Throw1": 0.0,
+				"Throw2": 17.0,
+				"Throw3": 34.0
+			}
+		},
+		"banana_farm": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"banana_investments_advisory": {
+			"frameCount": 15.0,
+			"labels": {}
+		},
+		"banana_plantation": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"banana_republic": {
+			"frameCount": 15.0,
+			"labels": {
+				"Ambient": 0.0
+			}
+		},
+		"banana_research_facility": {
+			"frameCount": 29.0,
+			"labels": {
+				"Ambient": 0.0
+			}
+		},
+		"beacon": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"bigger_blast": {
+			"frameCount": 19.0,
+			"labels": {
+				"Throw": 15.0
+			}
+		},
+		"bigger_stacks": {
+			"frameCount": 7.0,
+			"labels": {
+				"Throw": 0.0
+			}
+		},
+		"bionic_boomer": {
+			"frameCount": 10.0,
+			"labels": {
+				"Idle": 0.0,
+				"Throw": 1.0
+			}
+		},
+		"bionic_glaiver": {
+			"frameCount": 10.0,
+			"labels": {
+				"Idle": 0.0,
+				"Throw": 1.0
+			}
+		},
+		"blade_maelstrom": {
+			"frameCount": 16.0,
+			"labels": {
+				"Throw": 4.0
+			}
+		},
+		"blade_shooter": {
+			"frameCount": 16.0,
+			"labels": {
+				"Throw": 4.0
+			}
+		},
+		"blizzard": {
+			"frameCount": 28.0,
+			"labels": {}
+		},
+		"bloon_area_denial_system": {
+			"frameCount": 13.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 1.0
+			}
+		},
+		"bloon_buster": {
+			"frameCount": 19.0,
+			"labels": {
+				"Throw": 15.0
+			}
+		},
+		"bloon_dissolver": {
+			"frameCount": 12.0,
+			"labels": {
+				"Throw": 7.0
+			}
+		},
+		"bloon_impact": {
+			"frameCount": 14.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"bloon_liquifier": {
+			"frameCount": 12.0,
+			"labels": {
+				"Throw": 7.0
+			}
+		},
+		"bloonjitsu": {
+			"frameCount": 10.0,
+			"labels": {
+				"Throw": 2.0
+			}
+		},
+		"bomb_tower": {
+			"frameCount": 14.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"bomb_tower_bigger_range": {
+			"frameCount": 14.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"boomerang_multi": {
+			"frameCount": 12.0,
+			"labels": {
+				"Idle": 0.0,
+				"Throw": 9.0
+			}
+		},
+		"boomerang_thrower": {
+			"frameCount": 12.0,
+			"labels": {
+				"Idle": 0.0,
+				"Throw": 9.0
+			}
+		},
+		"buccaneer_cannons_left": {
+			"frameCount": 11.0,
+			"labels": {
+				"Throw": 3.0
+			}
+		},
+		"buccaneer_cannons_right": {
+			"frameCount": 11.0,
+			"labels": {
+				"Throw": 3.0
+			}
+		},
+		"buccaneer_fast_grape": {
+			"frameCount": 50.0,
+			"labels": {
+				"Ambient": 0.0
+			}
+		},
+		"buccaneer_faster": {
+			"frameCount": 50.0,
+			"labels": {
+				"Ambient": 0.0
+			}
+		},
+		"buccaneer_grape": {
+			"frameCount": 30.0,
+			"labels": {}
+		},
+		"cannon_ship": {
+			"frameCount": 13.0,
+			"labels": {
+				"Ambient": 0.0
+			}
+		},
+		"cannon_ship_cannons_left": {
+			"frameCount": 11.0,
+			"labels": {
+				"Throw": 3.0
+			}
+		},
+		"cannon_ship_cannons_right": {
+			"frameCount": 11.0,
+			"labels": {
+				"Throw": 3.0
+			}
+		},
+		"china_shop": {
+			"frameCount": 23.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"china_shop_night_vis": {
+			"frameCount": 23.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"cluster_bombs": {
+			"frameCount": 14.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"cluster_missile": {
+			"frameCount": 21.0,
+			"labels": {
+				"Throw": 6.0
+			}
+		},
+		"corrosive_glue": {
+			"frameCount": 12.0,
+			"labels": {
+				"Throw": 7.0
+			}
+		},
+		"cripple_moab": {
+			"frameCount": 23.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"cripple_moab_night_vis": {
+			"frameCount": 23.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"dart_long_sharp": {
+			"frameCount": 11.0,
+			"labels": {
+				"Throw": 7.0
+			}
+		},
+		"dart_longer_razor": {
+			"frameCount": 11.0,
+			"labels": {
+				"Throw": 7.0
+			}
+		},
+		"dart_monkey": {
+			"frameCount": 11.0,
+			"labels": {
+				"Throw": 7.0
+			}
+		},
+		"dart_super_call": {
+			"frameCount": 11.0,
+			"labels": {
+				"Throw": 7.0
+			}
+		},
+		"dartling_focused": {
+			"frameCount": 13.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 1.0
+			}
+		},
+		"dartling_gun": {
+			"frameCount": 13.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 1.0
+			}
+		},
+		"depleted_bloontonium_darts": {
+			"frameCount": 13.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 1.0
+			}
+		},
+		"destroyer": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"distraction": {
+			"frameCount": 10.0,
+			"labels": {
+				"Throw": 2.0
+			}
+		},
+		"dragons_breath": {
+			"frameCount": 7.0,
+			"labels": {
+				"Firebreathe": 0.0,
+				"Loop": 1.0,
+				"End": 6.0
+			}
+		},
+		"druid_body": {
+			"frameCount": 19.0,
+			"labels": {
+				"Throw": 10.0
+			}
+		},
+		"druid_cloud": {
+			"frameCount": 120.0,
+			"labels": {
+				"Ambient": 0.0
+			}
+		},
+		"druid_head": {
+			"frameCount": 73.0,
+			"labels": {
+				"Ambient": 0.0,
+				"Ambient End": 34.0,
+				"Laugh": 35.0
+			}
+		},
+		"energy_beacon": {
+			"frameCount": 168.0,
+			"labels": {
+				"Loop": 0.0
+			}
+		},
+		"energy_beacon_radar": {
+			"frameCount": 25.0,
+			"labels": {
+				"Loop": 0.0
+			}
+		},
+		"even_faster_production": {
+			"frameCount": 7.0,
+			"labels": {
+				"Throw": 0.0
+			}
+		},
+		"fast_fire": {
+			"frameCount": 23.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"faster_barrel_spin": {
+			"frameCount": 13.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 1.0
+			}
+		},
+		"faster_bigger_stacks": {
+			"frameCount": 7.0,
+			"labels": {
+				"Throw": 0.0
+			}
+		},
+		"faster_mine_spike": {
+			"frameCount": 9.0,
+			"labels": {
+				"Throw": 0.0
+			}
+		},
+		"faster_production": {
+			"frameCount": 7.0,
+			"labels": {
+				"Throw": 0.0
+			}
+		},
+		"faster_spike_ball": {
+			"frameCount": 9.0,
+			"labels": {
+				"Throw": 0.0
+			}
+		},
+		"faster_white_hot_spikes": {
+			"frameCount": 7.0,
+			"labels": {
+				"Throw": 0.0
+			}
+		},
+		"fire_circle": {
+			"frameCount": 10.0,
+			"labels": {}
+		},
+		"flare": {
+			"frameCount": 19.0,
+			"labels": {
+				"Throw": 15.0
+			}
+		},
+		"flash_bomb": {
+			"frameCount": 10.0,
+			"labels": {
+				"Throw": 2.0
+			}
+		},
+		"frag_bombs": {
+			"frameCount": 14.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"glaive_lord": {
+			"frameCount": 12.0,
+			"labels": {
+				"Idle": 0.0,
+				"Throw": 9.0
+			}
+		},
+		"glaive_ricochet": {
+			"frameCount": 12.0,
+			"labels": {
+				"Idle": 0.0,
+				"Throw": 9.0
+			}
+		},
+		"glaive_thrower": {
+			"frameCount": 12.0,
+			"labels": {
+				"Idle": 0.0,
+				"Throw": 9.0
+			}
+		},
+		"glue_gunner": {
+			"frameCount": 12.0,
+			"labels": {
+				"Throw": 7.0
+			}
+		},
+		"glue_hose": {
+			"frameCount": 20.0,
+			"labels": {
+				"Throw": 5.0,
+				"Loop": 10.0
+			}
+		},
+		"glue_splatter": {
+			"frameCount": 12.0,
+			"labels": {
+				"Throw": 7.0
+			}
+		},
+		"glue_sticky_soak": {
+			"frameCount": 12.0,
+			"labels": {
+				"Throw": 7.0
+			}
+		},
+		"glue_striker": {
+			"frameCount": 20.0,
+			"labels": {
+				"Throw": 5.0,
+				"Loop": 10.0
+			}
+		},
+		"harpoon_left": {
+			"frameCount": 11.0,
+			"labels": {
+				"Idle": 0.0,
+				"Fire": 2.0
+			}
+		},
+		"harpoon_right": {
+			"frameCount": 11.0,
+			"labels": {
+				"Idle": 0.0,
+				"Fire": 2.0
+			}
+		},
+		"heavy_dart": {
+			"frameCount": 23.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"high_cal": {
+			"frameCount": 23.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"high_cal_night_vis": {
+			"frameCount": 23.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"hot_glaive_lord": {
+			"frameCount": 12.0,
+			"labels": {
+				"Idle": 0.0,
+				"Throw": 9.0
+			}
+		},
+		"hot_glaive_ricochet": {
+			"frameCount": 12.0,
+			"labels": {
+				"Idle": 0.0,
+				"Throw": 9.0
+			}
+		},
+		"hot_glaive_thrower": {
+			"frameCount": 12.0,
+			"labels": {
+				"Idle": 0.0,
+				"Throw": 9.0
+			}
+		},
+		"hydra_rocket_pods": {
+			"frameCount": 13.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 1.0
+			}
+		},
+		"ice_shards": {
+			"frameCount": 16.0,
+			"labels": {
+				"Throw": 3.0
+			}
+		},
+		"ice_tower": {
+			"frameCount": 4.0,
+			"labels": {}
+		},
+		"intense_fireball": {
+			"frameCount": 14.0,
+			"labels": {
+				"Throw": 2.0
+			}
+		},
+		"juggernaut": {
+			"frameCount": 27.0,
+			"labels": {
+				"Throw": 2.0
+			}
+		},
+		"jungle_drums": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"laser_cannon": {
+			"frameCount": 13.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 1.0
+			}
+		},
+		"laser_monkey": {
+			"frameCount": 6.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 1.0
+			}
+		},
+		"left_back": {
+			"frameCount": 6.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"left_front": {
+			"frameCount": 25.0,
+			"labels": {
+				"Loop": 0.0
+			}
+		},
+		"lightning_sense": {
+			"frameCount": 14.0,
+			"labels": {
+				"Throw": 2.0
+			}
+		},
+		"longer_cannons_left": {
+			"frameCount": 11.0,
+			"labels": {
+				"Throw": 3.0
+			}
+		},
+		"longer_cannons_right": {
+			"frameCount": 11.0,
+			"labels": {
+				"Throw": 3.0
+			}
+		},
+		"longer_nest": {
+			"frameCount": 10.0,
+			"labels": {
+				"Ambient": 0.0
+			}
+		},
+		"mine_spike": {
+			"frameCount": 9.0,
+			"labels": {
+				"Throw": 0.0
+			}
+		},
+		"missile_buster": {
+			"frameCount": 21.0,
+			"labels": {
+				"Throw": 6.0
+			}
+		},
+		"missile_launcher": {
+			"frameCount": 21.0,
+			"labels": {
+				"Throw": 6.0
+			}
+		},
+		"moab_assassin": {
+			"frameCount": 20.0,
+			"labels": {
+				"Throw": 6.0
+			}
+		},
+		"moab_mauler": {
+			"frameCount": 20.0,
+			"labels": {
+				"Throw": 6.0
+			}
+		},
+		"moab_shreder": {
+			"frameCount": 9.0,
+			"labels": {
+				"Throw": 0.0
+			}
+		},
+		"money_bank": {
+			"frameCount": 15.0,
+			"labels": {}
+		},
+		"monkey_ace": {
+			"frameCount": 35.0,
+			"labels": {
+				"Takeoff": 0.0,
+				"Idle": 10.0,
+				"Landing": 25.0
+			}
+		},
+		"monkey_ace_rapid": {
+			"frameCount": 35.0,
+			"labels": {
+				"Takeoff": 0.0,
+				"Idle": 10.0,
+				"Landing": 25.0
+			}
+		},
+		"monkey_apprentice": {
+			"frameCount": 14.0,
+			"labels": {
+				"Throw": 2.0
+			}
+		},
+		"monkey_buccaneer": {
+			"frameCount": 10.0,
+			"labels": {}
+		},
+		"monkey_fort": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"monkey_god_head": {
+			"frameCount": 7.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 1.0
+			}
+		},
+		"monkey_intelligence_burau": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"monkey_pirates": {
+			"frameCount": 10.0,
+			"labels": {
+				"Ambient": 0.0
+			}
+		},
+		"monkey_sub": {
+			"frameCount": 6.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"monkey_town": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"monkey_town_fort": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"monkey_village": {
+			"frameCount": 15.0,
+			"labels": {}
+		},
+		"more_bananas": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"mortar_tower": {
+			"frameCount": 19.0,
+			"labels": {
+				"Throw": 15.0
+			}
+		},
+		"mortar_tower_accurate": {
+			"frameCount": 19.0,
+			"labels": {
+				"Throw": 15.0
+			}
+		},
+		"neva_miss_targeting": {
+			"frameCount": 35.0,
+			"labels": {
+				"Takeoff": 0.0,
+				"Idle": 10.0,
+				"Landing": 25.0
+			}
+		},
+		"night_vision": {
+			"frameCount": 23.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"ninja": {
+			"frameCount": 10.0,
+			"labels": {
+				"Throw": 2.0
+			}
+		},
+		"ninja_discipline": {
+			"frameCount": 10.0,
+			"labels": {
+				"Throw": 2.0
+			}
+		},
+		"ninja_double": {
+			"frameCount": 10.0,
+			"labels": {
+				"Throw": 2.0
+			}
+		},
+		"notes": {
+			"frameCount": 34.0,
+			"labels": {}
+		},
+		"operation_dart_storm": {
+			"frameCount": 35.0,
+			"labels": {
+				"Takeoff": 0.0,
+				"Idle": 10.0,
+				"Landing": 25.0
+			}
+		},
+		"perma_freeze": {
+			"frameCount": 4.0,
+			"labels": {}
+		},
+		"pirates_cannons_left": {
+			"frameCount": 11.0,
+			"labels": {
+				"Throw": 3.0
+			}
+		},
+		"pirates_cannons_right": {
+			"frameCount": 11.0,
+			"labels": {
+				"Throw": 3.0
+			}
+		},
+		"plasma_vision": {
+			"frameCount": 6.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 1.0
+			}
+		},
+		"radar_scanner": {
+			"frameCount": 32.0,
+			"labels": {}
+		},
+		"ray_of_doom": {
+			"frameCount": 13.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 1.0
+			}
+		},
+		"red_hot_rangs": {
+			"frameCount": 12.0,
+			"labels": {
+				"Idle": 0.0,
+				"Throw": 9.0
+			}
+		},
+		"right_back": {
+			"frameCount": 6.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"right_front": {
+			"frameCount": 19.0,
+			"labels": {
+				"Loop": 0.0
+			}
+		},
+		"ring_of_fire": {
+			"frameCount": 14.0,
+			"labels": {
+				"Ambient": 0.0
+			}
+		},
+		"robo_monkey": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"robo_monkey_left_arm": {
+			"frameCount": 5.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 1.0
+			}
+		},
+		"robo_monkey_right_arm": {
+			"frameCount": 5.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 1.0
+			}
+		},
+		"sabotage": {
+			"frameCount": 10.0,
+			"labels": {
+				"Throw": 2.0
+			}
+		},
+		"seeking_shurikens": {
+			"frameCount": 10.0,
+			"labels": {
+				"Throw": 2.0
+			}
+		},
+		"semi_automatic": {
+			"frameCount": 23.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"sharp_shuriken": {
+			"frameCount": 10.0,
+			"labels": {
+				"Throw": 2.0
+			}
+		},
+		"sharper_spy_plane": {
+			"frameCount": 35.0,
+			"labels": {
+				"Takeoff": 0.0,
+				"Idle": 10.0,
+				"Landing": 25.0
+			}
+		},
+		"snap_freeze": {
+			"frameCount": 4.0,
+			"labels": {}
+		},
+		"sniper": {
+			"frameCount": 23.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"sniper_supply": {
+			"frameCount": 23.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"snow_flakes": {
+			"frameCount": 81.0,
+			"labels": {}
+		},
+		"sonic_boom": {
+			"frameCount": 12.0,
+			"labels": {
+				"Idle": 0.0,
+				"Throw": 9.0
+			}
+		},
+		"sonic_boom_multi": {
+			"frameCount": 12.0,
+			"labels": {
+				"Idle": 0.0,
+				"Throw": 9.0
+			}
+		},
+		"sonic_glaive_thrower": {
+			"frameCount": 12.0,
+			"labels": {
+				"Idle": 0.0,
+				"Throw": 9.0
+			}
+		},
+		"spectre": {
+			"frameCount": 35.0,
+			"labels": {
+				"Takeoff": 0.0,
+				"Idle": 10.0,
+				"Landing": 25.0
+			}
+		},
+		"spike_ball": {
+			"frameCount": 9.0,
+			"labels": {
+				"Throw": 0.0
+			}
+		},
+		"spike_factory": {
+			"frameCount": 7.0,
+			"labels": {
+				"Throw": 0.0
+			}
+		},
+		"spike_o_pult": {
+			"frameCount": 23.0,
+			"labels": {
+				"Throw": 2.0
+			}
+		},
+		"spike_storm": {
+			"frameCount": 9.0,
+			"labels": {
+				"Throw": 0.0
+			}
+		},
+		"sub_advanced_intel": {
+			"frameCount": 6.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"sub_airburst_darts": {
+			"frameCount": 8.0,
+			"labels": {}
+		},
+		"sub_airburst_intel": {
+			"frameCount": 8.0,
+			"labels": {}
+		},
+		"sub_ballistic_missile": {
+			"frameCount": 12.0,
+			"labels": {}
+		},
+		"sub_ballistic_missile_gun_left": {
+			"frameCount": 6.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"sub_ballistic_missile_gun_right": {
+			"frameCount": 6.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"sub_barbed_darts": {
+			"frameCount": 6.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"sub_bloontonium_reactor": {
+			"frameCount": 40.0,
+			"labels": {}
+		},
+		"sub_first_strike": {
+			"frameCount": 12.0,
+			"labels": {}
+		},
+		"sub_first_strike_gun_left": {
+			"frameCount": 6.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"sub_first_strike_gun_right": {
+			"frameCount": 6.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"sub_gun_left": {
+			"frameCount": 6.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"sub_gun_right": {
+			"frameCount": 6.0,
+			"labels": {
+				"Throw": 1.0
+			}
+		},
+		"sub_submerge_support": {
+			"frameCount": 6.0,
+			"labels": {}
+		},
+		"sub_twin_barbed_darts": {
+			"frameCount": 8.0,
+			"labels": {}
+		},
+		"sub_twin_guns": {
+			"frameCount": 8.0,
+			"labels": {}
+		},
+		"summon_phoenix": {
+			"frameCount": 7.0,
+			"labels": {
+				"Firebreathe": 0.0,
+				"Loop": 1.0
+			}
+		},
+		"summon_whirlwind": {
+			"frameCount": 19.0,
+			"labels": {
+				"Throw": 3.0
+			}
+		},
+		"sun_avatar": {
+			"frameCount": 6.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 1.0
+			}
+		},
+		"super_monkey": {
+			"frameCount": 5.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 1.0
+			}
+		},
+		"super_monkey_range": {
+			"frameCount": 5.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 1.0
+			}
+		},
+		"supply_drop": {
+			"frameCount": 35.0,
+			"labels": {
+				"Takeoff": 0.0,
+				"Idle": 10.0,
+				"Landing": 25.0
+			}
+		},
+		"tack_sprayer": {
+			"frameCount": 9.0,
+			"labels": {
+				"Throw": 4.0
+			}
+		},
+		"tack_tower": {
+			"frameCount": 9.0,
+			"labels": {
+				"Throw": 4.0
+			}
+		},
+		"tack_tower_even_faster": {
+			"frameCount": 9.0,
+			"labels": {
+				"Throw": 4.0
+			}
+		},
+		"tack_tower_faster": {
+			"frameCount": 9.0,
+			"labels": {
+				"Throw": 4.0
+			}
+		},
+		"techno_terror_left_arm": {
+			"frameCount": 7.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 2.0
+			}
+		},
+		"techno_terror_right_arm": {
+			"frameCount": 7.0,
+			"labels": {
+				"Idle": 0.0,
+				"Loop": 2.0
+			}
+		},
+		"technological_terror": {
+			"frameCount": 11.0,
+			"labels": {
+				"IdleLoop": 0.0
+			}
+		},
+		"tempest_cloud": {
+			"frameCount": 37.0,
+			"labels": {}
+		},
+		"tempest_tornado": {
+			"frameCount": 15.0,
+			"labels": {
+				"Throw": 2.0
+			}
+		},
+		"temple_of_the_monkey_god": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"the_big_one": {
+			"frameCount": 19.0,
+			"labels": {
+				"Throw": 3.0
+			}
+		},
+		"triple_shot": {
+			"frameCount": 11.0,
+			"labels": {
+				"Throw": 7.0
+			}
+		},
+		"turbo_charge": {
+			"frameCount": 10.0,
+			"labels": {
+				"Idle": 0.0,
+				"Throw": 1.0
+			}
+		},
+		"turbo_glaiver": {
+			"frameCount": 10.0,
+			"labels": {
+				"Idle": 0.0,
+				"Throw": 1.0
+			}
+		},
+		"viral_fog": {
+			"frameCount": 34.0,
+			"labels": {}
+		},
+		"viral_forst": {
+			"frameCount": 13.0,
+			"labels": {
+				"Ambient": 0.0
+			}
+		},
+		"white_hot_moab_shreder": {
+			"frameCount": 9.0,
+			"labels": {
+				"Throw": 0.0
+			}
+		},
+		"white_hot_spike_storm": {
+			"frameCount": 9.0,
+			"labels": {
+				"Throw": 0.0
+			}
+		},
+		"white_hot_tacks": {
+			"frameCount": 7.0,
+			"labels": {
+				"Throw": 0.0
+			}
+		}
+	},
+	"projectiles": {
+		"apprentice_breath": {
+			"frameCount": 15.0,
+			"labels": {
+				"Loop": 0.0
+			}
+		},
+		"apprentice_disspate": {
+			"frameCount": 11.0,
+			"labels": {
+				"Loop": 0.0
+			}
+		},
+		"banana_crate": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"bananas": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"big_bomb": {
+			"frameCount": 15.0,
+			"labels": {}
+		},
+		"blade_maelstrom": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"blob_yellow": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"blootonium_dart": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"bomb": {
+			"frameCount": 15.0,
+			"labels": {}
+		},
+		"bomb_cluster": {
+			"frameCount": 15.0,
+			"labels": {}
+		},
+		"boomerang": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"buccaneer_dart": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"burny_large_explosion": {
+			"frameCount": 9.0,
+			"labels": {}
+		},
+		"burny_medium_explosion": {
+			"frameCount": 9.0,
+			"labels": {}
+		},
+		"burny_nuclear_explosion": {
+			"frameCount": 17.0,
+			"labels": {}
+		},
+		"burny_slightly_larger_explosion": {
+			"frameCount": 9.0,
+			"labels": {}
+		},
+		"dart": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"disslover_shot": {
+			"frameCount": 10.0,
+			"labels": {}
+		},
+		"fireball": {
+			"frameCount": 10.0,
+			"labels": {}
+		},
+		"flash_bomb": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"frag_shard": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"glaive": {
+			"frameCount": 14.0,
+			"labels": {}
+		},
+		"glue_shot": {
+			"frameCount": 10.0,
+			"labels": {}
+		},
+		"glue_splat": {
+			"frameCount": 10.0,
+			"labels": {}
+		},
+		"grape_shot": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"hot_glaive": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"hot_rang": {
+			"frameCount": 10.0,
+			"labels": {}
+		},
+		"hydra_missile": {
+			"frameCount": 4.0,
+			"labels": {}
+		},
+		"ice_burst": {
+			"frameCount": 8.0,
+			"labels": {}
+		},
+		"ice_burst_large": {
+			"frameCount": 8.0,
+			"labels": {}
+		},
+		"ice_burst_medium": {
+			"frameCount": 8.0,
+			"labels": {}
+		},
+		"intense_magic": {
+			"frameCount": 9.0,
+			"labels": {}
+		},
+		"large_explosion": {
+			"frameCount": 9.0,
+			"labels": {}
+		},
+		"large_spike_ball": {
+			"frameCount": 9.0,
+			"labels": {}
+		},
+		"laser": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"laser_cannon": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"magic_bolt": {
+			"frameCount": 7.0,
+			"labels": {}
+		},
+		"medium_explosion": {
+			"frameCount": 9.0,
+			"labels": {}
+		},
+		"missile": {
+			"frameCount": 4.0,
+			"labels": {}
+		},
+		"moab": {
+			"frameCount": 4.0,
+			"labels": {}
+		},
+		"moab_assassin": {
+			"frameCount": 4.0,
+			"labels": {}
+		},
+		"nuclear_explosion": {
+			"frameCount": 17.0,
+			"labels": {}
+		},
+		"pineapple_bomb": {
+			"frameCount": 4.0,
+			"labels": {
+				"Idle": 0.0,
+				"1": 1.0,
+				"2": 2.0,
+				"3": 3.0
+			}
+		},
+		"plasma": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"ring_of_fire": {
+			"frameCount": 18.0,
+			"labels": {}
+		},
+		"road_spikes": {
+			"frameCount": 12.0,
+			"labels": {}
+		},
+		"robo_dart": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"robo_laser": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"shuriken": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"slightly_larger_explosion": {
+			"frameCount": 9.0,
+			"labels": {}
+		},
+		"spectre_bomb": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"spike_ball": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"spike_factory_ball": {
+			"frameCount": 11.0,
+			"labels": {}
+		},
+		"spike_factory_spikes": {
+			"frameCount": 11.0,
+			"labels": {}
+		},
+		"spike_mine_ball": {
+			"frameCount": 11.0,
+			"labels": {}
+		},
+		"sub_airburst_dart_split": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"sub_dart": {
+			"frameCount": 10.0,
+			"labels": {}
+		},
+		"sub_dart_barbed": {
+			"frameCount": 10.0,
+			"labels": {}
+		},
+		"sun_beam": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"tack": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"tempest": {
+			"frameCount": 16.0,
+			"labels": {
+				"Loop": 0.0
+			}
+		},
+		"terror_blast": {
+			"frameCount": 23.0,
+			"labels": {}
+		},
+		"terror_shot": {
+			"frameCount": 1.0,
+			"labels": {}
+		},
+		"tiny_tornado": {
+			"frameCount": 8.0,
+			"labels": {
+				"Loop": 0.0
+			}
+		},
+		"tornado": {
+			"frameCount": 8.0,
+			"labels": {
+				"Loop": 0.0
+			}
+		},
+		"white_hot_spikes": {
+			"frameCount": 11.0,
+			"labels": {}
+		}
+	}
+}

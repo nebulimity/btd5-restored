@@ -1,0 +1,103 @@
+{
+	"id": "GlaiveRiccochet",
+	"label": "Boomerang Thrower",
+	"description": "Throws a single boomerang in an arc back round to the monkey. Each boomerang can pop 3 bloons.",
+	"display": "glaive_ricochet",
+	"occupiedSpace": "medium",
+	"rangeOfVisibility": 130,
+	"detailSmall": "ricochet",
+	"detail": "ricochet",
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Spread",
+			"range": 520,
+			"power": 700,
+			"reloadTime": 1.17,
+			"projectile": {
+				"display": "glaive",
+				"pierce": 1,
+				"radius": 10,
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				},
+				"behavior": {
+					"process": {
+						"$type": "FollowPath",
+						"path": [
+							{
+								"a": {
+									"x": 0,
+									"y": 0
+								},
+								"b": {
+									"x": 0,
+									"y": 0
+								},
+								"c": {
+									"x": 112,
+									"y": 55
+								},
+								"d": {
+									"x": 131,
+									"y": -27
+								}
+							},
+							{
+								"a": {
+									"x": 131,
+									"y": -27
+								},
+								"b": {
+									"x": 151,
+									"y": -109
+								},
+								"c": {
+									"x": 45,
+									"y": -159
+								},
+								"d": {
+									"x": -13,
+									"y": -11
+								}
+							}
+						]
+					},
+					"collision": {
+						"$type": "CollisionSpawnProjectile",
+						"projectile": {
+							"display": "glaive",
+							"pierce": 100,
+							"radius": 10,
+							"damageEffect": {
+								"damage": 1,
+								"cantBreak": [
+									"Lead"
+								],
+								"canBreakIce": false
+							},
+							"behavior": {
+								"process": {
+									"$type": "GoToNextTarget"
+								}
+							}
+						}
+					},
+					"lifespanOver": {
+						"$type": "LifeSpanOverBoomerangSpecialty"
+					}
+				}
+			},
+			"count": 1,
+			"angle": 0.5
+		}
+	]
+}

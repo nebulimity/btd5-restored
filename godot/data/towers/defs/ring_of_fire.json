@@ -1,0 +1,29 @@
+{
+	"id": "RingOfFire",
+	"label": "Ring of Fire",
+	"display": "ring_of_fire",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 80,
+	"detail": "ring_of_fire",
+	"detailSmall": "ring_of_fire",
+	"canPriorityTarget": false,
+	"rotates": false,
+	"weapons": [
+		{
+			"$type": "Surround",
+			"id": "ringOfFireWeapon",
+			"range": 80,
+			"reloadTime": 0.33,
+			"projectile": {
+				"display": "ring_of_fire",
+				"pierce": 60,
+				"radius": 80,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				}
+			},
+			"lifespan": 0.25
+		}
+	]
+}

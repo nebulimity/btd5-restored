@@ -1,0 +1,147 @@
+{
+	"sniperWeapon": {
+		"$type": "Instant",
+		"id": "sniperWeapon",
+		"reloadTime": 2.2,
+		"projectile": {
+			"display": "dart",
+			"pierce": 1.0,
+			"damageEffect": {
+				"damage": 2.0,
+				"cantBreak": [
+					"Lead"
+				]
+			}
+		}
+	},
+	"sniperAutomaticWeapon": {
+		"$type": "Instant",
+		"id": "sniperAutomaticWeapon",
+		"reloadTime": 0.5,
+		"projectile": {
+			"display": "dart",
+			"pierce": 1.0,
+			"effectMask": [
+				"None"
+			],
+			"damageEffect": {
+				"damage": 2.0
+			}
+		}
+	},
+	"sniperDeadlyWeapon": {
+		"$type": "Instant",
+		"id": "sniperDeadlyWeapon",
+		"reloadTime": 2.2,
+		"projectile": {
+			"display": "dart",
+			"pierce": 1.0,
+			"damageEffect": {
+				"damage": 18.0
+			}
+		}
+	},
+	"sniperCrippleWeapon": {
+		"$type": "Instant",
+		"id": "sniperCrippleWeapon",
+		"reloadTime": 2.2,
+		"projectile": {
+			"display": "dart",
+			"pierce": 1.0,
+			"damageEffect": {
+				"damage": 18.0
+			},
+			"stunEffect": {
+				"lifespan": 3.0,
+				"inherit": false,
+				"cantEffect": [
+					"Red",
+					"Blue",
+					"Green",
+					"Yellow",
+					"Pink",
+					"Black",
+					"White",
+					"Lead",
+					"Zebra",
+					"Rainbow",
+					"Ceramic"
+				]
+			}
+		}
+	},
+	"tackWeapon": {
+		"$type": "Circular",
+		"id": "tackWeapon",
+		"range": 70.0,
+		"power": 350.0,
+		"reloadTime": 1.66,
+		"projectile": {
+			"display": "tack",
+			"pierce": 1.0,
+			"damageEffect": {
+				"damage": 1.0,
+				"cantBreak": [
+					"Lead"
+				],
+				"canBreakIce": false
+			}
+		},
+		"count": 8.0
+	},
+	"tackSprayerWeapon": {
+		"$type": "Circular",
+		"id": "tackSprayerWeapon",
+		"range": 70.0,
+		"power": 350.0,
+		"reloadTime": 0.66,
+		"projectile": {
+			"display": "tack",
+			"pierce": 1.0,
+			"damageEffect": {
+				"damage": 1.0,
+				"cantBreak": [
+					"Lead"
+				],
+				"canBreakIce": false
+			}
+		},
+		"count": 16.0
+	},
+	"ringOfFireWeapon": {
+		"$type": "Surround",
+		"id": "ringOfFireWeapon",
+		"range": 80.0,
+		"reloadTime": 0.33,
+		"projectile": {
+			"display": "ring_of_fire",
+			"pierce": 60.0,
+			"radius": 80.0,
+			"damageEffect": {
+				"damage": 1.0,
+				"canBreakIce": true
+			}
+		},
+		"lifespan": 0.25
+	},
+	"bladeShooterWeapon": {
+		"$type": "Circular",
+		"id": "bladeShooterWeapon",
+		"range": 88.0,
+		"power": 490.0,
+		"reloadTime": 1.51,
+		"projectile": {
+			"display": "blade_maelstrom",
+			"pierce": 2.0,
+			"radius": 5.0,
+			"damageEffect": {
+				"damage": 1.0,
+				"cantBreak": [
+					"Lead"
+				],
+				"canBreakIce": false
+			}
+		},
+		"count": 8.0
+	}
+}

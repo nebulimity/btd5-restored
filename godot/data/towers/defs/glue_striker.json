@@ -1,0 +1,90 @@
+{
+	"id": "GlueStriker",
+	"label": "Glue Striker",
+	"description": "",
+	"display": "glue_striker",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 140,
+	"detail": "glue_striker",
+	"detailSmall": "glue_striker",
+	"targetMask": [
+		"NoDetection",
+		"Glue"
+	],
+	"sacrificeType": "Glue",
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "SingleSpread",
+			"range": 225,
+			"power": 630,
+			"reloadTime": 0.28,
+			"projectile": {
+				"display": "blob_yellow",
+				"pierce": 1,
+				"effectMask": [
+					"NoDetection"
+				],
+				"glueEffect": {
+					"lifespan": 22.86,
+					"speedScale": 0.4
+				},
+				"behavior": {
+					"collision": {
+						"$type": "CollisionSpawnProjectile",
+						"projectile": {
+							"display": "glue_splat",
+							"pierce": 11,
+							"radius": 60,
+							"effectMask": [
+								"NoDetection",
+								"Glue"
+							],
+							"glueEffect": {
+								"lifespan": 22.86,
+								"speedScale": 0.4
+							}
+						}
+					}
+				}
+			},
+			"spread": 0.4
+		}
+	],
+	"abilities": [
+		{
+			"$type": "ProjectileHitAllDef",
+			"id": "ProjectileHitAllGlue",
+			"projectile": {
+				"display": "glue_shot",
+				"pierce": 99999,
+				"radius": 99999,
+				"effectMask": [
+					"NoDetection",
+					"Glue"
+				],
+				"glueEffect": {
+					"lifespan": 22.86,
+					"speedScale": 0.3
+				}
+			},
+			"cooldown": 45,
+			"fullscreenEffect": "glue_gunner_rain",
+			"sound": "glue_strike",
+			"thumb": "activated_ability_glue_gunner",
+			"label": "Glue Strike Ability",
+			"description": "Glues all bloons on the screen.",
+			"abilityClass": "ProjectileHitAll"
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 10,
+			"y": 5
+		}
+	]
+}

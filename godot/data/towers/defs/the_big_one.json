@@ -1,0 +1,47 @@
+{
+	"id": "TheBigOne",
+	"label": "Mortar Tower",
+	"description": "",
+	"display": "the_big_one",
+	"detailSmall": "big_one",
+	"detail": "big_one",
+	"occupiedSpace": "mortar_monkey_space",
+	"rangeOfVisibility": 1250,
+	"canPriorityTarget": false,
+	"sacrificeType": "Explosion",
+	"weapons": [
+		{
+			"$type": "FireAtReticle",
+			"id": "theBigOneWeapon",
+			"range": 1250,
+			"power": 600,
+			"reloadTime": 1.8,
+			"projectile": {
+				"display": "MovieClip",
+				"pierce": 1,
+				"radius": 5,
+				"effectMask": [
+					"All"
+				],
+				"behavior": {
+					"destroy": {
+						"$type": "SpawnProjectile",
+						"projectile": {
+							"display": "nuclear_explosion",
+							"pierce": 100,
+							"radius": 150,
+							"damageEffect": {
+								"damage": 5,
+								"canBreakIce": true,
+								"showPop": false
+							}
+						}
+					}
+				}
+			},
+			"spread": 20
+		}
+	],
+	"targetingSystem": 2,
+	"requiresTarget": false
+}

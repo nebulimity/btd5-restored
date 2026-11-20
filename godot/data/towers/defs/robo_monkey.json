@@ -1,0 +1,75 @@
+{
+	"id": "RoboMonkey",
+	"label": "Robo Monkey",
+	"description": "",
+	"display": "robo_monkey",
+	"detailSmall": "robo_monkey",
+	"detail": "robo_monkey",
+	"occupiedSpace": "large",
+	"rangeOfVisibility": 210,
+	"displayAddons": [
+		{
+			"clip": "robo_monkey_left_arm",
+			"z": -1,
+			"ref": "left",
+			"loop": false
+		},
+		{
+			"clip": "robo_monkey_right_arm",
+			"z": -1,
+			"ref": "right",
+			"loop": false
+		}
+	],
+	"weapons": [
+		{
+			"$type": "Independent",
+			"range": 500,
+			"reloadTime": 0.04,
+			"offsets": [
+				{
+					"x": 0,
+					"y": -16
+				},
+				{
+					"x": 0,
+					"y": 16
+				}
+			],
+			"childWeapons": [
+				{
+					"$type": "Single",
+					"range": 500,
+					"power": 700,
+					"reloadTime": 0.058,
+					"projectile": {
+						"display": "robo_dart",
+						"pierce": 3,
+						"radius": 5,
+						"damageEffect": {
+							"damage": 1,
+							"canBreakIce": true
+						}
+					},
+					"rotate": false
+				},
+				{
+					"$type": "Single",
+					"range": 500,
+					"power": 700,
+					"reloadTime": 0.058,
+					"projectile": {
+						"display": "robo_dart",
+						"pierce": 3,
+						"radius": 5,
+						"damageEffect": {
+							"damage": 1,
+							"canBreakIce": true
+						}
+					},
+					"rotate": false
+				}
+			]
+		}
+	]
+}

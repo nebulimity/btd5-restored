@@ -1,0 +1,160 @@
+{
+	"base": "DartlingGun",
+	"upgrades": [
+		[
+			{
+				"label": "Focused Firing",
+				"description": "Greatly reduces the spread of the gun.",
+				"cost": 250,
+				"xpGate": 325,
+				"thumb": "focused_firing",
+				"add": {
+					"display": [
+						{
+							"useFor": "dartling_gun",
+							"display": "dartling_focused"
+						}
+					],
+					"weaponMod": {
+						"spread": -0.25
+					},
+					"detail": "focused_firing",
+					"detailSmall": "focused_firing"
+				}
+			},
+			{
+				"label": "Faster Barrel Spin",
+				"description": "Makes gun fire much faster.",
+				"cost": 1200,
+				"xpGate": 2605,
+				"thumb": "faster_barrel_spin",
+				"add": {
+					"display": [
+						{
+							"useFor": "dartling_focused",
+							"display": "faster_barrel_spin"
+						},
+						{
+							"useFor": "depleted_bloontonium_darts",
+							"display": "faster_barrel_spin"
+						}
+					],
+					"weaponMod": {
+						"reloadTime": -0.086
+					},
+					"detail": "faster_spin",
+					"detailSmall": "faster_spin"
+				}
+			},
+			{
+				"label": "Laser Cannon",
+				"description": "Converts the gun into a super powerful laser cannon. Blasts from this cannon can pop 13 bloons each, can pop frozen bloons, and have increased attack rate.",
+				"cost": 6000,
+				"xpGate": 9985,
+				"thumb": "plasma_cannon",
+				"assign": "LaserCannon"
+			},
+			{
+				"label": "Ray of Doom",
+				"description": "The Ray of Doom is a persistent solid beam of bloon destruction.",
+				"cost": 55000,
+				"xpGate": 54465,
+				"rankGate": 38,
+				"thumb": "rayof_doom",
+				"assign": "RayOfDoom"
+			}
+		],
+		[
+			{
+				"label": "Powerful Darts",
+				"description": "Makes darts shoot with greater velocity. Darts move faster and can pop 3 bloons each.",
+				"cost": 600,
+				"xpGate": 1035,
+				"thumb": "powerful_darts",
+				"add": {
+					"display": [
+						{
+							"useFor": "dartling_gun",
+							"display": "dartling_focused"
+						}
+					],
+					"weaponMod": {
+						"power": 350,
+						"projectileMod": {
+							"pierce": 2
+						}
+					},
+					"detail": "powerful_darts",
+					"detailSmall": "powerful_darts"
+				}
+			},
+			{
+				"label": "Depleted Bloontonium Darts",
+				"description": "Shoots specially modified darts that can hurt any bloon type.",
+				"cost": 1000,
+				"xpGate": 4325,
+				"thumb": "depleted_bloontonium_darts",
+				"add": {
+					"display": [
+						{
+							"useFor": "dartling_focused",
+							"display": "depleted_bloontonium_darts"
+						},
+						{
+							"useFor": "faster_barrel_spin",
+							"display": "depleted_bloontonium_darts"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"damageEffectMod": {
+								"canBreakIce": true,
+								"removeFromCantBreak": [
+									"Red",
+									"Blue",
+									"Green",
+									"Yellow",
+									"Pink",
+									"Black",
+									"White",
+									"Lead",
+									"Zebra",
+									"Rainbow",
+									"Ceramic",
+									"MOAB",
+									"BFB",
+									"Boss"
+								]
+							},
+							"display": [
+								{
+									"useFor": "dart",
+									"display": "blootonium_dart"
+								}
+							]
+						}
+					},
+					"detail": "depleted_plutonium",
+					"detailSmall": "depleted_plutonium"
+				}
+			},
+			{
+				"label": "Hydra Rocket Pods",
+				"description": "Shoots vicious little missiles instead of darts. Hydra rockets have sharp tips that can pop Black Bloons.",
+				"cost": 7000,
+				"xpGate": 23145,
+				"thumb": "hydra_rocket_pods",
+				"assign": "HydraRocketPods"
+			},
+			{
+				"label": "Bloon Area Denial System",
+				"description": "The BADS covers a wide area with each shot. Enables the Rocket Storm Ability: Rocket Storm shoots out a missile towards the nearest 100 bloons on screen. Ouch.",
+				"cost": 20000,
+				"xpGate": 98285,
+				"rankGate": 38,
+				"thumb": "bloon_area_denial_system",
+				"assign": "BloonAreaDenialSystem"
+			}
+		]
+	]
+}

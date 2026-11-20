@@ -1,0 +1,33 @@
+{
+	"id": "BladeShooter",
+	"label": "Blade Shooter",
+	"display": "blade_shooter",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 88,
+	"detail": "blade_shooter",
+	"detailSmall": "blade_shooter",
+	"canPriorityTarget": false,
+	"rotates": false,
+	"weapons": [
+		{
+			"$type": "Circular",
+			"id": "bladeShooterWeapon",
+			"range": 88,
+			"power": 490,
+			"reloadTime": 1.51,
+			"projectile": {
+				"display": "blade_maelstrom",
+				"pierce": 2,
+				"radius": 5,
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"count": 8
+		}
+	]
+}

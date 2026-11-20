@@ -1,0 +1,41 @@
+{
+	"id": "CrippleMOAB",
+	"label": "Sniper Monkey",
+	"description": "",
+	"display": "cripple_moab",
+	"detailSmall": "cripple_moab",
+	"detail": "cripple_moab",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 1200,
+	"weapons": [
+		{
+			"$type": "Instant",
+			"id": "sniperCrippleWeapon",
+			"reloadTime": 2.2,
+			"projectile": {
+				"display": "dart",
+				"pierce": 1,
+				"damageEffect": {
+					"damage": 18
+				},
+				"stunEffect": {
+					"lifespan": 3,
+					"inherit": false,
+					"cantEffect": [
+						"Red",
+						"Blue",
+						"Green",
+						"Yellow",
+						"Pink",
+						"Black",
+						"White",
+						"Lead",
+						"Zebra",
+						"Rainbow",
+						"Ceramic"
+					]
+				}
+			}
+		}
+	]
+}

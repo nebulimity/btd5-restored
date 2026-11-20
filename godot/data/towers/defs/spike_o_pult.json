@@ -1,0 +1,40 @@
+{
+	"id": "Spike-o-pult",
+	"label": "Spike-o-pult",
+	"display": "spike_o_pult",
+	"occupiedSpace": "small",
+	"detail": "spike_o_pult",
+	"detailSmall": "spike_o_pult",
+	"rangeOfVisibility": 150,
+	"targetMask": [
+		"None"
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Single",
+			"range": 440,
+			"power": 385,
+			"reloadTime": 1.54,
+			"projectile": {
+				"display": "spike_ball",
+				"pierce": 18,
+				"radius": 5,
+				"effectMask": [
+					"None"
+				],
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			}
+		}
+	]
+}

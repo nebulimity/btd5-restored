@@ -1,0 +1,56 @@
+{
+	"id": "ViralFrost",
+	"label": "Ice Tower",
+	"description": "Creates razor sharp pieces of ice on frozen bloons, that when popped, fly out and pop more nearby bloons.",
+	"display": "viral_forst",
+	"occupiedSpace": "small",
+	"canPriorityTarget": false,
+	"rotates": false,
+	"rangeOfVisibility": 105,
+	"detailSmall": "viral_frost",
+	"detail": "viral_frost",
+	"targetMask": [
+		"NoDetection",
+		"Ice"
+	],
+	"sacrificeType": "Freeze",
+	"weapons": [
+		{
+			"$type": "Surround",
+			"reloadTime": 2.1,
+			"projectile": {
+				"display": "ice_burst_large",
+				"pierce": 50,
+				"radius": 105,
+				"effectMask": [
+					"NoDetection",
+					"Ice"
+				],
+				"iceEffect": {
+					"lifespan": 2,
+					"viral": true,
+					"freezeLayers": 2
+				},
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				}
+			},
+			"lifespan": 0.1
+		}
+	],
+	"behavior": {
+		"roundStart": {
+			"$type": "SpawnArcticWind"
+		},
+		"roundOver": {
+			"$type": "RetractArcticWind"
+		}
+	},
+	"displayAddons": [
+		{
+			"clip": "viral_fog",
+			"z": 1
+		}
+	]
+}

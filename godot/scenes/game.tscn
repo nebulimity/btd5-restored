@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c07u1gx671rjn" path="res://scripts/Game.cs" id="1_458eo"]
 [ext_resource type="Script" uid="uid://1ydmng6wi0hr" path="res://scripts/display/BloonLayer.cs" id="2_458eo"]
 [ext_resource type="Script" uid="uid://3l6s2rd7umw2" path="res://scripts/gui/ingame/RangeCombo.cs" id="3_3hbvx"]
+[ext_resource type="Script" uid="uid://csc26f5sf0jp4" path="res://scripts/display/TowerPlaceView.cs" id="3_ms3bu"]
 [ext_resource type="Texture2D" uid="uid://c48fwu2o20e4u" path="res://assets/ui/side_panel.svg" id="4_iywne"]
 [ext_resource type="Script" uid="uid://dj5hpf6pytn4b" path="res://scripts/gui/ingame/InGameMenu.cs" id="4_o8ni1"]
 [ext_resource type="Texture2D" uid="uid://bmn0ag000gmv5" path="res://assets/ui/bottom_panel.svg" id="5_p57ef"]
@@ -3493,7 +3494,7 @@ shader_parameter/blur_y = 6.0000000894072
 shader_parameter/strength = 1.999999955296
 shader_parameter/quality = 1
 shader_parameter/glow_color = Color(0, 0, 0, 0.3)
-shader_parameter/knockout = false
+shader_parameter/knockout = true
 shader_parameter/scale_blur_with_oversampling = true
 
 [node name="Game" type="Node2D" unique_id=75469830 node_paths=PackedStringArray("_inGameMenu")]
@@ -3507,36 +3508,26 @@ y_sort_enabled = true
 [node name="BloonLayer" type="Node2D" parent="." unique_id=49594363]
 script = ExtResource("2_458eo")
 
-[node name="TowerPlaceView" type="Node2D" parent="." unique_id=1506401353]
+[node name="TowerPlaceView" type="Node2D" parent="." unique_id=1506401353 node_paths=PackedStringArray("_rangeCombo", "_ghost", "_tower", "_glow")]
 visible = false
+script = ExtResource("3_ms3bu")
+_rangeCombo = NodePath("RangeCombo")
+_ghost = NodePath("../GhostLayer/Ghost")
+_tower = NodePath("../GhostLayer/Ghost/Tower")
+_glow = NodePath("../GhostLayer/Ghost/Glow")
 
 [node name="RangeCombo" type="Node2D" parent="TowerPlaceView" unique_id=143024830]
 script = ExtResource("3_3hbvx")
 
-[node name="SpikeyBall" type="Sprite2D" parent="." unique_id=799275082]
-position = Vector2(-1068, 610)
-texture = ExtResource("9_0tnpc")
-
-[node name="Label" type="Label" parent="SpikeyBall" unique_id=1299698325]
-offset_left = -77.0
-offset_top = -133.0
-offset_right = 78.0
-offset_bottom = -32.0
-text = "in loving memory of
-SpikeyBall
-2007 - 2009
-R.I.P."
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1834070986]
 
-[node name="InGameMenu" type="Control" parent="UILayer" unique_id=54588509 node_paths=PackedStringArray("_selectionArea", "_cashValue", "_healthValue", "_playButton", "_fastForwardButton", "_blueArrowsDefault", "_blueArrowsPressed", "_roundValue", "_modeValue", "_rbeValue", "_towerButtons")]
+[node name="InGameMenu" type="Control" parent="UILayer" unique_id=54588509 node_paths=PackedStringArray("TowerPlaceView", "_selectionArea", "_cashValue", "_healthValue", "_playButton", "_fastForwardButton", "_blueArrowsDefault", "_blueArrowsPressed", "_roundValue", "_modeValue", "_rbeValue", "_towerButtons")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 800.0
 offset_bottom = 600.0
 script = ExtResource("4_o8ni1")
+TowerPlaceView = NodePath("../../TowerPlaceView")
 _selectionArea = NodePath("SelectionArea")
 _cashValue = NodePath("SidePanel/UI/Cash/Value")
 _healthValue = NodePath("SidePanel/UI/Health/Value")
@@ -3580,13 +3571,13 @@ texture_click_mask = ExtResource("11_twgab")
 [node name="Label" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/PlayButton" unique_id=163411914]
 layout_mode = 0
 offset_left = 21.05
+offset_top = 1.25
 offset_right = 78.1
 offset_bottom = 41.7
 text = "GO!"
 label_settings = SubResource("LabelSettings_gee14")
 horizontal_alignment = 1
 vertical_alignment = 2
-offset_top = 1.25
 
 [node name="GreenArrow" type="Sprite2D" parent="UILayer/InGameMenu/SidePanel/UI/PlayButton" unique_id=1701358159]
 material = SubResource("ShaderMaterial_264po")
@@ -3690,8 +3681,8 @@ metadata/_custom_type_script = "uid://bgqglerkcylxx"
 layout_mode = 2
 theme_override_constants/margin_left = -2
 theme_override_constants/margin_top = -2
-metadata/_smooth_scroll_default_mouse_filter_set = true
 theme_override_constants/margin_bottom = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="GridContainer" type="GridContainer" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer" unique_id=1174628144]
 layout_mode = 2
@@ -4117,6 +4108,7 @@ offset = Vector2(-52.45, -1.5)
 
 [node name="Default" type="Control" parent="UILayer/InGameMenu/BottomPanel" unique_id=47416990]
 layout_mode = 3
+anchors_preset = 0
 offset_left = 1.05
 offset_top = 3.95
 offset_right = 700.0
@@ -4210,6 +4202,7 @@ label_settings = SubResource("LabelSettings_8ool0")
 
 [node name="Misc" type="Control" parent="UILayer/InGameMenu/BottomPanel" unique_id=591304579]
 layout_mode = 3
+anchors_preset = 0
 offset_left = 700.55
 offset_top = 2.6
 offset_right = 803.55
@@ -4229,7 +4222,6 @@ offset_bottom = 71.32501
 [node name="SaveButton" type="TextureButton" parent="UILayer/InGameMenu/BottomPanel/Misc/Default" unique_id=1369328247]
 layout_mode = 0
 offset_left = -1.5
-offset_top = 0.0
 offset_right = 100.5
 offset_bottom = 41.0
 mouse_default_cursor_shape = 2
@@ -4291,6 +4283,7 @@ metadata/pressed_outlined = ExtResource("45_458eo")
 [node name="UpgradePanel" type="Control" parent="UILayer/InGameMenu/BottomPanel" unique_id=1543204309]
 visible = false
 layout_mode = 3
+anchors_preset = 0
 offset_left = 3.35
 offset_top = 2.95
 offset_right = 702.3
@@ -4917,9 +4910,28 @@ layer = 2
 follow_viewport_enabled = true
 
 [node name="Ghost" type="Node2D" parent="GhostLayer" unique_id=72183060]
+visible = false
 
-[node name="Tower" type="Sprite2D" parent="GhostLayer/Ghost" unique_id=1776137768]
+[node name="Glow" type="Sprite2D" parent="GhostLayer/Ghost" unique_id=1776137768]
 material = SubResource("ShaderMaterial_3hbvx")
+
+[node name="Tower" type="Sprite2D" parent="GhostLayer/Ghost" unique_id=934921590]
+
+[node name="SpikeyBall" type="Sprite2D" parent="." unique_id=799275082]
+position = Vector2(-1068, 610)
+texture = ExtResource("9_0tnpc")
+
+[node name="Label" type="Label" parent="SpikeyBall" unique_id=1299698325]
+offset_left = -77.0
+offset_top = -133.0
+offset_right = 78.0
+offset_bottom = -32.0
+text = "in loving memory of
+SpikeyBall
+2007 - 2009
+R.I.P."
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1944019081]
 offset = Vector2(2, 0)

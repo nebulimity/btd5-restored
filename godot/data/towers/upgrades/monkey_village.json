@@ -1,0 +1,195 @@
+{
+	"base": "MonkeyVillage",
+	"upgrades": [
+		[
+			{
+				"label": "Monkey Beacon",
+				"description": "Increases attack range of all towers within Monkey Village radius by 15%",
+				"cost": 500,
+				"xpGate": 250,
+				"thumb": "monkey_beacon",
+				"add": {
+					"displayAddons": [
+						{
+							"clip": "antenna_base"
+						},
+						{
+							"clip": "beacon"
+						}
+					],
+					"areaEffects": [
+						{
+							"upgrade": {
+								"id": "Test",
+								"add": {
+									"rangeOfVisibility": 1.15,
+									"rangeOfVisibilityAsScale": true
+								}
+							}
+						}
+					],
+					"detail": "monkey_beacon",
+					"detailSmall": "monkey_beacon"
+				}
+			},
+			{
+				"label": "Jungle Drums",
+				"description": "Jungle drums inspire nearby towers to attack faster, increasing attack rate by 15%",
+				"cost": 1500,
+				"xpGate": 2350,
+				"thumb": "jungle_drums",
+				"add": {
+					"displayAddons": [
+						{
+							"clip": "jungle_drums",
+							"alts": [
+								{
+									"useFor": "monkey_intelligence_burau",
+									"display": "notes"
+								}
+							]
+						}
+					],
+					"areaEffects": [
+						{
+							"upgrade": {
+								"id": "Test2",
+								"add": {
+									"weaponMod": {
+										"reloadTime": 0.8695652173913044,
+										"reloadTimeAsScale": true
+									}
+								}
+							}
+						}
+					],
+					"detail": "jungle_drums",
+					"detailSmall": "jungle_drums"
+				}
+			},
+			{
+				"id": "MonkeyTown",
+				"label": "Monkey Town",
+				"description": "All bloons popped by towers within the radius of the Monkey Town get 50% more cash per pop.",
+				"cost": 10000,
+				"xpGate": 9290,
+				"thumb": "monkey_town",
+				"assign": "MonkeyTown"
+			},
+			{
+				"label": "High Energy Beacon",
+				"description": "All nearby towers with 'Abilities' have their cooldowns reduced by 20% and adds a powerful energy beam attack.",
+				"cost": 12000,
+				"xpGate": 28960,
+				"rankGate": 35,
+				"thumb": "energy_beacon",
+				"assign": "EnergyBeacon"
+			}
+		],
+		[
+			{
+				"label": "Monkey Fort",
+				"description": "The Fort increases the popping power of all nearby towers by 1.",
+				"cost": 900,
+				"xpGate": 875,
+				"thumb": "monkey_fort",
+				"add": {
+					"displayAddons": [
+						{
+							"clip": "monkey_fort",
+							"z": -1,
+							"alts": [
+								{
+									"useFor": "monkey_town",
+									"display": "monkey_town_fort"
+								}
+							]
+						}
+					],
+					"areaEffects": [
+						{
+							"upgrade": {
+								"id": "Test3",
+								"add": {
+									"weaponMod": {
+										"projectileMod": {
+											"pierce": 1
+										}
+									}
+								}
+							}
+						}
+					],
+					"detail": "monkey_fort",
+					"detailSmall": "monkey_fort"
+				}
+			},
+			{
+				"label": "Radar Scanner",
+				"description": "Radar Scanner allows all towers within its radius to be able to detect and target camo bloons.",
+				"cost": 2000,
+				"xpGate": 4050,
+				"thumb": "radar_scanner",
+				"add": {
+					"rangeOfVisibility": 15,
+					"displayAddons": [
+						{
+							"clip": "antenna_base"
+						},
+						{
+							"clip": "radar_scanner",
+							"z": 3,
+							"alts": [
+								{
+									"useFor": "monkey_town",
+									"display": "energy_beacon_radar"
+								}
+							]
+						}
+					],
+					"areaEffects": [
+						{
+							"upgrade": {
+								"id": "Test6",
+								"add": {
+									"removeFromTargetMask": [
+										"NoDetection"
+									],
+									"weaponMod": {
+										"projectileMod": {
+											"removeFromEffectMask": [
+												"NoDetection"
+											]
+										}
+									}
+								}
+							}
+						}
+					],
+					"removeFromTargetMask": [
+						"NoDetection"
+					],
+					"detail": "radar_scanner",
+					"detailSmall": "radar_scanner"
+				}
+			},
+			{
+				"label": "Monkey Intelligence Bureau",
+				"description": "The Bureau grants special bloon popping knowledge to all nearby towers, allowing them to pop all bloon types.",
+				"cost": 4300,
+				"xpGate": 13130,
+				"thumb": "monkey_intelligence_bureau",
+				"assign": "MonkeyIntelligenceBureau"
+			},
+			{
+				"label": "M.I.B. Call to Arms",
+				"description": "Call to Arms Ability: Doubles the attack speed and popping power of all nearby towers for 10 seconds.",
+				"cost": 24000,
+				"xpGate": 44040,
+				"rankGate": 35,
+				"thumb": "mib_call_to_arms",
+				"assign": "MIBCallToArms"
+			}
+		]
+	]
+}

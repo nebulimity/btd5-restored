@@ -1,0 +1,57 @@
+{
+	"id": "NevaMissTargeting",
+	"label": "Monkey Ace",
+	"description": "",
+	"display": "air_base",
+	"occupiedSpace": "large",
+	"canPriorityTarget": false,
+	"rotates": false,
+	"detailSmall": "neva_miss_ace",
+	"detail": "neva_miss_ace",
+	"rangeOfVisibility": 50,
+	"requiresTarget": false,
+	"behavior": {
+		"initialise": {
+			"$type": "SpawnAce",
+			"display": "neva_miss_targeting"
+		},
+		"roundStart": {
+			"$type": "DeployMonkeyAce",
+			"display": "neva_miss_targeting"
+		},
+		"roundOver": {
+			"$type": "RetractMonkeyAce"
+		},
+		"destroy": {
+			"$type": "RemoveAceAircraft"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Spread",
+			"range": 1000,
+			"power": 280,
+			"reloadTime": 1.08,
+			"projectile": {
+				"display": "dart",
+				"pierce": 8,
+				"behavior": {
+					"process": {
+						"$type": "Target"
+					}
+				},
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"count": 8,
+			"angle": 5.497787143782138,
+			"proxied": true,
+			"rotate": false
+		}
+	]
+}

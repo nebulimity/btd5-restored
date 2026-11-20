@@ -1,0 +1,35 @@
+{
+	"id": "SuperMonkey",
+	"label": "Super Monkey",
+	"description": "Throws darts incredibly fast. Has long range and lots of insanely powerful upgrades.",
+	"display": "super_monkey",
+	"detail": "super_monkey",
+	"detailSmall": "super_monkey",
+	"occupiedSpace": "large",
+	"rangeOfVisibility": 140,
+	"weapons": [
+		{
+			"$type": "Single",
+			"range": 500,
+			"power": 700,
+			"reloadTime": 0.058,
+			"projectile": {
+				"display": "dart",
+				"pierce": 1,
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			}
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 9,
+			"y": 14
+		}
+	]
+}

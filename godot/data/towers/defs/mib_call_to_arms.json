@@ -1,0 +1,101 @@
+{
+	"id": "MIBCallToArms",
+	"label": "M.I.B. Call to Arms",
+	"description": "",
+	"display": "monkey_intelligence_burau",
+	"occupiedSpace": "village_space",
+	"rangeOfVisibility": 155,
+	"detailSmall": "call_to_arms",
+	"detail": "call_to_arms",
+	"canPriorityTarget": false,
+	"rotates": false,
+	"areaEffects": [
+		{
+			"costScale": 0.9
+		},
+		{
+			"upgrade": {
+				"id": "Test3",
+				"add": {
+					"weaponMod": {
+						"projectileMod": {
+							"pierce": 1
+						}
+					}
+				}
+			}
+		},
+		{
+			"upgrade": {
+				"id": "Test6",
+				"add": {
+					"removeFromTargetMask": [
+						"NoDetection"
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"removeFromEffectMask": [
+								"NoDetection"
+							]
+						}
+					}
+				}
+			}
+		},
+		{
+			"upgrade": {
+				"id": "MIB",
+				"add": {
+					"removeFromTargetMask": [
+						"Ice"
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"damageEffectMod": {
+								"canBreakIce": true,
+								"removeFromCantBreak": [
+									"Red",
+									"Blue",
+									"Green",
+									"Yellow",
+									"Pink",
+									"Black",
+									"White",
+									"Lead",
+									"Zebra",
+									"Rainbow",
+									"Ceramic",
+									"MOAB",
+									"BFB",
+									"Boss"
+								]
+							},
+							"removeFromEffectMask": [
+								"Ice"
+							]
+						}
+					}
+				}
+			}
+		}
+	],
+	"displayAddons": [
+		{
+			"clip": "radar_scanner",
+			"z": 2
+		}
+	],
+	"abilities": [
+		{
+			"$type": "MIBCallToArmsDef",
+			"id": "MIBCallToArms",
+			"cooldown": 50,
+			"sound": "mib_call_to_arms",
+			"effect": "monkey_village_pulse",
+			"thumb": "activated_ability_monkey_village",
+			"label": "Call to Arms Ability",
+			"description": "Doubles the attack speed and popping power of all nearby towers for 10 seconds.",
+			"abilityClass": "MIBCallToArms"
+		}
+	]
+}

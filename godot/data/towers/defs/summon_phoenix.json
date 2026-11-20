@@ -1,0 +1,136 @@
+{
+	"id": "SummonPhoenix",
+	"label": "Master of Fire",
+	"description": "",
+	"display": "summon_phoenix",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 120,
+	"detailSmall": "phoenix",
+	"detail": "phoenix",
+	"sacrificeType": "Wind",
+	"targetMask": [
+		"None"
+	],
+	"weapons": [
+		{
+			"$type": "Single",
+			"id": "MagicBoltWeapon",
+			"range": 240,
+			"power": 460,
+			"projectile": {
+				"display": "magic_bolt",
+				"pierce": 2,
+				"radius": 5,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				}
+			},
+			"reloadTime": 1.1
+		},
+		{
+			"$type": "Single",
+			"range": 240,
+			"power": 460,
+			"projectile": {
+				"display": "fireball",
+				"pierce": 1,
+				"radius": 8,
+				"behavior": {
+					"collision": {
+						"$type": "CollisionSpawnProjectile",
+						"projectile": {
+							"display": "medium_explosion",
+							"pierce": 40,
+							"radius": 60,
+							"damageEffect": {
+								"damage": 1,
+								"canBreakIce": true,
+								"cantBreak": [
+									"Black",
+									"Zebra"
+								],
+								"showPop": false
+							}
+						}
+					}
+				}
+			},
+			"reloadTime": 2.1
+		},
+		{
+			"$type": "SingleSpreadFlame",
+			"range": 120,
+			"power": 160,
+			"reloadTime": 0.08,
+			"projectile": {
+				"display": "apprentice_breath",
+				"pierce": 3,
+				"radius": 10,
+				"additiveBlend": true,
+				"effectMask": [
+					"None"
+				],
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				},
+				"behavior": {
+					"destroy": {
+						"$type": "SpawnProjectile",
+						"projectile": {
+							"display": "apprentice_disspate",
+							"pierce": 1,
+							"radius": 5,
+							"effectMask": [
+								"All"
+							],
+							"additiveBlend": true
+						},
+						"lifespan": 0.3333333333333333
+					}
+				}
+			},
+			"spread": 0.4
+		}
+	],
+	"abilities": [
+		{
+			"$type": "SummonPhoenixDef",
+			"id": "SummonPhoenix",
+			"cooldown": 60,
+			"sound": "summon_phoenix",
+			"effect": "monkey_apprentice_fiery_ring",
+			"thumb": "activated_ability_monkey_apprentice",
+			"label": "Summon Phoenix Ability",
+			"description": "Creates a super powerful flying phoenix that flies around wreaking bloon havoc for 20 seconds.",
+			"abilityClass": "SummonPhoenix"
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 0,
+			"y": 0
+		},
+		{
+			"x": 0,
+			"y": 0
+		},
+		{
+			"x": 60,
+			"y": 0
+		}
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	},
+	"displayAddons": [
+		{
+			"clip": "fire_circle",
+			"z": -1,
+			"rotate": false
+		}
+	]
+}

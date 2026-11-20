@@ -1,0 +1,49 @@
+{
+	"id": "MoabMauler",
+	"label": "MOAB Mauler",
+	"description": "",
+	"display": "moab_mauler",
+	"occupiedSpace": "medium",
+	"rangeOfVisibility": 125,
+	"detailSmall": "moab_mauler",
+	"detail": "moab_mauler",
+	"sacrificeType": "Explosion",
+	"weapons": [
+		{
+			"$type": "Single",
+			"range": 234,
+			"power": 455,
+			"reloadTime": 1.17,
+			"projectile": {
+				"display": "moab",
+				"pierce": 1,
+				"radius": 15,
+				"behavior": {
+					"collision": {
+						"$type": "CollisionSpawnProjectile",
+						"projectile": {
+							"display": "large_explosion",
+							"pierce": 50,
+							"radius": 75,
+							"damageEffect": {
+								"damage": 1,
+								"canBreakIce": true,
+								"cantBreak": [
+									"Black",
+									"Zebra"
+								],
+								"blimpScale": 10,
+								"showPop": false
+							}
+						}
+					}
+				}
+			}
+		}
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	}
+}

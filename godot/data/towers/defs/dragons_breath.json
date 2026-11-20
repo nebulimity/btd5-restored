@@ -1,0 +1,116 @@
+{
+	"id": "DragonsBreath",
+	"label": "Disciple of Fire",
+	"description": "",
+	"display": "dragons_breath",
+	"occupiedSpace": "small",
+	"detailSmall": "dragons_breath",
+	"detail": "dragons_breath",
+	"rangeOfVisibility": 120,
+	"sacrificeType": "Wind",
+	"targetMask": [
+		"None"
+	],
+	"weapons": [
+		{
+			"$type": "Single",
+			"id": "MagicBoltWeapon",
+			"range": 240,
+			"power": 460,
+			"projectile": {
+				"display": "magic_bolt",
+				"pierce": 2,
+				"radius": 5,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				}
+			},
+			"reloadTime": 1.1
+		},
+		{
+			"$type": "Single",
+			"range": 240,
+			"power": 460,
+			"projectile": {
+				"display": "fireball",
+				"pierce": 1,
+				"radius": 8,
+				"behavior": {
+					"collision": {
+						"$type": "CollisionSpawnProjectile",
+						"projectile": {
+							"display": "medium_explosion",
+							"pierce": 40,
+							"radius": 60,
+							"damageEffect": {
+								"damage": 1,
+								"canBreakIce": true,
+								"cantBreak": [
+									"Black",
+									"Zebra"
+								],
+								"showPop": false
+							}
+						}
+					}
+				}
+			},
+			"reloadTime": 2.1
+		},
+		{
+			"$type": "SingleSpreadFlame",
+			"range": 120,
+			"power": 160,
+			"reloadTime": 0.08,
+			"projectile": {
+				"display": "apprentice_breath",
+				"pierce": 3,
+				"radius": 10,
+				"additiveBlend": true,
+				"effectMask": [
+					"None"
+				],
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				},
+				"behavior": {
+					"destroy": {
+						"$type": "SpawnProjectile",
+						"projectile": {
+							"display": "apprentice_disspate",
+							"pierce": 1,
+							"radius": 5,
+							"effectMask": [
+								"All"
+							],
+							"additiveBlend": true
+						},
+						"lifespan": 0.3333333333333333
+					}
+				}
+			},
+			"spread": 0.4
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 0,
+			"y": 0
+		},
+		{
+			"x": 0,
+			"y": 0
+		},
+		{
+			"x": 60,
+			"y": 0
+		}
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	}
+}

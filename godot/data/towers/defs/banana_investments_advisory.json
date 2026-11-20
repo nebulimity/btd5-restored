@@ -1,0 +1,29 @@
+{
+	"id": "BananaInvestmentsAdvisory",
+	"label": "Banana Investments Advisory",
+	"description": "",
+	"display": "banana_investments_advisory",
+	"occupiedSpace": "banana_farm_space",
+	"rangeOfVisibility": 120,
+	"canPriorityTarget": false,
+	"rotates": false,
+	"detailSmall": "investment_advisory",
+	"detail": "investment_advisory",
+	"behavior": {
+		"roundStart": {
+			"$type": "BananaEmitter",
+			"cashPerPacket": 20,
+			"cashPerRound": 1000,
+			"cashScale": 1,
+			"lifespan": 20,
+			"maxFunds": 20000,
+			"interestMultiplier": 1.2,
+			"bankFunds": true
+		},
+		"roundOver": {
+			"$type": "Interest",
+			"isCalledOnReInit": false
+		}
+	},
+	"requiresTarget": false
+}

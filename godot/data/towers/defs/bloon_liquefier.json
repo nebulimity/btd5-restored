@@ -1,0 +1,52 @@
+{
+	"id": "BloonLiquefier",
+	"label": "Bloon Liquefier",
+	"description": "",
+	"display": "bloon_liquifier",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 140,
+	"detail": "bloon_liquefier",
+	"detailSmall": "bloon_liquefier",
+	"targetMask": [
+		"NoDetection",
+		"Glue"
+	],
+	"sacrificeType": "Glue",
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Single",
+			"range": 225,
+			"power": 630,
+			"reloadTime": 1,
+			"projectile": {
+				"display": "disslover_shot",
+				"pierce": 1,
+				"effectMask": [
+					"NoDetection",
+					"Glue"
+				],
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				},
+				"glueEffect": {
+					"lifespan": 11.43,
+					"speedScale": 0.5,
+					"soak": true,
+					"corrosionInterval": 0.1
+				}
+			}
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 10,
+			"y": 5
+		}
+	]
+}

@@ -1,0 +1,51 @@
+{
+	"id": "LaserCannon",
+	"label": "Laser Cannon",
+	"description": "",
+	"display": "laser_cannon",
+	"detailSmall": "laser_cannon",
+	"detail": "laser_cannon",
+	"occupiedSpace": "large",
+	"canPriorityTarget": false,
+	"rangeOfVisibility": 1250,
+	"targetMask": [
+		"None"
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToMouse"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "FireAtMouse",
+			"range": 1250,
+			"power": 875,
+			"reloadTime": 0.086,
+			"projectile": {
+				"display": "laser_cannon",
+				"pierce": 13,
+				"radius": 6,
+				"effectMask": [
+					"None"
+				],
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": true
+				}
+			},
+			"spread": 0.15
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 40,
+			"y": 0
+		}
+	],
+	"targetingSystem": 1,
+	"requiresTarget": false
+}

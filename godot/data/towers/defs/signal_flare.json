@@ -1,0 +1,62 @@
+{
+	"id": "SignalFlare",
+	"label": "Mortar Tower",
+	"description": "",
+	"display": "flare",
+	"occupiedSpace": "mortar_monkey_space",
+	"detailSmall": "signal_flare",
+	"detail": "signal_flare",
+	"rangeOfVisibility": 1250,
+	"canPriorityTarget": false,
+	"sacrificeType": "Explosion",
+	"targetMask": [
+		"None"
+	],
+	"weapons": [
+		{
+			"$type": "FireAtReticle",
+			"id": "signalFlareWeapon",
+			"range": 1250,
+			"power": 600,
+			"reloadTime": 1.61,
+			"projectile": {
+				"display": "MovieClip",
+				"pierce": 1,
+				"radius": 5,
+				"effectMask": [
+					"All"
+				],
+				"behavior": {
+					"destroy": {
+						"$type": "SpawnProjectile",
+						"projectile": {
+							"display": "burny_large_explosion",
+							"pierce": 40,
+							"radius": 75,
+							"effectMask": [
+								"None"
+							],
+							"damageEffect": {
+								"damage": 1,
+								"canBreakIce": true,
+								"cantBreak": [
+									"Black",
+									"Zebra"
+								],
+								"showPop": false
+							},
+							"burnEffect": {
+								"lifespan": 6,
+								"burnInterval": 2
+							},
+							"removeCamo": true
+						}
+					}
+				}
+			},
+			"spread": 60
+		}
+	],
+	"targetingSystem": 2,
+	"requiresTarget": false
+}

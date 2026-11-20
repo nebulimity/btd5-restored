@@ -1,0 +1,64 @@
+{
+	"id": "GlueHose",
+	"label": "Glue Hose",
+	"description": "",
+	"display": "glue_hose",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 140,
+	"detail": "glue_hoser",
+	"detailSmall": "glue_hoser",
+	"targetMask": [
+		"NoDetection",
+		"Glue"
+	],
+	"sacrificeType": "Glue",
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "SingleSpread",
+			"range": 225,
+			"power": 630,
+			"reloadTime": 0.28,
+			"projectile": {
+				"display": "blob_yellow",
+				"pierce": 1,
+				"effectMask": [
+					"NoDetection"
+				],
+				"glueEffect": {
+					"lifespan": 22.86,
+					"speedScale": 0.4
+				},
+				"behavior": {
+					"collision": {
+						"$type": "CollisionSpawnProjectile",
+						"projectile": {
+							"display": "glue_splat",
+							"pierce": 11,
+							"radius": 60,
+							"effectMask": [
+								"NoDetection",
+								"Glue"
+							],
+							"glueEffect": {
+								"lifespan": 22.86,
+								"speedScale": 0.4
+							}
+						}
+					}
+				}
+			},
+			"spread": 0.4
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 10,
+			"y": 5
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"id": "MonkeyAce",
+	"label": "Monkey Ace",
+	"description": "Patrols the skies above the action, regularly strafing the area with powerful darts in 8 directions.",
+	"display": "air_base",
+	"detail": "monkey_ace",
+	"occupiedSpace": "ace_space",
+	"rangeOfVisibility": 50,
+	"canPriorityTarget": false,
+	"rotates": false,
+	"detailSmall": "monkey_ace",
+	"requiresTarget": false,
+	"behavior": {
+		"initialise": {
+			"$type": "SpawnAce",
+			"display": "monkey_ace"
+		},
+		"roundStart": {
+			"$type": "DeployMonkeyAce",
+			"display": "monkey_ace"
+		},
+		"roundOver": {
+			"$type": "RetractMonkeyAce"
+		},
+		"destroy": {
+			"$type": "RemoveAceAircraft"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Spread",
+			"range": 1000,
+			"power": 280,
+			"reloadTime": 1.8,
+			"projectile": {
+				"display": "dart",
+				"pierce": 15,
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"count": 8,
+			"angle": 5.497787143782138,
+			"proxied": true,
+			"rotate": false
+		}
+	]
+}

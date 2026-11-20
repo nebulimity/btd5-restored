@@ -1,0 +1,56 @@
+{
+	"id": "SubmergeAndSupport",
+	"label": "Submerge and Support",
+	"display": "sub_submerge_support",
+	"occupiedSpace": "small",
+	"detail": "submerge_support",
+	"detailSmall": "submerge_support",
+	"rangeOfVisibility": 125,
+	"behavior": {
+		"processExtraSecond": {
+			"$type": "SubmergeAndSupport",
+			"pulseInterval": 1.75,
+			"pulseRange": 125,
+			"poppingPower": 10000,
+			"damage": 0
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Single",
+			"id": "MonkeySubWeapon",
+			"range": 850,
+			"power": 420,
+			"reloadTime": 0.76,
+			"projectile": {
+				"display": "sub_dart",
+				"pierce": 1,
+				"behavior": {
+					"process": {
+						"$type": "TargetFixedThenClosest",
+						"turnTime": 0.08,
+						"seekAngle": 1.2566370614359172,
+						"seekTarget": true
+					}
+				},
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			}
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 17,
+			"y": 0
+		}
+	],
+	"isBoat": true,
+	"isLand": false,
+	"canSubmerge": true,
+	"alternateTowerGraphicClass": "sub_submerge_support_dived"
+}

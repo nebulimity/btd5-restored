@@ -1,0 +1,151 @@
+{
+	"base": "IceTower",
+	"upgrades": [
+		[
+			{
+				"label": "Enhanced Freeze",
+				"description": "This enhanced Ice Tower has a larger freeze area and freezes bloons for longer.",
+				"cost": 225,
+				"xpGate": 90,
+				"thumb": "enhanced_freeze",
+				"add": {
+					"display": [
+						{
+							"useFor": "ice_tower",
+							"display": "perma_freeze"
+						}
+					],
+					"rangeOfVisibility": 15,
+					"weaponMod": {
+						"projectileMod": {
+							"radius": 15,
+							"iceEffectMod": {
+								"lifespan": 0.57
+							},
+							"display": [
+								{
+									"useFor": "ice_burst",
+									"display": "ice_burst_medium"
+								}
+							]
+						}
+					},
+					"detail": "enhanced_freeze",
+					"detailSmall": "enhanced_freeze"
+				}
+			},
+			{
+				"label": "Snap Freeze",
+				"description": "The tower freezes so fast the bloons pop once before freezing.",
+				"cost": 400,
+				"xpGate": 820,
+				"thumb": "sanp_freeze",
+				"add": {
+					"display": [
+						{
+							"useFor": "perma_freeze",
+							"display": "snap_freeze"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"damageEffectMod": {
+								"damage": 1,
+								"canBreakIce": true
+							},
+							"iceEffectMod": {
+								"freezeLayers": 1
+							}
+						}
+					},
+					"detail": "snap_freeze",
+					"detailSmall": "snap_freeze"
+				}
+			},
+			{
+				"label": "Arctic Wind",
+				"description": "Super cold aura that slows all bloons that come near the tower. In addition the regular freeze effect of this tower has much larger area.",
+				"cost": 6500,
+				"xpGate": 3050,
+				"thumb": "arctic_wind",
+				"assign": "ArcticWind"
+			},
+			{
+				"label": "Viral Frost",
+				"description": "Bloons are frozen so cold that they freeze other bloons that come in contact with them, spreading the freeze like a virus.",
+				"cost": 6000,
+				"xpGate": 11630,
+				"rankGate": 26,
+				"thumb": "viral_frost",
+				"assign": "ViralFrost"
+			}
+		],
+		[
+			{
+				"label": "Permafrost",
+				"description": "Makes the bloons so cold that they move slowly even after thawing out.",
+				"cost": 100,
+				"xpGate": 325,
+				"thumb": "permafrost",
+				"add": {
+					"display": [
+						{
+							"useFor": "ice_tower",
+							"display": "perma_freeze"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"iceEffectMod": {
+								"permafrost": -0.5
+							}
+						}
+					},
+					"detail": "permafrost",
+					"detailSmall": "perma_frost"
+				}
+			},
+			{
+				"label": "Deep Freeze",
+				"description": "Freezes 2 layers of bloons instead of 1.",
+				"cost": 350,
+				"xpGate": 1340,
+				"thumb": "deep_freeze",
+				"add": {
+					"display": [
+						{
+							"useFor": "perma_freeze",
+							"display": "snap_freeze"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"iceEffectMod": {
+								"freezeLayers": 1
+							}
+						}
+					},
+					"detail": "deep_freeze",
+					"detailSmall": "deep_freeze"
+				}
+			},
+			{
+				"label": "Ice Shards",
+				"description": "Creates razor sharp pieces of ice on frozen bloons, that when popped, fly out and pop more nearby bloons.",
+				"thumb": "ice_shards",
+				"xpGate": 5160,
+				"cost": 2000,
+				"assign": "IceShards"
+			},
+			{
+				"label": "Absolute Zero",
+				"description": "Absolute Zero Ability: freezes the entire screen of bloons for 4 seconds. Does not affect MOAB-class bloons.",
+				"cost": 2000,
+				"xpGate": 20850,
+				"rankGate": 26,
+				"thumb": "absolute_zero",
+				"assign": "AbsoluteZero"
+			}
+		]
+	]
+}

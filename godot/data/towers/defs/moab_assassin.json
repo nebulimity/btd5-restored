@@ -1,0 +1,62 @@
+{
+	"id": "MoabAssassin",
+	"label": "MOAB Assassin",
+	"description": "",
+	"display": "moab_assassin",
+	"occupiedSpace": "medium",
+	"detailSmall": "moab_assassin",
+	"detail": "moab_assassin",
+	"rangeOfVisibility": 125,
+	"sacrificeType": "Explosion",
+	"weapons": [
+		{
+			"$type": "Single",
+			"range": 234,
+			"power": 455,
+			"reloadTime": 1.17,
+			"projectile": {
+				"display": "moab_assassin",
+				"pierce": 1,
+				"radius": 15,
+				"behavior": {
+					"collision": {
+						"$type": "CollisionSpawnProjectile",
+						"projectile": {
+							"display": "large_explosion",
+							"pierce": 50,
+							"radius": 75,
+							"damageEffect": {
+								"damage": 1,
+								"canBreakIce": true,
+								"cantBreak": [
+									"Black",
+									"Zebra"
+								],
+								"blimpScale": 10,
+								"showPop": false
+							}
+						}
+					}
+				}
+			}
+		}
+	],
+	"abilities": [
+		{
+			"$type": "MoabAssassinDef",
+			"id": "MoabAssassin",
+			"cooldown": 45,
+			"effect": "bombtoweraura",
+			"sound": "moab_assassin_missile",
+			"thumb": "activated_ability_bomb_tower",
+			"label": "MOAB Assassin Ability",
+			"description": "Super deadly missile seeks the nearest MOAB-class bloon and destroys it instantly. Does 1000 damage to ZOMG bloons instead of destroying them.",
+			"abilityClass": "MoabAssasin"
+		}
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	}
+}

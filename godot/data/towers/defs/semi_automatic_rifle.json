@@ -1,0 +1,30 @@
+{
+	"id": "SemiAutomaticRifle",
+	"label": "Sniper Monkey",
+	"description": "",
+	"display": "semi_automatic",
+	"detailSmall": "semi_auto",
+	"detail": "semi_auto",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 1200,
+	"targetMask": [
+		"None"
+	],
+	"weapons": [
+		{
+			"$type": "Instant",
+			"id": "sniperAutomaticWeapon",
+			"reloadTime": 0.5,
+			"projectile": {
+				"display": "dart",
+				"pierce": 1,
+				"effectMask": [
+					"None"
+				],
+				"damageEffect": {
+					"damage": 2
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,76 @@
+{
+	"id": "SummonWhirlwind",
+	"label": "Disciple of Air",
+	"description": "",
+	"display": "summon_whirlwind",
+	"occupiedSpace": "small",
+	"detailSmall": "whirlwind",
+	"detail": "whirlwind",
+	"rangeOfVisibility": 120,
+	"sacrificeType": "Wind",
+	"weapons": [
+		{
+			"$type": "Single",
+			"id": "IntenseMagicBoltWeapon",
+			"range": 240,
+			"power": 460,
+			"projectile": {
+				"display": "intense_magic",
+				"pierce": 7,
+				"radius": 10,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				}
+			},
+			"reloadTime": 1.1
+		},
+		{
+			"$type": "CastLightning",
+			"range": 120,
+			"power": 3600,
+			"projectile": {
+				"display": "dart",
+				"pierce": 30,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				}
+			},
+			"reloadTime": 2.3
+		},
+		{
+			"$type": "Single",
+			"range": 120,
+			"power": 300,
+			"projectile": {
+				"display": "tornado",
+				"pierce": 20,
+				"radius": 30,
+				"windEffect": {
+					"speed": 300
+				},
+				"behavior": {
+					"destroy": {
+						"$type": "SpawnTinyTornadoes",
+						"projectile": {
+							"display": "tiny_tornado",
+							"pierce": 20,
+							"radius": 16,
+							"windEffect": {
+								"speed": 300
+							}
+						},
+						"lifespan": 1.5
+					}
+				}
+			},
+			"reloadTime": 2.5
+		}
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	}
+}

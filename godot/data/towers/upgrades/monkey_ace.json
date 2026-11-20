@@ -1,0 +1,169 @@
+{
+	"base": "MonkeyAce",
+	"upgrades": [
+		[
+			{
+				"label": "Rapid Fire",
+				"description": "Shoots darts more often.",
+				"cost": 700,
+				"xpGate": 225,
+				"thumb": "rapid_fire",
+				"add": {
+					"weaponMod": {
+						"reloadTime": 0.7142857142857143,
+						"reloadTimeAsScale": true
+					},
+					"behavior": {
+						"display": [
+							{
+								"useFor": "monkey_ace",
+								"display": "monkey_ace_rapid"
+							}
+						]
+					},
+					"detail": "rapid_fire_ace",
+					"detailSmall": "rapid_fire_ace"
+				}
+			},
+			{
+				"label": "Sharper Darts",
+				"description": "Monkey Ace darts can pop 8 bloons each!",
+				"cost": 500,
+				"xpGate": 2150,
+				"thumb": "sharper_darts",
+				"add": {
+					"weaponMod": {
+						"projectileMod": {
+							"pierce": 3
+						}
+					},
+					"behavior": {
+						"display": [
+							{
+								"useFor": "monkey_ace_rapid",
+								"display": "sharper_spy_plane"
+							}
+						]
+					},
+					"detail": "sharper_darts_ace",
+					"detailSmall": "sharper_darts_ace"
+				}
+			},
+			{
+				"label": "Neva-Miss Targeting",
+				"description": "Darts seek out and pop bloons intelligently.",
+				"cost": 2200,
+				"xpGate": 7725,
+				"thumb": "neva_miss_targeting",
+				"assign": "NevaMissTargeting"
+			},
+			{
+				"label": "Spectre",
+				"description": "Flying fortress of bloon doom.",
+				"cost": 18000,
+				"xpGate": 23250,
+				"rankGate": 30,
+				"thumb": "spectre",
+				"assign": "Spectre"
+			}
+		],
+		[
+			{
+				"label": "Pineapple Present",
+				"description": "Drops an exploding pineapple every 3 seconds.",
+				"cost": 200,
+				"xpGate": 850,
+				"thumb": "pineapple_present",
+				"add": {
+					"weapons": [
+						{
+							"$type": "Surround",
+							"range": 999,
+							"reloadTime": 3,
+							"lifespan": 0.1,
+							"projectile": {
+								"display": "pineapple_bomb",
+								"behavior": {
+									"destroy": {
+										"$type": "SpawnProjectile",
+										"projectile": {
+											"display": "large_explosion",
+											"pierce": 40,
+											"radius": 60,
+											"damageEffect": {
+												"damage": 1,
+												"canBreakIce": true,
+												"cantBreak": [
+													"Black",
+													"Zebra"
+												],
+												"showPop": false
+											}
+										}
+									}
+								}
+							},
+							"proxied": true
+						}
+					],
+					"behavior": {
+						"display": [
+							{
+								"useFor": "monkey_ace",
+								"display": "monkey_ace_rapid"
+							}
+						]
+					},
+					"detail": "pine_apple_express",
+					"detailSmall": "pineapple_express"
+				}
+			},
+			{
+				"label": "Spy Plane",
+				"description": "Allows the Monkey Ace to hit camo bloons. Does not grant detection to other towers.",
+				"cost": 350,
+				"xpGate": 3500,
+				"thumb": "spy_plane",
+				"add": {
+					"removeFromTargetMask": [
+						"NoDetection"
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"removeFromEffectMask": [
+								"NoDetection"
+							]
+						}
+					},
+					"behavior": {
+						"display": [
+							{
+								"useFor": "monkey_ace_rapid",
+								"display": "sharper_spy_plane"
+							}
+						]
+					},
+					"detail": "spy_plane",
+					"detailSmall": "spy_plane"
+				}
+			},
+			{
+				"label": "Operation: Dart Storm",
+				"description": "More darts = win.",
+				"cost": 3000,
+				"xpGate": 12400,
+				"thumb": "operation_dart_storm",
+				"assign": "OperationDartStorm"
+			},
+			{
+				"label": "Ground Zero",
+				"description": "Drops a single devastating bomb that destroys all bloons on screen and heavily damages MOAB-class bloons.",
+				"cost": 14000,
+				"xpGate": 35700,
+				"rankGate": 30,
+				"thumb": "ground_zero",
+				"assign": "GroundZero"
+			}
+		]
+	]
+}

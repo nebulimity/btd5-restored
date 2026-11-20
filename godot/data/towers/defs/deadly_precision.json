@@ -1,0 +1,24 @@
+{
+	"id": "DeadlyPrecision",
+	"label": "Sniper Monkey",
+	"description": "",
+	"display": "china_shop",
+	"detailSmall": "deadly_precision",
+	"detail": "deadly_precision",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 1200,
+	"weapons": [
+		{
+			"$type": "Instant",
+			"id": "sniperDeadlyWeapon",
+			"reloadTime": 2.2,
+			"projectile": {
+				"display": "dart",
+				"pierce": 1,
+				"damageEffect": {
+					"damage": 18
+				}
+			}
+		}
+	]
+}

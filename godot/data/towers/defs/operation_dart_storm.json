@@ -1,0 +1,90 @@
+{
+	"id": "OperationDartStorm",
+	"label": "Monkey Ace",
+	"description": "",
+	"display": "air_base",
+	"occupiedSpace": "large",
+	"rangeOfVisibility": 50,
+	"canPriorityTarget": false,
+	"rotates": false,
+	"detailSmall": "dart_storm",
+	"detail": "dart_storm",
+	"targetMask": [
+		"None"
+	],
+	"requiresTarget": false,
+	"behavior": {
+		"initialise": {
+			"$type": "SpawnAce",
+			"display": "operation_dart_storm"
+		},
+		"roundStart": {
+			"$type": "DeployMonkeyAce",
+			"display": "operation_dart_storm"
+		},
+		"roundOver": {
+			"$type": "RetractMonkeyAce"
+		},
+		"destroy": {
+			"$type": "RemoveAceAircraft"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Spread",
+			"range": 1000,
+			"power": 280,
+			"reloadTime": 1,
+			"projectile": {
+				"display": "dart",
+				"pierce": 15,
+				"effectMask": [
+					"None"
+				],
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"count": 16,
+			"angle": 5.890486225480862,
+			"proxied": true,
+			"rotate": false
+		},
+		{
+			"$type": "Surround",
+			"range": 999,
+			"reloadTime": 3,
+			"lifespan": 0.1,
+			"projectile": {
+				"display": "pineapple_bomb",
+				"behavior": {
+					"destroy": {
+						"$type": "SpawnProjectile",
+						"projectile": {
+							"display": "large_explosion",
+							"pierce": 40,
+							"radius": 60,
+							"effectMask": [
+								"None"
+							],
+							"damageEffect": {
+								"damage": 1,
+								"canBreakIce": true,
+								"cantBreak": [
+									"Black",
+									"Zebra"
+								],
+								"showPop": false
+							}
+						}
+					}
+				}
+			},
+			"proxied": true
+		}
+	]
+}

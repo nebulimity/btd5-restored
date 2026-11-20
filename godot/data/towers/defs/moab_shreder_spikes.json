@@ -1,0 +1,55 @@
+{
+	"id": "MoabShrederSpikes",
+	"label": "MOAB-SHREDR Spikes",
+	"description": "",
+	"display": "moab_shreder",
+	"detail": "moab_shredder",
+	"detailSmall": "maob_shredder",
+	"occupiedSpace": "large",
+	"rangeOfVisibility": 105,
+	"canPriorityTarget": false,
+	"rotates": false,
+	"targetMask": [
+		"None"
+	],
+	"weapons": [
+		{
+			"$type": "SpikeSpread",
+			"power": 115,
+			"reloadTime": 0.5,
+			"projectile": {
+				"display": "spike_factory_spikes",
+				"pierce": 5,
+				"radius": 25,
+				"effectMask": [
+					"None"
+				],
+				"behavior": {
+					"roundOver": {
+						"$type": "RoundOverDestroy"
+					},
+					"collision": {
+						"$type": "RoadSpikeCollision"
+					},
+					"process": {
+						"$type": "Friction"
+					},
+					"destroy": {
+						"$type": "RemoveSpikeSpread"
+					}
+				},
+				"canMultiEffect": true,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": false,
+					"cantBreak": [
+						"Lead"
+					],
+					"blimpScale": 4
+				}
+			},
+			"rotate": false
+		}
+	],
+	"requiresTarget": false
+}

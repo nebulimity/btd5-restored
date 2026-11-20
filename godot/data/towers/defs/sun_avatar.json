@@ -1,0 +1,31 @@
+{
+	"id": "SunAvatar",
+	"label": "Sun God",
+	"description": "",
+	"display": "sun_avatar",
+	"detailSmall": "sun_god",
+	"detail": "sun_god",
+	"occupiedSpace": "large",
+	"rangeOfVisibility": 140,
+	"weapons": [
+		{
+			"$type": "Spread",
+			"range": 500,
+			"power": 875,
+			"reloadTime": 0.058,
+			"projectile": {
+				"display": "sun_beam",
+				"pierce": 15,
+				"radius": 15,
+				"additiveBlend": true,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				}
+			},
+			"rotate": true,
+			"count": 3,
+			"angle": 0.4
+		}
+	]
+}

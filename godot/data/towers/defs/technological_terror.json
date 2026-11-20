@@ -1,0 +1,100 @@
+{
+	"id": "TechnologicalTerror",
+	"label": "Technological Terror",
+	"description": "",
+	"display": "technological_terror",
+	"detailSmall": "tech_terror",
+	"detail": "tech_terror",
+	"occupiedSpace": "large",
+	"rangeOfVisibility": 210,
+	"displayAddons": [
+		{
+			"clip": "techno_terror_left_arm",
+			"z": -1,
+			"ref": "left",
+			"loop": false
+		},
+		{
+			"clip": "techno_terror_right_arm",
+			"z": -1,
+			"ref": "right",
+			"loop": false
+		}
+	],
+	"weapons": [
+		{
+			"$type": "Independent",
+			"range": 500,
+			"reloadTime": 0.032,
+			"offsets": [
+				{
+					"x": 10,
+					"y": -32
+				},
+				{
+					"x": 10,
+					"y": 32
+				}
+			],
+			"childWeapons": [
+				{
+					"$type": "Single",
+					"range": 500,
+					"power": 700,
+					"reloadTime": 0.04,
+					"projectile": {
+						"display": "terror_shot",
+						"pierce": 5,
+						"radius": 8,
+						"additiveBlend": true,
+						"damageEffect": {
+							"damage": 1,
+							"canBreakIce": true
+						}
+					},
+					"rotate": false
+				},
+				{
+					"$type": "Single",
+					"range": 500,
+					"power": 700,
+					"reloadTime": 0.04,
+					"projectile": {
+						"display": "terror_shot",
+						"pierce": 5,
+						"radius": 8,
+						"additiveBlend": true,
+						"damageEffect": {
+							"damage": 1,
+							"canBreakIce": true
+						}
+					},
+					"rotate": false
+				}
+			]
+		}
+	],
+	"abilities": [
+		{
+			"$type": "SpawnProjectileDef",
+			"id": "SpawnProjectile",
+			"projectile": {
+				"display": "terror_blast",
+				"pierce": 9999,
+				"radius": 200,
+				"damageEffect": {
+					"damage": 1000,
+					"canBreakIce": true,
+					"kill": true
+				}
+			},
+			"cooldown": 60,
+			"sound": "techno_terror_ability",
+			"thumb": "activated_ability_super_monkey",
+			"label": "Bloon Annihilation Ability",
+			"description": "Destroys all bloons within short radius of tower, completely, and utterly. Does 1000 damage to MOAB-class bloons.",
+			"effect": "super_monkey_shockwave",
+			"abilityClass": "SpawnProjectile"
+		}
+	]
+}

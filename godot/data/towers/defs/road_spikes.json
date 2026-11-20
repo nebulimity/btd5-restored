@@ -1,0 +1,41 @@
+{
+	"id": "RoadSpikes",
+	"label": "Road Spikes",
+	"description": "Place these on the track to pop bloons. Each pack of spikes can pop 11 bloons before being used up. Use these to get bloons that escape past your towers.",
+	"display": "road_spikes",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 20,
+	"detailSmall": "road_spikes",
+	"canPlaceOnTrack": true,
+	"detail": "road_spikes",
+	"behavior": {
+		"roundStart": {
+			"$type": "SwapForProjectile",
+			"projectile": {
+				"display": "road_spikes",
+				"pierce": 11,
+				"radius": 25,
+				"effectMask": [
+					"None"
+				],
+				"behavior": {
+					"roundOver": {
+						"$type": "RoundOverDestroy"
+					},
+					"collision": {
+						"$type": "RoadSpikeCollision"
+					}
+				},
+				"canMultiEffect": true,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": false,
+					"cantBreak": [
+						"Lead"
+					]
+				}
+			},
+			"lifespan": 999999
+		}
+	}
+}

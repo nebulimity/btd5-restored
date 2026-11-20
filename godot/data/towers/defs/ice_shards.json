@@ -1,0 +1,45 @@
+{
+	"id": "IceShards",
+	"label": "Ice Tower",
+	"description": "Creates razor sharp pieces of ice on frozen bloons, that when popped, fly out and pop more nearby bloons.",
+	"display": "ice_shards",
+	"occupiedSpace": "small",
+	"canPriorityTarget": false,
+	"rotates": false,
+	"rangeOfVisibility": 60,
+	"detailSmall": "ice_shards",
+	"detail": "ice_shards",
+	"targetMask": [
+		"NoDetection",
+		"Ice"
+	],
+	"sacrificeType": "Freeze",
+	"weapons": [
+		{
+			"$type": "Surround",
+			"reloadTime": 2.1,
+			"projectile": {
+				"display": "ice_burst",
+				"pierce": 50,
+				"radius": 60,
+				"effectMask": [
+					"NoDetection",
+					"Ice"
+				],
+				"iceEffect": {
+					"lifespan": 2,
+					"freezeLayers": 2,
+					"shards": true,
+					"permafrost": 0.5
+				}
+			},
+			"lifespan": 0.1
+		}
+	],
+	"displayAddons": [
+		{
+			"clip": "snow_flakes",
+			"z": 1
+		}
+	]
+}

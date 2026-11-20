@@ -1,0 +1,70 @@
+{
+	"id": "BloontoniumReactor",
+	"label": "Bloontonium Reactor",
+	"display": "sub_bloontonium_reactor",
+	"occupiedSpace": "small",
+	"detail": "bloontonium_reactor",
+	"detailSmall": "bloontonium_reactor",
+	"rangeOfVisibility": 125,
+	"behavior": {
+		"processExtraSecond": {
+			"$type": "SubmergeAndSupport",
+			"pulseInterval": 0.5,
+			"pulseRange": 125,
+			"poppingPower": 10000,
+			"damage": 1
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Single",
+			"id": "MonkeySubWeapon",
+			"range": 850,
+			"power": 420,
+			"reloadTime": 0.76,
+			"projectile": {
+				"display": "sub_dart",
+				"pierce": 1,
+				"behavior": {
+					"process": {
+						"$type": "TargetFixedThenClosest",
+						"turnTime": 0.08,
+						"seekAngle": 1.2566370614359172,
+						"seekTarget": true
+					}
+				},
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			}
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 42,
+			"y": 0
+		}
+	],
+	"areaEffects": [
+		{
+			"upgrade": {
+				"id": "ReactorCooldownReduce",
+				"add": {
+					"abilityMod": {
+						"cooldown": 0.85,
+						"cooldownAsScale": true
+					}
+				}
+			},
+			"affectsWaterOnly": true
+		}
+	],
+	"isBoat": true,
+	"isLand": false,
+	"canSubmerge": true,
+	"alternateTowerGraphicClass": "sub_bloontonium_reactor_dived"
+}

@@ -1,0 +1,22 @@
+{
+	"id": "BananaFarm",
+	"label": "Banana Farm",
+	"description": "Banana Farms grow bananas that you can collect to turn into cash. When your farm produces some bananas, collect them by moving your mouse over them. Don't leave them too long however, or they will spoil!",
+	"display": "banana_farm",
+	"detail": "banana_farm",
+	"occupiedSpace": "banana_farm_space",
+	"rangeOfVisibility": 120,
+	"detailSmall": "banana_farm",
+	"canPriorityTarget": false,
+	"rotates": false,
+	"behavior": {
+		"roundStart": {
+			"$type": "BananaEmitter",
+			"cashPerPacket": 20,
+			"cashPerRound": 80,
+			"lifespan": 10,
+			"display": "bananas"
+		}
+	},
+	"requiresTarget": false
+}

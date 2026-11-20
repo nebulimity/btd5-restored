@@ -1,0 +1,188 @@
+{
+	"base": "SuperMonkey",
+	"upgrades": [
+		[
+			{
+				"label": "Laser Blasts",
+				"description": "Shoots super powerful lasers instead of throwing darts. Lasers can pop frozen bloons.",
+				"cost": 3500,
+				"xpGate": 500,
+				"thumb": "laser_blasts",
+				"add": {
+					"display": [
+						{
+							"useFor": "super_monkey",
+							"display": "laser_monkey",
+							"weaponOffsets": [
+								{
+									"x": 0,
+									"y": 0
+								}
+							]
+						},
+						{
+							"useFor": "super_monkey_range",
+							"display": "laser_monkey",
+							"weaponOffsets": [
+								{
+									"x": 0,
+									"y": 0
+								}
+							]
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"damageEffectMod": {
+								"canBreakIce": true
+							},
+							"pierce": 1,
+							"display": [
+								{
+									"useFor": "dart",
+									"display": "laser"
+								},
+								{
+									"useFor": "robo_dart",
+									"display": "robo_laser"
+								}
+							]
+						}
+					},
+					"detail": "super_lasers",
+					"detailSmall": "super_lasers"
+				}
+			},
+			{
+				"label": "Plasma Blasts",
+				"description": "Plasma vaporizes everything it touches.",
+				"cost": 5000,
+				"xpGate": 6300,
+				"thumb": "plasma_blasts",
+				"add": {
+					"display": [
+						{
+							"useFor": "super_monkey",
+							"display": "plasma_vision"
+						},
+						{
+							"useFor": "laser_monkey",
+							"display": "plasma_vision"
+						}
+					],
+					"weaponMod": {
+						"reloadTime": -1,
+						"projectileMod": {
+							"damageEffectMod": {
+								"removeFromCantBreak": [
+									"Red",
+									"Blue",
+									"Green",
+									"Yellow",
+									"Pink",
+									"Black",
+									"White",
+									"Lead",
+									"Zebra",
+									"Rainbow",
+									"Ceramic",
+									"MOAB",
+									"BFB",
+									"Boss"
+								],
+								"canBreakIce": true
+							},
+							"radius": 20,
+							"pierce": 1,
+							"display": [
+								{
+									"useFor": "dart",
+									"display": "plasma",
+									"additiveBlend": true
+								},
+								{
+									"useFor": "laser",
+									"display": "plasma",
+									"additiveBlend": true
+								},
+								{
+									"useFor": "robo_laser",
+									"display": "plasma",
+									"additiveBlend": true
+								}
+							]
+						}
+					},
+					"detail": "super_plasma",
+					"detailSmall": "super_plasma"
+				}
+			},
+			{
+				"label": "Sun God",
+				"description": "It is said that bloons who doth touch the sun shall be cleansed, and then there shalt be peace.",
+				"cost": 16500,
+				"xpGate": 23850,
+				"thumb": "sun_avatar",
+				"assign": "SunAvatar"
+			},
+			{
+				"label": "Temple of the Monkey God",
+				"description": "The Temple demands sacrifice. Its arsenal of unstoppable bloon destruction is enhanced and modified by the types of tower sacrificed. Use at your own peril.",
+				"cost": 100000,
+				"xpGate": 96400,
+				"rankGate": 32,
+				"thumb": "templeofthe_monkey_god",
+				"assign": "TempleOfTheMonkeyGod"
+			}
+		],
+		[
+			{
+				"label": "Super Range",
+				"description": "Super Monkey with super range = good!",
+				"cost": 1000,
+				"xpGate": 2350,
+				"thumb": "super_range_sm",
+				"add": {
+					"rangeOfVisibility": 40,
+					"detail": "super_range",
+					"detailSmall": "super_range"
+				}
+			},
+			{
+				"label": "Epic Range",
+				"description": "Why settle for super when you can have EPIC?",
+				"cost": 1500,
+				"xpGate": 10500,
+				"thumb": "epic_range",
+				"add": {
+					"rangeOfVisibility": 30,
+					"display": [
+						{
+							"useFor": "super_monkey",
+							"display": "super_monkey_range"
+						}
+					],
+					"detail": "epic_range",
+					"detailSmall": "epic_range"
+				}
+			},
+			{
+				"label": "Robo-Monkey",
+				"description": "Half Super Monkey, half killer robot of death. Super Monkey's arms become pulse cannons of annihilation, able to aim and target independently from each other.",
+				"cost": 9000,
+				"xpGate": 44700,
+				"thumb": "robo_monkey",
+				"assign": "RoboMonkey"
+			},
+			{
+				"label": "Technological Terror",
+				"description": "Be proud of this Technological Terror you've constructed. Bloon Annihilation Ability: Destroys all bloons within short radius of tower, completely, and utterly. Does 1000 damage to MOAB-class bloons.",
+				"cost": 25000,
+				"xpGate": 165600,
+				"rankGate": 32,
+				"thumb": "technological",
+				"assign": "TechnologicalTerror"
+			}
+		]
+	]
+}

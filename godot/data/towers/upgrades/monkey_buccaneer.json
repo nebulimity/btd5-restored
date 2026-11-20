@@ -1,0 +1,194 @@
+{
+	"base": "MonkeyBuccaneer",
+	"upgrades": [
+		[
+			{
+				"label": "Faster Shooting",
+				"description": "Shoots faster.",
+				"cost": 400,
+				"xpGate": 150,
+				"thumb": "faster_shooting",
+				"add": {
+					"display": [
+						{
+							"useFor": "monkey_buccaneer",
+							"display": "buccaneer_faster"
+						},
+						{
+							"useFor": "buccaneer_grape",
+							"display": "buccaneer_fast_grape"
+						}
+					],
+					"weaponMod": {
+						"reloadTime": 0.77,
+						"reloadTimeAsScale": true
+					},
+					"detail": "faster_shooting_buccaneer",
+					"detailSmall": "faster_shooting_buccaneer"
+				}
+			},
+			{
+				"label": "Longer Cannons",
+				"description": "Much longer range.",
+				"cost": 180,
+				"xpGate": 1425,
+				"thumb": "longer_cannons",
+				"add": {
+					"displayAddonMods": [
+						{
+							"useFor": "buccaneer_cannons_left",
+							"display": "longer_cannons_left"
+						},
+						{
+							"useFor": "buccaneer_cannons_right",
+							"display": "longer_cannons_right"
+						}
+					],
+					"display": [
+						{
+							"useFor": "buccaneer_faster",
+							"display": "longer_nest"
+						},
+						{
+							"useFor": "buccaneer_fast_grape",
+							"display": "longer_nest"
+						},
+						{
+							"useFor": "buccaneer_grape",
+							"display": "longer_nest"
+						}
+					],
+					"rangeOfVisibility": 30,
+					"detail": "longer_cannons",
+					"detailSmall": "longer_cannons"
+				}
+			},
+			{
+				"label": "Destroyer",
+				"description": "Attacks super duper fast!",
+				"cost": 2200,
+				"xpGate": 5350,
+				"thumb": "destroyer",
+				"assign": "Destroyer"
+			},
+			{
+				"label": "Aircraft Carrier",
+				"description": "Rapidly launches Monkey Ace pilots that strafe the area with darts.",
+				"cost": 15000,
+				"xpGate": 16975,
+				"rankGate": 29,
+				"thumb": "aircraft_carrier",
+				"assign": "AircraftCarrier"
+			}
+		],
+		[
+			{
+				"label": "Grape Shot",
+				"description": "Sprays out a blast of 4 sharp grapes for additional poppage.",
+				"cost": 500,
+				"xpGate": 550,
+				"thumb": "grape_shot",
+				"add": {
+					"display": [
+						{
+							"useFor": "monkey_buccaneer",
+							"display": "buccaneer_grape"
+						},
+						{
+							"useFor": "buccaneer_faster",
+							"display": "buccaneer_fast_grape"
+						}
+					],
+					"weapons": [
+						{
+							"$type": "SideSpread",
+							"range": 300,
+							"power": 525,
+							"reloadTime": 0.75,
+							"projectile": {
+								"display": "grape_shot",
+								"pierce": 2,
+								"damageEffect": {
+									"damage": 1,
+									"cantBreak": [
+										"Lead"
+									],
+									"canBreakIce": false
+								}
+							},
+							"count": 4,
+							"angle": 1.5707963267948966,
+							"fireFromRight": "cannon_backRight",
+							"fireFromLeft": "cannon_backLeft"
+						}
+					],
+					"detail": "grape_shot",
+					"detailSmall": "grape_shot"
+				}
+			},
+			{
+				"id": "UpgradeBuccaneerCrowsNest",
+				"label": "Crow's Nest",
+				"description": "Allows the Buccaneer to detect and target camo bloons. Does not grant detection to other towers.",
+				"cost": 250,
+				"xpGate": 2375,
+				"thumb": "crows_nest",
+				"add": {
+					"displayAddonMods": [
+						{
+							"useFor": "buccaneer_cannons_left",
+							"display": "longer_cannons_left"
+						},
+						{
+							"useFor": "buccaneer_cannons_right",
+							"display": "longer_cannons_right"
+						}
+					],
+					"display": [
+						{
+							"useFor": "buccaneer_faster",
+							"display": "longer_nest"
+						},
+						{
+							"useFor": "buccaneer_fast_grape",
+							"display": "longer_nest"
+						},
+						{
+							"useFor": "buccaneer_grape",
+							"display": "longer_nest"
+						}
+					],
+					"removeFromTargetMask": [
+						"NoDetection"
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"removeFromEffectMask": [
+								"NoDetection"
+							]
+						}
+					},
+					"detail": "crows_nest",
+					"detailSmall": "crows_nest"
+				}
+			},
+			{
+				"label": "Cannon Ship",
+				"description": "Adds a powerful, independently firing cannon to the Buccaneer.",
+				"cost": 1200,
+				"xpGate": 9125,
+				"thumb": "cannon_ship",
+				"assign": "CannonShip"
+			},
+			{
+				"label": "Monkey Pirates",
+				"description": "MOAB Takedown Ability: takes hold of the nearest MOAB-class bloon with a grappling hook and brings it down. ZOMG bloons are immune to this.",
+				"cost": 4500,
+				"xpGate": 26225,
+				"rankGate": 29,
+				"thumb": "monkey_pirates",
+				"assign": "MonkeyPirates"
+			}
+		]
+	]
+}

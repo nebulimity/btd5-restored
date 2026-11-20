@@ -1,0 +1,158 @@
+{
+	"base": "MortarTower",
+	"upgrades": [
+		[
+			{
+				"label": "Increased Accuracy",
+				"description": "Makes your mortar shots more accurate.",
+				"cost": 200,
+				"xpGate": 200,
+				"thumb": "increased_accuracy",
+				"add": {
+					"display": [
+						{
+							"useFor": "mortar_tower",
+							"display": "mortar_tower_accurate"
+						}
+					],
+					"weaponMod": {
+						"spread": -40
+					},
+					"detail": "mortar_accuracy",
+					"detailSmall": "mortar_accuracy"
+				}
+			},
+			{
+				"label": "Bigger Blast",
+				"description": "Heavy ordinance delivers a bigger explosion radius.",
+				"cost": 600,
+				"xpGate": 1612,
+				"thumb": "bigger_blast",
+				"add": {
+					"display": [
+						{
+							"useFor": "mortar_tower_accurate",
+							"display": "bigger_blast"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"display": [
+								{
+									"useFor": "large_explosion",
+									"display": "slightly_larger_explosion"
+								},
+								{
+									"useFor": "burny_large_explosion",
+									"display": "burny_slightly_larger_explosion"
+								}
+							],
+							"radius": 23
+						}
+					},
+					"detail": "mortar_bigger_blast",
+					"detailSmall": "mortar_bigger_blast"
+				}
+			},
+			{
+				"label": "Bloon Buster",
+				"description": "Bloon Buster Mortars smash through 2 layers of bloons at once!",
+				"cost": 800,
+				"xpGate": 5962,
+				"thumb": "bloon_buster",
+				"assign": "BloonBuster"
+			},
+			{
+				"label": "The Big One",
+				"description": "Devastatingly large explosions, and each pops through 5 layers of bloon.",
+				"cost": 10000,
+				"xpGate": 17387,
+				"rankGate": 37,
+				"thumb": "the_big_one",
+				"assign": "TheBigOne"
+			}
+		],
+		[
+			{
+				"label": "Rapid Reload",
+				"description": "Increase the attack speed of the Mortar.",
+				"cost": 250,
+				"xpGate": 650,
+				"thumb": "rapid_reload",
+				"add": {
+					"display": [
+						{
+							"useFor": "mortar_tower",
+							"display": "mortar_tower_accurate"
+						}
+					],
+					"weaponMod": {
+						"reloadTime": -0.49
+					},
+					"detail": "mortar_reload",
+					"detailSmall": "mortar_reload"
+				}
+			},
+			{
+				"label": "Burny Stuff",
+				"description": "A touch of Monkey napalm pops additional bloons every 2 seconds after impact for 6 seconds.",
+				"cost": 500,
+				"xpGate": 2637,
+				"thumb": "burny_stuff",
+				"add": {
+					"display": [
+						{
+							"useFor": "mortar_tower_accurate",
+							"display": "bigger_blast"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"burnEffectMod": {
+								"lifespan": 6,
+								"burnInterval": 2
+							},
+							"display": [
+								{
+									"useFor": "large_explosion",
+									"display": "burny_large_explosion"
+								},
+								{
+									"useFor": "slightly_larger_explosion",
+									"display": "burny_slightly_larger_explosion"
+								},
+								{
+									"useFor": "medium_explosion",
+									"display": "burny_medium_explosion"
+								},
+								{
+									"useFor": "nuclear_explosion",
+									"display": "burny_nuclear_explosion"
+								}
+							]
+						}
+					},
+					"detail": "burny_stuff",
+					"detailSmall": "burny_stuff"
+				}
+			},
+			{
+				"label": "Signal Flare",
+				"description": "Camo Bloons popped by this tower permanently lose their camo status, and can be attacked by towers without camo detection.",
+				"cost": 500,
+				"xpGate": 9687,
+				"thumb": "signal_flare",
+				"assign": "SignalFlare"
+			},
+			{
+				"label": "Artillery Battery",
+				"description": "Shoots mortar shells 3x as fast. Pop And Awe Ability: bombards the screen for 5 seconds, popping every bloon 1 time per second, and immobilizes all bloons during that time. Does not affect MOAB-class bloons.",
+				"cost": 9000,
+				"xpGate": 26087,
+				"rankGate": 37,
+				"thumb": "artillery_battery",
+				"assign": "ArtilleryBattery"
+			}
+		]
+	]
+}

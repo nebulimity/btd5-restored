@@ -1,0 +1,76 @@
+{
+	"id": "SpikedMines",
+	"label": "Spiked Mines",
+	"description": "",
+	"display": "mine_spike",
+	"detail": "spike_mine_factory",
+	"detailSmall": "spike_mine_factory",
+	"occupiedSpace": "large",
+	"rangeOfVisibility": 105,
+	"canPriorityTarget": false,
+	"rotates": false,
+	"targetMask": [
+		"None"
+	],
+	"weapons": [
+		{
+			"$type": "SpikeSpread",
+			"power": 115,
+			"reloadTime": 1,
+			"projectile": {
+				"display": "spike_mine_ball",
+				"pierce": 16,
+				"radius": 25,
+				"effectMask": [
+					"None"
+				],
+				"behavior": {
+					"roundOver": {
+						"$type": "RoundOverDestroy"
+					},
+					"collision": {
+						"$type": "RoadSpikeCollision"
+					},
+					"process": {
+						"$type": "Friction"
+					},
+					"destroy": {
+						"$type": "SpawnProjectile",
+						"projectile": {
+							"display": "burny_medium_explosion",
+							"pierce": 40,
+							"radius": 60,
+							"effectMask": [
+								"None"
+							],
+							"damageEffect": {
+								"damage": 4,
+								"canBreakIce": true,
+								"cantBreak": [
+									"Black",
+									"Zebra"
+								],
+								"showPop": false
+							},
+							"burnEffect": {
+								"lifespan": 6,
+								"burnInterval": 2
+							}
+						},
+						"next": {
+							"$type": "RemoveSpikeSpread"
+						}
+					}
+				},
+				"canMultiEffect": true,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true,
+					"ceramicScale": 3
+				}
+			},
+			"rotate": false
+		}
+	],
+	"requiresTarget": false
+}

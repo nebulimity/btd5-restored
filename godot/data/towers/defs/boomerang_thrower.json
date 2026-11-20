@@ -1,0 +1,89 @@
+{
+	"id": "BoomerangThrower",
+	"label": "Boomerang Thrower",
+	"description": "Throws a single boomerang in an arc back round to the monkey. Each boomerang can pop 3 bloons.",
+	"display": "boomerang_thrower",
+	"detail": "boomerang_monkey",
+	"occupiedSpace": "medium",
+	"rangeOfVisibility": 130,
+	"detailSmall": "boomerang_monkey",
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Spread",
+			"range": 520,
+			"power": 700,
+			"reloadTime": 1.33,
+			"projectile": {
+				"display": "boomerang",
+				"pierce": 3,
+				"radius": 10,
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				},
+				"behavior": {
+					"process": {
+						"$type": "FollowPath",
+						"path": [
+							{
+								"a": {
+									"x": 0,
+									"y": 0
+								},
+								"b": {
+									"x": 0,
+									"y": 0
+								},
+								"c": {
+									"x": 112,
+									"y": 55
+								},
+								"d": {
+									"x": 131,
+									"y": -27
+								}
+							},
+							{
+								"a": {
+									"x": 131,
+									"y": -27
+								},
+								"b": {
+									"x": 151,
+									"y": -109
+								},
+								"c": {
+									"x": 45,
+									"y": -159
+								},
+								"d": {
+									"x": -13,
+									"y": -11
+								}
+							}
+						]
+					},
+					"lifespanOver": {
+						"$type": "LifeSpanOverBoomerangSpecialty"
+					}
+				}
+			},
+			"count": 1,
+			"angle": 0.5
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 26,
+			"y": 8
+		}
+	]
+}

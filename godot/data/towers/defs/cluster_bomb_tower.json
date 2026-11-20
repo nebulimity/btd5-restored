@@ -1,0 +1,78 @@
+{
+	"id": "ClusterBombTower",
+	"label": "Cluster Bomb Tower",
+	"description": "Shoots a single bomb that explodes in a radius burst on impact. Good range, medium-slow fire rate. Can pop lead bloons but not black bloons.",
+	"display": "cluster_bombs",
+	"occupiedSpace": "medium",
+	"rangeOfVisibility": 150,
+	"detailSmall": "cluster_bombs",
+	"detail": "cluster_bombs",
+	"sacrificeType": "Explosion",
+	"weapons": [
+		{
+			"$type": "Single",
+			"range": 234,
+			"power": 455,
+			"reloadTime": 1.54,
+			"projectile": {
+				"display": "bomb",
+				"pierce": 1,
+				"radius": 5,
+				"behavior": {
+					"collision": {
+						"$type": "CollisionSpawnProjectile",
+						"projectile": {
+							"display": "medium_explosion",
+							"pierce": 40,
+							"radius": 60,
+							"damageEffect": {
+								"damage": 1,
+								"canBreakIce": true,
+								"cantBreak": [
+									"Black",
+									"Zebra"
+								],
+								"showPop": false
+							}
+						},
+						"next": {
+							"$type": "SpawnSpreadCollision",
+							"projectile": {
+								"display": "bomb_cluster",
+								"pierce": 1,
+								"radius": 5,
+								"effectMask": [
+									"All"
+								],
+								"behavior": {
+									"destroy": {
+										"$type": "SpawnProjectile",
+										"projectile": {
+											"display": "medium_explosion",
+											"pierce": 40,
+											"radius": 60,
+											"damageEffect": {
+												"damage": 1,
+												"canBreakIce": true,
+												"cantBreak": [
+													"Black",
+													"Zebra"
+												],
+												"showPop": false
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	}
+}

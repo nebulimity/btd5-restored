@@ -1,0 +1,29 @@
+{
+	"id": "TempleOfTheMonkeyGod",
+	"label": "Temple of the Monkey God",
+	"description": "",
+	"display": "temple_of_the_monkey_god",
+	"occupiedSpace": "temple_space",
+	"detailSmall": "temple",
+	"detail": "temple",
+	"rangeOfVisibility": 240,
+	"targetMask": [
+		"None"
+	],
+	"displayAddons": [
+		{
+			"clip": "monkey_god_head"
+		}
+	],
+	"behavior": {
+		"initialise": {
+			"$type": "Sacrifice"
+		},
+		"process": {
+			"$type": "RotateAddonToTarget"
+		},
+		"destroy": {
+			"$type": "UnSacrifice"
+		}
+	}
+}

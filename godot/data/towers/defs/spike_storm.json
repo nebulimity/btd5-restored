@@ -1,0 +1,68 @@
+{
+	"id": "SpikeStorm",
+	"label": "Spike Storm",
+	"description": "",
+	"display": "spike_storm",
+	"detail": "spike_storm",
+	"detailSmall": "spike_storm",
+	"occupiedSpace": "large",
+	"rangeOfVisibility": 105,
+	"canPriorityTarget": false,
+	"rotates": false,
+	"targetMask": [
+		"None"
+	],
+	"weapons": [
+		{
+			"$type": "SpikeSpread",
+			"power": 115,
+			"reloadTime": 0.5,
+			"projectile": {
+				"display": "spike_factory_spikes",
+				"pierce": 5,
+				"radius": 25,
+				"effectMask": [
+					"None"
+				],
+				"behavior": {
+					"roundOver": {
+						"$type": "RoundOverDestroy"
+					},
+					"collision": {
+						"$type": "RoadSpikeCollision"
+					},
+					"process": {
+						"$type": "Friction"
+					},
+					"destroy": {
+						"$type": "RemoveSpikeSpread"
+					}
+				},
+				"canMultiEffect": true,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": false,
+					"cantBreak": [
+						"Lead"
+					],
+					"blimpScale": 4
+				}
+			},
+			"rotate": false
+		}
+	],
+	"abilities": [
+		{
+			"$type": "SpikeStormDef",
+			"id": "SpikeStorm",
+			"cooldown": 40,
+			"sound": "spike_storm",
+			"effect": "spike_factory_aura",
+			"thumb": "activated_ability_spike_factory",
+			"label": "Spike Storm",
+			"description": "Lays down a thick carpet of Spikes over the whole track",
+			"abilityClass": "SpikeStorm"
+		}
+	],
+	"requiresTarget": false
+}

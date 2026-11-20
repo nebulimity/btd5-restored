@@ -1,0 +1,60 @@
+{
+	"id": "Destroyer",
+	"label": "Destroyer",
+	"description": "",
+	"detailSmall": "destroyer",
+	"detail": "destroyer",
+	"display": "destroyer",
+	"occupiedSpace": "medium",
+	"rangeOfVisibility": 210,
+	"isBoat": true,
+	"isLand": false,
+	"displayAddons": [
+		{
+			"clip": "right_front",
+			"z": -1,
+			"ref": "cannon_frontRight",
+			"loop": false
+		},
+		{
+			"clip": "right_back",
+			"z": -1,
+			"ref": "cannon_backRight",
+			"loop": false
+		},
+		{
+			"clip": "left_front",
+			"z": -1,
+			"ref": "cannon_frontLeft",
+			"loop": false
+		},
+		{
+			"clip": "left_back",
+			"z": -1,
+			"ref": "cannon_backLeft",
+			"loop": false
+		}
+	],
+	"weapons": [
+		{
+			"$type": "SideSingle",
+			"range": 300,
+			"power": 525,
+			"reloadTime": 0.14,
+			"projectile": {
+				"display": "buccaneer_dart",
+				"pierce": 5,
+				"radius": 8,
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"fireFromRight": "cannon_frontRight",
+			"fireFromLeft": "cannon_frontLeft"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"id": "SpikedBallFactory",
+	"label": "Spiked Ball Factory",
+	"description": "",
+	"display": "spike_ball",
+	"detail": "spike_ball_factory",
+	"detailSmall": "spike_ball_factory",
+	"occupiedSpace": "large",
+	"rangeOfVisibility": 105,
+	"canPriorityTarget": false,
+	"rotates": false,
+	"targetMask": [
+		"None"
+	],
+	"weapons": [
+		{
+			"$type": "SpikeSpread",
+			"power": 115,
+			"reloadTime": 2.29,
+			"projectile": {
+				"display": "spike_factory_ball",
+				"pierce": 16,
+				"radius": 25,
+				"effectMask": [
+					"None"
+				],
+				"behavior": {
+					"roundOver": {
+						"$type": "RoundOverDestroy"
+					},
+					"collision": {
+						"$type": "RoadSpikeCollision"
+					},
+					"process": {
+						"$type": "Friction"
+					},
+					"destroy": {
+						"$type": "RemoveSpikeSpread"
+					}
+				},
+				"canMultiEffect": true,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true,
+					"ceramicScale": 3
+				}
+			},
+			"rotate": false
+		}
+	],
+	"requiresTarget": false
+}

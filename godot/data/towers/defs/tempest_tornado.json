@@ -1,0 +1,87 @@
+{
+	"id": "TempestTornado",
+	"label": "Master of Air",
+	"description": "",
+	"display": "tempest_tornado",
+	"occupiedSpace": "small",
+	"detailSmall": "tempest",
+	"detail": "tempest",
+	"rangeOfVisibility": 120,
+	"sacrificeType": "Wind",
+	"weapons": [
+		{
+			"$type": "Single",
+			"id": "IntenseMagicBoltWeapon",
+			"range": 240,
+			"power": 460,
+			"projectile": {
+				"display": "intense_magic",
+				"pierce": 7,
+				"radius": 10,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				}
+			},
+			"reloadTime": 1.1
+		},
+		{
+			"$type": "CastLightning",
+			"range": 120,
+			"power": 3600,
+			"projectile": {
+				"display": "dart",
+				"pierce": 30,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				}
+			},
+			"reloadTime": 2.3
+		},
+		{
+			"$type": "Single",
+			"range": 240,
+			"power": 300,
+			"projectile": {
+				"display": "tempest",
+				"pierce": 70,
+				"radius": 40,
+				"windEffect": {
+					"speed": 300
+				},
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				},
+				"behavior": {
+					"destroy": {
+						"$type": "SpawnTinyTornadoes",
+						"projectile": {
+							"display": "tiny_tornado",
+							"pierce": 20,
+							"radius": 16,
+							"windEffect": {
+								"speed": 300
+							}
+						},
+						"lifespan": 2
+					}
+				}
+			},
+			"reloadTime": 1.75
+		}
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	},
+	"displayAddons": [
+		{
+			"clip": "tempest_cloud",
+			"z": -1,
+			"rotate": false
+		}
+	]
+}

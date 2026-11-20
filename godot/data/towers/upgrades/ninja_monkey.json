@@ -1,0 +1,155 @@
+{
+	"base": "NinjaMonkey",
+	"upgrades": [
+		[
+			{
+				"label": "Ninja Discipline",
+				"description": "Increases attack range and attack speed.",
+				"thumb": "ninja_discipline",
+				"cost": 300,
+				"xpGate": 125,
+				"add": {
+					"display": [
+						{
+							"useFor": "ninja",
+							"display": "ninja_discipline"
+						},
+						{
+							"useFor": "seeking_shurikens",
+							"display": "ninja_discipline"
+						}
+					],
+					"rangeOfVisibility": 20,
+					"weaponMod": {
+						"reloadTime": -0.125
+					},
+					"detail": "ninja_discipline",
+					"detailSmall": "ninja_discipline"
+				}
+			},
+			{
+				"label": "Sharp Shurikens",
+				"description": "Shurikens can pop 4 bloons each",
+				"thumb": "sharp_shurikens",
+				"cost": 350,
+				"xpGate": 1325,
+				"add": {
+					"display": [
+						{
+							"useFor": "ninja_discipline",
+							"display": "sharp_shuriken"
+						},
+						{
+							"useFor": "seeking_shurikens",
+							"display": "sharp_shuriken"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"pierce": 2
+						}
+					},
+					"detail": "sharp_shurikens",
+					"detailSmall": "sharp_shurikens"
+				}
+			},
+			{
+				"label": "Double Shot",
+				"description": "Extreme Ninja skill enables him to throw 2 shurikens at once",
+				"cost": 850,
+				"xpGate": 5200,
+				"thumb": "double_shot",
+				"assign": "DoubleShot"
+			},
+			{
+				"label": "Bloonjitsu",
+				"description": "The art of Bloonjitsu allows Ninjas to throw 5 shurikens at once!",
+				"cost": 2750,
+				"xpGate": 16500,
+				"rankGate": 23,
+				"thumb": "bloonjitsu",
+				"assign": "Bloonjitsu"
+			}
+		],
+		[
+			{
+				"label": "Seeking Shuriken",
+				"description": "Infuses bloon hatred into the weapons themselves - they will seek out and pop bloons automatically",
+				"thumb": "seeking_shuriken",
+				"cost": 250,
+				"xpGate": 475,
+				"add": {
+					"display": [
+						{
+							"useFor": "ninja",
+							"display": "seeking_shurikens"
+						},
+						{
+							"useFor": "ninja_discipline",
+							"display": "seeking_shurikens"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"behaviorMod": {
+								"setProcess": {
+									"$type": "Target",
+									"seekAngle": 2.5132741228718345,
+									"turnTime": 0.08,
+									"seekTarget": true
+								}
+							}
+						}
+					},
+					"detail": "seeking_shurikens",
+					"detailSmall": "seeking_shurikens"
+				}
+			},
+			{
+				"label": "Distraction",
+				"description": "Some bloons struck by the Ninja's weapons will become distracted and move the wrong way temporarily.",
+				"thumb": "distraction",
+				"cost": 350,
+				"xpGate": 2300,
+				"add": {
+					"display": [
+						{
+							"useFor": "seeking_shurikens",
+							"display": "distraction"
+						},
+						{
+							"useFor": "ninja_discipline",
+							"display": "distraction"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"windEffectMod": {
+								"chance": -0.85
+							}
+						}
+					},
+					"detail": "distraction",
+					"detailSmall": "distraction"
+				}
+			},
+			{
+				"label": "Flash Bomb",
+				"description": "Sometimes throws a flash bomb that stuns bloons in a large radius.",
+				"cost": 2750,
+				"xpGate": 8700,
+				"thumb": "flash_bomb",
+				"assign": "FlashBomb"
+			},
+			{
+				"label": "Sabotage Supply Lines",
+				"description": "Sabotage Supply Lines Ability: Sabotage the bloons supply lines for 15 seconds. During the sabotage, all recently created and new bloons are crippled to half speed.",
+				"cost": 2800,
+				"xpGate": 27150,
+				"rankGate": 23,
+				"thumb": "sabbotage_supply_lines",
+				"assign": "SabotageSupplyLines"
+			}
+		]
+	]
+}

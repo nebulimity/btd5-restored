@@ -6,6 +6,7 @@ public partial class Main : Node
 	public Level Level;
 
 	public RoundsDef DefaultRounds;
+	public TowerFactory TowerFactory;
 	public TowerMenuSet TowerMenu;
 
 	public override void _Ready()
@@ -13,7 +14,8 @@ public partial class Main : Node
 		Instance = this;
 
 		DefaultRounds = RoundsDef.Load("default");
-		TowerMenu = TowerMenuSet.Load();
+		TowerFactory = TowerFactory.Load();
+		TowerMenu = TowerMenuSet.Load(TowerFactory);
 	}
 
 	public override void _Input(InputEvent @event)

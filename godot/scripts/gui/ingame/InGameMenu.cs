@@ -11,6 +11,8 @@ public partial class InGameMenu : Control
 	public TowerSelectedState TowerSelectedState;
 	public TowerNotSelectedState TowerNotSelectedState;
 
+	[Export] public TowerPlaceView TowerPlaceView { get; private set; }
+
 	[Export] private Control _selectionArea;
 
 	[Export] private Label _cashValue;

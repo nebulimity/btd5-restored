@@ -1,0 +1,127 @@
+{
+	"base": "TackTower",
+	"upgrades": [
+		[
+			{
+				"label": "Faster Shooting",
+				"description": "Shoots tacks faster.",
+				"thumb": "faster_shoot",
+				"cost": 210,
+				"xpGate": 85,
+				"add": {
+					"display": [
+						{
+							"useFor": "tack_tower",
+							"display": "tack_tower_faster"
+						}
+					],
+					"weaponMod": {
+						"reloadTime": -0.43
+					},
+					"detail": "faster_tack",
+					"detailSmall": "faster_tack"
+				}
+			},
+			{
+				"label": "Even Faster Shooting",
+				"description": "Shoots tacks even faster!",
+				"thumb": "even_faster",
+				"cost": 300,
+				"xpGate": 770,
+				"add": {
+					"display": [
+						{
+							"useFor": "tack_tower_faster",
+							"display": "tack_tower_even_faster"
+						}
+					],
+					"weaponMod": {
+						"reloadTime": -0.57
+					},
+					"detail": "even_faster_tack",
+					"detailSmall": "even_faster_tack"
+				}
+			},
+			{
+				"label": "Tack Sprayer",
+				"description": "Sprays out 16 tacks per volley instead of the usual 8.",
+				"thumb": "tack_sprayer",
+				"cost": 500,
+				"xpGate": 2842,
+				"assign": "TackSprayer"
+			},
+			{
+				"label": "Ring of Fire",
+				"thumb": "ringof_fire",
+				"description": "Upgrade to a fast firing burst tower that shoots a deadly ring of flame instead of tacks.",
+				"cost": 2500,
+				"xpGate": 9030,
+				"rankGate": 20,
+				"assign": "RingOfFire"
+			}
+		],
+		[
+			{
+				"label": "Extra Range Tacks",
+				"description": "Tacks fly out further than normal.",
+				"thumb": "extra_range",
+				"cost": 100,
+				"xpGate": 305,
+				"add": {
+					"display": [
+						{
+							"useFor": "tack_tower",
+							"display": "tack_tower_faster"
+						}
+					],
+					"rangeOfVisibility": 10,
+					"weaponMod": {
+						"range": 10,
+						"power": 70
+					},
+					"detail": "extra_range_tack",
+					"detailSmall": "extra_range_tacks"
+				}
+			},
+			{
+				"label": "Super Range Tacks",
+				"description": "Tacks go much further than normal.",
+				"thumb": "super_range",
+				"cost": 225,
+				"xpGate": 1260,
+				"add": {
+					"display": [
+						{
+							"useFor": "tack_tower_faster",
+							"display": "tack_tower_even_faster"
+						}
+					],
+					"rangeOfVisibility": 8,
+					"weaponMod": {
+						"range": 10,
+						"power": 70
+					},
+					"detail": "super_range_tacks",
+					"detailSmall": "super_range_tacks"
+				}
+			},
+			{
+				"label": "Blade Shooter",
+				"description": "Converts tower into a blade shooter that shoots out razor sharp blades that are harder for bloons to avoid.",
+				"thumb": "blade_shooter",
+				"cost": 680,
+				"xpGate": 4785,
+				"assign": "BladeShooter"
+			},
+			{
+				"label": "Blade Maelstrom",
+				"description": "Blade Maelstrom Ability: covers the area in an unstoppable storm of blades.",
+				"thumb": "blade_maelstrom",
+				"cost": 2700,
+				"xpGate": 14625,
+				"rankGate": 20,
+				"assign": "BladeMaelstrom"
+			}
+		]
+	]
+}

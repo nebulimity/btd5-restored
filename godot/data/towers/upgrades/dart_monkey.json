@@ -1,0 +1,133 @@
+{
+	"base": "DartMonkey",
+	"upgrades": [
+		[
+			{
+				"label": "Long Range Darts",
+				"description": "Makes the Dart Monkey shoot further than normal.",
+				"xpGate": 30,
+				"thumb": "long_range_darts",
+				"cost": 90,
+				"add": {
+					"rangeOfVisibility": 25,
+					"display": [
+						{
+							"useFor": "dart_monkey",
+							"display": "dart_long_sharp"
+						}
+					],
+					"detail": "long_range_darts",
+					"detailSmall": "long_range_darts"
+				}
+			},
+			{
+				"label": "Enhanced Eyesight",
+				"description": "Increase attack range even further and allows Dart Monkey to shoot Camo Bloons.",
+				"xpGate": 460,
+				"thumb": "very_long_range",
+				"cost": 120,
+				"add": {
+					"removeFromTargetMask": [
+						"NoDetection"
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"removeFromEffectMask": [
+								"NoDetection"
+							]
+						}
+					},
+					"display": [
+						{
+							"useFor": "dart_long_sharp",
+							"display": "dart_longer_razor"
+						}
+					],
+					"rangeOfVisibility": 25,
+					"detail": "enhanced_vision",
+					"detailSmall": "enhanced_vision"
+				}
+			},
+			{
+				"label": "Spike-o-pult",
+				"description": "Converts the Dart Monkey into a Spike-o-pult, a powerful tower that hurls a large spiked ball instead of darts. Good range, but slower attack speed. Each ball can pop 18 bloons.",
+				"xpGate": 1890,
+				"thumb": "spike_o_pult",
+				"cost": 500,
+				"assign": "Spike-o-pult"
+			},
+			{
+				"label": "Juggernaut",
+				"description": "Hurls a giant unstoppable killer spiked ball that can pop lead bloons and excels at crushing ceramic bloons.",
+				"xpGate": 6220,
+				"rankGate": 19,
+				"thumb": "juggernaut",
+				"cost": 1500,
+				"assign": "Juggernaut"
+			}
+		],
+		[
+			{
+				"label": "Sharp Shots",
+				"description": "Can pop 1 extra bloon per shot.",
+				"cost": 140,
+				"xpGate": 75,
+				"thumb": "sharp_darts",
+				"add": {
+					"weaponMod": {
+						"projectileMod": {
+							"pierce": 1
+						}
+					},
+					"display": [
+						{
+							"useFor": "dart_monkey",
+							"display": "dart_long_sharp"
+						}
+					],
+					"detail": "sharp_darts",
+					"detailSmall": "sharp_darts"
+				}
+			},
+			{
+				"label": "Razor Sharp Shots",
+				"description": "Can pop 2 extra bloons per shot.",
+				"cost": 170,
+				"xpGate": 580,
+				"thumb": "razor_sharp_darts",
+				"add": {
+					"display": [
+						{
+							"useFor": "dart_long_sharp",
+							"display": "dart_longer_razor"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"pierce": 2
+						}
+					},
+					"detail": "razor_sharp_darts",
+					"detailSmall": "razor_sharp_darts"
+				}
+			},
+			{
+				"label": "Triple Darts",
+				"description": "Throws 3 darts at a time instead of 1.",
+				"xpGate": 3250,
+				"thumb": "triple_darts",
+				"cost": 330,
+				"assign": "TripleDarts"
+			},
+			{
+				"label": "Super Monkey Fan Club",
+				"description": "Super Monkey Fan Club Ability: Converts up to 10 nearby dart monkeys into Super Monkeys for 15 seconds",
+				"xpGate": 9690,
+				"rankGate": 19,
+				"thumb": "buncho_monkeys",
+				"cost": 8000,
+				"assign": "SuperMonkeyFanClub"
+			}
+		]
+	]
+}

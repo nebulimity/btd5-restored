@@ -1,0 +1,175 @@
+{
+	"base": "BombTower",
+	"upgrades": [
+		[
+			{
+				"label": "Extra Range",
+				"description": "Gives tower longer attack range.",
+				"cost": 200,
+				"xpGate": 150,
+				"thumb": "bomb_tower_extra_range",
+				"add": {
+					"display": [
+						{
+							"useFor": "bomb_tower",
+							"display": "bomb_tower_bigger_range"
+						}
+					],
+					"rangeOfVisibility": 20,
+					"detail": "bomb_range",
+					"detailSmall": "bomb_range"
+				}
+			},
+			{
+				"label": "Frag Bombs",
+				"description": "Each explosion throws out 8 sharp fragments that pop even more bloons.",
+				"cost": 300,
+				"xpGate": 1300,
+				"thumb": "frag_bombs",
+				"add": {
+					"display": [
+						{
+							"useFor": "bomb_tower_bigger_range",
+							"display": "frag_bombs"
+						}
+					],
+					"rangeOfVisibility": 10,
+					"weaponMod": {
+						"projectileMod": {
+							"behaviorMod": {
+								"addCollision": {
+									"$type": "SpawnSpreadCollision",
+									"projectile": {
+										"display": "frag_shard",
+										"pierce": 1,
+										"damageEffect": {
+											"damage": 1,
+											"cantBreak": [
+												"Lead"
+											],
+											"canBreakIce": false
+										}
+									}
+								}
+							}
+						}
+					},
+					"detail": "frag_bombs",
+					"detailSmall": "frag_bombs"
+				}
+			},
+			{
+				"label": "Cluster Bombs",
+				"description": "Throws out secondary bombs instead of frags - causing widespread explosive poppage.",
+				"cost": 800,
+				"xpGate": 5100,
+				"thumb": "cluster_bombs",
+				"assign": "ClusterBombTower"
+			},
+			{
+				"label": "Bloon Impact",
+				"description": "Impacts from this tower become so violent, bloons become stunned for a short time when they are hit.",
+				"cost": 4000,
+				"xpGate": 15450,
+				"rankGate": 24,
+				"thumb": "bloon_impact",
+				"assign": "BloonImpactBombTower"
+			}
+		],
+		[
+			{
+				"label": "Bigger Bombs",
+				"description": "Shoots much larger bombs than normal, they have a larger blast area and more popping power.",
+				"cost": 400,
+				"xpGate": 500,
+				"thumb": "bigger_bombs",
+				"add": {
+					"display": [
+						{
+							"useFor": "bomb_tower",
+							"display": "bomb_tower_bigger_range"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"radius": 2,
+							"pierce": 10,
+							"display": [
+								{
+									"useFor": "bomb",
+									"display": "big_bomb"
+								},
+								{
+									"useFor": "medium_explosion",
+									"display": "large_explosion"
+								}
+							]
+						}
+					},
+					"detail": "bigger_bombs",
+					"detailSmall": "bigger_bombs"
+				}
+			},
+			{
+				"label": "Missile Launcher",
+				"description": "Converts the tower into a missile launcher - the missiles have higher velocity, longer range, more popping power, and faster shooting.",
+				"thumb": "missile_launcher",
+				"cost": 400,
+				"xpGate": 2200,
+				"add": {
+					"display": [
+						{
+							"useFor": "bomb_tower_bigger_range",
+							"display": "missile_launcher"
+						},
+						{
+							"useFor": "frag_bombs",
+							"display": "missile_launcher"
+						},
+						{
+							"useFor": "cluster_bombs",
+							"display": "cluster_missile"
+						},
+						{
+							"useFor": "bloon_impact",
+							"display": "missile_buster"
+						}
+					],
+					"rangeOfVisibility": 5,
+					"weaponMod": {
+						"power": 245,
+						"reloadTime": -0.23,
+						"projectileMod": {
+							"pierce": 5,
+							"display": [
+								{
+									"useFor": "big_bomb",
+									"display": "missile"
+								}
+							]
+						}
+					},
+					"detail": "missile_launcher",
+					"detailSmall": "missile_launcher"
+				}
+			},
+			{
+				"label": "MOAB Mauler",
+				"description": "MOAB maulers are special missiles that wreak havoc on MOAB-class bloons, inflicting x10 damage.",
+				"thumb": "moab_mauler",
+				"cost": 900,
+				"xpGate": 8400,
+				"assign": "MoabMauler"
+			},
+			{
+				"label": "MOAB Assassin",
+				"description": "MOAB Assassin Ability: super deadly missile seeks the nearest MOAB-class bloon and destroys it instantly. Does 1000 damage to ZOMG bloons instead of destroying them.",
+				"cost": 3200,
+				"xpGate": 24100,
+				"rankGate": 24,
+				"thumb": "moab_assassin",
+				"assign": "MoabAssassin"
+			}
+		]
+	]
+}

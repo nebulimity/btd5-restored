@@ -1,0 +1,22 @@
+{
+	"id": "BananaRepublic",
+	"label": "Banana Republic",
+	"description": "",
+	"canPriorityTarget": false,
+	"rotates": false,
+	"display": "banana_republic",
+	"occupiedSpace": "banana_farm_space",
+	"rangeOfVisibility": 120,
+	"detailSmall": "banana_republic",
+	"detail": "banana_republic",
+	"behavior": {
+		"roundStart": {
+			"$type": "BananaEmitter",
+			"cashPerPacket": 20,
+			"cashPerRound": 500,
+			"lifespan": 10,
+			"display": "bananas"
+		}
+	},
+	"requiresTarget": false
+}

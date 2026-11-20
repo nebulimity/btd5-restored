@@ -1,0 +1,176 @@
+{
+	"base": "SniperMonkey",
+	"upgrades": [
+		[
+			{
+				"label": "Full Metal Jacket",
+				"description": "Shots can pop through 4 layers of bloon - and can pop lead and frozen bloons.",
+				"cost": 350,
+				"xpGate": 100,
+				"thumb": "full_metal_jacket",
+				"add": {
+					"display": [
+						{
+							"useFor": "sniper",
+							"display": "heavy_dart"
+						},
+						{
+							"useFor": "fast_fire",
+							"display": "heavy_dart"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"damageEffectMod": {
+								"damage": 2,
+								"canBreakIce": true,
+								"removeFromCantBreak": [
+									"Lead"
+								]
+							}
+						}
+					},
+					"detail": "full_metal_jacket",
+					"detailSmall": "full_metal_jacket"
+				}
+			},
+			{
+				"label": "Point Five Oh",
+				"description": "Shots can pop through 7 layers of bloon!",
+				"cost": 2200,
+				"xpGate": 1100,
+				"thumb": "point_five_oh",
+				"add": {
+					"display": [
+						{
+							"useFor": "heavy_dart",
+							"display": "high_cal"
+						},
+						{
+							"useFor": "fast_fire",
+							"display": "high_cal"
+						},
+						{
+							"useFor": "night_vision",
+							"display": "high_cal_night_vis"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"damageEffectMod": {
+								"damage": 3,
+								"canBreakIce": true
+							}
+						}
+					},
+					"detail": "point_five_oh",
+					"detailSmall": "point_five_oh"
+				}
+			},
+			{
+				"label": "Deadly Precision",
+				"description": "Extreme accuracy and muzzle velocity cause up to 18 layers of bloon to be popped per shot - enough to destroy an entire ceramic bloon!",
+				"cost": 4000,
+				"xpGate": 3275,
+				"thumb": "deadly_precision",
+				"assign": "DeadlyPrecision"
+			},
+			{
+				"label": "Cripple MOAB",
+				"description": "Bullets from this tower temporarily take out propulsion systems of MOAB-class bloons, immobilising them for a short time.",
+				"cost": 12500,
+				"xpGate": 15360,
+				"rankGate": 21,
+				"thumb": "cripple_moab",
+				"assign": "CrippleMOAB"
+			}
+		],
+		[
+			{
+				"label": "Faster Firing",
+				"description": "Allows Sniper to shoot faster.",
+				"cost": 400,
+				"xpGate": 400,
+				"thumb": "firing_faster",
+				"add": {
+					"display": [
+						{
+							"useFor": "sniper",
+							"display": "fast_fire"
+						},
+						{
+							"useFor": "heavy_dart",
+							"display": "fast_fire"
+						}
+					],
+					"weaponMod": {
+						"reloadTime": -0.666
+					},
+					"detail": "fast_sniper",
+					"detailSmall": "fast_sniper"
+				}
+			},
+			{
+				"label": "Night Vision Goggles",
+				"description": "Allows Sniper to detect and shoot Camo bloons",
+				"cost": 300,
+				"xpGate": 1950,
+				"thumb": "night_vision_goggles",
+				"add": {
+					"display": [
+						{
+							"useFor": "fast_fire",
+							"display": "night_vision"
+						},
+						{
+							"useFor": "heavy_dart",
+							"display": "night_vision"
+						},
+						{
+							"useFor": "high_cal",
+							"display": "high_cal_night_vis"
+						},
+						{
+							"useFor": "cripple_moab",
+							"display": "cripple_moab_night_vis"
+						},
+						{
+							"useFor": "china_shop",
+							"display": "china_shop_night_vis"
+						}
+					],
+					"removeFromTargetMask": [
+						"NoDetection"
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"removeFromEffectMask": [
+								"NoDetection"
+							]
+						}
+					},
+					"detail": "night_vision",
+					"detailSmall": "night_vision"
+				}
+			},
+			{
+				"label": "Semi Automatic Rifle",
+				"description": "Allows Sniper to take multiple shots and attack 3x as fast",
+				"cost": 3500,
+				"xpGate": 7875,
+				"thumb": "semi_automatic_rifle",
+				"assign": "SemiAutomaticRifle"
+			},
+			{
+				"id": "SupplyDrop",
+				"label": "Supply Drop",
+				"description": "Supply Drop Ability: drops a crate full of cash.",
+				"cost": 12000,
+				"xpGate": 26400,
+				"rankGate": 21,
+				"thumb": "supply_drop",
+				"assign": "SupplyDropSniper"
+			}
+		]
+	]
+}

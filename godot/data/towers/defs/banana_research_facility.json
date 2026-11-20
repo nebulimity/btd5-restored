@@ -1,0 +1,22 @@
+{
+	"id": "BananaResearchFacility",
+	"label": "Banana Research Facility",
+	"description": "",
+	"display": "banana_research_facility",
+	"occupiedSpace": "banana_farm_space",
+	"rangeOfVisibility": 120,
+	"canPriorityTarget": false,
+	"rotates": false,
+	"detailSmall": "research_facility",
+	"detail": "research_facility",
+	"behavior": {
+		"roundStart": {
+			"$type": "BananaEmitter",
+			"cashPerPacket": 200,
+			"cashPerRound": 2000,
+			"lifespan": 10,
+			"display": "banana_crate"
+		}
+	},
+	"requiresTarget": false
+}

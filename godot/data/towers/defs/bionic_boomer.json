@@ -1,0 +1,80 @@
+{
+	"id": "BionicBoomer",
+	"label": "Boomerang Thrower",
+	"description": "Throws a single boomerang in an arc back round to the monkey. Each boomerang can pop 3 bloons.",
+	"display": "bionic_boomer",
+	"occupiedSpace": "medium",
+	"rangeOfVisibility": 130,
+	"detailSmall": "bionic_boomer",
+	"detail": "bionic_boomer",
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Spread",
+			"range": 520,
+			"power": 700,
+			"reloadTime": 0.34,
+			"projectile": {
+				"display": "hot_rang",
+				"pierce": 3,
+				"radius": 10,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				},
+				"behavior": {
+					"process": {
+						"$type": "FollowPath",
+						"path": [
+							{
+								"a": {
+									"x": 0,
+									"y": 0
+								},
+								"b": {
+									"x": 0,
+									"y": 0
+								},
+								"c": {
+									"x": 112,
+									"y": 55
+								},
+								"d": {
+									"x": 131,
+									"y": -27
+								}
+							},
+							{
+								"a": {
+									"x": 131,
+									"y": -27
+								},
+								"b": {
+									"x": 151,
+									"y": -109
+								},
+								"c": {
+									"x": 45,
+									"y": -159
+								},
+								"d": {
+									"x": -13,
+									"y": -11
+								}
+							}
+						]
+					},
+					"lifespanOver": {
+						"$type": "LifeSpanOverBoomerangSpecialty"
+					}
+				}
+			},
+			"count": 1,
+			"angle": 0.5
+		}
+	]
+}

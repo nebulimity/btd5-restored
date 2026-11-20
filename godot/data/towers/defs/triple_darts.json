@@ -1,0 +1,41 @@
+{
+	"id": "TripleDarts",
+	"label": "Dart Monkey",
+	"display": "triple_shot",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 100,
+	"detail": "triple_darts",
+	"detailSmall": "triple_darts",
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	},
+	"weaponOffsets": [
+		{
+			"x": 6,
+			"y": 9
+		}
+	],
+	"weapons": [
+		{
+			"$type": "Spread",
+			"range": 161,
+			"power": 805,
+			"reloadTime": 0.9,
+			"projectile": {
+				"display": "dart",
+				"pierce": 4,
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"angle": 0.43,
+			"count": 3
+		}
+	]
+}

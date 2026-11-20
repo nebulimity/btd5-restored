@@ -12,14 +12,14 @@ public class TowerMenuSet
 		Converters = { new JsonStringEnumConverter() },
 	};
 
-	public static TowerMenuSet Load()
+	public static TowerMenuSet Load(TowerFactory factory)
 	{
 		string json = Godot.FileAccess.GetFileAsString("res://data/towers/tower_menu.json");
 
 		TowerMenuSet menuSet = JsonSerializer.Deserialize<TowerMenuSet>(json, JsonOptions);
 		foreach (var def in menuSet.TowersInMenu)
 		{
-			def.Tower = new TowerDef { Id = def.TowerId };
+			def.Tower = factory.GetBaseTower(def.TowerId);
 		}
 
 		return menuSet;

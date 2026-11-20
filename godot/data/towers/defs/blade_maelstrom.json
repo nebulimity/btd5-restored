@@ -1,0 +1,46 @@
+{
+	"id": "BladeMaelstrom",
+	"label": "Blade Shooter",
+	"display": "blade_maelstrom",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 88,
+	"detail": "maelstrom",
+	"detailSmall": "maelstrom",
+	"canPriorityTarget": false,
+	"rotates": false,
+	"weapons": [
+		{
+			"$type": "Circular",
+			"id": "bladeShooterWeapon",
+			"range": 88,
+			"power": 490,
+			"reloadTime": 1.51,
+			"projectile": {
+				"display": "blade_maelstrom",
+				"pierce": 2,
+				"radius": 5,
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"count": 8
+		}
+	],
+	"abilities": [
+		{
+			"$type": "MaelstromDef",
+			"id": "Maelstrom",
+			"cooldown": 20,
+			"sound": "blade_maelstrom",
+			"thumb": "activated_ability_tack_tower",
+			"label": "Blade Maelstrom Ability",
+			"description": "Covers the area in an unstoppable storm of blades.",
+			"effect": "tack_tower_spiral",
+			"abilityClass": "Maelstrom"
+		}
+	]
+}

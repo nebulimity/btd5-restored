@@ -1,0 +1,40 @@
+{
+	"id": "DartMonkey",
+	"label": "Dart Monkey",
+	"description": "Shoots a single dart that pops a single bloon. A good, cheap tower suitable for the early rounds.",
+	"display": "dart_monkey",
+	"detail": "dart_monkey",
+	"detailSmall": "dart_monkey",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 100,
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Single",
+			"range": 161,
+			"power": 805,
+			"reloadTime": 0.9,
+			"projectile": {
+				"display": "dart",
+				"pierce": 1,
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			}
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 6,
+			"y": 9
+		}
+	]
+}

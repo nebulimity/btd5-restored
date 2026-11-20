@@ -1,0 +1,86 @@
+{
+	"id": "ArtilleryBattery",
+	"label": "Artillery Battery",
+	"description": "",
+	"display": "artillery_battery",
+	"detailSmall": "battery",
+	"detail": "battery",
+	"occupiedSpace": "mortar_monkey_space",
+	"rangeOfVisibility": 1250,
+	"canPriorityTarget": false,
+	"sacrificeType": "Explosion",
+	"targetMask": [
+		"None"
+	],
+	"weapons": [
+		{
+			"$type": "FireAtReticle",
+			"id": "artilleryBatteryWeapon",
+			"range": 1250,
+			"power": 600,
+			"reloadTime": 0.52,
+			"projectile": {
+				"display": "MovieClip",
+				"pierce": 1,
+				"radius": 5,
+				"effectMask": [
+					"All"
+				],
+				"behavior": {
+					"destroy": {
+						"$type": "SpawnProjectile",
+						"projectile": {
+							"display": "burny_large_explosion",
+							"pierce": 40,
+							"radius": 75,
+							"effectMask": [
+								"None"
+							],
+							"damageEffect": {
+								"damage": 1,
+								"canBreakIce": true,
+								"cantBreak": [
+									"Black",
+									"Zebra"
+								],
+								"showPop": false
+							},
+							"burnEffect": {
+								"lifespan": 6,
+								"burnInterval": 2
+							},
+							"removeCamo": true
+						}
+					}
+				}
+			},
+			"spread": 60
+		}
+	],
+	"abilities": [
+		{
+			"$type": "ProjectileHitAllDef",
+			"id": "ProjectileHitAllArtllery",
+			"projectile": {
+				"display": "large_explosion",
+				"pierce": 10000,
+				"radius": 1000,
+				"stunEffect": {
+					"lifespan": 5
+				},
+				"burnEffect": {
+					"lifespan": 5,
+					"burnInterval": 1
+				}
+			},
+			"cooldown": 45,
+			"fullscreenEffect": "mortar_tower_artillary_rain",
+			"thumb": "activated_ability_mortar_tower",
+			"label": "Pop And Awe Ability",
+			"description": "Bombards the screen for 5 seconds, popping every bloon 1 time per second, and immobilizes all bloons during that time. Does not affect MOAB-class bloons.",
+			"abilityClass": "ProjectileHitAll"
+		}
+	],
+	"targetingSystem": 2,
+	"requiresTarget": false
+}

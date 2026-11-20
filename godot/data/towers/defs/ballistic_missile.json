@@ -1,0 +1,94 @@
+{
+	"id": "BallisticMissile",
+	"label": "Ballistic Missile",
+	"display": "sub_ballistic_missile",
+	"occupiedSpace": "small",
+	"detail": "ballistic_missile",
+	"detailSmall": "ballistic_missiles",
+	"rangeOfVisibility": 125,
+	"behavior": {
+		"processExtraFirst": {
+			"$type": "SpawnBallisticMissile",
+			"originOffset": {
+				"x": -20,
+				"y": 0
+			}
+		}
+	},
+	"weapons": [
+		{
+			"$type": "SingleMonkeySubAirburst",
+			"id": "AirburstWeapon",
+			"rangeAirburst": 850,
+			"powerAirburst": 420,
+			"reloadTimeAirburst": 0.76,
+			"projectileAirburst": {
+				"display": "sub_dart_barbed",
+				"pierce": 1,
+				"behavior": {
+					"process": {
+						"$type": "TargetFixedThenClosest",
+						"turnTime": 0.08,
+						"seekAngle": 1.2566370614359172,
+						"seekTarget": true
+					},
+					"destroy": {
+						"$type": "SpawnSpreadAngleDestroy",
+						"spawnedProjectileDef": {
+							"display": "sub_airburst_dart_split",
+							"pierce": 3,
+							"damageEffect": {
+								"damage": 1,
+								"cantBreak": [
+									"Lead"
+								],
+								"canBreakIce": false
+							}
+						},
+						"angleSpacing": 0.43,
+						"count": 3
+					}
+				},
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"offsetSequenceAirburst": [
+				{
+					"x": 36,
+					"y": -5
+				},
+				{
+					"x": 36,
+					"y": 5
+				}
+			]
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 44,
+			"y": 0
+		}
+	],
+	"isBoat": true,
+	"isLand": false,
+	"displayAddons": [
+		{
+			"clip": "sub_ballistic_missile_gun_left",
+			"z": 1,
+			"ref": "ballistic_gun_left",
+			"loop": false
+		},
+		{
+			"clip": "sub_ballistic_missile_gun_right",
+			"z": 1,
+			"ref": "ballistic_gun_right",
+			"loop": false
+		}
+	]
+}

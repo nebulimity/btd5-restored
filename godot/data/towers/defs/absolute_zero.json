@@ -1,0 +1,66 @@
+{
+	"id": "AbsoluteZero",
+	"label": "Ice Tower",
+	"description": "",
+	"display": "absolute_zero",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 60,
+	"canPriorityTarget": false,
+	"rotates": false,
+	"detailSmall": "absolute_zero",
+	"detail": "absolute_zero",
+	"targetMask": [
+		"NoDetection",
+		"Ice"
+	],
+	"sacrificeType": "Freeze",
+	"weapons": [
+		{
+			"$type": "Surround",
+			"reloadTime": 2.1,
+			"projectile": {
+				"display": "ice_burst",
+				"pierce": 50,
+				"radius": 60,
+				"effectMask": [
+					"NoDetection",
+					"Ice"
+				],
+				"iceEffect": {
+					"lifespan": 2,
+					"freezeLayers": 2,
+					"shards": true,
+					"permafrost": 0.5
+				}
+			},
+			"lifespan": 0.1
+		}
+	],
+	"abilities": [
+		{
+			"$type": "ProjectileHitAllDef",
+			"id": "ProjectileHitAllIce",
+			"projectile": {
+				"display": "ice_burst",
+				"pierce": 99999,
+				"radius": 99999,
+				"effectMask": [
+					"NoDetection",
+					"Ice"
+				],
+				"iceEffect": {
+					"lifespan": 4,
+					"permafrost": 0.5,
+					"freezeLayers": 2
+				}
+			},
+			"cooldown": 45,
+			"fullscreenEffect": "ice_tower_snow_storm",
+			"sound": "absolute_zero_ice_tower",
+			"thumb": "activated_ability_ice_tower",
+			"label": "Absolute Zero Ability",
+			"description": "Freezes the entire screen of bloons for 4 seconds. Does not affect MOAB-class bloons.",
+			"abilityClass": "ProjectileHitAll"
+		}
+	]
+}

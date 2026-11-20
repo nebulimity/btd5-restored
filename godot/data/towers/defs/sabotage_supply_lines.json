@@ -1,0 +1,175 @@
+{
+	"id": "SabotageSupplyLines",
+	"label": "Ninja Saboteur",
+	"description": "",
+	"display": "sabotage",
+	"detailSmall": "sabotage",
+	"detail": "sabotage",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 120,
+	"targetMask": [
+		"None"
+	],
+	"weapons": [
+		{
+			"$type": "Sequence",
+			"range": 360,
+			"reloadTime": 0.6,
+			"childWeapons": [
+				{
+					"$type": "Single",
+					"range": 360,
+					"power": 630,
+					"reloadTime": 0.6,
+					"projectile": {
+						"display": "shuriken",
+						"pierce": 2,
+						"radius": 4,
+						"effectMask": [
+							"None"
+						],
+						"damageEffect": {
+							"damage": 1,
+							"cantBreak": [
+								"Lead"
+							],
+							"canBreakIce": false
+						},
+						"behavior": {
+							"process": {
+								"$type": "Target",
+								"seekAngle": 1.2566370614359172,
+								"turnTime": 0.1,
+								"seekTarget": true
+							}
+						},
+						"windEffect": {
+							"chance": 0.1
+						}
+					}
+				},
+				{
+					"$type": "Single",
+					"range": 360,
+					"power": 630,
+					"reloadTime": 0.6,
+					"projectile": {
+						"display": "shuriken",
+						"pierce": 2,
+						"radius": 4,
+						"effectMask": [
+							"None"
+						],
+						"damageEffect": {
+							"damage": 1,
+							"cantBreak": [
+								"Lead"
+							],
+							"canBreakIce": false
+						},
+						"behavior": {
+							"process": {
+								"$type": "Target",
+								"seekAngle": 1.2566370614359172,
+								"turnTime": 0.1,
+								"seekTarget": true
+							}
+						},
+						"windEffect": {
+							"chance": 0.1
+						}
+					}
+				},
+				{
+					"$type": "Single",
+					"range": 360,
+					"power": 630,
+					"reloadTime": 0.6,
+					"projectile": {
+						"display": "shuriken",
+						"pierce": 2,
+						"radius": 4,
+						"effectMask": [
+							"None"
+						],
+						"damageEffect": {
+							"damage": 1,
+							"cantBreak": [
+								"Lead"
+							],
+							"canBreakIce": false
+						},
+						"behavior": {
+							"process": {
+								"$type": "Target",
+								"seekAngle": 1.2566370614359172,
+								"turnTime": 0.1,
+								"seekTarget": true
+							}
+						},
+						"windEffect": {
+							"chance": 0.1
+						}
+					}
+				},
+				{
+					"$type": "Single",
+					"range": 360,
+					"power": 630,
+					"reloadTime": 0.6,
+					"projectile": {
+						"display": "flash_bomb",
+						"pierce": 1,
+						"radius": 5,
+						"effectMask": [
+							"None"
+						],
+						"behavior": {
+							"collision": {
+								"$type": "CollisionSpawnProjectile",
+								"projectile": {
+									"display": "large_explosion",
+									"pierce": 60,
+									"radius": 120,
+									"effectMask": [
+										"None"
+									],
+									"damageEffect": {
+										"damage": 1,
+										"canBreakIce": true,
+										"showPop": false
+									},
+									"stunEffect": {
+										"lifespan": 1,
+										"inherit": false,
+										"cantEffect": [
+											"MOAB",
+											"BFB",
+											"Boss"
+										]
+									}
+								}
+							}
+						}
+					}
+				}
+			]
+		}
+	],
+	"abilities": [
+		{
+			"$type": "SabotageDef",
+			"id": "Sabotage",
+			"cooldown": 60,
+			"thumb": "activated_ability_ninja_monkey",
+			"label": "Sabotage Supply Lines Ability",
+			"description": "Sabotage the bloons supply lines for 15 seconds. During the sabotage, all new bloons are crippled to half speed.",
+			"abilityClass": "Sabotage"
+		}
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	}
+}

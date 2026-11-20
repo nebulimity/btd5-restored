@@ -1,0 +1,42 @@
+{
+	"id": "IceTower",
+	"label": "Ice Tower",
+	"description": "Freezes bloons in its burst radius for a short time. Frozen bloons are immune to sharp objects.",
+	"display": "ice_tower",
+	"detail": "snow_monkey",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 60,
+	"detailSmall": "snow_monkey",
+	"canPriorityTarget": false,
+	"targetMask": [
+		"NoDetection",
+		"Ice"
+	],
+	"sacrificeType": "Freeze",
+	"rotates": false,
+	"weapons": [
+		{
+			"$type": "Surround",
+			"reloadTime": 2.1,
+			"projectile": {
+				"display": "ice_burst",
+				"pierce": 50,
+				"radius": 60,
+				"effectMask": [
+					"NoDetection",
+					"Ice"
+				],
+				"iceEffect": {
+					"lifespan": 1.43
+				}
+			},
+			"lifespan": 0.1
+		}
+	],
+	"displayAddons": [
+		{
+			"clip": "snow_flakes",
+			"z": 1
+		}
+	]
+}

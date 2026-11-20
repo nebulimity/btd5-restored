@@ -1,0 +1,93 @@
+{
+	"id": "TurboCharge",
+	"label": "Boomerang Thrower",
+	"description": "",
+	"display": "bionic_boomer",
+	"occupiedSpace": "medium",
+	"rangeOfVisibility": 130,
+	"detailSmall": "turbo_charge",
+	"detail": "turbo_charge",
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Spread",
+			"range": 520,
+			"power": 700,
+			"reloadTime": 0.34,
+			"projectile": {
+				"display": "hot_rang",
+				"pierce": 3,
+				"radius": 10,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				},
+				"behavior": {
+					"process": {
+						"$type": "FollowPath",
+						"path": [
+							{
+								"a": {
+									"x": 0,
+									"y": 0
+								},
+								"b": {
+									"x": 0,
+									"y": 0
+								},
+								"c": {
+									"x": 112,
+									"y": 55
+								},
+								"d": {
+									"x": 131,
+									"y": -27
+								}
+							},
+							{
+								"a": {
+									"x": 131,
+									"y": -27
+								},
+								"b": {
+									"x": 151,
+									"y": -109
+								},
+								"c": {
+									"x": 45,
+									"y": -159
+								},
+								"d": {
+									"x": -13,
+									"y": -11
+								}
+							}
+						]
+					},
+					"lifespanOver": {
+						"$type": "LifeSpanOverBoomerangSpecialty"
+					}
+				}
+			},
+			"count": 1,
+			"angle": 0.5
+		}
+	],
+	"abilities": [
+		{
+			"$type": "TurboDef",
+			"id": "Turbo",
+			"cooldown": 45,
+			"sound": "turbo_boomerang",
+			"effect": "boomerang_aura",
+			"thumb": "activated_ability_boomerang_thrower",
+			"label": "Turbo Charge Ability",
+			"description": "Increase attack speed to hypersonic for 10 seconds.",
+			"abilityClass": "Turbo"
+		}
+	]
+}

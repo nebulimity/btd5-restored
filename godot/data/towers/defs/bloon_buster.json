@@ -1,0 +1,51 @@
+{
+	"id": "BloonBuster",
+	"label": "Mortar Tower",
+	"description": "",
+	"display": "bloon_buster",
+	"detailSmall": "bloon_buster",
+	"detail": "bloon_buster",
+	"occupiedSpace": "mortar_monkey_space",
+	"rangeOfVisibility": 1250,
+	"canPriorityTarget": false,
+	"sacrificeType": "Explosion",
+	"weapons": [
+		{
+			"$type": "FireAtReticle",
+			"id": "bloonBusterWeapon",
+			"range": 1250,
+			"power": 600,
+			"reloadTime": 2.1,
+			"projectile": {
+				"display": "MovieClip",
+				"pierce": 1,
+				"radius": 5,
+				"effectMask": [
+					"All"
+				],
+				"behavior": {
+					"destroy": {
+						"$type": "SpawnProjectile",
+						"projectile": {
+							"display": "slightly_larger_explosion",
+							"pierce": 40,
+							"radius": 98,
+							"damageEffect": {
+								"damage": 2,
+								"canBreakIce": true,
+								"cantBreak": [
+									"Black",
+									"Zebra"
+								],
+								"showPop": false
+							}
+						}
+					}
+				}
+			},
+			"spread": 20
+		}
+	],
+	"targetingSystem": 2,
+	"requiresTarget": false
+}

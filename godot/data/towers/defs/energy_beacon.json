@@ -1,0 +1,94 @@
+{
+	"id": "EnergyBeacon",
+	"label": "Monkey Town",
+	"description": "",
+	"display": "monkey_town",
+	"occupiedSpace": "village_space",
+	"rangeOfVisibility": 150,
+	"detailSmall": "energy_beacon",
+	"detail": "energy_beacon",
+	"rotates": false,
+	"areaEffects": [
+		{
+			"costScale": 0.9
+		},
+		{
+			"upgrade": {
+				"id": "Test",
+				"add": {
+					"rangeOfVisibility": 1.15,
+					"rangeOfVisibilityAsScale": true
+				}
+			}
+		},
+		{
+			"upgrade": {
+				"id": "Test2",
+				"add": {
+					"weaponMod": {
+						"reloadTime": 0.8695652173913044,
+						"reloadTimeAsScale": true
+					}
+				}
+			}
+		},
+		{
+			"upgrade": {
+				"id": "Test4",
+				"add": {
+					"abilityMod": {
+						"cooldown": 0.8,
+						"cooldownAsScale": true
+					}
+				}
+			}
+		},
+		{
+			"upgrade": {
+				"id": "Test5",
+				"add": {
+					"weaponMod": {
+						"projectileMod": {
+							"popCashScale": 0.5
+						}
+					}
+				}
+			}
+		}
+	],
+	"displayAddons": [
+		{
+			"clip": "beacon"
+		},
+		{
+			"clip": "energy_beacon",
+			"z": 2
+		}
+	],
+	"weapons": [
+		{
+			"$type": "CastRay",
+			"range": 180,
+			"power": 900,
+			"reloadTime": 0.058,
+			"projectile": {
+				"display": "dart",
+				"pierce": 1,
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"rotate": false
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 0,
+			"y": -59
+		}
+	]
+}

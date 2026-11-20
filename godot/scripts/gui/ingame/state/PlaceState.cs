@@ -20,6 +20,12 @@ public class PlaceState : InGameMenuState
 		_pickerDef = ((GameStateMessage)message).TowerPickerDef;
 
 		GD.Print("place state");
+		Menu.TowerPlaceView.ShowView(_pickerDef.Tower);
+	}
+
+	public override void Exit()
+	{
+		Menu.TowerPlaceView.HideView();
 	}
 
 	public override State HandleMessage(Message message)

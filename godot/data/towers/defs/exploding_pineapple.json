@@ -1,0 +1,42 @@
+{
+	"id": "ExplodingPineapple",
+	"label": "Exploding Pineapple",
+	"description": "This explosive fruit packs a real punch. When placed will explode violently after 3 seconds. Useful for destroying those bloons that require explosives to pop.",
+	"display": "pineapple_bomb",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 100,
+	"detail": "pineapple",
+	"canPlaceOnTrack": true,
+	"rotates": false,
+	"behavior": {
+		"roundStart": {
+			"$type": "SwapForProjectile",
+			"projectile": {
+				"display": "pineapple_bomb",
+				"behavior": {
+					"destroy": {
+						"$type": "SpawnProjectile",
+						"projectile": {
+							"display": "large_explosion",
+							"pierce": 40,
+							"radius": 60,
+							"effectMask": [
+								"None"
+							],
+							"damageEffect": {
+								"damage": 1,
+								"canBreakIce": true,
+								"cantBreak": [
+									"Black",
+									"Zebra"
+								],
+								"showPop": false
+							}
+						}
+					}
+				}
+			},
+			"lifespan": 3
+		}
+	}
+}

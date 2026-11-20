@@ -1,0 +1,55 @@
+{
+	"id": "ArcticWind",
+	"label": "Ice Tower",
+	"description": "",
+	"display": "arctic_wind",
+	"occupiedSpace": "small",
+	"canPriorityTarget": false,
+	"rotates": false,
+	"rangeOfVisibility": 105,
+	"detailSmall": "arctic_wind",
+	"detail": "arctic_wind",
+	"targetMask": [
+		"NoDetection",
+		"Ice"
+	],
+	"sacrificeType": "Freeze",
+	"weapons": [
+		{
+			"$type": "Surround",
+			"reloadTime": 2.1,
+			"projectile": {
+				"display": "ice_burst_large",
+				"pierce": 50,
+				"radius": 105,
+				"effectMask": [
+					"NoDetection",
+					"Ice"
+				],
+				"iceEffect": {
+					"lifespan": 2.0,
+					"freezeLayers": 2
+				},
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				}
+			},
+			"lifespan": 0.1
+		}
+	],
+	"behavior": {
+		"roundStart": {
+			"$type": "SpawnArcticWind"
+		},
+		"roundOver": {
+			"$type": "RetractArcticWind"
+		}
+	},
+	"displayAddons": [
+		{
+			"clip": "blizzard",
+			"z": 1
+		}
+	]
+}

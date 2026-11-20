@@ -1,0 +1,34 @@
+{
+	"id": "MonkeyApprentice",
+	"label": "Monkey Apprentice",
+	"description": "Trained in the arts of monkey magic, the Monkey Apprentice weaves magical bolts of power that pop bloons. Each shot can pop 2 bloons. Can upgrade to cast additional spells.",
+	"display": "monkey_apprentice",
+	"detail": "apprentice",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 120,
+	"detailSmall": "apprentice",
+	"sacrificeType": "Wind",
+	"weapons": [
+		{
+			"$type": "Single",
+			"id": "MagicBoltWeapon",
+			"range": 240,
+			"power": 460,
+			"projectile": {
+				"display": "magic_bolt",
+				"pierce": 2,
+				"radius": 5,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				}
+			},
+			"reloadTime": 1.1
+		}
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	}
+}

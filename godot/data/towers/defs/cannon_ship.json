@@ -1,0 +1,115 @@
+{
+	"id": "CannonShip",
+	"label": "Cannon Ship",
+	"description": "",
+	"display": "cannon_ship",
+	"occupiedSpace": "medium",
+	"detailSmall": "cannon_ship",
+	"detail": "cannon_ship",
+	"rangeOfVisibility": 210,
+	"isBoat": true,
+	"isLand": false,
+	"targetMask": [
+		"None"
+	],
+	"displayAddons": [
+		{
+			"clip": "cannon_ship_cannons_right",
+			"z": -1,
+			"ref": "cannon_right",
+			"loop": false
+		},
+		{
+			"clip": "cannon_ship_cannons_left",
+			"z": -1,
+			"ref": "cannon_left",
+			"loop": false
+		}
+	],
+	"weapons": [
+		{
+			"$type": "SideSingle",
+			"range": 300,
+			"power": 525,
+			"reloadTime": 1,
+			"projectile": {
+				"display": "buccaneer_dart",
+				"pierce": 5,
+				"effectMask": [
+					"None"
+				],
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"fireFromRight": "cannon_right",
+			"fireFromLeft": "cannon_left"
+		},
+		{
+			"$type": "SideSpread",
+			"range": 300,
+			"power": 525,
+			"reloadTime": 0.75,
+			"projectile": {
+				"display": "grape_shot",
+				"pierce": 2,
+				"effectMask": [
+					"None"
+				],
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"count": 4,
+			"angle": 1.5707963267948966,
+			"fireFromRight": "cannon_backRight",
+			"fireFromLeft": "cannon_backLeft"
+		},
+		{
+			"$type": "SideSingle",
+			"range": 234,
+			"power": 300,
+			"reloadTime": 1.2,
+			"projectile": {
+				"display": "bomb",
+				"pierce": 1,
+				"radius": 5,
+				"effectMask": [
+					"None"
+				],
+				"behavior": {
+					"collision": {
+						"$type": "CollisionSpawnProjectile",
+						"projectile": {
+							"display": "large_explosion",
+							"pierce": 40,
+							"radius": 75,
+							"effectMask": [
+								"None"
+							],
+							"damageEffect": {
+								"damage": 1,
+								"canBreakIce": true,
+								"cantBreak": [
+									"Black",
+									"Zebra"
+								],
+								"showPop": false
+							}
+						}
+					}
+				}
+			},
+			"fireFromRight": "cannon_right",
+			"fireFromLeft": "cannon_left"
+		}
+	]
+}

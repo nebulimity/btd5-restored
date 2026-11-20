@@ -1,0 +1,232 @@
+{
+	"base": "MonkeySub",
+	"upgrades": [
+		[
+			{
+				"label": "Barbed Darts",
+				"description": "Makes the Submarine's darts pop up to 3 bloons each.",
+				"xpGate": 450,
+				"thumb": "barbed_darts",
+				"cost": 300,
+				"add": {
+					"weaponMod": {
+						"projectileMod": {
+							"pierce": 2,
+							"display": [
+								{
+									"useFor": "sub_dart",
+									"display": "sub_dart_barbed"
+								}
+							]
+						}
+					},
+					"display": [
+						{
+							"useFor": "monkey_sub",
+							"display": "sub_barbed_darts"
+						},
+						{
+							"useFor": "sub_twin_guns",
+							"display": "sub_twin_barbed_darts"
+						}
+					],
+					"detail": "barbed_darts",
+					"detailSmall": "barbed_darts"
+				}
+			},
+			{
+				"label": "Advanced Intel",
+				"description": "Allows long range targeting of bloons that are in the radius of your other towers.",
+				"xpGate": 4000,
+				"thumb": "advanced_intel",
+				"cost": 500,
+				"add": {
+					"includeOtherTowersVision": true,
+					"display": [
+						{
+							"useFor": "sub_barbed_darts",
+							"display": "sub_advanced_intel"
+						},
+						{
+							"useFor": "sub_twin_barbed_darts",
+							"display": "sub_advanced_intel"
+						},
+						{
+							"useFor": "sub_airburst_darts",
+							"display": "sub_airburst_intel"
+						}
+					],
+					"detail": "advanced_intel",
+					"detailSmall": "advanced_intel"
+				}
+			},
+			{
+				"label": "Submerge and Support",
+				"description": "Enables Submarine to fully submerge and use its sonar to permanently reveal Camo Bloons in its pulsing radius.",
+				"xpGate": 8000,
+				"thumb": "submerge_and_support",
+				"cost": 500,
+				"assign": "SubmergeAndSupport"
+			},
+			{
+				"label": "Bloontonium Reactor",
+				"description": "Bloontonium Reactor is active when Monkey Sub is submerged. Causes nearby Bloons to pop rapidly while in its radius. Reactor also benefits nearby waterbased towers by reducing their Activated Ability cooldowns by 15%.",
+				"xpGate": 60000,
+				"rankGate": 19,
+				"thumb": "bloontonium_reactor",
+				"cost": 2500,
+				"assign": "BloontoniumReactor"
+			}
+		],
+		[
+			{
+				"label": "Twin Guns",
+				"description": "Added twin gun doubles attack speed.",
+				"cost": 450,
+				"xpGate": 1500,
+				"thumb": "twin_guns",
+				"add": {
+					"weaponMod": {
+						"reloadTime": 0.5,
+						"reloadTimeAsScale": true,
+						"offsetSequence": [
+							{
+								"x": 0,
+								"y": -5
+							},
+							{
+								"x": 0,
+								"y": 5
+							}
+						]
+					},
+					"displayAddons": [
+						{
+							"clip": "sub_gun_left",
+							"z": 1,
+							"ref": "twin_gun_left",
+							"loop": false
+						},
+						{
+							"clip": "sub_gun_right",
+							"z": 1,
+							"ref": "twin_gun_right",
+							"loop": false
+						}
+					],
+					"display": [
+						{
+							"useFor": "monkey_sub",
+							"display": "sub_twin_guns"
+						},
+						{
+							"useFor": "sub_barbed_darts",
+							"display": "sub_twin_barbed_darts"
+						}
+					],
+					"detail": "twin_guns",
+					"detailSmall": "twin_guns"
+				}
+			},
+			{
+				"label": "Airburst Darts",
+				"description": "Airburst darts split into 3 on impact for massively increased popping power.",
+				"cost": 750,
+				"xpGate": 5000,
+				"thumb": "air_burst_darts",
+				"add": {
+					"replaceWeapons": [
+						{
+							"replaceWeaponID": "MonkeySubWeapon",
+							"withWeapon": {
+								"$type": "SingleMonkeySubAirburst",
+								"id": "AirburstWeapon",
+								"rangeAirburst": 850,
+								"powerAirburst": 420,
+								"reloadTimeAirburst": 0.76,
+								"projectileAirburst": {
+									"display": "sub_dart_barbed",
+									"pierce": 1,
+									"behavior": {
+										"process": {
+											"$type": "TargetFixedThenClosest",
+											"turnTime": 0.08,
+											"seekAngle": 1.2566370614359172,
+											"seekTarget": true
+										},
+										"destroy": {
+											"$type": "SpawnSpreadAngleDestroy",
+											"spawnedProjectileDef": {
+												"display": "sub_airburst_dart_split",
+												"pierce": 3,
+												"damageEffect": {
+													"damage": 1,
+													"cantBreak": [
+														"Lead"
+													],
+													"canBreakIce": false
+												}
+											},
+											"angleSpacing": 0.43,
+											"count": 3
+										}
+									},
+									"damageEffect": {
+										"damage": 1,
+										"cantBreak": [
+											"Lead"
+										],
+										"canBreakIce": false
+									}
+								},
+								"offsetSequenceAirburst": [
+									{
+										"x": 36,
+										"y": -5
+									},
+									{
+										"x": 36,
+										"y": 5
+									}
+								]
+							}
+						}
+					],
+					"display": [
+						{
+							"useFor": "sub_twin_guns",
+							"display": "sub_airburst_darts"
+						},
+						{
+							"useFor": "sub_twin_barbed_darts",
+							"display": "sub_airburst_darts"
+						},
+						{
+							"useFor": "sub_advanced_intel",
+							"display": "sub_airburst_intel"
+						}
+					],
+					"detail": "air_burst_darts",
+					"detailSmall": "air_burst_darts"
+				}
+			},
+			{
+				"label": "Ballistic Missile",
+				"description": "Ballistic missile seeks its target at any distance and does huge damage to all bloons in its blast radius.",
+				"xpGate": 25000,
+				"thumb": "ballistic_missile",
+				"cost": 1500,
+				"assign": "BallisticMissile"
+			},
+			{
+				"label": "First Strike Capability",
+				"description": "Activated Ability: First Strike Capability - a devastating missile strike on the largest bloon on screen destroys up to a ZOMG bloon in one go, or many lesser bloons. 60 second cooldown.",
+				"xpGate": 120000,
+				"rankGate": 19,
+				"thumb": "first_strike_capability",
+				"cost": 20000,
+				"assign": "FirstStrikeCapability"
+			}
+		]
+	]
+}

@@ -1,0 +1,188 @@
+{
+	"base": "SpikeFactory",
+	"upgrades": [
+		[
+			{
+				"label": "Bigger Stacks",
+				"description": "Generates larger piles of spikes per shot.",
+				"xpGate": 500,
+				"thumb": "bigger_stacks",
+				"cost": 700,
+				"add": {
+					"weaponMod": {
+						"projectileMod": {
+							"pierce": 5
+						}
+					},
+					"display": [
+						{
+							"useFor": "spike_factory",
+							"display": "bigger_stacks"
+						},
+						{
+							"useFor": "faster_production",
+							"display": "faster_bigger_stacks"
+						},
+						{
+							"useFor": "even_faster_production",
+							"display": "faster_white_hot_spikes"
+						}
+					],
+					"detail": "bigger_stacks",
+					"detailSmall": "bigger_stacks"
+				}
+			},
+			{
+				"label": "White Hot Spikes",
+				"description": "Cuts through lead like a hot spike through... lead.",
+				"cost": 900,
+				"xpGate": 1500,
+				"thumb": "white_hot_spikes",
+				"add": {
+					"weaponMod": {
+						"projectileMod": {
+							"damageEffectMod": {
+								"canBreakIce": true,
+								"removeFromCantBreak": [
+									"Lead"
+								]
+							},
+							"display": [
+								{
+									"useFor": "spike_factory_spikes",
+									"display": "white_hot_spikes"
+								}
+							]
+						}
+					},
+					"display": [
+						{
+							"useFor": "bigger_stacks",
+							"display": "white_hot_tacks"
+						},
+						{
+							"useFor": "even_faster_production",
+							"display": "faster_white_hot_spikes"
+						},
+						{
+							"useFor": "moab_shreder",
+							"display": "white_hot_moab_shreder"
+						},
+						{
+							"useFor": "spike_storm",
+							"display": "white_hot_spike_storm"
+						},
+						{
+							"useFor": "faster_bigger_stacks",
+							"display": "faster_white_hot_spikes"
+						}
+					],
+					"detail": "white_hot_tacks",
+					"detailSmall": "white_hot_tacks"
+				}
+			},
+			{
+				"label": "Spiked Ball Factory",
+				"description": "Modified to produce heavy but viciously sharp spiked balls instead of regular spikes. Do extra damage to ceramic bloons.",
+				"xpGate": 10000,
+				"thumb": "spike_balls",
+				"cost": 2400,
+				"assign": "SpikedBallFactory"
+			},
+			{
+				"label": "Spiked Mines",
+				"description": "Rigged with heavy explosives, the spiked balls are set to go off when they lose all their spikes.",
+				"xpGate": 40000,
+				"rankGate": 45,
+				"thumb": "spike_mines",
+				"cost": 14000,
+				"assign": "SpikedMines"
+			}
+		],
+		[
+			{
+				"label": "Faster Production",
+				"description": "Increases the rate of spike production.",
+				"cost": 800,
+				"xpGate": 1000,
+				"thumb": "fast_production",
+				"add": {
+					"weaponMod": {
+						"reloadTime": 0.624,
+						"reloadTimeAsScale": true
+					},
+					"display": [
+						{
+							"useFor": "spike_factory",
+							"display": "faster_production"
+						},
+						{
+							"useFor": "bigger_stacks",
+							"display": "faster_bigger_stacks"
+						},
+						{
+							"useFor": "white_hot_tacks",
+							"display": "faster_white_hot_spikes"
+						}
+					],
+					"detail": "fast_production_spikes",
+					"detailSmall": "fast_production_spikes"
+				}
+			},
+			{
+				"label": "Even Faster Production",
+				"description": "By adding sprockets, dongles and widgets, the rate of spike production increases even more.",
+				"cost": 1250,
+				"xpGate": 3500,
+				"thumb": "faster_production",
+				"add": {
+					"weaponMod": {
+						"reloadTime": 0.601,
+						"reloadTimeAsScale": true
+					},
+					"display": [
+						{
+							"useFor": "faster_production",
+							"display": "even_faster_production"
+						},
+						{
+							"useFor": "white_hot_tacks",
+							"display": "faster_white_hot_spikes"
+						},
+						{
+							"useFor": "spike_ball",
+							"display": "faster_spike_ball"
+						},
+						{
+							"useFor": "mine_spike",
+							"display": "faster_mine_spike"
+						},
+						{
+							"useFor": "faster_bigger_stacks",
+							"display": "faster_white_hot_spikes"
+						}
+					],
+					"detail": "faster_production_spikes",
+					"detailSmall": "faster_production_spikes"
+				}
+			},
+			{
+				"label": "MOAB-SHREDR Spikes",
+				"description": "Super-Hard-Rending-Engine-Driven-Razors are specially engineered to really hurt MOAB-class bloons.",
+				"xpGate": 17000,
+				"thumb": "moab_shredder",
+				"cost": 3000,
+				"assign": "MoabShrederSpikes"
+			},
+			{
+				"label": "Spike Storm",
+				"description": "Lays down a thick carpet of spikes over the whole track.",
+				"xpGate": 70000,
+				"rankGate": 45,
+				"thumb": "spike_storm",
+				"cost": 6500,
+				"assign": "SpikeStorm"
+			}
+		]
+	]
+}

@@ -1,0 +1,88 @@
+{
+	"id": "MonkeyIntelligenceBureau",
+	"label": "Monkey Intelligence Bureau",
+	"description": "",
+	"display": "monkey_intelligence_burau",
+	"occupiedSpace": "village_space",
+	"rangeOfVisibility": 145,
+	"canPriorityTarget": false,
+	"rotates": false,
+	"detailSmall": "mib",
+	"detail": "mib",
+	"areaEffects": [
+		{
+			"costScale": 0.9
+		},
+		{
+			"upgrade": {
+				"id": "Test3",
+				"add": {
+					"weaponMod": {
+						"projectileMod": {
+							"pierce": 1
+						}
+					}
+				}
+			}
+		},
+		{
+			"upgrade": {
+				"id": "Test6",
+				"add": {
+					"removeFromTargetMask": [
+						"NoDetection"
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"removeFromEffectMask": [
+								"NoDetection"
+							]
+						}
+					}
+				}
+			}
+		},
+		{
+			"upgrade": {
+				"id": "MIB",
+				"add": {
+					"removeFromTargetMask": [
+						"Ice"
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"damageEffectMod": {
+								"canBreakIce": true,
+								"removeFromCantBreak": [
+									"Red",
+									"Blue",
+									"Green",
+									"Yellow",
+									"Pink",
+									"Black",
+									"White",
+									"Lead",
+									"Zebra",
+									"Rainbow",
+									"Ceramic",
+									"MOAB",
+									"BFB",
+									"Boss"
+								]
+							},
+							"removeFromEffectMask": [
+								"Ice"
+							]
+						}
+					}
+				}
+			}
+		}
+	],
+	"displayAddons": [
+		{
+			"clip": "radar_scanner",
+			"z": 2
+		}
+	]
+}

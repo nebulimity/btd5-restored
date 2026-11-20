@@ -1,0 +1,46 @@
+{
+	"id": "MonkeySub",
+	"label": "Monkey Sub",
+	"description": "Water based tower that shoots homing darts. Can upgrade to shoot at Bloons in the radius of any other tower. Can also upgrade to submerge and become a support tower.",
+	"display": "monkey_sub",
+	"detail": "monkey_sub",
+	"detailSmall": "monkey_sub",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 125,
+	"weapons": [
+		{
+			"$type": "Single",
+			"id": "MonkeySubWeapon",
+			"range": 850,
+			"power": 420,
+			"reloadTime": 0.76,
+			"projectile": {
+				"display": "sub_dart",
+				"pierce": 1,
+				"behavior": {
+					"process": {
+						"$type": "TargetFixedThenClosest",
+						"turnTime": 0.08,
+						"seekAngle": 1.2566370614359172,
+						"seekTarget": true
+					}
+				},
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			}
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 36,
+			"y": 0
+		}
+	],
+	"isBoat": true,
+	"isLand": false
+}

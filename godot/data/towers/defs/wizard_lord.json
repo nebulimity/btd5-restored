@@ -1,0 +1,202 @@
+{
+	"id": "WizardLord",
+	"label": "Wizard Lord",
+	"description": "No longer an apprentice, this monkey wizard has mastered the dark side and needs to absorb the tower with the most cash put in to it to survive.",
+	"display": "druid_body",
+	"detail": "apprentice",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 120,
+	"detailSmall": "druid",
+	"sacrificeType": "Wind",
+	"targetMask": [
+		"None"
+	],
+	"weapons": [
+		{
+			"$type": "Single",
+			"id": "IntenseMagicBoltWeapon",
+			"range": 240,
+			"power": 460,
+			"projectile": {
+				"display": "intense_magic",
+				"pierce": 7,
+				"radius": 10,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				}
+			},
+			"reloadTime": 1.1
+		},
+		{
+			"$type": "CastLightning",
+			"range": 120,
+			"power": 3600,
+			"projectile": {
+				"display": "dart",
+				"pierce": 30,
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				}
+			},
+			"reloadTime": 2.3
+		},
+		{
+			"$type": "Single",
+			"range": 240,
+			"power": 300,
+			"projectile": {
+				"display": "tempest",
+				"pierce": 70,
+				"radius": 40,
+				"windEffect": {
+					"speed": 300
+				},
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				},
+				"behavior": {
+					"destroy": {
+						"$type": "SpawnTinyTornadoes",
+						"projectile": {
+							"display": "tiny_tornado",
+							"pierce": 20,
+							"radius": 16,
+							"windEffect": {
+								"speed": 300
+							}
+						},
+						"lifespan": 2
+					}
+				}
+			},
+			"reloadTime": 1.75
+		},
+		{
+			"$type": "Single",
+			"range": 240,
+			"power": 460,
+			"projectile": {
+				"display": "fireball",
+				"pierce": 1,
+				"radius": 8,
+				"behavior": {
+					"collision": {
+						"$type": "CollisionSpawnProjectile",
+						"projectile": {
+							"display": "medium_explosion",
+							"pierce": 40,
+							"radius": 60,
+							"damageEffect": {
+								"damage": 1,
+								"canBreakIce": true,
+								"cantBreak": [
+									"Black",
+									"Zebra"
+								],
+								"showPop": false
+							}
+						}
+					}
+				}
+			},
+			"reloadTime": 2.1
+		},
+		{
+			"$type": "SingleSpreadFlame",
+			"range": 120,
+			"power": 160,
+			"reloadTime": 0.08,
+			"projectile": {
+				"display": "apprentice_breath",
+				"pierce": 3,
+				"radius": 10,
+				"additiveBlend": true,
+				"effectMask": [
+					"None"
+				],
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				},
+				"behavior": {
+					"destroy": {
+						"$type": "SpawnProjectile",
+						"projectile": {
+							"display": "apprentice_disspate",
+							"pierce": 1,
+							"radius": 5,
+							"effectMask": [
+								"All"
+							],
+							"additiveBlend": true
+						},
+						"lifespan": 0.3333333333333333
+					}
+				}
+			},
+			"spread": 0.4
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 0,
+			"y": 0
+		},
+		{
+			"x": 0,
+			"y": 0
+		},
+		{
+			"x": 0,
+			"y": 0
+		},
+		{
+			"x": 0,
+			"y": 0
+		},
+		{
+			"x": 60,
+			"y": 0
+		}
+	],
+	"behavior": {
+		"initialise": {
+			"$type": "WizardTowerInit"
+		},
+		"process": {
+			"$type": "RotateToTarget"
+		},
+		"roundOver": {
+			"$type": "WizardAbsorbTower",
+			"isCalledOnReInit": false
+		}
+	},
+	"displayAddons": [
+		{
+			"clip": "druid_cloud",
+			"z": -1,
+			"rotate": true
+		},
+		{
+			"clip": "druid_head",
+			"z": 1,
+			"rotate": true
+		}
+	],
+	"abilities": [
+		{
+			"$type": "SummonPhoenixDef",
+			"id": "SummonPheonixLord",
+			"cooldown": 60,
+			"sound": "summon_phoenix",
+			"effect": "monkey_apprentice_fiery_ring",
+			"thumb": "activated_ability_monkey_apprentice",
+			"label": "Summon Super Phoenix Ability",
+			"description": "Creates a super powerful flying super phoenix that flies around wreaking bloon havoc for 20 seconds and doing extra damage to MOAB class bloons.",
+			"abilityClass": "SummonSuperPhoenix"
+		}
+	]
+}

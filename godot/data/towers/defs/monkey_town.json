@@ -1,0 +1,54 @@
+{
+	"id": "MonkeyTown",
+	"label": "Monkey Town",
+	"description": "",
+	"display": "monkey_town",
+	"occupiedSpace": "village_space",
+	"rangeOfVisibility": 135,
+	"canPriorityTarget": false,
+	"rotates": false,
+	"detailSmall": "monkey_town",
+	"detail": "monkey_town",
+	"areaEffects": [
+		{
+			"costScale": 0.9
+		},
+		{
+			"upgrade": {
+				"id": "Test",
+				"add": {
+					"rangeOfVisibility": 1.15,
+					"rangeOfVisibilityAsScale": true
+				}
+			}
+		},
+		{
+			"upgrade": {
+				"id": "Test2",
+				"add": {
+					"weaponMod": {
+						"reloadTime": 0.8695652173913044,
+						"reloadTimeAsScale": true
+					}
+				}
+			}
+		},
+		{
+			"upgrade": {
+				"id": "Test5",
+				"add": {
+					"weaponMod": {
+						"projectileMod": {
+							"popCashScale": 0.5
+						}
+					}
+				}
+			}
+		}
+	],
+	"displayAddons": [
+		{
+			"clip": "beacon"
+		}
+	]
+}

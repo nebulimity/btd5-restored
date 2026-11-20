@@ -1,0 +1,27 @@
+{
+	"id": "SniperMonkey",
+	"label": "Sniper Monkey",
+	"description": "Armed with a high-tech long range rifle, pops 2 layers off of bloons with unlimited range.",
+	"display": "sniper",
+	"detailSmall": "sniper_monkey",
+	"detail": "sniper_monkey",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 1200,
+	"weapons": [
+		{
+			"$type": "Instant",
+			"id": "sniperWeapon",
+			"reloadTime": 2.2,
+			"projectile": {
+				"display": "dart",
+				"pierce": 1,
+				"damageEffect": {
+					"damage": 2,
+					"cantBreak": [
+						"Lead"
+					]
+				}
+			}
+		}
+	]
+}

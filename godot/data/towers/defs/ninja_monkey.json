@@ -1,0 +1,41 @@
+{
+	"id": "NinjaMonkey",
+	"label": "Ninja Monkey",
+	"description": "Stealthy tower that can see Camo Bloons and throws sharp shurikens rapidly.",
+	"display": "ninja",
+	"detail": "ninja_monkey",
+	"detailSmall": "ninja_monkey",
+	"occupiedSpace": "small",
+	"rangeOfVisibility": 120,
+	"targetMask": [
+		"None"
+	],
+	"weapons": [
+		{
+			"$type": "Single",
+			"range": 360,
+			"power": 630,
+			"reloadTime": 0.6,
+			"projectile": {
+				"display": "shuriken",
+				"pierce": 2,
+				"radius": 4,
+				"effectMask": [
+					"None"
+				],
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			}
+		}
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	}
+}

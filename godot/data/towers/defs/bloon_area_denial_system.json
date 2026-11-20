@@ -1,0 +1,100 @@
+{
+	"id": "BloonAreaDenialSystem",
+	"label": "Bloon Area Denial System",
+	"description": "",
+	"display": "bloon_area_denial_system",
+	"detailSmall": "ads",
+	"detail": "ads",
+	"occupiedSpace": "large",
+	"canPriorityTarget": false,
+	"rangeOfVisibility": 1250,
+	"targetMask": [
+		"None"
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToMouse"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "FireAtMouseSpread",
+			"range": 1250,
+			"power": 1225,
+			"reloadTime": 0.2,
+			"projectile": {
+				"display": "hydra_missile",
+				"pierce": 1,
+				"radius": 8,
+				"effectMask": [
+					"None"
+				],
+				"behavior": {
+					"collision": {
+						"$type": "CollisionSpawnProjectile",
+						"projectile": {
+							"display": "medium_explosion",
+							"pierce": 40,
+							"radius": 60,
+							"effectMask": [
+								"None"
+							],
+							"damageEffect": {
+								"damage": 1,
+								"canBreakIce": true,
+								"showPop": false
+							}
+						}
+					}
+				}
+			},
+			"spread": 0.4
+		}
+	],
+	"abilities": [
+		{
+			"$type": "BloonAreaDenialSystemDef",
+			"id": "BloonAreaDenialSystem",
+			"projectile": {
+				"display": "hydra_missile",
+				"pierce": 1,
+				"radius": 8,
+				"effectMask": [
+					"None"
+				],
+				"behavior": {
+					"collision": {
+						"$type": "CollisionSpawnProjectile",
+						"projectile": {
+							"display": "medium_explosion",
+							"pierce": 40,
+							"radius": 60,
+							"effectMask": [
+								"None"
+							],
+							"damageEffect": {
+								"damage": 1,
+								"canBreakIce": true,
+								"showPop": false
+							}
+						}
+					}
+				}
+			},
+			"cooldown": 30,
+			"effect": "dartling_gun_aura",
+			"thumb": "activated_ability_dartling_gun",
+			"label": "Rocket Storm Ability",
+			"description": "Rocket Storm shoots out a missile towards the nearest 100 bloons on screen. Ouch.",
+			"abilityClass": "BloonAreaDenialSystem"
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 40,
+			"y": 0
+		}
+	],
+	"targetingSystem": 1,
+	"requiresTarget": false
+}

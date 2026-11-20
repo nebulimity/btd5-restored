@@ -1,0 +1,47 @@
+{
+	"id": "GlueGunner",
+	"label": "Glue Gunner",
+	"description": "Shoots a glob of monkey glue at a single bloon. Glued bloons move more slowly than normal.",
+	"display": "glue_gunner",
+	"detail": "glue_monkey",
+	"occupiedSpace": "small",
+	"detailSmall": "glue_monkey",
+	"rangeOfVisibility": 140,
+	"targetMask": [
+		"NoDetection",
+		"Glue"
+	],
+	"sacrificeType": "Glue",
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Single",
+			"range": 225,
+			"power": 630,
+			"reloadTime": 1,
+			"projectile": {
+				"display": "glue_shot",
+				"pierce": 1,
+				"radius": 15,
+				"effectMask": [
+					"NoDetection",
+					"Glue"
+				],
+				"glueEffect": {
+					"lifespan": 11.43,
+					"speedScale": 0.5
+				}
+			}
+		}
+	],
+	"weaponOffsets": [
+		{
+			"x": 10,
+			"y": 5
+		}
+	]
+}

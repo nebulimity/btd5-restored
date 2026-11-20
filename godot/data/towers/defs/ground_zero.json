@@ -1,0 +1,113 @@
+{
+	"id": "GroundZero",
+	"label": "Monkey Ace",
+	"description": "",
+	"display": "air_base",
+	"occupiedSpace": "large",
+	"rangeOfVisibility": 50,
+	"detailSmall": "ground_zero",
+	"detail": "ground_zero",
+	"canPriorityTarget": false,
+	"rotates": false,
+	"targetMask": [
+		"None"
+	],
+	"requiresTarget": false,
+	"behavior": {
+		"initialise": {
+			"$type": "SpawnAce",
+			"display": "supply_drop"
+		},
+		"roundStart": {
+			"$type": "DeployMonkeyAce",
+			"display": "supply_drop"
+		},
+		"roundOver": {
+			"$type": "RetractMonkeyAce"
+		},
+		"destroy": {
+			"$type": "RemoveAceAircraft"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Spread",
+			"range": 1000,
+			"power": 280,
+			"reloadTime": 1,
+			"projectile": {
+				"display": "dart",
+				"pierce": 15,
+				"effectMask": [
+					"None"
+				],
+				"damageEffect": {
+					"damage": 1,
+					"cantBreak": [
+						"Lead"
+					],
+					"canBreakIce": false
+				}
+			},
+			"count": 16,
+			"angle": 5.890486225480862,
+			"proxied": true,
+			"rotate": false
+		},
+		{
+			"$type": "Surround",
+			"range": 999,
+			"reloadTime": 3,
+			"lifespan": 0.1,
+			"projectile": {
+				"display": "pineapple_bomb",
+				"behavior": {
+					"destroy": {
+						"$type": "SpawnProjectile",
+						"projectile": {
+							"display": "large_explosion",
+							"pierce": 40,
+							"radius": 60,
+							"effectMask": [
+								"None"
+							],
+							"damageEffect": {
+								"damage": 1,
+								"canBreakIce": true,
+								"cantBreak": [
+									"Black",
+									"Zebra"
+								],
+								"showPop": false
+							}
+						}
+					}
+				}
+			},
+			"proxied": true
+		}
+	],
+	"abilities": [
+		{
+			"$type": "ProjectileHitAllDef",
+			"id": "ProjectileHitAllAce",
+			"cooldown": 50,
+			"projectile": {
+				"effectMask": [
+					"None"
+				],
+				"pierce": 999999,
+				"damageEffect": {
+					"kill": true,
+					"damage": 350,
+					"canBreakIce": true
+				}
+			},
+			"fullscreenEffect": "monkey_ace_nuclear_blast",
+			"thumb": "activated_ability_monkey_ace",
+			"label": "Ground Zero Ability",
+			"description": "Drops a single devastating bomb that destroys all bloons on screen and heavily damages MOAB-class bloons.",
+			"abilityClass": "ProjectileHitAll"
+		}
+	]
+}

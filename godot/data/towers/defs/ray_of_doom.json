@@ -1,0 +1,39 @@
+{
+	"id": "RayOfDoom",
+	"label": "Ray of Doom",
+	"description": "",
+	"display": "ray_of_doom",
+	"detailSmall": "doom_ray",
+	"detail": "doom_ray",
+	"occupiedSpace": "large",
+	"rangeOfVisibility": 1250,
+	"canPriorityTarget": false,
+	"targetMask": [
+		"None"
+	],
+	"behavior": {
+		"process": {
+			"$type": "RayDamage",
+			"projectile": {
+				"display": "laser_cannon",
+				"pierce": 13,
+				"radius": 6,
+				"effectMask": [
+					"None"
+				],
+				"damageEffect": {
+					"damage": 1,
+					"canBreakIce": true
+				}
+			}
+		},
+		"roundStart": {
+			"$type": "DeployRay"
+		},
+		"roundOver": {
+			"$type": "RetractRay"
+		}
+	},
+	"targetingSystem": 1,
+	"requiresTarget": false
+}

@@ -1,0 +1,29 @@
+{
+	"id": "MonkeyBank",
+	"label": "Monkey Bank",
+	"description": "",
+	"display": "money_bank",
+	"occupiedSpace": "banana_farm_space",
+	"rangeOfVisibility": 120,
+	"detailSmall": "monkey_bank",
+	"detail": "monkey_bank",
+	"canPriorityTarget": false,
+	"rotates": false,
+	"behavior": {
+		"roundStart": {
+			"$type": "BananaEmitter",
+			"cashPerPacket": 10,
+			"cashPerRound": 450,
+			"cashScale": 1,
+			"lifespan": 20,
+			"maxFunds": 5000,
+			"interestMultiplier": 1.1,
+			"bankFunds": true
+		},
+		"roundOver": {
+			"$type": "Interest",
+			"isCalledOnReInit": false
+		}
+	},
+	"requiresTarget": false
+}

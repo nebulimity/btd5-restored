@@ -1,0 +1,85 @@
+{
+	"id": "Spectre",
+	"label": "Spectre",
+	"description": "",
+	"display": "air_base",
+	"occupiedSpace": "large",
+	"rangeOfVisibility": 9999,
+	"detailSmall": "spectre",
+	"detail": "spectre",
+	"canPriorityTarget": false,
+	"rotates": false,
+	"requiresTarget": false,
+	"behavior": {
+		"initialise": {
+			"$type": "SpawnAce",
+			"display": "spectre"
+		},
+		"roundStart": {
+			"$type": "DeployMonkeyAce",
+			"display": "spectre"
+		},
+		"roundOver": {
+			"$type": "RetractMonkeyAce"
+		},
+		"destroy": {
+			"$type": "RemoveAceAircraft"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Sequence",
+			"id": "spectreWeapon",
+			"range": 1000,
+			"reloadTime": 0.04,
+			"proxied": true,
+			"childWeapons": [
+				{
+					"$type": "Single",
+					"power": 1100,
+					"range": 1000,
+					"projectile": {
+						"display": "dart",
+						"pierce": 50,
+						"damageEffect": {
+							"damage": 1,
+							"cantBreak": [
+								"Lead"
+							],
+							"canBreakIce": false
+						}
+					},
+					"proxied": true,
+					"rotate": false
+				},
+				{
+					"$type": "Single",
+					"power": 800,
+					"range": 1000,
+					"projectile": {
+						"display": "spectre_bomb",
+						"pierce": 1,
+						"radius": 5,
+						"behavior": {
+							"collision": {
+								"$type": "CollisionSpawnProjectile",
+								"projectile": {
+									"display": "large_explosion",
+									"pierce": 100,
+									"radius": 75,
+									"damageEffect": {
+										"damage": 2,
+										"canBreakIce": true,
+										"showPop": false
+									}
+								}
+							}
+						}
+					},
+					"proxied": true,
+					"rotate": false
+				}
+			]
+		}
+	]
+}

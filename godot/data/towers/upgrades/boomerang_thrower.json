@@ -1,0 +1,212 @@
+{
+	"base": "BoomerangThrower",
+	"upgrades": [
+		[
+			{
+				"label": "Multi-Target",
+				"description": "Boomerangs can now pop 7 bloons each.",
+				"thumb": "boomerang_thrower",
+				"cost": 250,
+				"xpGate": 100,
+				"add": {
+					"display": [
+						{
+							"useFor": "boomerang_thrower",
+							"display": "boomerang_multi"
+						},
+						{
+							"useFor": "sonic_boom",
+							"display": "sonic_boom_multi"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"pierce": 4
+						}
+					},
+					"detail": "multi_boomerang",
+					"detailSmall": "multi_boomerang"
+				}
+			},
+			{
+				"label": "Glaive Thrower",
+				"description": "Throws glaives instead of boomerangs - they're sharper, faster, and more poptastic.",
+				"thumb": "glaive_thrower",
+				"cost": 280,
+				"xpGate": 905,
+				"add": {
+					"display": [
+						{
+							"useFor": "boomerang_multi",
+							"display": "glaive_thrower"
+						},
+						{
+							"useFor": "sonic_boom_multi",
+							"display": "glaive_thrower"
+						},
+						{
+							"useFor": "sonic_boom",
+							"display": "sonic_glaive_thrower"
+						},
+						{
+							"useFor": "red_hot_rangs",
+							"display": "hot_glaive_thrower"
+						},
+						{
+							"useFor": "bionic_boomer",
+							"display": "bionic_glaiver"
+						},
+						{
+							"useFor": "turbo_charge",
+							"display": "turbo_glaiver"
+						}
+					],
+					"weaponMod": {
+						"reloadTime": -0.086,
+						"projectileMod": {
+							"pierce": 5,
+							"radius": 3,
+							"display": [
+								{
+									"useFor": "boomerang",
+									"display": "glaive"
+								},
+								{
+									"useFor": "hot_rang",
+									"display": "hot_glaive"
+								}
+							]
+						}
+					},
+					"detail": "glaive_thrower",
+					"detailSmall": "glaive_thrower"
+				}
+			},
+			{
+				"label": "Glaive Riccochet",
+				"description": "The glaives from this tower will automatically bounce from bloon to bloon as long as there is one close by.",
+				"thumb": "glaive_riccochet",
+				"cost": 1500,
+				"xpGate": 3260,
+				"assign": "GlaiveRiccochet"
+			},
+			{
+				"label": "Glaive Lord",
+				"description": "Creates two permanent glaives that orbit round the tower, shredding almost anything that touches them. Glaive Lord can attack Camo Bloons.",
+				"thumb": "glaive_lord",
+				"cost": 9000,
+				"xpGate": 10165,
+				"rankGate": 22,
+				"assign": "GlaiveLord"
+			}
+		],
+		[
+			{
+				"label": "Sonic Boom",
+				"description": "Sonic boomerangs can smash through frozen bloons.",
+				"cost": 100,
+				"xpGate": 360,
+				"thumb": "sonic_boom",
+				"add": {
+					"display": [
+						{
+							"useFor": "boomerang_thrower",
+							"display": "sonic_boom"
+						},
+						{
+							"useFor": "boomerang_multi",
+							"display": "sonic_boom_multi"
+						},
+						{
+							"useFor": "glaive_thrower",
+							"display": "sonic_glaive_thrower"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"damageEffectMod": {
+								"canBreakIce": true
+							}
+						}
+					},
+					"detail": "sonic_boom",
+					"detailSmall": "sonic_boom"
+				}
+			},
+			{
+				"label": "Red Hot 'Rangs",
+				"description": "Red hot boomerangs can melt through lead bloons.",
+				"thumb": "red_hot_rangs",
+				"cost": 150,
+				"xpGate": 1475,
+				"add": {
+					"display": [
+						{
+							"useFor": "sonic_boom",
+							"display": "red_hot_rangs"
+						},
+						{
+							"useFor": "boomerang_multi",
+							"display": "red_hot_rangs"
+						},
+						{
+							"useFor": "sonic_boom_multi",
+							"display": "red_hot_rangs"
+						},
+						{
+							"useFor": "glaive_thrower",
+							"display": "hot_glaive_thrower"
+						},
+						{
+							"useFor": "glaive_ricochet",
+							"display": "hot_glaive_ricochet"
+						},
+						{
+							"useFor": "glaive_lord",
+							"display": "hot_glaive_lord"
+						}
+					],
+					"weaponMod": {
+						"projectileMod": {
+							"display": [
+								{
+									"useFor": "boomerang",
+									"display": "hot_rang"
+								},
+								{
+									"useFor": "glaive",
+									"display": "hot_glaive"
+								}
+							],
+							"damageEffectMod": {
+								"canBreakIce": true,
+								"removeFromCantBreak": [
+									"Lead"
+								]
+							}
+						}
+					},
+					"detail": "hot_rangas",
+					"detailSmall": "hot_rangas"
+				}
+			},
+			{
+				"label": "Bionic Boomer",
+				"description": "This tower replaces its arm with a super strong bionic arm. The Bionic Boomer throws boomerangs twice as fast.",
+				"thumb": "bionic_boomer",
+				"cost": 1600,
+				"xpGate": 5445,
+				"assign": "BionicBoomer"
+			},
+			{
+				"label": "Turbo Charge",
+				"description": "Turbo Charge Ability: increase attack speed to hypersonic for 10 seconds.",
+				"cost": 3000,
+				"xpGate": 16385,
+				"rankGate": 22,
+				"thumb": "turbo_charge",
+				"assign": "TurboCharge"
+			}
+		]
+	]
+}

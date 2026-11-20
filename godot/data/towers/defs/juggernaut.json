@@ -1,0 +1,38 @@
+{
+	"id": "Juggernaut",
+	"label": "Juggernaut",
+	"display": "juggernaut",
+	"occupiedSpace": "small",
+	"detail": "juggernaut",
+	"detailSmall": "juggernaut",
+	"rangeOfVisibility": 175,
+	"targetMask": [
+		"None"
+	],
+	"behavior": {
+		"process": {
+			"$type": "RotateToTarget"
+		}
+	},
+	"weapons": [
+		{
+			"$type": "Single",
+			"range": 440,
+			"power": 560,
+			"reloadTime": 1.4,
+			"projectile": {
+				"display": "large_spike_ball",
+				"pierce": 100,
+				"radius": 23,
+				"effectMask": [
+					"None"
+				],
+				"damageEffect": {
+					"damage": 1,
+					"ceramicScale": 5,
+					"canBreakIce": true
+				}
+			}
+		}
+	]
+}
