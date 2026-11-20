@@ -10,17 +10,17 @@ public partial class TowerPlaceView : Node2D
     private TowerDef _def;
     private OccupiedSpace _occupiedSpace;
 
-    public void ShowView(TowerDef def)
+    public void ShowView(TowerDef def, OccupiedSpace space, double rotation)
     {
         _def = def;
-        _occupiedSpace = new OccupiedSpace(Main.Instance.Footprints[def.OccupiedSpace]);
+        _occupiedSpace = space;
 
         _tower.Texture = GD.Load<Texture2D>($"res://assets/towers/{def.Display}/1.svg");
         _tower.Offset = new Vector2(-2.15f, 3.3f);
         _glow.Texture = _tower.Texture;
         _glow.Offset = _tower.Offset;
 
-        _ghost.Rotation = def.Rotates ? -Mathf.Pi / 2 : 0;
+        _ghost.Rotation = (float)rotation;
 
         _rangeCombo.SetRange(def.RangeOfVisibility, true);
 

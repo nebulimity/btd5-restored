@@ -24,14 +24,20 @@ public class Level : Scene
 	public int Health;
 	public double Cash;
 
+	private static readonly double[] ModeCostMultipliers = [0.85, 1, 1.08, 1, 1, 1];
+	private double _modeCostMultiplier;
+
 	private static readonly int[] InitialCashByMode = [650, 650, 650, int.MaxValue, 50000, 650];
 	private static readonly int[] InitialHealthByMode = [200, 150, 100, 200, 150, 150];
 	private static readonly double[] BloonSpeedModsByMode = [0, 0.05, 0.125, 0, 0, 0];
 	private static readonly int[] RoundsByMode = [50, 65, 85, 300, 300, 300];
 
+	public List<Tower> AllTowers = new List<Tower>();
 	public List<Bloon> AllBloons = new List<Bloon>();
 	public event Action<Bloon> BloonAdded;
 	public event Action<Bloon> BloonRemoved;
+
+	public uint NextTowerId; // AS3: Coopinator.§;!$§
 
 	public int UpdateMultiplier = 1;
 	public double RoundTime = 0;
@@ -54,6 +60,7 @@ public class Level : Scene
 	public event Action RoundEnded;
 	public event Action CashChanged;
 	public event Action HealthChanged;
+	public event Action TowerAdded;
 
 	public void Initialize()
 	{
@@ -92,6 +99,8 @@ public class Level : Scene
 		Spawner.ApplyCamoToo = null;
 		Spawner.ApplyRegenToo = null;
 		Spawner.BloonLevelOffsets = null;
+
+		_modeCostMultiplier = ModeCostMultipliers[(int)mode];
 
 		Cash = InitialCashByMode[(int)mode];
 		CashMultiplier = 1; // TODO
@@ -167,6 +176,33 @@ public class Level : Scene
 				_endWaveTimer = null;
 			};
 		}
+	}
+
+	public Tower CreateTower(uint owner, uint id, TowerDef def, double x, double y, double rotation, List<UpgradeDef> upgrades, double spentOn, uint seed)
+	{
+		Tower tower = new Tower { Owner = owner, Id = id, X = x, Y = y, SpentOn = spentOn, RootId = def.Id, BaseDef = def };
+
+		tower.Initialize(def, true, unchecked((int)seed));
+		tower.Rotation = rotation;
+
+		if (tower.Def != null)
+		{
+			AddTower(tower);
+		}
+
+		return tower;
+	}
+
+	public void AddTower(Tower tower)
+	{
+		AddEntity(tower);
+		AllTowers.Add(tower);
+
+		// if not roadspikes and not pineapple
+		// TerrainSet.AddTower(tower);
+		// CollisionGrid.RegisterTower(tower);
+
+		TowerAdded?.Invoke();
 	}
 
 	public bool IsPlaceable(OccupiedSpace space, bool isBoat = false, bool canPlaceOnTrack = false, bool isAmphibious = false)
@@ -280,5 +316,124 @@ public class Level : Scene
 	{
 		Cash += amount * CashMultiplier;
 		CashChanged?.Invoke();
+	}
+
+	public int Purchase(double cost, double x, double y, string towerId, Tower tower)
+	{
+		double newCost = CalcCostMods(cost, x, y, towerId, tower);
+
+		if (Mode != GameMode.Sandbox)
+		{
+			Cash -= newCost;
+			CashChanged?.Invoke();
+		}
+
+		return (int)newCost;
+	}
+
+	public int CalcCostMods(double cost, double x, double y, string towerId, Tower tower)
+	{
+		double newCost = CalcModeCostMod(cost);
+		newCost = CalcSpecialtyCostMods(newCost, towerId);
+		newCost = CalcAreaCostMods(newCost, x, y, tower);
+
+		return (int)Math.Floor(newCost / 5 + 0.5) * 5;
+	}
+
+	public int CalcPrePlaceCostMods(double cost, string towerId)
+	{
+		double newCost = CalcModeCostMod(cost);
+		newCost = CalcSpecialtyCostMods(newCost, towerId);
+
+		return (int)Math.Floor(newCost / 5 + 0.5) * 5;
+	}
+
+	private int CalcSpecialtyCostMods(double cost, string towerId) // todo: ts gonna be boring asf ngl (all for tower cost btw)
+	{
+		// int _loc6_ = 0;
+		// SpecialtyDef _loc7_;
+		// if (Main.Instance.Profile.Specialties.SpecialtyActive == -1)
+		{
+			return (int)cost;
+		}
+		// double _loc3_ = cost;
+		// TowerSpecialtiesDef _loc4_ = Main.Instance.SpecialtyFactory.§3f§();
+		// int _loc5_ = Main.Instance.SpecialtyFactory.§< b§();
+		//
+		// if (_loc4_ != null)
+		// {
+		// 	if (_loc4_.TowerId == param2)
+		// 	{
+		// 		_loc6_ = 0;
+		// 		while (_loc6_ < _loc4_.Tiers.Length && _loc6_ < _loc5_)
+		// 		{
+		// 			_loc7_ = _loc4_.tiers[_loc6_];
+		// 			if (_loc7_.towerCostMod != 1)
+		// 			{
+		// 				_loc3_ *= _loc7_.towerCostMod;
+		// 			}
+		// 			_loc6_++;
+		// 		}
+		// 	}
+		//
+		// 	if (_loc4_.opposite != null && _loc4_.opposite.towerId == param2)
+		// 	{
+		// 		_loc3_ *= _loc4_.opposite.towerCostMod;
+		// 	}
+		// }
+		// return _loc3_;
+	}
+
+	private int CalcAreaCostMods(double cost, double x, double y, Tower tower)
+	{
+		// double _loc5_ = param1;
+		// List<AreaEffectDef> _loc6_ = GetAreaEffects(param2, param3, param4);
+
+		// if (_loc6_ != null)
+		// {
+		// 	foreach (var _loc7_ in _loc6_)
+		// 	{
+		// 		_loc5_ *= _loc7_.CostScale;
+		// 		if (_loc7_.CostScale != 1)
+		// 		{
+		// 			break;
+		// 		}
+		// 	}
+		// }
+
+		// return (int)_loc5_;
+
+		return (int)cost;
+	}
+
+	public int CalcModeCostMod(double cost)
+	{
+		return (int)Math.Floor(cost * _modeCostMultiplier + 0.5);
+	}
+
+	public bool CanAfford(double cost, string towerId)
+	{
+		return CalcPrePlaceCostMods(cost, towerId) <= Cash;
+	}
+
+	public int GetReserveCount(string param1)
+	{
+		// var InventoryCount _loc2_ = null;
+		//if (Reserves == null)
+		{
+			return 0;
+		}
+
+		// foreach (var _loc5_ in Reserves)
+		// {
+		// 	_loc2_ = _loc5_;
+		// 	_loc5_;
+		// 	if (_loc2_.id == param1)
+		// 	{
+		// 		return _loc2_.count;
+		// 	}
+		// }
+
+		// return 0;
 	}
 }

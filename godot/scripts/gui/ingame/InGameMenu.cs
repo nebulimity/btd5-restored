@@ -29,6 +29,7 @@ public partial class InGameMenu : Control
 	[Export] private Label _rbeValue;
 
 	[Export] private TextureButton[] _towerButtons;
+	private List<(TextureButton Button, TowerPickerDef Def)> _towerPickers = new();
 
 	public void Initialize(Level level)
 	{
@@ -62,8 +63,11 @@ public partial class InGameMenu : Control
 			if (buttonsByName.TryGetValue(def.Button, out TextureButton button))
 			{
 				button.Pressed += () => Place(def);
+				_towerPickers.Add((button, def));
 			}
 		}
+
+		UpdateButtons();
 	}
 
 	private void OnRoundStarted()
@@ -92,6 +96,7 @@ public partial class InGameMenu : Control
 	private void OnCashChanged()
 	{
 		_cashValue.Text = ((int)_level.Cash).ToString();
+		UpdateButtons();
 	}
 
 	private void OnHealthChanged()
@@ -142,6 +147,16 @@ public partial class InGameMenu : Control
 	public void SetHandCursor(bool on)
 	{
 		_selectionArea.MouseDefaultCursorShape = on ? CursorShape.PointingHand : CursorShape.Arrow;
+	}
+
+	private void UpdateButtons()
+	{
+		foreach (var (button, def) in _towerPickers)
+		{
+			bool invalid = _level.Cash < _level.CalcPrePlaceCostMods(def.Cost, def.Tower.Id) && _level.GetReserveCount(def.Tower.Id) <= 0;
+			button.Disabled = invalid;
+			button.MouseDefaultCursorShape = invalid ? CursorShape.Arrow : CursorShape.PointingHand;
+		}
 	}
 
 	public override void _Process(double delta)
