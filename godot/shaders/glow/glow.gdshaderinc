@@ -1,33 +1,44 @@
-shader_type canvas_item;
+#ifdef GLOW_CANVAS_ITEM
 
+#ifndef CANVAS_GROUP
 uniform bool allow_out_of_bounds = true;
+#endif
 uniform float blur_x : hint_range(0.0, 255.0, 0.1) = 6.0;
 uniform float blur_y : hint_range(0.0, 255.0, 0.1) = 6.0;
 uniform float strength : hint_range(0.0, 255.0, 0.01) = 2.0; // flash strength (1.0 = 100%)
 uniform int quality : hint_range(0, 3) = 1;
 uniform vec4 glow_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
 uniform bool knockout = false;
-uniform bool scale_blur_with_oversampling = true;
 
+#ifdef CANVAS_GROUP
+uniform sampler2D screen_tex : hint_screen_texture, filter_nearest;
+#define GLOW_SRC screen_tex
+varying flat vec2 v_screen_scale;
+#else
+uniform bool scale_blur_with_oversampling = true;
+#define GLOW_SRC TEXTURE
 varying flat vec2 v_pad;
 varying flat vec2 v_node_scale;
+#endif
 
 const int HALF = 15;
 const int WIN = 32;
 
+#ifndef CANVAS_GROUP
 bool is_inside_usquare(vec2 x) {
 	return x == clamp(x, vec2(0.0), vec2(1.0));
 }
+
+float local_pad(float blur, float s, int passes) {
+	return blur > 0.0 ? ceil(float(max(passes, 1)) * (blur / s + 1.0)) : 0.0;
+}
+#endif
 
 vec4 blend(vec4 bottom, vec4 top) {
 	float alpha = top.a + bottom.a * (1.0 - top.a);
 	if (alpha < 0.0001) return vec4(0.0);
 	vec3 color = mix(bottom.rgb * bottom.a, top.rgb, top.a) / alpha;
 	return vec4(color, alpha);
-}
-
-float local_pad(float blur, float s, int passes) {
-	return blur > 0.0 ? ceil(float(max(passes, 1)) * (blur / s + 1.0)) : 0.0;
 }
 
 vec3 box_kernel(float width) {
@@ -90,8 +101,8 @@ float windowed_blur_alpha(sampler2D tex, vec2 f, ivec2 size, vec2 width, int pas
 	vec3 kx = box_kernel(width.x);
 	vec3 ky = box_kernel(width.y);
 	int stride = 1;
-	if (passes * max(kernel_reach(kx), kernel_reach(ky)) > HALF) {
-		int need = passes * max(kernel_reach(kx), kernel_reach(ky));
+	int need = passes * max(kernel_reach(kx), kernel_reach(ky));
+	if (need > HALF) {
 		stride = max(2, int(ceil(float(need) / float(HALF - 1))));
 		for (int t = 0; t < 8; t++) {
 			kx = box_kernel(width.x / float(stride));
@@ -166,15 +177,25 @@ float windowed_blur_alpha(sampler2D tex, vec2 f, ivec2 size, vec2 width, int pas
 }
 
 void vertex() {
+#ifdef CANVAS_GROUP
+	v_screen_scale = max(vec2(length(CANVAS_MATRIX[0].xy), length(CANVAS_MATRIX[1].xy)), vec2(1e-4));
+#else
 	v_node_scale = max(vec2(length(MODEL_MATRIX[0].xy), length(MODEL_MATRIX[1].xy)), vec2(1e-4));
 	v_pad = vec2(0.0);
 	if (allow_out_of_bounds) {
 		v_pad = vec2(local_pad(blur_x, v_node_scale.x, quality), local_pad(blur_y, v_node_scale.y, quality));
 		VERTEX += (UV * 2.0 - 1.0) * v_pad;
 	}
+#endif
 }
 
 void fragment() {
+#ifdef CANVAS_GROUP
+	ivec2 isize = textureSize(screen_tex, 0);
+	vec2 f = FRAGCOORD.xy;
+	vec4 src = texelFetch(screen_tex, ivec2(f), 0);
+	if (src.a > 0.0001) src.rgb /= src.a;
+#else
 	vec2 base_size = 1.0 / TEXTURE_PIXEL_SIZE;
 	ivec2 isize = textureSize(TEXTURE, 0);
 	vec2 raster_size = vec2(isize);
@@ -182,25 +203,30 @@ void fragment() {
 
 	vec2 uv = (UV * (base_size + 2.0 * v_pad) - v_pad) / base_size;
 	vec4 src = is_inside_usquare(uv) ? texture(TEXTURE, uv) : vec4(0.0);
+	vec2 f = uv * raster_size;
+#endif
 
 	if (knockout && src.a >= 1.0) {
 		COLOR = vec4(glow_color.rgb, 0.0);
 	} else {
 		vec2 b = vec2(blur_x, blur_y);
+#ifdef CANVAS_GROUP
+		vec2 width = b * v_screen_scale;
+#else
 		vec2 width = scale_blur_with_oversampling ? ((b - 1.0) * ovs + 1.0) / v_node_scale : b / v_node_scale;
+#endif
 		width = round(width * 65536.0) / 65536.0;
 		vec3 kx = box_kernel(width.x);
 		vec3 ky = box_kernel(width.y);
 
-		vec2 f = uv * raster_size;
 		ivec2 p = ivec2(floor(f));
 		float blurred;
 		if (quality <= 0) {
-			blurred = float(alpha_byte(TEXTURE, p, isize));
+			blurred = float(alpha_byte(GLOW_SRC, p, isize));
 		} else if (quality == 1 && max(kernel_reach(kx), kernel_reach(ky)) <= HALF) {
-			blurred = float(box_blur_alpha(TEXTURE, p, isize, kx, ky));
+			blurred = float(box_blur_alpha(GLOW_SRC, p, isize, kx, ky));
 		} else {
-			blurred = windowed_blur_alpha(TEXTURE, f, isize, width, quality);
+			blurred = windowed_blur_alpha(GLOW_SRC, f, isize, width, quality);
 		}
 		float blur = blurred / 255.0;
 
@@ -215,3 +241,4 @@ void fragment() {
 		}
 	}
 }
+#endif
