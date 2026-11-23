@@ -6,10 +6,35 @@ public partial class TowerHighlight : CanvasGroup
 	private Sprite2D _main;
 	private string _sourceDisplay;
 
+	private Vector2 _blur;
+	private int _quality;
+	private Vector2 _lastScale;
+
 	public override void _Ready()
 	{
 		_main = new Sprite2D();
 		AddChild(_main);
+		UpdateOutlineParams();
+	}
+
+	public void UpdateOutlineParams()
+	{
+		var material = (ShaderMaterial)Material;
+		_blur = new Vector2((float)material.GetShaderParameter("blur_x"), (float)material.GetShaderParameter("blur_y"));
+		_quality = (int)material.GetShaderParameter("quality");
+		_lastScale = Vector2.Zero;
+		UpdateMargins();
+	}
+
+	private void UpdateMargins()
+	{
+		Vector2 scale = GetViewportTransform().Scale.Abs();
+		if (scale == _lastScale) return;
+		_lastScale = scale;
+
+		Vector2 reach = _quality * (_blur * scale * 0.5f + Vector2.One);
+		FitMargin = Mathf.Ceil(Mathf.Max(reach.X, reach.Y));
+		ClearMargin = FitMargin * 2f;
 	}
 
 	public void SetTower(Tower tower)
@@ -45,5 +70,6 @@ public partial class TowerHighlight : CanvasGroup
 
 		Position = new Vector2((float)Tower.X, (float)Tower.Y);
 		Rotation = (float)Tower.Rotation;
+		UpdateOutlineParams();
 	}
 }
