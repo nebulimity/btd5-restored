@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bb38ao4tq6th0"]
+
+[ext_resource type="Shader" uid="uid://hhv72h2rxkuo" path="res://shaders/adjust_color.gdshader" id="1_sss87"]
+
+[resource]
+shader = ExtResource("1_sss87")
+shader_parameter/red_row = Vector4(0.309, 0.609, 0.082, 0)
+shader_parameter/green_row = Vector4(0.309, 0.609, 0.082, 0)
+shader_parameter/blue_row = Vector4(0.309, 0.609, 0.082, 0)
+shader_parameter/alpha_row = Vector4(0, 0, 0, 0.5)
+shader_parameter/offsets = Vector4(0, 0, 0, 0)

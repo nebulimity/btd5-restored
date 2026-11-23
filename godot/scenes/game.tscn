@@ -33,6 +33,8 @@
 [ext_resource type="Texture2D" uid="uid://wn3icr8ptd41" path="res://assets/ui/menu/default.svg" id="24_sww3w"]
 [ext_resource type="Texture2D" uid="uid://bmfyw85urpwy1" path="res://assets/ui/menu/outlined.svg" id="25_suyxu"]
 [ext_resource type="BitMap" uid="uid://dyggydn2lkit3" path="res://assets/ui/tower_buttons/mask.svg" id="26_02fa5"]
+[ext_resource type="Material" uid="uid://c3lbrolws51os" path="res://materials/tower_button/valid.tres" id="26_66xif"]
+[ext_resource type="Script" uid="uid://d1ieq4rjeof0g" path="res://scripts/gui/ingame/TowerButton.cs" id="26_n8ral"]
 [ext_resource type="Texture2D" uid="uid://c5m0qjpi8uhl7" path="res://assets/ui/music/on/default.svg" id="26_wljb1"]
 [ext_resource type="Texture2D" uid="uid://bcvbddanvqxfq" path="res://assets/ui/music/on/outlined.svg" id="27_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://cd5rmvpje5nqa" path="res://assets/ui/sfx/on/default.svg" id="28_js0lu"]
@@ -262,16 +264,6 @@ friction = 7.0
 script = ExtResource("16_bt5mj")
 
 [sub_resource type="Theme" id="Theme_1kice"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bt5mj"]
-shader = SubResource("Shader_oaba0")
-shader_parameter/allow_out_of_bounds = true
-shader_parameter/shadow_distance = 2.0
-shader_parameter/shadow_angle = 45.0
-shader_parameter/shadow_strength = 0.1999999955296
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/blur_x = 0.0
-shader_parameter/blur_y = 0.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_bt5mj"]
 font = ExtResource("7_u5sy4")
@@ -3937,17 +3929,19 @@ theme_override_constants/v_separation = 1
 columns = 2
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="DartTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1963882556]
+[node name="DartTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1963882556 node_paths=PackedStringArray("_icon")]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
+script = ExtResource("26_n8ral")
+_icon = NodePath("Icon")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="Icon" type="Sprite2D" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/DartTower" unique_id=639145932]
-material = SubResource("ShaderMaterial_bt5mj")
+material = ExtResource("26_66xif")
 texture = ExtResource("15_264po")
 centered = false
 
@@ -3961,7 +3955,7 @@ texture_hover = ExtResource("18_bt5mj")
 texture_click_mask = ExtResource("26_02fa5")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/TackTower" unique_id=2084092998]
+[node name="Locked" type="Label" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer/TackTower" unique_id=82895329]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
