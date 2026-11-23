@@ -23,6 +23,7 @@ public partial class TowerHighlight : CanvasGroup
 		_blur = new Vector2((float)material.GetShaderParameter("blur_x"), (float)material.GetShaderParameter("blur_y"));
 		_quality = (int)material.GetShaderParameter("quality");
 		_lastScale = Vector2.Zero;
+
 		UpdateMargins();
 	}
 

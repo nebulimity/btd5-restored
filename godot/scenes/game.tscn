@@ -3948,7 +3948,6 @@ centered = false
 [node name="TackTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1876199226]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
@@ -3971,7 +3970,6 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="SniperMonkey" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1863157191]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
@@ -3994,7 +3992,6 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="BoomerangTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=558366408]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
@@ -4017,7 +4014,6 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="NinjaMonkey" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1965595735]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
@@ -4040,7 +4036,6 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="BombTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=2136775923]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
@@ -4063,7 +4058,6 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="IceTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=20705111]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
@@ -4086,7 +4080,6 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="GlueTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1488052486]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
@@ -4109,7 +4102,6 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="BuccaneerTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1479445954]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
@@ -4132,7 +4124,6 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="AceTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=88032069]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
@@ -4155,7 +4146,6 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="SuperTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=2098169429]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
@@ -4178,7 +4168,6 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="WizardTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1001875812]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
@@ -4201,7 +4190,6 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="VillageTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1812926887]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
@@ -4224,7 +4212,6 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="FarmTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=1576221389]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
@@ -4247,7 +4234,6 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="MortarTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=962375264]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
@@ -4270,7 +4256,6 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="DartlingTower" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=785645918]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
@@ -4293,7 +4278,6 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="SpikeFactory" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=73172947]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
@@ -4316,7 +4300,6 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="MonkeySub" type="TextureButton" parent="UILayer/InGameMenu/SidePanel/UI/SmoothScrollContainer/MarginContainer/GridContainer" unique_id=417394309]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("17_37s47")
 texture_hover = ExtResource("18_bt5mj")
