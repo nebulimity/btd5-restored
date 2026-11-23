@@ -37,5 +37,12 @@ dd {
 }
 
 .footnote {
+  display: block;
+  margin-top: 12px;
+  line-height: 1.2;
+  color: rgb(140, 140, 140);
+}
+
+.footnote-mark {
   color: rgb(140, 140, 140);
 }
