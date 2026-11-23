@@ -11,7 +11,9 @@ public partial class InGameMenu : Control
 	public TowerSelectedState TowerSelectedState;
 	public TowerNotSelectedState TowerNotSelectedState;
 
+	[Export] public TowerHighlight TowerHighlight { get; private set; }
 	[Export] public TowerPlaceView TowerPlaceView { get; private set; }
+	[Export] public RangeCombo SelectedRange { get; private set; }
 
 	[Export] private Control _selectionArea;
 
@@ -147,6 +149,16 @@ public partial class InGameMenu : Control
 	public void SetHandCursor(bool on)
 	{
 		_selectionArea.MouseDefaultCursorShape = on ? CursorShape.PointingHand : CursorShape.Arrow;
+	}
+
+	public bool CanSelect(TowerDef def)
+	{
+		if (def.Id == TowerFactory.RoadSpikes || def.Id == TowerFactory.Pineapple)
+		{
+			return false;
+		}
+
+		return true;
 	}
 
 	private void UpdateButtons()

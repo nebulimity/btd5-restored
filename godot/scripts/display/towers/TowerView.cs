@@ -7,6 +7,7 @@ public partial class TowerView : Node2D
 
 	public void Bind(Tower tower)
 	{
+		_tower = tower;
 		_main = new Sprite2D();
 		_main.Texture = GD.Load<Texture2D>($"res://assets/towers/{tower.Def.Display}/1.svg"); // TODO: use an asset manager in the future
 

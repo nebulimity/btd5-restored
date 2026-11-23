@@ -47,12 +47,21 @@ public class PlaceState : InGameMenuState
 
 	public override State HandleMessage(Message message)
 	{
-		switch (((GameStateMessage)message).Type)
+		GameStateMessage msg = (GameStateMessage)message;
+
+		switch (msg.Type)
 		{
 			case GameStateMessageType.TowerPlaced:
 				Machine.ChangeState(Menu.NeutralState, message);
+				Tower tower = msg.Tower;
 
-				return null; // temp
+				if (tower != null && tower.Def != null && Menu.CanSelect(tower.Def))
+				{
+					Machine.Send(new GameStateMessage(GameStateMessageType.TowerSelected) { Tower = tower });
+				}
+
+				// todo: if(inGameMenu.shiftDown || this.pickerDef.tower.id == "RoadSpikes" || this.pickerDef.tower.id == "ExplodingPineapple")
+				return null;
 			case GameStateMessageType.TowerPlacing:
 				return Menu.PlaceState;
 			case GameStateMessageType.Cancel:

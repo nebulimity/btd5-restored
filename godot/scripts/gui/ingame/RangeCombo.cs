@@ -44,6 +44,16 @@ public partial class RangeCombo : Node2D
 		_rangeOutline.QueueRedraw();
 	}
 
+	public void ShowRange()
+	{
+		Visible = true;
+	}
+
+	public void HideRange()
+	{
+		Visible = false;
+	}
+
 	private void OnShadeDraw()
 	{
 		if (_radius > 0)
