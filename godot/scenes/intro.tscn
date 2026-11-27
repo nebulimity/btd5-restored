@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://be0kdyajj71i8" path="res://scripts/Intro.cs" id="1_va21j"]
 [ext_resource type="Texture2D" uid="uid://d3n0fexsygk8d" path="res://assets/animations/intro/sprites/stars.svg" id="2_epycs"]
 [ext_resource type="Texture2D" uid="uid://dxfru28bvqxe3" path="res://assets/animations/intro/sprites/trees.svg" id="2_yjqpq"]
-[ext_resource type="Texture2D" uid="uid://dx82a76fhrjjn" path="res://assets/animations/intro/sprites/glow.png" id="4_u5myo"]
 [ext_resource type="Texture2D" uid="uid://0qk5cbchduv3" path="res://assets/animations/intro/sprites/roof.svg" id="4_wfs7u"]
 [ext_resource type="Texture2D" uid="uid://cd20hn2mfl5p6" path="res://assets/animations/intro/sprites/moon.svg" id="7_0naf5"]
 [ext_resource type="Texture2D" uid="uid://bfyyhy4dryqa6" path="res://assets/animations/intro/sprites/bloon.svg" id="7_bu1yb"]
@@ -36,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://cmvbqyweswvwr" path="res://assets/animations/intro/sprites/kiwi/left_thigh/left_thigh_4.svg" id="41_nhtyu"]
 [ext_resource type="AudioStream" uid="uid://dx2mjd5c2mi21" path="res://assets/animations/intro/audio/pop.ogg" id="44_l82bo"]
 [ext_resource type="Texture2D" uid="uid://dffyl2xjqg5hg" path="res://assets/animations/intro/sprites/logo.svg" id="47_nhtyu"]
-[ext_resource type="Shader" uid="uid://3fds1ly303uw" path="res://shaders/circle.gdshader" id="47_y7gtc"]
+[ext_resource type="Shader" uid="uid://csvh6lqt7preb" path="res://shaders/circle.gdshader" id="47_y7gtc"]
 [ext_resource type="Texture2D" uid="uid://cti7rg0j8h0hd" path="res://assets/animations/intro/sprites/pop.svg" id="50_aotd0"]
 [ext_resource type="AudioStream" uid="uid://bbhafoia74l63" path="res://assets/animations/intro/audio/schwing.wav" id="52_va21j"]
 [ext_resource type="Texture2D" uid="uid://bmpn8q3jxs2t4" path="res://assets/animations/intro/sprites/kiwi/parts/sprite_27.svg" id="kiwi_27"]
@@ -90,6 +89,9 @@
 [ext_resource type="Texture2D" uid="uid://mavjduy4gnhu" path="res://assets/animations/intro/sprites/kiwi/parts/sprite_162.svg" id="kiwi_162"]
 [ext_resource type="Texture2D" uid="uid://dnr8iuqpyhctg" path="res://assets/animations/intro/sprites/kiwi/parts/sprite_164.svg" id="kiwi_164"]
 [ext_resource type="Texture2D" uid="uid://bykqnhmm75ogi" path="res://assets/animations/intro/sprites/kiwi/parts/sprite_166.svg" id="kiwi_166"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uwrfh"]
+load_path = "res://.godot/imported/glow.png-26be988f96a438ec02f4a2e161ede98f.ctex"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aotd0"]
 shader = ExtResource("47_y7gtc")
@@ -4026,15 +4028,15 @@ centered = false
 [node name="Moon" type="Sprite2D" parent="." unique_id=1818814864]
 modulate = Color(2, 2, 2, 1)
 position = Vector2(162.55, 103.8)
-scale = Vector2(0.331, 0.331)
+scale = Vector2(0.331, 0.332)
 texture = ExtResource("7_0naf5")
 centered = false
 offset = Vector2(64.5, 42.4)
 
 [node name="Glow" type="Sprite2D" parent="Moon" unique_id=339579013]
-position = Vector2(243.05127, 218.12689)
-scale = Vector2(3.021148, 3.021148)
-texture = ExtResource("4_u5myo")
+position = Vector2(243.05136, 220.48189)
+scale = Vector2(2.953511, 2.9535105)
+texture = SubResource("CompressedTexture2D_uwrfh")
 
 [node name="Trees" type="Sprite2D" parent="." unique_id=1897665173]
 modulate = Color(0, 0, 0, 1)
@@ -4461,6 +4463,7 @@ offset = Vector2(-0.05, 0)
 visible = false
 modulate = Color(18.892157, 18.892157, 18.892157, 1)
 position = Vector2(245.25, 154.85)
+scale = Vector2(0.53, 0.53)
 texture = ExtResource("50_aotd0")
 centered = false
 
