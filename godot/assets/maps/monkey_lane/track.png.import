@@ -2,30 +2,28 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwp5hnfevtwtb"
-path.bptc="res://.godot/imported/track.png-953b591b098314f23bab197b8a1ddb96.bptc.ctex"
-path.astc="res://.godot/imported/track.png-953b591b098314f23bab197b8a1ddb96.astc.ctex"
+uid="uid://bvu3sb41udqbr"
+path="res://.godot/imported/track.png-953b591b098314f23bab197b8a1ddb96.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/maps/monkey_lane/track.png"
-dest_files=["res://.godot/imported/track.png-953b591b098314f23bab197b8a1ddb96.bptc.ctex", "res://.godot/imported/track.png-953b591b098314f23bab197b8a1ddb96.astc.ctex"]
+dest_files=["res://.godot/imported/track.png-953b591b098314f23bab197b8a1ddb96.ctex"]
 
 [params]
 
-compress/mode=2
-compress/high_quality=true
+compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
